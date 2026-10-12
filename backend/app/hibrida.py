@@ -77,44 +77,57 @@ def rekomendasi(profil: ProfilPengguna, kb: BasisPengetahuan,
         "n_tersaring": len(tersaring),
         "rekomendasi": teratas,
         "peringkat_lengkap": [
-            {k: b[k] for k in ("peringkat", "profesi_id", "nama", "skor")} | {
-                "skor_kbf": b["kbf"]["skor"], "skor_cbf": b["cbf"]["skor"]}
+            {k: b[k] for k in ("peringkat", "profesi_id", "nama", "sektor", "skor")} | {
+                "skor_kbf": b["kbf"]["skor"], "skor_cbf": b["cbf"]["skor"],
+                **_ringkas(kb.cari_profesi(b["profesi_id"]))}
             for b in semua
         ],
         "tersaring": tersaring,
     }
 
 
-def susun_alasan(profil: ProfilPengguna, profesi: dict, baris: dict) -> list[str]:
-    """Penjelasan singkat mengapa profesi ini muncul, dari komponen skornya."""
+def _ringkas(p: dict) -> dict:
+    """Data kartu profesi di daftar."""
+    return {k: p[k] for k in ("gaji_min", "gaji_maks", "pola_kerja", "kode_holland", "deskripsi", "senioritas")}
+
+
+def susun_alasan(profil: ProfilPengguna, profesi: dict, baris: dict) -> list[dict]:
+    """Penjelasan singkat mengapa profesi ini muncul, dari komponen skornya.
+
+    Tiap alasan bernada "cocok" atau "perhatian", supaya antarmuka bisa
+    membedakan kekuatan dari hal yang perlu diperhatikan.
+    """
     k = baris["kbf"]["komponen"]
     kode = kode_holland(profil.riasec)
-    alasan = []
+    alasan: list[dict] = []
+
+    def tambah(nada: str, teks: str) -> None:
+        alasan.append({"nada": nada, "teks": teks})
 
     sama = [h for h in kode if h in profesi["kode_holland"]]
     if k["riasec"] >= 0.6:
-        alasan.append(f"Minatmu ({kode}) sejalan dengan tipe profesi ini ({profesi['kode_holland']}).")
+        tambah("cocok", f"Minatmu ({kode}) sejalan dengan tipe minat profesi ini ({profesi['kode_holland']}).")
     elif sama:
-        alasan.append(f"Sebagian minatmu ({', '.join(sama)}) cocok dengan tipe profesi ini ({profesi['kode_holland']}).")
+        tambah("cocok", f"Sebagian minatmu ({', '.join(sama)}) cocok dengan tipe minat profesi ini ({profesi['kode_holland']}).")
     else:
-        alasan.append(f"Tipe minat profesi ini ({profesi['kode_holland']}) berbeda dari minatmu ({kode}).")
+        tambah("perhatian", f"Tipe minat profesi ini ({profesi['kode_holland']}) berbeda dari minatmu ({kode}).")
 
     if k["big5"] >= 0.75:
-        alasan.append("Gaya kerjamu dekat dengan tuntutan kepribadian profesi ini.")
+        tambah("cocok", "Kepribadianmu dekat dengan profil ideal profesi ini.")
 
     cakupan = baris["cbf"]["cakupan"]
     if cakupan >= 0.5:
-        alasan.append(f"Kamu sudah menguasai sekitar {round(cakupan * 100)}% bobot skill yang diminta.")
+        tambah("cocok", f"Kamu sudah menguasai sekitar {round(cakupan * 100)}% bobot skill yang diminta.")
     elif cakupan > 0:
-        alasan.append(f"Skill-mu baru menutup sekitar {round(cakupan * 100)}% bobot yang diminta — lihat kesenjangan skill.")
+        tambah("perhatian", f"Skill-mu baru menutup sekitar {round(cakupan * 100)}% bobot yang diminta.")
     else:
-        alasan.append("Belum ada skill-mu yang beririsan dengan profesi ini.")
+        tambah("perhatian", "Belum ada skill-mu yang beririsan dengan profesi ini.")
 
     if profil.ekspektasi_gaji > 0:
         if k["finansial"] >= 1:
-            alasan.append("Ekspektasi gajimu masih di dalam rentang gaji awal profesi ini.")
+            tambah("cocok", "Ekspektasi gajimu terpenuhi oleh rentang gaji profesi ini.")
         elif k["finansial"] <= 0:
-            alasan.append("Ekspektasi gajimu melebihi rentang gaji profesi ini.")
+            tambah("perhatian", "Ekspektasi gajimu melebihi rentang gaji profesi ini.")
     if profil.punya_tanggungan and profesi["stabilitas"] >= 0.85:
-        alasan.append("Pola kerjanya relatif stabil, sesuai dengan tanggungan keluargamu.")
+        tambah("cocok", "Pola kerjanya relatif stabil, sesuai dengan tanggungan keluargamu.")
     return alasan

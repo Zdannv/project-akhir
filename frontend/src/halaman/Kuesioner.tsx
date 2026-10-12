@@ -1,10 +1,22 @@
-import { ArrowLeft, ArrowRight, Loader2, Search } from 'lucide-react'
-import { useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { ambilKuesioner, kirimMasukan, type Butir, type Kuesioner, type Masukan } from '../api'
-import { Galat, Kerangka, Memuat, kartu, tombolSekunder, tombolUtama, useData } from '../komponen/umum'
+/**
+ * Alur profiling, mengikuti bentuk Career DNA: layar pembuka, empat langkah
+ * dengan daftar langkah di kiri (desktop) atau chip STEP (ponsel), lalu layar
+ * penutup yang mengantar ke rekomendasi.
+ */
+import { ArrowLeft, ArrowRight, Check, ChevronRight, CornerUpLeft, Home, Loader2, Search, Timer, X } from 'lucide-react'
+import { useMemo, useState, type ReactNode } from 'react'
+import { Link } from 'react-router-dom'
+import { ambilKuesioner, kirimMasukan, type Butir, type Kuesioner as DataKuesioner, type Masukan } from '../api'
+import { Galat, Memuat } from '../komponen/umum'
+import { useData } from '../komponen/useData'
+import { ingatHasil } from '../sesi'
 
-const LANGKAH = ['Data diri', 'Minat', 'Kepribadian', 'Skill']
+const LANGKAH = [
+  { nama: 'Latar Belakang', tanya: 'Ceritakan pendidikan dan kondisimu saat ini.', gambar: '/onboarding/step-1.webp' },
+  { nama: 'Minat', tanya: 'Kegiatan seperti apa yang kamu sukai?', gambar: '/career-dna/step-1.webp' },
+  { nama: 'Kepribadian', tanya: 'Seperti apa dirimu sehari-hari?', gambar: '/career-dna/step-4.webp' },
+  { nama: 'Keahlian', tanya: 'Skill apa saja yang sudah kamu kuasai?', gambar: '/career-dna/step-3.webp' },
+]
 
 const AWAL: Masukan = {
   nama: '', jenis_responden: 'mahasiswa', profesi_aktual: null,
@@ -13,20 +25,23 @@ const AWAL: Masukan = {
   riasec: {}, big5: {}, skill: {},
 }
 
-export default function HalamanKuesioner() {
+export default function Kuesioner() {
   const { data, galat, muat } = useData(ambilKuesioner, 'kuesioner')
-  if (muat) return <Kerangka><Memuat /></Kerangka>
-  if (galat || !data) return <Kerangka><Galat pesan={galat ?? 'Gagal memuat kuesioner.'} /></Kerangka>
-  return <Kerangka><Formulir k={data} /></Kerangka>
-}
-
-function Formulir({ k }: { k: Kuesioner }) {
-  const navigate = useNavigate()
-  const [langkah, setLangkah] = useState(0)
+  // 0 = pembuka, 1..4 = langkah, 5 = penutup
+  const [step, setStep] = useState(0)
+  const [capai, setCapai] = useState(1)
   const [m, setM] = useState<Masukan>(AWAL)
   const [kirim, setKirim] = useState(false)
-  const [galat, setGalat] = useState<string | null>(null)
+  const [gagal, setGagal] = useState<string | null>(null)
+  const [idHasil, setIdHasil] = useState<string | null>(null)
   const ubah = (bagian: Partial<Masukan>) => setM((lama) => ({ ...lama, ...bagian }))
+
+  if (muat) return <Kerangka step={null}><Memuat /></Kerangka>
+  if (galat || !data) return <Kerangka step={null}><div className="mx-auto max-w-md p-6"><Galat pesan={galat ?? 'Gagal memuat kuesioner.'} /></div></Kerangka>
+  const k = data
+
+  if (step === 0) return <Kerangka step={null}><Pembuka onMulai={() => setStep(1)} /></Kerangka>
+  if (step === 5 && idHasil) return <Kerangka step={null}><Penutup id={idHasil} /></Kerangka>
 
   const lengkap = [
     m.nama.trim() !== '' && m.jenjang !== '' && m.domisili !== '' &&
@@ -34,7 +49,13 @@ function Formulir({ k }: { k: Kuesioner }) {
     k.riasec.butir.every((b) => m.riasec[b.kode]),
     k.big5.butir.every((b) => m.big5[b.kode]),
     true, // skill boleh kosong: mesin tetap jalan dengan KBF saja
-  ][langkah]
+  ][step - 1]
+
+  function pindah(ke: number) {
+    setStep(ke)
+    setCapai((c) => Math.max(c, ke))
+    window.scrollTo({ top: 0 })
+  }
 
   // Satu ketukan menaikkan tingkat: belum -> dasar -> menengah -> mahir -> belum.
   function ketukSkill(id: string) {
@@ -47,157 +68,279 @@ function Formulir({ k }: { k: Kuesioner }) {
     })
   }
 
-  function pindah(ke: number) {
-    setLangkah(ke)
-    window.scrollTo({ top: 0 })
-  }
-
   async function selesai() {
     setKirim(true)
-    setGalat(null)
+    setGagal(null)
     try {
       const { id } = await kirimMasukan({ ...m, nama: m.nama.trim() })
-      navigate(`/hasil/${id}`)
+      ingatHasil(id)
+      setIdHasil(id)
+      setStep(5)
+      window.scrollTo({ top: 0 })
     } catch (e) {
-      setGalat((e as Error).message)
+      setGagal((e as Error).message)
+    } finally {
       setKirim(false)
     }
   }
 
+  const kini = LANGKAH[step - 1]
+  const terakhir = step === LANGKAH.length
+
   return (
-    <>
-      <ol className="mb-6 flex gap-2" aria-label="Langkah pengisian">
-        {LANGKAH.map((nama, i) => (
-          <li key={nama} className="flex-1">
-            <div className={`h-1.5 rounded-full ${i <= langkah ? 'bg-teal-600' : 'bg-slate-200'}`} />
-            <p className={`mt-1.5 text-xs ${i === langkah ? 'font-semibold text-slate-900' : 'text-slate-500'}`}>
-              {i + 1}. {nama}
-            </p>
-          </li>
-        ))}
-      </ol>
+    <Kerangka step={step}>
+      <div className="mx-auto flex w-full max-w-[1160px] gap-10 lg:px-8 lg:py-8">
+        <aside className="hidden w-[300px] shrink-0 flex-col gap-6 lg:flex">
+          <div className="overflow-hidden rounded-2xl bg-violet-50/60">
+            <img key={kini.gambar} src={kini.gambar} alt="" className="h-auto w-full" aria-hidden />
+          </div>
+          <div>
+            <p className="text-[13px] font-bold text-slate-900">STEP {step}/{LANGKAH.length}</p>
+            <ol className="mt-4 flex flex-col">
+              {LANGKAH.map((s, i) => {
+                const no = i + 1
+                const beres = no < capai
+                const aktif = no === step
+                const bisa = no <= capai
+                return (
+                  <li key={s.nama} className="flex gap-3">
+                    <span className="flex flex-col items-center">
+                      <span className={`grid size-6 shrink-0 place-items-center rounded-full text-[11px] font-bold ${beres && !aktif ? 'bg-emerald-500 text-white' : aktif ? 'bg-violet-600 text-white' : 'text-slate-400'}`} aria-hidden>
+                        {beres && !aktif ? <Check className="size-3.5" strokeWidth={3} /> : no}
+                      </span>
+                      {i < LANGKAH.length - 1 && <span className="my-1 w-px flex-1 bg-slate-200" aria-hidden />}
+                    </span>
+                    <button type="button" disabled={!bisa} onClick={() => pindah(no)} aria-current={aktif ? 'step' : undefined} className="flex-1 pb-6 text-left disabled:cursor-not-allowed">
+                      <span className={`block text-[14px] font-semibold ${bisa ? 'text-violet-700' : 'text-slate-400'}`}>{s.nama}</span>
+                      <span className="mt-0.5 block text-[12.5px] leading-snug text-slate-500">{s.tanya}</span>
+                    </button>
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
+        </aside>
 
-      {langkah === 0 && <DataDiri k={k} m={m} ubah={ubah} />}
-      {langkah === 1 && (
-        <Likert
-          judul="Seberapa suka kamu melakukan kegiatan berikut?"
-          keterangan="Bayangkan kegiatannya, bukan apakah kamu sudah bisa melakukannya."
-          butir={k.riasec.butir} skala={k.riasec.skala}
-          jawaban={m.riasec} pilih={(kode, n) => setM((lama) => ({ ...lama, riasec: { ...lama.riasec, [kode]: n } }))}
-        />
-      )}
-      {langkah === 2 && (
-        <Likert
-          judul={k.big5.awalan}
-          keterangan="Tidak ada jawaban benar atau salah. Jawab sesuai dirimu sehari-hari."
-          butir={k.big5.butir} skala={k.big5.skala}
-          jawaban={m.big5} pilih={(kode, n) => setM((lama) => ({ ...lama, big5: { ...lama.big5, [kode]: n } }))}
-        />
-      )}
-      {langkah === 3 && <PilihSkill k={k} skill={m.skill} ketuk={ketukSkill} />}
+        <div className="flex min-w-0 flex-1 flex-col overflow-hidden border-slate-200 lg:rounded-2xl lg:border">
+          <div className="border-b border-slate-200 bg-slate-50/80 px-4 pb-4 pt-3.5 sm:px-6">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex shrink-0 items-center rounded-md bg-violet-600 px-2 py-1 text-[11px] font-bold text-white">
+                STEP {step}/{LANGKAH.length}
+              </span>
+              <p className="truncate text-[14px] font-bold text-slate-900">{kini.nama}</p>
+            </div>
+            <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-violet-100" role="progressbar" aria-valuenow={step} aria-valuemin={1} aria-valuemax={LANGKAH.length} aria-label={`Langkah ${step} dari ${LANGKAH.length}`}>
+              <div className="h-full rounded-full bg-violet-600 transition-[width] duration-300" style={{ width: `${(step / LANGKAH.length) * 100}%` }} />
+            </div>
+          </div>
 
-      {galat && <div className="mt-4"><Galat pesan={galat} /></div>}
+          <div className="flex-1 px-4 py-6 sm:px-6">
+            {step === 1 && <LatarBelakang k={k} m={m} ubah={ubah} />}
+            {step === 2 && (
+              <Likert
+                judul="Seberapa suka kamu melakukan kegiatan berikut?"
+                keterangan="Bayangkan kegiatannya, bukan apakah kamu sudah bisa melakukannya."
+                butir={k.riasec.butir} skala={k.riasec.skala} jawaban={m.riasec}
+                pilih={(kode, n) => setM((lama) => ({ ...lama, riasec: { ...lama.riasec, [kode]: n } }))}
+              />
+            )}
+            {step === 3 && (
+              <Likert
+                judul={k.big5.awalan}
+                keterangan="Tidak ada jawaban benar atau salah. Jawab sesuai dirimu sehari-hari."
+                butir={k.big5.butir} skala={k.big5.skala} jawaban={m.big5}
+                pilih={(kode, n) => setM((lama) => ({ ...lama, big5: { ...lama.big5, [kode]: n } }))}
+              />
+            )}
+            {step === 4 && <PilihSkill k={k} skill={m.skill} ketuk={ketukSkill} />}
+            {gagal && <div className="mt-5"><Galat pesan={gagal} /></div>}
+          </div>
 
-      <div className="mt-6 flex justify-between">
-        <button type="button" className={tombolSekunder} disabled={langkah === 0 || kirim} onClick={() => pindah(langkah - 1)}>
-          <ArrowLeft className="size-4" aria-hidden /> Kembali
-        </button>
-        {langkah < LANGKAH.length - 1 ? (
-          <button type="button" className={tombolUtama} disabled={!lengkap} onClick={() => pindah(langkah + 1)}>
-            Lanjut <ArrowRight className="size-4" aria-hidden />
-          </button>
-        ) : (
-          <button type="button" className={tombolUtama} disabled={kirim} onClick={selesai}>
-            {kirim && <Loader2 className="size-4 animate-spin" aria-hidden />} Lihat rekomendasi
-          </button>
-        )}
+          <div className="sticky bottom-0 flex flex-col gap-2.5 border-t border-slate-200 bg-violet-50/95 px-4 py-4 backdrop-blur sm:px-6 lg:flex-row-reverse lg:items-center lg:justify-between lg:bg-white">
+            <button
+              type="button" disabled={!lengkap || kirim}
+              onClick={() => (terakhir ? void selesai() : pindah(step + 1))}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-violet-600 px-6 py-3 text-[13.5px] font-semibold text-white transition-colors hover:bg-violet-700 disabled:opacity-50"
+            >
+              {kirim ? <><Loader2 className="size-4 animate-spin" aria-hidden /> Menghitung…</> : <>{terakhir ? 'Simpan & Lihat Rekomendasi' : `Lanjut ke Step ${step + 1}`} <ArrowRight className="size-4" aria-hidden /></>}
+            </button>
+            {step > 1 ? (
+              <button type="button" disabled={kirim} onClick={() => pindah(step - 1)} className="inline-flex items-center justify-center gap-2 rounded-full py-3 text-[13.5px] font-semibold text-slate-600 transition-colors hover:bg-slate-100 lg:px-5">
+                <CornerUpLeft className="size-4" aria-hidden /> Kembali ke Step {step - 1}
+              </button>
+            ) : (
+              <Link to="/" className="hidden items-center justify-center gap-2 rounded-full py-3 text-[13.5px] font-semibold text-slate-600 transition-colors hover:bg-slate-100 lg:inline-flex lg:px-5">
+                <X className="size-4" aria-hidden /> Batalkan
+              </Link>
+            )}
+          </div>
+        </div>
       </div>
-    </>
+    </Kerangka>
   )
 }
 
-const kolom = 'mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm focus:border-teal-600 focus:outline-none'
-const label = 'block text-sm font-medium text-slate-800'
-
-function DataDiri({ k, m, ubah }: { k: Kuesioner; m: Masukan; ubah: (b: Partial<Masukan>) => void }) {
+/** Kepala layar ponsel dan breadcrumb desktop. `step` null = pembuka/penutup. */
+function Kerangka({ step, children }: { step: number | null; children: ReactNode }) {
   return (
-    <div className={`${kartu} space-y-5`}>
-      <label className={label}>
-        Nama
-        <input className={kolom} value={m.nama} maxLength={80} onChange={(e) => ubah({ nama: e.target.value })} />
+    <div className="flex min-h-screen flex-col bg-white">
+      <header className="sticky top-0 z-20 flex items-center border-b border-slate-200 bg-white px-4 py-3.5 lg:hidden">
+        <Link to="/" className="flex items-center gap-3 text-slate-900">
+          <ArrowLeft className="size-[18px]" aria-hidden />
+          <span className="text-[14px] font-bold">Career DNA</span>
+        </Link>
+      </header>
+      <nav aria-label="Breadcrumb" className="hidden border-b border-slate-200 bg-white px-8 py-3.5 lg:block">
+        <ol className="mx-auto flex max-w-[1160px] items-center gap-2 text-[13px] text-slate-500">
+          <li><Link to="/" aria-label="Beranda" className="grid place-items-center text-slate-500 hover:text-slate-800"><Home className="size-4" aria-hidden /></Link></li>
+          <ChevronRight className="size-3.5 text-slate-300" aria-hidden />
+          <li className={step === null ? 'text-slate-800' : ''}>Kenali Career DNA-mu</li>
+          {step !== null && (
+            <>
+              <ChevronRight className="size-3.5 text-slate-300" aria-hidden />
+              <li className="font-semibold text-slate-800">STEP {step}/{LANGKAH.length}</li>
+            </>
+          )}
+        </ol>
+      </nav>
+      <main className="flex flex-1 flex-col">{children}</main>
+    </div>
+  )
+}
+
+function Pembuka({ onMulai }: { onMulai: () => void }) {
+  return (
+    <div className="mx-auto w-full max-w-[486px] px-4 py-8 sm:px-0">
+      <div className="rounded-2xl bg-slate-50/80 p-6 text-center">
+        <img src="/career-dna/intro.webp" alt="" className="mx-auto h-auto w-[218px]" aria-hidden />
+        <h1 className="mt-4 text-[17px] font-bold tracking-tight text-slate-900">Kenali Career DNA-mu</h1>
+        <p className="mx-auto mt-1 max-w-[380px] text-[13.5px] leading-relaxed text-slate-600">
+          Temukan profesi TI yang sesuai dengan minat, kepribadian, keahlian, dan kondisimu.
+        </p>
+      </div>
+      <div className="mt-4 flex items-center gap-3 rounded-xl bg-slate-100/80 px-4 py-3">
+        <span className="grid size-9 shrink-0 place-items-center rounded-full bg-violet-100 text-violet-600"><Timer className="size-4" aria-hidden /></span>
+        <span>
+          <span className="block text-[12.5px] font-bold text-slate-900">Estimasi penyelesaian</span>
+          <span className="block text-[12.5px] text-slate-600">~7 menit · 4 langkah</span>
+        </span>
+      </div>
+      <button type="button" onClick={onMulai} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-violet-600 py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-violet-700">
+        Ayo Mulai! <ArrowRight className="size-4" aria-hidden />
+      </button>
+    </div>
+  )
+}
+
+function Penutup({ id }: { id: string }) {
+  return (
+    <div className="mx-auto w-full max-w-[860px] px-4 py-10 sm:px-6">
+      <div className="rounded-2xl bg-slate-50/70 px-6 py-10 text-center">
+        <img src="/career-dna/done.webp" alt="" className="mx-auto h-auto w-[240px]" aria-hidden />
+        <h1 className="mt-4 text-[17px] font-bold tracking-tight text-slate-900">Yay! Data kamu tersimpan 🎉</h1>
+        <p className="mx-auto mt-2 max-w-[460px] text-[13.5px] leading-relaxed text-slate-600">
+          Terima kasih! Profilmu sudah dicocokkan dengan 35 profesi TI. Rekomendasinya siap dilihat.
+        </p>
+        <div className="mx-auto mt-6 max-w-[520px] border-t border-slate-200 pt-6">
+          <Link to={`/explore/${id}`} className="inline-flex items-center justify-center gap-2 rounded-full bg-violet-600 px-5 py-3 text-[13.5px] font-semibold text-white transition-colors hover:bg-violet-700">
+            Tampilkan Rekomendasi Profesi <ArrowRight className="size-4" aria-hidden />
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── Isi tiap langkah ────────────────────────────────────────────────────────
+const kolom = 'mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-[13.5px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-violet-400'
+const judulKolom = 'text-[14.5px] font-bold text-slate-900'
+
+function Pil({ pilihan, nilai, pilih, nama }: { pilihan: { nilai: string; label: string }[]; nilai: string; pilih: (v: string) => void; nama: string }) {
+  return (
+    <div className="mt-3 flex flex-wrap gap-2.5">
+      {pilihan.map((o) => {
+        const on = nilai === o.nilai
+        return (
+          <label key={o.nilai} className={`cursor-pointer select-none rounded-full px-4 py-2.5 text-[13.5px] font-medium shadow-sm ring-1 transition-colors focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-violet-600 ${on ? 'bg-[#F1EBFF] text-[#7033FF] ring-[#DDD0FF]' : 'bg-white text-slate-900 ring-slate-200 hover:bg-slate-50'}`}>
+            <input type="radio" name={nama} value={o.nilai} checked={on} onChange={() => pilih(o.nilai)} className="sr-only" />
+            {o.label}
+          </label>
+        )
+      })}
+    </div>
+  )
+}
+
+function Centang({ aktif, onUbah, judul, keterangan }: { aktif: boolean; onUbah: (v: boolean) => void; judul: string; keterangan?: string }) {
+  return (
+    <button type="button" aria-pressed={aktif} onClick={() => onUbah(!aktif)} className={`flex w-full items-start gap-3 rounded-xl border px-4 py-3 text-left transition-colors ${aktif ? 'border-violet-500 bg-violet-50/60' : 'border-slate-200 bg-white hover:border-slate-300'}`}>
+      <span className={`mt-0.5 grid size-[18px] shrink-0 place-items-center rounded-[5px] border ${aktif ? 'border-violet-600 bg-violet-600' : 'border-slate-300 bg-white'}`} aria-hidden>
+        {aktif && <Check className="size-3 text-white" strokeWidth={3} />}
+      </span>
+      <span className="min-w-0">
+        <span className="block text-[13.5px] font-semibold leading-snug text-slate-900">{judul}</span>
+        {keterangan && <span className="mt-0.5 block text-[12.5px] leading-relaxed text-slate-500">{keterangan}</span>}
+      </span>
+    </button>
+  )
+}
+
+function LatarBelakang({ k, m, ubah }: { k: DataKuesioner; m: Masukan; ubah: (b: Partial<Masukan>) => void }) {
+  return (
+    <div className="flex flex-col gap-7">
+      <label className="block">
+        <span className={judulKolom}>Siapa namamu?</span>
+        <input className={kolom} value={m.nama} maxLength={80} placeholder="Nama lengkap atau panggilan" onChange={(e) => ubah({ nama: e.target.value })} />
       </label>
 
       <fieldset>
-        <legend className={label}>Saya mengisi sebagai</legend>
-        <div className="mt-2 flex gap-2">
-          {(['mahasiswa', 'profesional'] as const).map((j) => (
-            <button
-              key={j} type="button" aria-pressed={m.jenis_responden === j}
-              onClick={() => ubah({ jenis_responden: j, profesi_aktual: j === 'mahasiswa' ? null : m.profesi_aktual })}
-              className={`rounded-lg border px-3 py-2 text-sm ${m.jenis_responden === j ? 'border-teal-600 bg-teal-50 font-semibold text-teal-800' : 'border-slate-300 bg-white text-slate-700'}`}
-            >
-              {j === 'mahasiswa' ? 'Mahasiswa / pencari kerja' : 'Profesional TI'}
-            </button>
-          ))}
-        </div>
+        <legend className={judulKolom}>Kamu mengisi sebagai</legend>
+        <Pil nama="jenis" nilai={m.jenis_responden}
+          pilihan={[{ nilai: 'mahasiswa', label: 'Mahasiswa / pencari kerja' }, { nilai: 'profesional', label: 'Profesional TI' }]}
+          pilih={(v) => ubah({ jenis_responden: v as Masukan['jenis_responden'], profesi_aktual: v === 'mahasiswa' ? null : m.profesi_aktual })} />
       </fieldset>
 
       {m.jenis_responden === 'profesional' && (
-        <label className={label}>
-          Profesi saat ini
+        <label className="block">
+          <span className={judulKolom}>Profesimu saat ini</span>
+          <span className="mt-0.5 block text-[12.5px] text-slate-500">Dipakai untuk menguji ketepatan sistem; tidak memengaruhi rekomendasimu.</span>
           <select className={kolom} value={m.profesi_aktual ?? ''} onChange={(e) => ubah({ profesi_aktual: e.target.value || null })}>
             <option value="">Pilih profesi…</option>
             {k.profesi.map((p) => <option key={p.id} value={p.id}>{p.nama}</option>)}
           </select>
-          <span className="mt-1 block text-xs font-normal text-slate-500">
-            Dipakai untuk menguji ketepatan sistem; tidak memengaruhi rekomendasimu.
-          </span>
         </label>
       )}
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <label className={label}>
-          Pendidikan terakhir / sedang ditempuh
-          <select className={kolom} value={m.jenjang} onChange={(e) => ubah({ jenjang: e.target.value })}>
-            <option value="">Pilih jenjang…</option>
-            {k.jenjang.map((j) => <option key={j.kode} value={j.kode}>{j.nama}</option>)}
-          </select>
-        </label>
-        <label className={label}>
-          Program studi <span className="font-normal text-slate-500">(opsional)</span>
-          <select className={kolom} value={m.prodi_id ?? ''} onChange={(e) => ubah({ prodi_id: e.target.value || null })}>
-            <option value="">Tidak ada / lainnya</option>
-            {k.prodi.map((p) => <option key={p.id} value={p.id}>{p.nama}</option>)}
-          </select>
-        </label>
-        <label className={label}>
-          Domisili
-          <select className={kolom} value={m.domisili} onChange={(e) => ubah({ domisili: e.target.value })}>
-            <option value="">Pilih kota…</option>
-            {k.kota.map((c) => <option key={c} value={c}>{c}</option>)}
-          </select>
-        </label>
-        <label className={label}>
-          Ekspektasi gaji per bulan <span className="font-normal text-slate-500">(juta rupiah, opsional)</span>
-          <input
-            className={kolom} type="number" min={0} max={200} step={0.5} inputMode="decimal"
-            value={m.ekspektasi_gaji ? m.ekspektasi_gaji / 1_000_000 : ''}
-            onChange={(e) => ubah({ ekspektasi_gaji: Math.max(0, Math.round(Number(e.target.value) * 1_000_000)) || 0 })}
-          />
-        </label>
-      </div>
+      <fieldset>
+        <legend className={judulKolom}>Pendidikan terakhir atau yang sedang ditempuh</legend>
+        <Pil nama="jenjang" nilai={m.jenjang} pilihan={k.jenjang.map((j) => ({ nilai: j.kode, label: j.nama }))} pilih={(v) => ubah({ jenjang: v })} />
+      </fieldset>
 
-      <label className="flex items-start gap-3 text-sm text-slate-800">
-        <input type="checkbox" className="mt-0.5 size-4 accent-teal-700" checked={m.bersedia_relokasi} onChange={(e) => ubah({ bersedia_relokasi: e.target.checked })} />
-        <span>Saya bersedia pindah kota untuk bekerja</span>
+      <label className="block">
+        <span className={judulKolom}>Program studi <span className="font-normal text-slate-400">(opsional)</span></span>
+        <select className={kolom} value={m.prodi_id ?? ''} onChange={(e) => ubah({ prodi_id: e.target.value || null })}>
+          <option value="">Tidak ada / lainnya</option>
+          {k.prodi.map((p) => <option key={p.id} value={p.id}>{p.nama}</option>)}
+        </select>
       </label>
-      <label className="flex items-start gap-3 text-sm text-slate-800">
-        <input type="checkbox" className="mt-0.5 size-4 accent-teal-700" checked={m.punya_tanggungan} onChange={(e) => ubah({ punya_tanggungan: e.target.checked })} />
-        <span>
-          Saya menanggung kebutuhan keluarga
-          <span className="block text-xs text-slate-500">Kalau ya, stabilitas pekerjaan ikut dipertimbangkan.</span>
-        </span>
+
+      <fieldset>
+        <legend className={judulKolom}>Domisili saat ini</legend>
+        <Pil nama="domisili" nilai={m.domisili} pilihan={k.kota.map((c) => ({ nilai: c, label: c }))} pilih={(v) => ubah({ domisili: v })} />
+      </fieldset>
+
+      <label className="block">
+        <span className={judulKolom}>Ekspektasi gaji per bulan <span className="font-normal text-slate-400">(juta rupiah, opsional)</span></span>
+        <input className={kolom} type="number" min={0} max={200} step={0.5} inputMode="decimal" placeholder="Contoh: 7"
+          value={m.ekspektasi_gaji ? m.ekspektasi_gaji / 1_000_000 : ''}
+          onChange={(e) => ubah({ ekspektasi_gaji: Math.max(0, Math.round(Number(e.target.value) * 1_000_000)) || 0 })} />
       </label>
+
+      <div className="flex flex-col gap-2.5">
+        <p className={judulKolom}>Kondisi pribadimu</p>
+        <Centang aktif={m.bersedia_relokasi} onUbah={(v) => ubah({ bersedia_relokasi: v })} judul="Bersedia pindah kota untuk bekerja" keterangan="Kalau tidak, profesi yang hanya ada di kota lain dan tidak bisa remote akan disaring." />
+        <Centang aktif={m.punya_tanggungan} onUbah={(v) => ubah({ punya_tanggungan: v })} judul="Menanggung kebutuhan keluarga" keterangan="Kalau ya, stabilitas pekerjaan ikut dipertimbangkan." />
+      </div>
     </div>
   )
 }
@@ -209,40 +352,51 @@ function Likert({ judul, keterangan, butir, skala, jawaban, pilih }: {
   const terisi = butir.filter((b) => jawaban[b.kode]).length
   return (
     <div>
-      <h1 className="text-lg font-semibold text-slate-900">{judul}</h1>
-      <p className="mt-1 text-sm text-slate-600">{keterangan}</p>
-      <p className="mt-1 text-xs text-slate-500">{terisi} dari {butir.length} terjawab · 1 = {skala[0]}, 5 = {skala[4]}</p>
-      <ol className="mt-4 space-y-3">
-        {butir.map((b, i) => (
-          <li key={b.kode} className={kartu}>
-            <p className="text-sm text-slate-800">{i + 1}. {b.teks}</p>
-            <div className="mt-3 grid grid-cols-5 gap-2" role="radiogroup" aria-label={b.teks}>
-              {skala.map((nama, n) => {
-                const on = jawaban[b.kode] === n + 1
-                return (
-                  <button
-                    key={nama} type="button" role="radio" aria-checked={on} title={nama}
-                    onClick={() => pilih(b.kode, n + 1)}
-                    className={`rounded-lg border py-2 text-xs transition-colors ${on ? 'border-teal-600 bg-teal-600 font-semibold text-white' : 'border-slate-300 bg-white text-slate-600 hover:border-teal-500'}`}
-                  >
-                    <span className="block text-sm font-semibold">{n + 1}</span>
-                    <span className="hidden sm:block">{nama}</span>
-                  </button>
-                )
-              })}
-            </div>
-          </li>
-        ))}
+      <h1 className="text-[17px] font-bold tracking-tight text-slate-900">{judul}</h1>
+      <p className="mt-1 text-[13px] leading-relaxed text-slate-500">{keterangan}</p>
+      <p className="mt-2 inline-flex rounded-md bg-violet-50 px-2 py-1 text-[11.5px] font-semibold text-violet-700">{terisi} dari {butir.length} terjawab</p>
+      <ol className="mt-4 flex flex-col gap-2.5">
+        {butir.map((b, i) => {
+          const sudah = !!jawaban[b.kode]
+          return (
+            <li key={b.kode} className={`rounded-xl border px-4 py-3.5 transition-colors ${sudah ? 'border-violet-200 bg-violet-50/40' : 'border-slate-200 bg-white'}`}>
+              <p className="text-[13.5px] font-semibold leading-snug text-slate-900">{i + 1}. {b.teks}</p>
+              <div className="mt-3 flex items-center justify-between gap-2" role="radiogroup" aria-label={b.teks}>
+                <span className="hidden w-24 text-[11.5px] leading-tight text-slate-400 sm:block">{skala[0]}</span>
+                <div className="flex flex-1 items-center justify-between gap-1.5 sm:justify-center sm:gap-3">
+                  {skala.map((nama, n) => {
+                    const on = jawaban[b.kode] === n + 1
+                    return (
+                      <button key={nama} type="button" role="radio" aria-checked={on} aria-label={nama} title={nama} onClick={() => pilih(b.kode, n + 1)}
+                        className={`grid size-10 place-items-center rounded-full border text-[13.5px] font-semibold transition-colors ${on ? 'border-violet-600 bg-violet-600 text-white' : 'border-slate-300 bg-white text-slate-600 hover:border-violet-400'}`}>
+                        {n + 1}
+                      </button>
+                    )
+                  })}
+                </div>
+                <span className="hidden w-24 text-right text-[11.5px] leading-tight text-slate-400 sm:block">{skala[4]}</span>
+              </div>
+              <div className="mt-1.5 flex justify-between text-[11px] text-slate-400 sm:hidden"><span>{skala[0]}</span><span>{skala[4]}</span></div>
+            </li>
+          )
+        })}
       </ol>
     </div>
   )
 }
 
-function PilihSkill({ k, skill, ketuk }: { k: Kuesioner; skill: Record<string, number>; ketuk: (id: string) => void }) {
+const GAYA_SKILL = [
+  'bg-white text-slate-900 ring-slate-200 hover:bg-slate-50',
+  'bg-[#F1EBFF] text-[#7033FF] ring-[#DDD0FF]',
+  'bg-violet-200 text-violet-900 ring-violet-300',
+  'bg-violet-600 text-white ring-violet-600',
+]
+
+function PilihSkill({ k, skill, ketuk }: { k: DataKuesioner; skill: Record<string, number>; ketuk: (id: string) => void }) {
   const [cari, setCari] = useState('')
   const kelompok = useMemo(() => {
     const kata = cari.trim().toLowerCase()
-    const peta = new Map<string, typeof k.skill>()
+    const peta = new Map<string, DataKuesioner['skill']>()
     for (const s of k.skill) {
       if (kata && !s.nama.toLowerCase().includes(kata) && !s.kategori.toLowerCase().includes(kata)) continue
       peta.set(s.kategori, [...(peta.get(s.kategori) ?? []), s])
@@ -250,30 +404,30 @@ function PilihSkill({ k, skill, ketuk }: { k: Kuesioner; skill: Record<string, n
     return [...peta.entries()]
   }, [k, cari])
 
-  const gaya = ['border-slate-300 bg-white text-slate-700', 'border-teal-300 bg-teal-50 text-teal-900', 'border-teal-500 bg-teal-100 text-teal-900', 'border-teal-700 bg-teal-700 text-white']
-
   return (
     <div>
-      <h1 className="text-lg font-semibold text-slate-900">Skill apa saja yang sudah kamu kuasai?</h1>
-      <p className="mt-1 text-sm text-slate-600">
+      <h1 className="text-[17px] font-bold tracking-tight text-slate-900">Skill apa saja yang sudah kamu kuasai?</h1>
+      <p className="mt-1 text-[13px] leading-relaxed text-slate-500">
         Ketuk skill untuk memilih; ketuk lagi untuk menaikkan tingkatnya (Dasar → Menengah → Mahir).
-        {' '}{Object.keys(skill).length} skill dipilih.
       </p>
+      <p className="mt-2 inline-flex rounded-md bg-violet-50 px-2 py-1 text-[11.5px] font-semibold text-violet-700">{Object.keys(skill).length} skill dipilih</p>
       <div className="relative mt-4">
-        <Search className="pointer-events-none absolute left-3 top-2.5 size-4 text-slate-400" aria-hidden />
-        <input className={`${kolom} mt-0 pl-9`} placeholder="Cari skill, mis. Python, Figma, SQL" value={cari} onChange={(e) => setCari(e.target.value)} />
+        <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" aria-hidden />
+        <input type="search" value={cari} onChange={(e) => setCari(e.target.value)} placeholder="Cari skill, mis. Python, Figma, SQL"
+          className="w-full rounded-full border border-slate-200 bg-white py-3 pl-11 pr-4 text-[13.5px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-violet-400" />
       </div>
-      <div className="mt-4 space-y-4">
-        {kelompok.length === 0 && <p className="text-sm text-slate-500">Tidak ada skill yang cocok.</p>}
+      <div className="mt-5 flex flex-col gap-5">
+        {kelompok.length === 0 && <p className="text-[13px] text-slate-400">Tidak ada skill yang cocok dengan “{cari.trim()}”.</p>}
         {kelompok.map(([kategori, daftar]) => (
           <section key={kategori}>
-            <h2 className="text-xs font-semibold uppercase tracking-wide text-slate-500">{kategori}</h2>
-            <div className="mt-2 flex flex-wrap gap-2">
+            <h2 className="text-[12px] font-bold uppercase tracking-wide text-slate-500">{kategori}</h2>
+            <div className="mt-2.5 flex flex-wrap gap-2">
               {daftar.map((s) => {
                 const t = skill[s.id] ?? 0
                 return (
-                  <button key={s.id} type="button" aria-pressed={t > 0} onClick={() => ketuk(s.id)} className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${gaya[t]}`}>
-                    {s.nama}{t > 0 && <span className="ml-1.5 text-xs opacity-80">· {k.tingkat_skill[String(t)]}</span>}
+                  <button key={s.id} type="button" aria-pressed={t > 0} onClick={() => ketuk(s.id)}
+                    className={`rounded-full px-3.5 py-2 text-[13px] font-medium shadow-sm ring-1 transition-colors ${GAYA_SKILL[t]}`}>
+                    {s.nama}{t > 0 && <span className="ml-1.5 text-[11.5px] opacity-80">· {k.tingkat_skill[String(t)]}</span>}
                   </button>
                 )
               })}

@@ -139,6 +139,23 @@ def ambil_rekomendasi(rid: str) -> dict:
     return {
         "id": r["id"], "nama": r["nama"], "dibuat": r["dibuat"], "jenis": r["jenis"],
         "hasil": r["hasil"], "umpan_balik": r["umpan_balik"], "skor_sus": r["skor_sus"],
+        "data_diri": _data_diri(r["masukan"]),
+    }
+
+
+def _data_diri(m: dict) -> dict:
+    """Ringkasan masukan untuk layar Profil — tanpa jawaban kuesioner mentah."""
+    kb = muat_kb()
+    nama_skill = kb.nama_skill()
+    return {
+        "jenjang": next(j["nama"] for j in kb.jenjang if j["kode"] == m["jenjang"]),
+        "prodi": next((f"{p['nama']} ({p['jenjang']})" for p in kb.prodi if p["id"] == m.get("prodi_id")), None),
+        "domisili": m["domisili"],
+        "bersedia_relokasi": m["bersedia_relokasi"],
+        "ekspektasi_gaji": m["ekspektasi_gaji"],
+        "punya_tanggungan": m["punya_tanggungan"],
+        "skill": [{"nama": nama_skill[sid], "tingkat": LABEL_TINGKAT[t]}
+                  for sid, t in sorted(m["skill"].items(), key=lambda x: -x[1])],
     }
 
 
@@ -160,6 +177,7 @@ def detail_profesi(rid: str, pid: str) -> dict:
         "penilaian": baris,
         "ringkas": ringkas,
         "tersaring": tersaring,
+        "relevan": r["umpan_balik"].get(pid),
         "kesenjangan": kesenjangan_skill(r["masukan"]["skill"], kb.skill_profesi(pid), kb.nama_skill()),
         "prodi_terkait": [x["nama"] for x in kb.prodi if pid in x["profesi"]],
     }

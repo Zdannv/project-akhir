@@ -47,6 +47,8 @@ export type Kesenjangan = {
   wajib_total: number
 }
 
+export type Alasan = { nada: 'cocok' | 'perhatian'; teks: string }
+
 export type Komponen = { riasec: number; big5: number; finansial: number; stabilitas: number }
 
 export type Rekomendasi = {
@@ -62,7 +64,33 @@ export type Rekomendasi = {
   gaji_maks: number
   pola_kerja: string[]
   kesenjangan: Kesenjangan
-  alasan: string[]
+  alasan: Alasan[]
+}
+
+export type Ringkas = {
+  peringkat: number
+  profesi_id: string
+  nama: string
+  sektor: string
+  skor: number
+  skor_kbf: number
+  skor_cbf: number
+  gaji_min: number
+  gaji_maks: number
+  pola_kerja: string[]
+  kode_holland: string
+  deskripsi: string
+  senioritas: string
+}
+
+export type DataDiri = {
+  jenjang: string
+  prodi: string | null
+  domisili: string
+  bersedia_relokasi: boolean
+  ekspektasi_gaji: number
+  punya_tanggungan: boolean
+  skill: { nama: string; tingkat: string }[]
 }
 
 export type Tersaring = { profesi_id: string; nama: string; alasan: { kode: string; pesan: string }[] }
@@ -78,11 +106,12 @@ export type Hasil = {
     n_tersaring: number
     profil: { riasec: Record<string, number>; big5: Record<string, number> }
     rekomendasi: Rekomendasi[]
-    peringkat_lengkap: { peringkat: number; profesi_id: string; nama: string; skor: number; skor_kbf: number; skor_cbf: number }[]
+    peringkat_lengkap: Ringkas[]
     tersaring: Tersaring[]
   }
   umpan_balik: Record<string, boolean>
   skor_sus: number | null
+  data_diri: DataDiri
 }
 
 export type Profesi = {
@@ -118,8 +147,9 @@ export type Detail = {
   profil: { riasec: Record<string, number>; big5: Record<string, number> }
   kode_holland_pengguna: string
   penilaian: Rekomendasi | null
-  ringkas: { peringkat: number; skor: number; skor_kbf: number; skor_cbf: number } | null
+  ringkas: Ringkas | null
   tersaring: Tersaring | null
+  relevan: boolean | null
   kesenjangan: Kesenjangan
   prodi_terkait: string[]
 }
@@ -146,6 +176,16 @@ export const kirimUmpanBalik = (id: string, penilaian: Record<string, boolean>) 
   minta<void>(`/rekomendasi/${id}/umpan-balik`, { method: 'POST', body: JSON.stringify({ penilaian }) })
 export const kirimSus = (id: string, jawaban: number[]) =>
   minta<{ skor: number }>(`/rekomendasi/${id}/sus`, { method: 'POST', body: JSON.stringify({ jawaban }) })
+
+/** Pita rekomendasi. Hanya cara menyajikan skor; tidak dipakai mesin maupun evaluasi. */
+export function pita(skor: number): { label: string; nada: 'hijau' | 'biru' | 'kuning' } {
+  if (skor >= 0.75) return { label: 'Sangat Direkomendasikan', nada: 'hijau' }
+  if (skor >= 0.6) return { label: 'Direkomendasikan', nada: 'biru' }
+  return { label: 'Kurang Direkomendasikan', nada: 'kuning' }
+}
+
+export const gaji = (min: number, maks: number) =>
+  `Rp ${(min / 1e6).toLocaleString('id-ID')} - ${(maks / 1e6).toLocaleString('id-ID')} juta/bulan`
 
 export const rupiah = (n: number) => `Rp${(n / 1_000_000).toLocaleString('id-ID', { maximumFractionDigits: 1 })} jt`
 export const persen = (x: number) => `${Math.round(x * 100)}%`
