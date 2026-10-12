@@ -1,0 +1,36 @@
+profesi,soc_code,judul_onet,keyakinan,catatan,r_raw,i_raw,a_raw,s_raw,e_raw,c_raw,holland_code
+Frontend Developer,15-1254.00,Web Developers,high,,2.98,5.01,3.13,2.22,2.96,5.03,CIA
+Backend Developer,15-1252.00,Software Developers,high,,3.61,6.05,2.37,1.81,1.87,5.62,ICR
+Fullstack Developer,15-1252.00,Software Developers,high,,3.61,6.05,2.37,1.81,1.87,5.62,ICR
+Mobile Developer (Android),15-1252.00,Software Developers,medium,O*NET tidak memisahkan platform mobile,3.61,6.05,2.37,1.81,1.87,5.62,ICR
+Mobile Developer (iOS),15-1252.00,Software Developers,medium,O*NET tidak memisahkan platform mobile,3.61,6.05,2.37,1.81,1.87,5.62,ICR
+Mobile Developer (Flutter/React Native),15-1252.00,Software Developers,medium,O*NET tidak memisahkan platform mobile,3.61,6.05,2.37,1.81,1.87,5.62,ICR
+Data Analyst,15-2051.01,Business Intelligence Analysts,high,,1.24,5.41,1.93,1.85,4.42,5.79,CIE
+Business Intelligence Developer,15-2051.01,Business Intelligence Analysts,high,,1.24,5.41,1.93,1.85,4.42,5.79,CIE
+Data Engineer,15-1243.01,Data Warehousing Specialists,high,,2.93,4.79,1.62,2.03,3.05,6.38,CIE
+Data Scientist,15-2051.00,Data Scientists,high,,2.17,6.98,2.61,1.66,1.71,5.39,ICA
+Machine Learning Engineer,15-2051.00,Data Scientists,medium,antara Data Scientists dan Computer & Information Research Scientists,2.17,6.98,2.61,1.66,1.71,5.39,ICA
+AI Engineer,15-1221.00,Computer and Information Research Scientists,medium,"peran baru, belum ada SOC khusus",3.74,7.00,2.95,2.00,2.49,4.80,ICR
+Computer Vision Engineer,15-1221.00,Computer and Information Research Scientists,medium,"peran baru, belum ada SOC khusus",3.74,7.00,2.95,2.00,2.49,4.80,ICR
+NLP Engineer,15-1221.00,Computer and Information Research Scientists,medium,"peran baru, belum ada SOC khusus",3.74,7.00,2.95,2.00,2.49,4.80,ICR
+DevOps Engineer,15-1244.00,Network and Computer Systems Administrators,medium,irisan Software Developers dan Sysadmin,4.19,4.04,1.00,2.22,3.46,6.18,CRI
+Cloud Engineer,15-1241.00,Computer Network Architects,medium,paling dekat ke Computer Network Architects,4.04,5.28,2.25,2.17,3.20,5.06,ICR
+Site Reliability Engineer,15-1244.00,Network and Computer Systems Administrators,medium,irisan Sysadmin dan Software Developers,4.19,4.04,1.00,2.22,3.46,6.18,CRI
+Cybersecurity Analyst,15-1212.00,Information Security Analysts,high,,3.56,5.40,1.34,2.11,2.85,6.08,CIR
+Penetration Tester,15-1299.04,Penetration Testers,high,,3.91,5.19,1.31,1.99,2.10,5.18,ICR
+UI/UX Designer,15-1255.00,Web and Digital Interface Designers,high,,2.59,4.88,4.48,2.20,3.13,4.40,IAC
+Product Manager,11-3021.00,Computer and Information Systems Managers,low,O*NET tidak punya Product Manager; dipakai Computer & Information Systems Managers,2.68,4.49,1.47,2.35,5.09,5.94,CEI
+QA Engineer / Software Tester,15-1253.00,Software Quality Assurance Analysts and Testers,high,,3.80,5.76,1.69,1.53,1.57,5.67,ICR
+IT Project Manager,15-1299.09,Information Technology Project Managers,high,,1.73,3.87,1.77,2.67,5.91,5.31,ECI
+IT Support / Helpdesk,15-1232.00,Computer User Support Specialists,high,,4.13,3.77,1.00,3.31,2.36,6.02,CRI
+System Administrator,15-1244.00,Network and Computer Systems Administrators,high,,4.19,4.04,1.00,2.22,3.46,6.18,CRI
+Network Engineer,15-1241.00,Computer Network Architects,high,,4.04,5.28,2.25,2.17,3.20,5.06,ICR
+Database Administrator,15-1242.00,Database Administrators,high,,2.83,4.83,1.20,2.29,2.94,6.61,CIE
+Scrum Master / Agile Coach,15-1299.09,Information Technology Project Managers,low,tidak ada SOC untuk Scrum Master; proxy IT Project Managers,1.73,3.87,1.77,2.67,5.91,5.31,ECI
+Digital Marketing Analyst,13-1161.01,Search Marketing Strategists,medium,Search Marketing Strategists,1.00,3.78,3.23,2.76,5.54,4.68,ECI
+Game Developer,15-1255.01,Video Game Designers,medium,Video Game Designers condong Artistic; developer murni lebih dekat 15-1252.00,2.77,4.15,6.38,2.30,3.92,3.85,AIE
+IT Business Analyst,15-1211.00,Computer Systems Analysts,high,,3.27,6.39,1.98,1.91,2.23,5.93,ICR
+ERP Consultant / Developer,15-1211.00,Computer Systems Analysts,medium,proxy Computer Systems Analysts,3.27,6.39,1.98,1.91,2.23,5.93,ICR
+Blockchain Developer,15-1299.07,Blockchain Engineers,high,,3.40,5.28,2.07,1.57,3.39,5.69,CIR
+IoT Engineer,17-2061.00,Computer Hardware Engineers,medium,Computer Hardware Engineers; sisi software lebih dekat 15-1252.00,5.69,5.56,1.83,1.82,1.98,5.37,RIC
+Technical Writer,27-3042.00,Technical Writers,high,,2.78,3.69,4.23,2.01,1.97,5.32,CAI

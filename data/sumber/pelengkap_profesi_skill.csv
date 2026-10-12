@@ -1,0 +1,78 @@
+career_id,skill_id,is_required,skill_weight_pct,notes
+C023,SK112,1,18,Inti peran
+C023,SK089,1,14,Kerangka kerja tim
+C023,SK113,1,14,Mengelola pemangku kepentingan
+C023,SK117,1,12,Risiko dan anggaran
+C023,SK108,1,12,Memimpin tim lintas fungsi
+C023,SK102,1,10,Komunikasi ke klien dan tim
+C023,SK116,0,10,Perangkat pelacakan
+C023,SK106,0,5,
+C023,SK093,0,5,Memahami rancangan sistem
+C028,SK089,1,25,Inti peran
+C028,SK102,1,15,Fasilitasi
+C028,SK103,1,13,
+C028,SK116,1,12,Papan sprint
+C028,SK108,0,10,Servant leadership
+C028,SK113,0,10,
+C028,SK101,0,8,
+C028,SK105,0,7,
+C029,SK118,1,18,
+C029,SK119,1,18,
+C029,SK120,1,14,
+C029,SK095,1,10,Olah data kampanye
+C029,SK098,0,10,Eksperimen kampanye
+C029,SK015,0,8,
+C029,SK066,0,8,Dasbor laporan
+C029,SK115,0,7,
+C029,SK104,0,7,
+C030,SK121,1,22,Mesin gim paling umum di studio lokal
+C030,SK007,1,18,Bahasa Unity
+C030,SK123,1,12,
+C030,SK008,0,12,Unreal dan performa
+C030,SK122,0,10,
+C030,SK101,0,10,
+C030,SK080,1,8,
+C030,SK109,0,8,
+C031,SK125,1,20,Inti peran
+C031,SK124,1,16,
+C031,SK015,1,12,Menelusuri data
+C031,SK113,1,12,
+C031,SK104,1,10,
+C031,SK102,1,10,
+C031,SK089,0,8,
+C031,SK095,0,6,
+C031,SK116,0,6,
+C032,SK126,1,20,
+C032,SK124,1,14,
+C032,SK015,1,12,
+C032,SK127,0,12,
+C032,SK125,1,10,
+C032,SK001,0,10,Kustomisasi Odoo
+C032,SK113,0,8,
+C032,SK043,0,7,
+C032,SK044,0,7,
+C033,SK128,1,25,
+C033,SK129,1,18,
+C033,SK086,1,12,
+C033,SK002,1,10,
+C033,SK083,0,8,Keamanan kontrak
+C033,SK014,0,8,
+C033,SK003,0,7,
+C033,SK009,0,6,
+C033,SK080,1,6,
+C034,SK130,1,24,
+C034,SK008,1,18,Firmware
+C034,SK131,1,15,
+C034,SK001,0,10,
+C034,SK056,0,8,Gateway dan edge
+C034,SK049,0,7,IoT cloud
+C034,SK082,0,6,
+C034,SK101,0,6,
+C035,SK132,1,28,Inti peran
+C035,SK133,1,16,
+C035,SK111,1,16,
+C035,SK110,0,10,
+C035,SK080,0,8,Docs-as-code
+C035,SK090,0,8,Memahami API yang didokumentasikan
+C035,SK102,0,8,
+C035,SK021,0,6,

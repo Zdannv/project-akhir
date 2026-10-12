@@ -1,0 +1,6177 @@
+{
+ "meta": {
+  "dibuat": "2026-10-12",
+  "n_profesi": 35,
+  "n_skill": 131,
+  "n_relasi": 384,
+  "sumber": {
+   "pasar_kerja": "knowledge_base_profesi_IT.xlsx — pengolahan lowongan kerja LinkedIn Indonesia 2025",
+   "skill_kurasi": "pelengkap_*.csv — kurasi penulis untuk 9 profesi yang belum tercakup, perlu divalidasi",
+   "riasec": "O*NET 30.3 Career Interest Types (USDOL/ETA, CC BY 4.0), lewat padanan kode SOC",
+   "big5_ideal": "diturunkan dari O*NET Work Styles; lihat bangun_kb.py",
+   "stabilitas": "proksi dari pola kerja dan sektor; lihat bangun_kb.py"
+  }
+ },
+ "jenjang": [
+  {
+   "kode": "SMA",
+   "nama": "SMA / SMK sederajat",
+   "rank": 1
+  },
+  {
+   "kode": "D1",
+   "nama": "Diploma 1 / 2",
+   "rank": 2
+  },
+  {
+   "kode": "D3",
+   "nama": "Diploma 3",
+   "rank": 3
+  },
+  {
+   "kode": "S1",
+   "nama": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "rank": 4
+  },
+  {
+   "kode": "S2",
+   "nama": "Magister (S2)",
+   "rank": 5
+  },
+  {
+   "kode": "S3",
+   "nama": "Doktor (S3)",
+   "rank": 6
+  }
+ ],
+ "kota": [
+  "Bali",
+  "Bandung",
+  "Jakarta",
+  "Surabaya",
+  "Yogyakarta"
+ ],
+ "profesi": [
+  {
+   "id": "C001",
+   "nama": "Frontend Developer",
+   "nama_en": "Frontend Developer",
+   "sektor": "Software Development",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 5000000,
+   "gaji_maks": 12000000,
+   "gaji_median": 8000000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengembangkan tampilan dan interaksi antarmuka pengguna berbasis web.",
+   "tanggung_jawab": [
+    "Membangun komponen UI",
+    "integrasi REST API",
+    "optimasi performa halaman",
+    "code review"
+   ],
+   "jenjang_karier": "Senior Frontend Dev → Tech Lead → Frontend Architect",
+   "soc_code": "15-1254.00",
+   "soc_judul": "Web Developers",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 2.98,
+    "I": 5.01,
+    "A": 3.13,
+    "S": 2.22,
+    "E": 2.96,
+    "C": 5.03
+   },
+   "kode_holland": "CIA",
+   "big5_ideal": {
+    "O": 0.8025,
+    "C": 0.6878,
+    "E": 0.3072,
+    "A": 0.2486,
+    "N": 0.4804
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C002",
+   "nama": "Backend Developer",
+   "nama_en": "Backend Developer",
+   "sektor": "Software Development",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 6000000,
+   "gaji_maks": 15000000,
+   "gaji_median": 10250000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Merancang dan membangun logika bisnis, API, serta manajemen database sisi server.",
+   "tanggung_jawab": [
+    "Desain & implementasi REST/GraphQL API",
+    "manajemen database",
+    "optimasi query",
+    "autentikasi & otorisasi",
+    "deployment"
+   ],
+   "jenjang_karier": "Senior Backend Dev → Software Architect → Engineering Manager",
+   "soc_code": "15-1252.00",
+   "soc_judul": "Software Developers",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 3.61,
+    "I": 6.05,
+    "A": 2.37,
+    "S": 1.81,
+    "E": 1.87,
+    "C": 5.62
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.8787,
+    "C": 0.7451,
+    "E": 0.2997,
+    "A": 0.3557,
+    "N": 0.4395
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C003",
+   "nama": "Fullstack Developer",
+   "nama_en": "Fullstack Developer",
+   "sektor": "Software Development",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 1,
+   "gaji_min": 8000000,
+   "gaji_maks": 18000000,
+   "gaji_median": 13000000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Menangani pengembangan sisi frontend dan backend secara menyeluruh dalam satu proyek.",
+   "tanggung_jawab": [
+    "Membangun end-to-end fitur",
+    "mengelola infrastruktur database",
+    "merancang arsitektur sistem",
+    "CI/CD pipeline"
+   ],
+   "jenjang_karier": "Senior Fullstack Dev → Tech Lead → CTO",
+   "soc_code": "15-1252.00",
+   "soc_judul": "Software Developers",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 3.61,
+    "I": 6.05,
+    "A": 2.37,
+    "S": 1.81,
+    "E": 1.87,
+    "C": 5.62
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.8787,
+    "C": 0.7451,
+    "E": 0.2997,
+    "A": 0.3557,
+    "N": 0.4395
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C004",
+   "nama": "Mobile Developer (Android)",
+   "nama_en": "Android Developer",
+   "sektor": "Mobile Development",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 5500000,
+   "gaji_maks": 13000000,
+   "gaji_median": 9250000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "hybrid",
+    "onsite"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengembangkan aplikasi native Android menggunakan Kotlin atau Java.",
+   "tanggung_jawab": [
+    "Develop fitur aplikasi Android",
+    "integrasi API",
+    "pengujian unit & UI",
+    "publikasi ke Play Store"
+   ],
+   "jenjang_karier": "Senior Android Dev → Mobile Lead → Head of Mobile",
+   "soc_code": "15-1252.00",
+   "soc_judul": "Software Developers",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "O*NET tidak memisahkan platform mobile",
+   "riasec": {
+    "R": 3.61,
+    "I": 6.05,
+    "A": 2.37,
+    "S": 1.81,
+    "E": 1.87,
+    "C": 5.62
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.8787,
+    "C": 0.7451,
+    "E": 0.2997,
+    "A": 0.3557,
+    "N": 0.4395
+   },
+   "stabilitas": 0.87,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C005",
+   "nama": "Mobile Developer (iOS)",
+   "nama_en": "iOS Developer",
+   "sektor": "Mobile Development",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 6000000,
+   "gaji_maks": 15000000,
+   "gaji_median": 10500000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "hybrid",
+    "onsite"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Bali"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengembangkan aplikasi native iOS menggunakan Swift atau Objective-C.",
+   "tanggung_jawab": [
+    "Develop fitur iOS",
+    "integrasi API",
+    "pengujian",
+    "deployment ke App Store"
+   ],
+   "jenjang_karier": "Senior iOS Dev → Mobile Lead → Head of Mobile",
+   "soc_code": "15-1252.00",
+   "soc_judul": "Software Developers",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "O*NET tidak memisahkan platform mobile",
+   "riasec": {
+    "R": 3.61,
+    "I": 6.05,
+    "A": 2.37,
+    "S": 1.81,
+    "E": 1.87,
+    "C": 5.62
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.8787,
+    "C": 0.7451,
+    "E": 0.2997,
+    "A": 0.3557,
+    "N": 0.4395
+   },
+   "stabilitas": 0.87,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C006",
+   "nama": "Mobile Developer (Flutter/React Native)",
+   "nama_en": "Cross-platform Mobile Developer",
+   "sektor": "Mobile Development",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 5000000,
+   "gaji_maks": 12000000,
+   "gaji_median": 8500000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "remote",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya",
+    "Yogyakarta"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengembangkan aplikasi mobile lintas platform menggunakan Flutter atau React Native.",
+   "tanggung_jawab": [
+    "Develop komponen cross-platform",
+    "integrasi REST API",
+    "state management",
+    "pengujian"
+   ],
+   "jenjang_karier": "Senior Mobile Dev → Tech Lead → Mobile Architect",
+   "soc_code": "15-1252.00",
+   "soc_judul": "Software Developers",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "O*NET tidak memisahkan platform mobile",
+   "riasec": {
+    "R": 3.61,
+    "I": 6.05,
+    "A": 2.37,
+    "S": 1.81,
+    "E": 1.87,
+    "C": 5.62
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.8787,
+    "C": 0.7451,
+    "E": 0.2997,
+    "A": 0.3557,
+    "N": 0.4395
+   },
+   "stabilitas": 0.637,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C007",
+   "nama": "Data Analyst",
+   "nama_en": "Data Analyst",
+   "sektor": "Data & Analytics",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 5000000,
+   "gaji_maks": 12000000,
+   "gaji_median": 9000000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya",
+    "Bandung",
+    "Bali"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Menganalisis data bisnis untuk menghasilkan insight yang mendukung pengambilan keputusan.",
+   "tanggung_jawab": [
+    "Pembersihan & pengolahan data",
+    "pembuatan dashboard",
+    "analisis statistik",
+    "pelaporan KPI",
+    "A/B testing"
+   ],
+   "jenjang_karier": "Senior Data Analyst → BI Lead → Data Manager",
+   "soc_code": "15-2051.01",
+   "soc_judul": "Business Intelligence Analysts",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 1.24,
+    "I": 5.41,
+    "A": 1.93,
+    "S": 1.85,
+    "E": 4.42,
+    "C": 5.79
+   },
+   "kode_holland": "CIE",
+   "big5_ideal": {
+    "O": 0.7638,
+    "C": 0.7262,
+    "E": 0.3211,
+    "A": 0.2471,
+    "N": 0.5506
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C008",
+   "nama": "Business Intelligence Developer",
+   "nama_en": "BI Developer",
+   "sektor": "Data & Analytics",
+   "senioritas": "Mid",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 1,
+   "gaji_min": 7000000,
+   "gaji_maks": 15000000,
+   "gaji_median": 10000000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "onsite"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Merancang dan membangun sistem pelaporan dan dashboard BI untuk kebutuhan bisnis.",
+   "tanggung_jawab": [
+    "Desain data warehouse",
+    "ETL pipeline",
+    "pembuatan dashboard Power BI/Tableau",
+    "optimasi query",
+    "data modeling"
+   ],
+   "jenjang_karier": "Senior BI Developer → BI Architect → Data Engineering Manager",
+   "soc_code": "15-2051.01",
+   "soc_judul": "Business Intelligence Analysts",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 1.24,
+    "I": 5.41,
+    "A": 1.93,
+    "S": 1.85,
+    "E": 4.42,
+    "C": 5.79
+   },
+   "kode_holland": "CIE",
+   "big5_ideal": {
+    "O": 0.7638,
+    "C": 0.7262,
+    "E": 0.3211,
+    "A": 0.2471,
+    "N": 0.5506
+   },
+   "stabilitas": 0.87,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C009",
+   "nama": "Data Engineer",
+   "nama_en": "Data Engineer",
+   "sektor": "Data & Analytics",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 2,
+   "gaji_min": 9000000,
+   "gaji_maks": 20000000,
+   "gaji_median": 15000000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Membangun dan mengelola infrastruktur data serta pipeline ETL/ELT skala besar.",
+   "tanggung_jawab": [
+    "Desain & implementasi data pipeline",
+    "ETL/ELT",
+    "data warehouse",
+    "orchestration (Airflow)",
+    "cloud data platform",
+    "data quality"
+   ],
+   "jenjang_karier": "Senior Data Engineer → Data Architect → Head of Data Engineering",
+   "soc_code": "15-1243.01",
+   "soc_judul": "Data Warehousing Specialists",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 2.93,
+    "I": 4.79,
+    "A": 1.62,
+    "S": 2.03,
+    "E": 3.05,
+    "C": 6.38
+   },
+   "kode_holland": "CIE",
+   "big5_ideal": {
+    "O": 0.7192,
+    "C": 0.8101,
+    "E": 0.2523,
+    "A": 0.1809,
+    "N": 0.6306
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C010",
+   "nama": "Data Scientist",
+   "nama_en": "Data Scientist",
+   "sektor": "Data & Analytics",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1/S2",
+   "pengalaman_min_tahun": 1,
+   "gaji_min": 10000000,
+   "gaji_maks": 25000000,
+   "gaji_median": 20000000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengembangkan model machine learning dan analisis prediktif untuk menyelesaikan masalah bisnis.",
+   "tanggung_jawab": [
+    "Eksplorasi data",
+    "feature engineering",
+    "training & evaluasi model",
+    "deployment model",
+    "kolaborasi dengan tim bisnis"
+   ],
+   "jenjang_karier": "Senior Data Scientist → Lead ML Engineer → Head of Data Science",
+   "soc_code": "15-2051.00",
+   "soc_judul": "Data Scientists",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 2.17,
+    "I": 6.98,
+    "A": 2.61,
+    "S": 1.66,
+    "E": 1.71,
+    "C": 5.39
+   },
+   "kode_holland": "ICA",
+   "big5_ideal": {
+    "O": 0.9057,
+    "C": 0.798,
+    "E": 0.2064,
+    "A": 0.226,
+    "N": 0.5043
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C011",
+   "nama": "Machine Learning Engineer",
+   "nama_en": "ML Engineer",
+   "sektor": "AI & Machine Learning",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1/S2",
+   "pengalaman_min_tahun": 2,
+   "gaji_min": 12000000,
+   "gaji_maks": 28000000,
+   "gaji_median": 22500000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Membangun, mengoptimalkan, dan men-deploy model machine learning ke lingkungan produksi.",
+   "tanggung_jawab": [
+    "Desain & training ML model",
+    "MLOps pipeline",
+    "model serving",
+    "monitoring performa model",
+    "optimasi GPU/cloud"
+   ],
+   "jenjang_karier": "Senior ML Engineer → AI Architect → Head of AI/ML",
+   "soc_code": "15-2051.00",
+   "soc_judul": "Data Scientists",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "antara Data Scientists dan Computer & Information Research Scientists",
+   "riasec": {
+    "R": 2.17,
+    "I": 6.98,
+    "A": 2.61,
+    "S": 1.66,
+    "E": 1.71,
+    "C": 5.39
+   },
+   "kode_holland": "ICA",
+   "big5_ideal": {
+    "O": 0.9057,
+    "C": 0.798,
+    "E": 0.2064,
+    "A": 0.226,
+    "N": 0.5043
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C012",
+   "nama": "AI Engineer",
+   "nama_en": "AI Engineer",
+   "sektor": "AI & Machine Learning",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1/S2",
+   "pengalaman_min_tahun": 2,
+   "gaji_min": 12000000,
+   "gaji_maks": 30000000,
+   "gaji_median": 24000000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Merancang dan mengimplementasikan solusi berbasis AI termasuk LLM, RAG, dan agentic workflow.",
+   "tanggung_jawab": [
+    "Implementasi LLM & RAG",
+    "prompt engineering",
+    "agentic AI workflow",
+    "integrasi API AI",
+    "deployment cloud"
+   ],
+   "jenjang_karier": "Senior AI Engineer → AI Architect → CTO/Chief AI Officer",
+   "soc_code": "15-1221.00",
+   "soc_judul": "Computer and Information Research Scientists",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "peran baru, belum ada SOC khusus",
+   "riasec": {
+    "R": 3.74,
+    "I": 7.0,
+    "A": 2.95,
+    "S": 2.0,
+    "E": 2.49,
+    "C": 4.8
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.9571,
+    "C": 0.7057,
+    "E": 0.2923,
+    "A": 0.3029,
+    "N": 0.4592
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C013",
+   "nama": "Computer Vision Engineer",
+   "nama_en": "Computer Vision Engineer",
+   "sektor": "AI & Machine Learning",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1/S2",
+   "pengalaman_min_tahun": 2,
+   "gaji_min": 12000000,
+   "gaji_maks": 25000000,
+   "gaji_median": 16000000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "onsite",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengembangkan sistem penglihatan komputer untuk deteksi objek, klasifikasi gambar, dan analisis video.",
+   "tanggung_jawab": [
+    "Training model CV",
+    "optimasi GPU (NVIDIA)",
+    "integrasi dengan kamera/sensor",
+    "deployment model",
+    "video processing"
+   ],
+   "jenjang_karier": "Senior CV Engineer → AI Research Engineer → AI Architect",
+   "soc_code": "15-1221.00",
+   "soc_judul": "Computer and Information Research Scientists",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "peran baru, belum ada SOC khusus",
+   "riasec": {
+    "R": 3.74,
+    "I": 7.0,
+    "A": 2.95,
+    "S": 2.0,
+    "E": 2.49,
+    "C": 4.8
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.9571,
+    "C": 0.7057,
+    "E": 0.2923,
+    "A": 0.3029,
+    "N": 0.4592
+   },
+   "stabilitas": 0.93,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C014",
+   "nama": "NLP Engineer",
+   "nama_en": "NLP Engineer",
+   "sektor": "AI & Machine Learning",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1/S2",
+   "pengalaman_min_tahun": 2,
+   "gaji_min": 11000000,
+   "gaji_maks": 25000000,
+   "gaji_median": 18000000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengembangkan sistem pemrosesan bahasa alami untuk analisis teks dan pemahaman bahasa.",
+   "tanggung_jawab": [
+    "Fine-tuning language model",
+    "NER",
+    "intent classification",
+    "RAG pipeline",
+    "integrasi Hugging Face ecosystem"
+   ],
+   "jenjang_karier": "Senior NLP Engineer → AI Research Engineer → Lead AI Engineer",
+   "soc_code": "15-1221.00",
+   "soc_judul": "Computer and Information Research Scientists",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "peran baru, belum ada SOC khusus",
+   "riasec": {
+    "R": 3.74,
+    "I": 7.0,
+    "A": 2.95,
+    "S": 2.0,
+    "E": 2.49,
+    "C": 4.8
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.9571,
+    "C": 0.7057,
+    "E": 0.2923,
+    "A": 0.3029,
+    "N": 0.4592
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C015",
+   "nama": "DevOps Engineer",
+   "nama_en": "DevOps Engineer",
+   "sektor": "Infrastructure & Cloud",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 1,
+   "gaji_min": 7000000,
+   "gaji_maks": 18000000,
+   "gaji_median": 10500000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengelola infrastruktur, CI/CD pipeline, dan memastikan keandalan sistem produksi.",
+   "tanggung_jawab": [
+    "CI/CD pipeline",
+    "container orchestration (Kubernetes, Docker)",
+    "monitoring & alerting",
+    "IaC (Terraform)",
+    "cloud management"
+   ],
+   "jenjang_karier": "Senior DevOps → Site Reliability Engineer → Platform Engineer → Head of Infrastructure",
+   "soc_code": "15-1244.00",
+   "soc_judul": "Network and Computer Systems Administrators",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "irisan Software Developers dan Sysadmin",
+   "riasec": {
+    "R": 4.19,
+    "I": 4.04,
+    "A": 1.0,
+    "S": 2.22,
+    "E": 3.46,
+    "C": 6.18
+   },
+   "kode_holland": "CRI",
+   "big5_ideal": {
+    "O": 0.6539,
+    "C": 0.7531,
+    "E": 0.3426,
+    "A": 0.2869,
+    "N": 0.4075
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C016",
+   "nama": "Cloud Engineer",
+   "nama_en": "Cloud Engineer",
+   "sektor": "Infrastructure & Cloud",
+   "senioritas": "Mid",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 1,
+   "gaji_min": 9000000,
+   "gaji_maks": 20000000,
+   "gaji_median": 15000000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Merancang, membangun, dan mengelola infrastruktur cloud pada platform AWS, GCP, atau Azure.",
+   "tanggung_jawab": [
+    "Cloud architecture design",
+    "infrastructure as code",
+    "cost optimization",
+    "security & compliance",
+    "cloud migration"
+   ],
+   "jenjang_karier": "Senior Cloud Engineer → Cloud Architect → Solutions Architect",
+   "soc_code": "15-1241.00",
+   "soc_judul": "Computer Network Architects",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "paling dekat ke Computer Network Architects",
+   "riasec": {
+    "R": 4.04,
+    "I": 5.28,
+    "A": 2.25,
+    "S": 2.17,
+    "E": 3.2,
+    "C": 5.06
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.8432,
+    "C": 0.792,
+    "E": 0.3813,
+    "A": 0.3486,
+    "N": 0.3948
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C017",
+   "nama": "Site Reliability Engineer",
+   "nama_en": "SRE",
+   "sektor": "Infrastructure & Cloud",
+   "senioritas": "Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 3,
+   "gaji_min": 15000000,
+   "gaji_maks": 30000000,
+   "gaji_median": 22500000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Memastikan keandalan, skalabilitas, dan performa sistem produksi melalui pendekatan software engineering.",
+   "tanggung_jawab": [
+    "SLO/SLI/SLA management",
+    "incident response",
+    "chaos engineering",
+    "automation",
+    "capacity planning",
+    "observability"
+   ],
+   "jenjang_karier": "Principal SRE → Director of Engineering",
+   "soc_code": "15-1244.00",
+   "soc_judul": "Network and Computer Systems Administrators",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "irisan Sysadmin dan Software Developers",
+   "riasec": {
+    "R": 4.19,
+    "I": 4.04,
+    "A": 1.0,
+    "S": 2.22,
+    "E": 3.46,
+    "C": 6.18
+   },
+   "kode_holland": "CRI",
+   "big5_ideal": {
+    "O": 0.6539,
+    "C": 0.7531,
+    "E": 0.3426,
+    "A": 0.2869,
+    "N": 0.4075
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C018",
+   "nama": "Cybersecurity Analyst",
+   "nama_en": "Cybersecurity Analyst",
+   "sektor": "Cybersecurity",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 6000000,
+   "gaji_maks": 15000000,
+   "gaji_median": 10500000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "onsite",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Menganalisis ancaman keamanan siber dan memproteksi sistem informasi organisasi.",
+   "tanggung_jawab": [
+    "Vulnerability assessment",
+    "penetration testing",
+    "SIEM monitoring",
+    "incident response",
+    "security audit",
+    "threat intelligence"
+   ],
+   "jenjang_karier": "Senior Security Analyst → Security Architect → CISO",
+   "soc_code": "15-1212.00",
+   "soc_judul": "Information Security Analysts",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 3.56,
+    "I": 5.4,
+    "A": 1.34,
+    "S": 2.11,
+    "E": 2.85,
+    "C": 6.08
+   },
+   "kode_holland": "CIR",
+   "big5_ideal": {
+    "O": 0.8494,
+    "C": 0.8749,
+    "E": 0.3213,
+    "A": 0.3293,
+    "N": 0.3097
+   },
+   "stabilitas": 0.93,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C019",
+   "nama": "Penetration Tester",
+   "nama_en": "Penetration Tester / Ethical Hacker",
+   "sektor": "Cybersecurity",
+   "senioritas": "Mid",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 2,
+   "gaji_min": 8000000,
+   "gaji_maks": 20000000,
+   "gaji_median": 14000000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Melakukan pengujian keamanan sistem dan aplikasi secara ofensif untuk menemukan celah keamanan.",
+   "tanggung_jawab": [
+    "Web app pentesting",
+    "network pentesting",
+    "mobile pentesting",
+    "social engineering",
+    "laporan temuan",
+    "remediation guidance"
+   ],
+   "jenjang_karier": "Senior Pentester → Red Team Lead → Security Architect",
+   "soc_code": "15-1299.04",
+   "soc_judul": "Penetration Testers",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 3.91,
+    "I": 5.19,
+    "A": 1.31,
+    "S": 1.99,
+    "E": 2.1,
+    "C": 5.18
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.9208,
+    "C": 0.8082,
+    "E": 0.1429,
+    "A": 0.0658,
+    "N": 0.4027
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C020",
+   "nama": "UI/UX Designer",
+   "nama_en": "UI/UX Designer",
+   "sektor": "Design & Product",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 4500000,
+   "gaji_maks": 12000000,
+   "gaji_median": 7750000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Bandung",
+    "Bali",
+    "Yogyakarta"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Merancang antarmuka dan pengalaman pengguna yang intuitif dan estetis untuk produk digital.",
+   "tanggung_jawab": [
+    "User research",
+    "wireframing",
+    "prototyping (Figma)",
+    "usability testing",
+    "design system",
+    "kolaborasi developer"
+   ],
+   "jenjang_karier": "Senior UI/UX Designer → Product Designer → Head of Design",
+   "soc_code": "15-1255.00",
+   "soc_judul": "Web and Digital Interface Designers",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 2.59,
+    "I": 4.88,
+    "A": 4.48,
+    "S": 2.2,
+    "E": 3.13,
+    "C": 4.4
+   },
+   "kode_holland": "IAC",
+   "big5_ideal": {
+    "O": 0.8538,
+    "C": 0.6345,
+    "E": 0.4425,
+    "A": 0.466,
+    "N": 0.4234
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C021",
+   "nama": "Product Manager",
+   "nama_en": "Product Manager",
+   "sektor": "Design & Product",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1/S2",
+   "pengalaman_min_tahun": 2,
+   "gaji_min": 12000000,
+   "gaji_maks": 30000000,
+   "gaji_median": 22500000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "onsite"
+   ],
+   "lokasi": [
+    "Jakarta"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengelola siklus hidup produk digital dari ideasi hingga peluncuran dan iterasi.",
+   "tanggung_jawab": [
+    "Product roadmap",
+    "user story",
+    "prioritization",
+    "stakeholder management",
+    "A/B testing",
+    "data-driven decision making"
+   ],
+   "jenjang_karier": "Senior PM → Group PM → VP Product → CPO",
+   "soc_code": "11-3021.00",
+   "soc_judul": "Computer and Information Systems Managers",
+   "soc_keyakinan": "low",
+   "soc_catatan": "O*NET tidak punya Product Manager; dipakai Computer & Information Systems Managers",
+   "riasec": {
+    "R": 2.68,
+    "I": 4.49,
+    "A": 1.47,
+    "S": 2.35,
+    "E": 5.09,
+    "C": 5.94
+   },
+   "kode_holland": "CEI",
+   "big5_ideal": {
+    "O": 0.8548,
+    "C": 0.7072,
+    "E": 0.5731,
+    "A": 0.5267,
+    "N": 0.3187
+   },
+   "stabilitas": 0.87,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C022",
+   "nama": "QA Engineer / Software Tester",
+   "nama_en": "QA Engineer",
+   "sektor": "Software Development",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 5000000,
+   "gaji_maks": 12000000,
+   "gaji_median": 8000000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "hybrid",
+    "onsite"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Memastikan kualitas software melalui pengujian manual dan otomasi.",
+   "tanggung_jawab": [
+    "Test planning",
+    "manual testing",
+    "automation testing (Selenium, Cypress)",
+    "API testing",
+    "bug reporting",
+    "regression testing"
+   ],
+   "jenjang_karier": "Senior QA Engineer → QA Lead → QA Manager → Head of Quality",
+   "soc_code": "15-1253.00",
+   "soc_judul": "Software Quality Assurance Analysts and Testers",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 3.8,
+    "I": 5.76,
+    "A": 1.69,
+    "S": 1.53,
+    "E": 1.57,
+    "C": 5.67
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.615,
+    "C": 0.805,
+    "E": 0.2391,
+    "A": 0.3013,
+    "N": 0.5575
+   },
+   "stabilitas": 0.87,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C023",
+   "nama": "IT Project Manager",
+   "nama_en": "IT Project Manager",
+   "sektor": "Management & Consulting",
+   "senioritas": "Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1/S2",
+   "pengalaman_min_tahun": 3,
+   "gaji_min": 15000000,
+   "gaji_maks": 35000000,
+   "gaji_median": 25000000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "onsite",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Memimpin dan mengelola proyek teknologi informasi dari perencanaan hingga delivery.",
+   "tanggung_jawab": [
+    "Project planning",
+    "resource management",
+    "stakeholder communication",
+    "risk management",
+    "Agile/Scrum",
+    "budget tracking"
+   ],
+   "jenjang_karier": "IT Program Manager → PMO Lead → Head of IT",
+   "soc_code": "15-1299.09",
+   "soc_judul": "Information Technology Project Managers",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 1.73,
+    "I": 3.87,
+    "A": 1.77,
+    "S": 2.67,
+    "E": 5.91,
+    "C": 5.31
+   },
+   "kode_holland": "ECI",
+   "big5_ideal": {
+    "O": 0.7582,
+    "C": 0.7509,
+    "E": 0.6682,
+    "A": 0.5877,
+    "N": 0.254
+   },
+   "stabilitas": 0.93,
+   "skill_sumber": "kurasi"
+  },
+  {
+   "id": "C024",
+   "nama": "IT Support / Helpdesk",
+   "nama_en": "IT Support Engineer",
+   "sektor": "IT Support & Operations",
+   "senioritas": "Entry - Junior",
+   "pendidikan_min_rank": 1,
+   "pendidikan_min_label": "SMA / SMK sederajat",
+   "pendidikan_sumber": "SMA/SMK - D3",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 3500000,
+   "gaji_maks": 7000000,
+   "gaji_median": 4500000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "onsite"
+   ],
+   "lokasi": [],
+   "semua_kota": true,
+   "deskripsi": "Memberikan dukungan teknis kepada pengguna dan mengelola infrastruktur IT sehari-hari.",
+   "tanggung_jawab": [
+    "Troubleshooting hardware/software",
+    "instalasi sistem",
+    "network support",
+    "dokumentasi",
+    "ticketing system"
+   ],
+   "jenjang_karier": "Senior IT Support → System Administrator → IT Infrastructure Manager",
+   "soc_code": "15-1232.00",
+   "soc_judul": "Computer User Support Specialists",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 4.13,
+    "I": 3.77,
+    "A": 1.0,
+    "S": 3.31,
+    "E": 2.36,
+    "C": 6.02
+   },
+   "kode_holland": "CRI",
+   "big5_ideal": {
+    "O": 0.596,
+    "C": 0.6224,
+    "E": 0.5117,
+    "A": 0.5719,
+    "N": 0.4527
+   },
+   "stabilitas": 1.0,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C025",
+   "nama": "System Administrator",
+   "nama_en": "System Administrator",
+   "sektor": "IT Support & Operations",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 1,
+   "gaji_min": 5000000,
+   "gaji_maks": 12000000,
+   "gaji_median": 8500000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "onsite",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengelola dan memelihara server, jaringan, dan infrastruktur IT organisasi.",
+   "tanggung_jawab": [
+    "Server management (Linux/Windows)",
+    "network configuration",
+    "backup & recovery",
+    "user management",
+    "security patching"
+   ],
+   "jenjang_karier": "Senior SysAdmin → Network Engineer → IT Infrastructure Manager",
+   "soc_code": "15-1244.00",
+   "soc_judul": "Network and Computer Systems Administrators",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 4.19,
+    "I": 4.04,
+    "A": 1.0,
+    "S": 2.22,
+    "E": 3.46,
+    "C": 6.18
+   },
+   "kode_holland": "CRI",
+   "big5_ideal": {
+    "O": 0.6539,
+    "C": 0.7531,
+    "E": 0.3426,
+    "A": 0.2869,
+    "N": 0.4075
+   },
+   "stabilitas": 0.93,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C026",
+   "nama": "Network Engineer",
+   "nama_en": "Network Engineer",
+   "sektor": "IT Support & Operations",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 1,
+   "gaji_min": 6000000,
+   "gaji_maks": 14000000,
+   "gaji_median": 10000000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "onsite"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Merancang, mengimplementasikan, dan mengelola infrastruktur jaringan.",
+   "tanggung_jawab": [
+    "Network design & implementation",
+    "routing & switching",
+    "firewall management",
+    "VPN",
+    "network monitoring",
+    "troubleshooting"
+   ],
+   "jenjang_karier": "Senior Network Engineer → Network Architect → Head of Network",
+   "soc_code": "15-1241.00",
+   "soc_judul": "Computer Network Architects",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 4.04,
+    "I": 5.28,
+    "A": 2.25,
+    "S": 2.17,
+    "E": 3.2,
+    "C": 5.06
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.8432,
+    "C": 0.792,
+    "E": 0.3813,
+    "A": 0.3486,
+    "N": 0.3948
+   },
+   "stabilitas": 1.0,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C027",
+   "nama": "Database Administrator",
+   "nama_en": "Database Administrator",
+   "sektor": "Data & Analytics",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 1,
+   "gaji_min": 6000000,
+   "gaji_maks": 15000000,
+   "gaji_median": 9750000,
+   "gaji_median_dari_patokan": true,
+   "pola_kerja": [
+    "onsite",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengelola, mengoptimalkan, dan memelihara sistem manajemen basis data.",
+   "tanggung_jawab": [
+    "Database design & optimization",
+    "backup & recovery",
+    "query tuning",
+    "security & access control",
+    "replication",
+    "monitoring"
+   ],
+   "jenjang_karier": "Senior DBA → Data Architect → Head of Data Infrastructure",
+   "soc_code": "15-1242.00",
+   "soc_judul": "Database Administrators",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 2.83,
+    "I": 4.83,
+    "A": 1.2,
+    "S": 2.29,
+    "E": 2.94,
+    "C": 6.61
+   },
+   "kode_holland": "CIE",
+   "big5_ideal": {
+    "O": 0.6446,
+    "C": 0.8191,
+    "E": 0.3213,
+    "A": 0.2698,
+    "N": 0.5194
+   },
+   "stabilitas": 0.93,
+   "skill_sumber": "lowongan"
+  },
+  {
+   "id": "C028",
+   "nama": "Scrum Master / Agile Coach",
+   "nama_en": "Scrum Master",
+   "sektor": "Management & Consulting",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 2,
+   "gaji_min": 10000000,
+   "gaji_maks": 22000000,
+   "gaji_median": 16000000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "hybrid",
+    "onsite"
+   ],
+   "lokasi": [
+    "Jakarta"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Memfasilitasi proses Agile dan membantu tim mencapai kinerja optimal.",
+   "tanggung_jawab": [
+    "Sprint planning",
+    "daily standup",
+    "retrospective",
+    "backlog refinement",
+    "impediment removal",
+    "Agile coaching",
+    "Jira/Trello"
+   ],
+   "jenjang_karier": "Senior Scrum Master → Agile Coach → Head of Delivery",
+   "soc_code": "15-1299.09",
+   "soc_judul": "Information Technology Project Managers",
+   "soc_keyakinan": "low",
+   "soc_catatan": "tidak ada SOC untuk Scrum Master; proxy IT Project Managers",
+   "riasec": {
+    "R": 1.73,
+    "I": 3.87,
+    "A": 1.77,
+    "S": 2.67,
+    "E": 5.91,
+    "C": 5.31
+   },
+   "kode_holland": "ECI",
+   "big5_ideal": {
+    "O": 0.7582,
+    "C": 0.7509,
+    "E": 0.6682,
+    "A": 0.5877,
+    "N": 0.254
+   },
+   "stabilitas": 0.87,
+   "skill_sumber": "kurasi"
+  },
+  {
+   "id": "C029",
+   "nama": "Digital Marketing Analyst",
+   "nama_en": "Digital Marketing Analyst",
+   "sektor": "Digital Marketing & E-commerce",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 4500000,
+   "gaji_maks": 10000000,
+   "gaji_median": 7250000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "hybrid",
+    "remote"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya",
+    "Bali"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Menganalisis data kampanye digital dan mengoptimalkan strategi pemasaran berbasis data.",
+   "tanggung_jawab": [
+    "Google Analytics",
+    "SEO/SEM",
+    "social media analytics",
+    "A/B testing",
+    "campaign reporting",
+    "funnel analysis"
+   ],
+   "jenjang_karier": "Senior Digital Marketing Analyst → Growth Lead → Head of Marketing",
+   "soc_code": "13-1161.01",
+   "soc_judul": "Search Marketing Strategists",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "Search Marketing Strategists",
+   "riasec": {
+    "R": 1.0,
+    "I": 3.78,
+    "A": 3.23,
+    "S": 2.76,
+    "E": 5.54,
+    "C": 4.68
+   },
+   "kode_holland": "ECI",
+   "big5_ideal": {
+    "O": 0.8562,
+    "C": 0.6247,
+    "E": 0.5481,
+    "A": 0.3945,
+    "N": 0.4154
+   },
+   "stabilitas": 0.713,
+   "skill_sumber": "kurasi"
+  },
+  {
+   "id": "C030",
+   "nama": "Game Developer",
+   "nama_en": "Game Developer",
+   "sektor": "Game Development",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 5000000,
+   "gaji_maks": 15000000,
+   "gaji_median": 10000000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "onsite",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Bandung",
+    "Yogyakarta"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengembangkan game untuk platform mobile, PC, atau konsol.",
+   "tanggung_jawab": [
+    "Game design implementation",
+    "Unity/Unreal Engine",
+    "physics & animation",
+    "multiplayer networking",
+    "optimization",
+    "QA"
+   ],
+   "jenjang_karier": "Senior Game Dev → Game Lead → Game Director",
+   "soc_code": "15-1255.01",
+   "soc_judul": "Video Game Designers",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "Video Game Designers condong Artistic; developer murni lebih dekat 15-1252.00",
+   "riasec": {
+    "R": 2.77,
+    "I": 4.15,
+    "A": 6.38,
+    "S": 2.3,
+    "E": 3.92,
+    "C": 3.85
+   },
+   "kode_holland": "AIE",
+   "big5_ideal": {
+    "O": 0.9797,
+    "C": 0.5083,
+    "E": 0.512,
+    "A": 0.4753,
+    "N": 0.3726
+   },
+   "stabilitas": 0.83,
+   "skill_sumber": "kurasi"
+  },
+  {
+   "id": "C031",
+   "nama": "IT Business Analyst",
+   "nama_en": "IT Business Analyst",
+   "sektor": "Management & Consulting",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 1,
+   "gaji_min": 7000000,
+   "gaji_maks": 16000000,
+   "gaji_median": 11500000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "onsite",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Menjembatani kebutuhan bisnis dan solusi teknis melalui analisis kebutuhan dan dokumentasi sistem.",
+   "tanggung_jawab": [
+    "Requirement gathering",
+    "BRD/FSD writing",
+    "process mapping",
+    "stakeholder interview",
+    "user acceptance testing",
+    "wireframing"
+   ],
+   "jenjang_karier": "Senior BA → Product Manager → Business Solution Manager",
+   "soc_code": "15-1211.00",
+   "soc_judul": "Computer Systems Analysts",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 3.27,
+    "I": 6.39,
+    "A": 1.98,
+    "S": 1.91,
+    "E": 2.23,
+    "C": 5.93
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.8508,
+    "C": 0.6734,
+    "E": 0.3546,
+    "A": 0.416,
+    "N": 0.4215
+   },
+   "stabilitas": 0.93,
+   "skill_sumber": "kurasi"
+  },
+  {
+   "id": "C032",
+   "nama": "ERP Consultant / Developer",
+   "nama_en": "ERP Consultant",
+   "sektor": "Enterprise Software",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 2,
+   "gaji_min": 10000000,
+   "gaji_maks": 25000000,
+   "gaji_median": 17500000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "onsite",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta",
+    "Surabaya"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengimplementasikan, mengkustomisasi, dan mendukung sistem ERP seperti SAP atau Oracle.",
+   "tanggung_jawab": [
+    "ERP implementation",
+    "business process mapping",
+    "customization & development",
+    "user training",
+    "Go-Live support",
+    "data migration"
+   ],
+   "jenjang_karier": "Senior ERP Consultant → SAP Architect → Head of Enterprise Solutions",
+   "soc_code": "15-1211.00",
+   "soc_judul": "Computer Systems Analysts",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "proxy Computer Systems Analysts",
+   "riasec": {
+    "R": 3.27,
+    "I": 6.39,
+    "A": 1.98,
+    "S": 1.91,
+    "E": 2.23,
+    "C": 5.93
+   },
+   "kode_holland": "ICR",
+   "big5_ideal": {
+    "O": 0.8508,
+    "C": 0.6734,
+    "E": 0.3546,
+    "A": 0.416,
+    "N": 0.4215
+   },
+   "stabilitas": 0.93,
+   "skill_sumber": "kurasi"
+  },
+  {
+   "id": "C033",
+   "nama": "Blockchain Developer",
+   "nama_en": "Blockchain Developer",
+   "sektor": "Emerging Technology",
+   "senioritas": "Mid - Senior",
+   "pendidikan_min_rank": 4,
+   "pendidikan_min_label": "Sarjana / Sarjana Terapan (S1 / D4)",
+   "pendidikan_sumber": "D4/S1",
+   "pengalaman_min_tahun": 2,
+   "gaji_min": 12000000,
+   "gaji_maks": 30000000,
+   "gaji_median": 21000000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "remote",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Mengembangkan aplikasi desentralisasi (DApp) dan smart contract di atas blockchain.",
+   "tanggung_jawab": [
+    "Smart contract development (Solidity)",
+    "DApp development",
+    "Web3 integration",
+    "blockchain protocol",
+    "DeFi/NFT"
+   ],
+   "jenjang_karier": "Senior Blockchain Dev → Blockchain Architect → Web3 Lead",
+   "soc_code": "15-1299.07",
+   "soc_judul": "Blockchain Engineers",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 3.4,
+    "I": 5.28,
+    "A": 2.07,
+    "S": 1.57,
+    "E": 3.39,
+    "C": 5.69
+   },
+   "kode_holland": "CIR",
+   "big5_ideal": {
+    "O": 0.9004,
+    "C": 0.8428,
+    "E": 0.2667,
+    "A": 0.2178,
+    "N": 0.3736
+   },
+   "stabilitas": 0.487,
+   "skill_sumber": "kurasi"
+  },
+  {
+   "id": "C034",
+   "nama": "IoT Engineer",
+   "nama_en": "IoT Engineer",
+   "sektor": "Emerging Technology",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 1,
+   "gaji_min": 7000000,
+   "gaji_maks": 16000000,
+   "gaji_median": 11500000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "onsite",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Surabaya",
+    "Jakarta",
+    "Bandung"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Merancang dan mengembangkan solusi Internet of Things yang menghubungkan perangkat fisik ke sistem digital.",
+   "tanggung_jawab": [
+    "Firmware development",
+    "protokol komunikasi (MQTT, LoRa)",
+    "cloud integration",
+    "sensor management",
+    "embedded systems"
+   ],
+   "jenjang_karier": "Senior IoT Engineer → IoT Architect → CTO",
+   "soc_code": "17-2061.00",
+   "soc_judul": "Computer Hardware Engineers",
+   "soc_keyakinan": "medium",
+   "soc_catatan": "Computer Hardware Engineers; sisi software lebih dekat 15-1252.00",
+   "riasec": {
+    "R": 5.69,
+    "I": 5.56,
+    "A": 1.83,
+    "S": 1.82,
+    "E": 1.98,
+    "C": 5.37
+   },
+   "kode_holland": "RIC",
+   "big5_ideal": {
+    "O": 0.8429,
+    "C": 0.7353,
+    "E": 0.2582,
+    "A": 0.2834,
+    "N": 0.476
+   },
+   "stabilitas": 0.78,
+   "skill_sumber": "kurasi"
+  },
+  {
+   "id": "C035",
+   "nama": "Technical Writer",
+   "nama_en": "Technical Writer",
+   "sektor": "Design & Product",
+   "senioritas": "Junior - Mid",
+   "pendidikan_min_rank": 3,
+   "pendidikan_min_label": "Diploma 3",
+   "pendidikan_sumber": "D3/D4/S1",
+   "pengalaman_min_tahun": 0,
+   "gaji_min": 4000000,
+   "gaji_maks": 9000000,
+   "gaji_median": 6500000,
+   "gaji_median_dari_patokan": false,
+   "pola_kerja": [
+    "remote",
+    "hybrid"
+   ],
+   "lokasi": [
+    "Jakarta"
+   ],
+   "semua_kota": false,
+   "deskripsi": "Membuat dokumentasi teknis yang jelas dan terstruktur untuk produk software, API, dan sistem.",
+   "tanggung_jawab": [
+    "API documentation",
+    "user manual",
+    "tutorial",
+    "changelog",
+    "Confluence/Notion",
+    "collaboration developer"
+   ],
+   "jenjang_karier": "Senior Technical Writer → Documentation Lead → Content Strategist",
+   "soc_code": "27-3042.00",
+   "soc_judul": "Technical Writers",
+   "soc_keyakinan": "high",
+   "soc_catatan": "",
+   "riasec": {
+    "R": 2.78,
+    "I": 3.69,
+    "A": 4.23,
+    "S": 2.01,
+    "E": 1.97,
+    "C": 5.32
+   },
+   "kode_holland": "CAI",
+   "big5_ideal": {
+    "O": 0.6226,
+    "C": 0.6745,
+    "E": 0.3116,
+    "A": 0.3568,
+    "N": 0.6857
+   },
+   "stabilitas": 0.637,
+   "skill_sumber": "kurasi"
+  }
+ ],
+ "skill": [
+  {
+   "id": "SK001",
+   "nama": "Python",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa pemrograman serbaguna untuk data science, backend, scripting, dan AI/ML",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK002",
+   "nama": "JavaScript",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa utama pengembangan web frontend dan backend (Node.js)",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK003",
+   "nama": "TypeScript",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Superset JavaScript dengan static typing untuk proyek skala besar",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK004",
+   "nama": "Java",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa OOP untuk enterprise backend dan Android development",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK005",
+   "nama": "Kotlin",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa modern untuk Android development (pengganti Java)",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK006",
+   "nama": "Swift",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa native Apple untuk iOS/macOS development",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK007",
+   "nama": "C#",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa Microsoft untuk .NET, game (Unity), dan enterprise",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK008",
+   "nama": "C/C++",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa sistem level rendah untuk embedded, game engine, dan performa tinggi",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK009",
+   "nama": "Go (Golang)",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa Google untuk backend berperforma tinggi dan microservices",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK010",
+   "nama": "PHP",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa server-side untuk web development (Laravel, CodeIgniter)",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK011",
+   "nama": "Dart",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa Google untuk Flutter cross-platform development",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK012",
+   "nama": "R",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa statistik untuk analisis data dan visualisasi",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK013",
+   "nama": "Scala",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa JVM untuk big data (Apache Spark) dan functional programming",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK014",
+   "nama": "Rust",
+   "kategori": "Programming Language",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa sistem dengan memory safety untuk performa & keamanan tinggi",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK015",
+   "nama": "SQL",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa query standar untuk relational database management",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK016",
+   "nama": "React.js",
+   "kategori": "Frontend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Library JavaScript populer untuk membangun UI component-based",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK017",
+   "nama": "Vue.js",
+   "kategori": "Frontend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework JavaScript progressive untuk membangun UI web",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK018",
+   "nama": "Angular",
+   "kategori": "Frontend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework TypeScript dari Google untuk SPA enterprise",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK019",
+   "nama": "Next.js",
+   "kategori": "Frontend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework React untuk SSR, SSG, dan full-stack development",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK020",
+   "nama": "Nuxt.js",
+   "kategori": "Frontend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework Vue.js untuk SSR dan static site generation",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK021",
+   "nama": "HTML/CSS",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "Markup dan styling dasar pengembangan web",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK022",
+   "nama": "Tailwind CSS",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "Utility-first CSS framework untuk styling cepat dan konsisten",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK023",
+   "nama": "Bootstrap",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "CSS framework populer untuk responsive web design",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK024",
+   "nama": "Node.js",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Runtime JavaScript untuk backend development (Express, Fastify, NestJS)",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK025",
+   "nama": "Laravel",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "PHP framework MVC untuk web application development",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK026",
+   "nama": "Django",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Python web framework untuk rapid development",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK027",
+   "nama": "FastAPI",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Modern Python framework untuk REST API berkecepatan tinggi",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK028",
+   "nama": "Spring Boot",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Java framework untuk enterprise microservices dan REST API",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK029",
+   "nama": "Express.js",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Minimalist Node.js framework untuk REST API",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK030",
+   "nama": "NestJS",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Node.js framework TypeScript untuk aplikasi backend terstruktur",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK031",
+   "nama": "Flask",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Micro Python web framework untuk API sederhana",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK032",
+   "nama": "CodeIgniter",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "PHP framework ringan untuk web development",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK033",
+   "nama": "ASP.NET Core",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Microsoft framework untuk web API dan web application",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK034",
+   "nama": "Flutter",
+   "kategori": "Mobile Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework cross-platform Google untuk mobile, web, dan desktop",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK035",
+   "nama": "React Native",
+   "kategori": "Mobile Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework React dari Meta untuk cross-platform mobile development",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK036",
+   "nama": "Android SDK",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "SDK native untuk pengembangan aplikasi Android",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK037",
+   "nama": "iOS SDK / UIKit / SwiftUI",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "SDK native Apple untuk iOS development",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK038",
+   "nama": "PostgreSQL",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Database relasional open-source berfitur lengkap",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK039",
+   "nama": "MySQL",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Database relasional paling populer untuk web",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK040",
+   "nama": "MongoDB",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Database NoSQL document-oriented untuk data fleksibel",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK041",
+   "nama": "Redis",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "In-memory data structure store untuk caching dan session",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK042",
+   "nama": "SQLite",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Database ringan untuk mobile dan embedded",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK043",
+   "nama": "Microsoft SQL Server",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Database enterprise Microsoft dengan ekosistem penuh",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK044",
+   "nama": "Oracle DB",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Database enterprise Oracle untuk sistem skala besar",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK045",
+   "nama": "BigQuery",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Serverless data warehouse Google Cloud untuk analitik skala besar",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK046",
+   "nama": "Snowflake",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Cloud data platform untuk data warehousing modern",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK047",
+   "nama": "Cassandra",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Distributed NoSQL database untuk write-heavy workloads",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK048",
+   "nama": "Elasticsearch",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Search engine dan analitik berbasis Lucene",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK049",
+   "nama": "AWS (Amazon Web Services)",
+   "kategori": "Cloud Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform cloud terbesar dengan 200+ layanan",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK050",
+   "nama": "Google Cloud Platform (GCP)",
+   "kategori": "Cloud Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform cloud Google dengan keunggulan di data dan AI",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK051",
+   "nama": "Microsoft Azure",
+   "kategori": "Cloud Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform cloud Microsoft dengan integrasi enterprise",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK052",
+   "nama": "Docker",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform containerization untuk packaging dan deployment aplikasi",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK053",
+   "nama": "Kubernetes (K8s)",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Container orchestration untuk deployment dan scaling otomatis",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK054",
+   "nama": "Terraform",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Infrastructure as Code tool untuk provisioning cloud resources",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK055",
+   "nama": "CI/CD (Jenkins, GitHub Actions, GitLab CI)",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Pipeline otomasi untuk continuous integration dan deployment",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK056",
+   "nama": "Linux / Unix Administration",
+   "kategori": "Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Administrasi sistem operasi Linux untuk server management",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK057",
+   "nama": "Nginx / Apache",
+   "kategori": "Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Web server dan reverse proxy untuk hosting aplikasi",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK058",
+   "nama": "Apache Airflow",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Workflow orchestration untuk scheduling dan monitoring data pipeline",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK059",
+   "nama": "Apache Spark",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework big data processing untuk komputasi terdistribusi",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK060",
+   "nama": "Apache Kafka",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Distributed streaming platform untuk real-time data pipeline",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK061",
+   "nama": "dbt (Data Build Tool)",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Transformation framework SQL-first untuk data warehouse",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK062",
+   "nama": "ETL/ELT Processes",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Proses ekstraksi, transformasi, dan loading data",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK063",
+   "nama": "Data Warehousing Concepts",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Star schema, dimensional modeling, fact/dimension tables",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK064",
+   "nama": "Tableau",
+   "kategori": "Data Visualization",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform BI visual analytics untuk dashboard dan reporting",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK065",
+   "nama": "Power BI",
+   "kategori": "Data Visualization",
+   "tipe": "hard_skill",
+   "deskripsi": "Microsoft BI tool untuk dashboard dan laporan interaktif",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK066",
+   "nama": "Looker / Looker Studio",
+   "kategori": "Data Visualization",
+   "tipe": "hard_skill",
+   "deskripsi": "Google BI platform untuk data visualization dan reporting",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK067",
+   "nama": "Metabase",
+   "kategori": "Data Visualization",
+   "tipe": "hard_skill",
+   "deskripsi": "Open-source BI tool sederhana untuk dashboard data",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK068",
+   "nama": "Pandas",
+   "kategori": "Data Science Library",
+   "tipe": "hard_skill",
+   "deskripsi": "Python library untuk data manipulation dan analisis",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK069",
+   "nama": "NumPy",
+   "kategori": "Data Science Library",
+   "tipe": "hard_skill",
+   "deskripsi": "Python library untuk komputasi numerik",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK070",
+   "nama": "Scikit-learn",
+   "kategori": "Data Science Library",
+   "tipe": "hard_skill",
+   "deskripsi": "Python ML library untuk klasifikasi, regresi, dan clustering",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK071",
+   "nama": "TensorFlow",
+   "kategori": "ML Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Google framework untuk deep learning dan neural network",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK072",
+   "nama": "PyTorch",
+   "kategori": "ML Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Meta framework untuk deep learning dan penelitian AI",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK073",
+   "nama": "Hugging Face",
+   "kategori": "ML Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Ekosistem model NLP dan multimodal pretrained",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK074",
+   "nama": "LangChain",
+   "kategori": "AI Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework untuk membangun aplikasi berbasis LLM",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK075",
+   "nama": "OpenAI API",
+   "kategori": "AI Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "API untuk akses model GPT dan DALL-E dari OpenAI",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK076",
+   "nama": "NVIDIA CUDA / GPU Computing",
+   "kategori": "ML Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework komputasi GPU untuk akselerasi ML training",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK077",
+   "nama": "Computer Vision (OpenCV)",
+   "kategori": "ML Specialization",
+   "tipe": "hard_skill",
+   "deskripsi": "Library computer vision untuk image processing dan analisis",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK078",
+   "nama": "RAG (Retrieval-Augmented Generation)",
+   "kategori": "AI Technique",
+   "tipe": "hard_skill",
+   "deskripsi": "Teknik augmentasi LLM dengan retrieval dari knowledge base",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK079",
+   "nama": "Vector Database (Pinecone, Weaviate)",
+   "kategori": "AI Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Database untuk menyimpan dan mencari embeddings ML",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK080",
+   "nama": "Git",
+   "kategori": "Version Control",
+   "tipe": "hard_skill",
+   "deskripsi": "Sistem version control terdistribusi untuk manajemen kode",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK081",
+   "nama": "GitHub / GitLab",
+   "kategori": "Version Control",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform hosting repositori kode dan kolaborasi developer",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK082",
+   "nama": "Network Security",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Keamanan jaringan termasuk firewall, IDS/IPS, VPN",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK083",
+   "nama": "Web Application Security (OWASP)",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Keamanan aplikasi web berdasarkan standar OWASP Top 10",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK084",
+   "nama": "Penetration Testing",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Uji keamanan ofensif untuk menemukan kerentanan sistem",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK085",
+   "nama": "SIEM Tools",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Security Information and Event Management untuk monitoring ancaman",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK086",
+   "nama": "Cryptography & PKI",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Enkripsi, sertifikat digital, dan manajemen kunci",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK087",
+   "nama": "Figma",
+   "kategori": "Design Tool",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform desain kolaboratif untuk UI/UX dan prototyping",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK088",
+   "nama": "Adobe XD / Photoshop / Illustrator",
+   "kategori": "Design Tool",
+   "tipe": "hard_skill",
+   "deskripsi": "Suite Adobe untuk desain visual dan prototyping",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK089",
+   "nama": "Agile / Scrum",
+   "kategori": "Methodology",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework pengembangan iteratif berbasis sprint",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK090",
+   "nama": "REST API Design",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Desain dan implementasi API RESTful yang standar",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK091",
+   "nama": "GraphQL",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Query language untuk API yang fleksibel",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK092",
+   "nama": "Microservices Architecture",
+   "kategori": "Architecture",
+   "tipe": "hard_skill",
+   "deskripsi": "Arsitektur dekomposisi aplikasi menjadi layanan kecil independen",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK093",
+   "nama": "System Design",
+   "kategori": "Architecture",
+   "tipe": "hard_skill",
+   "deskripsi": "Kemampuan merancang arsitektur sistem skala besar",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK094",
+   "nama": "Power Query",
+   "kategori": "Data Tool",
+   "tipe": "hard_skill",
+   "deskripsi": "Alat ETL ringan terintegrasi Microsoft Excel/Power BI",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK095",
+   "nama": "Microsoft Excel (Advanced)",
+   "kategori": "Data Tool",
+   "tipe": "hard_skill",
+   "deskripsi": "Spreadsheet tool dengan pivot, vlookup, macro untuk analisis data",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK096",
+   "nama": "IBM DataStage",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform ETL enterprise dari IBM untuk integrasi data",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK097",
+   "nama": "Apache Hadoop",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Framework distributed storage dan processing untuk big data",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK098",
+   "nama": "A/B Testing",
+   "kategori": "Analytics",
+   "tipe": "hard_skill",
+   "deskripsi": "Eksperimen terkontrol untuk membandingkan dua variasi produk/fitur",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK101",
+   "nama": "Problem Solving",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan mengidentifikasi, menganalisis, dan menyelesaikan masalah secara terstruktur",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK102",
+   "nama": "Communication",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan menyampaikan informasi teknis dan non-teknis secara jelas",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK103",
+   "nama": "Teamwork & Collaboration",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan bekerja efektif dalam tim lintas fungsi",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK104",
+   "nama": "Analytical Thinking",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan memecah masalah kompleks dengan pendekatan data-driven",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK105",
+   "nama": "Adaptability",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan beradaptasi dengan teknologi dan lingkungan kerja baru",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK106",
+   "nama": "Time Management",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan mengelola prioritas dan deadline secara efektif",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK107",
+   "nama": "Critical Thinking",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan mengevaluasi informasi secara objektif dan logis",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK108",
+   "nama": "Leadership",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan memimpin tim dan mengambil inisiatif",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK109",
+   "nama": "Creativity & Innovation",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan menghasilkan ide-ide baru dan solusi kreatif",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK110",
+   "nama": "Attention to Detail",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Ketelitian dalam memeriksa kode, data, atau desain",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK111",
+   "nama": "English Proficiency",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan berkomunikasi dalam bahasa Inggris (minimal pasif)",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK112",
+   "nama": "Project Management",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan merencanakan dan mengelola proyek dari awal hingga selesai",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK113",
+   "nama": "Stakeholder Management",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan berkomunikasi dan mengelola ekspektasi berbagai pemangku kepentingan",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK114",
+   "nama": "Self-Learning",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan belajar mandiri dan terus mengembangkan kompetensi",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK115",
+   "nama": "Data Storytelling",
+   "kategori": "Soft Skill",
+   "tipe": "soft_skill",
+   "deskripsi": "Kemampuan menyajikan temuan data secara naratif dan visual yang persuasif",
+   "sumber": "lowongan"
+  },
+  {
+   "id": "SK116",
+   "nama": "Jira / Confluence",
+   "kategori": "Project Tool",
+   "tipe": "hard_skill",
+   "deskripsi": "Perangkat pelacakan pekerjaan dan dokumentasi tim",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK117",
+   "nama": "Risk & Budget Management",
+   "kategori": "Project Management",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengelola risiko dan anggaran proyek TI",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK118",
+   "nama": "SEO / SEM",
+   "kategori": "Digital Marketing",
+   "tipe": "hard_skill",
+   "deskripsi": "Optimasi mesin pencari dan iklan pencarian",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK119",
+   "nama": "Google Analytics",
+   "kategori": "Digital Marketing",
+   "tipe": "hard_skill",
+   "deskripsi": "Analitik perilaku pengunjung situs dan aplikasi",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK120",
+   "nama": "Paid Ads (Meta Ads / Google Ads)",
+   "kategori": "Digital Marketing",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengelola dan mengukur kampanye iklan berbayar",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK121",
+   "nama": "Unity",
+   "kategori": "Game Engine",
+   "tipe": "hard_skill",
+   "deskripsi": "Mesin gim lintas platform berbasis C#",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK122",
+   "nama": "Unreal Engine",
+   "kategori": "Game Engine",
+   "tipe": "hard_skill",
+   "deskripsi": "Mesin gim berbasis C++ dan Blueprint",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK123",
+   "nama": "Game Design & Game Physics",
+   "kategori": "Game Development",
+   "tipe": "hard_skill",
+   "deskripsi": "Mekanika gim serta matematika dan fisika 3D",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK124",
+   "nama": "Business Process Modeling (BPMN / UML)",
+   "kategori": "Analysis",
+   "tipe": "hard_skill",
+   "deskripsi": "Memodelkan proses bisnis dan rancangan sistem",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK125",
+   "nama": "Requirements Engineering",
+   "kategori": "Analysis",
+   "tipe": "hard_skill",
+   "deskripsi": "Menggali dan menuliskan kebutuhan sistem",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK126",
+   "nama": "SAP",
+   "kategori": "ERP Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform ERP SAP dan modul-modulnya",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK127",
+   "nama": "Odoo",
+   "kategori": "ERP Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform ERP sumber terbuka berbasis Python",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK128",
+   "nama": "Solidity / Smart Contract",
+   "kategori": "Blockchain",
+   "tipe": "hard_skill",
+   "deskripsi": "Menulis dan menguji smart contract",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK129",
+   "nama": "Web3 Tooling (Ethers.js / Hardhat)",
+   "kategori": "Blockchain",
+   "tipe": "hard_skill",
+   "deskripsi": "Perkakas pengembangan aplikasi terdesentralisasi",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK130",
+   "nama": "Embedded Systems (Arduino / ESP32 / STM32)",
+   "kategori": "IoT",
+   "tipe": "hard_skill",
+   "deskripsi": "Pemrograman mikrokontroler dan sensor",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK131",
+   "nama": "IoT Protocols (MQTT / CoAP)",
+   "kategori": "IoT",
+   "tipe": "hard_skill",
+   "deskripsi": "Protokol komunikasi perangkat IoT",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK132",
+   "nama": "Technical Writing",
+   "kategori": "Documentation",
+   "tipe": "hard_skill",
+   "deskripsi": "Menulis dokumentasi teknis yang jelas dan terstruktur",
+   "sumber": "kurasi"
+  },
+  {
+   "id": "SK133",
+   "nama": "API Documentation (OpenAPI / Markdown)",
+   "kategori": "Documentation",
+   "tipe": "hard_skill",
+   "deskripsi": "Mendokumentasikan API dan panduan pengembang",
+   "sumber": "kurasi"
+  }
+ ],
+ "profesi_skill": {
+  "C001": [
+   {
+    "skill_id": "SK016",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "React.js adalah library wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK017",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Alternatif Vue.js",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK019",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Next.js untuk SSR/SSG",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK002",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "JavaScript core",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK003",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "TypeScript preferred",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK021",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "HTML/CSS dasar wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK022",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Tailwind CSS disukai",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK090",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Integrasi REST API",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Git wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK087",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Figma untuk membaca desain",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Docker basic",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK089",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": "Agile/Scrum",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK103",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C002": [
+   {
+    "skill_id": "SK002",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Node.js/JS alternatif",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "Python backend (FastAPI/Django)",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK010",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "PHP (Laravel) alternatif",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK009",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Go untuk microservices",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK024",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Node.js/Express",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK025",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Laravel/PHP",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK027",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "FastAPI",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "SQL wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK038",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "PostgreSQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK040",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "MongoDB NoSQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK041",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Redis caching",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK090",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "REST API design",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 6.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Docker",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK089",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Agile",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK092",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Microservices",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK103",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C003": [
+   {
+    "skill_id": "SK016",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "React.js frontend",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK019",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": "Next.js",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK024",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Node.js backend",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK002",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "JavaScript",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK003",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "TypeScript",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": "Python alternatif backend",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "SQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK038",
+    "wajib": true,
+    "bobot": 6.0,
+    "catatan": "PostgreSQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK040",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "MongoDB",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK041",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "Redis",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK090",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "REST API",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": true,
+    "bobot": 6.0,
+    "catatan": "Docker",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "CI/CD",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 6.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK021",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "HTML/CSS",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK089",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "Agile",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK093",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "System Design",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C004": [
+   {
+    "skill_id": "SK005",
+    "wajib": true,
+    "bobot": 20.0,
+    "catatan": "Kotlin wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK004",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Java alternatif lama",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK036",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Android SDK",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK090",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "REST API integrasi",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK040",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Firebase/Firestore",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK089",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Agile",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "SQL untuk lokal DB",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "Docker basic",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK103",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C005": [
+   {
+    "skill_id": "SK006",
+    "wajib": true,
+    "bobot": 25.0,
+    "catatan": "Swift wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK037",
+    "wajib": true,
+    "bobot": 20.0,
+    "catatan": "iOS SDK/SwiftUI",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK090",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "REST API",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "SQLite",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK089",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Agile",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C006": [
+   {
+    "skill_id": "SK034",
+    "wajib": true,
+    "bobot": 25.0,
+    "catatan": "Flutter wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK011",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Dart",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK035",
+    "wajib": false,
+    "bobot": 15.0,
+    "catatan": "React Native alternatif",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK002",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "JavaScript untuk RN",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK090",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "REST API",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "SQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK040",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Firebase",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK103",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C007": [
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 18.0,
+    "catatan": "SQL wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Python (Pandas, NumPy)",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK068",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Pandas",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK069",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "NumPy",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK064",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "Tableau",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK065",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "Power BI",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK066",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Looker Studio",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK095",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Excel advanced",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK098",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "A/B Testing",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK063",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Data warehouse concepts",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK104",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK115",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK102",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C008": [
+   {
+    "skill_id": "SK065",
+    "wajib": true,
+    "bobot": 20.0,
+    "catatan": "Power BI wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK064",
+    "wajib": false,
+    "bobot": 12.0,
+    "catatan": "Tableau alternatif",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 18.0,
+    "catatan": "SQL wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK063",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Data warehouse / star schema",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK062",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "ETL processes",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK094",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Power Query",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Python untuk ETL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK045",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "BigQuery",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK104",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK115",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C009": [
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "SQL wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Python wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK058",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Apache Airflow",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK059",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "Apache Spark",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK060",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Kafka",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK061",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "dbt",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK062",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "ETL/ELT",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK063",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Data warehouse",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK045",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": "BigQuery/Snowflake",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK046",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "Snowflake",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK049",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "AWS",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK050",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "GCP",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Docker",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK053",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "Kubernetes",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 4.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK040",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "MongoDB",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK038",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "PostgreSQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK103",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C010": [
+   {
+    "skill_id": "SK001",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Python wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK012",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "R alternatif",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "SQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK068",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Pandas",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK069",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "NumPy",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK070",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Scikit-learn",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK071",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "TensorFlow",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK072",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "PyTorch",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK045",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": "BigQuery",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK064",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Tableau",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK065",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Power BI",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK098",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "A/B Testing",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK104",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK115",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C011": [
+   {
+    "skill_id": "SK001",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Python wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK072",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "PyTorch",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK071",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "TensorFlow",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK070",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Scikit-learn",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK068",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Pandas",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK076",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "NVIDIA GPU/CUDA",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Docker",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK053",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": "Kubernetes",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK049",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "AWS/GCP",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK050",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "CI/CD MLOps",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "SQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK114",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C012": [
+   {
+    "skill_id": "SK001",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Python wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK074",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "LangChain",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK078",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "RAG",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK075",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "OpenAI API",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK079",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Vector DB",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK073",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Hugging Face",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK027",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "FastAPI untuk deployment",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": true,
+    "bobot": 6.0,
+    "catatan": "Docker",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK049",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Cloud (AWS/GCP/Azure)",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "SQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK090",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "REST API",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK114",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C013": [
+   {
+    "skill_id": "SK001",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Python wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK077",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "OpenCV/Computer Vision",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK072",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "PyTorch",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK071",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "TensorFlow",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK076",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "NVIDIA GPU/CUDA",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK008",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "C++ untuk embedded",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": true,
+    "bobot": 6.0,
+    "catatan": "Docker",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK049",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": "Cloud",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "SQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK114",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C014": [
+   {
+    "skill_id": "SK001",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Python wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK073",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Hugging Face",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK072",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "PyTorch",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK074",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "LangChain",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK078",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "RAG",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK075",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "OpenAI API",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK079",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Vector DB",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK068",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Pandas",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": true,
+    "bobot": 6.0,
+    "catatan": "Docker",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "SQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK027",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "FastAPI",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK114",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C015": [
+   {
+    "skill_id": "SK052",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Docker wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK053",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Kubernetes wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK054",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Terraform",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "CI/CD",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Linux",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK049",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "AWS",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK050",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "GCP",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK051",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Azure",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK057",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Nginx",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Python scripting",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK009",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "Go",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK103",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C016": [
+   {
+    "skill_id": "SK049",
+    "wajib": true,
+    "bobot": 20.0,
+    "catatan": "AWS wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK050",
+    "wajib": false,
+    "bobot": 15.0,
+    "catatan": "GCP",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK051",
+    "wajib": false,
+    "bobot": 15.0,
+    "catatan": "Azure",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK054",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Terraform",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Docker",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK053",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Kubernetes",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "CI/CD",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Linux",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Python scripting",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C017": [
+   {
+    "skill_id": "SK052",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Docker",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK053",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Kubernetes",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK049",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Cloud",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK054",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Terraform",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "CI/CD",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Linux",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Python automation",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK009",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Go",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK112",
+    "wajib": false,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C018": [
+   {
+    "skill_id": "SK082",
+    "wajib": true,
+    "bobot": 20.0,
+    "catatan": "Network security",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK083",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "OWASP web security",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK085",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "SIEM tools",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK084",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Pentesting basic",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK086",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Cryptography",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Linux",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Python scripting",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "SQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK107",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C019": [
+   {
+    "skill_id": "SK084",
+    "wajib": true,
+    "bobot": 30.0,
+    "catatan": "Pentesting core",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK083",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Web app security",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK082",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Network security",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK086",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "Cryptography",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Linux",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Python exploit scripting",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK107",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C020": [
+   {
+    "skill_id": "SK087",
+    "wajib": true,
+    "bobot": 30.0,
+    "catatan": "Figma wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK088",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Adobe suite",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK021",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "HTML/CSS basic",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK089",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Agile",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK109",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK104",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK102",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C021": [
+   {
+    "skill_id": "SK089",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Agile/Scrum",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "SQL untuk analisis",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK098",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "A/B Testing",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK065",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Power BI",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK087",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Figma wireframing",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK112",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK113",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK104",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK102",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK108",
+    "wajib": false,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C022": [
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "SQL untuk DB testing",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Python automation",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK090",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "API testing (Postman)",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK089",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Agile",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK110",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK104",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C024": [
+   {
+    "skill_id": "SK056",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Linux basic",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK082",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "Network basic",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "SQL basic",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK057",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Nginx/Apache basic",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK102",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK110",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C025": [
+   {
+    "skill_id": "SK056",
+    "wajib": true,
+    "bobot": 20.0,
+    "catatan": "Linux wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK082",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Network admin",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK057",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Nginx/Apache",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK041",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Redis",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK038",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "PostgreSQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": "Docker",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Python scripting",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C026": [
+   {
+    "skill_id": "SK082",
+    "wajib": true,
+    "bobot": 30.0,
+    "catatan": "Network wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Linux",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK086",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Cryptography/VPN",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK107",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C027": [
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 25.0,
+    "catatan": "SQL wajib",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK038",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "PostgreSQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK039",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "MySQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK043",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "MSSQL",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK044",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Oracle",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK040",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "MongoDB",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK041",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Redis",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Linux",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK063",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": "Data modeling",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Git",
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK110",
+    "wajib": true,
+    "bobot": 0.0,
+    "catatan": null,
+    "sumber": "lowongan"
+   }
+  ],
+  "C023": [
+   {
+    "skill_id": "SK112",
+    "wajib": true,
+    "bobot": 18.0,
+    "catatan": "Inti peran",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK089",
+    "wajib": true,
+    "bobot": 14.0,
+    "catatan": "Kerangka kerja tim",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK113",
+    "wajib": true,
+    "bobot": 14.0,
+    "catatan": "Mengelola pemangku kepentingan",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK117",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Risiko dan anggaran",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK108",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Memimpin tim lintas fungsi",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK102",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Komunikasi ke klien dan tim",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK116",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "Perangkat pelacakan",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK106",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK093",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": "Memahami rancangan sistem",
+    "sumber": "kurasi"
+   }
+  ],
+  "C028": [
+   {
+    "skill_id": "SK089",
+    "wajib": true,
+    "bobot": 25.0,
+    "catatan": "Inti peran",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK102",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": "Fasilitasi",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK103",
+    "wajib": true,
+    "bobot": 13.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK116",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Papan sprint",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK108",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "Servant leadership",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK113",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK105",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   }
+  ],
+  "C029": [
+   {
+    "skill_id": "SK118",
+    "wajib": true,
+    "bobot": 18.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK119",
+    "wajib": true,
+    "bobot": 18.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK120",
+    "wajib": true,
+    "bobot": 14.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK095",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": "Olah data kampanye",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK098",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "Eksperimen kampanye",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK066",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Dasbor laporan",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK115",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK104",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   }
+  ],
+  "C030": [
+   {
+    "skill_id": "SK121",
+    "wajib": true,
+    "bobot": 22.0,
+    "catatan": "Mesin gim paling umum di studio lokal",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK007",
+    "wajib": true,
+    "bobot": 18.0,
+    "catatan": "Bahasa Unity",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK123",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK008",
+    "wajib": false,
+    "bobot": 12.0,
+    "catatan": "Unreal dan performa",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK122",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK109",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   }
+  ],
+  "C031": [
+   {
+    "skill_id": "SK125",
+    "wajib": true,
+    "bobot": 20.0,
+    "catatan": "Inti peran",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK124",
+    "wajib": true,
+    "bobot": 16.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": "Menelusuri data",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK113",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK104",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK102",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK089",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK095",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK116",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   }
+  ],
+  "C032": [
+   {
+    "skill_id": "SK126",
+    "wajib": true,
+    "bobot": 20.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK124",
+    "wajib": true,
+    "bobot": 14.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK127",
+    "wajib": false,
+    "bobot": 12.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK125",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": "Kustomisasi Odoo",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK113",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK043",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK044",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   }
+  ],
+  "C033": [
+   {
+    "skill_id": "SK128",
+    "wajib": true,
+    "bobot": 25.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK129",
+    "wajib": true,
+    "bobot": 18.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK086",
+    "wajib": true,
+    "bobot": 12.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK002",
+    "wajib": true,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK083",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Keamanan kontrak",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK014",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK003",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK009",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": true,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   }
+  ],
+  "C034": [
+   {
+    "skill_id": "SK130",
+    "wajib": true,
+    "bobot": 24.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK008",
+    "wajib": true,
+    "bobot": 18.0,
+    "catatan": "Firmware",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK131",
+    "wajib": true,
+    "bobot": 15.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Gateway dan edge",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK049",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": "IoT cloud",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK082",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK101",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   }
+  ],
+  "C035": [
+   {
+    "skill_id": "SK132",
+    "wajib": true,
+    "bobot": 28.0,
+    "catatan": "Inti peran",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK133",
+    "wajib": true,
+    "bobot": 16.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK111",
+    "wajib": true,
+    "bobot": 16.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK110",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Docs-as-code",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK090",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": "Memahami API yang didokumentasikan",
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK102",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK021",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   }
+  ]
+ },
+ "prodi": [
+  {
+   "id": "PRD001",
+   "nama": "Teknik Informatika",
+   "jenjang": "S1/D4",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 5,
+   "profesi": [
+    "C001",
+    "C002",
+    "C003",
+    "C007",
+    "C008",
+    "C009",
+    "C010",
+    "C011",
+    "C012",
+    "C013",
+    "C014",
+    "C015",
+    "C016",
+    "C018",
+    "C019",
+    "C022",
+    "C027"
+   ]
+  },
+  {
+   "id": "PRD002",
+   "nama": "Sistem Informasi",
+   "jenjang": "S1/D4",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 5,
+   "profesi": [
+    "C001",
+    "C002",
+    "C003",
+    "C007",
+    "C008",
+    "C009",
+    "C018",
+    "C021",
+    "C022",
+    "C027",
+    "C031"
+   ]
+  },
+  {
+   "id": "PRD003",
+   "nama": "Ilmu Komputer",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 5,
+   "profesi": [
+    "C001",
+    "C002",
+    "C003",
+    "C007",
+    "C009",
+    "C010",
+    "C011",
+    "C012",
+    "C013",
+    "C014",
+    "C015",
+    "C016",
+    "C022",
+    "C027"
+   ]
+  },
+  {
+   "id": "PRD004",
+   "nama": "Rekayasa Perangkat Lunak",
+   "jenjang": "S1/D4",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 5,
+   "profesi": [
+    "C001",
+    "C002",
+    "C003",
+    "C004",
+    "C005",
+    "C006",
+    "C022",
+    "C023",
+    "C028",
+    "C030",
+    "C034"
+   ]
+  },
+  {
+   "id": "PRD005",
+   "nama": "Sistem dan Teknologi Informasi",
+   "jenjang": "S1/D4",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 5,
+   "profesi": [
+    "C001",
+    "C002",
+    "C007",
+    "C008",
+    "C021",
+    "C031"
+   ]
+  },
+  {
+   "id": "PRD006",
+   "nama": "Teknologi Informasi",
+   "jenjang": "S1/D4",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 5,
+   "profesi": [
+    "C001",
+    "C002",
+    "C003",
+    "C007",
+    "C015",
+    "C016",
+    "C018",
+    "C022",
+    "C024",
+    "C025",
+    "C027"
+   ]
+  },
+  {
+   "id": "PRD007",
+   "nama": "Rekayasa Sistem Komputer",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 4,
+   "profesi": [
+    "C015",
+    "C016",
+    "C025",
+    "C026",
+    "C034"
+   ]
+  },
+  {
+   "id": "PRD008",
+   "nama": "Kecerdasan Buatan",
+   "jenjang": "S1/S2",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 5,
+   "profesi": [
+    "C010",
+    "C011",
+    "C012",
+    "C013",
+    "C014"
+   ]
+  },
+  {
+   "id": "PRD009",
+   "nama": "Data Science / Sains Data",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Multi-Disiplin",
+   "relevansi": 5,
+   "profesi": [
+    "C007",
+    "C008",
+    "C009",
+    "C010",
+    "C011",
+    "C012"
+   ]
+  },
+  {
+   "id": "PRD010",
+   "nama": "Statistika",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Formal",
+   "relevansi": 4,
+   "profesi": [
+    "C007",
+    "C008",
+    "C010",
+    "C029"
+   ]
+  },
+  {
+   "id": "PRD011",
+   "nama": "Matematika",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Formal",
+   "relevansi": 3,
+   "profesi": [
+    "C007",
+    "C010",
+    "C027"
+   ]
+  },
+  {
+   "id": "PRD012",
+   "nama": "Teknik Elektro",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Teknik",
+   "relevansi": 3,
+   "profesi": [
+    "C015",
+    "C016",
+    "C025",
+    "C026",
+    "C034"
+   ]
+  },
+  {
+   "id": "PRD013",
+   "nama": "Desain Komunikasi Visual",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Arsitektur/Desain",
+   "relevansi": 3,
+   "profesi": [
+    "C020",
+    "C035"
+   ]
+  },
+  {
+   "id": "PRD014",
+   "nama": "Desain Produk",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Arsitektur/Desain",
+   "relevansi": 2,
+   "profesi": [
+    "C020"
+   ]
+  },
+  {
+   "id": "PRD015",
+   "nama": "Manajemen",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Bisnis",
+   "relevansi": 2,
+   "profesi": [
+    "C021",
+    "C023",
+    "C028",
+    "C031"
+   ]
+  },
+  {
+   "id": "PRD016",
+   "nama": "Administrasi Bisnis",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Bisnis",
+   "relevansi": 2,
+   "profesi": [
+    "C021",
+    "C031"
+   ]
+  },
+  {
+   "id": "PRD017",
+   "nama": "Teknik Komputer dan Jaringan (SMK)",
+   "jenjang": "SMK",
+   "rumpun": "Vokasi",
+   "relevansi": 3,
+   "profesi": [
+    "C024",
+    "C025",
+    "C026"
+   ]
+  },
+  {
+   "id": "PRD018",
+   "nama": "Rekayasa Perangkat Lunak (SMK)",
+   "jenjang": "SMK",
+   "rumpun": "Vokasi",
+   "relevansi": 4,
+   "profesi": [
+    "C001",
+    "C002",
+    "C006",
+    "C022",
+    "C024"
+   ]
+  },
+  {
+   "id": "PRD019",
+   "nama": "Animasi dan Desain Grafis (SMK)",
+   "jenjang": "SMK",
+   "rumpun": "Vokasi",
+   "relevansi": 2,
+   "profesi": [
+    "C020",
+    "C030"
+   ]
+  },
+  {
+   "id": "PRD020",
+   "nama": "Multimedia (SMK)",
+   "jenjang": "SMK",
+   "rumpun": "Vokasi",
+   "relevansi": 3,
+   "profesi": [
+    "C001",
+    "C020",
+    "C029",
+    "C035"
+   ]
+  },
+  {
+   "id": "PRD021",
+   "nama": "D3 Teknik Informatika",
+   "jenjang": "D3",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 4,
+   "profesi": [
+    "C001",
+    "C002",
+    "C006",
+    "C007",
+    "C022",
+    "C024",
+    "C025"
+   ]
+  },
+  {
+   "id": "PRD022",
+   "nama": "D3 Sistem Informasi",
+   "jenjang": "D3",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 3,
+   "profesi": [
+    "C007",
+    "C024",
+    "C025",
+    "C031"
+   ]
+  },
+  {
+   "id": "PRD023",
+   "nama": "D3 Manajemen Informatika",
+   "jenjang": "D3",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 3,
+   "profesi": [
+    "C007",
+    "C024",
+    "C031"
+   ]
+  },
+  {
+   "id": "PRD024",
+   "nama": "D3 Teknik Komputer",
+   "jenjang": "D3",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 4,
+   "profesi": [
+    "C024",
+    "C025",
+    "C026"
+   ]
+  },
+  {
+   "id": "PRD025",
+   "nama": "Keamanan Siber / Cybersecurity",
+   "jenjang": "S1",
+   "rumpun": "Rumpun Komputer",
+   "relevansi": 5,
+   "profesi": [
+    "C018",
+    "C019",
+    "C022",
+    "C025",
+    "C026"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,177 @@
+soc_code,atribut,nama,skor,sumber
+11-3021.00,WSY_BERUBAH,Adaptif,68.13,onet
+11-3021.00,WSY_DETAIL,Berorientasi Detail,72.12,onet
+11-3021.00,WSY_DINAMIS,Dinamis,85.48,onet
+11-3021.00,WSY_KOLABORATIF,Kolaboratif,69.29,onet
+11-3021.00,WSY_MANDIRI,Mandiri,73.71,onet
+11-3021.00,WSY_PELAYANAN,Berorientasi Pelayanan,36.04,onet
+11-3021.00,WSY_TARGET,Berorientasi Target,66.38,onet
+11-3021.00,WSY_TERSTRUKTUR,Terstruktur,73.65,onet
+13-1161.01,WSY_BERUBAH,Adaptif,58.46,onet
+13-1161.01,WSY_DETAIL,Berorientasi Detail,72.12,onet
+13-1161.01,WSY_DINAMIS,Dinamis,85.62,onet
+13-1161.01,WSY_KOLABORATIF,Kolaboratif,57.12,onet
+13-1161.01,WSY_MANDIRI,Mandiri,71.88,onet
+13-1161.01,WSY_PELAYANAN,Berorientasi Pelayanan,21.78,onet
+13-1161.01,WSY_TARGET,Berorientasi Target,63.96,onet
+13-1161.01,WSY_TERSTRUKTUR,Terstruktur,51.32,onet
+15-1211.00,WSY_BERUBAH,Adaptif,57.85,onet
+15-1211.00,WSY_DETAIL,Berorientasi Detail,80.97,onet
+15-1211.00,WSY_DINAMIS,Dinamis,85.08,onet
+15-1211.00,WSY_KOLABORATIF,Kolaboratif,53.09,onet
+15-1211.00,WSY_MANDIRI,Mandiri,60.85,onet
+15-1211.00,WSY_PELAYANAN,Berorientasi Pelayanan,30.10,onet
+15-1211.00,WSY_TARGET,Berorientasi Target,53.83,onet
+15-1211.00,WSY_TERSTRUKTUR,Terstruktur,67.23,onet
+15-1212.00,WSY_BERUBAH,Adaptif,69.03,onet
+15-1212.00,WSY_DETAIL,Berorientasi Detail,100.00,onet
+15-1212.00,WSY_DINAMIS,Dinamis,84.94,onet
+15-1212.00,WSY_KOLABORATIF,Kolaboratif,39.59,onet
+15-1212.00,WSY_MANDIRI,Mandiri,67.28,onet
+15-1212.00,WSY_PELAYANAN,Berorientasi Pelayanan,26.27,onet
+15-1212.00,WSY_TARGET,Berorientasi Target,69.53,onet
+15-1212.00,WSY_TERSTRUKTUR,Terstruktur,92.94,onet
+15-1221.00,WSY_BERUBAH,Adaptif,54.08,onet
+15-1221.00,WSY_DETAIL,Berorientasi Detail,77.88,onet
+15-1221.00,WSY_DINAMIS,Dinamis,95.71,onet
+15-1221.00,WSY_KOLABORATIF,Kolaboratif,37.70,onet
+15-1221.00,WSY_MANDIRI,Mandiri,71.32,onet
+15-1221.00,WSY_PELAYANAN,Berorientasi Pelayanan,22.89,onet
+15-1221.00,WSY_TARGET,Berorientasi Target,70.74,onet
+15-1221.00,WSY_TERSTRUKTUR,Terstruktur,63.08,onet
+15-1232.00,WSY_BERUBAH,Adaptif,54.73,onet
+15-1232.00,WSY_DETAIL,Berorientasi Detail,70.80,onet
+15-1232.00,WSY_DINAMIS,Dinamis,59.60,onet
+15-1232.00,WSY_KOLABORATIF,Kolaboratif,71.75,onet
+15-1232.00,WSY_MANDIRI,Mandiri,48.53,onet
+15-1232.00,WSY_PELAYANAN,Berorientasi Pelayanan,42.64,onet
+15-1232.00,WSY_TARGET,Berorientasi Target,50.06,onet
+15-1232.00,WSY_TERSTRUKTUR,Terstruktur,65.86,onet
+15-1241.00,WSY_BERUBAH,Adaptif,60.52,onet
+15-1241.00,WSY_DETAIL,Berorientasi Detail,88.50,onet
+15-1241.00,WSY_DINAMIS,Dinamis,84.32,onet
+15-1241.00,WSY_KOLABORATIF,Kolaboratif,48.17,onet
+15-1241.00,WSY_MANDIRI,Mandiri,63.79,onet
+15-1241.00,WSY_PELAYANAN,Berorientasi Pelayanan,21.54,onet
+15-1241.00,WSY_TARGET,Berorientasi Target,64.44,onet
+15-1241.00,WSY_TERSTRUKTUR,Terstruktur,84.66,onet
+15-1242.00,WSY_BERUBAH,Adaptif,48.06,onet
+15-1242.00,WSY_DETAIL,Berorientasi Detail,100.00,onet
+15-1242.00,WSY_DINAMIS,Dinamis,64.46,onet
+15-1242.00,WSY_KOLABORATIF,Kolaboratif,37.34,onet
+15-1242.00,WSY_MANDIRI,Mandiri,52.76,onet
+15-1242.00,WSY_PELAYANAN,Berorientasi Pelayanan,16.62,onet
+15-1242.00,WSY_TARGET,Berorientasi Target,55.75,onet
+15-1242.00,WSY_TERSTRUKTUR,Terstruktur,89.98,onet
+15-1243.01,WSY_BERUBAH,Adaptif,36.94,onet
+15-1243.01,WSY_DETAIL,Berorientasi Detail,100.00,onet
+15-1243.01,WSY_DINAMIS,Dinamis,71.92,onet
+15-1243.01,WSY_KOLABORATIF,Kolaboratif,24.79,onet
+15-1243.01,WSY_MANDIRI,Mandiri,50.37,onet
+15-1243.01,WSY_PELAYANAN,Berorientasi Pelayanan,11.38,onet
+15-1243.01,WSY_TARGET,Berorientasi Target,57.51,onet
+15-1243.01,WSY_TERSTRUKTUR,Terstruktur,85.52,onet
+15-1244.00,WSY_BERUBAH,Adaptif,59.25,onet
+15-1244.00,WSY_DETAIL,Berorientasi Detail,85.40,onet
+15-1244.00,WSY_DINAMIS,Dinamis,65.39,onet
+15-1244.00,WSY_KOLABORATIF,Kolaboratif,37.86,onet
+15-1244.00,WSY_MANDIRI,Mandiri,57.54,onet
+15-1244.00,WSY_PELAYANAN,Berorientasi Pelayanan,19.53,onet
+15-1244.00,WSY_TARGET,Berorientasi Target,57.00,onet
+15-1244.00,WSY_TERSTRUKTUR,Terstruktur,83.53,onet
+15-1252.00,WSY_BERUBAH,Adaptif,56.05,onet
+15-1252.00,WSY_DETAIL,Berorientasi Detail,85.40,onet
+15-1252.00,WSY_DINAMIS,Dinamis,87.87,onet
+15-1252.00,WSY_KOLABORATIF,Kolaboratif,45.94,onet
+15-1252.00,WSY_MANDIRI,Mandiri,60.85,onet
+15-1252.00,WSY_PELAYANAN,Berorientasi Pelayanan,25.19,onet
+15-1252.00,WSY_TARGET,Berorientasi Target,64.50,onet
+15-1252.00,WSY_TERSTRUKTUR,Terstruktur,73.64,onet
+15-1253.00,WSY_BERUBAH,Adaptif,44.25,onet
+15-1253.00,WSY_DETAIL,Berorientasi Detail,100.00,onet
+15-1253.00,WSY_DINAMIS,Dinamis,61.50,onet
+15-1253.00,WSY_KOLABORATIF,Kolaboratif,38.65,onet
+15-1253.00,WSY_MANDIRI,Mandiri,43.57,onet
+15-1253.00,WSY_PELAYANAN,Berorientasi Pelayanan,21.61,onet
+15-1253.00,WSY_TARGET,Berorientasi Target,57.57,onet
+15-1253.00,WSY_TERSTRUKTUR,Terstruktur,83.94,onet
+15-1254.00,WSY_BERUBAH,Adaptif,51.96,onet
+15-1254.00,WSY_DETAIL,Berorientasi Detail,80.97,onet
+15-1254.00,WSY_DINAMIS,Dinamis,80.25,onet
+15-1254.00,WSY_KOLABORATIF,Kolaboratif,34.94,onet
+15-1254.00,WSY_MANDIRI,Mandiri,56.07,onet
+15-1254.00,WSY_PELAYANAN,Berorientasi Pelayanan,14.78,onet
+15-1254.00,WSY_TARGET,Berorientasi Target,59.14,onet
+15-1254.00,WSY_TERSTRUKTUR,Terstruktur,66.23,onet
+15-1255.00,WSY_BERUBAH,Adaptif,57.66,onet
+15-1255.00,WSY_DETAIL,Berorientasi Detail,80.97,onet
+15-1255.00,WSY_DINAMIS,Dinamis,85.38,onet
+15-1255.00,WSY_KOLABORATIF,Kolaboratif,60.75,onet
+15-1255.00,WSY_MANDIRI,Mandiri,58.09,onet
+15-1255.00,WSY_PELAYANAN,Berorientasi Pelayanan,32.45,onet
+15-1255.00,WSY_TARGET,Berorientasi Target,53.54,onet
+15-1255.00,WSY_TERSTRUKTUR,Terstruktur,55.84,onet
+15-1255.01,WSY_BERUBAH,Adaptif,62.74,onet
+15-1255.01,WSY_DETAIL,Berorientasi Detail,52.21,onet
+15-1255.01,WSY_DINAMIS,Dinamis,97.97,onet
+15-1255.01,WSY_KOLABORATIF,Kolaboratif,67.23,onet
+15-1255.01,WSY_MANDIRI,Mandiri,75.74,onet
+15-1255.01,WSY_PELAYANAN,Berorientasi Pelayanan,27.83,onet
+15-1255.01,WSY_TARGET,Berorientasi Target,66.32,onet
+15-1255.01,WSY_TERSTRUKTUR,Terstruktur,33.97,onet
+15-1299.04,WSY_BERUBAH,Adaptif,59.73,onet
+15-1299.04,WSY_DETAIL,Berorientasi Detail,89.82,onet
+15-1299.04,WSY_DINAMIS,Dinamis,92.08,onet
+15-1299.04,WSY_KOLABORATIF,Kolaboratif,11.16,onet
+15-1299.04,WSY_MANDIRI,Mandiri,53.31,onet
+15-1299.04,WSY_PELAYANAN,Berorientasi Pelayanan,2.00,onet
+15-1299.04,WSY_TARGET,Berorientasi Target,70.28,onet
+15-1299.04,WSY_TERSTRUKTUR,Terstruktur,82.36,onet
+15-1299.07,WSY_BERUBAH,Adaptif,62.64,onet
+15-1299.07,WSY_DETAIL,Berorientasi Detail,99.56,onet
+15-1299.07,WSY_DINAMIS,Dinamis,90.04,onet
+15-1299.07,WSY_KOLABORATIF,Kolaboratif,28.67,onet
+15-1299.07,WSY_MANDIRI,Mandiri,62.87,onet
+15-1299.07,WSY_PELAYANAN,Berorientasi Pelayanan,14.90,onet
+15-1299.07,WSY_TARGET,Berorientasi Target,67.03,onet
+15-1299.07,WSY_TERSTRUKTUR,Terstruktur,86.25,onet
+15-1299.09,WSY_BERUBAH,Adaptif,74.60,onet
+15-1299.09,WSY_DETAIL,Berorientasi Detail,70.80,onet
+15-1299.09,WSY_DINAMIS,Dinamis,75.82,onet
+15-1299.09,WSY_KOLABORATIF,Kolaboratif,78.81,onet
+15-1299.09,WSY_MANDIRI,Mandiri,82.35,onet
+15-1299.09,WSY_PELAYANAN,Berorientasi Pelayanan,38.74,onet
+15-1299.09,WSY_TARGET,Berorientasi Target,74.73,onet
+15-1299.09,WSY_TERSTRUKTUR,Terstruktur,79.75,onet
+15-2051.00,WSY_BERUBAH,Adaptif,49.57,onet
+15-2051.00,WSY_DETAIL,Berorientasi Detail,99.56,onet
+15-2051.00,WSY_DINAMIS,Dinamis,90.57,onet
+15-2051.00,WSY_KOLABORATIF,Kolaboratif,29.87,onet
+15-2051.00,WSY_MANDIRI,Mandiri,59.19,onet
+15-2051.00,WSY_PELAYANAN,Berorientasi Pelayanan,15.32,onet
+15-2051.00,WSY_TARGET,Berorientasi Target,65.59,onet
+15-2051.00,WSY_TERSTRUKTUR,Terstruktur,74.26,onet
+15-2051.01,WSY_BERUBAH,Adaptif,44.94,onet
+15-2051.01,WSY_DETAIL,Berorientasi Detail,89.82,onet
+15-2051.01,WSY_DINAMIS,Dinamis,76.38,onet
+15-2051.01,WSY_KOLABORATIF,Kolaboratif,28.63,onet
+15-2051.01,WSY_MANDIRI,Mandiri,55.33,onet
+15-2051.01,WSY_PELAYANAN,Berorientasi Pelayanan,20.79,onet
+15-2051.01,WSY_TARGET,Berorientasi Target,58.30,onet
+15-2051.01,WSY_TERSTRUKTUR,Terstruktur,69.73,onet
+17-2061.00,WSY_BERUBAH,Adaptif,52.40,onet
+17-2061.00,WSY_DETAIL,Berorientasi Detail,85.40,onet
+17-2061.00,WSY_DINAMIS,Dinamis,84.29,onet
+17-2061.00,WSY_KOLABORATIF,Kolaboratif,36.64,onet
+17-2061.00,WSY_MANDIRI,Mandiri,57.54,onet
+17-2061.00,WSY_PELAYANAN,Berorientasi Pelayanan,20.04,onet
+17-2061.00,WSY_TARGET,Berorientasi Target,62.14,onet
+17-2061.00,WSY_TERSTRUKTUR,Terstruktur,73.04,onet
+27-3042.00,WSY_BERUBAH,Adaptif,31.43,onet
+27-3042.00,WSY_DETAIL,Berorientasi Detail,89.82,onet
+27-3042.00,WSY_DINAMIS,Dinamis,62.26,onet
+27-3042.00,WSY_KOLABORATIF,Kolaboratif,45.83,onet
+27-3042.00,WSY_MANDIRI,Mandiri,40.81,onet
+27-3042.00,WSY_PELAYANAN,Berorientasi Pelayanan,25.52,onet
+27-3042.00,WSY_TARGET,Berorientasi Target,43.08,onet
+27-3042.00,WSY_TERSTRUKTUR,Terstruktur,69.45,onet

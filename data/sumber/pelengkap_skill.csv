@@ -1,0 +1,19 @@
+skill_id,skill_name,skill_category,skill_type,description
+SK116,Jira / Confluence,Project Tool,hard_skill,Perangkat pelacakan pekerjaan dan dokumentasi tim
+SK117,Risk & Budget Management,Project Management,hard_skill,Mengelola risiko dan anggaran proyek TI
+SK118,SEO / SEM,Digital Marketing,hard_skill,Optimasi mesin pencari dan iklan pencarian
+SK119,Google Analytics,Digital Marketing,hard_skill,Analitik perilaku pengunjung situs dan aplikasi
+SK120,Paid Ads (Meta Ads / Google Ads),Digital Marketing,hard_skill,Mengelola dan mengukur kampanye iklan berbayar
+SK121,Unity,Game Engine,hard_skill,Mesin gim lintas platform berbasis C#
+SK122,Unreal Engine,Game Engine,hard_skill,Mesin gim berbasis C++ dan Blueprint
+SK123,Game Design & Game Physics,Game Development,hard_skill,Mekanika gim serta matematika dan fisika 3D
+SK124,Business Process Modeling (BPMN / UML),Analysis,hard_skill,Memodelkan proses bisnis dan rancangan sistem
+SK125,Requirements Engineering,Analysis,hard_skill,Menggali dan menuliskan kebutuhan sistem
+SK126,SAP,ERP Platform,hard_skill,Platform ERP SAP dan modul-modulnya
+SK127,Odoo,ERP Platform,hard_skill,Platform ERP sumber terbuka berbasis Python
+SK128,Solidity / Smart Contract,Blockchain,hard_skill,Menulis dan menguji smart contract
+SK129,Web3 Tooling (Ethers.js / Hardhat),Blockchain,hard_skill,Perkakas pengembangan aplikasi terdesentralisasi
+SK130,Embedded Systems (Arduino / ESP32 / STM32),IoT,hard_skill,Pemrograman mikrokontroler dan sensor
+SK131,IoT Protocols (MQTT / CoAP),IoT,hard_skill,Protokol komunikasi perangkat IoT
+SK132,Technical Writing,Documentation,hard_skill,Menulis dokumentasi teknis yang jelas dan terstruktur
+SK133,API Documentation (OpenAPI / Markdown),Documentation,hard_skill,Mendokumentasikan API dan panduan pengembang
