@@ -71,3 +71,92 @@ def test_sus():
     assert skor_sus([1, 5] * 5) == 0.0
     with pytest.raises(ValueError):
         skor_sus([3] * 9)
+
+
+# ── Fitur lanjutan ──────────────────────────────────────────────────────────
+def test_skill_lain_dirapikan_dan_tidak_memengaruhi_skor(klien):
+    a = klien.post("/api/rekomendasi", json=masukan()).json()["id"]
+    b = klien.post("/api/rekomendasi", json=masukan(
+        skill_lain=["  Svelte ", "svelte", "COBOL", ""])).json()["id"]
+    ha, hb = (klien.get(f"/api/rekomendasi/{x}").json() for x in (a, b))
+    assert hb["data_diri"]["skill_lain"] == ["Svelte", "COBOL"]
+    assert [r["skor"] for r in ha["hasil"]["rekomendasi"]] == [r["skor"] for r in hb["hasil"]["rekomendasi"]]
+
+
+def test_target_dan_roadmap(klien):
+    rid = klien.post("/api/rekomendasi", json=masukan()).json()["id"]
+    assert klien.get(f"/api/rekomendasi/{rid}/roadmap").json() == {"target": None}
+    assert klien.post(f"/api/rekomendasi/{rid}/roadmap/centang",
+                      json={"skill_id": "SK068", "selesai": True}).status_code == 422
+
+    assert klien.put(f"/api/rekomendasi/{rid}/target", json={"profesi_id": "C999"}).status_code == 422
+    assert klien.put(f"/api/rekomendasi/{rid}/target", json={"profesi_id": "C007"}).status_code == 204
+
+    r = klien.get(f"/api/rekomendasi/{rid}/roadmap").json()
+    assert r["target"]["profesi_id"] == "C007" and r["tahap"][0]["kode"] == "pondasi"
+    semua = [s for t in r["tahap"] for s in t["skill"]]
+    assert r["progres"] == {"selesai": 0, "total": len(semua)}
+    assert not {s["skill_id"] for s in semua} & {"SK001", "SK015"}  # yang sudah dikuasai tidak diulang
+    assert r["proyeksi"] == r["awal"]
+
+    # Mencentang skill menaikkan skor proyeksi, tetapi rekomendasi tersimpan tetap.
+    sebelum = klien.get(f"/api/rekomendasi/{rid}").json()["hasil"]
+    for s in r["tahap"][0]["skill"]:
+        assert klien.post(f"/api/rekomendasi/{rid}/roadmap/centang",
+                          json={"skill_id": s["skill_id"], "selesai": True}).status_code == 204
+    r2 = klien.get(f"/api/rekomendasi/{rid}/roadmap").json()
+    assert r2["progres"]["selesai"] == len(r["tahap"][0]["skill"])
+    assert r2["proyeksi"]["cakupan"] > r2["awal"]["cakupan"] and r2["awal"] == r["awal"]
+    assert r2["proyeksi"]["skor"] != r2["awal"]["skor"]
+    h = klien.get(f"/api/rekomendasi/{rid}").json()
+    assert h["hasil"] == sebelum and h["target"]["profesi_id"] == "C007"
+
+    assert klien.post(f"/api/rekomendasi/{rid}/roadmap/centang",
+                      json={"skill_id": "SK128", "selesai": True}).status_code == 422  # bukan skill profesi ini
+    assert klien.put(f"/api/rekomendasi/{rid}/target", json={"profesi_id": None}).status_code == 204
+    assert klien.get(f"/api/rekomendasi/{rid}").json()["target"] is None
+
+
+def test_profesi_tersaring_tidak_bisa_jadi_target(klien):
+    rid = klien.post("/api/rekomendasi", json=masukan(jenjang="SMA")).json()["id"]
+    assert klien.put(f"/api/rekomendasi/{rid}/target", json={"profesi_id": "C003"}).status_code == 422
+    assert klien.put(f"/api/rekomendasi/{rid}/target", json={"profesi_id": "C024"}).status_code == 204
+
+
+def test_ubah_jawaban_tidak_dihitung_dua_kali(klien):
+    lama = klien.post("/api/rekomendasi", json=masukan(nama="Satu")).json()["id"]
+    isi = klien.get(f"/api/rekomendasi/{lama}/masukan").json()
+    assert isi["riasec"]["I1"] == 5 and "induk" not in isi
+    baru = klien.post("/api/rekomendasi", json=isi | {"skill": {"SK002": 3}, "induk": lama}).json()["id"]
+    assert klien.post("/api/rekomendasi", json=masukan(induk="tidakada")).status_code == 422
+    klien.post("/api/rekomendasi", json=masukan(nama="Dua"))
+
+    d = klien.get("/api/peneliti/ringkasan").json()
+    assert d["n"] == 2
+    assert baru in {r["id"] for r in d["responden"]} and lama not in {r["id"] for r in d["responden"]}
+
+
+def test_dasbor_peneliti(klien, monkeypatch):
+    assert klien.get("/api/peneliti/ringkasan").json() == {"n": 0}
+    rid = klien.post("/api/rekomendasi", json=masukan(
+        profesi_aktual="C010", jenis_responden="profesional", skill_lain=["Svelte"])).json()["id"]
+    klien.post(f"/api/rekomendasi/{rid}/sus", json={"jawaban": [4, 2] * 5})
+    d = klien.get("/api/peneliti/ringkasan").json()
+    assert d["n"] == 1 and d["n_pakar"] == 1 and d["sus"][0] == 75.0
+    assert d["skill_lain"] == [["svelte", 1]] and d["responden"][0]["profesi_aktual"] == "Data Scientist"
+    assert "Hibrida (α = 0,6)" in d["pakar"]
+
+    csv_ = klien.get("/api/peneliti/ekspor.csv")
+    assert csv_.headers["content-type"].startswith("text/csv")
+    baris = csv_.text.strip().splitlines()
+    assert len(baris) == 2 and baris[0].startswith("id,dibuat,jenis") and "Svelte" in baris[1]
+
+    monkeypatch.setenv("PA_KUNCI_PENELITI", "rahasia-uji")
+    assert klien.get("/api/peneliti/ringkasan").status_code == 401
+    assert klien.get("/api/peneliti/ringkasan", headers={"X-Kunci": "salah"}).status_code == 401
+    assert klien.get("/api/peneliti/ringkasan", headers={"X-Kunci": "rahasia-uji"}).status_code == 200
+
+
+def test_alias_skill(klien):
+    skill = {s["id"]: s for s in klien.get("/api/kuesioner").json()["skill"]}
+    assert "ReactJS" in skill["SK016"]["alias"] and len(skill) == 168

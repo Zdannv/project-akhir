@@ -132,7 +132,16 @@ def test_cbf():
     assert skor_cbf({"A": 3}, [sp[0]])["skor"] == 1.0
     penuh = skor_cbf({"A": 3, "B": 3}, sp)
     assert penuh["cakupan"] == 1.0
+    # Skill di luar profesi: tidak berpengaruh di ruang profesi, mengencerkan di ruang global.
     assert skor_cbf({"A": 3, "B": 3, "Z": 3}, sp)["skor"] < penuh["skor"]
+    assert skor_cbf({"A": 3, "B": 3, "Z": 3}, sp, "profesi")["skor"] == penuh["skor"]
+    assert skor_cbf({"A": 3, "B": 3}, sp, "profesi")["skor"] == penuh["skor"]
+    # Skill berbobot 0 bukan dimensi vektor profesi.
+    nol = sp + [{"skill_id": "N", "bobot": 0, "wajib": True, "catatan": None}]
+    assert skor_cbf({"A": 3, "B": 3}, nol)["skor"] == penuh["skor"]
+    assert skor_cbf({"A": 3, "B": 3, "N": 3}, nol, "profesi")["skor"] == penuh["skor"]
+    with pytest.raises(ValueError):
+        skor_cbf({}, sp, "lain")
     assert skor_cbf({"A": 1}, sp)["skor"] == skor_cbf({"A": 3}, sp)["skor"]  # cosine: arah, bukan besar
 
 
@@ -170,6 +179,22 @@ def test_skill_menggeser_peringkat():
     data = rekomendasi(profil(skill={"SK001": 3, "SK068": 3, "SK070": 3, "SK072": 3}), KB)
     web = rekomendasi(profil(skill={"SK002": 3, "SK016": 3, "SK021": 3, "SK003": 2}), KB)
     assert data["rekomendasi"][0]["profesi_id"] != web["rekomendasi"][0]["profesi_id"]
+
+
+def test_cakupan_selalu_naik_saat_skill_bertambah():
+    """Cakupan dipakai sebagai ukuran kemajuan di roadmap, jadi harus monoton."""
+    dasar = {"SK001": 3, "SK015": 2}
+    for p in KB.profesi:
+        relasi = KB.skill_profesi(p["id"])
+        sebelum = skor_cbf(dasar, relasi)["cakupan"]
+        skill = dict(dasar)
+        for s in relasi:
+            if s["skill_id"] in skill:
+                continue
+            skill[s["skill_id"]] = 2
+            sesudah = skor_cbf(skill, relasi)["cakupan"]
+            assert sesudah >= sebelum and (sesudah > sebelum or s["bobot"] == 0), p["id"]
+            sebelum = sesudah
 
 
 def test_konfigurasi_tidak_sah():

@@ -1,17 +1,17 @@
 /**
- * Detail profesi — tiga tab, mengikuti susunan Navika.
+ * Detail profesi — tiga tab.
  *
  *   Analisa            skor kecocokan, alasan, rincian komponen, perbandingan profil
  *   Skill & Kompetensi syarat, kesenjangan skill, skill yang sudah dimiliki
  *   Insight            gaji, pola kerja, tanggung jawab, jenjang karier
  */
-import { ArrowRight, Building2, Check, GraduationCap, Info, ThumbsDown, ThumbsUp } from 'lucide-react'
+import { ArrowRight, Building2, Check, GraduationCap, Info, Loader2, Target, ThumbsDown, ThumbsUp } from 'lucide-react'
 import { useState, type ReactNode } from 'react'
-import { useParams } from 'react-router-dom'
-import { ambilDetail, kirimUmpanBalik, NAMA_BIG5, NAMA_RIASEC, persen, rupiah, type Alasan, type Detail, type SkillProfesi } from '../api'
+import { useNavigate, useParams } from 'react-router-dom'
+import { ambilDetail, kirimUmpanBalik, pilihTarget, NAMA_BIG5, NAMA_RIASEC, persen, rupiah, type Alasan, type Detail, type SkillProfesi } from '../api'
 import { AppTopNav, KepalaLayar } from '../komponen/AppNav'
 import { BusurSkor, LencanaPita, TabSwitch } from '../komponen/profesi'
-import { Batang, Galat, Memuat } from '../komponen/umum'
+import { Batang, Galat, Memuat, Radar } from '../komponen/umum'
 import { useData } from '../komponen/useData'
 
 type Tab = 'analisa' | 'skill' | 'insight'
@@ -32,6 +32,21 @@ export default function DetailProfesi() {
   const { id = '', pid = '' } = useParams()
   const { data, galat, muat, setData } = useData(() => ambilDetail(id, pid), `${id}/${pid}`)
   const [tab, setTab] = useState<Tab>('analisa')
+  const [memilih, setMemilih] = useState(false)
+  const [gagal, setGagal] = useState<string | null>(null)
+  const navigate = useNavigate()
+
+  async function jadikanTujuan() {
+    setMemilih(true)
+    setGagal(null)
+    try {
+      if (!data?.jadi_target) await pilihTarget(id, pid)
+      navigate(`/explore/${id}/roadmap`)
+    } catch (e) {
+      setGagal((e as Error).message)
+      setMemilih(false)
+    }
+  }
 
   // Tampilan diperbarui lebih dulu dan dikembalikan kalau penyimpanannya gagal.
   async function nilai(relevan: boolean) {
@@ -67,23 +82,33 @@ export default function DetailProfesi() {
             {tab === 'insight' && <TabInsight d={data} />}
           </main>
 
-          {data.penilaian && (
-            <div className="sticky bottom-0 z-20 border-t border-violet-100 bg-[#EDEBFA] px-4 py-3 sm:px-6" style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))' }}>
-              <div className="mx-auto flex max-w-3xl flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-[13.5px] font-semibold text-slate-900">Menurutmu, apakah rekomendasi ini relevan?</p>
-                <div className="flex gap-2">
-                  <button type="button" aria-pressed={data.relevan === false} onClick={() => nilai(false)}
-                    className={`inline-flex flex-1 items-center justify-center gap-2 rounded-full px-5 py-3 text-[13.5px] font-semibold transition-colors sm:flex-none ${data.relevan === false ? 'bg-slate-900 text-white' : 'bg-white text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50'}`}>
-                    <ThumbsDown className="size-4" aria-hidden /> Tidak
-                  </button>
-                  <button type="button" aria-pressed={data.relevan === true} onClick={() => nilai(true)}
-                    className={`inline-flex flex-1 items-center justify-center gap-2 rounded-full px-5 py-3 text-[13.5px] font-semibold transition-colors sm:flex-none ${data.relevan === true ? 'bg-violet-600 text-white' : 'bg-white text-violet-700 ring-1 ring-violet-300 hover:bg-violet-50'}`}>
-                    <ThumbsUp className="size-4" aria-hidden /> Ya, relevan
-                  </button>
+          {gagal && <div className="mx-auto w-full max-w-3xl px-4 pb-3 sm:px-6"><Galat pesan={gagal} /></div>}
+          <div className="sticky bottom-0 z-20 border-t border-violet-100 bg-[#EDEBFA] px-4 py-3 sm:px-6" style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))' }}>
+            <div className="mx-auto flex max-w-3xl flex-col gap-2.5">
+              {data.penilaian && (
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-[13px] font-semibold text-slate-900">Apakah rekomendasi ini relevan untukmu?</p>
+                  <div className="flex shrink-0 gap-1.5">
+                    <button type="button" aria-pressed={data.relevan === false} aria-label="Tidak relevan" onClick={() => nilai(false)}
+                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[12.5px] font-semibold transition-colors ${data.relevan === false ? 'bg-slate-900 text-white' : 'bg-white text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50'}`}>
+                      <ThumbsDown className="size-3.5" aria-hidden /> Tidak
+                    </button>
+                    <button type="button" aria-pressed={data.relevan === true} aria-label="Ya, relevan" onClick={() => nilai(true)}
+                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-[12.5px] font-semibold transition-colors ${data.relevan === true ? 'bg-emerald-600 text-white' : 'bg-white text-slate-700 ring-1 ring-slate-200 hover:bg-slate-50'}`}>
+                      <ThumbsUp className="size-3.5" aria-hidden /> Ya
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )}
+              {/* Hanya profesi yang lolos penyaringan yang bisa dijadikan tujuan. */}
+              <button type="button" onClick={jadikanTujuan} disabled={memilih || !data.ringkas}
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-violet-600 px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-violet-700 disabled:cursor-not-allowed disabled:bg-violet-300">
+                {memilih ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <Target className="size-4" aria-hidden />}
+                {!data.ringkas ? 'Syarat profesi ini belum terpenuhi' : data.jadi_target ? 'Lanjutkan Roadmap' : 'Jadikan Profesi Tujuan'}
+                {!memilih && data.ringkas && <ArrowRight className="size-4" aria-hidden />}
+              </button>
             </div>
-          )}
+          </div>
         </>
       )}
     </div>
@@ -169,7 +194,11 @@ function TabAnalisa({ d }: { d: Detail }) {
       )}
 
       <Blok judul="Minat" keterangan={`(kamu ${d.kode_holland_pengguna} · profesi ${p.kode_holland})`}>
-        <Banding baris={[...'RIASEC'].map((t) => ({ nama: NAMA_RIASEC[t], kamu: d.profil.riasec[t], profesi: (p.riasec[t] - 1) / 6 }))} />
+        <Radar
+          sumbu={[...'RIASEC'].map((t) => ({ kode: t, nama: NAMA_RIASEC[t] }))}
+          kamu={d.profil.riasec}
+          banding={Object.fromEntries([...'RIASEC'].map((t) => [t, (p.riasec[t] - 1) / 6]))}
+        />
       </Blok>
       <Blok judul="Kepribadian" keterangan="(kamu dan profil ideal profesi)">
         <Banding baris={[...'OCEAN'].map((k) => ({ nama: NAMA_BIG5[k], kamu: d.profil.big5[k], profesi: p.big5_ideal[k] }))} />
@@ -219,7 +248,7 @@ function TabSkill({ d }: { d: Detail }) {
       </Blok>
 
       <section className="relative overflow-hidden rounded-2xl border border-violet-100 bg-violet-50 p-4">
-        <img src="/profesi/skill-gap-banner.webp" alt="" className="pointer-events-none absolute -right-6 bottom-0 h-[86%] w-auto object-contain" />
+        <img src="/ilustrasi/skill-gap.webp" alt="" className="pointer-events-none absolute -right-6 bottom-0 h-[86%] w-auto object-contain" />
         <div className="relative max-w-[64%]">
           <p className="text-[15px] font-bold text-violet-700">Skill Gap Analysis</p>
           <p className="mt-1 text-[12.5px] leading-relaxed text-slate-600">

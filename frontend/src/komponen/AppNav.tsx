@@ -2,21 +2,24 @@
  * Navigasi aplikasi: bar atas di desktop, bar bawah di ponsel dan tablet.
  * Daftar tujuannya ditulis sekali supaya kedua bentuk tidak berbeda isi.
  */
-import { ClipboardCheck, Compass, UserRound } from 'lucide-react'
+import { ClipboardCheck, Compass, Map, UserRound } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 import { Lambang } from './umum'
 
 function tujuan(id: string) {
   return [
     { href: `/explore/${id}`, label: 'Explore', icon: Compass, persis: true },
+    { href: `/explore/${id}/roadmap`, label: 'Roadmap', icon: Map, persis: false },
     { href: `/explore/${id}/penilaian`, label: 'Penilaian', icon: ClipboardCheck, persis: false },
     { href: `/explore/${id}/profil`, label: 'Profil', icon: UserRound, persis: false },
   ]
 }
 
 function aktif(pathname: string, href: string, persis: boolean): boolean {
-  // Detail profesi berada di bawah Explore.
-  return persis ? pathname === href || pathname.startsWith(`${href}/profesi`) : pathname.startsWith(href)
+  // Detail profesi dan pencarian berada di bawah Explore.
+  return persis
+    ? pathname === href || pathname.startsWith(`${href}/profesi`) || pathname.startsWith(`${href}/cari`)
+    : pathname.startsWith(href)
 }
 
 export function AppTopNav({ id }: { id: string }) {
@@ -25,7 +28,7 @@ export function AppTopNav({ id }: { id: string }) {
     <header className="sticky top-0 z-30 hidden border-b border-slate-200 bg-white/95 backdrop-blur lg:block">
       <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-6 px-8">
         <Link to={`/explore/${id}`} className="flex items-center gap-3">
-          <Lambang className="h-7 w-[21px] shrink-0 text-violet-600" />
+          <Lambang className="size-8 shrink-0" />
           <span className="h-6 w-px bg-slate-200" aria-hidden />
           <span className="leading-tight">
             <span className="block text-[13px] font-semibold text-slate-900">Rekomendasi Profesi TI</span>

@@ -24,26 +24,17 @@ from __future__ import annotations
 
 import argparse
 import random
-import statistics
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app import kuesioner as q  # noqa: E402
-from app import penyimpanan as db  # noqa: E402
-from app.hibrida import Konfigurasi, peringkat  # noqa: E402
+from app.evaluasi import KONFIG_ABLASI, data_responden, metrik, posisi_profesi  # noqa: E402
+from app.hibrida import Konfigurasi  # noqa: E402
 from app.kb import AKAR, BIG5, RIASEC, BasisPengetahuan, muat_kb  # noqa: E402
 from app.kbf import ProfilPengguna  # noqa: E402
 
 KELUARAN = AKAR / "docs" / "hasil-evaluasi.md"
-K = (1, 3, 5)
-
-KONFIG_ABLASI = {
-    "KBF saja (α = 1,0)": Konfigurasi(alpha=1.0),
-    "CBF saja (α = 0,0)": Konfigurasi(alpha=0.0),
-    "Hibrida (α = 0,6)": Konfigurasi(alpha=0.6),
-}
 
 
 def jepit(x: float) -> float:
@@ -52,7 +43,7 @@ def jepit(x: float) -> float:
 
 # ── A. Simulasi ─────────────────────────────────────────────────────────────
 def persona(p: dict, kb: BasisPengetahuan, acak: random.Random,
-            sigma: float, semua_skill: list[str]) -> ProfilPengguna:
+            sigma: float, semua_skill: list[str], n_derau: int = 2) -> ProfilPengguna:
     """Satu orang rekaan yang 'cocok' dengan profesi p, dengan derau.
 
     Minat dan kepribadian: profil profesi + derau Gauss. Skill: sebagian skill
@@ -66,7 +57,7 @@ def persona(p: dict, kb: BasisPengetahuan, acak: random.Random,
     for s in kb.skill_profesi(p["id"]):
         if acak.random() < (0.75 if s["wajib"] else 0.35):
             skill[s["skill_id"]] = acak.choice((1, 2, 2, 3))
-    for sid in acak.sample(semua_skill, 2):
+    for sid in acak.sample(semua_skill, n_derau):
         skill.setdefault(sid, acak.choice((1, 2)))
     return ProfilPengguna(
         riasec=riasec, big5=big5,
@@ -75,20 +66,6 @@ def persona(p: dict, kb: BasisPengetahuan, acak: random.Random,
         ekspektasi_gaji=p["gaji_min"], punya_tanggungan=acak.random() < 0.3,
         skill=skill,
     )
-
-
-def metrik(posisi: list[int | None]) -> dict:
-    """posisi: peringkat jawaban benar tiap kasus (None = tidak masuk daftar)."""
-    n = len(posisi)
-    hasil = {f"hit@{k}": sum(1 for r in posisi if r and r <= k) / n for k in K}
-    hasil["mrr"] = sum(1 / r for r in posisi if r) / n
-    return hasil
-
-
-def posisi_profesi(profil: ProfilPengguna, target: str, kb: BasisPengetahuan,
-                   konfig: Konfigurasi) -> int | None:
-    semua, _ = peringkat(profil, kb, konfig)
-    return next((b["peringkat"] for b in semua if b["profesi_id"] == target), None)
 
 
 def simulasi(kb: BasisPengetahuan, n_persona: int, seed: int, sigma: float) -> dict:
@@ -100,81 +77,30 @@ def simulasi(kb: BasisPengetahuan, n_persona: int, seed: int, sigma: float) -> d
     def jalankan(konfig: Konfigurasi) -> dict:
         return metrik([posisi_profesi(pr, pid, kb, konfig) for pid, pr in kasus])
 
+    # Persona "generalis": profil yang sama kuatnya, tetapi punya 15 skill lain
+    # di luar profesinya. Menguji seberapa tahan tiap ruang CBF terhadap orang
+    # yang skill-nya banyak.
+    acak_g = random.Random(seed)
+    generalis = [(p["id"], persona(p, kb, acak_g, sigma, semua_skill, n_derau=15))
+                 for p in kb.profesi for _ in range(n_persona)]
+
+    def jalankan_di(daftar: list, konfig: Konfigurasi) -> dict:
+        return metrik([posisi_profesi(pr, pid, kb, konfig) for pid, pr in daftar])
+
+    ruang = {}
+    for nama_set, daftar in (("spesialis (2 skill lain)", kasus), ("generalis (15 skill lain)", generalis)):
+        for r in ("profesi", "global"):
+            ruang[f"CBF saja, ruang {r} — {nama_set}"] = jalankan_di(daftar, Konfigurasi(alpha=0.0, ruang_cbf=r))
+            ruang[f"Hibrida, ruang {r} — {nama_set}"] = jalankan_di(daftar, Konfigurasi(ruang_cbf=r))
+
     return {
+        "ruang": ruang,
         "n": len(kasus),
         "ablasi": {nama: jalankan(k) for nama, k in KONFIG_ABLASI.items()},
         "alpha": {a / 10: jalankan(Konfigurasi(alpha=a / 10)) for a in range(11)},
         "riasec": {m: jalankan(Konfigurasi(metode_riasec=m)) for m in ("iachan", "korelasi")},
         "riasec_kbf": {m: jalankan(Konfigurasi(alpha=1.0, metode_riasec=m)) for m in ("iachan", "korelasi")},
     }
-
-
-# ── B. Data responden ───────────────────────────────────────────────────────
-def profil_dari_masukan(m: dict, kb: BasisPengetahuan) -> ProfilPengguna:
-    return ProfilPengguna(
-        riasec=q.skor_riasec(m["riasec"]), big5=q.skor_big5(m["big5"]),
-        rank_pendidikan=kb.rank_jenjang(m["jenjang"]), domisili=m["domisili"],
-        bersedia_relokasi=m["bersedia_relokasi"], ekspektasi_gaji=m["ekspektasi_gaji"],
-        punya_tanggungan=m["punya_tanggungan"], skill=m["skill"],
-    )
-
-
-def cronbach_alpha(butir: list[list[int]]) -> float | None:
-    """butir[i][j]: jawaban responden j pada butir i."""
-    k, n = len(butir), len(butir[0]) if butir else 0
-    if k < 2 or n < 2:
-        return None
-    total = [sum(b[j] for b in butir) for j in range(n)]
-    var_total = statistics.variance(total)
-    if var_total == 0:
-        return None
-    return k / (k - 1) * (1 - sum(statistics.variance(b) for b in butir) / var_total)
-
-
-def data_responden(kb: BasisPengetahuan) -> dict | None:
-    if not db.berkas_db().exists():
-        return None
-    responden = db.semua_responden()
-    if not responden:
-        return None
-
-    pakar = [r for r in responden if r["profesi_aktual"]]
-    hasil: dict = {"n": len(responden), "n_pakar": len(pakar)}
-
-    if pakar:
-        hasil["pakar"] = {
-            nama: metrik([posisi_profesi(profil_dari_masukan(r["masukan"], kb), r["profesi_aktual"], kb, k)
-                          for r in pakar])
-            for nama, k in KONFIG_ABLASI.items()
-        }
-
-    # Precision@K dari penilaian relevansi: hanya responden yang menilai semua
-    # K rekomendasi teratasnya, supaya penyebutnya benar-benar K.
-    presisi = {}
-    for k in K:
-        nilai = []
-        for r in responden:
-            teratas = [b["profesi_id"] for b in r["hasil"]["rekomendasi"][:k]]
-            if len(teratas) == k and all(p in r["umpan_balik"] for p in teratas):
-                nilai.append(sum(r["umpan_balik"][p] for p in teratas) / k)
-        presisi[k] = (statistics.mean(nilai), len(nilai)) if nilai else None
-    hasil["presisi"] = presisi
-
-    sus = [r["skor_sus"] for r in responden if r["skor_sus"] is not None]
-    hasil["sus"] = (statistics.mean(sus), len(sus)) if sus else None
-
-    reliabilitas = {}
-    for tipe in RIASEC:
-        kode = [k for k, t, _ in q.BUTIR_RIASEC if t == tipe]
-        reliabilitas[f"RIASEC {tipe}"] = cronbach_alpha(
-            [[r["masukan"]["riasec"][k] for r in responden] for k in kode])
-    for dim in BIG5:
-        butir = [(k, tb) for k, d, tb, _ in q.BUTIR_BIG5 if d == dim]
-        reliabilitas[f"Big Five {dim}"] = cronbach_alpha(
-            [[(6 - r["masukan"]["big5"][k]) if tb else r["masukan"]["big5"][k] for r in responden]
-             for k, tb in butir])
-    hasil["reliabilitas"] = reliabilitas
-    return hasil
 
 
 # ── Laporan ─────────────────────────────────────────────────────────────────
@@ -218,6 +144,13 @@ def laporan(sim: dict, resp: dict | None, argumen: argparse.Namespace, kb: Basis
         *tabel_metrik({f"Hibrida, {m}": v for m, v in sim["riasec"].items()}
                       | {f"KBF saja, {m}": v for m, v in sim["riasec_kbf"].items()}),
         "",
+        "### A.4 Ruang vektor CBF",
+        "",
+        "Cosine pada seluruh kosakata skill (`global`, bawaan) dibandingkan dengan cosine pada skill profesi",
+        "saja (`profesi`), untuk persona spesialis dan generalis.",
+        "",
+        *tabel_metrik(sim["ruang"]),
+        "",
         "## B. Data responden",
         "",
     ]
@@ -252,6 +185,14 @@ def laporan(sim: dict, resp: dict | None, argumen: argparse.Namespace, kb: Basis
         L.append(f"| {nama} | {'–' if a is None else f'{a:.2f}'.replace('.', ',')} |")
     L += ["", "Skala Big Five hanya dua butir per dimensi (BFI-10), sehingga α yang rendah di sana "
               "lazim dan bukan tanda instrumen rusak.", ""]
+
+    L += ["### B.5 Skill di luar pilihan", "",
+          f"Rata-rata {resp['n_skill']:.1f} skill dipilih per responden. Skill yang diketik sendiri "
+          "karena tidak ada di pilihan (bahan perluasan basis pengetahuan):", ""]
+    if resp["skill_lain"]:
+        L += ["| Skill | Disebut |", "|---|---:|", *[f"| {s} | {n} |" for s, n in resp["skill_lain"]], ""]
+    else:
+        L += ["Belum ada.", ""]
     return "\n".join(L)
 
 

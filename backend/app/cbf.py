@@ -9,6 +9,27 @@ skill:
 Skor CBF adalah cosine similarity keduanya. Karena cosine tidak peka terhadap
 panjang vektor, bobot profesi tidak perlu berjumlah 100.
 
+Ruang vektornya bisa dipilih:
+
+  "global" (bawaan)  cosine pada seluruh kosakata skill, sesuai rumus di
+                     proposal. Skill pengguna di luar profesi ikut memperpanjang
+                     vektornya, jadi profesi yang hanya memakai sebagian kecil
+                     skill pengguna tidak otomatis mendapat skor tinggi.
+
+  "profesi"          cosine hanya pada skill yang diminta profesi itu. Skill
+                     lain tidak mengurangi skor, tetapi daya bedanya turun:
+                     profesi dengan daftar skill pendek mudah terlihat "cocok".
+
+Di simulasi (docs/hasil-evaluasi.md, bagian A.4) ruang global lebih akurat,
+juga untuk persona yang skill-nya banyak, sehingga ia dipertahankan. Harganya:
+cosine mengukur KEMIRIPAN ARAH, bukan banyaknya skill, jadi menambah skill
+berbobot kecil bisa sedikit menurunkan skornya. Karena itu kemajuan belajar di
+roadmap ditampilkan dengan `cakupan` (porsi bobot skill profesi yang sudah
+dikuasai), yang selalu naik saat skill bertambah.
+
+Skill profesi yang bobotnya 0 di data sumber tidak menjadi dimensi vektor; ia
+tetap tampil di analisis kesenjangan.
+
 Selain skor, modul ini menghasilkan analisis kesenjangan skill (skill gap):
 skill profesi yang belum dimiliki, diurutkan dari yang wajib dan paling berat.
 """
@@ -21,17 +42,22 @@ TINGKAT_MAKS = 3
 LABEL_TINGKAT = {1: "Dasar", 2: "Menengah", 3: "Mahir"}
 
 
-def skor_cbf(skill_pengguna: dict[str, int], skill_profesi: list[dict]) -> dict:
-    u = {sid: t / TINGKAT_MAKS for sid, t in skill_pengguna.items() if t > 0}
-    w = {s["skill_id"]: s["bobot"] for s in skill_profesi}
+def skor_cbf(skill_pengguna: dict[str, int], skill_profesi: list[dict],
+             ruang: str = "global") -> dict:
+    if ruang not in ("profesi", "global"):
+        raise ValueError(f"ruang_cbf tidak dikenal: {ruang}")
+    w = {s["skill_id"]: s["bobot"] for s in skill_profesi if s["bobot"] > 0}
+    u = {sid: t / TINGKAT_MAKS for sid, t in skill_pengguna.items()
+         if t > 0 and (ruang == "global" or sid in w)}
 
     norma_u = math.sqrt(sum(v * v for v in u.values()))
     norma_w = math.sqrt(sum(v * v for v in w.values()))
     titik = sum(u[s] * w[s] for s in u.keys() & w.keys())
     kosinus = titik / (norma_u * norma_w) if norma_u and norma_w else 0.0
 
-    # Cakupan: porsi bobot skill profesi yang sudah dikuasai. Bukan bagian dari
-    # skor; dipakai untuk menjelaskan hasil ke pengguna.
+    # Cakupan: porsi bobot skill profesi yang sudah dikuasai, memperhitungkan
+    # tingkat penguasaan. Bukan bagian dari skor; dipakai untuk menjelaskan
+    # hasil dan mengukur kemajuan di roadmap.
     cakupan = titik / sum(w.values()) if w else 0.0
     return {"skor": round(kosinus, 4), "cakupan": round(cakupan, 4)}
 

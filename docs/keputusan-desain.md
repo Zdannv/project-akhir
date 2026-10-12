@@ -18,6 +18,7 @@ sistem yang tidak bisa dijelaskan asal-usulnya saat sidang.
 | CBF cosine similarity skill | `cbf.skor_cbf` | vektor profesi berbobot `skill_weight_pct` |
 | `α·KBF + (1−α)·CBF`, α = 0,6 | `hibrida.py` | α bisa diubah untuk eksperimen |
 | Dasbor Top-N + detail 3 tab | layar Explore dan Detail Profesi | Analisa · Skill & Kompetensi · Insight |
+| Analisis kesenjangan skill | `cbf.kesenjangan_skill`, `roadmap.py` | ditambah roadmap bertahap dan simulasi skor |
 | Precision@K, Recall@K, Hit Rate@5, SUS | `scripts/evaluasi.py` | lihat §5 |
 
 ## 2. Yang sengaja berbeda dari proposal
@@ -42,12 +43,26 @@ penggabungan *weighted hybrid* (Burke, 2002).
 
 ## 3. Asumsi yang perlu dipertanggungjawabkan
 
-**Sembilan profesi tanpa data skill dari lowongan.** Workbook sumber berhenti di
-C027; C023 dan C028–C035 tidak punya relasi skill. Dilengkapi lewat
-`data/sumber/pelengkap_*.csv` yang isinya kurasi, dan ditandai
-`skill_sumber: "kurasi"` di basis pengetahuan serta di layar detail. **Ini
-perlu divalidasi** dengan data lowongan atau pakar sebelum naskah final; kalau
-tidak sempat, sembilan profesi itu lebih aman dikeluarkan dari cakupan.
+**Skill hasil kurasi.** Workbook sumber punya dua lubang, dan keduanya ditambal
+lewat `data/sumber/pelengkap_*.csv`:
+
+- sembilan profesi (C023, C028–C035) tidak punya relasi skill sama sekali;
+- banyak skill umum tidak ada di daftarnya (machine learning, statistika,
+  pengujian, jaringan, riset pengguna, dan lain-lain), sehingga responden tidak
+  menemukan skill mereka. Ditambahkan 37 skill beserta relasinya ke profesi
+  yang sudah ada, dengan bobot sengaja kecil (3–16) supaya tidak mengalahkan
+  data lowongan.
+
+Hasilnya 168 skill dan 463 relasi, **156 relasi di antaranya kurasi**. Setiap
+relasi membawa penanda `sumber` (`lowongan` atau `kurasi`), dan layar detail
+memberi tahu pengguna kalau daftar skill sebuah profesi memuat kurasi. **Ini
+perlu divalidasi** dengan data lowongan atau pakar sebelum naskah final.
+
+**Skill di luar daftar.** Responden bisa mengetik skill yang tidak ada di
+pilihan. Skill itu disimpan dan dilaporkan (dasbor peneliti dan bagian B.5
+laporan evaluasi) tetapi tidak ikut dihitung, karena belum ada profesi yang bisa
+dicocokkan dengannya. Daftar itu adalah bahan perluasan basis pengetahuan dan
+bisa dilaporkan sebagai ukuran cakupan kosakata.
 
 **Profil ideal Big Five per profesi.** O*NET tidak mengukur Big Five. Profil
 ideal diturunkan dari O*NET Work Styles dengan pemetaan yang ditulis di
@@ -81,13 +96,26 @@ hanya cara menyajikan skor di antarmuka. Mesin dan evaluasi tidak memakainya.
 Angka lengkap ada di `docs/hasil-evaluasi.md`. Tiga hal yang layak dibahas
 dengan pembimbing:
 
-1. **Hibrida mengungguli KBF saja maupun CBF saja** — dasar empiris untuk
-   memilih pendekatan hybrid.
-2. **α = 0,6 bukan yang terbaik di simulasi**; puncaknya di sekitar 0,3–0,4.
-   Banyak profesi TI punya kode Holland yang mirip (ICR muncul 11 kali), jadi
-   KBF kurang membedakan dan terlalu banyak bobot padanya merugikan.
-3. **Korelasi profil RIASEC mengungguli Iachan**, karena Iachan hanya memakai
-   tiga huruf teratas dan memberi skor identik untuk profesi berkode sama.
+1. **Hibrida mengungguli KBF saja, dan sedikit di atas CBF saja** (Hit@1 85,5%
+   vs 36,8% dan 85,3%) — di simulasi, hampir seluruh daya beda datang dari skill.
+2. **α = 0,6 bukan yang terbaik di simulasi**; puncaknya di sekitar 0,3–0,4
+   (Hit@1 89,0%). Banyak profesi TI punya kode Holland yang mirip (ICR muncul
+   11 kali), jadi KBF kurang membedakan dan terlalu banyak bobot padanya merugikan.
+3. **Korelasi profil RIASEC mengungguli Iachan** (Hit@1 92,4% vs 85,5%), karena
+   Iachan hanya memakai tiga huruf teratas dan memberi skor identik untuk
+   profesi berkode sama.
+4. **Cosine global mengungguli cosine pada ruang skill profesi** (Hit@1 85,3%
+   vs 65,5%), juga untuk persona yang skill-nya banyak. Varian ruang profesi
+   sempat dicoba karena cosine global "mengencerkan" skor orang yang memilih
+   banyak skill, tetapi daya bedanya ternyata jauh lebih buruk, jadi cosine
+   global — sesuai proposal — dipertahankan.
+
+**Keterbatasan cosine yang perlu disebut di naskah.** Cosine mengukur kemiripan
+arah, bukan banyaknya skill. Akibatnya (a) orang yang memilih sangat banyak
+skill mendapat skor CBF lebih rendah di semua profesi, dan (b) menambah skill
+berbobot kecil bisa sedikit menurunkan skor. Karena itu kemajuan belajar di
+roadmap diukur dengan *cakupan* (porsi bobot skill profesi yang dikuasai), yang
+selalu naik, sedangkan skor dan peringkat proyeksi ditampilkan apa adanya.
 
 Simulasi memakai persona yang dibangkitkan dari basis pengetahuan itu sendiri,
 jadi angkanya batas atas dan **bukan** bukti akurasi pada manusia. Nilai α dan
@@ -97,11 +125,16 @@ ukuran kongruensi sebaiknya baru diputuskan setelah ada data responden.
 
 | Pengujian | Cara | Target proposal |
 |---|---|---|
-| Fungsional | `pytest` (22 uji) | semua lulus |
+| Fungsional | `pytest` (29 uji) | semua lulus |
 | Akurasi, uji pakar | 15–20 profesional TI mengisi sebagai "Profesional TI" beserta profesinya; Hit Rate@5 dan MRR dihitung terhadap profesi itu | Hit Rate@5 ≥ 60% |
 | Relevansi | responden menilai tiap rekomendasi relevan/tidak di layar detail; Precision@K | — |
 | Usability | 10 butir SUS di menu Penilaian | skor ≥ 68 |
 | Reliabilitas instrumen | Cronbach's α per skala | — |
+
+Isian yang diperbarui lewat "Ubah jawaban" disimpan sebagai isian baru yang
+menunjuk isian lamanya; evaluasi hanya menghitung isian terakhir tiap orang.
+Centang di roadmap disimpan terpisah dan tidak pernah mengubah rekomendasi yang
+tersimpan, supaya data pengujian tetap mencerminkan jawaban asli.
 
 Recall@K dengan satu jawaban benar per orang sama dengan Hit Rate@K, jadi
 tidak dilaporkan terpisah. Jawaban mentah kuesioner disimpan, sehingga

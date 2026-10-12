@@ -2,11 +2,12 @@
  "meta": {
   "dibuat": "2026-10-12",
   "n_profesi": 35,
-  "n_skill": 131,
-  "n_relasi": 384,
+  "n_skill": 168,
+  "n_relasi": 463,
+  "n_relasi_kurasi": 156,
   "sumber": {
    "pasar_kerja": "knowledge_base_profesi_IT.xlsx — pengolahan lowongan kerja LinkedIn Indonesia 2025",
-   "skill_kurasi": "pelengkap_*.csv — kurasi penulis untuk 9 profesi yang belum tercakup, perlu divalidasi",
+   "skill_kurasi": "pelengkap_*.csv — kurasi penulis: skill untuk 9 profesi yang belum tercakup dan skill umum yang belum ada di data lowongan; perlu divalidasi",
    "riasec": "O*NET 30.3 Career Interest Types (USDOL/ETA, CC BY 4.0), lewat padanan kode SOC",
    "big5_ideal": "diturunkan dari O*NET Work Styles; lihat bangun_kb.py",
    "stabilitas": "proksi dari pola kerja dan sektor; lihat bangun_kb.py"
@@ -105,7 +106,7 @@
     "N": 0.4804
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C002",
@@ -161,7 +162,7 @@
     "N": 0.4395
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C003",
@@ -216,7 +217,7 @@
     "N": 0.4395
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C004",
@@ -270,7 +271,7 @@
     "N": 0.4395
    },
    "stabilitas": 0.87,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C005",
@@ -324,7 +325,7 @@
     "N": 0.4395
    },
    "stabilitas": 0.87,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C006",
@@ -379,7 +380,7 @@
     "N": 0.4395
    },
    "stabilitas": 0.637,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C007",
@@ -436,7 +437,7 @@
     "N": 0.5506
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C008",
@@ -491,7 +492,7 @@
     "N": 0.5506
    },
    "stabilitas": 0.87,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C009",
@@ -548,7 +549,7 @@
     "N": 0.6306
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C010",
@@ -603,7 +604,7 @@
     "N": 0.5043
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C011",
@@ -658,7 +659,7 @@
     "N": 0.5043
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C012",
@@ -712,7 +713,7 @@
     "N": 0.4592
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C013",
@@ -767,7 +768,7 @@
     "N": 0.4592
    },
    "stabilitas": 0.93,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C014",
@@ -822,7 +823,7 @@
     "N": 0.4592
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C015",
@@ -878,7 +879,7 @@
     "N": 0.4075
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C016",
@@ -933,7 +934,7 @@
     "N": 0.3948
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C017",
@@ -988,7 +989,7 @@
     "N": 0.4075
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C018",
@@ -1044,7 +1045,7 @@
     "N": 0.3097
    },
    "stabilitas": 0.93,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C019",
@@ -1100,7 +1101,7 @@
     "N": 0.4027
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C020",
@@ -1158,7 +1159,7 @@
     "N": 0.4234
    },
    "stabilitas": 0.713,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C021",
@@ -1213,7 +1214,7 @@
     "N": 0.3187
    },
    "stabilitas": 0.87,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C022",
@@ -1269,7 +1270,7 @@
     "N": 0.5575
    },
    "stabilitas": 0.87,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C023",
@@ -1376,7 +1377,7 @@
     "N": 0.4527
    },
    "stabilitas": 1.0,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C025",
@@ -1432,7 +1433,7 @@
     "N": 0.4075
    },
    "stabilitas": 0.93,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C026",
@@ -1488,7 +1489,7 @@
     "N": 0.3948
    },
    "stabilitas": 1.0,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C027",
@@ -1544,7 +1545,7 @@
     "N": 0.5194
    },
    "stabilitas": 0.93,
-   "skill_sumber": "lowongan"
+   "skill_sumber": "campuran"
   },
   {
    "id": "C028",
@@ -2001,7 +2002,10 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa pemrograman serbaguna untuk data science, backend, scripting, dan AI/ML",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "py"
+   ]
   },
   {
    "id": "SK002",
@@ -2009,7 +2013,12 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa utama pengembangan web frontend dan backend (Node.js)",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "JS",
+    "ES6",
+    "ECMAScript"
+   ]
   },
   {
    "id": "SK003",
@@ -2017,7 +2026,10 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Superset JavaScript dengan static typing untuk proyek skala besar",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "TS"
+   ]
   },
   {
    "id": "SK004",
@@ -2025,7 +2037,8 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa OOP untuk enterprise backend dan Android development",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK005",
@@ -2033,7 +2046,8 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa modern untuk Android development (pengganti Java)",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK006",
@@ -2041,7 +2055,8 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa native Apple untuk iOS/macOS development",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK007",
@@ -2049,7 +2064,11 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa Microsoft untuk .NET, game (Unity), dan enterprise",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "C Sharp",
+    ".NET"
+   ]
   },
   {
    "id": "SK008",
@@ -2057,7 +2076,12 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa sistem level rendah untuk embedded, game engine, dan performa tinggi",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "C",
+    "C++",
+    "CPP"
+   ]
   },
   {
    "id": "SK009",
@@ -2065,7 +2089,10 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa Google untuk backend berperforma tinggi dan microservices",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Golang"
+   ]
   },
   {
    "id": "SK010",
@@ -2073,7 +2100,8 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa server-side untuk web development (Laravel, CodeIgniter)",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK011",
@@ -2081,7 +2109,8 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa Google untuk Flutter cross-platform development",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK012",
@@ -2089,7 +2118,8 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa statistik untuk analisis data dan visualisasi",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK013",
@@ -2097,7 +2127,8 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa JVM untuk big data (Apache Spark) dan functional programming",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK014",
@@ -2105,7 +2136,8 @@
    "kategori": "Programming Language",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa sistem dengan memory safety untuk performa & keamanan tinggi",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK015",
@@ -2113,7 +2145,10 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Bahasa query standar untuk relational database management",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Query"
+   ]
   },
   {
    "id": "SK016",
@@ -2121,7 +2156,11 @@
    "kategori": "Frontend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Library JavaScript populer untuk membangun UI component-based",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "React",
+    "ReactJS"
+   ]
   },
   {
    "id": "SK017",
@@ -2129,7 +2168,11 @@
    "kategori": "Frontend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Framework JavaScript progressive untuk membangun UI web",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Vue",
+    "VueJS"
+   ]
   },
   {
    "id": "SK018",
@@ -2137,7 +2180,8 @@
    "kategori": "Frontend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Framework TypeScript dari Google untuk SPA enterprise",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK019",
@@ -2145,7 +2189,10 @@
    "kategori": "Frontend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Framework React untuk SSR, SSG, dan full-stack development",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "NextJS"
+   ]
   },
   {
    "id": "SK020",
@@ -2153,7 +2200,10 @@
    "kategori": "Frontend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Framework Vue.js untuk SSR dan static site generation",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "NuxtJS"
+   ]
   },
   {
    "id": "SK021",
@@ -2161,7 +2211,13 @@
    "kategori": "Frontend",
    "tipe": "hard_skill",
    "deskripsi": "Markup dan styling dasar pengembangan web",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "HTML",
+    "CSS",
+    "HTML5",
+    "CSS3"
+   ]
   },
   {
    "id": "SK022",
@@ -2169,7 +2225,8 @@
    "kategori": "Frontend",
    "tipe": "hard_skill",
    "deskripsi": "Utility-first CSS framework untuk styling cepat dan konsisten",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK023",
@@ -2177,7 +2234,8 @@
    "kategori": "Frontend",
    "tipe": "hard_skill",
    "deskripsi": "CSS framework populer untuk responsive web design",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK024",
@@ -2185,7 +2243,11 @@
    "kategori": "Backend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Runtime JavaScript untuk backend development (Express, Fastify, NestJS)",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Node",
+    "NodeJS"
+   ]
   },
   {
    "id": "SK025",
@@ -2193,7 +2255,8 @@
    "kategori": "Backend Framework",
    "tipe": "hard_skill",
    "deskripsi": "PHP framework MVC untuk web application development",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK026",
@@ -2201,7 +2264,8 @@
    "kategori": "Backend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Python web framework untuk rapid development",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK027",
@@ -2209,7 +2273,8 @@
    "kategori": "Backend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Modern Python framework untuk REST API berkecepatan tinggi",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK028",
@@ -2217,7 +2282,8 @@
    "kategori": "Backend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Java framework untuk enterprise microservices dan REST API",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK029",
@@ -2225,7 +2291,10 @@
    "kategori": "Backend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Minimalist Node.js framework untuk REST API",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Express"
+   ]
   },
   {
    "id": "SK030",
@@ -2233,7 +2302,8 @@
    "kategori": "Backend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Node.js framework TypeScript untuk aplikasi backend terstruktur",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK031",
@@ -2241,7 +2311,8 @@
    "kategori": "Backend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Micro Python web framework untuk API sederhana",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK032",
@@ -2249,7 +2320,8 @@
    "kategori": "Backend Framework",
    "tipe": "hard_skill",
    "deskripsi": "PHP framework ringan untuk web development",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK033",
@@ -2257,7 +2329,11 @@
    "kategori": "Backend Framework",
    "tipe": "hard_skill",
    "deskripsi": "Microsoft framework untuk web API dan web application",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "dotnet",
+    ".NET"
+   ]
   },
   {
    "id": "SK034",
@@ -2265,7 +2341,8 @@
    "kategori": "Mobile Framework",
    "tipe": "hard_skill",
    "deskripsi": "Framework cross-platform Google untuk mobile, web, dan desktop",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK035",
@@ -2273,7 +2350,10 @@
    "kategori": "Mobile Framework",
    "tipe": "hard_skill",
    "deskripsi": "Framework React dari Meta untuk cross-platform mobile development",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "RN"
+   ]
   },
   {
    "id": "SK036",
@@ -2281,7 +2361,10 @@
    "kategori": "Mobile",
    "tipe": "hard_skill",
    "deskripsi": "SDK native untuk pengembangan aplikasi Android",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Android Studio"
+   ]
   },
   {
    "id": "SK037",
@@ -2289,7 +2372,12 @@
    "kategori": "Mobile",
    "tipe": "hard_skill",
    "deskripsi": "SDK native Apple untuk iOS development",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "SwiftUI",
+    "UIKit",
+    "Xcode"
+   ]
   },
   {
    "id": "SK038",
@@ -2297,7 +2385,10 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Database relasional open-source berfitur lengkap",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Postgres"
+   ]
   },
   {
    "id": "SK039",
@@ -2305,7 +2396,10 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Database relasional paling populer untuk web",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "MariaDB"
+   ]
   },
   {
    "id": "SK040",
@@ -2313,7 +2407,11 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Database NoSQL document-oriented untuk data fleksibel",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Mongo",
+    "NoSQL"
+   ]
   },
   {
    "id": "SK041",
@@ -2321,7 +2419,8 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "In-memory data structure store untuk caching dan session",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK042",
@@ -2329,7 +2428,8 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Database ringan untuk mobile dan embedded",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK043",
@@ -2337,7 +2437,11 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Database enterprise Microsoft dengan ekosistem penuh",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "SQL Server",
+    "MSSQL"
+   ]
   },
   {
    "id": "SK044",
@@ -2345,7 +2449,8 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Database enterprise Oracle untuk sistem skala besar",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK045",
@@ -2353,7 +2458,8 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Serverless data warehouse Google Cloud untuk analitik skala besar",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK046",
@@ -2361,7 +2467,8 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Cloud data platform untuk data warehousing modern",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK047",
@@ -2369,7 +2476,8 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Distributed NoSQL database untuk write-heavy workloads",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK048",
@@ -2377,7 +2485,8 @@
    "kategori": "Database",
    "tipe": "hard_skill",
    "deskripsi": "Search engine dan analitik berbasis Lucene",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK049",
@@ -2385,7 +2494,12 @@
    "kategori": "Cloud Platform",
    "tipe": "hard_skill",
    "deskripsi": "Platform cloud terbesar dengan 200+ layanan",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "AWS",
+    "EC2",
+    "S3"
+   ]
   },
   {
    "id": "SK050",
@@ -2393,7 +2507,11 @@
    "kategori": "Cloud Platform",
    "tipe": "hard_skill",
    "deskripsi": "Platform cloud Google dengan keunggulan di data dan AI",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "GCP",
+    "Google Cloud"
+   ]
   },
   {
    "id": "SK051",
@@ -2401,7 +2519,10 @@
    "kategori": "Cloud Platform",
    "tipe": "hard_skill",
    "deskripsi": "Platform cloud Microsoft dengan integrasi enterprise",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Azure"
+   ]
   },
   {
    "id": "SK052",
@@ -2409,7 +2530,8 @@
    "kategori": "DevOps",
    "tipe": "hard_skill",
    "deskripsi": "Platform containerization untuk packaging dan deployment aplikasi",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK053",
@@ -2417,7 +2539,11 @@
    "kategori": "DevOps",
    "tipe": "hard_skill",
    "deskripsi": "Container orchestration untuk deployment dan scaling otomatis",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "K8s",
+    "Kubernetes"
+   ]
   },
   {
    "id": "SK054",
@@ -2425,7 +2551,8 @@
    "kategori": "DevOps",
    "tipe": "hard_skill",
    "deskripsi": "Infrastructure as Code tool untuk provisioning cloud resources",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK055",
@@ -2433,7 +2560,13 @@
    "kategori": "DevOps",
    "tipe": "hard_skill",
    "deskripsi": "Pipeline otomasi untuk continuous integration dan deployment",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "CI/CD",
+    "Jenkins",
+    "GitHub Actions",
+    "GitLab CI"
+   ]
   },
   {
    "id": "SK056",
@@ -2441,7 +2574,12 @@
    "kategori": "Infrastructure",
    "tipe": "hard_skill",
    "deskripsi": "Administrasi sistem operasi Linux untuk server management",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Linux",
+    "Ubuntu",
+    "Unix"
+   ]
   },
   {
    "id": "SK057",
@@ -2449,7 +2587,11 @@
    "kategori": "Infrastructure",
    "tipe": "hard_skill",
    "deskripsi": "Web server dan reverse proxy untuk hosting aplikasi",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Nginx",
+    "Apache"
+   ]
   },
   {
    "id": "SK058",
@@ -2457,7 +2599,8 @@
    "kategori": "Data Engineering",
    "tipe": "hard_skill",
    "deskripsi": "Workflow orchestration untuk scheduling dan monitoring data pipeline",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK059",
@@ -2465,7 +2608,8 @@
    "kategori": "Data Engineering",
    "tipe": "hard_skill",
    "deskripsi": "Framework big data processing untuk komputasi terdistribusi",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK060",
@@ -2473,7 +2617,8 @@
    "kategori": "Data Engineering",
    "tipe": "hard_skill",
    "deskripsi": "Distributed streaming platform untuk real-time data pipeline",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK061",
@@ -2481,7 +2626,8 @@
    "kategori": "Data Engineering",
    "tipe": "hard_skill",
    "deskripsi": "Transformation framework SQL-first untuk data warehouse",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK062",
@@ -2489,7 +2635,11 @@
    "kategori": "Data Engineering",
    "tipe": "hard_skill",
    "deskripsi": "Proses ekstraksi, transformasi, dan loading data",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "ETL",
+    "ELT"
+   ]
   },
   {
    "id": "SK063",
@@ -2497,7 +2647,8 @@
    "kategori": "Data Engineering",
    "tipe": "hard_skill",
    "deskripsi": "Star schema, dimensional modeling, fact/dimension tables",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK064",
@@ -2505,7 +2656,8 @@
    "kategori": "Data Visualization",
    "tipe": "hard_skill",
    "deskripsi": "Platform BI visual analytics untuk dashboard dan reporting",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK065",
@@ -2513,7 +2665,8 @@
    "kategori": "Data Visualization",
    "tipe": "hard_skill",
    "deskripsi": "Microsoft BI tool untuk dashboard dan laporan interaktif",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK066",
@@ -2521,7 +2674,11 @@
    "kategori": "Data Visualization",
    "tipe": "hard_skill",
    "deskripsi": "Google BI platform untuk data visualization dan reporting",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Looker Studio",
+    "Google Data Studio"
+   ]
   },
   {
    "id": "SK067",
@@ -2529,7 +2686,8 @@
    "kategori": "Data Visualization",
    "tipe": "hard_skill",
    "deskripsi": "Open-source BI tool sederhana untuk dashboard data",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK068",
@@ -2537,7 +2695,8 @@
    "kategori": "Data Science Library",
    "tipe": "hard_skill",
    "deskripsi": "Python library untuk data manipulation dan analisis",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK069",
@@ -2545,7 +2704,8 @@
    "kategori": "Data Science Library",
    "tipe": "hard_skill",
    "deskripsi": "Python library untuk komputasi numerik",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK070",
@@ -2553,7 +2713,10 @@
    "kategori": "Data Science Library",
    "tipe": "hard_skill",
    "deskripsi": "Python ML library untuk klasifikasi, regresi, dan clustering",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "sklearn"
+   ]
   },
   {
    "id": "SK071",
@@ -2561,7 +2724,10 @@
    "kategori": "ML Framework",
    "tipe": "hard_skill",
    "deskripsi": "Google framework untuk deep learning dan neural network",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Keras"
+   ]
   },
   {
    "id": "SK072",
@@ -2569,7 +2735,8 @@
    "kategori": "ML Framework",
    "tipe": "hard_skill",
    "deskripsi": "Meta framework untuk deep learning dan penelitian AI",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK073",
@@ -2577,7 +2744,10 @@
    "kategori": "ML Framework",
    "tipe": "hard_skill",
    "deskripsi": "Ekosistem model NLP dan multimodal pretrained",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Transformers"
+   ]
   },
   {
    "id": "SK074",
@@ -2585,7 +2755,8 @@
    "kategori": "AI Framework",
    "tipe": "hard_skill",
    "deskripsi": "Framework untuk membangun aplikasi berbasis LLM",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK075",
@@ -2593,7 +2764,11 @@
    "kategori": "AI Framework",
    "tipe": "hard_skill",
    "deskripsi": "API untuk akses model GPT dan DALL-E dari OpenAI",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "ChatGPT API",
+    "LLM API"
+   ]
   },
   {
    "id": "SK076",
@@ -2601,7 +2776,8 @@
    "kategori": "ML Infrastructure",
    "tipe": "hard_skill",
    "deskripsi": "Framework komputasi GPU untuk akselerasi ML training",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK077",
@@ -2609,7 +2785,10 @@
    "kategori": "ML Specialization",
    "tipe": "hard_skill",
    "deskripsi": "Library computer vision untuk image processing dan analisis",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "OpenCV"
+   ]
   },
   {
    "id": "SK078",
@@ -2617,7 +2796,10 @@
    "kategori": "AI Technique",
    "tipe": "hard_skill",
    "deskripsi": "Teknik augmentasi LLM dengan retrieval dari knowledge base",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "RAG"
+   ]
   },
   {
    "id": "SK079",
@@ -2625,7 +2807,8 @@
    "kategori": "AI Infrastructure",
    "tipe": "hard_skill",
    "deskripsi": "Database untuk menyimpan dan mencari embeddings ML",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK080",
@@ -2633,7 +2816,8 @@
    "kategori": "Version Control",
    "tipe": "hard_skill",
    "deskripsi": "Sistem version control terdistribusi untuk manajemen kode",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK081",
@@ -2641,7 +2825,11 @@
    "kategori": "Version Control",
    "tipe": "hard_skill",
    "deskripsi": "Platform hosting repositori kode dan kolaborasi developer",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "GitHub",
+    "GitLab"
+   ]
   },
   {
    "id": "SK082",
@@ -2649,7 +2837,8 @@
    "kategori": "Cybersecurity",
    "tipe": "hard_skill",
    "deskripsi": "Keamanan jaringan termasuk firewall, IDS/IPS, VPN",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK083",
@@ -2657,7 +2846,8 @@
    "kategori": "Cybersecurity",
    "tipe": "hard_skill",
    "deskripsi": "Keamanan aplikasi web berdasarkan standar OWASP Top 10",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK084",
@@ -2665,7 +2855,11 @@
    "kategori": "Cybersecurity",
    "tipe": "hard_skill",
    "deskripsi": "Uji keamanan ofensif untuk menemukan kerentanan sistem",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Pentest",
+    "Ethical Hacking"
+   ]
   },
   {
    "id": "SK085",
@@ -2673,7 +2867,8 @@
    "kategori": "Cybersecurity",
    "tipe": "hard_skill",
    "deskripsi": "Security Information and Event Management untuk monitoring ancaman",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK086",
@@ -2681,7 +2876,8 @@
    "kategori": "Cybersecurity",
    "tipe": "hard_skill",
    "deskripsi": "Enkripsi, sertifikat digital, dan manajemen kunci",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK087",
@@ -2689,7 +2885,8 @@
    "kategori": "Design Tool",
    "tipe": "hard_skill",
    "deskripsi": "Platform desain kolaboratif untuk UI/UX dan prototyping",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK088",
@@ -2697,7 +2894,12 @@
    "kategori": "Design Tool",
    "tipe": "hard_skill",
    "deskripsi": "Suite Adobe untuk desain visual dan prototyping",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Photoshop",
+    "Illustrator",
+    "Adobe XD"
+   ]
   },
   {
    "id": "SK089",
@@ -2705,7 +2907,12 @@
    "kategori": "Methodology",
    "tipe": "hard_skill",
    "deskripsi": "Framework pengembangan iteratif berbasis sprint",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Scrum",
+    "Agile",
+    "Kanban"
+   ]
   },
   {
    "id": "SK090",
@@ -2713,7 +2920,12 @@
    "kategori": "Backend",
    "tipe": "hard_skill",
    "deskripsi": "Desain dan implementasi API RESTful yang standar",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "REST",
+    "RESTful",
+    "API"
+   ]
   },
   {
    "id": "SK091",
@@ -2721,7 +2933,8 @@
    "kategori": "Backend",
    "tipe": "hard_skill",
    "deskripsi": "Query language untuk API yang fleksibel",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK092",
@@ -2729,7 +2942,8 @@
    "kategori": "Architecture",
    "tipe": "hard_skill",
    "deskripsi": "Arsitektur dekomposisi aplikasi menjadi layanan kecil independen",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK093",
@@ -2737,7 +2951,8 @@
    "kategori": "Architecture",
    "tipe": "hard_skill",
    "deskripsi": "Kemampuan merancang arsitektur sistem skala besar",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK094",
@@ -2745,7 +2960,8 @@
    "kategori": "Data Tool",
    "tipe": "hard_skill",
    "deskripsi": "Alat ETL ringan terintegrasi Microsoft Excel/Power BI",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK095",
@@ -2753,7 +2969,12 @@
    "kategori": "Data Tool",
    "tipe": "hard_skill",
    "deskripsi": "Spreadsheet tool dengan pivot, vlookup, macro untuk analisis data",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Excel",
+    "Spreadsheet",
+    "Google Sheets"
+   ]
   },
   {
    "id": "SK096",
@@ -2761,7 +2982,8 @@
    "kategori": "Data Engineering",
    "tipe": "hard_skill",
    "deskripsi": "Platform ETL enterprise dari IBM untuk integrasi data",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK097",
@@ -2769,7 +2991,8 @@
    "kategori": "Data Engineering",
    "tipe": "hard_skill",
    "deskripsi": "Framework distributed storage dan processing untuk big data",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK098",
@@ -2777,7 +3000,8 @@
    "kategori": "Analytics",
    "tipe": "hard_skill",
    "deskripsi": "Eksperimen terkontrol untuk membandingkan dua variasi produk/fitur",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK101",
@@ -2785,7 +3009,10 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan mengidentifikasi, menganalisis, dan menyelesaikan masalah secara terstruktur",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Pemecahan Masalah"
+   ]
   },
   {
    "id": "SK102",
@@ -2793,7 +3020,11 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan menyampaikan informasi teknis dan non-teknis secara jelas",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Komunikasi",
+    "Presentasi"
+   ]
   },
   {
    "id": "SK103",
@@ -2801,7 +3032,11 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan bekerja efektif dalam tim lintas fungsi",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Kerja Sama Tim",
+    "Kolaborasi"
+   ]
   },
   {
    "id": "SK104",
@@ -2809,7 +3044,10 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan memecah masalah kompleks dengan pendekatan data-driven",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Berpikir Analitis"
+   ]
   },
   {
    "id": "SK105",
@@ -2817,7 +3055,10 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan beradaptasi dengan teknologi dan lingkungan kerja baru",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Adaptasi"
+   ]
   },
   {
    "id": "SK106",
@@ -2825,7 +3066,10 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan mengelola prioritas dan deadline secara efektif",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Manajemen Waktu"
+   ]
   },
   {
    "id": "SK107",
@@ -2833,7 +3077,10 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan mengevaluasi informasi secara objektif dan logis",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Berpikir Kritis"
+   ]
   },
   {
    "id": "SK108",
@@ -2841,7 +3088,10 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan memimpin tim dan mengambil inisiatif",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Kepemimpinan"
+   ]
   },
   {
    "id": "SK109",
@@ -2849,7 +3099,10 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan menghasilkan ide-ide baru dan solusi kreatif",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Kreativitas"
+   ]
   },
   {
    "id": "SK110",
@@ -2857,7 +3110,10 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Ketelitian dalam memeriksa kode, data, atau desain",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Ketelitian"
+   ]
   },
   {
    "id": "SK111",
@@ -2865,7 +3121,11 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan berkomunikasi dalam bahasa Inggris (minimal pasif)",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Bahasa Inggris",
+    "English"
+   ]
   },
   {
    "id": "SK112",
@@ -2873,7 +3133,10 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan merencanakan dan mengelola proyek dari awal hingga selesai",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Manajemen Proyek"
+   ]
   },
   {
    "id": "SK113",
@@ -2881,7 +3144,8 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan berkomunikasi dan mengelola ekspektasi berbagai pemangku kepentingan",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK114",
@@ -2889,7 +3153,10 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan belajar mandiri dan terus mengembangkan kompetensi",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": [
+    "Belajar Mandiri"
+   ]
   },
   {
    "id": "SK115",
@@ -2897,7 +3164,8 @@
    "kategori": "Soft Skill",
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan menyajikan temuan data secara naratif dan visual yang persuasif",
-   "sumber": "lowongan"
+   "sumber": "lowongan",
+   "alias": []
   },
   {
    "id": "SK116",
@@ -2905,7 +3173,12 @@
    "kategori": "Project Tool",
    "tipe": "hard_skill",
    "deskripsi": "Perangkat pelacakan pekerjaan dan dokumentasi tim",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": [
+    "Jira",
+    "Confluence",
+    "Trello"
+   ]
   },
   {
    "id": "SK117",
@@ -2913,7 +3186,8 @@
    "kategori": "Project Management",
    "tipe": "hard_skill",
    "deskripsi": "Mengelola risiko dan anggaran proyek TI",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": []
   },
   {
    "id": "SK118",
@@ -2921,7 +3195,11 @@
    "kategori": "Digital Marketing",
    "tipe": "hard_skill",
    "deskripsi": "Optimasi mesin pencari dan iklan pencarian",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": [
+    "SEO",
+    "SEM"
+   ]
   },
   {
    "id": "SK119",
@@ -2929,7 +3207,10 @@
    "kategori": "Digital Marketing",
    "tipe": "hard_skill",
    "deskripsi": "Analitik perilaku pengunjung situs dan aplikasi",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": [
+    "GA4"
+   ]
   },
   {
    "id": "SK120",
@@ -2937,7 +3218,12 @@
    "kategori": "Digital Marketing",
    "tipe": "hard_skill",
    "deskripsi": "Mengelola dan mengukur kampanye iklan berbayar",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": [
+    "Meta Ads",
+    "Google Ads",
+    "Facebook Ads"
+   ]
   },
   {
    "id": "SK121",
@@ -2945,7 +3231,10 @@
    "kategori": "Game Engine",
    "tipe": "hard_skill",
    "deskripsi": "Mesin gim lintas platform berbasis C#",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": [
+    "Unity3D"
+   ]
   },
   {
    "id": "SK122",
@@ -2953,7 +3242,8 @@
    "kategori": "Game Engine",
    "tipe": "hard_skill",
    "deskripsi": "Mesin gim berbasis C++ dan Blueprint",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": []
   },
   {
    "id": "SK123",
@@ -2961,7 +3251,8 @@
    "kategori": "Game Development",
    "tipe": "hard_skill",
    "deskripsi": "Mekanika gim serta matematika dan fisika 3D",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": []
   },
   {
    "id": "SK124",
@@ -2969,7 +3260,11 @@
    "kategori": "Analysis",
    "tipe": "hard_skill",
    "deskripsi": "Memodelkan proses bisnis dan rancangan sistem",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": [
+    "BPMN",
+    "UML"
+   ]
   },
   {
    "id": "SK125",
@@ -2977,7 +3272,8 @@
    "kategori": "Analysis",
    "tipe": "hard_skill",
    "deskripsi": "Menggali dan menuliskan kebutuhan sistem",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": []
   },
   {
    "id": "SK126",
@@ -2985,7 +3281,8 @@
    "kategori": "ERP Platform",
    "tipe": "hard_skill",
    "deskripsi": "Platform ERP SAP dan modul-modulnya",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": []
   },
   {
    "id": "SK127",
@@ -2993,7 +3290,8 @@
    "kategori": "ERP Platform",
    "tipe": "hard_skill",
    "deskripsi": "Platform ERP sumber terbuka berbasis Python",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": []
   },
   {
    "id": "SK128",
@@ -3001,7 +3299,11 @@
    "kategori": "Blockchain",
    "tipe": "hard_skill",
    "deskripsi": "Menulis dan menguji smart contract",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": [
+    "Solidity",
+    "Ethereum"
+   ]
   },
   {
    "id": "SK129",
@@ -3009,7 +3311,8 @@
    "kategori": "Blockchain",
    "tipe": "hard_skill",
    "deskripsi": "Perkakas pengembangan aplikasi terdesentralisasi",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": []
   },
   {
    "id": "SK130",
@@ -3017,7 +3320,13 @@
    "kategori": "IoT",
    "tipe": "hard_skill",
    "deskripsi": "Pemrograman mikrokontroler dan sensor",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": [
+    "Arduino",
+    "ESP32",
+    "Mikrokontroler",
+    "Raspberry Pi"
+   ]
   },
   {
    "id": "SK131",
@@ -3025,7 +3334,10 @@
    "kategori": "IoT",
    "tipe": "hard_skill",
    "deskripsi": "Protokol komunikasi perangkat IoT",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": [
+    "MQTT"
+   ]
   },
   {
    "id": "SK132",
@@ -3033,7 +3345,8 @@
    "kategori": "Documentation",
    "tipe": "hard_skill",
    "deskripsi": "Menulis dokumentasi teknis yang jelas dan terstruktur",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": []
   },
   {
    "id": "SK133",
@@ -3041,7 +3354,415 @@
    "kategori": "Documentation",
    "tipe": "hard_skill",
    "deskripsi": "Mendokumentasikan API dan panduan pengembang",
-   "sumber": "kurasi"
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK134",
+   "nama": "Machine Learning (konsep & algoritma)",
+   "kategori": "Data Science",
+   "tipe": "hard_skill",
+   "deskripsi": "Supervised dan unsupervised learning serta evaluasi model",
+   "sumber": "kurasi",
+   "alias": [
+    "ML"
+   ]
+  },
+  {
+   "id": "SK135",
+   "nama": "Deep Learning",
+   "kategori": "Data Science",
+   "tipe": "hard_skill",
+   "deskripsi": "Jaringan saraf tiruan: CNN / RNN / Transformer",
+   "sumber": "kurasi",
+   "alias": [
+    "DL",
+    "Neural Network",
+    "CNN"
+   ]
+  },
+  {
+   "id": "SK136",
+   "nama": "Natural Language Processing",
+   "kategori": "ML Specialization",
+   "tipe": "hard_skill",
+   "deskripsi": "Pemrosesan teks dan bahasa alami",
+   "sumber": "kurasi",
+   "alias": [
+    "NLP"
+   ]
+  },
+  {
+   "id": "SK137",
+   "nama": "Statistics & Probability",
+   "kategori": "Data Science",
+   "tipe": "hard_skill",
+   "deskripsi": "Statistika inferensial dan peluang",
+   "sumber": "kurasi",
+   "alias": [
+    "Statistika",
+    "Statistik"
+   ]
+  },
+  {
+   "id": "SK138",
+   "nama": "Data Visualization (konsep)",
+   "kategori": "Data Visualization",
+   "tipe": "hard_skill",
+   "deskripsi": "Memilih dan merancang visualisasi data yang tepat",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK139",
+   "nama": "Data Structures & Algorithms",
+   "kategori": "Computer Science",
+   "tipe": "hard_skill",
+   "deskripsi": "Struktur data dan algoritma dasar",
+   "sumber": "kurasi",
+   "alias": [
+    "DSA",
+    "Algoritma",
+    "Struktur Data"
+   ]
+  },
+  {
+   "id": "SK140",
+   "nama": "Object-Oriented Programming",
+   "kategori": "Computer Science",
+   "tipe": "hard_skill",
+   "deskripsi": "Pemrograman berorientasi objek dan design pattern",
+   "sumber": "kurasi",
+   "alias": [
+    "OOP",
+    "PBO"
+   ]
+  },
+  {
+   "id": "SK141",
+   "nama": "Unit Testing / TDD",
+   "kategori": "Testing",
+   "tipe": "hard_skill",
+   "deskripsi": "Pengujian unit dan pengembangan berbasis pengujian",
+   "sumber": "kurasi",
+   "alias": [
+    "TDD",
+    "Jest",
+    "JUnit"
+   ]
+  },
+  {
+   "id": "SK142",
+   "nama": "Test Automation (Selenium, Cypress, Playwright)",
+   "kategori": "Testing",
+   "tipe": "hard_skill",
+   "deskripsi": "Otomasi pengujian antarmuka",
+   "sumber": "kurasi",
+   "alias": [
+    "Selenium",
+    "Cypress",
+    "Playwright"
+   ]
+  },
+  {
+   "id": "SK143",
+   "nama": "API Testing (Postman)",
+   "kategori": "Testing",
+   "tipe": "hard_skill",
+   "deskripsi": "Pengujian layanan API",
+   "sumber": "kurasi",
+   "alias": [
+    "Postman"
+   ]
+  },
+  {
+   "id": "SK144",
+   "nama": "Manual Testing & Test Case Design",
+   "kategori": "Testing",
+   "tipe": "hard_skill",
+   "deskripsi": "Merancang dan menjalankan kasus uji",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK145",
+   "nama": "UI Design & Prototyping",
+   "kategori": "Design",
+   "tipe": "hard_skill",
+   "deskripsi": "Merancang antarmuka dan purwarupa interaktif",
+   "sumber": "kurasi",
+   "alias": [
+    "UI Design",
+    "Prototyping"
+   ]
+  },
+  {
+   "id": "SK146",
+   "nama": "User Research & Usability Testing",
+   "kategori": "Design",
+   "tipe": "hard_skill",
+   "deskripsi": "Riset pengguna dan uji ketergunaan",
+   "sumber": "kurasi",
+   "alias": [
+    "UX Research"
+   ]
+  },
+  {
+   "id": "SK147",
+   "nama": "Wireframing & Design System",
+   "kategori": "Design",
+   "tipe": "hard_skill",
+   "deskripsi": "Kerangka tampilan dan sistem desain",
+   "sumber": "kurasi",
+   "alias": [
+    "Wireframe"
+   ]
+  },
+  {
+   "id": "SK148",
+   "nama": "Product Roadmap & Prioritization",
+   "kategori": "Product",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyusun peta jalan dan prioritas produk",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK149",
+   "nama": "User Story & PRD Writing",
+   "kategori": "Product",
+   "tipe": "hard_skill",
+   "deskripsi": "Menulis kebutuhan produk",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK150",
+   "nama": "Product Analytics (Mixpanel, Amplitude)",
+   "kategori": "Product",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengukur perilaku pengguna produk",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK151",
+   "nama": "TCP/IP, Routing & Switching",
+   "kategori": "Networking",
+   "tipe": "hard_skill",
+   "deskripsi": "Dasar jaringan komputer",
+   "sumber": "kurasi",
+   "alias": [
+    "Jaringan Komputer",
+    "CCNA"
+   ]
+  },
+  {
+   "id": "SK152",
+   "nama": "Cisco / MikroTik",
+   "kategori": "Networking",
+   "tipe": "hard_skill",
+   "deskripsi": "Konfigurasi perangkat jaringan",
+   "sumber": "kurasi",
+   "alias": [
+    "Cisco",
+    "MikroTik",
+    "MTCNA"
+   ]
+  },
+  {
+   "id": "SK153",
+   "nama": "Firewall & VPN",
+   "kategori": "Networking",
+   "tipe": "hard_skill",
+   "deskripsi": "Pengamanan lalu lintas jaringan",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK154",
+   "nama": "Windows Server & Active Directory",
+   "kategori": "Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Administrasi server dan direktori pengguna",
+   "sumber": "kurasi",
+   "alias": [
+    "Active Directory"
+   ]
+  },
+  {
+   "id": "SK155",
+   "nama": "Hardware & OS Troubleshooting",
+   "kategori": "IT Support",
+   "tipe": "hard_skill",
+   "deskripsi": "Diagnosis dan perbaikan perangkat serta sistem operasi",
+   "sumber": "kurasi",
+   "alias": [
+    "Troubleshooting",
+    "Teknisi Komputer"
+   ]
+  },
+  {
+   "id": "SK156",
+   "nama": "Ticketing / ITSM (ITIL, Service Desk)",
+   "kategori": "IT Support",
+   "tipe": "hard_skill",
+   "deskripsi": "Pengelolaan tiket dan layanan TI",
+   "sumber": "kurasi",
+   "alias": [
+    "ITIL",
+    "Helpdesk"
+   ]
+  },
+  {
+   "id": "SK157",
+   "nama": "Bash / Shell Scripting",
+   "kategori": "Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Otomasi lewat skrip shell",
+   "sumber": "kurasi",
+   "alias": [
+    "Bash",
+    "Shell"
+   ]
+  },
+  {
+   "id": "SK158",
+   "nama": "Monitoring & Observability (Prometheus, Grafana)",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Pemantauan sistem dan layanan",
+   "sumber": "kurasi",
+   "alias": [
+    "Grafana",
+    "Prometheus"
+   ]
+  },
+  {
+   "id": "SK159",
+   "nama": "Ansible / Configuration Management",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Otomasi konfigurasi server",
+   "sumber": "kurasi",
+   "alias": [
+    "Ansible"
+   ]
+  },
+  {
+   "id": "SK160",
+   "nama": "MLOps (MLflow, model deployment)",
+   "kategori": "ML Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Siklus hidup dan penyajian model",
+   "sumber": "kurasi",
+   "alias": [
+    "MLOps",
+    "MLflow"
+   ]
+  },
+  {
+   "id": "SK161",
+   "nama": "Firebase",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "Backend-as-a-service untuk aplikasi mobile dan web",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK162",
+   "nama": "Jetpack Compose",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "Toolkit UI deklaratif Android",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK163",
+   "nama": "State Management (Redux, Bloc, Provider)",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "Pengelolaan state aplikasi",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK164",
+   "nama": "Responsive Web Design",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "Tata letak yang menyesuaikan ukuran layar",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK165",
+   "nama": "Burp Suite / Kali Linux Tools",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Perkakas uji penetrasi",
+   "sumber": "kurasi",
+   "alias": [
+    "Burp Suite",
+    "Kali Linux",
+    "Nmap"
+   ]
+  },
+  {
+   "id": "SK166",
+   "nama": "Incident Response & Digital Forensics",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Penanganan insiden dan forensik digital",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK167",
+   "nama": "Backup, Recovery & Performance Tuning",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Pemeliharaan dan penalaan basis data",
+   "sumber": "kurasi",
+   "alias": []
+  },
+  {
+   "id": "SK168",
+   "nama": "Prompt Engineering / LLM Fine-tuning",
+   "kategori": "AI Technique",
+   "tipe": "hard_skill",
+   "deskripsi": "Merancang prompt dan menyesuaikan model bahasa",
+   "sumber": "kurasi",
+   "alias": [
+    "Prompt Engineering",
+    "LLM",
+    "Fine-tuning"
+   ]
+  },
+  {
+   "id": "SK169",
+   "nama": "Image Processing & Object Detection (YOLO)",
+   "kategori": "ML Specialization",
+   "tipe": "hard_skill",
+   "deskripsi": "Pengolahan citra dan deteksi objek",
+   "sumber": "kurasi",
+   "alias": [
+    "YOLO",
+    "Object Detection"
+   ]
+  },
+  {
+   "id": "SK170",
+   "nama": "Data Modeling",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Perancangan model dan skema data",
+   "sumber": "kurasi",
+   "alias": [
+    "ERD"
+   ]
   }
  ],
  "profesi_skill": {
@@ -3143,6 +3864,34 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK141",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK145",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK163",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK164",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C002": [
@@ -3271,6 +4020,34 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK139",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK140",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK141",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK143",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C003": [
@@ -3399,6 +4176,13 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK139",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C004": [
@@ -3478,6 +4262,27 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK140",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK161",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK162",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C005": [
@@ -3529,6 +4334,20 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK140",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK161",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C006": [
@@ -3601,6 +4420,20 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK161",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK163",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C007": [
@@ -3701,6 +4534,20 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK137",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK138",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C008": [
@@ -3780,6 +4627,20 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK138",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK170",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C009": [
@@ -3915,6 +4776,13 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK170",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C010": [
@@ -4022,6 +4890,20 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK134",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK137",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C011": [
@@ -4129,6 +5011,41 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK134",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK135",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK137",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK139",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK160",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C012": [
@@ -4229,6 +5146,41 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK134",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK135",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK136",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK160",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK168",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C013": [
@@ -4315,6 +5267,27 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK134",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK135",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK169",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C014": [
@@ -4415,6 +5388,34 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK134",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK135",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK136",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK168",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C015": [
@@ -4515,6 +5516,27 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK157",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK158",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK159",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C016": [
@@ -4594,6 +5616,20 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK158",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK159",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C017": [
@@ -4673,6 +5709,20 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK157",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK158",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C018": [
@@ -4752,6 +5802,27 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK151",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK153",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK166",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C019": [
@@ -4817,6 +5888,13 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK165",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C020": [
@@ -4875,6 +5953,27 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK145",
+    "wajib": false,
+    "bobot": 14.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK146",
+    "wajib": false,
+    "bobot": 12.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK147",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C021": [
@@ -4947,6 +6046,34 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK146",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK148",
+    "wajib": false,
+    "bobot": 14.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK149",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK150",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C022": [
@@ -5005,6 +6132,34 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK141",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK142",
+    "wajib": false,
+    "bobot": 14.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK143",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK144",
+    "wajib": false,
+    "bobot": 14.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C024": [
@@ -5056,6 +6211,27 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK154",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK155",
+    "wajib": false,
+    "bobot": 16.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK156",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C025": [
@@ -5121,6 +6297,41 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK151",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK153",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK154",
+    "wajib": false,
+    "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK156",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK157",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C026": [
@@ -5158,6 +6369,27 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK151",
+    "wajib": false,
+    "bobot": 16.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK152",
+    "wajib": false,
+    "bobot": 12.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK153",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C027": [
@@ -5244,6 +6476,20 @@
     "bobot": 0.0,
     "catatan": null,
     "sumber": "lowongan"
+   },
+   {
+    "skill_id": "SK167",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK170",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C023": [
@@ -5432,6 +6678,13 @@
     "bobot": 7.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK150",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C030": [
@@ -5488,6 +6741,20 @@
     "skill_id": "SK109",
     "wajib": false,
     "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK139",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK140",
+    "wajib": false,
+    "bobot": 5.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -5551,6 +6818,13 @@
    },
    {
     "skill_id": "SK116",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK149",
     "wajib": false,
     "bobot": 6.0,
     "catatan": null,

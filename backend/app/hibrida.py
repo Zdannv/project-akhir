@@ -21,6 +21,7 @@ from .kuesioner import kode_holland
 class Konfigurasi:
     alpha: float = 0.6              # porsi KBF; 1 = KBF saja, 0 = CBF saja
     metode_riasec: str = "iachan"   # "iachan" | "korelasi"
+    ruang_cbf: str = "global"       # "global" | "profesi"; lihat cbf.py
     top_n: int = 5
 
     def __post_init__(self) -> None:
@@ -37,7 +38,7 @@ def peringkat(profil: ProfilPengguna, kb: BasisPengetahuan,
     baris = []
     for p in lolos:
         kbf = skor_kbf(profil, p, konfig.metode_riasec)
-        cbf = skor_cbf(profil.skill, kb.skill_profesi(p["id"]))
+        cbf = skor_cbf(profil.skill, kb.skill_profesi(p["id"]), konfig.ruang_cbf)
         final = konfig.alpha * kbf["skor"] + (1 - konfig.alpha) * cbf["skor"]
         baris.append({
             "profesi_id": p["id"],

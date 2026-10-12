@@ -3,13 +3,13 @@
  * kanan. Baris pertama adalah lima teratas hasil hybrid filtering; baris kedua
  * sisanya, supaya pengguna bisa membandingkan.
  */
-import { ArrowRight, Info, Search } from 'lucide-react'
+import { ArrowRight, Info, Search, SlidersHorizontal, Target } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ambilHasil, NAMA_RIASEC, type Hasil } from '../api'
+import { ambilHasil, NAMA_RIASEC, persen, type Hasil, type RingkasTarget } from '../api'
 import { AppBottomNav, AppTopNav } from '../komponen/AppNav'
 import { BarisKartu, KartuProfesi } from '../komponen/profesi'
-import { Galat, Memuat } from '../komponen/umum'
+import { Avatar, Batang, Galat, Memuat } from '../komponen/umum'
 import { useData } from '../komponen/useData'
 
 export default function Explore() {
@@ -41,9 +41,16 @@ function Isi({ id, d }: { id: string; d: Hasil }) {
       <div className="bg-[#E7EAF2] px-4 py-5 sm:px-6 lg:sticky lg:top-24 lg:w-[380px] lg:shrink-0 lg:rounded-2xl lg:px-5">
         <div className="flex flex-col gap-4">
           <Sapaan id={id} d={d} />
+          {d.target ? <KartuTarget id={id} t={d.target} /> : n > 0 && (
+            <Banner
+              ke={`/explore/${id}/roadmap`} gambar="/ilustrasi/banner-tujuan.webp" gambarLebar="/ilustrasi/banner-tujuan-lebar.webp"
+              eyebrow="Profesi Tujuan" judul="Sudah ada yang menarik?"
+              isi="Pilih satu profesi sebagai tujuan, lalu lihat skill apa yang perlu dikejar." tombol="Susun Roadmap"
+            />
+          )}
 
           <section className="rounded-2xl bg-white p-4">
-            <p className="text-[12px] font-bold text-violet-600">Career DNA-mu</p>
+            <p className="text-[12px] font-bold text-violet-600">Profil Kariermu</p>
             <p className="mt-1 text-[22px] font-bold tracking-[0.12em] text-slate-900">{h.kode_holland}</p>
             <p className="text-[12.5px] leading-relaxed text-slate-500">{[...h.kode_holland].map((c) => NAMA_RIASEC[c]).join(' · ')}</p>
             <Link to={`/explore/${id}/profil`} className="mt-3 inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-violet-700 hover:text-violet-800">
@@ -51,23 +58,12 @@ function Isi({ id, d }: { id: string; d: Hasil }) {
             </Link>
           </section>
 
-          <Link to={`/explore/${id}/penilaian`} style={{ backgroundColor: '#EFEBFB' }} className="group relative block min-h-[180px] overflow-hidden rounded-2xl transition-opacity hover:opacity-95">
-            <div className="absolute inset-0 bg-cover bg-right-bottom bg-no-repeat sm:hidden lg:block" style={{ backgroundImage: "url('/explore/dna-art.webp')" }} aria-hidden />
-            <div className="absolute inset-0 hidden bg-cover bg-right-bottom bg-no-repeat sm:block lg:hidden" style={{ backgroundImage: "url('/explore/dna-art-wide.webp')" }} aria-hidden />
-            <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, #EFEBFB, #EFEBFBd9 55%, transparent)' }} aria-hidden />
-            <div className="relative flex max-w-[76%] flex-col gap-1.5 p-5 sm:max-w-[58%]">
-              <p className="text-[12px] font-bold text-violet-600">Penilaian Sistem</p>
-              <h3 className="text-[18px] font-bold leading-tight tracking-tight text-slate-900">
-                {d.skor_sus === null ? 'Bantu penelitian ini' : 'Terima kasih!'}
-              </h3>
-              <p className="text-[12.5px] leading-relaxed text-slate-600">
-                {d.skor_sus === null ? 'Nilai kemudahan penggunaan sistem lewat 10 pertanyaan singkat.' : 'Penilaianmu sudah tersimpan. Kamu masih bisa mengubahnya.'}
-              </p>
-              <span className="mt-3 inline-flex w-fit items-center gap-2 whitespace-nowrap rounded-full bg-violet-600 px-4 py-2 text-[12px] font-semibold text-white transition-colors group-hover:bg-violet-700">
-                {d.skor_sus === null ? 'Isi Penilaian' : 'Ubah Penilaian'} <ArrowRight className="size-3.5" aria-hidden />
-              </span>
-            </div>
-          </Link>
+          <Banner
+            ke={`/explore/${id}/penilaian`} gambar="/ilustrasi/banner.webp" gambarLebar="/ilustrasi/banner-lebar.webp"
+            eyebrow="Penilaian Sistem" judul={d.skor_sus === null ? 'Bantu penelitian ini' : 'Terima kasih!'}
+            isi={d.skor_sus === null ? 'Nilai kemudahan penggunaan sistem lewat 10 pertanyaan singkat.' : 'Penilaianmu sudah tersimpan. Kamu masih bisa mengubahnya.'}
+            tombol={d.skor_sus === null ? 'Isi Penilaian' : 'Ubah Penilaian'}
+          />
         </div>
       </div>
 
@@ -130,10 +126,11 @@ function Sapaan({ id, d }: { id: string; d: Hasil }) {
           <p className="mt-0.5 text-[12.5px] text-slate-500">Ini profesi TI yang paling cocok dengan profilmu.</p>
         </div>
         <Link to={`/explore/${id}/profil`} aria-label="Buka profil" className="shrink-0 rounded-full transition-transform hover:scale-105">
-          <img src="/avatar-default.webp" alt="" width={40} height={40} className="size-10 rounded-full object-cover" />
+          <Avatar nama={d.nama} />
         </Link>
       </div>
-      <div className="relative">
+      <div className="flex items-center gap-2">
+      <div className="relative flex-1">
         <label htmlFor="cari-profesi" className="sr-only">Cari profesi TI</label>
         <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" aria-hidden />
         <input id="cari-profesi" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Cari profesi TI.."
@@ -151,6 +148,48 @@ function Sapaan({ id, d }: { id: string; d: Hasil }) {
           </div>
         )}
       </div>
+      <Link to={`/explore/${id}/cari`} aria-label="Cari dengan filter" className="grid size-11 shrink-0 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 transition-colors hover:bg-slate-50">
+        <SlidersHorizontal className="size-4" aria-hidden />
+      </Link>
+      </div>
     </div>
+  )
+}
+
+/** Kartu profesi tujuan: kemajuan roadmap dan cakupan skill saat ini. */
+function KartuTarget({ id, t }: { id: string; t: RingkasTarget }) {
+  const { selesai, total } = t.progres
+  const bagian = total === 0 ? 1 : selesai / total
+  return (
+    <Link to={`/explore/${id}/roadmap`} className="block rounded-2xl bg-violet-600 p-4 text-white transition-colors hover:bg-violet-700">
+      <p className="flex items-center gap-1.5 text-[12px] font-bold text-violet-200"><Target className="size-3.5" aria-hidden /> Profesi Tujuanmu</p>
+      <p className="mt-1 text-[17px] font-bold leading-snug tracking-tight">{t.nama}</p>
+      <div className="mt-3 flex items-baseline justify-between text-[12.5px] text-violet-100">
+        <span>{total === 0 ? 'Semua skill sudah dikuasai' : `${selesai} dari ${total} skill dipelajari`}</span>
+        {t.proyeksi && <span className="font-semibold text-white">Cakupan {persen(t.proyeksi.cakupan)}</span>}
+      </div>
+      <div className="mt-1.5"><Batang nilai={bagian} warna="bg-white" alas="bg-violet-400/60" /></div>
+      <span className="mt-3 inline-flex items-center gap-1.5 text-[12.5px] font-semibold">Lanjutkan roadmap <ArrowRight className="size-3.5" aria-hidden /></span>
+    </Link>
+  )
+}
+
+function Banner({ ke, gambar, gambarLebar, eyebrow, judul, isi, tombol }: {
+  ke: string; gambar: string; gambarLebar: string; eyebrow: string; judul: string; isi: string; tombol: string
+}) {
+  return (
+    <Link to={ke} style={{ backgroundColor: '#EFEBFB' }} className="group relative block min-h-[180px] overflow-hidden rounded-2xl transition-opacity hover:opacity-95">
+      <div className="absolute inset-0 bg-cover bg-right-bottom bg-no-repeat sm:hidden lg:block" style={{ backgroundImage: `url('${gambar}')` }} aria-hidden />
+      <div className="absolute inset-0 hidden bg-cover bg-right-bottom bg-no-repeat sm:block lg:hidden" style={{ backgroundImage: `url('${gambarLebar}')` }} aria-hidden />
+      <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to right, #EFEBFB, #EFEBFBd9 55%, transparent)' }} aria-hidden />
+      <div className="relative flex max-w-[76%] flex-col gap-1.5 p-5 sm:max-w-[58%]">
+        <p className="text-[12px] font-bold text-violet-600">{eyebrow}</p>
+        <h3 className="text-[18px] font-bold leading-tight tracking-tight text-slate-900">{judul}</h3>
+        <p className="text-[12.5px] leading-relaxed text-slate-600">{isi}</p>
+        <span className="mt-3 inline-flex w-fit items-center gap-2 whitespace-nowrap rounded-full bg-violet-600 px-4 py-2 text-[12px] font-semibold text-white transition-colors group-hover:bg-violet-700">
+          {tombol} <ArrowRight className="size-3.5" aria-hidden />
+        </span>
+      </div>
+    </Link>
   )
 }

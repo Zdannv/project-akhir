@@ -17,3 +17,40 @@ SK130,Embedded Systems (Arduino / ESP32 / STM32),IoT,hard_skill,Pemrograman mikr
 SK131,IoT Protocols (MQTT / CoAP),IoT,hard_skill,Protokol komunikasi perangkat IoT
 SK132,Technical Writing,Documentation,hard_skill,Menulis dokumentasi teknis yang jelas dan terstruktur
 SK133,API Documentation (OpenAPI / Markdown),Documentation,hard_skill,Mendokumentasikan API dan panduan pengembang
+SK134,Machine Learning (konsep & algoritma),Data Science,hard_skill,Supervised dan unsupervised learning serta evaluasi model
+SK135,Deep Learning,Data Science,hard_skill,Jaringan saraf tiruan: CNN / RNN / Transformer
+SK136,Natural Language Processing,ML Specialization,hard_skill,Pemrosesan teks dan bahasa alami
+SK137,Statistics & Probability,Data Science,hard_skill,Statistika inferensial dan peluang
+SK138,Data Visualization (konsep),Data Visualization,hard_skill,Memilih dan merancang visualisasi data yang tepat
+SK139,Data Structures & Algorithms,Computer Science,hard_skill,Struktur data dan algoritma dasar
+SK140,Object-Oriented Programming,Computer Science,hard_skill,Pemrograman berorientasi objek dan design pattern
+SK141,Unit Testing / TDD,Testing,hard_skill,Pengujian unit dan pengembangan berbasis pengujian
+SK142,"Test Automation (Selenium, Cypress, Playwright)",Testing,hard_skill,Otomasi pengujian antarmuka
+SK143,API Testing (Postman),Testing,hard_skill,Pengujian layanan API
+SK144,Manual Testing & Test Case Design,Testing,hard_skill,Merancang dan menjalankan kasus uji
+SK145,UI Design & Prototyping,Design,hard_skill,Merancang antarmuka dan purwarupa interaktif
+SK146,User Research & Usability Testing,Design,hard_skill,Riset pengguna dan uji ketergunaan
+SK147,Wireframing & Design System,Design,hard_skill,Kerangka tampilan dan sistem desain
+SK148,Product Roadmap & Prioritization,Product,hard_skill,Menyusun peta jalan dan prioritas produk
+SK149,User Story & PRD Writing,Product,hard_skill,Menulis kebutuhan produk
+SK150,"Product Analytics (Mixpanel, Amplitude)",Product,hard_skill,Mengukur perilaku pengguna produk
+SK151,"TCP/IP, Routing & Switching",Networking,hard_skill,Dasar jaringan komputer
+SK152,Cisco / MikroTik,Networking,hard_skill,Konfigurasi perangkat jaringan
+SK153,Firewall & VPN,Networking,hard_skill,Pengamanan lalu lintas jaringan
+SK154,Windows Server & Active Directory,Infrastructure,hard_skill,Administrasi server dan direktori pengguna
+SK155,Hardware & OS Troubleshooting,IT Support,hard_skill,Diagnosis dan perbaikan perangkat serta sistem operasi
+SK156,"Ticketing / ITSM (ITIL, Service Desk)",IT Support,hard_skill,Pengelolaan tiket dan layanan TI
+SK157,Bash / Shell Scripting,Infrastructure,hard_skill,Otomasi lewat skrip shell
+SK158,"Monitoring & Observability (Prometheus, Grafana)",DevOps,hard_skill,Pemantauan sistem dan layanan
+SK159,Ansible / Configuration Management,DevOps,hard_skill,Otomasi konfigurasi server
+SK160,"MLOps (MLflow, model deployment)",ML Infrastructure,hard_skill,Siklus hidup dan penyajian model
+SK161,Firebase,Mobile,hard_skill,Backend-as-a-service untuk aplikasi mobile dan web
+SK162,Jetpack Compose,Mobile,hard_skill,Toolkit UI deklaratif Android
+SK163,"State Management (Redux, Bloc, Provider)",Frontend,hard_skill,Pengelolaan state aplikasi
+SK164,Responsive Web Design,Frontend,hard_skill,Tata letak yang menyesuaikan ukuran layar
+SK165,Burp Suite / Kali Linux Tools,Cybersecurity,hard_skill,Perkakas uji penetrasi
+SK166,Incident Response & Digital Forensics,Cybersecurity,hard_skill,Penanganan insiden dan forensik digital
+SK167,"Backup, Recovery & Performance Tuning",Database,hard_skill,Pemeliharaan dan penalaan basis data
+SK168,Prompt Engineering / LLM Fine-tuning,AI Technique,hard_skill,Merancang prompt dan menyesuaikan model bahasa
+SK169,Image Processing & Object Detection (YOLO),ML Specialization,hard_skill,Pengolahan citra dan deteksi objek
+SK170,Data Modeling,Database,hard_skill,Perancangan model dan skema data

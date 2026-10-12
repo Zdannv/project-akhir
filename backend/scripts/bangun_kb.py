@@ -7,11 +7,15 @@ Tiga sumber digabung menjadi satu berkas JSON yang dibaca mesin rekomendasi:
       Hasil pengolahan lowongan kerja lokal (LinkedIn Indonesia, 2025).
 
   data/sumber/pelengkap_skill.csv, pelengkap_profesi_skill.csv
-      Workbook di atas berhenti di C027: sembilan profesi (C023, C028 - C035)
-      belum punya relasi skill, dan skill khasnya belum ada di daftar. Dua
+      Workbook di atas punya dua lubang: sembilan profesi (C023, C028 - C035)
+      belum punya relasi skill, dan banyak skill umum (machine learning,
+      pengujian, jaringan, riset pengguna, ...) tidak ada di daftarnya. Dua
       berkas ini melengkapinya. Isinya KURASI PENULIS, bukan hasil pengolahan
       lowongan; setiap baris dari sini diberi sumber "kurasi" di keluaran
       supaya bisa dibedakan dan divalidasi belakangan.
+
+  data/sumber/alias_skill.csv
+      Nama lain tiap skill, hanya untuk pencarian di formulir.
 
   data/sumber/onet_riasec_profesi_ti.csv
       Profil minat Holland (RIASEC) tiap profesi, dari O*NET 30.3 lewat padanan
@@ -220,15 +224,26 @@ def main() -> None:
     ]
     id_skill = {s["id"] for s in skill}
 
+    # Alias hanya untuk pencarian di formulir ("ReactJS" menemukan React.js);
+    # tidak ikut dalam perhitungan.
+    alias: dict[str, list[str]] = {}
+    for b in baca_csv("alias_skill.csv"):
+        if b["skill_id"] not in id_skill:
+            raise ValueError(f"alias menunjuk skill yang tidak ada: {b['skill_id']}")
+        alias.setdefault(b["skill_id"], []).append(b["alias"])
+    for s in skill:
+        s["alias"] = alias.get(s["id"], [])
+
     profesi_skill: dict[str, list[dict]] = {}
-    dari_lowongan: set[str] = set()
     for sumber, daftar in (("lowongan", baca_sheet(wb, "career_skills")),
                            ("kurasi", baca_csv("pelengkap_profesi_skill.csv"))):
         for b in daftar:
             if b["skill_id"] not in id_skill:
                 raise ValueError(f"relasi menunjuk skill yang tidak ada: {b['skill_id']}")
-            if sumber == "kurasi" and b["career_id"] in dari_lowongan:
-                raise ValueError(f"pelengkap menimpa profesi yang sudah punya data: {b['career_id']}")
+            # Pelengkap boleh MENAMBAH skill ke profesi mana pun, tetapi tidak
+            # boleh menimpa relasi yang sudah ada di data lowongan.
+            if any(x["skill_id"] == b["skill_id"] for x in profesi_skill.get(b["career_id"], [])):
+                raise ValueError(f"relasi ganda: {b['career_id']} - {b['skill_id']}")
             profesi_skill.setdefault(b["career_id"], []).append({
                 "skill_id": b["skill_id"],
                 "wajib": bool(int(b["is_required"])),
@@ -236,8 +251,6 @@ def main() -> None:
                 "catatan": b["notes"] or None,
                 "sumber": sumber,
             })
-        if sumber == "lowongan":
-            dari_lowongan = set(profesi_skill)
 
     prodi = [
         {"id": b["prodi_id"], "nama": b["nama_prodi"], "jenjang": b["jenjang"], "rumpun": b["rumpun"],
@@ -255,8 +268,11 @@ def main() -> None:
         if p["gaji_min"] > p["gaji_maks"]:
             raise ValueError(f"rentang gaji terbalik: {p['id']}")
 
+    # lowongan = seluruh skill dari data lowongan; kurasi = seluruhnya kurasi;
+    # campuran = data lowongan yang ditambah skill kurasi.
     for p in profesi:
-        p["skill_sumber"] = "lowongan" if p["id"] in dari_lowongan else "kurasi"
+        asal = {r["sumber"] for r in profesi_skill[p["id"]]}
+        p["skill_sumber"] = "campuran" if len(asal) > 1 else asal.pop()
 
     kota = sorted({k for p in profesi for k in p["lokasi"]})
 
@@ -266,9 +282,11 @@ def main() -> None:
             "n_profesi": len(profesi),
             "n_skill": len(skill),
             "n_relasi": sum(len(v) for v in profesi_skill.values()),
+            "n_relasi_kurasi": sum(1 for v in profesi_skill.values() for r in v if r["sumber"] == "kurasi"),
             "sumber": {
                 "pasar_kerja": "knowledge_base_profesi_IT.xlsx — pengolahan lowongan kerja LinkedIn Indonesia 2025",
-                "skill_kurasi": "pelengkap_*.csv — kurasi penulis untuk 9 profesi yang belum tercakup, perlu divalidasi",
+                "skill_kurasi": "pelengkap_*.csv — kurasi penulis: skill untuk 9 profesi yang belum tercakup "
+                                "dan skill umum yang belum ada di data lowongan; perlu divalidasi",
                 "riasec": "O*NET 30.3 Career Interest Types (USDOL/ETA, CC BY 4.0), lewat padanan kode SOC",
                 "big5_ideal": "diturunkan dari O*NET Work Styles; lihat bangun_kb.py",
                 "stabilitas": "proksi dari pola kerja dan sektor; lihat bangun_kb.py",

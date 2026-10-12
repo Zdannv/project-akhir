@@ -7,8 +7,22 @@ skill):
 
     Skor_Final = α · Skor_KBF + (1 − α) · Skor_CBF        α = 0,6
 
-Proyek ini berdiri sendiri dan terpisah dari Navika (proyek magang). Yang
-diambil dari sana hanya gaya tampilan dan aset gambarnya.
+## Fitur
+
+- **Profil karier** — kuesioner empat langkah: latar belakang, minat (RIASEC),
+  kepribadian (Big Five), dan keahlian. Pencarian skill mengenali nama lain
+  ("ReactJS", "Postgres"), dan skill yang tidak ada di daftar bisa diketik sendiri.
+- **Explore** — lima profesi teratas beserta alasannya, peringkat lengkap, dan
+  profesi yang tersaring berikut sebabnya.
+- **Cari & filter** — menjelajah 35 profesi menurut sektor, pola kerja, dan gaji.
+- **Detail profesi** — tiga tab: Analisa (rincian skor, diagram radar minat),
+  Skill & Kompetensi (analisis kesenjangan skill), Insight (gaji, jenjang karier).
+- **Profesi tujuan & roadmap** — skill yang belum dikuasai disusun tiga tahap,
+  dengan simulasi: kalau skill ini dipelajari, cakupan, skor, dan peringkatnya
+  jadi berapa.
+- **Penilaian** — relevansi tiap rekomendasi dan kuesioner SUS.
+- **Dasbor peneliti** (`/peneliti`) — Hit Rate@K, Precision@K, SUS, Cronbach's α,
+  daftar responden, dan ekspor CSV.
 
 ## Menjalankan
 
@@ -38,13 +52,21 @@ Untuk pengembangan antarmuka: jalankan backend seperti di atas, lalu
 
 ```bash
 cd backend
-.venv/bin/python -m pytest                   # 22 uji: mesin (white-box) dan API (black-box)
+.venv/bin/python -m pytest                   # 29 uji: mesin (white-box) dan API (black-box)
 .venv/bin/python scripts/evaluasi.py         # menulis docs/hasil-evaluasi.md
 ```
 
 `evaluasi.py` punya dua bagian: simulasi persona sintetis (ablasi KBF/CBF/hibrida,
-kepekaan α, Iachan vs korelasi) dan metrik dari responden sungguhan yang
-tersimpan di `data/pa.db` (Hit Rate@K, Precision@K, SUS, Cronbach's α).
+kepekaan α, Iachan vs korelasi, ruang vektor CBF) dan metrik dari responden
+sungguhan yang tersimpan di `data/pa.db` (Hit Rate@K, Precision@K, SUS,
+Cronbach's α, skill di luar pilihan). Angka yang sama tampil langsung di dasbor
+peneliti.
+
+## Dasbor peneliti
+
+Buka http://127.0.0.1:8000/peneliti dari komputer yang menjalankan server.
+Kalau aplikasinya dipasang di server yang bisa diakses orang lain, isi variabel
+lingkungan `PA_KUNCI_PENELITI` sebelum menjalankan; dasbor lalu meminta kunci itu.
 
 ## Susunan
 
@@ -52,7 +74,8 @@ tersimpan di `data/pa.db` (Hit Rate@K, Precision@K, SUS, Cronbach's α).
 data/sumber/     berkas sumber: workbook lowongan, O*NET, pelengkap kurasi
 data/kb/         basis pengetahuan hasil bangun_kb.py
 data/pa.db       jawaban responden (tidak masuk repo)
-backend/app/     kuesioner.py · kbf.py · cbf.py · hibrida.py · main.py (API)
+backend/app/     kuesioner.py · kbf.py · cbf.py · hibrida.py · roadmap.py ·
+                 evaluasi.py · main.py (API)
 backend/scripts/ bangun_kb.py · evaluasi.py
 frontend/        React + Vite + Tailwind
 docs/            keputusan-desain.md · hasil-evaluasi.md

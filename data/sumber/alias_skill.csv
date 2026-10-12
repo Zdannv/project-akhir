@@ -1,0 +1,167 @@
+skill_id,alias
+SK001,py
+SK002,JS
+SK002,ES6
+SK002,ECMAScript
+SK003,TS
+SK007,C Sharp
+SK007,.NET
+SK008,C
+SK008,C++
+SK008,CPP
+SK009,Golang
+SK015,Query
+SK016,React
+SK016,ReactJS
+SK017,Vue
+SK017,VueJS
+SK019,NextJS
+SK020,NuxtJS
+SK021,HTML
+SK021,CSS
+SK021,HTML5
+SK021,CSS3
+SK024,Node
+SK024,NodeJS
+SK029,Express
+SK033,dotnet
+SK033,.NET
+SK035,RN
+SK036,Android Studio
+SK037,SwiftUI
+SK037,UIKit
+SK037,Xcode
+SK038,Postgres
+SK039,MariaDB
+SK040,Mongo
+SK040,NoSQL
+SK043,SQL Server
+SK043,MSSQL
+SK049,AWS
+SK049,EC2
+SK049,S3
+SK050,GCP
+SK050,Google Cloud
+SK051,Azure
+SK053,K8s
+SK053,Kubernetes
+SK055,CI/CD
+SK055,Jenkins
+SK055,GitHub Actions
+SK055,GitLab CI
+SK056,Linux
+SK056,Ubuntu
+SK056,Unix
+SK057,Nginx
+SK057,Apache
+SK062,ETL
+SK062,ELT
+SK066,Looker Studio
+SK066,Google Data Studio
+SK070,sklearn
+SK071,Keras
+SK073,Transformers
+SK075,ChatGPT API
+SK075,LLM API
+SK077,OpenCV
+SK078,RAG
+SK081,GitHub
+SK081,GitLab
+SK084,Pentest
+SK084,Ethical Hacking
+SK088,Photoshop
+SK088,Illustrator
+SK088,Adobe XD
+SK089,Scrum
+SK089,Agile
+SK089,Kanban
+SK090,REST
+SK090,RESTful
+SK090,API
+SK095,Excel
+SK095,Spreadsheet
+SK095,Google Sheets
+SK101,Pemecahan Masalah
+SK102,Komunikasi
+SK102,Presentasi
+SK103,Kerja Sama Tim
+SK103,Kolaborasi
+SK104,Berpikir Analitis
+SK105,Adaptasi
+SK106,Manajemen Waktu
+SK107,Berpikir Kritis
+SK108,Kepemimpinan
+SK109,Kreativitas
+SK110,Ketelitian
+SK111,Bahasa Inggris
+SK111,English
+SK112,Manajemen Proyek
+SK114,Belajar Mandiri
+SK116,Jira
+SK116,Confluence
+SK116,Trello
+SK118,SEO
+SK118,SEM
+SK119,GA4
+SK120,Meta Ads
+SK120,Google Ads
+SK120,Facebook Ads
+SK121,Unity3D
+SK124,BPMN
+SK124,UML
+SK128,Solidity
+SK128,Ethereum
+SK130,Arduino
+SK130,ESP32
+SK130,Mikrokontroler
+SK130,Raspberry Pi
+SK131,MQTT
+SK134,ML
+SK135,DL
+SK135,Neural Network
+SK135,CNN
+SK136,NLP
+SK137,Statistika
+SK137,Statistik
+SK139,DSA
+SK139,Algoritma
+SK139,Struktur Data
+SK140,OOP
+SK140,PBO
+SK141,TDD
+SK141,Jest
+SK141,JUnit
+SK142,Selenium
+SK142,Cypress
+SK142,Playwright
+SK143,Postman
+SK145,UI Design
+SK145,Prototyping
+SK146,UX Research
+SK147,Wireframe
+SK151,Jaringan Komputer
+SK151,CCNA
+SK152,Cisco
+SK152,MikroTik
+SK152,MTCNA
+SK154,Active Directory
+SK155,Troubleshooting
+SK155,Teknisi Komputer
+SK156,ITIL
+SK156,Helpdesk
+SK157,Bash
+SK157,Shell
+SK158,Grafana
+SK158,Prometheus
+SK159,Ansible
+SK160,MLOps
+SK160,MLflow
+SK165,Burp Suite
+SK165,Kali Linux
+SK165,Nmap
+SK168,Prompt Engineering
+SK168,LLM
+SK168,Fine-tuning
+SK169,YOLO
+SK169,Object Detection
+SK170,ERD

@@ -1,7 +1,7 @@
 // Bentuk data dan pemanggil API. Nama kolom mengikuti keluaran backend apa adanya.
 
 export type Butir = { kode: string; teks: string }
-export type Skill = { id: string; nama: string; kategori: string; tipe: string }
+export type Skill = { id: string; nama: string; kategori: string; tipe: string; alias: string[] }
 
 export type Kuesioner = {
   riasec: { skala: string[]; butir: Butir[] }
@@ -28,6 +28,8 @@ export type Masukan = {
   riasec: Record<string, number>
   big5: Record<string, number>
   skill: Record<string, number>
+  skill_lain: string[]
+  induk?: string | null
 }
 
 export type SkillProfesi = {
@@ -91,6 +93,46 @@ export type DataDiri = {
   ekspektasi_gaji: number
   punya_tanggungan: boolean
   skill: { nama: string; tingkat: string }[]
+  skill_lain: string[]
+}
+
+export type Posisi = { skor: number; skor_cbf: number; cakupan: number; peringkat: number }
+
+export type RingkasTarget = {
+  profesi_id: string
+  nama: string
+  progres: { selesai: number; total: number }
+  awal: Posisi | null
+  proyeksi: Posisi | null
+}
+
+export type SkillRoadmap = { skill_id: string; nama: string; wajib: boolean; bobot: number; dicentang: boolean }
+
+export type Roadmap =
+  | { target: null }
+  | {
+      target: { profesi_id: string; nama: string; sektor: string; skill_sumber: string }
+      tahap: { kode: string; nama: string; keterangan: string; skill: SkillRoadmap[] }[]
+      dikuasai: { skill_id: string; nama: string; wajib: boolean }[]
+      progres: { selesai: number; total: number }
+      awal: Posisi | null
+      proyeksi: Posisi | null
+    }
+
+export type Peneliti = {
+  n: number
+  n_pakar?: number
+  pakar?: Record<string, { 'hit@1': number; 'hit@3': number; 'hit@5': number; mrr: number }>
+  presisi?: Record<string, [number, number] | null>
+  sus?: [number, number] | null
+  reliabilitas?: Record<string, number | null>
+  skill_lain?: [string, number][]
+  n_skill?: number
+  responden?: {
+    id: string; dibuat: string; nama: string; jenis: string; profesi_aktual: string | null
+    kode_holland: string; teratas: string | null; posisi_aktual: number | null
+    n_dinilai: number; skor_sus: number | null
+  }[]
 }
 
 export type Tersaring = { profesi_id: string; nama: string; alasan: { kode: string; pesan: string }[] }
@@ -112,6 +154,7 @@ export type Hasil = {
   umpan_balik: Record<string, boolean>
   skor_sus: number | null
   data_diri: DataDiri
+  target: RingkasTarget | null
 }
 
 export type Profesi = {
@@ -150,6 +193,7 @@ export type Detail = {
   ringkas: Ringkas | null
   tersaring: Tersaring | null
   relevan: boolean | null
+  jadi_target: boolean
   kesenjangan: Kesenjangan
   prodi_terkait: string[]
 }
@@ -174,6 +218,19 @@ export const ambilHasil = (id: string) => minta<Hasil>(`/rekomendasi/${id}`)
 export const ambilDetail = (id: string, pid: string) => minta<Detail>(`/rekomendasi/${id}/profesi/${pid}`)
 export const kirimUmpanBalik = (id: string, penilaian: Record<string, boolean>) =>
   minta<void>(`/rekomendasi/${id}/umpan-balik`, { method: 'POST', body: JSON.stringify({ penilaian }) })
+export const ambilMasukan = (id: string) => minta<Masukan>(`/rekomendasi/${id}/masukan`)
+export const pilihTarget = (id: string, profesi_id: string | null) =>
+  minta<void>(`/rekomendasi/${id}/target`, { method: 'PUT', body: JSON.stringify({ profesi_id }) })
+export const ambilRoadmap = (id: string) => minta<Roadmap>(`/rekomendasi/${id}/roadmap`)
+export const centangRoadmap = (id: string, skill_id: string, selesai: boolean) =>
+  minta<void>(`/rekomendasi/${id}/roadmap/centang`, { method: 'POST', body: JSON.stringify({ skill_id, selesai }) })
+export const ambilPeneliti = (kunci: string) =>
+  minta<Peneliti>('/peneliti/ringkasan', { headers: kunci ? { 'X-Kunci': kunci } : {} })
+export async function unduhEkspor(kunci: string): Promise<Blob> {
+  const r = await fetch('/api/peneliti/ekspor.csv', { headers: kunci ? { 'X-Kunci': kunci } : {} })
+  if (!r.ok) throw new Error('Gagal mengunduh data.')
+  return r.blob()
+}
 export const kirimSus = (id: string, jawaban: number[]) =>
   minta<{ skor: number }>(`/rekomendasi/${id}/sus`, { method: 'POST', body: JSON.stringify({ jawaban }) })
 

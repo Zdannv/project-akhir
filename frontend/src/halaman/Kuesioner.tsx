@@ -1,44 +1,53 @@
 /**
- * Alur profiling, mengikuti bentuk Career DNA: layar pembuka, empat langkah
+ * Alur profiling: layar pembuka, empat langkah
  * dengan daftar langkah di kiri (desktop) atau chip STEP (ponsel), lalu layar
  * penutup yang mengantar ke rekomendasi.
  */
-import { ArrowLeft, ArrowRight, Check, ChevronRight, CornerUpLeft, Home, Loader2, Search, Timer, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Check, ChevronRight, CornerUpLeft, Home, Loader2, Plus, Search, Timer, X } from 'lucide-react'
 import { useMemo, useState, type ReactNode } from 'react'
-import { Link } from 'react-router-dom'
-import { ambilKuesioner, kirimMasukan, type Butir, type Kuesioner as DataKuesioner, type Masukan } from '../api'
+import { Link, useSearchParams } from 'react-router-dom'
+import { ambilKuesioner, ambilMasukan, kirimMasukan, type Butir, type Kuesioner as DataKuesioner, type Masukan } from '../api'
 import { Galat, Memuat } from '../komponen/umum'
 import { useData } from '../komponen/useData'
 import { ingatHasil } from '../sesi'
 
 const LANGKAH = [
-  { nama: 'Latar Belakang', tanya: 'Ceritakan pendidikan dan kondisimu saat ini.', gambar: '/onboarding/step-1.webp' },
-  { nama: 'Minat', tanya: 'Kegiatan seperti apa yang kamu sukai?', gambar: '/career-dna/step-1.webp' },
-  { nama: 'Kepribadian', tanya: 'Seperti apa dirimu sehari-hari?', gambar: '/career-dna/step-4.webp' },
-  { nama: 'Keahlian', tanya: 'Skill apa saja yang sudah kamu kuasai?', gambar: '/career-dna/step-3.webp' },
+  { nama: 'Latar Belakang', tanya: 'Ceritakan pendidikan dan kondisimu saat ini.', gambar: '/ilustrasi/langkah-latar.webp' },
+  { nama: 'Minat', tanya: 'Kegiatan seperti apa yang kamu sukai?', gambar: '/ilustrasi/langkah-minat.webp' },
+  { nama: 'Kepribadian', tanya: 'Seperti apa dirimu sehari-hari?', gambar: '/ilustrasi/langkah-kepribadian.webp' },
+  { nama: 'Keahlian', tanya: 'Skill apa saja yang sudah kamu kuasai?', gambar: '/ilustrasi/langkah-keahlian.webp' },
 ]
 
 const AWAL: Masukan = {
   nama: '', jenis_responden: 'mahasiswa', profesi_aktual: null,
   jenjang: '', prodi_id: null, domisili: '', bersedia_relokasi: true,
   ekspektasi_gaji: 0, punya_tanggungan: false,
-  riasec: {}, big5: {}, skill: {},
+  riasec: {}, big5: {}, skill: {}, skill_lain: [],
 }
 
 export default function Kuesioner() {
-  const { data, galat, muat } = useData(ambilKuesioner, 'kuesioner')
-  // 0 = pembuka, 1..4 = langkah, 5 = penutup
-  const [step, setStep] = useState(0)
-  const [capai, setCapai] = useState(1)
-  const [m, setM] = useState<Masukan>(AWAL)
+  // ?dari=<id> berarti mengubah jawaban lama: formulirnya diisi dari isian itu.
+  const [param] = useSearchParams()
+  const dari = param.get('dari')
+  const { data, galat, muat } = useData(
+    async () => ({ k: await ambilKuesioner(), awal: dari ? await ambilMasukan(dari) : null }),
+    `kuesioner/${dari ?? ''}`,
+  )
+  if (muat) return <Kerangka step={null}><Memuat /></Kerangka>
+  if (galat || !data) return <Kerangka step={null}><div className="mx-auto max-w-md p-6"><Galat pesan={galat ?? 'Gagal memuat kuesioner.'} /></div></Kerangka>
+  return <Formulir key={dari ?? 'baru'} k={data.k} awal={data.awal} dari={dari} />
+}
+
+function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; dari: string | null }) {
+  // 0 = pembuka, 1..4 = langkah, 5 = penutup. Saat mengubah jawaban, pembuka
+  // dilewati dan semua langkah langsung bisa dilompati.
+  const [step, setStep] = useState(awal ? 1 : 0)
+  const [capai, setCapai] = useState(awal ? LANGKAH.length : 1)
+  const [m, setM] = useState<Masukan>(awal ? { ...AWAL, ...awal } : AWAL)
   const [kirim, setKirim] = useState(false)
   const [gagal, setGagal] = useState<string | null>(null)
   const [idHasil, setIdHasil] = useState<string | null>(null)
   const ubah = (bagian: Partial<Masukan>) => setM((lama) => ({ ...lama, ...bagian }))
-
-  if (muat) return <Kerangka step={null}><Memuat /></Kerangka>
-  if (galat || !data) return <Kerangka step={null}><div className="mx-auto max-w-md p-6"><Galat pesan={galat ?? 'Gagal memuat kuesioner.'} /></div></Kerangka>
-  const k = data
 
   if (step === 0) return <Kerangka step={null}><Pembuka onMulai={() => setStep(1)} /></Kerangka>
   if (step === 5 && idHasil) return <Kerangka step={null}><Penutup id={idHasil} /></Kerangka>
@@ -57,13 +66,12 @@ export default function Kuesioner() {
     window.scrollTo({ top: 0 })
   }
 
-  // Satu ketukan menaikkan tingkat: belum -> dasar -> menengah -> mahir -> belum.
-  function ketukSkill(id: string) {
+  // Tingkat 0 berarti skill dilepas.
+  function aturSkill(id: string, tingkat: number) {
     setM((lama) => {
       const skill = { ...lama.skill }
-      const berikut = ((skill[id] ?? 0) + 1) % 4
-      if (berikut === 0) delete skill[id]
-      else skill[id] = berikut
+      if (tingkat === 0) delete skill[id]
+      else skill[id] = tingkat
       return { ...lama, skill }
     })
   }
@@ -72,7 +80,7 @@ export default function Kuesioner() {
     setKirim(true)
     setGagal(null)
     try {
-      const { id } = await kirimMasukan({ ...m, nama: m.nama.trim() })
+      const { id } = await kirimMasukan({ ...m, nama: m.nama.trim(), induk: dari })
       ingatHasil(id)
       setIdHasil(id)
       setStep(5)
@@ -152,7 +160,7 @@ export default function Kuesioner() {
                 pilih={(kode, n) => setM((lama) => ({ ...lama, big5: { ...lama.big5, [kode]: n } }))}
               />
             )}
-            {step === 4 && <PilihSkill k={k} skill={m.skill} ketuk={ketukSkill} />}
+            {step === 4 && <PilihSkill k={k} skill={m.skill} atur={aturSkill} lain={m.skill_lain} ubahLain={(skill_lain) => ubah({ skill_lain })} />}
             {gagal && <div className="mt-5"><Galat pesan={gagal} /></div>}
           </div>
 
@@ -187,14 +195,14 @@ function Kerangka({ step, children }: { step: number | null; children: ReactNode
       <header className="sticky top-0 z-20 flex items-center border-b border-slate-200 bg-white px-4 py-3.5 lg:hidden">
         <Link to="/" className="flex items-center gap-3 text-slate-900">
           <ArrowLeft className="size-[18px]" aria-hidden />
-          <span className="text-[14px] font-bold">Career DNA</span>
+          <span className="text-[14px] font-bold">Profil Karier</span>
         </Link>
       </header>
       <nav aria-label="Breadcrumb" className="hidden border-b border-slate-200 bg-white px-8 py-3.5 lg:block">
         <ol className="mx-auto flex max-w-[1160px] items-center gap-2 text-[13px] text-slate-500">
           <li><Link to="/" aria-label="Beranda" className="grid place-items-center text-slate-500 hover:text-slate-800"><Home className="size-4" aria-hidden /></Link></li>
           <ChevronRight className="size-3.5 text-slate-300" aria-hidden />
-          <li className={step === null ? 'text-slate-800' : ''}>Kenali Career DNA-mu</li>
+          <li className={step === null ? 'text-slate-800' : ''}>Kenali Profil Kariermu</li>
           {step !== null && (
             <>
               <ChevronRight className="size-3.5 text-slate-300" aria-hidden />
@@ -212,8 +220,8 @@ function Pembuka({ onMulai }: { onMulai: () => void }) {
   return (
     <div className="mx-auto w-full max-w-[486px] px-4 py-8 sm:px-0">
       <div className="rounded-2xl bg-slate-50/80 p-6 text-center">
-        <img src="/career-dna/intro.webp" alt="" className="mx-auto h-auto w-[218px]" aria-hidden />
-        <h1 className="mt-4 text-[17px] font-bold tracking-tight text-slate-900">Kenali Career DNA-mu</h1>
+        <img src="/ilustrasi/pembuka.webp" alt="" className="mx-auto h-auto w-[218px]" aria-hidden />
+        <h1 className="mt-4 text-[17px] font-bold tracking-tight text-slate-900">Kenali Profil Kariermu</h1>
         <p className="mx-auto mt-1 max-w-[380px] text-[13.5px] leading-relaxed text-slate-600">
           Temukan profesi TI yang sesuai dengan minat, kepribadian, keahlian, dan kondisimu.
         </p>
@@ -236,7 +244,7 @@ function Penutup({ id }: { id: string }) {
   return (
     <div className="mx-auto w-full max-w-[860px] px-4 py-10 sm:px-6">
       <div className="rounded-2xl bg-slate-50/70 px-6 py-10 text-center">
-        <img src="/career-dna/done.webp" alt="" className="mx-auto h-auto w-[240px]" aria-hidden />
+        <img src="/ilustrasi/selesai.webp" alt="" className="mx-auto h-auto w-[240px]" aria-hidden />
         <h1 className="mt-4 text-[17px] font-bold tracking-tight text-slate-900">Yay! Data kamu tersimpan 🎉</h1>
         <p className="mx-auto mt-2 max-w-[460px] text-[13.5px] leading-relaxed text-slate-600">
           Terima kasih! Profilmu sudah dicocokkan dengan 35 profesi TI. Rekomendasinya siap dilihat.
@@ -385,49 +393,118 @@ function Likert({ judul, keterangan, butir, skala, jawaban, pilih }: {
   )
 }
 
-const GAYA_SKILL = [
-  'bg-white text-slate-900 ring-slate-200 hover:bg-slate-50',
-  'bg-[#F1EBFF] text-[#7033FF] ring-[#DDD0FF]',
-  'bg-violet-200 text-violet-900 ring-violet-300',
-  'bg-violet-600 text-white ring-violet-600',
-]
-
-function PilihSkill({ k, skill, ketuk }: { k: DataKuesioner; skill: Record<string, number>; ketuk: (id: string) => void }) {
+/**
+ * Langkah keahlian.
+ *
+ * Tiga hal yang membuat daftar 160-an skill tetap bisa dipakai:
+ *   1. Pencarian mengenali nama lain ("ReactJS", "Postgres", "PBO").
+ *   2. Skill yang sudah dipilih dikumpulkan di atas, tingkatnya diatur di sana.
+ *   3. Skill yang tidak ada di daftar bisa diketik sendiri. Skill itu dicatat
+ *      untuk memperluas basis data, tetapi belum ikut dihitung dalam skor.
+ */
+function PilihSkill({ k, skill, atur, lain, ubahLain }: {
+  k: DataKuesioner; skill: Record<string, number>; atur: (id: string, tingkat: number) => void
+  lain: string[]; ubahLain: (v: string[]) => void
+}) {
   const [cari, setCari] = useState('')
+  const kata = cari.trim().toLowerCase()
+  const nama = useMemo(() => new Map(k.skill.map((s) => [s.id, s.nama])), [k])
   const kelompok = useMemo(() => {
-    const kata = cari.trim().toLowerCase()
     const peta = new Map<string, DataKuesioner['skill']>()
     for (const s of k.skill) {
-      if (kata && !s.nama.toLowerCase().includes(kata) && !s.kategori.toLowerCase().includes(kata)) continue
-      peta.set(s.kategori, [...(peta.get(s.kategori) ?? []), s])
+      const kena = !kata || s.nama.toLowerCase().includes(kata) || s.kategori.toLowerCase().includes(kata) ||
+        s.alias.some((a) => a.toLowerCase().includes(kata))
+      if (kena) peta.set(s.kategori, [...(peta.get(s.kategori) ?? []), s])
     }
     return [...peta.entries()]
-  }, [k, cari])
+  }, [k, kata])
+
+  const ketik = cari.trim()
+  const sudahAda = k.skill.some((s) => s.nama.toLowerCase() === kata || s.alias.some((a) => a.toLowerCase() === kata)) ||
+    lain.some((s) => s.toLowerCase() === kata)
+  const bisaTambah = ketik.length >= 2 && ketik.length <= 40 && !sudahAda && lain.length < 20
+  const terpilih = Object.entries(skill).sort((a, b) => b[1] - a[1])
+
+  function tambahLain() {
+    if (!bisaTambah) return
+    ubahLain([...lain, ketik])
+    setCari('')
+  }
 
   return (
     <div>
       <h1 className="text-[17px] font-bold tracking-tight text-slate-900">Skill apa saja yang sudah kamu kuasai?</h1>
       <p className="mt-1 text-[13px] leading-relaxed text-slate-500">
-        Ketuk skill untuk memilih; ketuk lagi untuk menaikkan tingkatnya (Dasar → Menengah → Mahir).
+        Pilih yang benar-benar pernah kamu pakai, lalu atur tingkatnya. Tidak perlu memilih sebanyak mungkin:
+        yang dinilai adalah kemiripan dengan kebutuhan profesi, bukan jumlahnya.
       </p>
-      <p className="mt-2 inline-flex rounded-md bg-violet-50 px-2 py-1 text-[11.5px] font-semibold text-violet-700">{Object.keys(skill).length} skill dipilih</p>
+
+      {(terpilih.length > 0 || lain.length > 0) && (
+        <section className="mt-4 rounded-2xl border border-violet-200 bg-violet-50/50 p-4">
+          <h2 className="text-[13px] font-bold text-slate-900">Skill pilihanmu <span className="font-normal text-slate-500">({terpilih.length + lain.length})</span></h2>
+          <ul className="mt-3 flex flex-col gap-2">
+            {terpilih.map(([id, t]) => (
+              <li key={id} className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-white px-3 py-2 ring-1 ring-slate-200">
+                <span className="min-w-0 flex-1 truncate text-[13.5px] font-semibold text-slate-900">{nama.get(id) ?? id}</span>
+                <div className="flex items-center gap-1" role="radiogroup" aria-label={`Tingkat ${nama.get(id)}`}>
+                  {[1, 2, 3].map((n) => (
+                    <button key={n} type="button" role="radio" aria-checked={t === n} onClick={() => atur(id, n)}
+                      className={`rounded-full px-2.5 py-1 text-[11.5px] font-semibold transition-colors ${t === n ? 'bg-violet-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}>
+                      {k.tingkat_skill[String(n)]}
+                    </button>
+                  ))}
+                  <button type="button" aria-label={`Hapus ${nama.get(id)}`} onClick={() => atur(id, 0)} className="ml-1 rounded-full p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700">
+                    <X className="size-3.5" aria-hidden />
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+          {lain.length > 0 && (
+            <>
+              <p className="mt-3 text-[11.5px] leading-relaxed text-slate-500">Skill lain yang kamu tambahkan (dicatat, belum ikut dihitung dalam skor):</p>
+              <ul className="mt-2 flex flex-wrap gap-2">
+                {lain.map((s) => (
+                  <li key={s} className="inline-flex items-center gap-1 rounded-full bg-white py-1 pl-3 pr-1.5 text-[12.5px] font-medium text-slate-700 ring-1 ring-slate-200">
+                    {s}
+                    <button type="button" aria-label={`Hapus ${s}`} onClick={() => ubahLain(lain.filter((x) => x !== s))} className="rounded-full p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700">
+                      <X className="size-3" aria-hidden />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </section>
+      )}
+
       <div className="relative mt-4">
         <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" aria-hidden />
-        <input type="search" value={cari} onChange={(e) => setCari(e.target.value)} placeholder="Cari skill, mis. Python, Figma, SQL"
+        <input type="search" value={cari} onChange={(e) => setCari(e.target.value)}
+          onKeyDown={(e) => { if (e.key === 'Enter' && kelompok.length === 0) { e.preventDefault(); tambahLain() } }}
+          placeholder="Cari skill, mis. Python, ReactJS, Figma, jaringan"
           className="w-full rounded-full border border-slate-200 bg-white py-3 pl-11 pr-4 text-[13.5px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-violet-400" />
       </div>
+
+      {bisaTambah && (
+        <button type="button" onClick={tambahLain} className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-dashed border-violet-400 px-3.5 py-2 text-[13px] font-semibold text-violet-700 hover:bg-violet-50">
+          <Plus className="size-4" aria-hidden /> Tidak ada di daftar? Tambahkan “{ketik}”
+        </button>
+      )}
+
       <div className="mt-5 flex flex-col gap-5">
-        {kelompok.length === 0 && <p className="text-[13px] text-slate-400">Tidak ada skill yang cocok dengan “{cari.trim()}”.</p>}
+        {kelompok.length === 0 && <p className="text-[13px] text-slate-400">Tidak ada skill yang cocok dengan “{ketik}”.</p>}
         {kelompok.map(([kategori, daftar]) => (
           <section key={kategori}>
             <h2 className="text-[12px] font-bold uppercase tracking-wide text-slate-500">{kategori}</h2>
             <div className="mt-2.5 flex flex-wrap gap-2">
               {daftar.map((s) => {
-                const t = skill[s.id] ?? 0
+                const on = (skill[s.id] ?? 0) > 0
                 return (
-                  <button key={s.id} type="button" aria-pressed={t > 0} onClick={() => ketuk(s.id)}
-                    className={`rounded-full px-3.5 py-2 text-[13px] font-medium shadow-sm ring-1 transition-colors ${GAYA_SKILL[t]}`}>
-                    {s.nama}{t > 0 && <span className="ml-1.5 text-[11.5px] opacity-80">· {k.tingkat_skill[String(t)]}</span>}
+                  <button key={s.id} type="button" aria-pressed={on} onClick={() => atur(s.id, on ? 0 : 2)}
+                    className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-medium shadow-sm ring-1 transition-colors ${on ? 'bg-[#F1EBFF] text-[#7033FF] ring-[#DDD0FF]' : 'bg-white text-slate-900 ring-slate-200 hover:bg-slate-50'}`}>
+                    {on && <Check className="size-3.5" strokeWidth={3} aria-hidden />}
+                    {s.nama}
                   </button>
                 )
               })}

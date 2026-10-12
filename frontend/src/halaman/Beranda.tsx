@@ -15,7 +15,7 @@ export default function Beranda() {
     <div className="min-h-screen w-full bg-white text-slate-900">
       <header className="border-b border-slate-200 bg-white/95">
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
-          <Lambang className="h-7 w-[21px] shrink-0 text-violet-600" />
+          <Lambang className="size-8 shrink-0" />
           <span className="h-6 w-px bg-slate-200" aria-hidden />
           <span className="leading-tight">
             <span className="block text-[13px] font-semibold text-slate-900">Rekomendasi Profesi TI</span>
@@ -51,7 +51,7 @@ export default function Beranda() {
               <span className="text-[13px] text-slate-500">±7 menit · tanpa perlu akun</span>
             </div>
           </div>
-          <img src="/landing/hero-roadmap.webp" alt="" width={997} height={1240} className="mx-auto h-auto w-full max-w-[420px]" aria-hidden />
+          <img src="/ilustrasi/hero.webp" alt="" width={997} height={1240} className="mx-auto h-auto w-full max-w-[420px]" aria-hidden />
         </div>
       </section>
 
