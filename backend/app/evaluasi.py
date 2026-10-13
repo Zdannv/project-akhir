@@ -24,6 +24,7 @@ KONFIG_ABLASI = {
     "CBF saja (α = 0,0)": Konfigurasi(alpha=0.0),
     NAMA_BAWAAN: Konfigurasi(),
     "Hibrida tanpa minat bidang dan kesiapan (α = 0,5)": Konfigurasi(skema_bobot="proposal"),
+    "Hibrida dengan cosine murni (α = 0,5)": Konfigurasi(ukuran_cbf="kosinus"),
     "Hibrida proposal (Iachan, α = 0,6)": KONFIG_PROPOSAL,
 }
 

@@ -6,9 +6,9 @@ import pytest
 
 from app import kuesioner as q
 from app.cbf import kesenjangan_skill, skor_cbf
-from app.hibrida import Konfigurasi, peringkat, rekomendasi
+from app.hibrida import KONFIG_PROPOSAL, Konfigurasi, peringkat, rekomendasi
 from app.kb import muat_kb
-from app.kbf import (BOBOT_TANGGUNGAN, BOBOT_TANPA, ProfilPengguna, alasan_tersaring,
+from app.kbf import (BOBOT_TANGGUNGAN, BOBOT_TANPA, ProfilPengguna, alasan_tersaring, catatan_lokasi,
                      kecocokan_big5, kecocokan_finansial, kongruensi_iachan,
                      kongruensi_korelasi, skor_kbf)
 
@@ -137,36 +137,54 @@ def test_saring_pendidikan():
 
 def test_saring_relokasi():
     network = KB.cari_profesi("C026")  # onsite, Jakarta/Surabaya/Bandung
-    assert alasan_tersaring(profil(domisili="Bali", bersedia_relokasi=False), network)[0]["kode"] == "relokasi"
-    assert alasan_tersaring(profil(domisili="Bali", bersedia_relokasi=True), network) == []
-    assert alasan_tersaring(profil(domisili="Surabaya", bersedia_relokasi=False), network) == []
+    bali = profil(domisili="Bali", bersedia_relokasi=False)
+    # Bawaan: tidak disaring, hanya diberi catatan.
+    assert alasan_tersaring(bali, network) == []
+    assert "cek lowongan setempat" in catatan_lokasi(bali, network)
+    assert "bukan halangan" in catatan_lokasi(profil(domisili="Bali"), network)
+    assert catatan_lokasi(profil(domisili="Surabaya"), network) is None
+    assert catatan_lokasi(bali, KB.cari_profesi("C002")) is None  # bisa remote
+    # Konfigurasi proposal: penyaring mutlak.
+    assert alasan_tersaring(bali, network, relokasi=True)[0]["kode"] == "relokasi"
+    assert alasan_tersaring(profil(domisili="Bali", bersedia_relokasi=True), network, relokasi=True) == []
+    assert alasan_tersaring(profil(domisili="Surabaya", bersedia_relokasi=False), network, relokasi=True) == []
+    assert len(peringkat(bali, KB)[0]) == 35 and len(peringkat(bali, KB, KONFIG_PROPOSAL)[0]) < 35
     # bisa remote -> domisili tidak jadi soal
-    assert alasan_tersaring(profil(domisili="Lainnya", bersedia_relokasi=False), KB.cari_profesi("C002")) == []
+    assert alasan_tersaring(profil(domisili="Lainnya", bersedia_relokasi=False), KB.cari_profesi("C002"), relokasi=True) == []
     # IT Support: semua kota besar
-    assert alasan_tersaring(profil(domisili="Lainnya", bersedia_relokasi=False), KB.cari_profesi("C024")) == []
+    assert alasan_tersaring(profil(domisili="Lainnya", bersedia_relokasi=False), KB.cari_profesi("C024"), relokasi=True) == []
 
 
 # ── CBF ─────────────────────────────────────────────────────────────────────
 def test_cbf():
     sp = [{"skill_id": "A", "bobot": 30, "wajib": True, "catatan": None},
           {"skill_id": "B", "bobot": 40, "wajib": False, "catatan": None}]
-    assert skor_cbf({}, sp) == {"skor": 0.0, "cakupan": 0.0}
-    assert skor_cbf({"Z": 3}, sp)["skor"] == 0.0
+    assert skor_cbf({}, sp) == {"skor": 0.0, "kosinus": 0.0, "cakupan": 0.0}
+    assert skor_cbf({"Z": 3}, sp)["kosinus"] == 0.0
     # vektor pengguna searah dengan vektor profesi -> 1
-    assert skor_cbf({"A": 3}, [sp[0]])["skor"] == 1.0
+    assert skor_cbf({"A": 3}, [sp[0]])["kosinus"] == 1.0
     penuh = skor_cbf({"A": 3, "B": 3}, sp)
     assert penuh["cakupan"] == 1.0
     # Skill di luar profesi: tidak berpengaruh di ruang profesi, mengencerkan di ruang global.
-    assert skor_cbf({"A": 3, "B": 3, "Z": 3}, sp)["skor"] < penuh["skor"]
-    assert skor_cbf({"A": 3, "B": 3, "Z": 3}, sp, "profesi")["skor"] == penuh["skor"]
-    assert skor_cbf({"A": 3, "B": 3}, sp, "profesi")["skor"] == penuh["skor"]
+    assert skor_cbf({"A": 3, "B": 3, "Z": 3}, sp)["kosinus"] < penuh["kosinus"]
+    assert skor_cbf({"A": 3, "B": 3, "Z": 3}, sp, "profesi")["kosinus"] == penuh["kosinus"]
+    assert skor_cbf({"A": 3, "B": 3}, sp, "profesi")["kosinus"] == penuh["kosinus"]
     # Skill berbobot 0 bukan dimensi vektor profesi.
     nol = sp + [{"skill_id": "N", "bobot": 0, "wajib": True, "catatan": None}]
-    assert skor_cbf({"A": 3, "B": 3}, nol)["skor"] == penuh["skor"]
-    assert skor_cbf({"A": 3, "B": 3, "N": 3}, nol, "profesi")["skor"] == penuh["skor"]
+    assert skor_cbf({"A": 3, "B": 3}, nol)["kosinus"] == penuh["kosinus"]
+    assert skor_cbf({"A": 3, "B": 3, "N": 3}, nol, "profesi")["kosinus"] == penuh["kosinus"]
     with pytest.raises(ValueError):
         skor_cbf({}, sp, "lain")
-    assert skor_cbf({"A": 1}, sp)["skor"] == skor_cbf({"A": 3}, sp)["skor"]  # cosine: arah, bukan besar
+    assert skor_cbf({"A": 1}, sp)["kosinus"] == skor_cbf({"A": 3}, sp)["kosinus"]  # cosine: arah, bukan besar
+    # Ukuran gabungan = akar(kosinus x cakupan): tiga skill yang searah tetapi
+    # baru menutup sedikit kebutuhan tidak lagi dinilai tinggi.
+    banyak = sp + [{"skill_id": f"X{i}", "bobot": 30, "wajib": False, "catatan": None} for i in range(8)]
+    r = skor_cbf({"A": 3, "B": 3}, banyak)
+    assert r["skor"] == pytest.approx(math.sqrt(r["kosinus"] * r["cakupan"]), abs=1e-4)
+    assert r["cakupan"] < r["skor"] < r["kosinus"]
+    assert skor_cbf({"A": 3, "B": 3}, banyak, ukuran="kosinus")["skor"] == r["kosinus"]
+    with pytest.raises(ValueError):
+        skor_cbf({}, sp, ukuran="lain")
 
 
 def test_kesenjangan_urut_wajib_dulu():

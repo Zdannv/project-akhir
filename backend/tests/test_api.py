@@ -144,7 +144,7 @@ def test_dasbor_peneliti(klien, monkeypatch):
     d = klien.get("/api/peneliti/ringkasan").json()
     assert d["n"] == 1 and d["n_pakar"] == 1 and d["sus"][0] == 75.0
     assert d["skill_lain"] == [["svelte", 1]] and d["responden"][0]["profesi_aktual"] == "Data Scientist"
-    assert "Hibrida bawaan (korelasi, α = 0,5)" in d["pakar"] and len(d["pakar"]) == 5
+    assert "Hibrida bawaan (korelasi, α = 0,5)" in d["pakar"] and len(d["pakar"]) == 6
 
     csv_ = klien.get("/api/peneliti/ekspor.csv")
     assert csv_.headers["content-type"].startswith("text/csv")

@@ -26,7 +26,7 @@ from . import roadmap as rm
 from .cbf import LABEL_TINGKAT, kesenjangan_skill
 from .hibrida import Konfigurasi, rekomendasi
 from .kb import AKAR, muat_kb
-from .kbf import DOMISILI_LAIN, ProfilPengguna  # noqa: F401
+from .kbf import DOMISILI_LAIN, ProfilPengguna, catatan_lokasi  # noqa: F401
 from .sus import BUTIR_SUS, skor_sus
 
 
@@ -277,6 +277,7 @@ def detail_profesi(rid: str, pid: str) -> dict:
         "tersaring": tersaring,
         "relevan": r["umpan_balik"].get(pid),
         "jadi_target": r["target"] == pid,
+        "catatan_lokasi": catatan_lokasi(ev.profil_dari_masukan(r["masukan"], kb), p),
         "alpha": r["hasil"]["konfigurasi"]["alpha"],
         "kesenjangan": _dengan_belajar(
             kesenjangan_skill(r["masukan"]["skill"], kb.skill_profesi(pid), kb.nama_skill())),

@@ -8,6 +8,8 @@ Dua lapis, mengikuti buku proposal:
        * relokasi    — pengguna tidak bersedia pindah, sedangkan profesinya
                        tidak ada di kota domisili dan tidak bisa dikerjakan
                        jarak jauh.
+                       Bawaannya MATI dan diganti catatan untuk pengguna;
+                       hanya aktif di konfigurasi proposal.
 
   2. Skor kecocokan berbobot dari enam komponen, masing-masing 0 - 1:
 
@@ -84,15 +86,22 @@ class ProfilPengguna:
 
 
 # ── Penyaring mutlak ────────────────────────────────────────────────────────
-def alasan_tersaring(profil: ProfilPengguna, profesi: dict) -> list[dict]:
-    """Daftar kosong berarti profesi lolos."""
+def alasan_tersaring(profil: ProfilPengguna, profesi: dict, relokasi: bool = False) -> list[dict]:
+    """Daftar kosong berarti profesi lolos.
+
+    Penyaring relokasi (dari buku proposal) bawaannya MATI. Data lokasi berasal
+    dari tempat lowongan terbanyak, bukan dari tempat lowongan itu mustahil
+    ada: menyaring Mobile Developer bagi orang di luar lima kota besar berarti
+    menyatakan sesuatu yang tidak didukung datanya. Sebagai gantinya pengguna
+    diberi catatan (lihat catatan_lokasi) dan profesinya tetap dinilai.
+    """
     alasan = []
     if profil.rank_pendidikan < profesi["pendidikan_min_rank"]:
         alasan.append({
             "kode": "pendidikan",
             "pesan": f"Syarat pendidikan minimum {profesi['pendidikan_min_label']}.",
         })
-    if not profil.bersedia_relokasi and not _terjangkau(profil.domisili, profesi):
+    if relokasi and not profil.bersedia_relokasi and not _terjangkau(profil.domisili, profesi):
         kota = ", ".join(profesi["lokasi"])
         alasan.append({
             "kode": "relokasi",
@@ -107,6 +116,18 @@ def _terjangkau(domisili: str, profesi: dict) -> bool:
         or "remote" in profesi["pola_kerja"]
         or domisili in profesi["lokasi"]
     )
+
+
+def catatan_lokasi(profil: ProfilPengguna, profesi: dict) -> str | None:
+    """Catatan untuk pengguna yang kotanya bukan pusat lowongan profesi ini.
+    Hanya keterangan; tidak mengubah skor maupun peringkat."""
+    if _terjangkau(profil.domisili, profesi):
+        return None
+    kota = ", ".join(profesi["lokasi"])
+    if profil.bersedia_relokasi:
+        return f"Lowongannya paling banyak di {kota}. Kamu bersedia pindah, jadi ini bukan halangan."
+    return (f"Lowongannya paling banyak di {kota} dan umumnya tidak jarak jauh. "
+            "Di kotamu peluangnya mungkin lebih sedikit; cek lowongan setempat.")
 
 
 # ── Komponen skor ───────────────────────────────────────────────────────────
@@ -203,11 +224,12 @@ def skor_kbf(profil: ProfilPengguna, profesi: dict, metode_riasec: str = "korela
     }
 
 
-def saring(profil: ProfilPengguna, kb: BasisPengetahuan) -> tuple[list[dict], list[dict]]:
+def saring(profil: ProfilPengguna, kb: BasisPengetahuan,
+           relokasi: bool = False) -> tuple[list[dict], list[dict]]:
     """Memisahkan profesi yang lolos dari yang tersaring."""
     lolos, tersaring = [], []
     for p in kb.profesi:
-        alasan = alasan_tersaring(profil, p)
+        alasan = alasan_tersaring(profil, p, relokasi)
         if alasan:
             tersaring.append({"profesi_id": p["id"], "nama": p["nama"], "alasan": alasan})
         else:

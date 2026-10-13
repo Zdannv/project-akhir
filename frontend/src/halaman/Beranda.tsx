@@ -5,7 +5,7 @@ import { hasilTerakhir } from '../sesi'
 
 const TAHAP = [
   { ikon: ListChecks, nama: 'Profiling', isi: 'Isi latar belakang, minat (RIASEC), kepribadian (Big Five), dan skill yang sudah kamu kuasai.' },
-  { ikon: ScanSearch, nama: 'Matching', isi: 'Profilmu dicocokkan dengan 35 profesi TI: aturan dan kecocokan psikologis (KBF) digabung dengan kemiripan skill (CBF).' },
+  { ikon: ScanSearch, nama: 'Matching', isi: 'Profilmu dicocokkan dengan 35 profesi TI: aturan dan kecocokan psikologis (KBF) digabung dengan kecocokan skill (CBF).' },
   { ikon: Target, nama: 'Rekomendasi', isi: 'Dapatkan lima profesi teratas, alasan di balik skornya, dan skill yang masih perlu dikejar.' },
 ]
 

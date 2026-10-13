@@ -6,8 +6,25 @@ skill:
   * vektor profesi  : bobot kepentingan skill di profesi itu (skill_weight_pct);
   * vektor pengguna : tingkat penguasaan, 1/3 (dasar), 2/3 (menengah), 1 (mahir).
 
-Skor CBF adalah cosine similarity keduanya. Karena cosine tidak peka terhadap
-panjang vektor, bobot profesi tidak perlu berjumlah 100.
+Dua ukuran dihitung dari kedua vektor itu:
+
+  kosinus   cosine similarity: seberapa SEARAH skill pengguna dengan kebutuhan
+            profesi. Tidak peka terhadap banyaknya skill, jadi orang dengan
+            tiga skill yang semuanya penting bisa mendapat 60% walaupun baru
+            menguasai sebagian kecil kebutuhan profesi.
+  cakupan   porsi bobot skill profesi yang sudah dikuasai (memperhitungkan
+            tingkat): seberapa LENGKAP. Tidak peka terhadap fokus, jadi orang
+            yang memilih semua skill mendapat cakupan tinggi di semua profesi.
+
+Skor CBF bawaan ("gabungan") adalah rata-rata geometrik keduanya,
+akar(kosinus x cakupan): tinggi hanya kalau skill-nya searah DAN cukup
+lengkap. Di simulasi akurasi peringkatnya setara dengan cosine murni (selisih
+di bawah 1,5 poin, lebih baik untuk pemula), tetapi angkanya tidak lagi
+bertentangan dengan cakupan yang ditampilkan ke pengguna. Cosine murni
+("kosinus") adalah ukuran di buku proposal dan tetap tersedia sebagai pembanding.
+
+Karena cosine tidak peka terhadap panjang vektor, bobot profesi tidak perlu
+berjumlah 100.
 
 Ruang vektornya bisa dipilih:
 
@@ -43,9 +60,11 @@ LABEL_TINGKAT = {1: "Dasar", 2: "Menengah", 3: "Mahir"}
 
 
 def skor_cbf(skill_pengguna: dict[str, int], skill_profesi: list[dict],
-             ruang: str = "global") -> dict:
+             ruang: str = "global", ukuran: str = "gabungan") -> dict:
     if ruang not in ("profesi", "global"):
         raise ValueError(f"ruang_cbf tidak dikenal: {ruang}")
+    if ukuran not in ("gabungan", "kosinus"):
+        raise ValueError(f"ukuran_cbf tidak dikenal: {ukuran}")
     w = {s["skill_id"]: s["bobot"] for s in skill_profesi if s["bobot"] > 0}
     u = {sid: t / TINGKAT_MAKS for sid, t in skill_pengguna.items()
          if t > 0 and (ruang == "global" or sid in w)}
@@ -55,11 +74,9 @@ def skor_cbf(skill_pengguna: dict[str, int], skill_profesi: list[dict],
     titik = sum(u[s] * w[s] for s in u.keys() & w.keys())
     kosinus = titik / (norma_u * norma_w) if norma_u and norma_w else 0.0
 
-    # Cakupan: porsi bobot skill profesi yang sudah dikuasai, memperhitungkan
-    # tingkat penguasaan. Bukan bagian dari skor; dipakai untuk menjelaskan
-    # hasil dan mengukur kemajuan di roadmap.
     cakupan = titik / sum(w.values()) if w else 0.0
-    return {"skor": round(kosinus, 4), "cakupan": round(cakupan, 4)}
+    skor = math.sqrt(kosinus * cakupan) if ukuran == "gabungan" else kosinus
+    return {"skor": round(skor, 4), "kosinus": round(kosinus, 4), "cakupan": round(cakupan, 4)}
 
 
 def kesenjangan_skill(skill_pengguna: dict[str, int], skill_profesi: list[dict],

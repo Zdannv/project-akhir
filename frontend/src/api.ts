@@ -72,7 +72,8 @@ export type Rekomendasi = {
   sektor: string
   skor: number
   kbf: { skor: number; komponen: Komponen; bobot: Komponen }
-  cbf: { skor: number; cakupan: number }
+  /** `kosinus` tidak ada pada hasil yang dihitung sebelum ukuran gabungan dipakai. */
+  cbf: { skor: number; cakupan: number; kosinus?: number }
   kode_holland: string
   gaji_min: number
   gaji_maks: number
@@ -214,6 +215,7 @@ export type Detail = {
   tersaring: Tersaring | null
   relevan: boolean | null
   jadi_target: boolean
+  catatan_lokasi: string | null
   alpha: number
   kesenjangan: Kesenjangan
   prodi_terkait: string[]

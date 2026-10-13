@@ -361,7 +361,7 @@ function LatarBelakang({ k, m, ubah }: { k: DataKuesioner; m: Masukan; ubah: (b:
 
       <div className="flex flex-col gap-2.5">
         <p className={judulKolom}>Kondisi pribadimu</p>
-        <Centang aktif={m.bersedia_relokasi} onUbah={(v) => ubah({ bersedia_relokasi: v })} judul="Bersedia pindah kota untuk bekerja" keterangan="Kalau tidak, profesi yang hanya ada di kota lain dan tidak bisa remote akan disaring." />
+        <Centang aktif={m.bersedia_relokasi} onUbah={(v) => ubah({ bersedia_relokasi: v })} judul="Bersedia pindah kota untuk bekerja" keterangan="Tidak menyaring profesi apa pun; hanya dipakai untuk memberi catatan kalau lowongannya terpusat di kota lain." />
         <Centang aktif={m.punya_tanggungan} onUbah={(v) => ubah({ punya_tanggungan: v })} judul="Menanggung kebutuhan keluarga" keterangan="Kalau ya, stabilitas pekerjaan ikut dipertimbangkan." />
       </div>
     </div>

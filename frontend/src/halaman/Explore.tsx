@@ -71,7 +71,7 @@ function Isi({ id, d }: { id: string; d: Hasil }) {
         {n === 0 ? (
           <div className="p-4 sm:p-6"><Galat pesan="Tidak ada profesi yang lolos penyaringan dengan syarat yang kamu isi. Coba ubah pendidikan atau kesediaan relokasi." /></div>
         ) : (
-          <BarisKartu judul="Persentase Match Profesi" keterangan={`${n} profesi teratas untukmu. Skor akhir = ${alpha} × kecocokan profil (KBF) + ${beta} × kemiripan skill (CBF).`}>
+          <BarisKartu judul="Persentase Match Profesi" keterangan={`${n} profesi teratas untukmu. Skor akhir = ${alpha} × kecocokan profil (KBF) + ${beta} × kecocokan skill (CBF).`}>
             {h.peringkat_lengkap.slice(0, n).map((p) => <KartuProfesi key={p.profesi_id} id={id} p={p} alasan={alasan.get(p.profesi_id)} />)}
           </BarisKartu>
         )}

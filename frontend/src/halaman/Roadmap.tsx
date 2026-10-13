@@ -98,8 +98,8 @@ function Isi({ id, d, centang, ganti }: { id: string; d: Terisi; centang: (skill
             <Angka label="Peringkat" awal={`#${d.awal.peringkat}`} kini={`#${d.proyeksi.peringkat}`} berubah={d.awal.peringkat !== d.proyeksi.peringkat} />
           </dl>
           <p className="mt-3 text-[11px] leading-relaxed text-slate-400">
-            **Cakupan = porsi bobot skill profesi yang dikuasai. Skill yang dicentang dihitung pada tingkat Menengah. Skor akhir memakai
-            cosine similarity, yang mengukur kemiripan arah, sehingga kenaikannya tidak selalu sebesar cakupan.
+            **Cakupan = porsi bobot skill profesi yang dikuasai. Skill yang dicentang dihitung pada tingkat Menengah. Skor akhir
+            menggabungkan cakupan dengan kemiripan arah skill dan kecocokan profilmu, sehingga kenaikannya tidak sebesar cakupan.
           </p>
         </section>
       )}

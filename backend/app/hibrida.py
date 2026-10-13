@@ -18,7 +18,7 @@ from dataclasses import asdict, dataclass
 
 from .cbf import kesenjangan_skill, skor_cbf
 from .kb import BasisPengetahuan
-from .kbf import ProfilPengguna, saring, skor_kbf
+from .kbf import ProfilPengguna, catatan_lokasi, saring, skor_kbf
 from .kuesioner import kode_holland
 
 
@@ -28,6 +28,8 @@ class Konfigurasi:
     metode_riasec: str = "korelasi"  # "korelasi" | "iachan"
     ruang_cbf: str = "global"       # "global" | "profesi"; lihat cbf.py
     skema_bobot: str = "lengkap"    # "lengkap" | "proposal"; lihat kbf.py
+    ukuran_cbf: str = "gabungan"    # "gabungan" | "kosinus"; lihat cbf.py
+    saring_relokasi: bool = False   # penyaring mutlak relokasi; lihat kbf.alasan_tersaring
     top_n: int = 5
 
     def __post_init__(self) -> None:
@@ -38,17 +40,18 @@ class Konfigurasi:
 
 
 # Persis seperti di buku proposal; dipakai sebagai pembanding.
-KONFIG_PROPOSAL = Konfigurasi(alpha=0.6, metode_riasec="iachan", skema_bobot="proposal")
+KONFIG_PROPOSAL = Konfigurasi(alpha=0.6, metode_riasec="iachan", skema_bobot="proposal",
+                              ukuran_cbf="kosinus", saring_relokasi=True)
 
 
 def peringkat(profil: ProfilPengguna, kb: BasisPengetahuan,
               konfig: Konfigurasi = Konfigurasi()) -> tuple[list[dict], list[dict]]:
     """Semua profesi yang lolos, terurut; ditambah daftar yang tersaring."""
-    lolos, tersaring = saring(profil, kb)
+    lolos, tersaring = saring(profil, kb, konfig.saring_relokasi)
     baris = []
     for p in lolos:
         kbf = skor_kbf(profil, p, konfig.metode_riasec, konfig.skema_bobot)
-        cbf = skor_cbf(profil.skill, kb.skill_profesi(p["id"]), konfig.ruang_cbf)
+        cbf = skor_cbf(profil.skill, kb.skill_profesi(p["id"]), konfig.ruang_cbf, konfig.ukuran_cbf)
         final = konfig.alpha * kbf["skor"] + (1 - konfig.alpha) * cbf["skor"]
         baris.append({
             "profesi_id": p["id"],
@@ -155,6 +158,9 @@ def susun_alasan(profil: ProfilPengguna, profesi: dict, baris: dict,
             tambah("cocok", "Ekspektasi gajimu terpenuhi oleh rentang gaji profesi ini.")
         elif k["finansial"] <= 0:
             tambah("perhatian", "Ekspektasi gajimu melebihi rentang gaji profesi ini.")
+    lokasi = catatan_lokasi(profil, profesi)
+    if lokasi:
+        tambah("cocok" if profil.bersedia_relokasi else "perhatian", lokasi)
     if profil.punya_tanggungan and profesi["stabilitas"] >= 0.85:
         tambah("cocok", "Pola kerjanya relatif stabil, sesuai dengan tanggungan keluargamu.")
     return alasan

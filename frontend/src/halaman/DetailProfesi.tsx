@@ -172,7 +172,7 @@ function TabAnalisa({ d }: { d: Detail }) {
         <section className="rounded-2xl border border-slate-200 p-4">
           <h3 className="text-[15px] font-semibold text-slate-900">Rincian Skor</h3>
           <p className="mt-1 text-[12.5px] leading-relaxed text-slate-500">
-            Kecocokan profil (KBF) {persen(n.kbf.skor)} dan kemiripan skill (CBF) {persen(n.cbf.skor)} digabung menjadi {persen(n.skor)}.
+            Kecocokan profil (KBF) {persen(n.kbf.skor)} dan kecocokan skill (CBF) {persen(n.cbf.skor)} digabung menjadi {persen(n.skor)}.
           </p>
           <dl className="mt-4 flex flex-col gap-3.5">
             {komponenAda(n).map((k) => (
@@ -186,10 +186,17 @@ function TabAnalisa({ d }: { d: Detail }) {
             ))}
             <div>
               <div className="mb-1.5 flex justify-between gap-3 text-[13px]">
-                <dt className="text-slate-700">Kemiripan skill <span className="text-[11.5px] text-slate-400">· cosine similarity</span></dt>
+                <dt className="text-slate-700">Kecocokan skill</dt>
                 <dd className="font-semibold tabular-nums text-slate-900">{persen(n.cbf.skor)}</dd>
               </div>
               <Batang nilai={n.cbf.skor} warna="bg-indigo-500" alas="bg-indigo-100" />
+              {n.cbf.kosinus !== undefined && (
+                <p className="mt-1.5 text-[11.5px] leading-relaxed text-slate-500">
+                  Gabungan dua hal: <strong className="font-semibold text-slate-700">searah {persen(n.cbf.kosinus)}</strong> (skill-mu
+                  mengarah ke kebutuhan profesi ini) dan <strong className="font-semibold text-slate-700">lengkap {persen(n.cbf.cakupan)}</strong> (porsi
+                  kebutuhan yang sudah kamu kuasai).
+                </p>
+              )}
             </div>
           </dl>
           <PenahanSkor n={n} alpha={d.alpha} />
@@ -197,7 +204,7 @@ function TabAnalisa({ d }: { d: Detail }) {
       ) : d.ringkas && (
         <section className="rounded-2xl bg-violet-50 px-4 py-3.5">
           <p className="text-[13px] leading-relaxed text-slate-700">
-            Profesi ini di luar rekomendasi teratasmu: kecocokan profil (KBF) {persen(d.ringkas.skor_kbf)}, kemiripan skill (CBF) {persen(d.ringkas.skor_cbf)}.
+            Profesi ini di luar rekomendasi teratasmu: kecocokan profil (KBF) {persen(d.ringkas.skor_kbf)}, kecocokan skill (CBF) {persen(d.ringkas.skor_cbf)}.
           </p>
         </section>
       )}
@@ -230,7 +237,7 @@ function PenahanSkor({ n, alpha }: { n: NonNullable<Detail['penilaian']>; alpha:
     ...komponenAda(n).map((k) => ({
       nama: NAMA_KOMPONEN[k].replace(/ \(.*\)/, ''), poin: alpha * (n.kbf.bobot[k] ?? 0) * (1 - (n.kbf.komponen[k] ?? 0)) * 100, skill: false,
     })),
-    { nama: 'Kemiripan skill', poin: (1 - alpha) * (1 - n.cbf.skor) * 100, skill: true },
+    { nama: 'Kecocokan skill', poin: (1 - alpha) * (1 - n.cbf.skor) * 100, skill: true },
   ].filter((h) => h.poin >= 1).sort((a, b) => b.poin - a.poin)
   if (hilang.length === 0) return null
   const skill = hilang.find((h) => h.skill)
@@ -245,8 +252,8 @@ function PenahanSkor({ n, alpha }: { n: NonNullable<Detail['penilaian']>; alpha:
         ))}
       </ul>
       <p className="mt-3 text-[11.5px] leading-relaxed text-slate-500">
-        Skor akhir = {Math.round(alpha * 100)}% kecocokan profil (minat, bidang, kepribadian, pengalaman, finansial) + {Math.round((1 - alpha) * 100)}% kemiripan skill.
-        {skill && skill.poin >= 10 && ' Kemiripan skill dihitung dengan cosine similarity, yang membandingkan seluruh skill-mu dengan kebutuhan profesi: skill di luar kebutuhan profesi ini ikut menurunkan nilainya, dan skill bertingkat Dasar atau Menengah dihitung sebagian.'}
+        Skor akhir = {Math.round(alpha * 100)}% kecocokan profil (minat, bidang, kepribadian, pengalaman, finansial) + {Math.round((1 - alpha) * 100)}% kecocokan skill.
+        {skill && skill.poin >= 10 && ' Kecocokan skill tinggi kalau skill-mu searah dengan kebutuhan profesi ini DAN sudah menutup sebagian besar kebutuhannya. Skill di luar kebutuhan profesi menurunkan keserahannya; skill yang belum dimiliki, atau baru bertingkat Dasar dan Menengah, menurunkan kelengkapannya.'}
       </p>
     </div>
   )
@@ -360,10 +367,15 @@ function TabInsight({ d }: { d: Detail }) {
       <section className="flex items-center justify-between gap-3 rounded-2xl bg-violet-50 px-4 py-3.5">
         <div className="min-w-0">
           <h3 className="text-[14.5px] font-semibold text-slate-900">Pola Kerja</h3>
-          <p className="mt-0.5 text-[11.5px] leading-snug text-slate-500">{p.semua_kota ? 'Semua kota besar Indonesia' : p.lokasi.join(', ')}</p>
+          <p className="mt-0.5 text-[11.5px] leading-snug text-slate-500">Lowongan terbanyak: {p.semua_kota ? 'semua kota besar Indonesia' : p.lokasi.join(', ')}</p>
         </div>
         <p className="shrink-0 text-[15px] font-bold capitalize text-slate-900">{p.pola_kerja.join(' / ')}</p>
       </section>
+      {d.catatan_lokasi && (
+        <p className="-mt-4 flex items-start gap-2 rounded-xl bg-amber-50 px-4 py-3 text-[12.5px] leading-relaxed text-amber-800">
+          <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden /> {d.catatan_lokasi}
+        </p>
+      )}
 
       <Blok judul="Tanggung Jawab Utama">
         <ul>

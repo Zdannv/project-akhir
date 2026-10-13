@@ -12,10 +12,10 @@ sistem yang tidak bisa dijelaskan asal-usulnya saat sidang.
 | Profiling: Big Five | `kuesioner.py`, BFI-10 | terjemahan sendiri, lihat §3 |
 | Profiling: skill, preferensi, kendala sosial-keluarga | langkah 1 dan 4 kuesioner | |
 | Profiling: klaster GMM (K = 8) | **tidak dibuat** | lihat §2 |
-| Hard filter pendidikan dan relokasi | `kbf.alasan_tersaring` | profesi tersaring tetap ditampilkan dengan alasannya |
+| Hard filter pendidikan dan relokasi | `kbf.alasan_tersaring` | pendidikan tetap penyaring; relokasi kini hanya catatan (§2) |
 | Kongruensi Iachan | `kbf.kongruensi_iachan` | indeks M, maksimum 28; kini pembanding, bawaannya korelasi (§2) |
 | Bobot KBF 50/20/15/15 dan 60/25/15/0 | `kbf.SKEMA_BOBOT["proposal"]` | kini pembanding; bawaannya skema enam komponen (§2) |
-| CBF cosine similarity skill | `cbf.skor_cbf` | vektor profesi berbobot `skill_weight_pct` |
+| CBF cosine similarity skill | `cbf.skor_cbf` | bawaannya kini gabungan cosine × cakupan (§2); cosine murni jadi pembanding |
 | `α·KBF + (1−α)·CBF`, α = 0,6 | `hibrida.py` | bawaan kini α = 0,5 (§2); konfigurasi proposal tersedia sebagai `KONFIG_PROPOSAL` |
 | Dasbor Top-N + detail 3 tab | layar Explore dan Detail Profesi | Analisa · Skill & Kompetensi · Insight |
 | Analisis kesenjangan skill | `cbf.kesenjangan_skill`, `roadmap.py` | ditambah roadmap bertahap dan simulasi skor |
@@ -84,11 +84,36 @@ mencari bobot dan α dari data responden profesional dengan validasi
 leave-one-out; jalankan setelah data terkumpul dan ganti bobot hanya kalau
 hasil leave-one-out mengungguli bobot bawaan.
 
-Di simulasi, dua komponen ini menaikkan KBF saja dari 55,9% ke 75,7% (Hit@1),
-tetapi hibrida hampir tidak berubah (95,6% → 95,7%) karena CBF sudah sangat
-kuat pada persona sintetis. Manfaat yang diharapkan ada pada pengguna
-sungguhan yang skill-nya masih sedikit atau terlalu banyak; itu baru bisa
-dibuktikan dengan data responden.
+**Simulasi tidak mendukung dua komponen ini, dan itu harus dicatat.** KBF saja
+memang naik dari 55,9% ke 75,7% (Hit@1), tetapi hibrida justru sedikit turun:
+95,6% dengan dua komponen itu, 96,4% tanpanya. Pada persona sintetis, sisi
+skill sudah hampir sempurna, sehingga komponen tambahan lebih banyak menambah
+derau daripada informasi. Dua komponen ini dipertahankan karena alasan yang
+tidak bisa diuji simulasi: pengguna sungguhan sering punya skill sedikit atau
+terlalu banyak, dan rekomendasi profesi senior untuk mahasiswa tidak berguna
+walaupun "cocok". Kalau data responden profesional juga tidak mendukungnya
+(`scripts/kalibrasi.py` akan memberi bobot mendekati nol), keduanya sebaiknya
+dibuang.
+
+**Skor skill: gabungan cosine dan cakupan, bukan cosine saja.** Cosine mengukur
+arah, bukan kelengkapan. Akibatnya orang dengan tiga skill yang semuanya
+penting bagi sebuah profesi mendapat cosine 61% padahal baru menguasai 16%
+kebutuhan profesi itu; dua angka itu tampil berdampingan dan saling
+bertentangan. Skor CBF bawaan sekarang akar(cosine × cakupan): tinggi hanya
+kalau skill-nya searah dan cukup lengkap. Pada simulasi dengan empat jenis
+persona (pemula 3 skill, spesialis, generalis, sangat luas), akurasi peringkat
+ukuran gabungan setara dengan cosine murni: selisih Hit@1 paling besar 1,1
+poin, dan untuk pemula justru 3,5 poin lebih baik. Jadi yang berubah terutama
+makna angkanya, bukan urutannya. Roadmap ikut diuntungkan: mempelajari skill
+menaikkan cakupan, sehingga skor proyeksi naik.
+
+**Relokasi bukan lagi penyaring mutlak.** Kolom lokasi di data sumber mencatat
+kota dengan lowongan terbanyak, bukan kota tempat profesi itu mustahil ada.
+Menyaring Mobile Developer bagi orang di luar lima kota besar menyatakan
+sesuatu yang tidak didukung datanya, dan bisa menutup pilihan yang sebenarnya
+terbuka. Sekarang profesinya tetap dinilai dan pengguna diberi catatan
+("lowongannya paling banyak di ...; di kotamu peluangnya mungkin lebih
+sedikit"). Catatan itu tidak mengubah skor. Penyaring pendidikan tetap mutlak.
 
 **Tumpukan teknologi.** FastAPI + Python untuk mesin dan evaluasi (satu bahasa
 untuk rumus dan pengujiannya), React + Vite untuk antarmuka, SQLite untuk
@@ -177,7 +202,7 @@ Angka lengkap ada di `docs/hasil-evaluasi.md`. Tiga hal yang layak dibahas
 dengan pembimbing:
 
 1. **Dengan konfigurasi bawaan, hibrida mengungguli KBF saja dan CBF saja**
-   (Hit@1 95,7% vs 75,7% dan 91,1%).
+   (Hit@1 95,6% vs 75,7% dan 91,0%).
 2. **Dengan konfigurasi proposal, hibrida kalah dari CBF saja** (88,9% vs
    91,1%). Iachan baru unggul tipis pada α 0,1–0,5 (puncak 93,9% di α = 0,3):
    banyak profesi TI berkode Holland sama, jadi Iachan kurang membedakan dan
