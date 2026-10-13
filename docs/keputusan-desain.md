@@ -138,15 +138,30 @@ perhitungan skor; semuanya membantu pengguna menindaklanjuti rekomendasi.
 | Bahan | Sumber | Catatan |
 |---|---|---|
 | Sumber belajar per skill | `sumber_belajar.csv`, 190 tautan untuk 157 skill | dokumentasi resmi dan kursus gratis; tiap tautan diperiksa bisa dibuka pada 13 Oktober 2026 |
+| Video tutorial per skill | `video_tutorial.csv`, 470 video untuk 248 dari 262 technical skill | dibuat `scripts/ambil_video.py` dari hasil pencarian YouTube, lihat di bawah |
 | Tautan cari video dan kursus | dirakit dari nama skill | pencarian YouTube dan Coursera; tersedia untuk semua skill, isinya tidak dikurasi |
 | Peta belajar per profesi | `panduan_karier.csv`, 28 profesi | roadmap.sh |
 | Ide proyek portofolio | `proyek_portofolio.csv`, 2 per profesi | disusun penulis |
 | Tautan lowongan | dirakit dari nama profesi | LinkedIn, Jobstreet, Glints |
 
-Tautan luar bisa berubah. Sebelum demo atau pengujian, jalankan ulang
-pemeriksaan tautan dan perbaiki yang mati. Video YouTube tertentu sengaja tidak
-ditautkan langsung: tautan video mudah mati dan mutunya tidak bisa dijamin,
-sedangkan tautan pencarian selalu berfungsi.
+**Cara video dipilih.** Tautan video tidak ditulis tangan. Untuk tiap skill,
+`ambil_video.py` membuka pencarian YouTube ("tutorial <skill> bahasa
+indonesia"), mengambil dua hasil teratas yang durasinya minimal 8 menit dan
+judulnya memuat nama skill, lalu memastikan videonya masih ada lewat oEmbed.
+Seluruh 513 judul hasilnya dibaca satu per satu; 43 yang meleset dibuang dan
+dicatat beserta alasannya di `video_ditolak.csv` (misalnya "dbt" yang ternyata
+terapi psikologi, "Helm" yang ternyata helm motor, "risk management" yang
+ternyata trading). Video di daftar itu tidak akan terpilih lagi.
+
+Yang dijamin: videonya ada, publik, cukup panjang, dan judulnya relevan. Yang
+TIDAK dijamin: mutu isinya, karena tidak ada yang menontonnya. Kanal dan durasi
+ditampilkan supaya pengguna bisa menilai sendiri. Sebagian besar berbahasa
+Indonesia; untuk skill yang tidak punya tutorial Indonesia, dipakai video
+berbahasa Inggris.
+
+Tautan luar bisa berubah. Sebelum demo atau pengujian, jalankan
+`scripts/cek_tautan.py` (video diperiksa lewat oEmbed, karena halaman video
+yang sudah dihapus tetap menjawab 200) dan perbaiki yang mati.
 
 ## 6. Rencana pengujian
 

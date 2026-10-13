@@ -17,6 +17,9 @@ Tiga sumber digabung menjadi satu berkas JSON yang dibaca mesin rekomendasi:
   data/sumber/alias_skill.csv
       Nama lain tiap skill, hanya untuk pencarian di formulir.
 
+  data/sumber/video_tutorial.csv
+      Video tutorial YouTube per skill, dibuat scripts/ambil_video.py.
+
   data/sumber/sumber_belajar.csv, panduan_karier.csv, proyek_portofolio.csv
       Bahan belajar: tautan dokumentasi resmi dan kursus gratis per skill, peta
       belajar per profesi, dan ide proyek portofolio. Semuanya kurasi, hanya
@@ -267,6 +270,18 @@ def main() -> None:
             raise ValueError(f"tautan sumber belajar harus https: {b['url']}")
         belajar.setdefault(b["skill_id"], []).append(
             {"judul": b["judul"], "penyedia": b["penyedia"], "jenis": b["jenis"], "url": b["url"]})
+    # Video tutorial hasil scripts/ambil_video.py: dipilih otomatis dari
+    # pencarian YouTube dan dipastikan masih ada, tetapi isinya tidak ditinjau.
+    if (SUMBER / "video_tutorial.csv").exists():
+        with open(SUMBER / "video_tutorial.csv", newline="", encoding="utf-8") as f:
+            for b in csv.DictReader(f, delimiter="|", quoting=csv.QUOTE_NONE):
+                if b["skill_id"] not in id_skill:
+                    continue  # skill-nya sudah dihapus dari katalog
+                if not b["url"].startswith("https://www.youtube.com/watch?v="):
+                    raise ValueError(f"tautan video tidak sah: {b['url']}")
+                belajar.setdefault(b["skill_id"], []).append({
+                    "judul": b["judul"], "penyedia": b["kanal"], "jenis": "video",
+                    "url": b["url"], "durasi": b["durasi"]})
     for s in skill:
         s["belajar"] = belajar.get(s["id"], [])
 

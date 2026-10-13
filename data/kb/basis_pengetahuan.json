@@ -2557,6 +2557,20 @@
      "penyedia": "Harvard CS50",
      "jenis": "kursus",
      "url": "https://cs50.harvard.edu/python/"
+    },
+    {
+     "judul": "Belajar Dasar Pemrograman Menggunakan Python Mulai Dari Nol",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=poZtdyC24P4",
+     "durasi": "1.07.55"
+    },
+    {
+     "judul": "Belajar Pemrograman Python Dasar untuk Pemula",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=fmZX-5r0t5E",
+     "durasi": "5.11.21"
     }
    ]
   },
@@ -2584,6 +2598,20 @@
      "penyedia": "freeCodeCamp",
      "jenis": "kursus",
      "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/"
+    },
+    {
+     "judul": "TUTORIAL JAVASCRIPT DASAR BAHASA INDONESIA",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=SDROba_M42g",
+     "durasi": "8.03.53"
+    },
+    {
+     "judul": "Belajar Dasar Pemrograman Javascript 1 Jam",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=mD6uSGSjgr4",
+     "durasi": "1.00.23"
     }
    ]
   },
@@ -2603,6 +2631,20 @@
      "penyedia": "typescriptlang.org",
      "jenis": "dokumentasi",
      "url": "https://www.typescriptlang.org/docs/handbook/intro.html"
+    },
+    {
+     "judul": "1 JAM BELAJAR TYPESCRIPT",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ugOonjYVxYM",
+     "durasi": "1.16.34"
+    },
+    {
+     "judul": "Tutorial TypeScript Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=C_C64faSO4c",
+     "durasi": "2.44.51"
     }
    ]
   },
@@ -2620,6 +2662,20 @@
      "penyedia": "dev.java",
      "jenis": "dokumentasi",
      "url": "https://dev.java/learn/"
+    },
+    {
+     "judul": "TUTORIAL JAVA DASAR BAHASA INDONESIA",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=jiUxHm9l1KY",
+     "durasi": "3.40.04"
+    },
+    {
+     "judul": "Tutorial Bahasa Pemrograman Java",
+     "penyedia": "arfy slowy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=5-g1z8C4At0",
+     "durasi": "15.10.22"
     }
    ]
   },
@@ -2637,6 +2693,20 @@
      "penyedia": "kotlinlang.org",
      "jenis": "dokumentasi",
      "url": "https://kotlinlang.org/docs/getting-started.html"
+    },
+    {
+     "judul": "Belajar Kotlin Dasar (Tutorial Lengkap)",
+     "penyedia": "Stacklab",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=YzmG42laeeQ",
+     "durasi": "8.14.58"
+    },
+    {
+     "judul": "TUTORIAL KOTLIN COROUTINES (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Cu1c77pBFuo",
+     "durasi": "1.48.50"
     }
    ]
   },
@@ -2654,6 +2724,20 @@
      "penyedia": "swift.org",
      "jenis": "dokumentasi",
      "url": "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/"
+    },
+    {
+     "judul": "Tutorial Swift Indonesia : Dasar Pemrograman Swift",
+     "penyedia": "Dr. Ir. Purwono",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=V9YlTNVJ3dA",
+     "durasi": "12.46"
+    },
+    {
+     "judul": "01 Pengenalan Swift & Setup Xcode",
+     "penyedia": "ShiftSpace_ Studio",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=zqI8aXg7GPU",
+     "durasi": "19.53"
     }
    ]
   },
@@ -2674,6 +2758,20 @@
      "penyedia": "Microsoft Learn",
      "jenis": "dokumentasi",
      "url": "https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/"
+    },
+    {
+     "judul": "Tutorial Belajar C# Ep1 - Pendahuluan Dan Persiapan - Belajar C# Dasar Untuk Pemula",
+     "penyedia": "Riffa Media",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=NuLvyB0bs6A",
+     "durasi": "8.48"
+    },
+    {
+     "judul": "Belajar Coding C# Programming untuk pemula - 01 Introduction",
+     "penyedia": "Bimbingan Belajar Coding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=kKAcsIvF9UQ",
+     "durasi": "11.53"
     }
    ]
   },
@@ -2695,6 +2793,20 @@
      "penyedia": "learncpp.com",
      "jenis": "panduan",
      "url": "https://www.learncpp.com/"
+    },
+    {
+     "judul": "Belajar Dasar Pemrograman Menggunakan C++ Mulai Dari NOL",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=utT0uY6loVg",
+     "durasi": "51.54"
+    },
+    {
+     "judul": "Mudah Banget!!! Instal Bahasa C dan C++ di Visual Studio Code",
+     "penyedia": "Mpus Gabut",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=9563Y0kxxzM",
+     "durasi": "11.23"
     }
    ]
   },
@@ -2714,6 +2826,20 @@
      "penyedia": "go.dev",
      "jenis": "latihan",
      "url": "https://go.dev/tour/"
+    },
+    {
+     "judul": "Tutorial Golang Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=IO_vkyJnMas",
+     "durasi": "5.31.30"
+    },
+    {
+     "judul": "Belajar Go dari Dasar Sampai Mahir (Full Tutorial Pemula)",
+     "penyedia": "JustKoding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hNPCjQKRtxM",
+     "durasi": "2.22.40"
     }
    ]
   },
@@ -2731,6 +2857,20 @@
      "penyedia": "php.net",
      "jenis": "dokumentasi",
      "url": "https://www.php.net/manual/en/tutorial.php"
+    },
+    {
+     "judul": "Belajar Web Dengan PHP & Database Untuk Pemula Dari Nol",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Ak6VTSekGP4",
+     "durasi": "1.19.36"
+    },
+    {
+     "judul": "TUTORIAL PHP DASAR BAHASA INDONESIA",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=TaBWhb5SPfc",
+     "durasi": "5.28.26"
     }
    ]
   },
@@ -2748,6 +2888,20 @@
      "penyedia": "dart.dev",
      "jenis": "dokumentasi",
      "url": "https://dart.dev/language"
+    },
+    {
+     "judul": "TUTORIAL DART DASAR (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=-mzXdI27tyk",
+     "durasi": "4.01.02"
+    },
+    {
+     "judul": "TUTORIAL DART OOP (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=k0ycD2aqPzU",
+     "durasi": "4.20.18"
     }
    ]
   },
@@ -2782,6 +2936,20 @@
      "penyedia": "scala-lang.org",
      "jenis": "dokumentasi",
      "url": "https://docs.scala-lang.org/tour/tour-of-scala.html"
+    },
+    {
+     "judul": "Scala Tutorial - Learn Scala in one Video",
+     "penyedia": "Genka",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=VRI8ks31NCI",
+     "durasi": "1.21.15"
+    },
+    {
+     "judul": "Scala Tutorial for Beginners",
+     "penyedia": "ProgrammingKnowledge",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=OfngvXKNkpM",
+     "durasi": "4.58.04"
     }
    ]
   },
@@ -2799,6 +2967,20 @@
      "penyedia": "rust-lang.org",
      "jenis": "panduan",
      "url": "https://doc.rust-lang.org/book/"
+    },
+    {
+     "judul": "Tutorial Rust Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=FkASrE05VY4",
+     "durasi": "10.31.43"
+    },
+    {
+     "judul": "Tutorial Bahasa Pemrograman Rust",
+     "penyedia": "arfy slowy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=M59FQF_4V1c",
+     "durasi": "14.29.09"
     }
    ]
   },
@@ -2824,6 +3006,20 @@
      "penyedia": "Kaggle Learn",
      "jenis": "kursus",
      "url": "https://www.kaggle.com/learn/intro-to-sql"
+    },
+    {
+     "judul": "Tutorial SQL Untuk Pemula - Instalasi SQL Server Management Studio dan Membuat Tabel - Episode 1",
+     "penyedia": "Habibie Data Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ktkeHUhk0-0",
+     "durasi": "12.51"
+    },
+    {
+     "judul": "Alur Belajar SQL untuk Data Analyst",
+     "penyedia": "HaloTech Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=b_chiDIMdwc",
+     "durasi": "13.45"
     }
    ]
   },
@@ -2844,6 +3040,20 @@
      "penyedia": "react.dev",
      "jenis": "dokumentasi",
      "url": "https://react.dev/learn"
+    },
+    {
+     "judul": "Tutorial React.JS Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=yOIO5h3ENIw",
+     "durasi": "5.44.38"
+    },
+    {
+     "judul": "Tutorial REACT \"Paling Masuk Akal\" untuk PEMULA 🤩🌐",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=kcnwI_5nKyA",
+     "durasi": "1.16.30"
     }
    ]
   },
@@ -2864,6 +3074,20 @@
      "penyedia": "vuejs.org",
      "jenis": "latihan",
      "url": "https://vuejs.org/tutorial/"
+    },
+    {
+     "judul": "Tutorial Vue.js Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=G_IjpeXxAkE",
+     "durasi": "5.11.25"
+    },
+    {
+     "judul": "Tutorial Vue Bahasa Indonesia : 1.Intro & Setup",
+     "penyedia": "VIP CODE STUDIO",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=S-QjWroWPSQ",
+     "durasi": "27.31"
     }
    ]
   },
@@ -2881,6 +3105,20 @@
      "penyedia": "angular.dev",
      "jenis": "latihan",
      "url": "https://angular.dev/tutorials"
+    },
+    {
+     "judul": "Belajar Angular Pemula - 1. Apa itu angular? - Tutorial Angular Pemula Bahasa Indonesia",
+     "penyedia": "Coders Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=suCc9a82AIQ",
+     "durasi": "29.37"
+    },
+    {
+     "judul": "Belajar Angular Pemula - 2. Apa itu angular component? - Tutorial Angular Pemula Bahasa Indonesia",
+     "penyedia": "Coders Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=1D3KiCSxHEo",
+     "durasi": "20.58"
     }
    ]
   },
@@ -2900,6 +3138,20 @@
      "penyedia": "nextjs.org",
      "jenis": "kursus",
      "url": "https://nextjs.org/learn"
+    },
+    {
+     "judul": "Belajar Next.js untuk Pemula 🚀 - Dari Nol Sampai Bisa Bikin Website Modern",
+     "penyedia": "Dirumahrafif",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=HHlI_mea-uQ",
+     "durasi": "1.37.53"
+    },
+    {
+     "judul": "5 Jam Belajar Next.js Yang Penting-Penting Aja",
+     "penyedia": "Nauval",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Uog2o5kYbVU",
+     "durasi": "5.26.53"
     }
    ]
   },
@@ -2919,6 +3171,20 @@
      "penyedia": "nuxt.com",
      "jenis": "dokumentasi",
      "url": "https://nuxt.com/docs/getting-started/introduction"
+    },
+    {
+     "judul": "NuxtJS, lebih mudah dari NextJS!",
+     "penyedia": "Ruangguru Engineering Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=pbqBrGHIyX4",
+     "durasi": "19.09"
+    },
+    {
+     "judul": "Learn Nuxt.js Fast: The Ultimate Beginner Tutorial",
+     "penyedia": "Udemy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=PVMOQrdEjB0",
+     "durasi": "55.04"
     }
    ]
   },
@@ -2947,6 +3213,20 @@
      "penyedia": "freeCodeCamp",
      "jenis": "kursus",
      "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/"
+    },
+    {
+     "judul": "Belajar HTML Dari Nol Sampai Mahir - Untuk Pemula - Membuat, Menyimpan Dan Menjalankan HTML",
+     "penyedia": "Kelas Komputer Online",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=0oA1Z6UKM5M",
+     "durasi": "11.59"
+    },
+    {
+     "judul": "Tutorial HTML Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hMDJyb7VkYw",
+     "durasi": "3.42.13"
     }
    ]
   },
@@ -2964,6 +3244,20 @@
      "penyedia": "tailwindcss.com",
      "jenis": "dokumentasi",
      "url": "https://tailwindcss.com/docs"
+    },
+    {
+     "judul": "Tutorial Tailwind CSS 4.0",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=VklI5-WvCCc",
+     "durasi": "54.39"
+    },
+    {
+     "judul": "Dalam Satu Video Saja - Tutorial Tailwind CSS",
+     "penyedia": "Dirumahrafif",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=4B9XYXCBYkA",
+     "durasi": "1.16.41"
     }
    ]
   },
@@ -2981,6 +3275,20 @@
      "penyedia": "getbootstrap.com",
      "jenis": "dokumentasi",
      "url": "https://getbootstrap.com/docs/5.3/getting-started/introduction/"
+    },
+    {
+     "judul": "Tutorial Bootstrap Layout (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=iYXbzOC-j5E",
+     "durasi": "1.06.43"
+    },
+    {
+     "judul": "Tutorial Bootstrap CSS Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ZwMVRjPEi0M",
+     "durasi": "3.03.07"
     }
    ]
   },
@@ -3001,6 +3309,20 @@
      "penyedia": "nodejs.org",
      "jenis": "dokumentasi",
      "url": "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs"
+    },
+    {
+     "judul": "TUTORIAL NODEJS DASAR (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=b39Xqf5iyjo",
+     "durasi": "3.48.04"
+    },
+    {
+     "judul": "SESI 1 - Tutorial Setup Backend API NodeJS Express",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=LuY3f978a-A",
+     "durasi": "25.21"
     }
    ]
   },
@@ -3018,6 +3340,20 @@
      "penyedia": "laravel.com",
      "jenis": "dokumentasi",
      "url": "https://laravel.com/docs"
+    },
+    {
+     "judul": "BELAJAR LARAVEL UNTUK PEMULA",
+     "penyedia": "Dirumahrafif",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=yQItJNFbkpc",
+     "durasi": "1.26.43"
+    },
+    {
+     "judul": "Tutorial Laravel 13 Bahasa Indonesia: Fitur Baru yang Wajib Kamu Tahu!",
+     "penyedia": "RhanTech",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=MFdnbst-xfY",
+     "durasi": "57.12"
     }
    ]
   },
@@ -3035,6 +3371,20 @@
      "penyedia": "djangoproject.com",
      "jenis": "dokumentasi",
      "url": "https://docs.djangoproject.com/en/stable/intro/tutorial01/"
+    },
+    {
+     "judul": "Tutorial Django - Mari mulai dari installasi",
+     "penyedia": "Sabit Huraira",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=DZIuD28TgjM",
+     "durasi": "18.05"
+    },
+    {
+     "judul": "Tutorial Django #4 : Create and Read - Tutorial Django Pemula - operasi CRUD Django",
+     "penyedia": "Auto Didak",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Ax7d59VGgYU",
+     "durasi": "26.08"
     }
    ]
   },
@@ -3052,6 +3402,20 @@
      "penyedia": "fastapi.tiangolo.com",
      "jenis": "dokumentasi",
      "url": "https://fastapi.tiangolo.com/tutorial/"
+    },
+    {
+     "judul": "Belajar FastAPI dari 0 – Part 1: Perkenalan & Setup Project Lengkap - Tutorial Bahasa Indonesia",
+     "penyedia": "extrao dev",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=dtD2mQrKGRI",
+     "durasi": "8.03"
+    },
+    {
+     "judul": "Belajar API #1 - Kenalan FastAPI - Episode AI #35",
+     "penyedia": "Abel K Widodo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=0jTYGgULUFE",
+     "durasi": "14.51"
     }
    ]
   },
@@ -3069,6 +3433,20 @@
      "penyedia": "spring.io",
      "jenis": "panduan",
      "url": "https://spring.io/guides"
+    },
+    {
+     "judul": "TUTORIAL JAVA SPRING BOOT BAHASA INDONESIA LENGKAP UNTUK PEMULA",
+     "penyedia": "Belajar Coding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Wd_FCzvOBqs",
+     "durasi": "1.44.41"
+    },
+    {
+     "judul": "TUTORIAL SPRING BOOT DASAR (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=VM3rwdMBORY",
+     "durasi": "4.48.41"
     }
    ]
   },
@@ -3088,6 +3466,20 @@
      "penyedia": "expressjs.com",
      "jenis": "dokumentasi",
      "url": "https://expressjs.com/en/starter/installing.html"
+    },
+    {
+     "judul": "TUTORIAL NODEJS EXPRESS JS (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=L7-u0CHm1GI",
+     "durasi": "1.00.53"
+    },
+    {
+     "judul": "SESI 5 - Express JS Untuk Pemula",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=WgfSD3nFCds",
+     "durasi": "30.23"
     }
    ]
   },
@@ -3105,6 +3497,20 @@
      "penyedia": "nestjs.com",
      "jenis": "dokumentasi",
      "url": "https://docs.nestjs.com/"
+    },
+    {
+     "judul": "Tutorial NestJS Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=BXTEwuoDkDQ",
+     "durasi": "4.41.52"
+    },
+    {
+     "judul": "Tutorial NestJS RESTful API (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=DrqVYkXpods",
+     "durasi": "3.42.05"
     }
    ]
   },
@@ -3122,6 +3528,20 @@
      "penyedia": "palletsprojects.com",
      "jenis": "dokumentasi",
      "url": "https://flask.palletsprojects.com/en/stable/tutorial/"
+    },
+    {
+     "judul": "Tutorial Flask (Python) Bahasa Indonesia #5 - Test Request Context",
+     "penyedia": "Programmer Bar Bar",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=j-RxwQF59FY",
+     "durasi": "10.03"
+    },
+    {
+     "judul": "Tutorial Flask (Python) Bahasa Indonesia #4 - Routing",
+     "penyedia": "Programmer Bar Bar",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=5BF2CJZwjxQ",
+     "durasi": "13.35"
     }
    ]
   },
@@ -3139,6 +3559,20 @@
      "penyedia": "codeigniter.com",
      "jenis": "dokumentasi",
      "url": "https://codeigniter.com/user_guide/intro/index.html"
+    },
+    {
+     "judul": "Tutorial CodeIgniter 4 untuk PEMULA - 2. Persiapan & Instalasi",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=UhpzEne6omo",
+     "durasi": "19.56"
+    },
+    {
+     "judul": "Tutorial CodeIgniter 4 untuk PEMULA - 1. Intro",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Nt3YH68npW4",
+     "durasi": "15.28"
     }
    ]
   },
@@ -3159,6 +3593,20 @@
      "penyedia": "Microsoft Learn",
      "jenis": "dokumentasi",
      "url": "https://learn.microsoft.com/en-us/aspnet/core/getting-started/"
+    },
+    {
+     "judul": "01. PERKENALAN - TUTORIAL ASP NET CORE 7 BAHASA INDONESIA",
+     "penyedia": "Rifki Ahmad Sururi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=eU_ZDtfD-N0",
+     "durasi": "13.10"
+    },
+    {
+     "judul": "TUTORIAL ASP.Net Core 8 - CRUD - Part 1 - Bahasa Indonesia",
+     "penyedia": "Rifki Ahmad Sururi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=psMVWAO8_dE",
+     "durasi": "1.04.55"
     }
    ]
   },
@@ -3176,6 +3624,20 @@
      "penyedia": "flutter.dev",
      "jenis": "dokumentasi",
      "url": "https://docs.flutter.dev/get-started/learn-flutter"
+    },
+    {
+     "judul": "Tutorial Flutter Indonesia - Basic Layout Widget untuk Pemula!",
+     "penyedia": "Azwar Buton",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ljnCigzqyTA",
+     "durasi": "41.54"
+    },
+    {
+     "judul": "FLUTTER UI 03 MyTsel - Design by Muhammad Najib (Tutorial Flutter Bahasa Indonesia)",
+     "penyedia": "Kuldii Project",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Cx12579Soxk",
+     "durasi": "2.15.49"
     }
    ]
   },
@@ -3195,6 +3657,20 @@
      "penyedia": "reactnative.dev",
      "jenis": "dokumentasi",
      "url": "https://reactnative.dev/docs/getting-started"
+    },
+    {
+     "judul": "Belajar React Native ⚛️ untuk Pemula dari NOL sampai MAHIR",
+     "penyedia": "JustKoding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Hw_d5RV8O1E",
+     "durasi": "2.53.22"
+    },
+    {
+     "judul": "Belajar React Native Expo untuk Pemula #1 : Pengenalan dan Setup React Native Expo",
+     "penyedia": "JustKoding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=phYa-zi0PjM",
+     "durasi": "13.23"
     }
    ]
   },
@@ -3214,6 +3690,20 @@
      "penyedia": "Android Developers",
      "jenis": "kursus",
      "url": "https://developer.android.com/courses/android-basics-compose/course"
+    },
+    {
+     "judul": "Cara Install Android Studio Terbaru 2025 + Setting SDK & Emulator - Tutorial Pemula Android",
+     "penyedia": "Cara Jitu",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=TtswoJ6jtDo",
+     "durasi": "9.32"
+    },
+    {
+     "judul": "Proses instalasi Android Studio, konfigurasi environment Kotlin & Android SDK",
+     "penyedia": "Zalwa Zahliah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=lITIl7wcySM",
+     "durasi": "15.01"
     }
    ]
   },
@@ -3235,6 +3725,20 @@
      "penyedia": "Apple Developer",
      "jenis": "latihan",
      "url": "https://developer.apple.com/tutorials/swiftui"
+    },
+    {
+     "judul": "SwiftUI Tutorial: Memahami State dan Binding #9 - Tutorial SwiftUI Bahasa Indonesia",
+     "penyedia": "Dr. Ir. Purwono",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=10OXbr3FeWI",
+     "durasi": "15.32"
+    },
+    {
+     "judul": "SwiftUI Tutorial: Memahami Environment Object #11 - Tutorial SwiftUI Bahasa Indonesia",
+     "penyedia": "Dr. Ir. Purwono",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=DjwjBt3NwwY",
+     "durasi": "40.09"
     }
    ]
   },
@@ -3254,6 +3758,20 @@
      "penyedia": "postgresql.org",
      "jenis": "dokumentasi",
      "url": "https://www.postgresql.org/docs/current/tutorial.html"
+    },
+    {
+     "judul": "Tutorial PostgreSQL Database (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=iEeveYoD0SA",
+     "durasi": "6.05.56"
+    },
+    {
+     "judul": "Full Tutorial PostgreSQL Dan Database",
+     "penyedia": "HaloTech Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=EAr5GvF7-dw",
+     "durasi": "4.26.20"
     }
    ]
   },
@@ -3273,6 +3791,20 @@
      "penyedia": "dev.mysql.com",
      "jenis": "dokumentasi",
      "url": "https://dev.mysql.com/doc/refman/8.4/en/tutorial.html"
+    },
+    {
+     "judul": "Tutorial MySQL Database (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=xYBclb-sYQ4",
+     "durasi": "6.37.38"
+    },
+    {
+     "judul": "Tutorial MySQL Dasar Lengkap Untuk Pemula",
+     "penyedia": "Kenapa Coding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=4ptA6e7N0xo",
+     "durasi": "8.37.53"
     }
    ]
   },
@@ -3293,6 +3825,20 @@
      "penyedia": "MongoDB",
      "jenis": "kursus",
      "url": "https://learn.mongodb.com/"
+    },
+    {
+     "judul": "Tutorial MongoDB Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ICQ6V8u9sSw",
+     "durasi": "4.34.48"
+    },
+    {
+     "judul": "Tutorial Bikin Database di MongoDB Compass",
+     "penyedia": "Hidaa44",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=pcjmZ4b1Xuc",
+     "durasi": "10.19"
     }
    ]
   },
@@ -3310,6 +3856,20 @@
      "penyedia": "Redis",
      "jenis": "kursus",
      "url": "https://university.redis.io/"
+    },
+    {
+     "judul": "Tutorial Redis Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=5N0fD0GMm2g",
+     "durasi": "1.49.42"
+    },
+    {
+     "judul": "Fitur Redis yang Wajib Lo Tahu",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ev5vHhlAvbA",
+     "durasi": "9.24"
     }
    ]
   },
@@ -3327,6 +3887,20 @@
      "penyedia": "sqlite.org",
      "jenis": "dokumentasi",
      "url": "https://www.sqlite.org/docs.html"
+    },
+    {
+     "judul": "Apa Itu SQLite?",
+     "penyedia": "Hobon id",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=rkh8EPh2ns4",
+     "durasi": "13.20"
+    },
+    {
+     "judul": "Koneksi DB SQLite - Tutorial C# 2024 Bahasa Indonesia",
+     "penyedia": "Deddy Armanda",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=fkvpQEZoVQE",
+     "durasi": "11.47"
     }
    ]
   },
@@ -3347,6 +3921,20 @@
      "penyedia": "Microsoft Learn",
      "jenis": "dokumentasi",
      "url": "https://learn.microsoft.com/en-us/sql/sql-server/tutorials-for-sql-server-2016"
+    },
+    {
+     "judul": "Tutorial SQL Untuk Pemula - Instalasi SQL Server Management Studio dan Membuat Tabel - Episode 1",
+     "penyedia": "Habibie Data Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ktkeHUhk0-0",
+     "durasi": "12.51"
+    },
+    {
+     "judul": "Cara Mudah Install dan Download SQL Server 2022",
+     "penyedia": "Al Hadid Yunus",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=rfxv_ciZGoc",
+     "durasi": "24.20"
     }
    ]
   },
@@ -3358,7 +3946,22 @@
    "deskripsi": "Database enterprise Oracle untuk sistem skala besar",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Tutorial Dasar Menggunakan Oracle SQLDeveloper (Bahasa Indonesia)",
+     "penyedia": "Boby Siswanto",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hRwCEBRP1kI",
+     "durasi": "10.40"
+    },
+    {
+     "judul": "Tutorial Oracle Report Builder Pemula - Bahasa Indonesia",
+     "penyedia": "Sabtu Minggu Motoride",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ZW1C_zScsJ0",
+     "durasi": "23.35"
+    }
+   ]
   },
   {
    "id": "SK045",
@@ -3374,6 +3977,20 @@
      "penyedia": "Google Cloud",
      "jenis": "dokumentasi",
      "url": "https://cloud.google.com/bigquery/docs"
+    },
+    {
+     "judul": "Belajar SQL mulai dari mana? ( Tutorial Belajar Google Bigquery)",
+     "penyedia": "Mira's Blackbox",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=tZlTflyzvkk",
+     "durasi": "18.38"
+    },
+    {
+     "judul": "Data Analisis Menggunakan Google Bigquery - Portofolio Data Analyst",
+     "penyedia": "HaloTech Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=m2cj4-Y6SCA",
+     "durasi": "30.06"
     }
    ]
   },
@@ -3391,6 +4008,13 @@
      "penyedia": "Snowflake",
      "jenis": "dokumentasi",
      "url": "https://docs.snowflake.com/"
+    },
+    {
+     "judul": "Belajar Snowflake Pemula - Persiapan dan loading data",
+     "penyedia": "Bima Ngulik Data",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=cgVFwV1i45w",
+     "durasi": "30.17"
     }
    ]
   },
@@ -3402,7 +4026,22 @@
    "deskripsi": "Distributed NoSQL database untuk write-heavy workloads",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Database NoSQL Cassandra (Penjelasan, Penggunaan, dan Implementasi)",
+     "penyedia": "Putri Widya",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=OSdDTHuTnOY",
+     "durasi": "23.22"
+    },
+    {
+     "judul": "Apa itu Apache Cassandra? - Cara install DataStax Cassandra di Windows",
+     "penyedia": "Okv Tutorial",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=P5lasxzM-0s",
+     "durasi": "12.44"
+    }
+   ]
   },
   {
    "id": "SK048",
@@ -3418,6 +4057,20 @@
      "penyedia": "Elastic",
      "jenis": "kursus",
      "url": "https://www.elastic.co/training"
+    },
+    {
+     "judul": "Tutorial Elasticsearch Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=JfW7tg0yWsc",
+     "durasi": "5.10.02"
+    },
+    {
+     "judul": "Fitur Elasticsearch yang Wajib Tahu",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=YP4FfJPSnXg",
+     "durasi": "9.18"
     }
    ]
   },
@@ -3439,6 +4092,13 @@
      "penyedia": "Amazon Web Services",
      "jenis": "kursus",
      "url": "https://skillbuilder.aws/"
+    },
+    {
+     "judul": "AWS In 60 Minutes - AWS Tutorial For Beginners - AWS Training Video - Dalam Bahasa Indonesia",
+     "penyedia": "Kusmadi SmileCodes",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=qZ4G4IcPT0A",
+     "durasi": "1.38.57"
     }
    ]
   },
@@ -3459,6 +4119,20 @@
      "penyedia": "Google Cloud",
      "jenis": "kursus",
      "url": "https://www.cloudskillsboost.google/"
+    },
+    {
+     "judul": "Pengenalan Google Cloud Platform (GCP) untuk Pemula - Belajar BigQuery, IAM, GCS dari Nol",
+     "penyedia": "Belajar Data & AI",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=BmoC8ASnuzU",
+     "durasi": "2.13.27"
+    },
+    {
+     "judul": "Apa itu Google Cloud Platform? - Tanya langsung ke tim Google",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=3d-rMsTjfAY",
+     "durasi": "36.37"
     }
    ]
   },
@@ -3478,6 +4152,20 @@
      "penyedia": "Microsoft Learn",
      "jenis": "kursus",
      "url": "https://learn.microsoft.com/en-us/training/azure/"
+    },
+    {
+     "judul": "Belajar Microsoft Azure Open AI Service",
+     "penyedia": "Sagi Arsyad",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=4Y2pjCJr9CA",
+     "durasi": "17.29"
+    },
+    {
+     "judul": "(FULL VIDEO) Pengantar Microsoft Azure Level Dasar",
+     "penyedia": "Kelas Online Teknologi - JubileeID",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Mq8qgosUNSY",
+     "durasi": "2.46.02"
     }
    ]
   },
@@ -3495,6 +4183,20 @@
      "penyedia": "docker.com",
      "jenis": "dokumentasi",
      "url": "https://docs.docker.com/get-started/"
+    },
+    {
+     "judul": "TUTORIAL DOCKER DASAR (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=3_yxVjV88Zk",
+     "durasi": "3.04.56"
+    },
+    {
+     "judul": "Docker - Gak Ada Nih Di Kampus Gue 🤡",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Fgq6hsnKllQ",
+     "durasi": "38.45"
     }
    ]
   },
@@ -3515,6 +4217,20 @@
      "penyedia": "kubernetes.io",
      "jenis": "latihan",
      "url": "https://kubernetes.io/docs/tutorials/"
+    },
+    {
+     "judul": "Belajar Kubernetes Dasar",
+     "penyedia": "DevOps with Dian",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=7zInpQfPRqo",
+     "durasi": "2.27.49"
+    },
+    {
+     "judul": "Belajar Kubernetes dalam 10 menit (UNTUK PEMULA)",
+     "penyedia": "Giri Kuncoro",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=1U7Zsazd96o",
+     "durasi": "12.19"
     }
    ]
   },
@@ -3532,6 +4248,20 @@
      "penyedia": "HashiCorp",
      "jenis": "latihan",
      "url": "https://developer.hashicorp.com/terraform/tutorials"
+    },
+    {
+     "judul": "Terraform explained in 15 mins - Terraform Tutorial for Beginners",
+     "penyedia": "TechWorld with Nana",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=l5k1ai_GBDE",
+     "durasi": "18.15"
+    },
+    {
+     "judul": "Complete Terraform Course - From BEGINNER to PRO! (Learn Infrastructure as Code)",
+     "penyedia": "DevOps Directive",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=7xngnjfIlK4",
+     "durasi": "2.38.04"
     }
    ]
   },
@@ -3554,6 +4284,20 @@
      "penyedia": "GitHub",
      "jenis": "dokumentasi",
      "url": "https://docs.github.com/en/actions"
+    },
+    {
+     "judul": "Apa Itu CI/CD, Dan Praktek Dengan GitHub Action",
+     "penyedia": "turtlepod",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=9ydsDmjB1us",
+     "durasi": "12.20"
+    },
+    {
+     "judul": "Belajar CI/CD dalam 10 menit lewat GitHub Actions dan Docker - Part 1",
+     "penyedia": "Giri Kuncoro",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=v-pqoP6ro-8",
+     "durasi": "9.25"
     }
    ]
   },
@@ -3575,6 +4319,20 @@
      "penyedia": "Ubuntu",
      "jenis": "latihan",
      "url": "https://ubuntu.com/tutorials/command-line-for-beginners"
+    },
+    {
+     "judul": "Terminal CLI Linux UBUNTU Buat Pemula",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ClbWfffCYf4",
+     "durasi": "15.04"
+    },
+    {
+     "judul": "Tutorial Linux System Administration Dari Level Pemula - Upskilling with SUHU",
+     "penyedia": "SUHU TV",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=HHeYsyE87ZM",
+     "durasi": "11.57"
     }
    ]
   },
@@ -3595,6 +4353,20 @@
      "penyedia": "nginx.org",
      "jenis": "dokumentasi",
      "url": "https://nginx.org/en/docs/beginners_guide.html"
+    },
+    {
+     "judul": "Install Web Server NGINX & APACHE Dalam Docker Container di NEO Virtual Compute Biznet Gio Cloud",
+     "penyedia": "Raden Febri",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=sc2jpGrWprk",
+     "durasi": "15.53"
+    },
+    {
+     "judul": "TUTORIAL NGINX 3 - Konfigurasi NGINX Web Server",
+     "penyedia": "Wirasec",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ttxGjRC1e1s",
+     "durasi": "15.18"
     }
    ]
   },
@@ -3612,6 +4384,20 @@
      "penyedia": "Apache Airflow",
      "jenis": "dokumentasi",
      "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html"
+    },
+    {
+     "judul": "Apache Airflow Docker Tutorial (Bahasa Indonesia)",
+     "penyedia": "ItsRai Ramones",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=CIMircrVbHo",
+     "durasi": "18.12"
+    },
+    {
+     "judul": "Belajar Apache Airflow #1 : Overview - Data Engineering Indonesia",
+     "penyedia": "Dimas",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=qhyZKW2ppUw",
+     "durasi": "17.29"
     }
    ]
   },
@@ -3629,6 +4415,20 @@
      "penyedia": "Apache Spark",
      "jenis": "dokumentasi",
      "url": "https://spark.apache.org/docs/latest/quick-start.html"
+    },
+    {
+     "judul": "Aditya Riaddy - Apa itu Apache Spark dan Penggunaanya untuk Big Data Analytics - BukaTalks",
+     "penyedia": "Bukalapak",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=fM39s4EN6pU",
+     "durasi": "12.41"
+    },
+    {
+     "judul": "Kuliah PySpark - Tutorial Spark DataFrame dan Spark SQL 1 Jam",
+     "penyedia": "Faqih Hamami",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=oKWWHTgJzBk",
+     "durasi": "58.21"
     }
    ]
   },
@@ -3646,6 +4446,20 @@
      "penyedia": "Apache Kafka",
      "jenis": "dokumentasi",
      "url": "https://kafka.apache.org/quickstart"
+    },
+    {
+     "judul": "Tutorial Kafka Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=K7bIgpPAdbc",
+     "durasi": "2.37.31"
+    },
+    {
+     "judul": "Tonton Ini Sebelum Pake Kafka",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ms6ltwRC1sE",
+     "durasi": "47.31"
     }
    ]
   },
@@ -3663,6 +4477,13 @@
      "penyedia": "dbt Labs",
      "jenis": "kursus",
      "url": "https://learn.getdbt.com/"
+    },
+    {
+     "judul": "dbt : Transformation Tool yang Makin Ngetrend",
+     "penyedia": "Insinyur Data",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=_ek6xMQ29YM",
+     "durasi": "54.40"
     }
    ]
   },
@@ -3677,7 +4498,22 @@
     "ETL",
     "ELT"
    ],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Extract Transform Load (ETL) dengan Airflow & MySQL",
+     "penyedia": "Ade Aulia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=73ShlvRyf5c",
+     "durasi": "12.24"
+    },
+    {
+     "judul": "Workshop Pengembangan Data Warehouse & ETL dengan Pentaho Data Integration",
+     "penyedia": "Faqih Hamami",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=KiiYq6zcpCM",
+     "durasi": "2.38.15"
+    }
+   ]
   },
   {
    "id": "SK063",
@@ -3687,7 +4523,22 @@
    "deskripsi": "Star schema, dimensional modeling, fact/dimension tables",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Data Warehouse Tutorial For Beginners - Data Warehouse Concepts - Data Warehousing - Edureka",
+     "penyedia": "edureka!",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=J326LIUrZM8",
+     "durasi": "1.38.50"
+    },
+    {
+     "judul": "Datawarehousing 5 - Komponen Data Warehouse",
+     "penyedia": "Muhammad Ariful Furqon",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=trWlSzaWAtM",
+     "durasi": "43.10"
+    }
+   ]
   },
   {
    "id": "SK064",
@@ -3703,6 +4554,20 @@
      "penyedia": "Tableau",
      "jenis": "kursus",
      "url": "https://www.tableau.com/learn/training"
+    },
+    {
+     "judul": "Dasar Dasar Tableau - Pembuatan Dashboard Covid 19 Indonesia",
+     "penyedia": "Adam Startup",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=d_J2fWqCKgM",
+     "durasi": "24.51"
+    },
+    {
+     "judul": "Tableau Dashboard Tutorial dalam 12 Menit - Bahasa Indonesia",
+     "penyedia": "Wanda Kinasih",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=M1v9ZMl0-3E",
+     "durasi": "12.03"
     }
    ]
   },
@@ -3720,6 +4585,20 @@
      "penyedia": "Microsoft Learn",
      "jenis": "kursus",
      "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi"
+    },
+    {
+     "judul": "Power BI Dashboard, 15 Menit jago Power BI Tutorial Lengkap Power BI untuk Pemula",
+     "penyedia": "Prof Uda",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=QAp9Xrct8Ww",
+     "durasi": "18.23"
+    },
+    {
+     "judul": "Tutorial Power BI Bahasa Indonesia - Membuat Report dari File Excel",
+     "penyedia": "Sagi Arsyad",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=RBVVxbxERis",
+     "durasi": "46.06"
     }
    ]
   },
@@ -3740,6 +4619,20 @@
      "penyedia": "Google",
      "jenis": "dokumentasi",
      "url": "https://support.google.com/looker-studio/"
+    },
+    {
+     "judul": "Belajar Looker Studio / Google Data Studio - Dashboard Pemula",
+     "penyedia": "Bima Ngulik Data",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=sUAqphE0UeM",
+     "durasi": "18.44"
+    },
+    {
+     "judul": "Tutorial Looker Studio (Google Data Studio) FULL 1 JAM - Bikin Dashboard Coffee Shop dari NOL",
+     "penyedia": "DataCraft by El",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=CZtnv_eLswM",
+     "durasi": "1.08.24"
     }
    ]
   },
@@ -3757,6 +4650,20 @@
      "penyedia": "Metabase",
      "jenis": "panduan",
      "url": "https://www.metabase.com/learn/"
+    },
+    {
+     "judul": "Panduan Penggunaan Metabase",
+     "penyedia": "Beny Iswaril",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=DmCBfzf7Yq4",
+     "durasi": "42.13"
+    },
+    {
+     "judul": "Visualisasi Data Menggunakan Metabase Tools",
+     "penyedia": "rizcaptrs",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=B0srlCTw5NM",
+     "durasi": "11.33"
     }
    ]
   },
@@ -3780,6 +4687,20 @@
      "penyedia": "pandas.pydata.org",
      "jenis": "dokumentasi",
      "url": "https://pandas.pydata.org/docs/getting_started/index.html"
+    },
+    {
+     "judul": "Belajar Pandas Mudah: Pengenalan Pengenalan PANDAS di Python -- Pandas Tutorial",
+     "penyedia": "Jinbey Daigaku",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=T_sU2bz1vJQ",
+     "durasi": "19.10"
+    },
+    {
+     "judul": "Tutorial Belajar Pandas pada Python - Data Science For Beginners",
+     "penyedia": "KSO - Software Developer",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Lga8e8w5O1A",
+     "durasi": "1.44.15"
     }
    ]
   },
@@ -3797,6 +4718,20 @@
      "penyedia": "numpy.org",
      "jenis": "dokumentasi",
      "url": "https://numpy.org/doc/stable/user/absolute_beginners.html"
+    },
+    {
+     "judul": "Menggunakan Numpy Array - [Tutorial Python Data Science bahasa Indonesia untuk pemula] #INDOSOAI",
+     "penyedia": "TeknoMerdeka",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=06cjWxfk-Zc",
+     "durasi": "16.55"
+    },
+    {
+     "judul": "Tutorial Numpy ( Numerical Python ) 💡",
+     "penyedia": "arfy slowy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=bNhve_X6B6o",
+     "durasi": "5.18.26"
     }
    ]
   },
@@ -3816,6 +4751,13 @@
      "penyedia": "scikit-learn.org",
      "jenis": "dokumentasi",
      "url": "https://scikit-learn.org/stable/getting_started.html"
+    },
+    {
+     "judul": "Bikin Chatbot Pintar Bahasa Indonesia menggunakan Scikit-Learn - 50 Menit Auto Paham dan BISA !!",
+     "penyedia": "NgodingAI",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=sotu6YqPoY0",
+     "durasi": "48.16"
     }
    ]
   },
@@ -3835,6 +4777,20 @@
      "penyedia": "tensorflow.org",
      "jenis": "latihan",
      "url": "https://www.tensorflow.org/tutorials"
+    },
+    {
+     "judul": "🔴 [ LIVE ] Mahir Deep Learning dengan TensorFlow dalam 1 Jam bersama Addin Malik",
+     "penyedia": "UNNES TV",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=tMOQW8MxYR8",
+     "durasi": "59.15"
+    },
+    {
+     "judul": "Convolutional & Pooling Layer untuk meningkatkan akurasi -- Training Model dengan TensorFlow",
+     "penyedia": "Catatan Coder",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=KMiWi-V-bQg",
+     "durasi": "9.44"
     }
    ]
   },
@@ -3852,6 +4808,20 @@
      "penyedia": "pytorch.org",
      "jenis": "latihan",
      "url": "https://pytorch.org/tutorials/"
+    },
+    {
+     "judul": "PyTorch untuk Pemula : Ep. 1 Pengenalan PyTorch",
+     "penyedia": "NgodingAI",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=NOG9SKfNprc",
+     "durasi": "11.45"
+    },
+    {
+     "judul": "1 PyTorch Useful Function - Introduction to PyTorch - Indonesia",
+     "penyedia": "Ruby Abdullah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=sdGmJHobNm8",
+     "durasi": "11.47"
     }
    ]
   },
@@ -3871,6 +4841,13 @@
      "penyedia": "Hugging Face",
      "jenis": "kursus",
      "url": "https://huggingface.co/learn"
+    },
+    {
+     "judul": "Konsep Dasar #3 - Apa Itu Hugging Face dan Contohnya dalam NLP & LLM - Episode AI #57",
+     "penyedia": "Abel K Widodo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=UM2hjDA9haE",
+     "durasi": "35.05"
     }
    ]
   },
@@ -3888,6 +4865,20 @@
      "penyedia": "LangChain",
      "jenis": "dokumentasi",
      "url": "https://python.langchain.com/docs/introduction/"
+    },
+    {
+     "judul": "Apa itu langchain? - Tutorial Langchain indonesia",
+     "penyedia": "RunStack",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=JgFdyBrJo_U",
+     "durasi": "9.13"
+    },
+    {
+     "judul": "Sistem AI Agent Sendiri Pake Langchain & Python",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=CmKohf3mm7g",
+     "durasi": "14.30"
     }
    ]
   },
@@ -3908,6 +4899,20 @@
      "penyedia": "OpenAI",
      "jenis": "dokumentasi",
      "url": "https://platform.openai.com/docs/quickstart"
+    },
+    {
+     "judul": "Belajar API #10 - Bentuk Aplikatif API OpenAI - Episode AI #44",
+     "penyedia": "Abel K Widodo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ABtTVMi7_CQ",
+     "durasi": "17.37"
+    },
+    {
+     "judul": "Setup dan Konfigurasi OpenAI di Python - OpenAI Tips",
+     "penyedia": "Halovina Tutorial",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=3qPgfJqR978",
+     "durasi": "14.13"
     }
    ]
   },
@@ -3919,7 +4924,22 @@
    "deskripsi": "Framework komputasi GPU untuk akselerasi ML training",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Apa itu NVIDIA CUDA Core, Yang Mana CUDA, Kegunaan CUDA Versi CUDA, Download Update dan Install CUDA",
+     "penyedia": "BelajarBentar (Belajar Bentar)",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ocgKhtdRyUM",
+     "durasi": "11.07"
+    },
+    {
+     "judul": "Pemrograman GPU dengan CUDA - Video 1",
+     "penyedia": "Vikri Informatika",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=8QXXi5woErA",
+     "durasi": "1.09.04"
+    }
+   ]
   },
   {
    "id": "SK077",
@@ -3937,6 +4957,20 @@
      "penyedia": "opencv.org",
      "jenis": "dokumentasi",
      "url": "https://docs.opencv.org/4.x/d9/df8/tutorial_root.html"
+    },
+    {
+     "judul": "Belajar Computer Vision dari 0 (penjelasan)",
+     "penyedia": "Vintec",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=fyzVfz2lvRc",
+     "durasi": "9.03"
+    },
+    {
+     "judul": "Tutorial Computer Vision #1. Pengenalan dan Instalasi",
+     "penyedia": "Hari Nugraha",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=FhyI7jK_XM8",
+     "durasi": "8.01"
     }
    ]
   },
@@ -3950,7 +4984,22 @@
    "alias": [
     "RAG"
    ],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Tutorial RAG & LangChain dengan LLM Gemini (Bahasa Indonesia)",
+     "penyedia": "AI-NOID",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=uQrAMbc2gsE",
+     "durasi": "1.14.48"
+    },
+    {
+     "judul": "[RAG Series #1] Hanya 10 menit paham bagaimana konsep dibalik Retrieval Augmented Generation (RAG)",
+     "penyedia": "Akademi AI",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=-G5Mt5p2Syo",
+     "durasi": "11.28"
+    }
+   ]
   },
   {
    "id": "SK079",
@@ -3960,7 +5009,22 @@
    "deskripsi": "Database untuk menyimpan dan mencari embeddings ML",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "[Ngobrolin AI #8] JANGAN CUMA TAU INSTALL!!! Bahas Vector Database Lengkap dengan Konsep + Diagram",
+     "penyedia": "Akademi AI",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Nk59sP3NRVk",
+     "durasi": "30.29"
+    },
+    {
+     "judul": "Cara AI Memahami Bahasa Kita: Embedding & Vector Database",
+     "penyedia": "HaloTech Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=wOinGSjyYHI",
+     "durasi": "10.25"
+    }
+   ]
   },
   {
    "id": "SK080",
@@ -3982,6 +5046,20 @@
      "penyedia": "learngitbranching.js.org",
      "jenis": "latihan",
      "url": "https://learngitbranching.js.org/"
+    },
+    {
+     "judul": "Tutorial Cara Penggunaan Git dan Github (Bahasa Indonesia)",
+     "penyedia": "Naistudio Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=u0zqtYU-rJA",
+     "durasi": "11.37"
+    },
+    {
+     "judul": "TUTORIAL GIT DASAR (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=fQbTeNX1mvM",
+     "durasi": "2.35.51"
     }
    ]
   },
@@ -4002,6 +5080,20 @@
      "penyedia": "GitHub",
      "jenis": "latihan",
      "url": "https://skills.github.com/"
+    },
+    {
+     "judul": "Belajar GitHub Dasar 12 Menit Buat Pemula",
+     "penyedia": "Mico-Ritsu",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=j52zgn_xfNg",
+     "durasi": "12.19"
+    },
+    {
+     "judul": "Tutorial GIT & GitHub Untuk Pemula (2026) - Panduan Lengkap Dari Nol Sampai Push Project",
+     "penyedia": "HyELqi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=xQRR1OUg8tM",
+     "durasi": "20.24"
     }
    ]
   },
@@ -4013,7 +5105,22 @@
    "deskripsi": "Keamanan jaringan termasuk firewall, IDS/IPS, VPN",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Keamanan Jaringan Komputer - Konsep Dasar Network Security",
+     "penyedia": "Cyber Learning Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=DeRN8RuprLM",
+     "durasi": "54.12"
+    },
+    {
+     "judul": "#1 NETWORK SECURITY : NETWORK DEFENSE FUNDAMENTAL",
+     "penyedia": "Doddy Ferdiansyah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=iI2fqnyW4Io",
+     "durasi": "16.06"
+    }
+   ]
   },
   {
    "id": "SK083",
@@ -4035,6 +5142,20 @@
      "penyedia": "PortSwigger",
      "jenis": "latihan",
      "url": "https://portswigger.net/web-security"
+    },
+    {
+     "judul": "Security Series #01 : Pengetahuan Wajib Application Security bagi Programmer",
+     "penyedia": "ArtiVisi Intermedia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Ul3dDO-MeDo",
+     "durasi": "10.41"
+    },
+    {
+     "judul": "OWASP Application Security Verification Standard",
+     "penyedia": "Inixindo Jogja",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=A34fFfnmWqY",
+     "durasi": "1.44.42"
     }
    ]
   },
@@ -4055,6 +5176,20 @@
      "penyedia": "TryHackMe",
      "jenis": "latihan",
      "url": "https://tryhackme.com/"
+    },
+    {
+     "judul": "Mengenal Penetration Testing (Pentest) : Metode, Tahapan dan Aspek Pengujian - Upskilling With SUHU",
+     "penyedia": "SUHU TV",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=eMjoxaTpOgM",
+     "durasi": "12.17"
+    },
+    {
+     "judul": "TUTORIAL LENGKAP PENETRATION TESTING WEBSITE - PART 1",
+     "penyedia": "Tulisan Tangan",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=QsgB-MyYwG4",
+     "durasi": "12.24"
     }
    ]
   },
@@ -4066,7 +5201,22 @@
    "deskripsi": "Security Information and Event Management untuk monitoring ancaman",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Mau Jadi Security Analyst? Pahami Cara Kerja SIEM Sekarang (Introduction to SIEM - TryHackMe)",
+     "penyedia": "Recoon",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=5y9iUKiJjIA",
+     "durasi": "24.24"
+    },
+    {
+     "judul": "Webinar - Perkenalan ke Blue Team dan Wazuh SIEM & XDR",
+     "penyedia": "Cyberkarta",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=tXZ4089H_tw",
+     "durasi": "1.45.08"
+    }
+   ]
   },
   {
    "id": "SK086",
@@ -4076,7 +5226,22 @@
    "deskripsi": "Enkripsi, sertifikat digital, dan manajemen kunci",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Simplifying Public Key Infrastructure (PKI) for Beginners",
+     "penyedia": "Prabh Nair",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=SQlJcWqyqqI",
+     "durasi": "22.37"
+    },
+    {
+     "judul": "Kripto 22: Kriptografi Kunci-Publik (Public-key Cryptography)",
+     "penyedia": "Rinaldi Munir",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=q_vkfOw_9-k",
+     "durasi": "24.39"
+    }
+   ]
   },
   {
    "id": "SK087",
@@ -4092,6 +5257,20 @@
      "penyedia": "Figma",
      "jenis": "panduan",
      "url": "https://help.figma.com/hc/en-us"
+    },
+    {
+     "judul": "Belajar Figma dari Nol 2025 - Tutorial Figma Pemula Bahasa Indonesia",
+     "penyedia": "UX Orbit Design",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=AmDKFOXD_Jg",
+     "durasi": "22.00"
+    },
+    {
+     "judul": "Belajar Dasar Figma untuk Pemula - Tutorial Bahasa Indonesia",
+     "penyedia": "Mas KukuhAldy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=PJIKqnftfPw",
+     "durasi": "22.51"
     }
    ]
   },
@@ -4107,7 +5286,22 @@
     "Illustrator",
     "Adobe XD"
    ],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Tutorial Aplikasi Adobe XD Dari Nol untuk Pemula #30MENITAJA",
+     "penyedia": "Fini Charisa",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=LGTH4Q2TiRA",
+     "durasi": "30.32"
+    },
+    {
+     "judul": "Belajar Adobe XD Untuk Pemula - Part 1 - Tutorial Bahasa Indonesia",
+     "penyedia": "Dezsandra Raenal Abdillah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=30pr-Ah93CQ",
+     "durasi": "11.37"
+    }
+   ]
   },
   {
    "id": "SK089",
@@ -4133,6 +5327,20 @@
      "penyedia": "Atlassian",
      "jenis": "panduan",
      "url": "https://www.atlassian.com/agile"
+    },
+    {
+     "judul": "Agile Scrum Full Course In 4 Hours - Agile Scrum Master Training - Agile Training Video -Simplilearn",
+     "penyedia": "Simplilearn",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=VFQtSqChlsk",
+     "durasi": "3.24.58"
+    },
+    {
+     "judul": "Pahami Scrum dalam 10 Menit (Agile Methodology) Introduction to Scrum (Bahasa Indonesia) Bercerisa#1",
+     "penyedia": "Sadida Aruni",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=wPd4D9v-CfY",
+     "durasi": "11.53"
     }
    ]
   },
@@ -4154,6 +5362,20 @@
      "penyedia": "MDN Web Docs",
      "jenis": "panduan",
      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP"
+    },
+    {
+     "judul": "REST API #1 APA ITU API ?",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=vQJJ_K1JbEA",
+     "durasi": "16.21"
+    },
+    {
+     "judul": "BELAJAR RESTFUL API (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=9ed3b0tSRvI",
+     "durasi": "1.51.15"
     }
    ]
   },
@@ -4171,6 +5393,20 @@
      "penyedia": "graphql.org",
      "jenis": "dokumentasi",
      "url": "https://graphql.org/learn/"
+    },
+    {
+     "judul": "🔴 Mengakses GraphQL dari Client - Belajar GraphQL Client Bagian 1 - RandomScreencast",
+     "penyedia": "Eksperimen Pemrograman",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Mu-pB4jGy4M",
+     "durasi": "1.06.09"
+    },
+    {
+     "judul": "Belajar graphql dalam 30 menit.",
+     "penyedia": "lice dev",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ypB5NJWZzCk",
+     "durasi": "28.21"
     }
    ]
   },
@@ -4188,6 +5424,20 @@
      "penyedia": "microservices.io",
      "jenis": "panduan",
      "url": "https://microservices.io/"
+    },
+    {
+     "judul": "Belajar Microservices - 10 Service Orchestration",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=WTLGEsmKves",
+     "durasi": "10.01"
+    },
+    {
+     "judul": "Modular Monolith: Arsitektur Terbaik Sebelum Microservices",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=qTfkfel9x1Q",
+     "durasi": "37.24"
     }
    ]
   },
@@ -4205,6 +5455,20 @@
      "penyedia": "GitHub (donnemartin)",
      "jenis": "panduan",
      "url": "https://github.com/donnemartin/system-design-primer"
+    },
+    {
+     "judul": "Disuruh Merancang Spotify Saat System Design Interview? 😱 Gini Cara Jawabnya! #backend #systemdesign",
+     "penyedia": "Backend Magang",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=CA65Dlc6-_s",
+     "durasi": "27.39"
+    },
+    {
+     "judul": "Sebelum User Interview? Kuasai 20 Konsep System Design Ini! - PART#1",
+     "penyedia": "Backend Magang",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=_VYITO1KNBc",
+     "durasi": "14.56"
     }
    ]
   },
@@ -4222,6 +5486,20 @@
      "penyedia": "Microsoft Learn",
      "jenis": "dokumentasi",
      "url": "https://learn.microsoft.com/en-us/power-query/"
+    },
+    {
+     "judul": "POWER QUERY MS EXCEL - DATA TRAINING KARYAWAN",
+     "penyedia": "EGIS TUBAGUS P STP MM",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=HUPpckEtYy8",
+     "durasi": "30.10"
+    },
+    {
+     "judul": "Belajar Power Query Excel Indonesia - Webinar Tutorial Excel Indonesia",
+     "penyedia": "Belajar Excel",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=MV3hDbACkkg",
+     "durasi": "1.51.02"
     }
    ]
   },
@@ -4243,6 +5521,20 @@
      "penyedia": "Microsoft Support",
      "jenis": "kursus",
      "url": "https://support.microsoft.com/en-us/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb"
+    },
+    {
+     "judul": "Belajar Excel dari Nol episode 1 - Tutorial Excel Pemula",
+     "penyedia": "Ignasius Ryan",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=6WgvzCU3TI8",
+     "durasi": "10.04"
+    },
+    {
+     "judul": "Belajar Dasar hingga Siap Kerja menggunakan Microsoft Excel",
+     "penyedia": "Kifrad Tutorial",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=r9xxSvrLWwM",
+     "durasi": "41.57"
     }
    ]
   },
@@ -4254,7 +5546,22 @@
    "deskripsi": "Platform ETL enterprise dari IBM untuk integrasi data",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "IBM DataStage Tutorial for Beginners - DataStage Video Tutorials - Bigclasses",
+     "penyedia": "BigClasses",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=XMeQkZmaFtg",
+     "durasi": "1.00.06"
+    },
+    {
+     "judul": "IBM DataStage ETL Tool - Beginners & Advanced-Real Time Offline & Online Training-Venkat- 9538160185",
+     "penyedia": "Nandini Software Solutions Pvt. Ltd.",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=00yfY5GQEmM",
+     "durasi": "43.25"
+    }
+   ]
   },
   {
    "id": "SK097",
@@ -4264,7 +5571,22 @@
    "deskripsi": "Framework distributed storage dan processing untuk big data",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Tutorial Instalasi Apache Hadoop di Windows & Linux (Indonesia)",
+     "penyedia": "Bagas Ardiansyah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=tIY1mOHk_c8",
+     "durasi": "12.21"
+    },
+    {
+     "judul": "Tutorial Instalasi Apache Hadoop di Windows 11",
+     "penyedia": "Ridwanul Bakhri",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=dSwhijGPoMk",
+     "durasi": "13.37"
+    }
+   ]
   },
   {
    "id": "SK098",
@@ -4274,7 +5596,22 @@
    "deskripsi": "Eksperimen terkontrol untuk membandingkan dua variasi produk/fitur",
    "sumber": "lowongan",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Cara Melakukan A/B Testing dalam Copywriting",
+     "penyedia": "Upgraded",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=0qJFkF7EeAA",
+     "durasi": "9.24"
+    },
+    {
+     "judul": "Cara Cepat Split Test A/B Testing Targeting dan Iklan Fb Ads Sekaligus #RidwanFbMastery",
+     "penyedia": "Ridwan Fb Mastery",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=X6tsWPtG9eI",
+     "durasi": "10.08"
+    }
+   ]
   },
   {
    "id": "SK101",
@@ -4473,6 +5810,20 @@
      "penyedia": "Atlassian",
      "jenis": "panduan",
      "url": "https://www.atlassian.com/software/jira/guides/getting-started/introduction"
+    },
+    {
+     "judul": "Belajar QA #1: Tutorial Dokumentasi QA Menggunakan Confluence",
+     "penyedia": "Zanuar Tri",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=trZxUvdRPNk",
+     "durasi": "10.34"
+    },
+    {
+     "judul": "JIRA : Tutorial Jira Atlassian 2026: Cara Login & Setup Dashboard untuk Pemula",
+     "penyedia": "TAMHAR NAID",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=wMFZWjHe85Q",
+     "durasi": "11.48"
     }
    ]
   },
@@ -4503,6 +5854,20 @@
      "penyedia": "Google Search Central",
      "jenis": "panduan",
      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+    },
+    {
+     "judul": "🔴 BELAJAR SEO DARI AWAL DAN DARI NOL ITU PERSIAPAN NYA SEPERTI APA?? SIMAK SAMPAI SELESAI",
+     "penyedia": "Didik Arwinsyah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=oeOO_U5P7qo",
+     "durasi": "9.28"
+    },
+    {
+     "judul": "Belajar Panduan Dasar SEO Tutorial - Website Bagi Pemula",
+     "penyedia": "Easywebsi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=UfJHRxUxp4U",
+     "durasi": "21.54"
     }
    ]
   },
@@ -4522,6 +5887,20 @@
      "penyedia": "Google Skillshop",
      "jenis": "kursus",
      "url": "https://skillshop.withgoogle.com/"
+    },
+    {
+     "judul": "Google Analytics Tutorial Indonesia 2025 - Cara Pasang & Baca",
+     "penyedia": "Ihsan Santoso",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Yz_atV2Gma4",
+     "durasi": "47.39"
+    },
+    {
+     "judul": "Panduan Cara Menggunakan Google Analytics Pemula (Step by Step)",
+     "penyedia": "Hostinger ID",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=7fKWKEBQteE",
+     "durasi": "10.57"
     }
    ]
   },
@@ -4537,7 +5916,22 @@
     "Google Ads",
     "Facebook Ads"
    ],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Kelas Meta Ads: 2 Jam Belajar Meta Ads Dari Pemula Sampai Mendingan",
+     "penyedia": "Jordan Digital",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ZWwSUBB9HrU",
+     "durasi": "2.40.04"
+    },
+    {
+     "judul": "Google Ads Tutorial Indonesia 2025 untuk Pemula - Cara Pasang Google Ads - Free Template - Real Case",
+     "penyedia": "Ihsan Santoso",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=_iswCWy1v8Q",
+     "durasi": "48.31"
+    }
+   ]
   },
   {
    "id": "SK121",
@@ -4555,6 +5949,20 @@
      "penyedia": "Unity",
      "jenis": "kursus",
      "url": "https://learn.unity.com/"
+    },
+    {
+     "judul": "Tutorial Unity Untuk Pemula Lengkap (Membuat Game Dengan Mudah Dipahami)",
+     "penyedia": "sagalanichol",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=w1Qk5RVocA4",
+     "durasi": "1.30.51"
+    },
+    {
+     "judul": "Cara Membuat Game 2D di Unity (Player Movement) - TUTORIAL",
+     "penyedia": "Galang GRF",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=zMn1_QIuNIU",
+     "durasi": "8.16"
     }
    ]
   },
@@ -4572,6 +5980,20 @@
      "penyedia": "Epic Games",
      "jenis": "kursus",
      "url": "https://dev.epicgames.com/community/unreal-engine/learning"
+    },
+    {
+     "judul": "Tutorial Unreal Engine 5 Bahasa Indonesia Bagian 1 - Perkenalan dan Install",
+     "penyedia": "Dipo Bineri",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Y_xC11V1rU8",
+     "durasi": "11.23"
+    },
+    {
+     "judul": "Tutorial Pemula Unreal Engine 5 - Bikin Foliage",
+     "penyedia": "Mfalme Studio",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=T1nHSZW8nrE",
+     "durasi": "17.36"
     }
    ]
   },
@@ -4583,7 +6005,22 @@
    "deskripsi": "Mekanika gim serta matematika dan fisika 3D",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Tutorial Game Physics GameMaker: [1] Dasar Physics di GameMaker:Studio",
+     "penyedia": "Roychan Meliaz",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=JTawqUDAV5s",
+     "durasi": "12.12"
+    },
+    {
+     "judul": "Game Dev Construct Part 3 : Merancang Game dengan Behavior Physics",
+     "penyedia": "arif ranu",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=8gAPaUJo93c",
+     "durasi": "35.43"
+    }
+   ]
   },
   {
    "id": "SK124",
@@ -4602,6 +6039,20 @@
      "penyedia": "Camunda",
      "jenis": "panduan",
      "url": "https://camunda.com/bpmn/"
+    },
+    {
+     "judul": "Tutorial Business Process (BPMN) - Bizagi",
+     "penyedia": "RPL Unej",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Zs6yOTpMWyw",
+     "durasi": "13.43"
+    },
+    {
+     "judul": "Pengantar BPMN",
+     "penyedia": "Dicky Puja Pratama, S.Kom., M.Kom.",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=bQ8FzeJOigc",
+     "durasi": "14.12"
     }
    ]
   },
@@ -4613,7 +6064,22 @@
    "deskripsi": "Menggali dan menuliskan kebutuhan sistem",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "DASAR RPL PERTEMUAN 5 - REQUIREMENTS ENGINEERING - STMIK SUMEDANG",
+     "penyedia": "PojokIT",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=HcNWoSTNgus",
+     "durasi": "25.11"
+    },
+    {
+     "judul": "Bahas RE?! Resident Evil?!! SALAH! Kenalan Sama Requirements Engineering!",
+     "penyedia": "Affan Tazakha",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=HbB0eZr-azM",
+     "durasi": "15.51"
+    }
+   ]
   },
   {
    "id": "SK126",
@@ -4629,6 +6095,20 @@
      "penyedia": "SAP",
      "jenis": "kursus",
      "url": "https://learning.sap.com/"
+    },
+    {
+     "judul": "Belajar SAP Business One Bahasa Indonesia Untuk User Pemula - Part 1",
+     "penyedia": "STEM - iREAP POS - SAP - UIPATH - MICROSOFT 365",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=pKd12Aym1M0",
+     "durasi": "15.03"
+    },
+    {
+     "judul": "Praktek Transaksi Akuntansi Sederhana (SAP Accounting Tutorial)",
+     "penyedia": "Luthfi mnabil",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=kRyCYicU6jk",
+     "durasi": "9.04"
     }
    ]
   },
@@ -4646,6 +6126,20 @@
      "penyedia": "Odoo",
      "jenis": "kursus",
      "url": "https://www.odoo.com/slides"
+    },
+    {
+     "judul": "Tutorial Odoo Bahasa Indonesia 2025 [Odoo 19] - Flow Order to Cash",
+     "penyedia": "REMIRA STUDIO",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=AcKKkj8Q10g",
+     "durasi": "15.50"
+    },
+    {
+     "judul": "#1 Odoo - Software Untuk Wirausaha - Gratis Berkelas PRO - Open Source",
+     "penyedia": "Akhmad Kresna",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ay-tpKgyf80",
+     "durasi": "37.01"
     }
    ]
   },
@@ -4672,6 +6166,20 @@
      "penyedia": "CryptoZombies",
      "jenis": "latihan",
      "url": "https://cryptozombies.io/"
+    },
+    {
+     "judul": "Belajar membuat Smart Contract menggunakan Solidity, Hardhat & Ethers JS",
+     "penyedia": "Iqbal Syamil",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=5Hzf6C2SEpI",
+     "durasi": "50.40"
+    },
+    {
+     "judul": "Tutorial Solidity - Interface - Belajar Smart Contract Development Part 15",
+     "penyedia": "Yusril Asrul",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=4FGCnxHWtEU",
+     "durasi": "13.38"
     }
    ]
   },
@@ -4689,6 +6197,20 @@
      "penyedia": "Hardhat",
      "jenis": "dokumentasi",
      "url": "https://hardhat.org/hardhat-runner/docs/getting-started"
+    },
+    {
+     "judul": "Roadmap Lengkap Front End Web3 Developer (Skill, Tools, Gaji)",
+     "penyedia": "Dewangga Praxindo (dewaxindo)",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=vmHPTPMoMeg",
+     "durasi": "11.49"
+    },
+    {
+     "judul": "Membuat Smart Contract & Transaksi ETH dengan Python (Tutorial Web3 Pemula)",
+     "penyedia": "Riz Development Digital Solutions",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=tHYMESeogvc",
+     "durasi": "11.38"
     }
    ]
   },
@@ -4711,6 +6233,20 @@
      "penyedia": "Arduino",
      "jenis": "panduan",
      "url": "https://docs.arduino.cc/learn/"
+    },
+    {
+     "judul": "Part 1: Konsep Dasar Sistem Embedded – Fondasi Dunia Mikrokontroler & Otomasi",
+     "penyedia": "WTech Education",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Gc0cCj82l_0",
+     "durasi": "8.46"
+    },
+    {
+     "judul": "MATERI EMBEDDED SYSTEM",
+     "penyedia": "arifumi channel",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=tAQI0mNSDio",
+     "durasi": "11.52"
     }
    ]
   },
@@ -4730,6 +6266,20 @@
      "penyedia": "mqtt.org",
      "jenis": "panduan",
      "url": "https://mqtt.org/getting-started/"
+    },
+    {
+     "judul": "IoT Learning - #Part1 Monitoring Nilai Suhu dan Kelembapan Pada Dashboard Menggunakan Protokol MQTT",
+     "penyedia": "HaloTech Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=O7ACt-kchrw",
+     "durasi": "22.34"
+    },
+    {
+     "judul": "Belajar MQTT untuk Pemula #1: Pengenalan MQTT, Broker & QoS - Dasar IoT & Publish Subscribe",
+     "penyedia": "Kelas Robot",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=btRJn19QhIE",
+     "durasi": "18.12"
     }
    ]
   },
@@ -4747,6 +6297,13 @@
      "penyedia": "Google for Developers",
      "jenis": "kursus",
      "url": "https://developers.google.com/tech-writing"
+    },
+    {
+     "judul": "Mentoring 6 - Technical Writing",
+     "penyedia": "Jobhun",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=wr7AsBXJTKo",
+     "durasi": "1.24.01"
     }
    ]
   },
@@ -4764,6 +6321,20 @@
      "penyedia": "Swagger",
      "jenis": "dokumentasi",
      "url": "https://swagger.io/docs/specification/v3_0/about/"
+    },
+    {
+     "judul": "SpringBoot Swagger Integration for API Documentation - Bahasa Indonesia",
+     "penyedia": "Hendro Steven",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=BWGRPgAQD9A",
+     "durasi": "26.47"
+    },
+    {
+     "judul": "🔥 Developer Laravel Wajib Tahu Cara Setup Dokumentasi API dengan Postman Redocly & OpenAPI!",
+     "penyedia": "FASTCAMPUS IDN",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=2QWbvMRr1MI",
+     "durasi": "10.07"
     }
    ]
   },
@@ -4789,6 +6360,20 @@
      "penyedia": "Kaggle Learn",
      "jenis": "kursus",
      "url": "https://www.kaggle.com/learn/intro-to-machine-learning"
+    },
+    {
+     "judul": "STOP Belajar Ngawur! Ini Peta Jalan Machine Learning Paling Efisien untuk Pemula",
+     "penyedia": "Kelas Terbuka",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=aO20B5g42Vw",
+     "durasi": "16.22"
+    },
+    {
+     "judul": "Belajar Machine Learning dengan Python - Belajar Machine Learning Classification for Beginners",
+     "penyedia": "Adi Setiawan",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=1X9uogcEl8g",
+     "durasi": "1.09.23"
     }
    ]
   },
@@ -4829,6 +6414,20 @@
      "penyedia": "Hugging Face",
      "jenis": "kursus",
      "url": "https://huggingface.co/learn/llm-course/chapter1/1"
+    },
+    {
+     "judul": "Natural Language Processing - 1 Apa itu NLP?",
+     "penyedia": "Muhammad Fhadli",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=dguJCi_O1eI",
+     "durasi": "1.07.28"
+    },
+    {
+     "judul": "Machine Learning #17 - Natural Language Processing (Pemrosesan Bahasa Alami)",
+     "penyedia": "GuruVirtual.ID",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=lnenwmP00K8",
+     "durasi": "9.13"
     }
    ]
   },
@@ -4849,6 +6448,20 @@
      "penyedia": "Khan Academy",
      "jenis": "kursus",
      "url": "https://www.khanacademy.org/math/statistics-probability"
+    },
+    {
+     "judul": "Probabilitas (Peluang) - Pengantar Statistika Ekonomi dan Bisnis (Statistik 1) - E-Learning STA",
+     "penyedia": "Statistics Teaching Assistant",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=aXEtlAx7XVo",
+     "durasi": "15.04"
+    },
+    {
+     "judul": "[Tutorial] TF2102 Probabilitas dan Statistik Pra-UTS 2025/2026",
+     "penyedia": "Academic Management HMFT-ITB",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=8Ya1iNRJ51I",
+     "durasi": "1.23.31"
     }
    ]
   },
@@ -4866,6 +6479,20 @@
      "penyedia": "Kaggle Learn",
      "jenis": "kursus",
      "url": "https://www.kaggle.com/learn/data-visualization"
+    },
+    {
+     "judul": "Simple End-to-End Data Engineering: Analytics & Visualization using Metabase [Day 3]",
+     "penyedia": "Pacmann AI",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=XujNNyDP83w",
+     "durasi": "1.37.32"
+    },
+    {
+     "judul": "Data Visualization 101 - Tujuan Visualisasi dan Package lubridate part 1 - Video 1",
+     "penyedia": "SkolaData Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=JbKyCDriank",
+     "durasi": "8.27"
     }
    ]
   },
@@ -4887,6 +6514,20 @@
      "penyedia": "NeetCode",
      "jenis": "latihan",
      "url": "https://neetcode.io/roadmap"
+    },
+    {
+     "judul": "STRUKTUR DATA dalam PEMROGRAMAN",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=q04buHDFT6M",
+     "durasi": "11.17"
+    },
+    {
+     "judul": "JavaScript Algorithms and Data Structures - #14 - Basic Algorithm Scripting (Bagian 1/2)",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=SsHx4ckVQkA",
+     "durasi": "1.57.05"
     }
    ]
   },
@@ -4907,6 +6548,20 @@
      "penyedia": "Refactoring.Guru",
      "jenis": "panduan",
      "url": "https://refactoring.guru/design-patterns"
+    },
+    {
+     "judul": "DASAR OOP (OBJECT ORIENTED PROGRAMMING) DALAM 45 MENIT",
+     "penyedia": "UpKoding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=C0p5570Ggng",
+     "durasi": "43.57"
+    },
+    {
+     "judul": "TUTORIAL JAVA OOP BAHASA INDONESIA",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=f3ZhNnvtV-w",
+     "durasi": "4.32.37"
     }
    ]
   },
@@ -4922,7 +6577,22 @@
     "Jest",
     "JUnit"
    ],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "PHP UNIT TESTING MENGGUNAKAN LARAVEL (TDD)",
+     "penyedia": "Abdul Haris Dwi Utomo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=xo3ixy9ZZTg",
+     "durasi": "10.18"
+    },
+    {
+     "judul": "Test Driven Development Di NodeJS (Part 2) - Live Code - Belajar TDD",
+     "penyedia": "Iqbal Syamil",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=vLWGxtWxE4U",
+     "durasi": "12.14"
+    }
+   ]
   },
   {
    "id": "SK142",
@@ -4948,6 +6618,20 @@
      "penyedia": "selenium.dev",
      "jenis": "dokumentasi",
      "url": "https://www.selenium.dev/documentation/"
+    },
+    {
+     "judul": "Tutorial TestNG - Belajar Automation Testing Untuk Pemula",
+     "penyedia": "Zanuar Tri",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=841ZtV4frU4",
+     "durasi": "14.50"
+    },
+    {
+     "judul": "Belajar Web Testing Menggunakan Katalon Studio - Automation Testing untuk Pemula",
+     "penyedia": "Zanuar Tri",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=CtcsvswG7_o",
+     "durasi": "9.48"
     }
    ]
   },
@@ -4967,6 +6651,20 @@
      "penyedia": "Postman",
      "jenis": "panduan",
      "url": "https://learning.postman.com/"
+    },
+    {
+     "judul": "Tutorial Postman untuk Pemula - Belajar API Testing",
+     "penyedia": "Zanuar Tri",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=eOQpbSeMbeE",
+     "durasi": "8.26"
+    },
+    {
+     "judul": "Belajar API Testing dengan Postman untuk Pemula - #1 Setup & Instalasi",
+     "penyedia": "DhanByCode",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=rOhVTlpm-UM",
+     "durasi": "11.47"
     }
    ]
   },
@@ -4978,7 +6676,22 @@
    "deskripsi": "Merancang dan menjalankan kasus uji",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Belajar SQA Dasar - #4 Membuat Test Case Part 1",
+     "penyedia": "HaloTech Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=jYAOc8eQyC8",
+     "durasi": "8.23"
+    },
+    {
+     "judul": "Belajar SQA Dasar - #5 Membuat Test Case Part 2",
+     "penyedia": "HaloTech Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=813lb5PKREs",
+     "durasi": "8.45"
+    }
+   ]
   },
   {
    "id": "SK145",
@@ -4997,6 +6710,20 @@
      "penyedia": "Figma",
      "jenis": "kursus",
      "url": "https://www.figma.com/resources/learn-design/"
+    },
+    {
+     "judul": "Tutorial Membuat UI Design & Prototyping Sederhana Menggunakan Figma",
+     "penyedia": "Nasyiya Ulfa",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=KQ3_CmB69gg",
+     "durasi": "26.15"
+    },
+    {
+     "judul": "Bikin Movie Ticketing Apps - Belajar UI Design & Prototyping Figma 2023 (Full Course)",
+     "penyedia": "ariedezign",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=LYHtQ0Shz9M",
+     "durasi": "1.37.24"
     }
    ]
   },
@@ -5016,6 +6743,20 @@
      "penyedia": "Nielsen Norman Group",
      "jenis": "panduan",
      "url": "https://www.nngroup.com/articles/"
+    },
+    {
+     "judul": "Usability Testing Aplikasi Menggunakan Maze Design",
+     "penyedia": "ariedezign",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=U0Cokfr8zR4",
+     "durasi": "15.29"
+    },
+    {
+     "judul": "Panduan Mahir Menjadi Seorang UX Researcher - [UIUXINDO Webinar #5]",
+     "penyedia": "uiuxindo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=UZ3gMTrSZM4",
+     "durasi": "1.47.40"
     }
    ]
   },
@@ -5029,7 +6770,22 @@
    "alias": [
     "Wireframe"
    ],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "(Tutorial Figma Bahasa Indonesia) Cara membuat wireframe - Part 1",
+     "penyedia": "DevpathbySyarif",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=wUm9NGolBXo",
+     "durasi": "30.55"
+    },
+    {
+     "judul": "TUTORIAL UI/UX DESIGN! Penjelasan Singkat Tentang Wireframe dan Penggunaan Whimsical",
+     "penyedia": "Jihad Design",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=tjFn-GIGAPc",
+     "durasi": "20.37"
+    }
+   ]
   },
   {
    "id": "SK148",
@@ -5039,7 +6795,22 @@
    "deskripsi": "Menyusun peta jalan dan prioritas produk",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "#SekolahBeta Kelas Daring - Hacker: How to Build a Product Roadmap",
+     "penyedia": "Gerakan Nasional 1000 Startup Digital",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=wkGN_FJdApQ",
+     "durasi": "1.22.17"
+    },
+    {
+     "judul": "How to Build a Product Roadmap: 5 Steps From Features to Outcome Roadmap (REAL EXAMPLE)",
+     "penyedia": "Product Pathways",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=9oeeoeRfNU0",
+     "durasi": "49.42"
+    }
+   ]
   },
   {
    "id": "SK149",
@@ -5049,7 +6820,22 @@
    "deskripsi": "Menulis kebutuhan produk",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Writing User Stories",
+     "penyedia": "Genesis Enwenyeokwu",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=vbZfJMNfHqo",
+     "durasi": "1.05.23"
+    },
+    {
+     "judul": "Beginner's Guide to Writing User Stories (Real Examples)",
+     "penyedia": "IT Project Managers",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=C_S3ygjANg4",
+     "durasi": "11.45"
+    }
+   ]
   },
   {
    "id": "SK150",
@@ -5059,7 +6845,22 @@
    "deskripsi": "Mengukur perilaku pengguna produk",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Analytics for Product Managers Masterclass - Metrics - KPIs - Events - Mixpanel - HelloPM",
+     "penyedia": "HelloPM",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=N-Igkw7__z0",
+     "durasi": "2.10.00"
+    },
+    {
+     "judul": "Google Analytics Tutorial Indonesia 2025 - Cara Pasang & Baca",
+     "penyedia": "Ihsan Santoso",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Yz_atV2Gma4",
+     "durasi": "47.39"
+    }
+   ]
   },
   {
    "id": "SK151",
@@ -5078,6 +6879,20 @@
      "penyedia": "Cisco Networking Academy",
      "jenis": "kursus",
      "url": "https://www.netacad.com/courses/networking-basics"
+    },
+    {
+     "judul": "Konsep dan Cara Kerja TCP/IP ( dasar jaringan komputer )",
+     "penyedia": "Tani Cyber",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=0RedyOvvkM0",
+     "durasi": "26.32"
+    },
+    {
+     "judul": "Routing & Switching - Jaringan Komputer dan Komunikasi Data",
+     "penyedia": "Kuliah Teknokrat",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=emcyqeOx_JY",
+     "durasi": "14.07"
     }
    ]
   },
@@ -5099,6 +6914,20 @@
      "penyedia": "MikroTik",
      "jenis": "dokumentasi",
      "url": "https://help.mikrotik.com/docs/"
+    },
+    {
+     "judul": "CARA SETTING / KONFIGURASI DASAR MIKROTIK - MIKROTIK TUTORIAL [ENG SUB]",
+     "penyedia": "Mikrotik Indonesia - Citraweb",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=HgejDSlTyBk",
+     "durasi": "51.40"
+    },
+    {
+     "judul": "Cara Mudah Seting Mikrotik Dari Awal Sampai Bisa Online -- How to setting mikrotik routerboard",
+     "penyedia": "GAPTEK AMATIR",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=WKrRWSCXo38",
+     "durasi": "22.08"
     }
    ]
   },
@@ -5110,7 +6939,22 @@
    "deskripsi": "Pengamanan lalu lintas jaringan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Setting Dasar Fortigate Firewall",
+     "penyedia": "Leo Siribere",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=KgdJVCcHGMQ",
+     "durasi": "29.22"
+    },
+    {
+     "judul": "Hati-hati Membuat Firewall NAT - MIKROTIK TUTORIAL [ENG SUB]",
+     "penyedia": "Mikrotik Indonesia - Citraweb",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=DWYk8KVExYM",
+     "durasi": "17.50"
+    }
+   ]
   },
   {
    "id": "SK154",
@@ -5128,6 +6972,20 @@
      "penyedia": "Microsoft Learn",
      "jenis": "dokumentasi",
      "url": "https://learn.microsoft.com/en-us/windows-server/"
+    },
+    {
+     "judul": "APA SIH ACTIVE DIRECTORY?? FUNGSI, IMPLEMENTASI & CARA MENGGUNAKAN NYA DI DUNIA KERJA",
+     "penyedia": "Hilal Basyaib",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=EX6vI66ua2E",
+     "durasi": "14.17"
+    },
+    {
+     "judul": "Tutorial Lengkap Membuat Active Directory dan File Server di Windows Server 2019",
+     "penyedia": "Sobat Jarkom",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=4GAZoRD3SAE",
+     "durasi": "40.21"
     }
    ]
   },
@@ -5142,7 +7000,15 @@
     "Troubleshooting",
     "Teknisi Komputer"
    ],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "TROUBLESHOOTING HARDWARE -- SMK KELAS X SEMESTER GANJIL",
+     "penyedia": "Tammarizqi Arsyinta Putrie",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=q5ZzQ9O_WWU",
+     "durasi": "12.08"
+    }
+   ]
   },
   {
    "id": "SK156",
@@ -5155,7 +7021,22 @@
     "ITIL",
     "Helpdesk"
    ],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Tutorial Lengkap Cara Implementasi dan Menggunakan osTicket untuk Mengelola Ticketing Support",
+     "penyedia": "Wong IT",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Vi-x1aQmVPU",
+     "durasi": "59.26"
+    },
+    {
+     "judul": "ITSM UNTUK PERUSAHAAN BUMN",
+     "penyedia": "Daya Cipta Mandiri Group",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=nyhG8gLGICw",
+     "durasi": "1.59.31"
+    }
+   ]
   },
   {
    "id": "SK157",
@@ -5174,6 +7055,20 @@
      "penyedia": "linuxcommand.org",
      "jenis": "panduan",
      "url": "https://linuxcommand.org/tlcl.php"
+    },
+    {
+     "judul": "Membuat Fungsi di Bash Shell - Tutorial Shell Scripting (Bash) Bahasa Indonesia untuk Pemula",
+     "penyedia": "DevOps & Cloud with Aryya",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=kGh-EagQGW0",
+     "durasi": "8.57"
+    },
+    {
+     "judul": "Argument dan Pengondisian IF & Case - Tutorial Shell Scripting (BASH) Bahasa Indonesia untuk Pemula",
+     "penyedia": "DevOps & Cloud with Aryya",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hGOdaNtBQB8",
+     "durasi": "14.28"
     }
    ]
   },
@@ -5200,6 +7095,20 @@
      "penyedia": "prometheus.io",
      "jenis": "dokumentasi",
      "url": "https://prometheus.io/docs/prometheus/latest/getting_started/"
+    },
+    {
+     "judul": "TUTORIAL Monitoring Server Menggunakan Grafana dan Prometheus",
+     "penyedia": "Aji Diyantoro",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=M6ds-70GIpY",
+     "durasi": "33.27"
+    },
+    {
+     "judul": "Monitoring & Observability with Grafana Stack: Prometheus, Loki, Tempo & Alloy (Real Project Go API)",
+     "penyedia": "Aji Diyantoro",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=uLL-eJcBL84",
+     "durasi": "49.25"
     }
    ]
   },
@@ -5219,6 +7128,20 @@
      "penyedia": "Ansible",
      "jenis": "dokumentasi",
      "url": "https://docs.ansible.com/ansible/latest/getting_started/index.html"
+    },
+    {
+     "judul": "E1 - Ansible Installation - Ngoprek Ngoprek Time - Bahasa Indonesia",
+     "penyedia": "Techinet",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=nRrmI-dxUHE",
+     "durasi": "30.27"
+    },
+    {
+     "judul": "Tutorial ansible bahasa indonesia - part 1 - introduction",
+     "penyedia": "Ngejarkom",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=2qyzC6753yA",
+     "durasi": "12.15"
     }
    ]
   },
@@ -5239,6 +7162,20 @@
      "penyedia": "MLflow",
      "jenis": "dokumentasi",
      "url": "https://mlflow.org/docs/latest/index.html"
+    },
+    {
+     "judul": "MeetUp idBigData #35 - Randi Eka Sanjaya - Pengenalan MLOps Menggunakan MLFlow",
+     "penyedia": "idBigData",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=7H93e5TDF_g",
+     "durasi": "1.25.59"
+    },
+    {
+     "judul": "Pacbuburit Webinar Series - Kenapa Project DS Kamu Gagal Terus? Nggak Ada MLOps, Sih!",
+     "penyedia": "Pacmann AI",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=sLTUSVkfHt0",
+     "durasi": "1.01.40"
     }
    ]
   },
@@ -5256,6 +7193,20 @@
      "penyedia": "Firebase",
      "jenis": "dokumentasi",
      "url": "https://firebase.google.com/docs"
+    },
+    {
+     "judul": "Tutorial Firebase Android Part 1 untuk Pemula, Paling Lengkap !",
+     "penyedia": "Aji",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=58IUNjXSwp8",
+     "durasi": "11.06"
+    },
+    {
+     "judul": "FLUTTER 3 INTEGRASI FIREBASE 🫰 DALAM 5 MENIT AJA 😆, JANJIII",
+     "penyedia": "kopianan",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=XrwArFyo5_o",
+     "durasi": "9.28"
     }
    ]
   },
@@ -5273,6 +7224,20 @@
      "penyedia": "Android Developers",
      "jenis": "latihan",
      "url": "https://developer.android.com/develop/ui/compose/tutorial"
+    },
+    {
+     "judul": "Tutorial Desain Aplikasi Wisata Android Menggunakan Kotlin dan Jetpack Compose (Basic)",
+     "penyedia": "Fajar Nasrullah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=r3z7Xz9z0Js",
+     "durasi": "2.06.16"
+    },
+    {
+     "judul": "#3 LAYOUTING [BASIC LAYOUT] - BELAJAR ANDROID JETPACK COMPOSE",
+     "penyedia": "Guna Dermawan",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=D39EXmseCwU",
+     "durasi": "26.59"
     }
    ]
   },
@@ -5290,6 +7255,20 @@
      "penyedia": "redux.js.org",
      "jenis": "dokumentasi",
      "url": "https://redux.js.org/tutorials/essentials/part-1-overview-concepts"
+    },
+    {
+     "judul": "Cukup 15 menit paham state management provider - Flutter Run",
+     "penyedia": "Flutter Run",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=y8ku0tQMHq8",
+     "durasi": "15.51"
+    },
+    {
+     "judul": "Tutorial React JS Bahasa Indonesia : 20.Redux - State Management",
+     "penyedia": "VIP CODE STUDIO",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=jn89UKxa2do",
+     "durasi": "21.33"
     }
    ]
   },
@@ -5307,6 +7286,20 @@
      "penyedia": "web.dev",
      "jenis": "kursus",
      "url": "https://web.dev/learn/design"
+    },
+    {
+     "judul": "10 Prinsip RESPONSIVE WEB DESIGN",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=jEGPKL7n4Uw",
+     "durasi": "20.34"
+    },
+    {
+     "judul": "Tutorial membuat website yang responsive di semua ukuran ! -- Media Queries - Responsive Breakpoints",
+     "penyedia": "Creative Academy Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=XZh7sJ-3AXI",
+     "durasi": "35.32"
     }
    ]
   },
@@ -5328,6 +7321,20 @@
      "penyedia": "kali.org",
      "jenis": "dokumentasi",
      "url": "https://www.kali.org/docs/"
+    },
+    {
+     "judul": "Belajar Ethical Hacking - Mensetting Burpsuite untuk Proxy Web Browser",
+     "penyedia": "Belajar Cyber Security",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=4ytX7XreDkg",
+     "durasi": "9.02"
+    },
+    {
+     "judul": "Burpsuite Full Tutorial - Mengenal Fungsi darri burpsite - #linux #burpsuite #portswigger #indonesia",
+     "penyedia": "Ethical Hacking Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=qw4JzhjASDc",
+     "durasi": "22.03"
     }
    ]
   },
@@ -5339,7 +7346,22 @@
    "deskripsi": "Penanganan insiden dan forensik digital",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Tutorial Series: Digital Forensics for Beginners - Windows Artifacts 1 (in Bahasa Indonesia)",
+     "penyedia": "Semi Yulianto",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=q3wrsWttRXU",
+     "durasi": "15.29"
+    },
+    {
+     "judul": "KULIAH INCIDENT RESPONSE #1 : Introduction to Incident Response",
+     "penyedia": "Doddy Ferdiansyah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=YEnj5vlrK88",
+     "durasi": "18.53"
+    }
+   ]
   },
   {
    "id": "SK167",
@@ -5349,7 +7371,22 @@
    "deskripsi": "Pemeliharaan dan penalaan basis data",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "M02M - Hardware Tuning Database: Memory Buffering, Five Minute Rule (Bahasa Indonesia)",
+     "penyedia": "Ardian Umam Indo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=A15ATW1XMnk",
+     "durasi": "10.14"
+    },
+    {
+     "judul": "M02A - Pengenalan Tuning Kinerja Database (Bahasa Indonesia)",
+     "penyedia": "Ardian Umam Indo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=UCWgvdA9zkE",
+     "durasi": "20.55"
+    }
+   ]
   },
   {
    "id": "SK168",
@@ -5369,6 +7406,20 @@
      "penyedia": "learnprompting.org",
      "jenis": "panduan",
      "url": "https://learnprompting.org/docs/introduction"
+    },
+    {
+     "judul": "Latih LLM Dengan Fine tuning",
+     "penyedia": "Artificial Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=CDxAWdL_9SE",
+     "durasi": "9.24"
+    },
+    {
+     "judul": "Tutorial Prompt Engineering Google untuk Bisnis & Kreator Indonesia l Prompt Engineering 2026",
+     "penyedia": "Freddie Kashawan",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=tvF7_fO8dJY",
+     "durasi": "14.55"
     }
    ]
   },
@@ -5383,7 +7434,22 @@
     "YOLO",
     "Object Detection"
    ],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Membuat Program Deteksi Objek Dari Nol - Object Detection YOLO V8 - AI - Python Programming",
+     "penyedia": "Gumilang Code",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=t_QoxR2-k0g",
+     "durasi": "22.01"
+    },
+    {
+     "judul": "Belajar Computer Vision - Membuat Object Detection sederhana dengan YOLO",
+     "penyedia": "Kahfi Gunardi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=7kN2GvyR0II",
+     "durasi": "1.13.12"
+    }
+   ]
   },
   {
    "id": "SK170",
@@ -5395,7 +7461,22 @@
    "alias": [
     "ERD"
    ],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Data Modeling",
+     "penyedia": "IGB Channel",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=tm7om4gkjZg",
+     "durasi": "41.24"
+    },
+    {
+     "judul": "Belajar Membuat ERD (Entity Relationship Diagram) - Belajar UML & Perancangan Sistem",
+     "penyedia": "Naistudio Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=LyfrTvsYTFE",
+     "durasi": "21.07"
+    }
+   ]
   },
   {
    "id": "SK171",
@@ -5411,6 +7492,20 @@
      "penyedia": "web.dev",
      "jenis": "kursus",
      "url": "https://web.dev/learn/performance"
+    },
+    {
+     "judul": "Apa itu Core Web Vitals? Bagaimana Cara Membacanya?",
+     "penyedia": "DailySEO ID",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=YcgCuXp1ffY",
+     "durasi": "23.01"
+    },
+    {
+     "judul": "Core Web Vitals Hack (Cara Optimasi Kecepatan Website Yang Terlarang)",
+     "penyedia": "Projasaweb",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=lCdXMMy79Rw",
+     "durasi": "15.18"
     }
    ]
   },
@@ -5428,6 +7523,20 @@
      "penyedia": "web.dev",
      "jenis": "kursus",
      "url": "https://web.dev/learn/accessibility"
+    },
+    {
+     "judul": "9. Accessibility - Belajar HTML5",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ELqsF3rD920",
+     "durasi": "27.32"
+    },
+    {
+     "judul": "Learn Accessibility - Full a11y Tutorial",
+     "penyedia": "freeCodeCamp.org",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=e2nkq3h1P68",
+     "durasi": "1.33.06"
     }
    ]
   },
@@ -5445,6 +7554,13 @@
      "penyedia": "vite.dev",
      "jenis": "dokumentasi",
      "url": "https://vite.dev/guide/"
+    },
+    {
+     "judul": "Tutorial Vite : Frontend Build Tool (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=6UJnu25ji2A",
+     "durasi": "1.04.19"
     }
    ]
   },
@@ -5462,6 +7578,20 @@
      "penyedia": "oauth.com",
      "jenis": "panduan",
      "url": "https://www.oauth.com/"
+    },
+    {
+     "judul": "Belajar RESTful API - 9 Authentication & Authorization",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=A-7_PWsi8Mg",
+     "durasi": "15.12"
+    },
+    {
+     "judul": "JWT Auth: Konsep & Implementasinya (BE & FE) yang Aman 🛡️",
+     "penyedia": "Muhammad Afifudin",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=3FzuHlWqDfQ",
+     "durasi": "16.17"
     }
    ]
   },
@@ -5479,6 +7609,20 @@
      "penyedia": "RabbitMQ",
      "jenis": "latihan",
      "url": "https://www.rabbitmq.com/tutorials"
+    },
+    {
+     "judul": "API Anti Lemot Kalo Ngerti Message Queue!",
+     "penyedia": "Code Kyra",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=XBsYC7aZAoM",
+     "durasi": "10.37"
+    },
+    {
+     "judul": "Pengaruh Penggunaan Message Queue Pada Sistem Teknologi Informasi",
+     "penyedia": "Wildan Aqso",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=7Bp6p_ZwhSA",
+     "durasi": "13.59"
     }
    ]
   },
@@ -5490,7 +7634,22 @@
    "deskripsi": "Mempercepat layanan dengan cache dan profiling",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Best Practice Strategy Caching dengan Redis",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=u7fpf66AGTE",
+     "durasi": "13.14"
+    },
+    {
+     "judul": "Belajar RESTful API - 15 Caching",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=4i4HINEn5x0",
+     "durasi": "9.45"
+    }
+   ]
   },
   {
    "id": "SK177",
@@ -5506,6 +7665,20 @@
      "penyedia": "Prisma",
      "jenis": "dokumentasi",
      "url": "https://www.prisma.io/docs/getting-started"
+    },
+    {
+     "judul": "Apa itu ORM (Object Relational Mapping) ? Belajar ngoding yuk",
+     "penyedia": "Code Marvel",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=3DirSBrVD54",
+     "durasi": "11.36"
+    },
+    {
+     "judul": "Pros dan Cons Menggunakan ORM",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=gb-H3g61Wfk",
+     "durasi": "14.24"
     }
    ]
   },
@@ -5523,6 +7696,20 @@
      "penyedia": "Refactoring.Guru",
      "jenis": "panduan",
      "url": "https://refactoring.guru/"
+    },
+    {
+     "judul": "Belajar Software Architecture Patterns (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Ix09qfew6oA",
+     "durasi": "2.19.34"
+    },
+    {
+     "judul": "Clean architecture gak penting?",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Naq5js9SQOM",
+     "durasi": "11.23"
     }
    ]
   },
@@ -5540,6 +7727,20 @@
      "penyedia": "Android Developers",
      "jenis": "dokumentasi",
      "url": "https://developer.android.com/topic/architecture"
+    },
+    {
+     "judul": "Pengenalan dan Tutorial Android Jetpack Navigation - Kotlin - Bahasa Indonesia",
+     "penyedia": "Raditya Rinandyaswara",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Ecvy_ZQSSHU",
+     "durasi": "18.59"
+    },
+    {
+     "judul": "Tutorial Desain Aplikasi Wisata Android Menggunakan Kotlin dan Jetpack Compose (Basic)",
+     "penyedia": "Fajar Nasrullah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=r3z7Xz9z0Js",
+     "durasi": "2.06.16"
     }
    ]
   },
@@ -5557,6 +7758,20 @@
      "penyedia": "Android Developers",
      "jenis": "dokumentasi",
      "url": "https://developer.android.com/kotlin/coroutines"
+    },
+    {
+     "judul": "TUTORIAL KOTLIN COROUTINES (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Cu1c77pBFuo",
+     "durasi": "1.48.50"
+    },
+    {
+     "judul": "Dicoding Developer Coaching #5: Android - Coroutine pada Kotlin",
+     "penyedia": "Dicoding Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=gglLAK9-ZMk",
+     "durasi": "1.03.20"
     }
    ]
   },
@@ -5568,7 +7783,15 @@
    "deskripsi": "Merilis dan memelihara aplikasi di toko aplikasi",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Cara Upload Aplikasi Android ke Google Play Store Terbaru 2026",
+     "penyedia": "Nocragear",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=krq72riYqkc",
+     "durasi": "24.28"
+    }
+   ]
   },
   {
    "id": "SK182",
@@ -5578,7 +7801,22 @@
    "deskripsi": "Penyimpanan lokal dan pemrograman reaktif di iOS",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Introduction to Core Data using SwiftUI - Build To Do App using CoreData - Persistence Container",
+     "penyedia": "Recoding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=0fCxpENpZt4",
+     "durasi": "20.48"
+    },
+    {
+     "judul": "iOS Core Data QuickStart Tutorial 2020",
+     "penyedia": "CodeWithChris",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=O7u9nYWjvKk",
+     "durasi": "1.10.58"
+    }
+   ]
   },
   {
    "id": "SK183",
@@ -5588,7 +7826,15 @@
    "deskripsi": "Perkakas pengembangan dan distribusi uji iOS",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Membuat Projek Xcode",
+     "penyedia": "SwiftIndo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=0KHcJTGT4j8",
+     "durasi": "13.50"
+    }
+   ]
   },
   {
    "id": "SK184",
@@ -5621,7 +7867,15 @@
    "deskripsi": "Notifikasi dan tautan langsung ke layar aplikasi",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "5 LANGKAH: LOCAL PUSH NOTIFICATION REACT NATIVE ANDROID",
+     "penyedia": "Dirumahrafif",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=IdXhIsYANbY",
+     "durasi": "15.58"
+    }
+   ]
   },
   {
    "id": "SK186",
@@ -5637,6 +7891,20 @@
      "penyedia": "Kaggle Learn",
      "jenis": "kursus",
      "url": "https://www.kaggle.com/learn/data-cleaning"
+    },
+    {
+     "judul": "Data Cleaning & Wrangling - Fungsi `group_by()` dan `summarise()` - Video 5",
+     "penyedia": "SkolaData Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=GxUqACnw8DA",
+     "durasi": "8.11"
+    },
+    {
+     "judul": "Tutorial Data Cleaning di Microsoft Excel",
+     "penyedia": "Irgi Yuana",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=I2wwJ-bnSv0",
+     "durasi": "33.28"
     }
    ]
   },
@@ -5648,7 +7916,22 @@
    "deskripsi": "Menjelajahi data untuk menemukan pola awal",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Machine Learning #16 - Exploratory Data Analysis",
+     "penyedia": "GuruVirtual.ID",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=OxbdAdudJyY",
+     "durasi": "8.16"
+    },
+    {
+     "judul": "Exploratory Data Analysis (EDA) - Bahasa Indonesia",
+     "penyedia": "MemedAI",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=cICxFNbLpnk",
+     "durasi": "20.53"
+    }
+   ]
   },
   {
    "id": "SK188",
@@ -5658,7 +7941,22 @@
    "deskripsi": "Merancang dasbor dan indikator kinerja",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "PIVOT CHART: KEREN! Visualisasi Dashboard Menggunakan Excel",
+     "penyedia": "Yuliana Epianingsih",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=jkmhCyzpDuI",
+     "durasi": "16.18"
+    },
+    {
+     "judul": "Membuat KPI Dashboard Kinerja Karyawan dengan Excel",
+     "penyedia": "Mirwan Siregar",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=29vPuA989wE",
+     "durasi": "33.14"
+    }
+   ]
   },
   {
    "id": "SK189",
@@ -5674,6 +7972,20 @@
      "penyedia": "Microsoft Learn",
      "jenis": "dokumentasi",
      "url": "https://learn.microsoft.com/en-us/dax/"
+    },
+    {
+     "judul": "Cara Cepat Mempelajari DAX di Power BI",
+     "penyedia": "Leading With Data",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=GNxAEyBjOS8",
+     "durasi": "26.32"
+    },
+    {
+     "judul": "Tutorial DAX CALCULATE Power BI Cara Memfilter Data Dinamis untuk Pemula",
+     "penyedia": "DataCraft by El",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=GKXZ9RBoWnE",
+     "durasi": "16.05"
     }
    ]
   },
@@ -5691,6 +8003,13 @@
      "penyedia": "Kaggle Learn",
      "jenis": "kursus",
      "url": "https://www.kaggle.com/learn/feature-engineering"
+    },
+    {
+     "judul": "DS_UI04 Pertemuan #10 Feature Engineering - Thematic Academy 2021",
+     "penyedia": "MY Official Channel",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=QRup-t0YOx0",
+     "durasi": "1.30.53"
     }
    ]
   },
@@ -5702,7 +8021,15 @@
    "deskripsi": "Merancang eksperimen dan menguji hipotesis",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Statistika 03 - Desain Eksperimen dalam Statistika - Experimental Design - Belajar Statistika",
+     "penyedia": "Indonesia Belajar",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=vQlgpkTazaE",
+     "durasi": "16.17"
+    }
+   ]
   },
   {
    "id": "SK192",
@@ -5718,6 +8045,20 @@
      "penyedia": "Kaggle Learn",
      "jenis": "kursus",
      "url": "https://www.kaggle.com/learn/time-series"
+    },
+    {
+     "judul": "BUSINESS FORECASTING MENGGUNAKAN ARIMA #datascience #tutorial #machinelearning",
+     "penyedia": "PythonTube",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=vA_8gqRtKqs",
+     "durasi": "16.49"
+    },
+    {
+     "judul": "Time Series Forecasting using Statistical Method - Rusnandi Fikri, S.Mat",
+     "penyedia": "BISA AI Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=OWNF9W9zV0Q",
+     "durasi": "1.39.26"
     }
    ]
   },
@@ -5729,7 +8070,22 @@
    "deskripsi": "Penyimpanan data skala besar",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Kuliah Databricks - 1. Konsep Lakehouse dan Praktik Menggunakan Platform Databricks",
+     "penyedia": "Faqih Hamami",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=HNForHw5dCc",
+     "durasi": "24.56"
+    },
+    {
+     "judul": "#8 FOLKS - Next Generation Data Management: Embracing the Data Lakehouse",
+     "penyedia": "IYKRA Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=5HkuaXs0ROw",
+     "durasi": "1.20.37"
+    }
+   ]
   },
   {
    "id": "SK194",
@@ -5739,7 +8095,22 @@
    "deskripsi": "Menjaga mutu, katalog, dan tata kelola data",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Penjelasan Lebih Dalam Tentang Data Governance !!",
+     "penyedia": "Mochamad Badowi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Pj8PTztDyII",
+     "durasi": "24.23"
+    },
+    {
+     "judul": "Data Governance 101: Percuma Punya Data Kalau tidak Ditatakelola? - Kenal Digital Episode 14",
+     "penyedia": "Nur Imroatun Sholihat",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Cjnc-cNnKag",
+     "durasi": "15.35"
+    }
+   ]
   },
   {
    "id": "SK195",
@@ -5749,7 +8120,15 @@
    "deskripsi": "Pemrosesan data waktu nyata",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Lanjutan Arsitektur Data Pipeline : Batch atau Stream? Tips-nya?",
+     "penyedia": "Insinyur Data",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=HRrRajop3I8",
+     "durasi": "8.00"
+    }
+   ]
   },
   {
    "id": "SK196",
@@ -5759,7 +8138,22 @@
    "deskripsi": "Menyajikan model sebagai layanan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Sesi 4: Model Deployment - Mini Bootcamp - Belajar Machine Learning dari Nol",
+     "penyedia": "Rumah Coding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=StL9rnX9XyU",
+     "durasi": "2.06.58"
+    },
+    {
+     "judul": "Kuliah Databricks - 8. Deploy & Serving Model AI/ML di Databricks",
+     "penyedia": "Faqih Hamami",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=jmi9JDUEheM",
+     "durasi": "14.50"
+    }
+   ]
   },
   {
    "id": "SK197",
@@ -5769,7 +8163,15 @@
    "deskripsi": "Mengukur dan menjaga keluaran model bahasa",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Agentic AI Session 14 LLM Evaluation and Guardrails",
+     "penyedia": "Buraq ai",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=IC5VIW4F38k",
+     "durasi": "1.20.37"
+    }
+   ]
   },
   {
    "id": "SK198",
@@ -5779,7 +8181,22 @@
    "deskripsi": "Membangun agen yang memakai alat",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Tool Calling AI Agent di Self Hosted n8n Hostinger",
+     "penyedia": "VIP CODE STUDIO",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ioTeQzJDl30",
+     "durasi": "21.39"
+    },
+    {
+     "judul": "Build Your First AI Agent + LLM Tool Calling Explained - Chapter 09",
+     "penyedia": "Ease With Data",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=E6SNu37-dCY",
+     "durasi": "46.36"
+    }
+   ]
   },
   {
    "id": "SK199",
@@ -5789,7 +8206,15 @@
    "deskripsi": "Memperkecil dan mempercepat model",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "[Model Optimization Series #3]: 🔥 Teknik RAHASIA Membuat Model Neural Network Ultra-Efisien!",
+     "penyedia": "Akademi AI",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=lxWz7DEGseA",
+     "durasi": "18.37"
+    }
+   ]
   },
   {
    "id": "SK200",
@@ -5799,7 +8224,15 @@
    "deskripsi": "Pelabelan dan pengelolaan dataset",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Complete Guide to Data Annotation & Labeling for Beginners",
+     "penyedia": "AI With Wazir",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=dQElqoBOX4E",
+     "durasi": "8.15"
+    }
+   ]
   },
   {
    "id": "SK201",
@@ -5809,7 +8242,22 @@
    "deskripsi": "Menyiapkan teks dan representasi vektornya",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Text Preprocessing",
+     "penyedia": "Ahmad Fathan Hidayatullah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=04-qYIDKJ7U",
+     "durasi": "18.20"
+    },
+    {
+     "judul": "Bongkar Cara Text Mining di Python!🖥 Text Preprocessing, TF-IDF Lengkap Banget!",
+     "penyedia": "Farah Asyifa Utari",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=_SgNvEERu38",
+     "durasi": "14.07"
+    }
+   ]
   },
   {
    "id": "SK202",
@@ -5825,6 +8273,13 @@
      "penyedia": "Argo Project",
      "jenis": "dokumentasi",
      "url": "https://argo-cd.readthedocs.io/en/stable/getting_started/"
+    },
+    {
+     "judul": "AWS X Dicoding LIVE \"Membangun Software Lebih Produktif dengan GitOps\"",
+     "penyedia": "Dicoding Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=grMu3AR8TJ8",
+     "durasi": "1.33.04"
     }
    ]
   },
@@ -5842,6 +8297,13 @@
      "penyedia": "helm.sh",
      "jenis": "dokumentasi",
      "url": "https://helm.sh/docs/"
+    },
+    {
+     "judul": "Belajar Helm Chart Dasar",
+     "penyedia": "DevOps with Dian",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ael4W2Ubc0A",
+     "durasi": "1.12.48"
     }
    ]
   },
@@ -5853,7 +8315,22 @@
    "deskripsi": "Jaringan di layanan awan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Virtual Private Cloud Fundamentals - Amazon VPC - Effendi Sihaloho - Cloud Networking",
+     "penyedia": "Indonesia Belajar",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=XDldIz1bZAA",
+     "durasi": "1.47.17"
+    },
+    {
+     "judul": "Cloud Networking Explained – Part 1: Networking Fundamentals and AWS VPC",
+     "penyedia": "Digital Cloud Training",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=nKrc3FAIYHU",
+     "durasi": "26.41"
+    }
+   ]
   },
   {
    "id": "SK205",
@@ -5863,7 +8340,22 @@
    "deskripsi": "Keamanan dan pengelolaan akses di awan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "[Tutorial AWS] Kenalan Dengan AWS Identity and Access Management (IAM)",
+     "penyedia": "Abdul Cholik",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=yeLiJ5wucC4",
+     "durasi": "21.14"
+    },
+    {
+     "judul": "Ngulik Desain API Identity Access Management (IAM) Google Cloud",
+     "penyedia": "Imre Nagi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=o4g1pKA0yQY",
+     "durasi": "1.07.35"
+    }
+   ]
   },
   {
    "id": "SK206",
@@ -5873,7 +8365,22 @@
    "deskripsi": "Komputasi tanpa mengelola server",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "AWS - Membuat Serverless API dengan AWS Lambda & API Gateway - Tutorial Amazon Web Service Indonesia",
+     "penyedia": "DevOps & Cloud with Aryya",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=TtGRRmpR5ns",
+     "durasi": "15.24"
+    },
+    {
+     "judul": "Tutorial Deploy Node.js App ke Serverless Sekali Setup, Langsung Live",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=dGKXBS86O4w",
+     "durasi": "29.57"
+    }
+   ]
   },
   {
    "id": "SK207",
@@ -5883,7 +8390,22 @@
    "deskripsi": "Mengendalikan biaya layanan awan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Cloud cost optimization Explained: Everything You Need to Know 🚀",
+     "penyedia": "ByteExplorer",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=oeDnhX_i40k",
+     "durasi": "20.01"
+    },
+    {
+     "judul": "Cloud Cost Optimization Strategy Explained - FinOps",
+     "penyedia": "Abhishek.Veeramalla",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=B3kC9gBqO88",
+     "durasi": "17.29"
+    }
+   ]
   },
   {
    "id": "SK208",
@@ -5899,6 +8421,20 @@
      "penyedia": "Google SRE",
      "jenis": "panduan",
      "url": "https://sre.google/books/"
+    },
+    {
+     "judul": "Introduction of Incident Management - Estu Fardani",
+     "penyedia": "Cloud Native Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=G5HPg4Ify74",
+     "durasi": "32.02"
+    },
+    {
+     "judul": "#Webinar Menguasai Pengelolaan Kejadian Keamanan Informasi (Incident Management)",
+     "penyedia": "Inixindo Jogja",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ahD-L1ZQL9M",
+     "durasi": "1.46.17"
     }
    ]
   },
@@ -5910,7 +8446,22 @@
    "deskripsi": "Mengumpulkan dan menelusuri log",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Centralized Logging With Graylog - Nicolas Julian",
+     "penyedia": "Akademi Digital Nusantara (ADINUSA)",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=JQDUIiuenPc",
+     "durasi": "50.09"
+    },
+    {
+     "judul": "Kamu Wajib Tahu Best Practice Logging Management",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=qSjMi02B_cU",
+     "durasi": "40.03"
+    }
+   ]
   },
   {
    "id": "SK210",
@@ -5920,7 +8471,22 @@
    "deskripsi": "Memindai dan menilai kerentanan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Perbedaan Penetration Testing Dan Vulnerability Assessment Dalam Dunia Cybersecurity",
+     "penyedia": "Doddy Ferdiansyah",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=M7SeO85tQ90",
+     "durasi": "9.03"
+    },
+    {
+     "judul": "Ch.03 - Vulnerability Assessment",
+     "penyedia": "SLASHROOT ID",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hxwE9Syv47I",
+     "durasi": "37.24"
+    }
+   ]
   },
   {
    "id": "SK211",
@@ -5930,7 +8496,15 @@
    "deskripsi": "Kerangka kerja pengelolaan keamanan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Keamanan Dunia Maya - NIST Cybersecurity Framework",
+     "penyedia": "Calvin Kurniawan Syah Putra",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=CGkM3gOMaf0",
+     "durasi": "15.12"
+    }
+   ]
   },
   {
    "id": "SK212",
@@ -5946,6 +8520,20 @@
      "penyedia": "MITRE",
      "jenis": "panduan",
      "url": "https://attack.mitre.org/"
+    },
+    {
+     "judul": "Pengenalan OpenCTI: Threat Intelligence untuk Threat Hunting - SOC & Blue Team - Open Source",
+     "penyedia": "COMITMEN",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=6WElkITJR-U",
+     "durasi": "12.44"
+    },
+    {
+     "judul": "What is MITRE ATT&CK - How can use MITRE ATT&CK Framework - Cyber Kill-Chain - Rajneesh Gupta",
+     "penyedia": "Rajneesh Gupta",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=2pyu5h1jwPk",
+     "durasi": "8.56"
     }
    ]
   },
@@ -5957,7 +8545,22 @@
    "deskripsi": "Menganalisis perilaku perangkat lunak jahat",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Setiap Malware/Virus Dijelaskan Dalam 10 Menit",
+     "penyedia": "Sekilat Info",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=7GUyo0_u_K8",
+     "durasi": "10.28"
+    },
+    {
+     "judul": "Tutorial Wireshark - Malware Traffic Analysis (Bahasa Indonesia)",
+     "penyedia": "Sultan Ramadhan",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=1ZEF__x7XX0",
+     "durasi": "10.03"
+    }
+   ]
   },
   {
    "id": "SK214",
@@ -5973,6 +8576,20 @@
      "penyedia": "OffSec",
      "jenis": "kursus",
      "url": "https://www.offsec.com/metasploit-unleashed/"
+    },
+    {
+     "judul": "Tutorial Metasploit: Dari Scan Sampai Dapat Akses Root! (Metasploit Exploitation - TryHackMe)",
+     "penyedia": "Recoon",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hDNPL0zz-B8",
+     "durasi": "39.16"
+    },
+    {
+     "judul": "Dokumentasi [Cyber Security] Teknik Meretas server dengan Metasploit Framework",
+     "penyedia": "Cyberlone Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=n3sVVZY45rQ",
+     "durasi": "10.32"
     }
    ]
   },
@@ -5984,7 +8601,22 @@
    "deskripsi": "Menguji dan mengamankan lingkungan Active Directory",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "APA SIH ACTIVE DIRECTORY?? FUNGSI, IMPLEMENTASI & CARA MENGGUNAKAN NYA DI DUNIA KERJA",
+     "penyedia": "Hilal Basyaib",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=EX6vI66ua2E",
+     "durasi": "14.17"
+    },
+    {
+     "judul": "Cara Atur Ribuan Komputer Sekaligus! Belajar Active Directory (Active Directory Basics - TryHackMe)",
+     "penyedia": "Recoon",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Exyr7V3fUXE",
+     "durasi": "41.24"
+    }
+   ]
   },
   {
    "id": "SK216",
@@ -6014,7 +8646,22 @@
    "deskripsi": "Merancang alur dan perilaku interaksi",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Animation & Interaction untuk PEMULA - Membuat PROTOTYPE pada Figma",
+     "penyedia": "Creative Academy Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=l-6vRjEknC0",
+     "durasi": "15.19"
+    },
+    {
+     "judul": "Tutorial Micro-Interaction Mobile App, Cara Pemula - Part 1- Bahasa Indonesia - Protopie",
+     "penyedia": "The Dei",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=EIiozF9FoYY",
+     "durasi": "14.28"
+    }
+   ]
   },
   {
    "id": "SK219",
@@ -6024,7 +8671,22 @@
    "deskripsi": "Menata struktur dan navigasi informasi",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Information Architecture pada UX Design - Pawestri Shofia Nariswari",
+     "penyedia": "BISA AI Academy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=nM1_Z5HBhi8",
+     "durasi": "20.03"
+    },
+    {
+     "judul": "Bikin Information Architecture pake AI?? Anak UIUX wajib tau! #uiux #figma",
+     "penyedia": "Andika Leonardo Surya",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Kwvq4lrE1qo",
+     "durasi": "10.19"
+    }
+   ]
   },
   {
    "id": "SK220",
@@ -6034,7 +8696,22 @@
    "deskripsi": "Menyerahkan desain ke pengembang",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "DesignSharing - Ideal Design Handoff Ke Tim Developer",
+     "penyedia": "The Dei",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hojja-LEcc0",
+     "durasi": "15.04"
+    },
+    {
+     "judul": "Beberapa yang Perlu diperhatikan Saat Handoff Design to Developer Bag 2",
+     "penyedia": "MOFON",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ZFZ3vvcSqng",
+     "durasi": "22.51"
+    }
+   ]
   },
   {
    "id": "SK221",
@@ -6044,7 +8721,15 @@
    "deskripsi": "Dasar tata rupa antarmuka",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "BELAJAR DESAIN GRAFIS DARI NOL (COLOR, LAYOUT, TYPOGRAPHY, Dll.) 🎨",
+     "penyedia": "Keke Genio",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Nfd4UGgmdhI",
+     "durasi": "10.01"
+    }
+   ]
   },
   {
    "id": "SK222",
@@ -6054,7 +8739,22 @@
    "deskripsi": "Menentukan arah dan peluncuran produk",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Strategi 'Go To Market'",
+     "penyedia": "HENDRA HILMAN",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ENXetIVKV3w",
+     "durasi": "10.56"
+    },
+    {
+     "judul": "What is a Go-To-Market strategy? Fully Explained by an Ex-CMO",
+     "penyedia": "Hattie the PMM",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hPp5sj37mOA",
+     "durasi": "16.01"
+    }
+   ]
   },
   {
    "id": "SK223",
@@ -6064,7 +8764,22 @@
    "deskripsi": "Riset pasar dan pesaing",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Bedah Cara Market Research Secara Detail dengan Ahlinya",
+     "penyedia": "DennySantoso",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Oj3cHpQXYTA",
+     "durasi": "1.13.52"
+    },
+    {
+     "judul": "Analisa Pesaing (Competitor Analysis)",
+     "penyedia": "Utama Management Course",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=CxopNIRZVSU",
+     "durasi": "56.49"
+    }
+   ]
   },
   {
    "id": "SK224",
@@ -6074,7 +8789,22 @@
    "deskripsi": "Menetapkan sasaran dan mengukur hasil",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Fundamental Data Analysis - Memahami Business Metrics (KPI & OKR) - Episode 4 Belajar Data Analysis",
+     "penyedia": "OYUSEP",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Tat9Xpoa9mw",
+     "durasi": "10.12"
+    },
+    {
+     "judul": "Panduan Praktis Objective Key Result untuk Pemula - OKR",
+     "penyedia": "Dwi Indra Purnomo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=DQ-a1Z9lIG0",
+     "durasi": "23.39"
+    }
+   ]
   },
   {
    "id": "SK225",
@@ -6090,6 +8820,20 @@
      "penyedia": "Grafana k6",
      "jenis": "dokumentasi",
      "url": "https://grafana.com/docs/k6/latest/"
+    },
+    {
+     "judul": "Tutorial K6 Performance Testing (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=VGO5CfOve90",
+     "durasi": "2.41.07"
+    },
+    {
+     "judul": "Tutorial Apache JMeter: Load Testing Dasar",
+     "penyedia": "Jagoan IT",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=YwsZq7zb1Sg",
+     "durasi": "21.44"
     }
    ]
   },
@@ -6101,7 +8845,22 @@
    "deskripsi": "Mencatat cacat dan mengelola siklus uji",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Belajar Test Management Tools Qase.io Lengkap Untuk Pemula dari Awal Sampai Bisa",
+     "penyedia": "Zanuar Tri",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Dh6SbH5MQ1U",
+     "durasi": "22.37"
+    },
+    {
+     "judul": "Software Manual Testing - Bug Tracking Tools - Part 7 - JIRA & Bugzilla Tutorial - Tech Margadarshi",
+     "penyedia": "TECH Margadarshi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=lgP2Dg2m8hw",
+     "durasi": "12.50"
+    }
+   ]
   },
   {
    "id": "SK227",
@@ -6117,6 +8876,13 @@
      "penyedia": "appium.io",
      "jenis": "dokumentasi",
      "url": "https://appium.io/docs/en/latest/"
+    },
+    {
+     "judul": "Belajar Automation Testing Mobile: Ep1 - Konsep dasar automation dan mengenal Appium Server",
+     "penyedia": "NgeTest Bareng Fachrul",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=6TaG2OtX764",
+     "durasi": "29.41"
     }
    ]
   },
@@ -6128,7 +8894,22 @@
    "deskripsi": "Menyusun rencana dan jadwal proyek",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Belajar Project Planning Dari Nol - Project Management Tutorial Bahasa Indonesia",
+     "penyedia": "Vicario Reinaldo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=sh_xA92Vi7M",
+     "durasi": "9.16"
+    },
+    {
+     "judul": "Tutorial LENGKAP Penjadwalan Proyek / Scheduling (MS Project) + Alur Berpikirnya !!",
+     "penyedia": "Kontraktor vs Owner",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=M1tuax2k6eA",
+     "durasi": "39.35"
+    }
+   ]
   },
   {
    "id": "SK229",
@@ -6138,7 +8919,22 @@
    "deskripsi": "Siklus hidup pengembangan perangkat lunak",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Mengenal SDLC (Software Development Life Cycle)",
+     "penyedia": "Ichbal Hadi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=OgYuHtmpEjI",
+     "durasi": "9.39"
+    },
+    {
+     "judul": "🚀 Belajar QA dari Nol - Materi 2: Mengenal SDLC & STLC",
+     "penyedia": "QA Journey by Aulia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=pqAyWxSma9s",
+     "durasi": "10.09"
+    }
+   ]
   },
   {
    "id": "SK230",
@@ -6148,7 +8944,22 @@
    "deskripsi": "Mengelola pemasok dan kontrak",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "PENGANTAR VENDOR/SUPPLIER MANAGEMENT",
+     "penyedia": "Oktri Berbagi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Z74DV9A-iqg",
+     "durasi": "11.51"
+    },
+    {
+     "judul": "Vendor Contract Management for Beginners Webinar",
+     "penyedia": "Venminder",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=3PXTCiZpKaE",
+     "durasi": "1.02.01"
+    }
+   ]
   },
   {
    "id": "SK231",
@@ -6158,7 +8969,22 @@
    "deskripsi": "Kerangka kerja manajemen proyek",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Yuk Pahami Apa Itu PRINCE2!",
+     "penyedia": "Paramavida Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=FFOLWUrx1Po",
+     "durasi": "1.13.41"
+    },
+    {
+     "judul": "49 Proses PMBOK - Dana Persada, PMP",
+     "penyedia": "Media Club Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=IFF_xb8QfrQ",
+     "durasi": "17.48"
+    }
+   ]
   },
   {
    "id": "SK232",
@@ -6168,7 +8994,22 @@
    "deskripsi": "Dukungan jarak jauh dan pengelolaan perangkat",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Skill Yang Harus Dikuasai IT Support - Tugas Dan Tanggung Jawab IT Support",
+     "penyedia": "Muhamad Ali Basri",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=5rabpnxIds0",
+     "durasi": "8.02"
+    },
+    {
+     "judul": "Tools IT Support yang Paling Sering Dipakai di Dunia Kerja",
+     "penyedia": "Muhamad Ali Basri",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=lNbch-A3zTc",
+     "durasi": "9.02"
+    }
+   ]
   },
   {
    "id": "SK233",
@@ -6178,7 +9019,22 @@
    "deskripsi": "Mengelola akun dan layanan kolaborasi",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Panduan Pindah dari Google Workspace ke Microsoft 365",
+     "penyedia": "Sagi Arsyad",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=7AXiqXNC-lI",
+     "durasi": "10.20"
+    },
+    {
+     "judul": "15+ APLIKASI GOOGLE WORKSPACE DIJELASKAN DALAM 8 MENIT! Bahasa",
+     "penyedia": "DROWEHT",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=UdI1XGFKuG4",
+     "durasi": "8.07"
+    }
+   ]
   },
   {
    "id": "SK234",
@@ -6188,7 +9044,15 @@
    "deskripsi": "Memasang dan memperbaiki jaringan lokal",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Apa Itu Wi-Fi, Router, ISP, LAN, Switch, dan Access Point? Dalam Penjelasan Versi Sederhana",
+     "penyedia": "Jagat Review",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=pp4SSw_0uXA",
+     "durasi": "17.19"
+    }
+   ]
   },
   {
    "id": "SK235",
@@ -6215,7 +9079,22 @@
    "deskripsi": "Cadangan data dan pemulihan bencana",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Cara Memilih Solusi Backup dan Disaster Recovery untuk Mengatasi Ransomware - Master Talk",
+     "penyedia": "Mastersystem Infotama",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=LBkRsgy9k5k",
+     "durasi": "18.49"
+    },
+    {
+     "judul": "Tutorial Disaster Recovery Menggunakan Docker + MySQL - Backup & Restore Database",
+     "penyedia": "Ridhooo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=lyUY7tKHFpc",
+     "durasi": "11.51"
+    }
+   ]
   },
   {
    "id": "SK237",
@@ -6231,6 +9110,20 @@
      "penyedia": "Wireshark",
      "jenis": "dokumentasi",
      "url": "https://www.wireshark.org/docs/wsug_html_chunked/"
+    },
+    {
+     "judul": "Solusi Monitoring Jaringan Gratis & Powerful! LibreNMS Full Setup Bisa di Docker & LXC Lhooo...",
+     "penyedia": "UPX ID",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=DilHiKjm-Kw",
+     "durasi": "16.22"
+    },
+    {
+     "judul": "TUTORIAL Monitoring Server Menggunakan Grafana dan Prometheus",
+     "penyedia": "Aji Diyantoro",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=M6ds-70GIpY",
+     "durasi": "33.27"
     }
    ]
   },
@@ -6242,7 +9135,22 @@
    "deskripsi": "Perancangan alamat dan segmentasi jaringan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "[Tips Komputer dan Jaringan] Teknik menghitung Subnetting kelas C yang cepat dan mudah",
+     "penyedia": "Hasrul Tips-Channel",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ZhbVeqQgNGE",
+     "durasi": "9.19"
+    },
+    {
+     "judul": "Soal-soal Subnetting IP Address IPV4 -- Smart Education -- STMIK Sumedang",
+     "penyedia": "Smart Education",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=XCo-d9iqBuo",
+     "durasi": "13.31"
+    }
+   ]
   },
   {
    "id": "SK239",
@@ -6252,7 +9160,22 @@
    "deskripsi": "Perancangan dan pengamanan jaringan nirkabel",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Cara Membuat Koneksi Wireless - Cisco Packet Tracer",
+     "penyedia": "Ratware",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=dFMku7sdLzM",
+     "durasi": "8.49"
+    },
+    {
+     "judul": "#GenerasiTutorial Cara Konfigurasi Wireless Access Point di Cisco Packet Tracer",
+     "penyedia": "Reni Nuryati",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=R5rTLW7pmZo",
+     "durasi": "11.44"
+    }
+   ]
   },
   {
    "id": "SK240",
@@ -6262,7 +9185,22 @@
    "deskripsi": "Protokol routing dinamis",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Mengenal Konsep Dasar Routing Pada Jaringan Komputer - Network Fundamental Learning Series #11",
+     "penyedia": "Aji Diyantoro",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=5YjRoxJYHgc",
+     "durasi": "31.46"
+    },
+    {
+     "judul": "Routing Part1 (AIJ TKJ) - Cara Kerja,Protokol,Default-Static Route,Gateway,Packet Fowarding,Bridging",
+     "penyedia": "Meja Guru Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=0wCcq3b-Shk",
+     "durasi": "26.29"
+    }
+   ]
   },
   {
    "id": "SK241",
@@ -6272,7 +9210,22 @@
    "deskripsi": "Otomasi konfigurasi perangkat jaringan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Part 1 - Network Automation with Python - Introduction Python ( Bahasa Indonesia )",
+     "penyedia": "Enetwork TV Official",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=sIaWbKBHaH4",
+     "durasi": "15.24"
+    },
+    {
+     "judul": "Network Automation Series #2 - Telnetlib - Otomatisasi Jaringan Menggunakan Modul Python - Telnetlib",
+     "penyedia": "Fransiska Sisilia Mukti",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=g9YYlgI7omY",
+     "durasi": "33.32"
+    }
+   ]
   },
   {
    "id": "SK242",
@@ -6288,6 +9241,20 @@
      "penyedia": "Markus Winand",
      "jenis": "panduan",
      "url": "https://use-the-index-luke.com/"
+    },
+    {
+     "judul": "Kenapa Index Bisa Mempercepat Query Database?",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=yuySYEJe6Ik",
+     "durasi": "15.22"
+    },
+    {
+     "judul": "Qonita Agnia Rizkya_19251011 - Tema B - Optimasi Query: Indexing, Execution Plan & Anti - Pattern",
+     "penyedia": "Qonita Agnia Rizkya",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=BLRAU2ilsVE",
+     "durasi": "11.14"
     }
    ]
   },
@@ -6309,7 +9276,22 @@
    "deskripsi": "Hak akses, enkripsi, dan audit basis data",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Keamanan Komputer - Database Security ( Keamanan Database )",
+     "penyedia": "07TPLP009",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=oUw064QSDOA",
+     "durasi": "16.26"
+    },
+    {
+     "judul": "EL5215 - Software Security: 8 - Database security",
+     "penyedia": "Budi Rahardjo",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ztE-0u265AM",
+     "durasi": "1.07.00"
+    }
+   ]
   },
   {
    "id": "SK245",
@@ -6325,6 +9307,20 @@
      "penyedia": "Atlassian",
      "jenis": "panduan",
      "url": "https://www.atlassian.com/agile/kanban"
+    },
+    {
+     "judul": "Kanban : Apa itu dan Bagaimana Penggunannya?",
+     "penyedia": "Hanifah N Wismadi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Cee49490cvo",
+     "durasi": "9.35"
+    },
+    {
+     "judul": "7 - Tutorial: Menggunakan Kanban Board pada GitHub",
+     "penyedia": "Learn with Supardianto",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=q6JDEy18Hn4",
+     "durasi": "13.59"
     }
    ]
   },
@@ -6346,7 +9342,22 @@
    "deskripsi": "Planning, retrospektif, velocity, dan burndown",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Pahami Scrum dalam 10 Menit (Agile Methodology) Introduction to Scrum (Bahasa Indonesia) Bercerisa#1",
+     "penyedia": "Sadida Aruni",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=wPd4D9v-CfY",
+     "durasi": "11.53"
+    },
+    {
+     "judul": "Top 10 SAFe Agile Metrics I Agile KPIs I Scrum KPIs I Scrum Metrics I Scrum Master PART 2",
+     "penyedia": "CareersTalk",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=1Vq3Ay_dGd0",
+     "durasi": "53.15"
+    }
+   ]
   },
   {
    "id": "SK248",
@@ -6356,7 +9367,22 @@
    "deskripsi": "Menulis konten yang menarik dan menjual",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Formula Copywriting Beserta Contoh Langsung!",
+     "penyedia": "Upgraded",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=BrP1PBVTs2E",
+     "durasi": "8.19"
+    },
+    {
+     "judul": "Strategi Content Marketing 2026 untuk Bisnis - Apa Itu Content Marketing di Era Digital Marketing!",
+     "penyedia": "Business and Marketing with Eki",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ho_keqe7I2U",
+     "durasi": "14.06"
+    }
+   ]
   },
   {
    "id": "SK249",
@@ -6366,7 +9392,22 @@
    "deskripsi": "Mengukur kinerja media sosial",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Memahami Analisis Sosial Media dalam 10 menit",
+     "penyedia": "Keanshihab Is'ad Hakim",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=geyxUYv1IQQ",
+     "durasi": "9.44"
+    },
+    {
+     "judul": "Memahami Metrics Sosial Media dalam 10 Menit (Mulai dari konten views, engagement, watch time, dll)",
+     "penyedia": "Keanshihab Is'ad Hakim",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=A2KudyglN1I",
+     "durasi": "11.21"
+    }
+   ]
   },
   {
    "id": "SK250",
@@ -6376,7 +9417,22 @@
    "deskripsi": "Kampanye surel dan pengelolaan pelanggan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "3 Email Marketing Indonesia Terbaik",
+     "penyedia": "Sandi Hermawan",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=8ntJU_johj4",
+     "durasi": "13.28"
+    },
+    {
+     "judul": "Tutorial Email Marketing untuk Pemula (2026)",
+     "penyedia": "Metics Media - Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=t6-3FzckCX8",
+     "durasi": "19.42"
+    }
+   ]
   },
   {
    "id": "SK251",
@@ -6386,7 +9442,22 @@
    "deskripsi": "Meningkatkan rasio konversi",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Apa Itu Conversion Rate? Cara Meningkatkan Conversion Rate",
+     "penyedia": "Projasaweb",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=_kEuUHfHfeE",
+     "durasi": "10.57"
+    },
+    {
+     "judul": "COMPLETE Revenue-increasing Conversion Rate Optimisation (CRO) Course",
+     "penyedia": "Exposure Ninja",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=rfdkMStaBW0",
+     "durasi": "2.32.14"
+    }
+   ]
   },
   {
    "id": "SK252",
@@ -6402,6 +9473,20 @@
      "penyedia": "Google",
      "jenis": "dokumentasi",
      "url": "https://support.google.com/tagmanager/"
+    },
+    {
+     "judul": "Cara Pasang Google Tag Manager untuk Pelacakan Konversi Google Ads",
+     "penyedia": "Pujianto",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=l5PiNN2T8IY",
+     "durasi": "19.33"
+    },
+    {
+     "judul": "CARA SETTING GOOGLE TAG MANAGER DI GOOGLE ADS - Cara tracking button di website",
+     "penyedia": "Bagus Prasetyo Bhakti",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=eM5VMv1j_pE",
+     "durasi": "9.38"
     }
    ]
   },
@@ -6413,7 +9498,22 @@
    "deskripsi": "Pemrograman grafis dan efek visual",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Introduction to shaders: Learn the basics!",
+     "penyedia": "Barney Codes",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=3mfvZ-mdtZQ",
+     "durasi": "34.50"
+    },
+    {
+     "judul": "An introduction to Shader Art Coding",
+     "penyedia": "kishimisu",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=f4s1h2YETNY",
+     "durasi": "22.40"
+    }
+   ]
   },
   {
    "id": "SK254",
@@ -6423,7 +9523,22 @@
    "deskripsi": "Perilaku karakter dan pencarian jalur",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Tutorial & Penjelasan Pathfinding Algoritma A* (A-star) pada NPC dengan Unity 3D - (Part 29 / 33)",
+     "penyedia": "JuniorDev",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=vnp1WMyUitA",
+     "durasi": "52.14"
+    },
+    {
+     "judul": "Mencari Jalur Terpendek (Pathfinding) Menggunakan Algoritma A* (A Star) Pada Game Engine Unity 3D",
+     "penyedia": "Fajar Wibi",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hRMNqTmS3J0",
+     "durasi": "10.59"
+    }
+   ]
   },
   {
    "id": "SK255",
@@ -6433,7 +9548,22 @@
    "deskripsi": "Sinkronisasi permainan daring",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Membuat Game 3D Multiplayer Unity & Photon (Part 9 / 33) - UI Multiplayer & Setting Photon",
+     "penyedia": "JuniorDev",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=_YOq6_sod2Y",
+     "durasi": "18.29"
+    },
+    {
+     "judul": "How Multiplayer Games Work",
+     "penyedia": "Nick Maltbie",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=KBBJqPL5-eU",
+     "durasi": "15.14"
+    }
+   ]
   },
   {
    "id": "SK256",
@@ -6449,6 +9579,20 @@
      "penyedia": "Blender",
      "jenis": "kursus",
      "url": "https://www.blender.org/support/tutorials/"
+    },
+    {
+     "judul": "Belajar Blender dari NOL - Tutorial Blender Untuk Pemula",
+     "penyedia": "Apriliyandi Tami",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=JGF5ie2EkUg",
+     "durasi": "37.52"
+    },
+    {
+     "judul": "BIKIN KARAKTER 3D MU SENDIRI! ANIMASI BLENDER - Part 1",
+     "penyedia": "Guntur Putra",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Sey2KpEza6Y",
+     "durasi": "19.07"
     }
    ]
   },
@@ -6460,7 +9604,22 @@
    "deskripsi": "Menjaga performa permainan",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Game Optimization - Introduction & General Principles - Episode 1",
+     "penyedia": "Ben Cloward",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=jt8b0cpjUVk",
+     "durasi": "13.53"
+    },
+    {
+     "judul": "UE5 Open World Performance Optimization Part 01 BaseLine Profiling",
+     "penyedia": "Hamid Jalili",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=T-_Wdqg7wpQ",
+     "durasi": "9.20"
+    }
+   ]
   },
   {
    "id": "SK258",
@@ -6476,6 +9635,20 @@
      "penyedia": "Godot Engine",
      "jenis": "dokumentasi",
      "url": "https://docs.godotengine.org/en/stable/getting_started/introduction/index.html"
+    },
+    {
+     "judul": "Tutorial Bikin GAME Pake Godot Engine PART 1",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=pBpGlNwO5uA",
+     "durasi": "1.54.47"
+    },
+    {
+     "judul": "Dasar-Dasar Godot Bagi Pemula",
+     "penyedia": "CircleDev",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=YakeFl12wGo",
+     "durasi": "18.18"
     }
    ]
   },
@@ -6487,7 +9660,15 @@
    "deskripsi": "Menilai selisih kondisi dan kelayakan solusi",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Gap Analysis - Cara Mudah Membaca Situasi untuk Meraih Goal",
+     "penyedia": "Adam Startup",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=w3PJZn_E8P0",
+     "durasi": "9.37"
+    }
+   ]
   },
   {
    "id": "SK260",
@@ -6507,7 +9688,15 @@
    "deskripsi": "Memahami proses di tiap modul ERP",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Pembahasan Modul Human Resource di Odoo ERP - Functional Human Resource in Odoo",
+     "penyedia": "Muhammad Syarif",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=XXbbQalwYe0",
+     "durasi": "28.56"
+    }
+   ]
   },
   {
    "id": "SK262",
@@ -6523,6 +9712,20 @@
      "penyedia": "SAP",
      "jenis": "kursus",
      "url": "https://learning.sap.com/"
+    },
+    {
+     "judul": "SAP ABAP - Basic Knowledge Part - 1 (Indonesia)",
+     "penyedia": "SAP Interface",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=pQIEM4phJXE",
+     "durasi": "10.32"
+    },
+    {
+     "judul": "MARI BELAJAR ABAP PROGRAMMING",
+     "penyedia": "Nur Tri Ramadhanti Adiningrum",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=fR7j-z0seCY",
+     "durasi": "47.17"
     }
    ]
   },
@@ -6534,7 +9737,22 @@
    "deskripsi": "Tahapan implementasi dan pemindahan data",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Lecture-33 Data Migration in ERP",
+     "penyedia": "Computing World",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ar8u6KD-Rfw",
+     "durasi": "31.25"
+    },
+    {
+     "judul": "09 Data Migration - Employee Personal Information",
+     "penyedia": "Onfinity Enterprise Open Source ERP",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=yGC73R1cYbo",
+     "durasi": "10.38"
+    }
+   ]
   },
   {
    "id": "SK264",
@@ -6550,6 +9768,20 @@
      "penyedia": "Microsoft Learn",
      "jenis": "kursus",
      "url": "https://learn.microsoft.com/en-us/training/dynamics365/"
+    },
+    {
+     "judul": "Belajar Review Aplikasi ERP & CRM Microsoft Dynamics 365",
+     "penyedia": "Adila Channel",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=8OWZbmaqgWA",
+     "durasi": "14.10"
+    },
+    {
+     "judul": "Dynamics 365 Sales (CRM) part 1 - Account, Contact dan Task - Paduan Bahasa Indonesia",
+     "penyedia": "Sagi Arsyad",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=SXQ7lAblcfY",
+     "durasi": "14.52"
     }
    ]
   },
@@ -6561,7 +9793,22 @@
    "deskripsi": "Mencari celah pada smart contract",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Tutorial Unit Test Pada Smart Contract",
+     "penyedia": "Faerul Salamun",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=16OtQqZiDo0",
+     "durasi": "19.21"
+    },
+    {
+     "judul": "Belajar membuat Smart Contract menggunakan Solidity, Hardhat & Ethers JS",
+     "penyedia": "Iqbal Syamil",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=5Hzf6C2SEpI",
+     "durasi": "50.40"
+    }
+   ]
   },
   {
    "id": "SK266",
@@ -6571,7 +9818,15 @@
    "deskripsi": "Standar token dan aplikasi keuangan terdesentralisasi",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Defi Untuk Pemula : Dari Rothschild Hingga DeFi.",
+     "penyedia": "Angga Andinata",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=euOyQNfx5yg",
+     "durasi": "17.13"
+    }
+   ]
   },
   {
    "id": "SK267",
@@ -6587,6 +9842,20 @@
      "penyedia": "ethereum.org",
      "jenis": "dokumentasi",
      "url": "https://ethereum.org/en/developers/docs/"
+    },
+    {
+     "judul": "Blockchain Itu Apa? Cara Kerjanya Dijelaskan dari Nol untuk Pemula",
+     "penyedia": "dailyfinsight",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=BI_pqo_I4jc",
+     "durasi": "9.54"
+    },
+    {
+     "judul": "Blockchain dan Konsensus 🗼",
+     "penyedia": "hapdul",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=zC2ld3e9OTQ",
+     "durasi": "9.30"
     }
    ]
   },
@@ -6614,6 +9883,20 @@
      "penyedia": "FreeRTOS",
      "jenis": "dokumentasi",
      "url": "https://www.freertos.org/Documentation/00-Overview"
+    },
+    {
+     "judul": "Pengenalan RTOS",
+     "penyedia": "Muhammad Ikhwan Fathulloh",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=3Dh6zyZz2QU",
+     "durasi": "8.40"
+    },
+    {
+     "judul": "TUGAS 7 - Memahami RTOS dari Nol",
+     "penyedia": "Supriyono",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=1iKvdpfzXv4",
+     "durasi": "16.18"
     }
    ]
   },
@@ -6625,7 +9908,22 @@
    "deskripsi": "Dasar elektronika, sensor, dan aktuator",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Basic Electronics For Beginners",
+     "penyedia": "The Organic Chemistry Tutor",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=uXr4lXYjXuU",
+     "durasi": "30.15"
+    },
+    {
+     "judul": "Sensors and Actuators 1",
+     "penyedia": "Prof. Gholap Umesh S",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ECwiHedUTHM",
+     "durasi": "13.31"
+    }
+   ]
   },
   {
    "id": "SK271",
@@ -6641,6 +9939,20 @@
      "penyedia": "KiCad",
      "jenis": "dokumentasi",
      "url": "https://docs.kicad.org/"
+    },
+    {
+     "judul": "Desain PCB di KiCad – Gampang Banget! (Part 1)",
+     "penyedia": "Koding Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=AMxdv901eEc",
+     "durasi": "12.33"
+    },
+    {
+     "judul": "Step by Step Cara membuat desain atau layout PCB dengan software eagle mudah dan cepat pasti bisa",
+     "penyedia": "Elmech Technology",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=BENCYAJb2JA",
+     "durasi": "22.11"
     }
    ]
   },
@@ -6668,6 +9980,20 @@
      "penyedia": "Node-RED",
      "jenis": "dokumentasi",
      "url": "https://nodered.org/docs/"
+    },
+    {
+     "judul": "ThingsBoard IoT Platform Tutorial for Beginners - Device Creation & Dashboard Explained",
+     "penyedia": "Engineer’s Point",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Ky6Jzx8UUhE",
+     "durasi": "9.45"
+    },
+    {
+     "judul": "Learn ThingsBoard in 10 Minutes",
+     "penyedia": "Mirutec",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=GzBy2ke8wwc",
+     "durasi": "8.56"
     }
    ]
   },
@@ -6679,7 +10005,22 @@
    "deskripsi": "Menjalankan model di perangkat tepi",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "ESP32 Series Ep04 - Edge Computing TinyML Project - the Electronic Nose",
+     "penyedia": "DFRobot",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=fbkvl0cvo1E",
+     "durasi": "14.55"
+    },
+    {
+     "judul": "Edge AI: Intelligence Inside - TinyML & Embedded AI Primer",
+     "penyedia": "EmbedSystems",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=2g14B2IX98U",
+     "durasi": "8.06"
+    }
+   ]
   },
   {
    "id": "SK275",
@@ -6701,6 +10042,20 @@
      "penyedia": "Write the Docs",
      "jenis": "panduan",
      "url": "https://www.writethedocs.org/guide/"
+    },
+    {
+     "judul": "Docs-as-Code for Technical Writing 01 - Setup GitLab + VS Code",
+     "penyedia": "AB Writing",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Z5sQHzKRxn8",
+     "durasi": "26.04"
+    },
+    {
+     "judul": "Docs as code tools and workflows presentation",
+     "penyedia": "I'd Rather Be Writing podcast",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Z3e_38WS-2Q",
+     "durasi": "1.18.10"
     }
    ]
   },
@@ -6732,7 +10087,22 @@
    "deskripsi": "Menulis teks antarmuka",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "Dewatalks UX Writing for Website",
+     "penyedia": "Dewaweb",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=15Rjg-8YJdg",
+     "durasi": "32.41"
+    },
+    {
+     "judul": "🔴 Berkenalan dengan UX Writing",
+     "penyedia": "Hostinger Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=KYypHbvy-zw",
+     "durasi": "1.17.09"
+    }
+   ]
   },
   {
    "id": "SK279",
@@ -6742,7 +10112,22 @@
    "deskripsi": "Komunikasi dua arah waktu nyata",
    "sumber": "kurasi",
    "alias": [],
-   "belajar": []
+   "belajar": [
+    {
+     "judul": "WebSocket di Node.js - Tutorial Real-Time Komunikasi",
+     "penyedia": "Yho Tie",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=w9CeGWrBtB8",
+     "durasi": "15.31"
+    },
+    {
+     "judul": "REALTIME CHAT Socket.io HTML Javascript Untuk Pemula",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=ARYdhJEdXTs",
+     "durasi": "49.53"
+    }
+   ]
   }
  ],
  "profesi_skill": {

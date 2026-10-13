@@ -21,7 +21,7 @@ skill):
   dengan simulasi: kalau skill ini dipelajari, cakupan, skor, dan peringkatnya
   jadi berapa.
 - **Bahan belajar** — tiap skill punya tautan dokumentasi resmi, kursus gratis,
-  dan pencarian video tutorial; tiap profesi punya peta belajar, ide proyek
+  dan video tutorial YouTube (kebanyakan berbahasa Indonesia); tiap profesi punya peta belajar, ide proyek
   portofolio, dan tautan lowongan.
 - **Penilaian** — relevansi tiap rekomendasi dan kuesioner SUS.
 - **Dasbor peneliti** (`/peneliti`) — Hit Rate@K, Precision@K, SUS, Cronbach's α,

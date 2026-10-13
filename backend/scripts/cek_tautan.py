@@ -26,13 +26,27 @@ def cek(url: str) -> tuple[str, str]:
     return r.stdout.strip() or "ERR", url
 
 
+def cek_video(url: str) -> tuple[str, str]:
+    """Halaman video yang sudah dihapus tetap menjawab 200; oEmbed tidak."""
+    oembed = "https://www.youtube.com/oembed?format=json&url=" + url
+    r = subprocess.run(["curl", "-s", "-o", "/dev/null", "-m", "25", "-A", UA,
+                        "-w", "%{http_code}", oembed], capture_output=True, text=True)
+    return r.stdout.strip() or "ERR", url
+
+
 def main() -> None:
     urls: set[str] = set()
     for berkas in ("sumber_belajar.csv", "panduan_karier.csv"):
         with open(SUMBER / berkas, newline="", encoding="utf-8") as f:
             urls |= {b["url"] for b in csv.DictReader(f, delimiter="|")}
+    video: set[str] = set()
+    if (SUMBER / "video_tutorial.csv").exists():
+        with open(SUMBER / "video_tutorial.csv", newline="", encoding="utf-8") as f:
+            video = {b["url"] for b in csv.DictReader(f, delimiter="|", quoting=csv.QUOTE_NONE)}
     with cf.ThreadPoolExecutor(12) as ex:
         hasil = sorted(ex.map(cek, sorted(urls)))
+    with cf.ThreadPoolExecutor(4) as ex:
+        hasil += sorted(ex.map(cek_video, sorted(video)))
     print(dict(collections.Counter(kode for kode, _ in hasil)))
     for kode, url in hasil:
         if kode != "200":

@@ -3,8 +3,10 @@
  * tautan lowongan.
  *
  * Dua jenis tautan dibedakan dengan sengaja:
- *   - sumber kurasi  : dokumentasi resmi dan kursus gratis, disimpan di basis
- *                      pengetahuan dan sudah diperiksa bisa dibuka;
+ *   - sumber tersimpan: dokumentasi resmi dan kursus gratis (kurasi), serta
+ *                      video YouTube yang dipilih otomatis dari hasil pencarian
+ *                      dan dipastikan masih ada. Judul, kanal, dan durasi video
+ *                      ditampilkan supaya pengguna tahu apa yang dibukanya;
  *   - tautan cari    : pencarian YouTube dan Coursera yang dirakit dari nama
  *                      skill. Isinya berubah-ubah, jadi tidak pernah "mati",
  *                      dan selalu tersedia walau skill-nya belum punya kurasi.
@@ -13,8 +15,8 @@ import { BookOpen, Briefcase, ChevronDown, ExternalLink, GraduationCap, Hammer, 
 import { useState, type ReactNode } from 'react'
 import type { Proyek, Sumber } from '../api'
 
-const IKON = { dokumentasi: BookOpen, kursus: GraduationCap, latihan: Hammer, panduan: BookOpen } as const
-const LABEL = { dokumentasi: 'Dokumentasi', kursus: 'Kursus', latihan: 'Latihan', panduan: 'Panduan' } as const
+const IKON = { dokumentasi: BookOpen, kursus: GraduationCap, latihan: Hammer, panduan: BookOpen, video: MonitorPlay } as const
+const LABEL = { dokumentasi: 'Dokumentasi', kursus: 'Kursus', latihan: 'Latihan', panduan: 'Panduan', video: 'Video' } as const
 
 /** "CI/CD (Jenkins, GitHub Actions)" -> "CI/CD": kata kunci cari yang ringkas. */
 const kunci = (nama: string) => nama.replace(/\s*\(.*\)\s*/g, ' ').trim()
@@ -44,9 +46,12 @@ export function SumberBelajar({ nama, belajar }: { nama: string; belajar: Sumber
     <div className="flex flex-col gap-2">
       {belajar.map((b) => {
         const Ikon = IKON[b.jenis] ?? BookOpen
-        return <Tautan key={b.url} href={b.url} ikon={<Ikon className="size-4" aria-hidden />} judul={b.judul} ket={`${LABEL[b.jenis] ?? 'Sumber'} gratis · ${b.penyedia}`} />
+        const ket = b.jenis === 'video'
+          ? `Video YouTube · ${b.penyedia}${b.durasi ? ` · ${b.durasi.replace(/\./g, ':')}` : ''}`
+          : `${LABEL[b.jenis] ?? 'Sumber'} gratis · ${b.penyedia}`
+        return <Tautan key={b.url} href={b.url} ikon={<Ikon className="size-4" aria-hidden />} judul={b.judul} ket={ket} />
       })}
-      <Tautan href={tautanYoutube(nama)} ikon={<MonitorPlay className="size-4" aria-hidden />} judul="Cari video tutorial" ket="YouTube · berbahasa Indonesia" />
+      <Tautan href={tautanYoutube(nama)} ikon={<MonitorPlay className="size-4" aria-hidden />} judul="Cari video tutorial lain" ket="YouTube · berbahasa Indonesia" />
       <Tautan href={tautanKursus(nama)} ikon={<Search className="size-4" aria-hidden />} judul="Cari kursus" ket="Coursera · sebagian bisa diaudit gratis" />
     </div>
   )

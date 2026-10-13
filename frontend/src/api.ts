@@ -32,7 +32,10 @@ export type Masukan = {
   induk?: string | null
 }
 
-export type Sumber = { judul: string; penyedia: string; jenis: 'dokumentasi' | 'kursus' | 'latihan' | 'panduan'; url: string }
+export type Sumber = {
+  judul: string; penyedia: string; url: string; durasi?: string
+  jenis: 'dokumentasi' | 'kursus' | 'latihan' | 'panduan' | 'video'
+}
 export type Proyek = { tingkat: string; judul: string; deskripsi: string }
 
 export type SkillProfesi = {
