@@ -6,10 +6,11 @@
  * mengubah rekomendasi tersimpan; ia menghitung proyeksi: kalau skill ini
  * sudah dikuasai, cakupan, skor, dan peringkatnya jadi berapa.
  */
-import { ArrowRight, Check, CheckCircle2, Repeat, TrendingUp } from 'lucide-react'
+import { ArrowRight, Check, CheckCircle2, Hammer, Repeat, TrendingUp } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
-import { ambilRoadmap, centangRoadmap, persen, pilihTarget, type Roadmap as DataRoadmap } from '../api'
+import { ambilRoadmap, centangRoadmap, persen, pilihTarget, type Roadmap as DataRoadmap, type SkillRoadmap } from '../api'
 import { AppBottomNav, AppTopNav, KepalaLayar } from '../komponen/AppNav'
+import { useBelajar, DaftarProyek, PetaBelajar } from '../komponen/belajar'
 import { Batang, Galat, Memuat } from '../komponen/umum'
 import { useData } from '../komponen/useData'
 
@@ -124,24 +125,26 @@ function Isi({ id, d, centang, ganti }: { id: string; d: Terisi; centang: (skill
                 <h2 className="text-[15px] font-bold text-slate-900">{t.nama} <span className="text-[12.5px] font-normal text-slate-400">({t.skill.filter((s) => s.dicentang).length}/{t.skill.length})</span></h2>
                 <p className="mt-0.5 text-[12.5px] leading-snug text-slate-500">{t.keterangan}</p>
                 <ul className="mt-3 flex flex-col gap-2">
-                  {t.skill.map((s) => (
-                    <li key={s.skill_id}>
-                      <button type="button" aria-pressed={s.dicentang} onClick={() => centang(s.skill_id, !s.dicentang)}
-                        className={`flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left transition-colors ${s.dicentang ? 'border-violet-500 bg-violet-50/60' : 'border-slate-200 bg-white hover:border-slate-300'}`}>
-                        <span className={`grid size-[18px] shrink-0 place-items-center rounded-[5px] border ${s.dicentang ? 'border-violet-600 bg-violet-600' : 'border-slate-300 bg-white'}`} aria-hidden>
-                          {s.dicentang && <Check className="size-3 text-white" strokeWidth={3} />}
-                        </span>
-                        <span className={`min-w-0 flex-1 text-[13.5px] font-semibold leading-snug ${s.dicentang ? 'text-slate-500 line-through' : 'text-slate-900'}`}>{s.nama}</span>
-                        {s.bobot > 0 && <span className="shrink-0 text-[11.5px] tabular-nums text-slate-400">bobot {s.bobot}</span>}
-                      </button>
-                    </li>
-                  ))}
+                  {t.skill.map((s) => <BarisSkill key={s.skill_id} s={s} centang={centang} />)}
                 </ul>
               </div>
             </li>
           )
         })}
       </ol>
+
+      {(d.target.peta_belajar || d.target.proyek.length > 0) && (
+        <section className="mb-4 rounded-2xl border border-slate-200 p-4">
+          <h2 className="flex items-center gap-2 text-[15px] font-semibold text-slate-900"><Hammer className="size-4 text-violet-600" aria-hidden /> Buktikan lewat proyek</h2>
+          <p className="mt-1 text-[12.5px] leading-relaxed text-slate-500">
+            Skill paling cepat menempel kalau dipakai. Kerjakan proyek di bawah dan pajang hasilnya di portofoliomu.
+          </p>
+          <div className="mt-3 flex flex-col gap-2.5">
+            <PetaBelajar peta={d.target.peta_belajar} />
+            <DaftarProyek proyek={d.target.proyek} />
+          </div>
+        </section>
+      )}
 
       {d.dikuasai.length > 0 && (
         <section className="rounded-2xl border border-slate-200 p-4">
@@ -154,6 +157,28 @@ function Isi({ id, d, centang, ganti }: { id: string; d: Terisi; centang: (skill
         </section>
       )}
     </main>
+  )
+}
+
+/** Satu skill: kotak centang di kiri, tombol sumber belajar di kanan. */
+function BarisSkill({ s, centang }: { s: SkillRoadmap; centang: (skill: string, selesai: boolean) => void }) {
+  const belajar = useBelajar({ nama: s.nama, belajar: s.belajar })
+  return (
+    <li className={`rounded-xl border px-4 py-3 transition-colors ${s.dicentang ? 'border-violet-500 bg-violet-50/60' : 'border-slate-200 bg-white'}`}>
+      <div className="flex items-center gap-3">
+        <button type="button" aria-pressed={s.dicentang} onClick={() => centang(s.skill_id, !s.dicentang)} className="flex min-w-0 flex-1 items-center gap-3 text-left">
+          <span className={`grid size-[18px] shrink-0 place-items-center rounded-[5px] border ${s.dicentang ? 'border-violet-600 bg-violet-600' : 'border-slate-300 bg-white'}`} aria-hidden>
+            {s.dicentang && <Check className="size-3 text-white" strokeWidth={3} />}
+          </span>
+          <span className="min-w-0">
+            <span className={`block text-[13.5px] font-semibold leading-snug ${s.dicentang ? 'text-slate-500 line-through' : 'text-slate-900'}`}>{s.nama}</span>
+            {s.bobot > 0 && <span className="block text-[11.5px] tabular-nums text-slate-400">bobot {s.bobot}</span>}
+          </span>
+        </button>
+        {belajar.tombol}
+      </div>
+      {belajar.isi}
+    </li>
   )
 }
 

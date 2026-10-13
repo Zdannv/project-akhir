@@ -54,3 +54,112 @@ SK167,"Backup, Recovery & Performance Tuning",Database,hard_skill,Pemeliharaan d
 SK168,Prompt Engineering / LLM Fine-tuning,AI Technique,hard_skill,Merancang prompt dan menyesuaikan model bahasa
 SK169,Image Processing & Object Detection (YOLO),ML Specialization,hard_skill,Pengolahan citra dan deteksi objek
 SK170,Data Modeling,Database,hard_skill,Perancangan model dan skema data
+SK171,Web Performance & Core Web Vitals,Frontend,hard_skill,Mengukur dan mempercepat waktu muat halaman
+SK172,Web Accessibility (a11y),Frontend,hard_skill,Membuat antarmuka yang bisa dipakai semua orang
+SK173,Build Tools (Vite / Webpack),Frontend,hard_skill,Bundling dan alur build aplikasi web
+SK174,Authentication & Authorization (JWT / OAuth2),Backend,hard_skill,"Login, sesi, dan hak akses"
+SK175,Message Queue (RabbitMQ),Backend,hard_skill,Komunikasi asinkron antarlayanan
+SK176,Caching & Performance Optimization,Backend,hard_skill,Mempercepat layanan dengan cache dan profiling
+SK177,ORM (Prisma / Eloquent / SQLAlchemy),Backend,hard_skill,Pemetaan objek ke basis data
+SK178,Clean Architecture & Design Patterns,Architecture,hard_skill,Menyusun kode yang mudah dirawat
+SK179,"Android Jetpack (Room, ViewModel, Navigation)",Mobile,hard_skill,Komponen arsitektur Android
+SK180,Kotlin Coroutines & Flow,Mobile,hard_skill,Pemrograman asinkron di Kotlin
+SK181,App Publishing (Play Store / App Store),Mobile,hard_skill,Merilis dan memelihara aplikasi di toko aplikasi
+SK182,Core Data & Combine,Mobile,hard_skill,Penyimpanan lokal dan pemrograman reaktif di iOS
+SK183,Xcode & TestFlight,Mobile,hard_skill,Perkakas pengembangan dan distribusi uji iOS
+SK184,Mobile Design Guidelines (Material / HIG),Mobile,hard_skill,Pedoman desain Android dan iOS
+SK185,Push Notification & Deep Link,Mobile,hard_skill,Notifikasi dan tautan langsung ke layar aplikasi
+SK186,Data Cleaning & Wrangling,Data Science,hard_skill,Merapikan dan menyiapkan data mentah
+SK187,Exploratory Data Analysis (EDA),Data Science,hard_skill,Menjelajahi data untuk menemukan pola awal
+SK188,Dashboard Design & KPI,Data Visualization,hard_skill,Merancang dasbor dan indikator kinerja
+SK189,DAX,Data Tool,hard_skill,Bahasa rumus Power BI
+SK190,Feature Engineering,Data Science,hard_skill,Membentuk fitur untuk model
+SK191,Experiment Design & Hypothesis Testing,Data Science,hard_skill,Merancang eksperimen dan menguji hipotesis
+SK192,Time Series Forecasting,Data Science,hard_skill,Peramalan data deret waktu
+SK193,Data Lake & Lakehouse (Delta / Iceberg),Data Engineering,hard_skill,Penyimpanan data skala besar
+SK194,Data Quality & Governance,Data Engineering,hard_skill,"Menjaga mutu, katalog, dan tata kelola data"
+SK195,Stream Processing (Flink / Spark Streaming),Data Engineering,hard_skill,Pemrosesan data waktu nyata
+SK196,Model Deployment & Serving,ML Infrastructure,hard_skill,Menyajikan model sebagai layanan
+SK197,LLM Evaluation & Guardrails,AI Technique,hard_skill,Mengukur dan menjaga keluaran model bahasa
+SK198,AI Agents & Tool Calling,AI Technique,hard_skill,Membangun agen yang memakai alat
+SK199,Model Optimization (Quantization / ONNX / TensorRT),ML Infrastructure,hard_skill,Memperkecil dan mempercepat model
+SK200,Data Annotation & Dataset Management,ML Specialization,hard_skill,Pelabelan dan pengelolaan dataset
+SK201,Text Preprocessing & Embeddings,ML Specialization,hard_skill,Menyiapkan teks dan representasi vektornya
+SK202,GitOps (Argo CD / Flux),DevOps,hard_skill,Deployment berbasis repositori Git
+SK203,Helm,DevOps,hard_skill,Pengelola paket Kubernetes
+SK204,"Cloud Networking (VPC, Load Balancer, DNS)",Cloud Platform,hard_skill,Jaringan di layanan awan
+SK205,Cloud Security & IAM,Cloud Platform,hard_skill,Keamanan dan pengelolaan akses di awan
+SK206,Serverless (Lambda / Cloud Functions),Cloud Platform,hard_skill,Komputasi tanpa mengelola server
+SK207,Cloud Cost Optimization (FinOps),Cloud Platform,hard_skill,Mengendalikan biaya layanan awan
+SK208,Incident Management & SLO/SLI,DevOps,hard_skill,Menangani insiden dan mengukur keandalan
+SK209,Centralized Logging (ELK / Loki),DevOps,hard_skill,Mengumpulkan dan menelusuri log
+SK210,Vulnerability Assessment (Nessus / OpenVAS),Cybersecurity,hard_skill,Memindai dan menilai kerentanan
+SK211,Security Frameworks (ISO 27001 / NIST),Cybersecurity,hard_skill,Kerangka kerja pengelolaan keamanan
+SK212,Threat Intelligence & MITRE ATT&CK,Cybersecurity,hard_skill,Memahami taktik dan teknik penyerang
+SK213,Malware Analysis,Cybersecurity,hard_skill,Menganalisis perilaku perangkat lunak jahat
+SK214,Metasploit & Exploitation,Cybersecurity,hard_skill,Eksploitasi kerentanan dalam uji penetrasi
+SK215,Active Directory Security,Cybersecurity,hard_skill,Menguji dan mengamankan lingkungan Active Directory
+SK216,Mobile & API Security Testing,Cybersecurity,hard_skill,Menguji keamanan aplikasi mobile dan API
+SK217,Security Report Writing,Cybersecurity,hard_skill,Menulis laporan temuan dan rekomendasi
+SK218,Interaction Design,Design,hard_skill,Merancang alur dan perilaku interaksi
+SK219,Information Architecture,Design,hard_skill,Menata struktur dan navigasi informasi
+SK220,Design Handoff & Collaboration,Design,hard_skill,Menyerahkan desain ke pengembang
+SK221,"Visual Design (Typography, Color, Layout)",Design,hard_skill,Dasar tata rupa antarmuka
+SK222,Product Strategy & Go-to-Market,Product,hard_skill,Menentukan arah dan peluncuran produk
+SK223,Market & Competitor Research,Product,hard_skill,Riset pasar dan pesaing
+SK224,OKR & Product Metrics,Product,hard_skill,Menetapkan sasaran dan mengukur hasil
+SK225,Performance & Load Testing (JMeter / k6),Testing,hard_skill,Menguji kinerja di bawah beban
+SK226,Bug Tracking & Test Management,Testing,hard_skill,Mencatat cacat dan mengelola siklus uji
+SK227,Mobile Test Automation (Appium),Testing,hard_skill,Otomasi pengujian aplikasi mobile
+SK228,Project Planning & Scheduling (WBS / Gantt),Project Management,hard_skill,Menyusun rencana dan jadwal proyek
+SK229,SDLC & Software Process,Methodology,hard_skill,Siklus hidup pengembangan perangkat lunak
+SK230,Vendor & Contract Management,Project Management,hard_skill,Mengelola pemasok dan kontrak
+SK231,PMBOK / PRINCE2,Project Management,hard_skill,Kerangka kerja manajemen proyek
+SK232,Remote Support & Endpoint Management,IT Support,hard_skill,Dukungan jarak jauh dan pengelolaan perangkat
+SK233,Microsoft 365 / Google Workspace Administration,IT Support,hard_skill,Mengelola akun dan layanan kolaborasi
+SK234,LAN / Wi-Fi Setup & Troubleshooting,IT Support,hard_skill,Memasang dan memperbaiki jaringan lokal
+SK235,Virtualization (VMware / Proxmox / Hyper-V),Infrastructure,hard_skill,Menjalankan dan mengelola mesin virtual
+SK236,Backup & Disaster Recovery,Infrastructure,hard_skill,Cadangan data dan pemulihan bencana
+SK237,Network Monitoring & Analysis (Wireshark / Zabbix),Networking,hard_skill,Memantau dan menganalisis lalu lintas jaringan
+SK238,"Subnetting, VLAN & IP Addressing",Networking,hard_skill,Perancangan alamat dan segmentasi jaringan
+SK239,Wireless Networking,Networking,hard_skill,Perancangan dan pengamanan jaringan nirkabel
+SK240,Routing Protocols (OSPF / BGP),Networking,hard_skill,Protokol routing dinamis
+SK241,Network Automation (Python / Netmiko),Networking,hard_skill,Otomasi konfigurasi perangkat jaringan
+SK242,Query Optimization & Indexing,Database,hard_skill,Mempercepat kueri dengan indeks dan rencana eksekusi
+SK243,Replication & High Availability,Database,hard_skill,Replikasi dan ketersediaan tinggi basis data
+SK244,Database Security & Access Control,Database,hard_skill,"Hak akses, enkripsi, dan audit basis data"
+SK245,Kanban & Lean,Methodology,hard_skill,Mengalirkan pekerjaan dan mengurangi pemborosan
+SK246,Agile at Scale (SAFe / LeSS),Methodology,hard_skill,Menerapkan agile pada banyak tim
+SK247,Sprint Ceremonies & Agile Metrics,Methodology,hard_skill,"Planning, retrospektif, velocity, dan burndown"
+SK248,Content Marketing & Copywriting,Digital Marketing,hard_skill,Menulis konten yang menarik dan menjual
+SK249,Social Media Analytics,Digital Marketing,hard_skill,Mengukur kinerja media sosial
+SK250,Email Marketing & CRM,Digital Marketing,hard_skill,Kampanye surel dan pengelolaan pelanggan
+SK251,Conversion Rate Optimization,Digital Marketing,hard_skill,Meningkatkan rasio konversi
+SK252,Google Tag Manager & Tracking,Digital Marketing,hard_skill,Memasang pelacakan peristiwa
+SK253,Shader & Graphics Programming,Game Development,hard_skill,Pemrograman grafis dan efek visual
+SK254,Game AI & Pathfinding,Game Development,hard_skill,Perilaku karakter dan pencarian jalur
+SK255,Multiplayer & Game Networking,Game Development,hard_skill,Sinkronisasi permainan daring
+SK256,3D Modeling & Animation (Blender),Game Development,hard_skill,Membuat aset tiga dimensi
+SK257,Game Optimization & Profiling,Game Development,hard_skill,Menjaga performa permainan
+SK258,Godot,Game Engine,hard_skill,Mesin gim sumber terbuka
+SK259,Gap Analysis & Feasibility Study,Analysis,hard_skill,Menilai selisih kondisi dan kelayakan solusi
+SK260,UAT Planning & Test Scenario,Analysis,hard_skill,Menyiapkan uji penerimaan pengguna
+SK261,"ERP Functional Modules (Finance, Inventory, HR)",ERP Platform,hard_skill,Memahami proses di tiap modul ERP
+SK262,ABAP,ERP Platform,hard_skill,Bahasa pemrograman SAP
+SK263,ERP Implementation & Data Migration,ERP Platform,hard_skill,Tahapan implementasi dan pemindahan data
+SK264,Microsoft Dynamics 365,ERP Platform,hard_skill,Platform ERP dan CRM Microsoft
+SK265,Smart Contract Security & Auditing,Blockchain,hard_skill,Mencari celah pada smart contract
+SK266,Token Standards & DeFi (ERC-20 / ERC-721),Blockchain,hard_skill,Standar token dan aplikasi keuangan terdesentralisasi
+SK267,Blockchain Fundamentals & Consensus,Blockchain,hard_skill,Cara kerja rantai blok dan konsensus
+SK268,"Blockchain Node, RPC & Indexing",Blockchain,hard_skill,Berinteraksi dengan node dan mengindeks data
+SK269,RTOS (FreeRTOS),IoT,hard_skill,Sistem operasi waktu nyata untuk mikrokontroler
+SK270,"Sensors, Actuators & Basic Electronics",IoT,hard_skill,"Dasar elektronika, sensor, dan aktuator"
+SK271,PCB Design (KiCad / Eagle),IoT,hard_skill,Merancang papan sirkuit
+SK272,Wireless Connectivity (BLE / LoRa / Zigbee),IoT,hard_skill,Komunikasi nirkabel perangkat
+SK273,IoT Platform & Dashboard (Node-RED / ThingsBoard),IoT,hard_skill,Mengumpulkan dan menampilkan data perangkat
+SK274,Edge Computing & TinyML,IoT,hard_skill,Menjalankan model di perangkat tepi
+SK275,Docs-as-Code (Markdown / Docusaurus / Sphinx),Documentation,hard_skill,Dokumentasi yang dikelola seperti kode
+SK276,Information Design & Diagramming,Documentation,hard_skill,Menyajikan informasi dengan struktur dan diagram
+SK277,"Editing, Style Guide & Localization",Documentation,hard_skill,Menyunting dan menjaga konsistensi gaya
+SK278,UX Writing,Documentation,hard_skill,Menulis teks antarmuka
+SK279,WebSocket & Real-time Communication,Backend,hard_skill,Komunikasi dua arah waktu nyata

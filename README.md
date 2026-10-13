@@ -20,6 +20,9 @@ skill):
 - **Profesi tujuan & roadmap** — skill yang belum dikuasai disusun tiga tahap,
   dengan simulasi: kalau skill ini dipelajari, cakupan, skor, dan peringkatnya
   jadi berapa.
+- **Bahan belajar** — tiap skill punya tautan dokumentasi resmi, kursus gratis,
+  dan pencarian video tutorial; tiap profesi punya peta belajar, ide proyek
+  portofolio, dan tautan lowongan.
 - **Penilaian** — relevansi tiap rekomendasi dan kuesioner SUS.
 - **Dasbor peneliti** (`/peneliti`) — Hit Rate@K, Precision@K, SUS, Cronbach's α,
   daftar responden, dan ekspor CSV.
@@ -52,7 +55,7 @@ Untuk pengembangan antarmuka: jalankan backend seperti di atas, lalu
 
 ```bash
 cd backend
-.venv/bin/python -m pytest                   # 29 uji: mesin (white-box) dan API (black-box)
+.venv/bin/python -m pytest                   # 30 uji: mesin (white-box) dan API (black-box)
 .venv/bin/python scripts/evaluasi.py         # menulis docs/hasil-evaluasi.md
 ```
 

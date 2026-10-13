@@ -47,6 +47,10 @@ class BasisPengetahuan:
     def nama_skill(self) -> dict[str, str]:
         return {s["id"]: s["nama"] for s in self.skill}
 
+    def belajar_skill(self) -> dict[str, list[dict]]:
+        """Sumber belajar kurasi per skill; kosong kalau belum ada."""
+        return {s["id"]: s.get("belajar", []) for s in self.skill}
+
     def rank_jenjang(self, kode: str) -> int:
         return next(j["rank"] for j in self.jenjang if j["kode"] == kode)
 

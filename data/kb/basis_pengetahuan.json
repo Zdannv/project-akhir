@@ -1,10 +1,10 @@
 {
  "meta": {
-  "dibuat": "2026-10-12",
+  "dibuat": "2026-10-13",
   "n_profesi": 35,
-  "n_skill": 168,
-  "n_relasi": 463,
-  "n_relasi_kurasi": 156,
+  "n_skill": 277,
+  "n_relasi": 811,
+  "n_relasi_kurasi": 504,
   "sumber": {
    "pasar_kerja": "knowledge_base_profesi_IT.xlsx — pengolahan lowongan kerja LinkedIn Indonesia 2025",
    "skill_kurasi": "pelengkap_*.csv — kurasi penulis: skill untuk 9 profesi yang belum tercakup dan skill umum yang belum ada di data lowongan; perlu divalidasi",
@@ -106,6 +106,22 @@
     "N": 0.4804
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "Frontend Developer Roadmap",
+    "url": "https://roadmap.sh/frontend"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Landing page responsif",
+     "deskripsi": "Bangun ulang halaman depan sebuah produk dengan HTML, CSS, dan JavaScript, lalu ukur performa dan aksesibilitasnya dengan Lighthouse."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Dasbor data dengan React",
+     "deskripsi": "Aplikasi React + TypeScript yang mengambil data dari API publik, lengkap dengan pencarian, filter, state management, dan pengujian komponen."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -162,6 +178,22 @@
     "N": 0.4395
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "Backend Developer Roadmap",
+    "url": "https://roadmap.sh/backend"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "REST API toko daring",
+     "deskripsi": "API dengan autentikasi JWT, CRUD produk dan pesanan, validasi masukan, PostgreSQL, serta dokumentasi OpenAPI."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Layanan dengan cache dan antrean",
+     "deskripsi": "Tambahkan Redis untuk cache dan antrean pesan untuk pekerjaan latar, bungkus dengan Docker, dan uji bebannya."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -217,6 +249,22 @@
     "N": 0.4395
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "Full Stack Developer Roadmap",
+    "url": "https://roadmap.sh/full-stack"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Aplikasi catatan full-stack",
+     "deskripsi": "Frontend React dan backend Node.js dengan login, basis data, dan deployment ke layanan cloud gratis."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Marketplace sederhana",
+     "deskripsi": "Katalog, keranjang, pembayaran simulasi, panel admin, dan pipeline CI/CD yang menjalankan pengujian otomatis."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -271,6 +319,22 @@
     "N": 0.4395
    },
    "stabilitas": 0.87,
+   "peta_belajar": {
+    "judul": "Android Developer Roadmap",
+    "url": "https://roadmap.sh/android"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Aplikasi daftar tugas Android",
+     "deskripsi": "Kotlin + Jetpack Compose dengan penyimpanan Room dan arsitektur ViewModel."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Aplikasi berita daring-luring",
+     "deskripsi": "Mengambil data dari REST API, menyimpan cache lokal, notifikasi, dan rilis uji di Play Console."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -325,6 +389,22 @@
     "N": 0.4395
    },
    "stabilitas": 0.87,
+   "peta_belajar": {
+    "judul": "iOS Developer Roadmap",
+    "url": "https://roadmap.sh/ios"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Aplikasi pencatat kebiasaan iOS",
+     "deskripsi": "SwiftUI dengan penyimpanan lokal dan widget sederhana."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Aplikasi cuaca dengan API",
+     "deskripsi": "Networking async/await, Core Data untuk cache, pengujian unit, dan distribusi lewat TestFlight."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -380,6 +460,22 @@
     "N": 0.4395
    },
    "stabilitas": 0.637,
+   "peta_belajar": {
+    "judul": "Flutter Developer Roadmap",
+    "url": "https://roadmap.sh/flutter"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Aplikasi resep lintas platform",
+     "deskripsi": "Flutter dengan navigasi, pencarian, dan data dari API publik."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Aplikasi chat real-time",
+     "deskripsi": "Flutter atau React Native dengan Firebase Auth, Firestore, notifikasi, dan state management."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -437,6 +533,22 @@
     "N": 0.5506
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "Data Analyst Roadmap",
+    "url": "https://roadmap.sh/data-analyst"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Analisis penjualan dengan SQL dan Excel",
+     "deskripsi": "Bersihkan dataset penjualan publik, jawab lima pertanyaan bisnis, dan tulis temuannya."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Dasbor interaktif",
+     "deskripsi": "Dasbor Power BI atau Tableau dengan KPI, tren, dan segmentasi, disertai cerita data untuk manajemen."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -492,6 +604,22 @@
     "N": 0.5506
    },
    "stabilitas": 0.87,
+   "peta_belajar": {
+    "judul": "BI Analyst Roadmap",
+    "url": "https://roadmap.sh/bi-analyst"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Model data bintang untuk penjualan",
+     "deskripsi": "Rancang skema bintang, isi dengan ETL sederhana, dan sajikan di Power BI dengan ukuran DAX."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Laporan otomatis harian",
+     "deskripsi": "Pipeline yang memuat data ke gudang data dan memperbarui dasbor terjadwal."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -549,6 +677,22 @@
     "N": 0.6306
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "Data Engineer Roadmap",
+    "url": "https://roadmap.sh/data-engineer"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Pipeline ETL harian",
+     "deskripsi": "Ambil data dari API publik, bersihkan dengan Python, muat ke PostgreSQL, dan jadwalkan dengan Airflow."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Gudang data dengan dbt",
+     "deskripsi": "Bangun model berlapis di BigQuery atau PostgreSQL, tambahkan uji kualitas data dan dokumentasi."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -604,6 +748,22 @@
     "N": 0.5043
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "AI and Data Scientist Roadmap",
+    "url": "https://roadmap.sh/ai-data-scientist"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Prediksi harga rumah",
+     "deskripsi": "EDA, feature engineering, perbandingan beberapa model, dan evaluasi dengan validasi silang."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Analisis churn pelanggan",
+     "deskripsi": "Model klasifikasi, interpretasi fitur, dan rekomendasi bisnis yang disajikan dalam notebook dan presentasi."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -659,6 +819,22 @@
     "N": 0.5043
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "MLOps Roadmap",
+    "url": "https://roadmap.sh/mlops"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Model sebagai API",
+     "deskripsi": "Latih model klasifikasi dan sajikan lewat FastAPI di dalam kontainer Docker."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Pipeline pelatihan ulang otomatis",
+     "deskripsi": "Pelacakan eksperimen dengan MLflow, CI/CD untuk model, dan pemantauan performa setelah deployment."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -713,6 +889,22 @@
     "N": 0.4592
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "AI Engineer Roadmap",
+    "url": "https://roadmap.sh/ai-engineer"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Chatbot tanya-jawab dokumen",
+     "deskripsi": "RAG sederhana: pecah dokumen, simpan embedding di vector database, dan jawab pertanyaan dengan LLM."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Agen dengan beberapa alat",
+     "deskripsi": "Agen yang bisa mencari, menghitung, dan memanggil API, dilengkapi evaluasi jawaban dan pengaman."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -768,6 +960,22 @@
     "N": 0.4592
    },
    "stabilitas": 0.93,
+   "peta_belajar": {
+    "judul": "AI and Data Scientist Roadmap",
+    "url": "https://roadmap.sh/ai-data-scientist"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Klasifikasi gambar",
+     "deskripsi": "Fine-tuning model pralatih untuk dataset sendiri dan laporan akurasinya."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Deteksi objek waktu nyata",
+     "deskripsi": "Latih YOLO untuk kasus tertentu, optimalkan modelnya, dan jalankan dari kamera."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -823,6 +1031,22 @@
     "N": 0.4592
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "AI Engineer Roadmap",
+    "url": "https://roadmap.sh/ai-engineer"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Analisis sentimen ulasan berbahasa Indonesia",
+     "deskripsi": "Praproses teks, fine-tuning model Transformer, dan evaluasi per kelas."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Peringkas dokumen",
+     "deskripsi": "Bandingkan pendekatan ekstraktif dan generatif, lalu sajikan sebagai layanan API."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -879,6 +1103,22 @@
     "N": 0.4075
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "DevOps Roadmap",
+    "url": "https://roadmap.sh/devops"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Pipeline CI/CD untuk aplikasi web",
+     "deskripsi": "Build, uji, dan deploy otomatis dengan GitHub Actions dan Docker."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Klaster Kubernetes dengan pemantauan",
+     "deskripsi": "Deploy aplikasi dengan Helm, infrastruktur lewat Terraform, dan dasbor Prometheus + Grafana."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -934,6 +1174,22 @@
     "N": 0.3948
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "AWS Roadmap",
+    "url": "https://roadmap.sh/aws"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Situs statis di cloud",
+     "deskripsi": "Hosting, CDN, domain, dan HTTPS di satu penyedia cloud, seluruhnya ditulis sebagai Terraform."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Arsitektur tiga lapis yang tangguh",
+     "deskripsi": "VPC, load balancer, autoscaling, basis data terkelola, dan kebijakan IAM dengan hak minimum."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -989,6 +1245,22 @@
     "N": 0.4075
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "DevOps Roadmap",
+    "url": "https://roadmap.sh/devops"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Dasbor keandalan layanan",
+     "deskripsi": "Tetapkan SLI dan SLO untuk sebuah layanan, pasang pemantauan, dan buat aturan peringatan."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Latihan insiden",
+     "deskripsi": "Simulasikan kegagalan, tulis runbook, dan susun laporan pascainsiden tanpa menyalahkan."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -1045,6 +1317,22 @@
     "N": 0.3097
    },
    "stabilitas": 0.93,
+   "peta_belajar": {
+    "judul": "Cyber Security Roadmap",
+    "url": "https://roadmap.sh/cyber-security"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Laboratorium SIEM rumahan",
+     "deskripsi": "Kumpulkan log dari beberapa mesin virtual, buat aturan deteksi, dan dokumentasikan temuannya."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Analisis insiden simulasi",
+     "deskripsi": "Telusuri serangan pada lab sendiri, petakan ke MITRE ATT&CK, dan tulis laporan penanganannya."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -1101,6 +1389,22 @@
     "N": 0.4027
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "Cyber Security Roadmap",
+    "url": "https://roadmap.sh/cyber-security"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Catatan penyelesaian lab keamanan web",
+     "deskripsi": "Selesaikan lab kerentanan web dan tulis laporan temuan dengan langkah reproduksi dan saran perbaikan."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Uji penetrasi lab sendiri",
+     "deskripsi": "Pemindaian, eksploitasi, dan eskalasi hak akses pada mesin latihan yang sah, ditutup laporan profesional."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -1159,6 +1463,22 @@
     "N": 0.4234
    },
    "stabilitas": 0.713,
+   "peta_belajar": {
+    "judul": "UX Design Roadmap",
+    "url": "https://roadmap.sh/ux-design"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Desain ulang aplikasi yang ada",
+     "deskripsi": "Audit kegunaan, wireframe, dan purwarupa interaktif di Figma, disertai alasan tiap keputusan."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Studi kasus UX ujung ke ujung",
+     "deskripsi": "Riset pengguna, persona, alur, design system, uji kegunaan, dan iterasi berdasarkan hasilnya."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -1214,6 +1534,22 @@
     "N": 0.3187
    },
    "stabilitas": 0.87,
+   "peta_belajar": {
+    "judul": "Product Manager Roadmap",
+    "url": "https://roadmap.sh/product-manager"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Dokumen kebutuhan produk (PRD)",
+     "deskripsi": "Pilih satu masalah pengguna, tulis PRD, user story, dan metrik keberhasilannya."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Peta jalan dan analisis eksperimen",
+     "deskripsi": "Susun prioritas fitur, rancang uji A/B, dan analisis hasilnya dengan data contoh."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -1270,6 +1606,22 @@
     "N": 0.5575
    },
    "stabilitas": 0.87,
+   "peta_belajar": {
+    "judul": "QA Engineer Roadmap",
+    "url": "https://roadmap.sh/qa"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Rencana dan kasus uji",
+     "deskripsi": "Rencana uji dan kasus uji untuk aplikasi web publik, beserta laporan bug yang jelas."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Rangkaian uji otomatis",
+     "deskripsi": "Uji UI dengan Playwright dan uji API dengan Postman, dijalankan otomatis di CI."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -1326,6 +1678,22 @@
     "N": 0.254
    },
    "stabilitas": 0.93,
+   "peta_belajar": {
+    "judul": "Engineering Manager Roadmap",
+    "url": "https://roadmap.sh/engineering-manager"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Rencana proyek TI",
+     "deskripsi": "Piagam proyek, WBS, jadwal Gantt, anggaran, dan daftar risiko untuk proyek contoh."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Simulasi pengelolaan sprint",
+     "deskripsi": "Kelola backlog di Jira, jalankan beberapa sprint, dan laporkan kemajuan ke pemangku kepentingan."
+    }
+   ],
    "skill_sumber": "kurasi"
   },
   {
@@ -1377,6 +1745,19 @@
     "N": 0.4527
    },
    "stabilitas": 1.0,
+   "peta_belajar": null,
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Basis pengetahuan helpdesk",
+     "deskripsi": "Tulis panduan penyelesaian untuk sepuluh masalah TI yang paling sering muncul."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Lab kantor kecil",
+     "deskripsi": "Siapkan domain, akun pengguna, berbagi berkas, dan sistem tiket di mesin virtual."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -1433,6 +1814,22 @@
     "N": 0.4075
    },
    "stabilitas": 0.93,
+   "peta_belajar": {
+    "judul": "Linux Roadmap",
+    "url": "https://roadmap.sh/linux"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Server Linux yang diperkeras",
+     "deskripsi": "Pasang server web, atur firewall, akun, dan cadangan otomatis."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Otomasi konfigurasi",
+     "deskripsi": "Kelola beberapa server dengan Ansible, tambahkan pemantauan, dan uji prosedur pemulihannya."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -1489,6 +1886,19 @@
     "N": 0.3948
    },
    "stabilitas": 1.0,
+   "peta_belajar": null,
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Rancangan jaringan kantor",
+     "deskripsi": "Topologi, subnetting, dan VLAN di simulator jaringan, lengkap dengan dokumentasinya."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Jaringan multi-lokasi",
+     "deskripsi": "Routing dinamis, VPN antarlokasi, pemantauan, dan skrip otomasi konfigurasi."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -1545,6 +1955,22 @@
     "N": 0.5194
    },
    "stabilitas": 0.93,
+   "peta_belajar": {
+    "judul": "PostgreSQL DBA Roadmap",
+    "url": "https://roadmap.sh/postgresql-dba"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Rancang dan optimalkan basis data",
+     "deskripsi": "Skema ternormalisasi untuk sebuah aplikasi, indeks, dan perbandingan rencana eksekusi kueri."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Replikasi dan pemulihan",
+     "deskripsi": "Siapkan replikasi, cadangan terjadwal, dan latihan pemulihan ke titik waktu tertentu."
+    }
+   ],
    "skill_sumber": "campuran"
   },
   {
@@ -1601,6 +2027,19 @@
     "N": 0.254
    },
    "stabilitas": 0.87,
+   "peta_belajar": null,
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Panduan kerja tim Scrum",
+     "deskripsi": "Susun definisi selesai, format acara sprint, dan papan kerja untuk tim contoh."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Studi kasus perbaikan proses",
+     "deskripsi": "Ukur velocity dan waktu siklus sebuah tim, temukan hambatannya, dan usulkan perbaikan."
+    }
+   ],
    "skill_sumber": "kurasi"
   },
   {
@@ -1658,6 +2097,19 @@
     "N": 0.4154
    },
    "stabilitas": 0.713,
+   "peta_belajar": null,
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Audit SEO sebuah situs",
+     "deskripsi": "Analisis kata kunci, masalah teknis, dan rekomendasi perbaikan yang diurutkan menurut dampak."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Dasbor kinerja kampanye",
+     "deskripsi": "Gabungkan data iklan dan analitik ke Looker Studio, lalu simpulkan saluran yang paling efisien."
+    }
+   ],
    "skill_sumber": "kurasi"
   },
   {
@@ -1715,6 +2167,22 @@
     "N": 0.3726
    },
    "stabilitas": 0.83,
+   "peta_belajar": {
+    "judul": "Game Developer Roadmap",
+    "url": "https://roadmap.sh/game-developer"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Gim 2D sederhana",
+     "deskripsi": "Platformer atau puzzle dengan Unity atau Godot, lengkap dengan menu, skor, dan suara."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Gim 3D yang dipublikasikan",
+     "deskripsi": "Mekanika inti, AI musuh, optimasi performa, dan rilis di itch.io."
+    }
+   ],
    "skill_sumber": "kurasi"
   },
   {
@@ -1771,6 +2239,19 @@
     "N": 0.4215
    },
    "stabilitas": 0.93,
+   "peta_belajar": null,
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Dokumen analisis kebutuhan",
+     "deskripsi": "Wawancara pengguna, diagram proses bisnis, dan spesifikasi kebutuhan untuk sebuah sistem."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Analisis kesenjangan dan usulan solusi",
+     "deskripsi": "Bandingkan proses saat ini dan yang diinginkan, hitung kelayakannya, dan siapkan skenario UAT."
+    }
+   ],
    "skill_sumber": "kurasi"
   },
   {
@@ -1827,6 +2308,19 @@
     "N": 0.4215
    },
    "stabilitas": 0.93,
+   "peta_belajar": null,
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Konfigurasi modul ERP",
+     "deskripsi": "Siapkan modul penjualan dan persediaan di Odoo untuk usaha contoh."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Modul kustom dan migrasi data",
+     "deskripsi": "Buat modul Odoo sederhana dengan Python dan pindahkan data dari spreadsheet."
+    }
+   ],
    "skill_sumber": "kurasi"
   },
   {
@@ -1881,6 +2375,22 @@
     "N": 0.3736
    },
    "stabilitas": 0.487,
+   "peta_belajar": {
+    "judul": "Blockchain Developer Roadmap",
+    "url": "https://roadmap.sh/blockchain"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Token dan kontrak sederhana",
+     "deskripsi": "Tulis, uji, dan deploy kontrak ERC-20 ke jaringan uji."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Aplikasi terdesentralisasi",
+     "deskripsi": "Smart contract dengan antarmuka web, pengujian menyeluruh, dan tinjauan keamanannya."
+    }
+   ],
    "skill_sumber": "kurasi"
   },
   {
@@ -1937,6 +2447,19 @@
     "N": 0.476
    },
    "stabilitas": 0.78,
+   "peta_belajar": null,
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Pemantau suhu dan kelembapan",
+     "deskripsi": "Sensor dengan ESP32 yang mengirim data lewat MQTT ke dasbor."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Sistem otomasi rumah",
+     "deskripsi": "Beberapa perangkat, kendali jarak jauh, penyimpanan data, dan peringatan otomatis."
+    }
+   ],
    "skill_sumber": "kurasi"
   },
   {
@@ -1992,6 +2515,22 @@
     "N": 0.6857
    },
    "stabilitas": 0.637,
+   "peta_belajar": {
+    "judul": "Technical Writer Roadmap",
+    "url": "https://roadmap.sh/technical-writer"
+   },
+   "proyek": [
+    {
+     "tingkat": "Pemula",
+     "judul": "Dokumentasi sebuah proyek sumber terbuka",
+     "deskripsi": "Tulis ulang panduan memulai dan README sebuah proyek agar lebih mudah diikuti."
+    },
+    {
+     "tingkat": "Menengah",
+     "judul": "Situs dokumentasi API",
+     "deskripsi": "Dokumentasi API dengan OpenAPI dan Docusaurus, dilengkapi tutorial dan contoh kode."
+    }
+   ],
    "skill_sumber": "kurasi"
   }
  ],
@@ -2005,6 +2544,20 @@
    "sumber": "lowongan",
    "alias": [
     "py"
+   ],
+   "belajar": [
+    {
+     "judul": "The Python Tutorial",
+     "penyedia": "python.org",
+     "jenis": "dokumentasi",
+     "url": "https://docs.python.org/3/tutorial/"
+    },
+    {
+     "judul": "CS50's Introduction to Programming with Python",
+     "penyedia": "Harvard CS50",
+     "jenis": "kursus",
+     "url": "https://cs50.harvard.edu/python/"
+    }
    ]
   },
   {
@@ -2018,6 +2571,20 @@
     "JS",
     "ES6",
     "ECMAScript"
+   ],
+   "belajar": [
+    {
+     "judul": "The Modern JavaScript Tutorial",
+     "penyedia": "javascript.info",
+     "jenis": "panduan",
+     "url": "https://javascript.info/"
+    },
+    {
+     "judul": "JavaScript Algorithms and Data Structures",
+     "penyedia": "freeCodeCamp",
+     "jenis": "kursus",
+     "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/"
+    }
    ]
   },
   {
@@ -2029,6 +2596,14 @@
    "sumber": "lowongan",
    "alias": [
     "TS"
+   ],
+   "belajar": [
+    {
+     "judul": "The TypeScript Handbook",
+     "penyedia": "typescriptlang.org",
+     "jenis": "dokumentasi",
+     "url": "https://www.typescriptlang.org/docs/handbook/intro.html"
+    }
    ]
   },
   {
@@ -2038,7 +2613,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Bahasa OOP untuk enterprise backend dan Android development",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Learn Java",
+     "penyedia": "dev.java",
+     "jenis": "dokumentasi",
+     "url": "https://dev.java/learn/"
+    }
+   ]
   },
   {
    "id": "SK005",
@@ -2047,7 +2630,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Bahasa modern untuk Android development (pengganti Java)",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Get started with Kotlin",
+     "penyedia": "kotlinlang.org",
+     "jenis": "dokumentasi",
+     "url": "https://kotlinlang.org/docs/getting-started.html"
+    }
+   ]
   },
   {
    "id": "SK006",
@@ -2056,7 +2647,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Bahasa native Apple untuk iOS/macOS development",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "The Swift Programming Language",
+     "penyedia": "swift.org",
+     "jenis": "dokumentasi",
+     "url": "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/"
+    }
+   ]
   },
   {
    "id": "SK007",
@@ -2068,6 +2667,14 @@
    "alias": [
     "C Sharp",
     ".NET"
+   ],
+   "belajar": [
+    {
+     "judul": "A tour of C#",
+     "penyedia": "Microsoft Learn",
+     "jenis": "dokumentasi",
+     "url": "https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/"
+    }
    ]
   },
   {
@@ -2081,6 +2688,14 @@
     "C",
     "C++",
     "CPP"
+   ],
+   "belajar": [
+    {
+     "judul": "Learn C++",
+     "penyedia": "learncpp.com",
+     "jenis": "panduan",
+     "url": "https://www.learncpp.com/"
+    }
    ]
   },
   {
@@ -2092,6 +2707,14 @@
    "sumber": "lowongan",
    "alias": [
     "Golang"
+   ],
+   "belajar": [
+    {
+     "judul": "A Tour of Go",
+     "penyedia": "go.dev",
+     "jenis": "latihan",
+     "url": "https://go.dev/tour/"
+    }
    ]
   },
   {
@@ -2101,7 +2724,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Bahasa server-side untuk web development (Laravel, CodeIgniter)",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "PHP: A simple tutorial",
+     "penyedia": "php.net",
+     "jenis": "dokumentasi",
+     "url": "https://www.php.net/manual/en/tutorial.php"
+    }
+   ]
   },
   {
    "id": "SK011",
@@ -2110,7 +2741,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Bahasa Google untuk Flutter cross-platform development",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Introduction to Dart",
+     "penyedia": "dart.dev",
+     "jenis": "dokumentasi",
+     "url": "https://dart.dev/language"
+    }
+   ]
   },
   {
    "id": "SK012",
@@ -2119,7 +2758,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Bahasa statistik untuk analisis data dan visualisasi",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "R for Data Science (2e)",
+     "penyedia": "Hadley Wickham",
+     "jenis": "panduan",
+     "url": "https://r4ds.hadley.nz/"
+    }
+   ]
   },
   {
    "id": "SK013",
@@ -2128,7 +2775,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Bahasa JVM untuk big data (Apache Spark) dan functional programming",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Tour of Scala",
+     "penyedia": "scala-lang.org",
+     "jenis": "dokumentasi",
+     "url": "https://docs.scala-lang.org/tour/tour-of-scala.html"
+    }
+   ]
   },
   {
    "id": "SK014",
@@ -2137,7 +2792,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Bahasa sistem dengan memory safety untuk performa & keamanan tinggi",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "The Rust Programming Language",
+     "penyedia": "rust-lang.org",
+     "jenis": "panduan",
+     "url": "https://doc.rust-lang.org/book/"
+    }
+   ]
   },
   {
    "id": "SK015",
@@ -2148,6 +2811,20 @@
    "sumber": "lowongan",
    "alias": [
     "Query"
+   ],
+   "belajar": [
+    {
+     "judul": "SQLBolt: Learn SQL with interactive exercises",
+     "penyedia": "SQLBolt",
+     "jenis": "latihan",
+     "url": "https://sqlbolt.com/"
+    },
+    {
+     "judul": "Intro to SQL",
+     "penyedia": "Kaggle Learn",
+     "jenis": "kursus",
+     "url": "https://www.kaggle.com/learn/intro-to-sql"
+    }
    ]
   },
   {
@@ -2160,6 +2837,14 @@
    "alias": [
     "React",
     "ReactJS"
+   ],
+   "belajar": [
+    {
+     "judul": "Learn React",
+     "penyedia": "react.dev",
+     "jenis": "dokumentasi",
+     "url": "https://react.dev/learn"
+    }
    ]
   },
   {
@@ -2172,6 +2857,14 @@
    "alias": [
     "Vue",
     "VueJS"
+   ],
+   "belajar": [
+    {
+     "judul": "Vue.js Tutorial",
+     "penyedia": "vuejs.org",
+     "jenis": "latihan",
+     "url": "https://vuejs.org/tutorial/"
+    }
    ]
   },
   {
@@ -2181,7 +2874,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Framework TypeScript dari Google untuk SPA enterprise",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Angular Tutorials",
+     "penyedia": "angular.dev",
+     "jenis": "latihan",
+     "url": "https://angular.dev/tutorials"
+    }
+   ]
   },
   {
    "id": "SK019",
@@ -2192,6 +2893,14 @@
    "sumber": "lowongan",
    "alias": [
     "NextJS"
+   ],
+   "belajar": [
+    {
+     "judul": "Learn Next.js",
+     "penyedia": "nextjs.org",
+     "jenis": "kursus",
+     "url": "https://nextjs.org/learn"
+    }
    ]
   },
   {
@@ -2203,6 +2912,14 @@
    "sumber": "lowongan",
    "alias": [
     "NuxtJS"
+   ],
+   "belajar": [
+    {
+     "judul": "Nuxt: Getting Started",
+     "penyedia": "nuxt.com",
+     "jenis": "dokumentasi",
+     "url": "https://nuxt.com/docs/getting-started/introduction"
+    }
    ]
   },
   {
@@ -2217,6 +2934,20 @@
     "CSS",
     "HTML5",
     "CSS3"
+   ],
+   "belajar": [
+    {
+     "judul": "Learn web development",
+     "penyedia": "MDN Web Docs",
+     "jenis": "panduan",
+     "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development"
+    },
+    {
+     "judul": "Responsive Web Design",
+     "penyedia": "freeCodeCamp",
+     "jenis": "kursus",
+     "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/"
+    }
    ]
   },
   {
@@ -2226,7 +2957,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Utility-first CSS framework untuk styling cepat dan konsisten",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Tailwind CSS Documentation",
+     "penyedia": "tailwindcss.com",
+     "jenis": "dokumentasi",
+     "url": "https://tailwindcss.com/docs"
+    }
+   ]
   },
   {
    "id": "SK023",
@@ -2235,7 +2974,15 @@
    "tipe": "hard_skill",
    "deskripsi": "CSS framework populer untuk responsive web design",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Get started with Bootstrap",
+     "penyedia": "getbootstrap.com",
+     "jenis": "dokumentasi",
+     "url": "https://getbootstrap.com/docs/5.3/getting-started/introduction/"
+    }
+   ]
   },
   {
    "id": "SK024",
@@ -2247,6 +2994,14 @@
    "alias": [
     "Node",
     "NodeJS"
+   ],
+   "belajar": [
+    {
+     "judul": "Learn Node.js",
+     "penyedia": "nodejs.org",
+     "jenis": "dokumentasi",
+     "url": "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs"
+    }
    ]
   },
   {
@@ -2256,7 +3011,15 @@
    "tipe": "hard_skill",
    "deskripsi": "PHP framework MVC untuk web application development",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Laravel Documentation",
+     "penyedia": "laravel.com",
+     "jenis": "dokumentasi",
+     "url": "https://laravel.com/docs"
+    }
+   ]
   },
   {
    "id": "SK026",
@@ -2265,7 +3028,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Python web framework untuk rapid development",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Writing your first Django app",
+     "penyedia": "djangoproject.com",
+     "jenis": "dokumentasi",
+     "url": "https://docs.djangoproject.com/en/stable/intro/tutorial01/"
+    }
+   ]
   },
   {
    "id": "SK027",
@@ -2274,7 +3045,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Modern Python framework untuk REST API berkecepatan tinggi",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "FastAPI Tutorial - User Guide",
+     "penyedia": "fastapi.tiangolo.com",
+     "jenis": "dokumentasi",
+     "url": "https://fastapi.tiangolo.com/tutorial/"
+    }
+   ]
   },
   {
    "id": "SK028",
@@ -2283,7 +3062,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Java framework untuk enterprise microservices dan REST API",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Spring Guides",
+     "penyedia": "spring.io",
+     "jenis": "panduan",
+     "url": "https://spring.io/guides"
+    }
+   ]
   },
   {
    "id": "SK029",
@@ -2294,6 +3081,14 @@
    "sumber": "lowongan",
    "alias": [
     "Express"
+   ],
+   "belajar": [
+    {
+     "judul": "Express: Getting started",
+     "penyedia": "expressjs.com",
+     "jenis": "dokumentasi",
+     "url": "https://expressjs.com/en/starter/installing.html"
+    }
    ]
   },
   {
@@ -2303,7 +3098,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Node.js framework TypeScript untuk aplikasi backend terstruktur",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "NestJS Documentation",
+     "penyedia": "nestjs.com",
+     "jenis": "dokumentasi",
+     "url": "https://docs.nestjs.com/"
+    }
+   ]
   },
   {
    "id": "SK031",
@@ -2312,7 +3115,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Micro Python web framework untuk API sederhana",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Flask Tutorial",
+     "penyedia": "palletsprojects.com",
+     "jenis": "dokumentasi",
+     "url": "https://flask.palletsprojects.com/en/stable/tutorial/"
+    }
+   ]
   },
   {
    "id": "SK032",
@@ -2321,7 +3132,15 @@
    "tipe": "hard_skill",
    "deskripsi": "PHP framework ringan untuk web development",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "CodeIgniter User Guide",
+     "penyedia": "codeigniter.com",
+     "jenis": "dokumentasi",
+     "url": "https://codeigniter.com/user_guide/intro/index.html"
+    }
+   ]
   },
   {
    "id": "SK033",
@@ -2333,6 +3152,14 @@
    "alias": [
     "dotnet",
     ".NET"
+   ],
+   "belajar": [
+    {
+     "judul": "Get started with ASP.NET Core",
+     "penyedia": "Microsoft Learn",
+     "jenis": "dokumentasi",
+     "url": "https://learn.microsoft.com/en-us/aspnet/core/getting-started/"
+    }
    ]
   },
   {
@@ -2342,7 +3169,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Framework cross-platform Google untuk mobile, web, dan desktop",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Learn Flutter",
+     "penyedia": "flutter.dev",
+     "jenis": "dokumentasi",
+     "url": "https://docs.flutter.dev/get-started/learn-flutter"
+    }
+   ]
   },
   {
    "id": "SK035",
@@ -2353,6 +3188,14 @@
    "sumber": "lowongan",
    "alias": [
     "RN"
+   ],
+   "belajar": [
+    {
+     "judul": "React Native: Introduction",
+     "penyedia": "reactnative.dev",
+     "jenis": "dokumentasi",
+     "url": "https://reactnative.dev/docs/getting-started"
+    }
    ]
   },
   {
@@ -2364,6 +3207,14 @@
    "sumber": "lowongan",
    "alias": [
     "Android Studio"
+   ],
+   "belajar": [
+    {
+     "judul": "Android Basics with Compose",
+     "penyedia": "Android Developers",
+     "jenis": "kursus",
+     "url": "https://developer.android.com/courses/android-basics-compose/course"
+    }
    ]
   },
   {
@@ -2377,6 +3228,14 @@
     "SwiftUI",
     "UIKit",
     "Xcode"
+   ],
+   "belajar": [
+    {
+     "judul": "SwiftUI Tutorials",
+     "penyedia": "Apple Developer",
+     "jenis": "latihan",
+     "url": "https://developer.apple.com/tutorials/swiftui"
+    }
    ]
   },
   {
@@ -2388,6 +3247,14 @@
    "sumber": "lowongan",
    "alias": [
     "Postgres"
+   ],
+   "belajar": [
+    {
+     "judul": "PostgreSQL Tutorial",
+     "penyedia": "postgresql.org",
+     "jenis": "dokumentasi",
+     "url": "https://www.postgresql.org/docs/current/tutorial.html"
+    }
    ]
   },
   {
@@ -2399,6 +3266,14 @@
    "sumber": "lowongan",
    "alias": [
     "MariaDB"
+   ],
+   "belajar": [
+    {
+     "judul": "MySQL Tutorial",
+     "penyedia": "dev.mysql.com",
+     "jenis": "dokumentasi",
+     "url": "https://dev.mysql.com/doc/refman/8.4/en/tutorial.html"
+    }
    ]
   },
   {
@@ -2411,6 +3286,14 @@
    "alias": [
     "Mongo",
     "NoSQL"
+   ],
+   "belajar": [
+    {
+     "judul": "MongoDB University",
+     "penyedia": "MongoDB",
+     "jenis": "kursus",
+     "url": "https://learn.mongodb.com/"
+    }
    ]
   },
   {
@@ -2420,7 +3303,15 @@
    "tipe": "hard_skill",
    "deskripsi": "In-memory data structure store untuk caching dan session",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Redis University",
+     "penyedia": "Redis",
+     "jenis": "kursus",
+     "url": "https://university.redis.io/"
+    }
+   ]
   },
   {
    "id": "SK042",
@@ -2429,7 +3320,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Database ringan untuk mobile dan embedded",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "SQLite Documentation",
+     "penyedia": "sqlite.org",
+     "jenis": "dokumentasi",
+     "url": "https://www.sqlite.org/docs.html"
+    }
+   ]
   },
   {
    "id": "SK043",
@@ -2441,6 +3340,14 @@
    "alias": [
     "SQL Server",
     "MSSQL"
+   ],
+   "belajar": [
+    {
+     "judul": "SQL Server Tutorials",
+     "penyedia": "Microsoft Learn",
+     "jenis": "dokumentasi",
+     "url": "https://learn.microsoft.com/en-us/sql/sql-server/tutorials-for-sql-server-2016"
+    }
    ]
   },
   {
@@ -2450,7 +3357,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Database enterprise Oracle untuk sistem skala besar",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK045",
@@ -2459,7 +3367,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Serverless data warehouse Google Cloud untuk analitik skala besar",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "BigQuery Documentation",
+     "penyedia": "Google Cloud",
+     "jenis": "dokumentasi",
+     "url": "https://cloud.google.com/bigquery/docs"
+    }
+   ]
   },
   {
    "id": "SK046",
@@ -2468,7 +3384,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Cloud data platform untuk data warehousing modern",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Snowflake Documentation",
+     "penyedia": "Snowflake",
+     "jenis": "dokumentasi",
+     "url": "https://docs.snowflake.com/"
+    }
+   ]
   },
   {
    "id": "SK047",
@@ -2477,7 +3401,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Distributed NoSQL database untuk write-heavy workloads",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK048",
@@ -2486,7 +3411,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Search engine dan analitik berbasis Lucene",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Elastic Training",
+     "penyedia": "Elastic",
+     "jenis": "kursus",
+     "url": "https://www.elastic.co/training"
+    }
+   ]
   },
   {
    "id": "SK049",
@@ -2499,6 +3432,14 @@
     "AWS",
     "EC2",
     "S3"
+   ],
+   "belajar": [
+    {
+     "judul": "AWS Skill Builder",
+     "penyedia": "Amazon Web Services",
+     "jenis": "kursus",
+     "url": "https://skillbuilder.aws/"
+    }
    ]
   },
   {
@@ -2511,6 +3452,14 @@
    "alias": [
     "GCP",
     "Google Cloud"
+   ],
+   "belajar": [
+    {
+     "judul": "Google Cloud Skills Boost",
+     "penyedia": "Google Cloud",
+     "jenis": "kursus",
+     "url": "https://www.cloudskillsboost.google/"
+    }
    ]
   },
   {
@@ -2522,6 +3471,14 @@
    "sumber": "lowongan",
    "alias": [
     "Azure"
+   ],
+   "belajar": [
+    {
+     "judul": "Microsoft Learn: Azure",
+     "penyedia": "Microsoft Learn",
+     "jenis": "kursus",
+     "url": "https://learn.microsoft.com/en-us/training/azure/"
+    }
    ]
   },
   {
@@ -2531,7 +3488,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Platform containerization untuk packaging dan deployment aplikasi",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Docker: Get started",
+     "penyedia": "docker.com",
+     "jenis": "dokumentasi",
+     "url": "https://docs.docker.com/get-started/"
+    }
+   ]
   },
   {
    "id": "SK053",
@@ -2543,6 +3508,14 @@
    "alias": [
     "K8s",
     "Kubernetes"
+   ],
+   "belajar": [
+    {
+     "judul": "Kubernetes Tutorials",
+     "penyedia": "kubernetes.io",
+     "jenis": "latihan",
+     "url": "https://kubernetes.io/docs/tutorials/"
+    }
    ]
   },
   {
@@ -2552,7 +3525,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Infrastructure as Code tool untuk provisioning cloud resources",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Terraform Tutorials",
+     "penyedia": "HashiCorp",
+     "jenis": "latihan",
+     "url": "https://developer.hashicorp.com/terraform/tutorials"
+    }
+   ]
   },
   {
    "id": "SK055",
@@ -2566,6 +3547,14 @@
     "Jenkins",
     "GitHub Actions",
     "GitLab CI"
+   ],
+   "belajar": [
+    {
+     "judul": "GitHub Actions Documentation",
+     "penyedia": "GitHub",
+     "jenis": "dokumentasi",
+     "url": "https://docs.github.com/en/actions"
+    }
    ]
   },
   {
@@ -2579,6 +3568,14 @@
     "Linux",
     "Ubuntu",
     "Unix"
+   ],
+   "belajar": [
+    {
+     "judul": "The Linux command line for beginners",
+     "penyedia": "Ubuntu",
+     "jenis": "latihan",
+     "url": "https://ubuntu.com/tutorials/command-line-for-beginners"
+    }
    ]
   },
   {
@@ -2591,6 +3588,14 @@
    "alias": [
     "Nginx",
     "Apache"
+   ],
+   "belajar": [
+    {
+     "judul": "NGINX Beginner's Guide",
+     "penyedia": "nginx.org",
+     "jenis": "dokumentasi",
+     "url": "https://nginx.org/en/docs/beginners_guide.html"
+    }
    ]
   },
   {
@@ -2600,7 +3605,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Workflow orchestration untuk scheduling dan monitoring data pipeline",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Airflow Tutorials",
+     "penyedia": "Apache Airflow",
+     "jenis": "dokumentasi",
+     "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html"
+    }
+   ]
   },
   {
    "id": "SK059",
@@ -2609,7 +3622,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Framework big data processing untuk komputasi terdistribusi",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Spark Quick Start",
+     "penyedia": "Apache Spark",
+     "jenis": "dokumentasi",
+     "url": "https://spark.apache.org/docs/latest/quick-start.html"
+    }
+   ]
   },
   {
    "id": "SK060",
@@ -2618,7 +3639,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Distributed streaming platform untuk real-time data pipeline",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Kafka Quickstart",
+     "penyedia": "Apache Kafka",
+     "jenis": "dokumentasi",
+     "url": "https://kafka.apache.org/quickstart"
+    }
+   ]
   },
   {
    "id": "SK061",
@@ -2627,7 +3656,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Transformation framework SQL-first untuk data warehouse",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "dbt Learn",
+     "penyedia": "dbt Labs",
+     "jenis": "kursus",
+     "url": "https://learn.getdbt.com/"
+    }
+   ]
   },
   {
    "id": "SK062",
@@ -2639,7 +3676,8 @@
    "alias": [
     "ETL",
     "ELT"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK063",
@@ -2648,7 +3686,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Star schema, dimensional modeling, fact/dimension tables",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK064",
@@ -2657,7 +3696,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Platform BI visual analytics untuk dashboard dan reporting",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Tableau Free Training Videos",
+     "penyedia": "Tableau",
+     "jenis": "kursus",
+     "url": "https://www.tableau.com/learn/training"
+    }
+   ]
   },
   {
    "id": "SK065",
@@ -2666,7 +3713,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Microsoft BI tool untuk dashboard dan laporan interaktif",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Power BI on Microsoft Learn",
+     "penyedia": "Microsoft Learn",
+     "jenis": "kursus",
+     "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi"
+    }
+   ]
   },
   {
    "id": "SK066",
@@ -2678,6 +3733,14 @@
    "alias": [
     "Looker Studio",
     "Google Data Studio"
+   ],
+   "belajar": [
+    {
+     "judul": "Looker Studio Help",
+     "penyedia": "Google",
+     "jenis": "dokumentasi",
+     "url": "https://support.google.com/looker-studio/"
+    }
    ]
   },
   {
@@ -2687,7 +3750,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Open-source BI tool sederhana untuk dashboard data",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Metabase Learn",
+     "penyedia": "Metabase",
+     "jenis": "panduan",
+     "url": "https://www.metabase.com/learn/"
+    }
+   ]
   },
   {
    "id": "SK068",
@@ -2696,7 +3767,21 @@
    "tipe": "hard_skill",
    "deskripsi": "Python library untuk data manipulation dan analisis",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Pandas",
+     "penyedia": "Kaggle Learn",
+     "jenis": "kursus",
+     "url": "https://www.kaggle.com/learn/pandas"
+    },
+    {
+     "judul": "Getting started with pandas",
+     "penyedia": "pandas.pydata.org",
+     "jenis": "dokumentasi",
+     "url": "https://pandas.pydata.org/docs/getting_started/index.html"
+    }
+   ]
   },
   {
    "id": "SK069",
@@ -2705,7 +3790,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Python library untuk komputasi numerik",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "NumPy: the absolute basics for beginners",
+     "penyedia": "numpy.org",
+     "jenis": "dokumentasi",
+     "url": "https://numpy.org/doc/stable/user/absolute_beginners.html"
+    }
+   ]
   },
   {
    "id": "SK070",
@@ -2716,6 +3809,14 @@
    "sumber": "lowongan",
    "alias": [
     "sklearn"
+   ],
+   "belajar": [
+    {
+     "judul": "scikit-learn Tutorials",
+     "penyedia": "scikit-learn.org",
+     "jenis": "dokumentasi",
+     "url": "https://scikit-learn.org/stable/getting_started.html"
+    }
    ]
   },
   {
@@ -2727,6 +3828,14 @@
    "sumber": "lowongan",
    "alias": [
     "Keras"
+   ],
+   "belajar": [
+    {
+     "judul": "TensorFlow Tutorials",
+     "penyedia": "tensorflow.org",
+     "jenis": "latihan",
+     "url": "https://www.tensorflow.org/tutorials"
+    }
    ]
   },
   {
@@ -2736,7 +3845,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Meta framework untuk deep learning dan penelitian AI",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "PyTorch Tutorials",
+     "penyedia": "pytorch.org",
+     "jenis": "latihan",
+     "url": "https://pytorch.org/tutorials/"
+    }
+   ]
   },
   {
    "id": "SK073",
@@ -2747,6 +3864,14 @@
    "sumber": "lowongan",
    "alias": [
     "Transformers"
+   ],
+   "belajar": [
+    {
+     "judul": "Hugging Face Learn",
+     "penyedia": "Hugging Face",
+     "jenis": "kursus",
+     "url": "https://huggingface.co/learn"
+    }
    ]
   },
   {
@@ -2756,7 +3881,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Framework untuk membangun aplikasi berbasis LLM",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "LangChain Documentation",
+     "penyedia": "LangChain",
+     "jenis": "dokumentasi",
+     "url": "https://python.langchain.com/docs/introduction/"
+    }
+   ]
   },
   {
    "id": "SK075",
@@ -2768,6 +3901,14 @@
    "alias": [
     "ChatGPT API",
     "LLM API"
+   ],
+   "belajar": [
+    {
+     "judul": "OpenAI API Quickstart",
+     "penyedia": "OpenAI",
+     "jenis": "dokumentasi",
+     "url": "https://platform.openai.com/docs/quickstart"
+    }
    ]
   },
   {
@@ -2777,7 +3918,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Framework komputasi GPU untuk akselerasi ML training",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK077",
@@ -2788,6 +3930,14 @@
    "sumber": "lowongan",
    "alias": [
     "OpenCV"
+   ],
+   "belajar": [
+    {
+     "judul": "OpenCV Tutorials",
+     "penyedia": "opencv.org",
+     "jenis": "dokumentasi",
+     "url": "https://docs.opencv.org/4.x/d9/df8/tutorial_root.html"
+    }
    ]
   },
   {
@@ -2799,7 +3949,8 @@
    "sumber": "lowongan",
    "alias": [
     "RAG"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK079",
@@ -2808,7 +3959,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Database untuk menyimpan dan mencari embeddings ML",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK080",
@@ -2817,7 +3969,21 @@
    "tipe": "hard_skill",
    "deskripsi": "Sistem version control terdistribusi untuk manajemen kode",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Pro Git (buku gratis)",
+     "penyedia": "git-scm.com",
+     "jenis": "panduan",
+     "url": "https://git-scm.com/book/en/v2"
+    },
+    {
+     "judul": "Learn Git Branching",
+     "penyedia": "learngitbranching.js.org",
+     "jenis": "latihan",
+     "url": "https://learngitbranching.js.org/"
+    }
+   ]
   },
   {
    "id": "SK081",
@@ -2829,6 +3995,14 @@
    "alias": [
     "GitHub",
     "GitLab"
+   ],
+   "belajar": [
+    {
+     "judul": "GitHub Skills",
+     "penyedia": "GitHub",
+     "jenis": "latihan",
+     "url": "https://skills.github.com/"
+    }
    ]
   },
   {
@@ -2838,7 +4012,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Keamanan jaringan termasuk firewall, IDS/IPS, VPN",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK083",
@@ -2847,7 +4022,21 @@
    "tipe": "hard_skill",
    "deskripsi": "Keamanan aplikasi web berdasarkan standar OWASP Top 10",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "OWASP Top Ten",
+     "penyedia": "OWASP",
+     "jenis": "panduan",
+     "url": "https://owasp.org/www-project-top-ten/"
+    },
+    {
+     "judul": "Web Security Academy",
+     "penyedia": "PortSwigger",
+     "jenis": "latihan",
+     "url": "https://portswigger.net/web-security"
+    }
+   ]
   },
   {
    "id": "SK084",
@@ -2859,6 +4048,14 @@
    "alias": [
     "Pentest",
     "Ethical Hacking"
+   ],
+   "belajar": [
+    {
+     "judul": "TryHackMe",
+     "penyedia": "TryHackMe",
+     "jenis": "latihan",
+     "url": "https://tryhackme.com/"
+    }
    ]
   },
   {
@@ -2868,7 +4065,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Security Information and Event Management untuk monitoring ancaman",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK086",
@@ -2877,7 +4075,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Enkripsi, sertifikat digital, dan manajemen kunci",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK087",
@@ -2886,7 +4085,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Platform desain kolaboratif untuk UI/UX dan prototyping",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Figma Learn",
+     "penyedia": "Figma",
+     "jenis": "panduan",
+     "url": "https://help.figma.com/hc/en-us"
+    }
+   ]
   },
   {
    "id": "SK088",
@@ -2899,7 +4106,8 @@
     "Photoshop",
     "Illustrator",
     "Adobe XD"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK089",
@@ -2912,6 +4120,20 @@
     "Scrum",
     "Agile",
     "Kanban"
+   ],
+   "belajar": [
+    {
+     "judul": "The Scrum Guide",
+     "penyedia": "scrumguides.org",
+     "jenis": "panduan",
+     "url": "https://scrumguides.org/scrum-guide.html"
+    },
+    {
+     "judul": "Agile Coach",
+     "penyedia": "Atlassian",
+     "jenis": "panduan",
+     "url": "https://www.atlassian.com/agile"
+    }
    ]
   },
   {
@@ -2925,6 +4147,14 @@
     "REST",
     "RESTful",
     "API"
+   ],
+   "belajar": [
+    {
+     "judul": "HTTP guides",
+     "penyedia": "MDN Web Docs",
+     "jenis": "panduan",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP"
+    }
    ]
   },
   {
@@ -2934,7 +4164,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Query language untuk API yang fleksibel",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Introduction to GraphQL",
+     "penyedia": "graphql.org",
+     "jenis": "dokumentasi",
+     "url": "https://graphql.org/learn/"
+    }
+   ]
   },
   {
    "id": "SK092",
@@ -2943,7 +4181,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Arsitektur dekomposisi aplikasi menjadi layanan kecil independen",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Microservice Architecture",
+     "penyedia": "microservices.io",
+     "jenis": "panduan",
+     "url": "https://microservices.io/"
+    }
+   ]
   },
   {
    "id": "SK093",
@@ -2952,7 +4198,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Kemampuan merancang arsitektur sistem skala besar",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "The System Design Primer",
+     "penyedia": "GitHub (donnemartin)",
+     "jenis": "panduan",
+     "url": "https://github.com/donnemartin/system-design-primer"
+    }
+   ]
   },
   {
    "id": "SK094",
@@ -2961,7 +4215,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Alat ETL ringan terintegrasi Microsoft Excel/Power BI",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Power Query documentation",
+     "penyedia": "Microsoft Learn",
+     "jenis": "dokumentasi",
+     "url": "https://learn.microsoft.com/en-us/power-query/"
+    }
+   ]
   },
   {
    "id": "SK095",
@@ -2974,6 +4236,14 @@
     "Excel",
     "Spreadsheet",
     "Google Sheets"
+   ],
+   "belajar": [
+    {
+     "judul": "Excel video training",
+     "penyedia": "Microsoft Support",
+     "jenis": "kursus",
+     "url": "https://support.microsoft.com/en-us/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb"
+    }
    ]
   },
   {
@@ -2983,7 +4253,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Platform ETL enterprise dari IBM untuk integrasi data",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK097",
@@ -2992,7 +4263,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Framework distributed storage dan processing untuk big data",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK098",
@@ -3001,7 +4273,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Eksperimen terkontrol untuk membandingkan dua variasi produk/fitur",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK101",
@@ -3012,7 +4285,8 @@
    "sumber": "lowongan",
    "alias": [
     "Pemecahan Masalah"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK102",
@@ -3024,7 +4298,8 @@
    "alias": [
     "Komunikasi",
     "Presentasi"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK103",
@@ -3036,7 +4311,8 @@
    "alias": [
     "Kerja Sama Tim",
     "Kolaborasi"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK104",
@@ -3047,7 +4323,8 @@
    "sumber": "lowongan",
    "alias": [
     "Berpikir Analitis"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK105",
@@ -3058,7 +4335,8 @@
    "sumber": "lowongan",
    "alias": [
     "Adaptasi"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK106",
@@ -3069,7 +4347,8 @@
    "sumber": "lowongan",
    "alias": [
     "Manajemen Waktu"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK107",
@@ -3080,7 +4359,8 @@
    "sumber": "lowongan",
    "alias": [
     "Berpikir Kritis"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK108",
@@ -3091,7 +4371,8 @@
    "sumber": "lowongan",
    "alias": [
     "Kepemimpinan"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK109",
@@ -3102,7 +4383,8 @@
    "sumber": "lowongan",
    "alias": [
     "Kreativitas"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK110",
@@ -3113,7 +4395,8 @@
    "sumber": "lowongan",
    "alias": [
     "Ketelitian"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK111",
@@ -3125,7 +4408,8 @@
    "alias": [
     "Bahasa Inggris",
     "English"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK112",
@@ -3136,7 +4420,8 @@
    "sumber": "lowongan",
    "alias": [
     "Manajemen Proyek"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK113",
@@ -3145,7 +4430,8 @@
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan berkomunikasi dan mengelola ekspektasi berbagai pemangku kepentingan",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK114",
@@ -3156,7 +4442,8 @@
    "sumber": "lowongan",
    "alias": [
     "Belajar Mandiri"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK115",
@@ -3165,7 +4452,8 @@
    "tipe": "soft_skill",
    "deskripsi": "Kemampuan menyajikan temuan data secara naratif dan visual yang persuasif",
    "sumber": "lowongan",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK116",
@@ -3178,6 +4466,14 @@
     "Jira",
     "Confluence",
     "Trello"
+   ],
+   "belajar": [
+    {
+     "judul": "Jira Software guides",
+     "penyedia": "Atlassian",
+     "jenis": "panduan",
+     "url": "https://www.atlassian.com/software/jira/guides/getting-started/introduction"
+    }
    ]
   },
   {
@@ -3187,7 +4483,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Mengelola risiko dan anggaran proyek TI",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK118",
@@ -3199,6 +4496,14 @@
    "alias": [
     "SEO",
     "SEM"
+   ],
+   "belajar": [
+    {
+     "judul": "SEO Starter Guide",
+     "penyedia": "Google Search Central",
+     "jenis": "panduan",
+     "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
+    }
    ]
   },
   {
@@ -3210,6 +4515,14 @@
    "sumber": "kurasi",
    "alias": [
     "GA4"
+   ],
+   "belajar": [
+    {
+     "judul": "Google Analytics di Skillshop",
+     "penyedia": "Google Skillshop",
+     "jenis": "kursus",
+     "url": "https://skillshop.withgoogle.com/"
+    }
    ]
   },
   {
@@ -3223,7 +4536,8 @@
     "Meta Ads",
     "Google Ads",
     "Facebook Ads"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK121",
@@ -3234,6 +4548,14 @@
    "sumber": "kurasi",
    "alias": [
     "Unity3D"
+   ],
+   "belajar": [
+    {
+     "judul": "Unity Learn",
+     "penyedia": "Unity",
+     "jenis": "kursus",
+     "url": "https://learn.unity.com/"
+    }
    ]
   },
   {
@@ -3243,7 +4565,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Mesin gim berbasis C++ dan Blueprint",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Unreal Engine Learning",
+     "penyedia": "Epic Games",
+     "jenis": "kursus",
+     "url": "https://dev.epicgames.com/community/unreal-engine/learning"
+    }
+   ]
   },
   {
    "id": "SK123",
@@ -3252,7 +4582,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Mekanika gim serta matematika dan fisika 3D",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK124",
@@ -3264,6 +4595,14 @@
    "alias": [
     "BPMN",
     "UML"
+   ],
+   "belajar": [
+    {
+     "judul": "BPMN Tutorial",
+     "penyedia": "Camunda",
+     "jenis": "panduan",
+     "url": "https://camunda.com/bpmn/"
+    }
    ]
   },
   {
@@ -3273,7 +4612,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Menggali dan menuliskan kebutuhan sistem",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK126",
@@ -3282,7 +4622,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Platform ERP SAP dan modul-modulnya",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "SAP Learning",
+     "penyedia": "SAP",
+     "jenis": "kursus",
+     "url": "https://learning.sap.com/"
+    }
+   ]
   },
   {
    "id": "SK127",
@@ -3291,7 +4639,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Platform ERP sumber terbuka berbasis Python",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Odoo Tutorials",
+     "penyedia": "Odoo",
+     "jenis": "kursus",
+     "url": "https://www.odoo.com/slides"
+    }
+   ]
   },
   {
    "id": "SK128",
@@ -3303,6 +4659,20 @@
    "alias": [
     "Solidity",
     "Ethereum"
+   ],
+   "belajar": [
+    {
+     "judul": "Solidity Documentation",
+     "penyedia": "soliditylang.org",
+     "jenis": "dokumentasi",
+     "url": "https://docs.soliditylang.org/"
+    },
+    {
+     "judul": "CryptoZombies",
+     "penyedia": "CryptoZombies",
+     "jenis": "latihan",
+     "url": "https://cryptozombies.io/"
+    }
    ]
   },
   {
@@ -3312,7 +4682,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Perkakas pengembangan aplikasi terdesentralisasi",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Hardhat: Getting started",
+     "penyedia": "Hardhat",
+     "jenis": "dokumentasi",
+     "url": "https://hardhat.org/hardhat-runner/docs/getting-started"
+    }
+   ]
   },
   {
    "id": "SK130",
@@ -3326,6 +4704,14 @@
     "ESP32",
     "Mikrokontroler",
     "Raspberry Pi"
+   ],
+   "belajar": [
+    {
+     "judul": "Arduino Learn",
+     "penyedia": "Arduino",
+     "jenis": "panduan",
+     "url": "https://docs.arduino.cc/learn/"
+    }
    ]
   },
   {
@@ -3337,6 +4723,14 @@
    "sumber": "kurasi",
    "alias": [
     "MQTT"
+   ],
+   "belajar": [
+    {
+     "judul": "MQTT: Getting Started",
+     "penyedia": "mqtt.org",
+     "jenis": "panduan",
+     "url": "https://mqtt.org/getting-started/"
+    }
    ]
   },
   {
@@ -3346,7 +4740,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Menulis dokumentasi teknis yang jelas dan terstruktur",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Technical Writing Courses",
+     "penyedia": "Google for Developers",
+     "jenis": "kursus",
+     "url": "https://developers.google.com/tech-writing"
+    }
+   ]
   },
   {
    "id": "SK133",
@@ -3355,7 +4757,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Mendokumentasikan API dan panduan pengembang",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "OpenAPI Specification",
+     "penyedia": "Swagger",
+     "jenis": "dokumentasi",
+     "url": "https://swagger.io/docs/specification/v3_0/about/"
+    }
+   ]
   },
   {
    "id": "SK134",
@@ -3366,6 +4776,20 @@
    "sumber": "kurasi",
    "alias": [
     "ML"
+   ],
+   "belajar": [
+    {
+     "judul": "Machine Learning Crash Course",
+     "penyedia": "Google for Developers",
+     "jenis": "kursus",
+     "url": "https://developers.google.com/machine-learning/crash-course"
+    },
+    {
+     "judul": "Intro to Machine Learning",
+     "penyedia": "Kaggle Learn",
+     "jenis": "kursus",
+     "url": "https://www.kaggle.com/learn/intro-to-machine-learning"
+    }
    ]
   },
   {
@@ -3379,6 +4803,14 @@
     "DL",
     "Neural Network",
     "CNN"
+   ],
+   "belajar": [
+    {
+     "judul": "Practical Deep Learning for Coders",
+     "penyedia": "fast.ai",
+     "jenis": "kursus",
+     "url": "https://course.fast.ai/"
+    }
    ]
   },
   {
@@ -3390,6 +4822,14 @@
    "sumber": "kurasi",
    "alias": [
     "NLP"
+   ],
+   "belajar": [
+    {
+     "judul": "Hugging Face LLM / NLP Course",
+     "penyedia": "Hugging Face",
+     "jenis": "kursus",
+     "url": "https://huggingface.co/learn/llm-course/chapter1/1"
+    }
    ]
   },
   {
@@ -3402,6 +4842,14 @@
    "alias": [
     "Statistika",
     "Statistik"
+   ],
+   "belajar": [
+    {
+     "judul": "Statistics and Probability",
+     "penyedia": "Khan Academy",
+     "jenis": "kursus",
+     "url": "https://www.khanacademy.org/math/statistics-probability"
+    }
    ]
   },
   {
@@ -3411,7 +4859,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Memilih dan merancang visualisasi data yang tepat",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Data Visualization",
+     "penyedia": "Kaggle Learn",
+     "jenis": "kursus",
+     "url": "https://www.kaggle.com/learn/data-visualization"
+    }
+   ]
   },
   {
    "id": "SK139",
@@ -3424,6 +4880,14 @@
     "DSA",
     "Algoritma",
     "Struktur Data"
+   ],
+   "belajar": [
+    {
+     "judul": "NeetCode Roadmap",
+     "penyedia": "NeetCode",
+     "jenis": "latihan",
+     "url": "https://neetcode.io/roadmap"
+    }
    ]
   },
   {
@@ -3436,6 +4900,14 @@
    "alias": [
     "OOP",
     "PBO"
+   ],
+   "belajar": [
+    {
+     "judul": "Design Patterns",
+     "penyedia": "Refactoring.Guru",
+     "jenis": "panduan",
+     "url": "https://refactoring.guru/design-patterns"
+    }
    ]
   },
   {
@@ -3449,7 +4921,8 @@
     "TDD",
     "Jest",
     "JUnit"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK142",
@@ -3462,6 +4935,20 @@
     "Selenium",
     "Cypress",
     "Playwright"
+   ],
+   "belajar": [
+    {
+     "judul": "Playwright: Getting started",
+     "penyedia": "playwright.dev",
+     "jenis": "dokumentasi",
+     "url": "https://playwright.dev/docs/intro"
+    },
+    {
+     "judul": "Selenium Documentation",
+     "penyedia": "selenium.dev",
+     "jenis": "dokumentasi",
+     "url": "https://www.selenium.dev/documentation/"
+    }
    ]
   },
   {
@@ -3473,6 +4960,14 @@
    "sumber": "kurasi",
    "alias": [
     "Postman"
+   ],
+   "belajar": [
+    {
+     "judul": "Postman Learning Center",
+     "penyedia": "Postman",
+     "jenis": "panduan",
+     "url": "https://learning.postman.com/"
+    }
    ]
   },
   {
@@ -3482,7 +4977,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Merancang dan menjalankan kasus uji",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK145",
@@ -3494,6 +4990,14 @@
    "alias": [
     "UI Design",
     "Prototyping"
+   ],
+   "belajar": [
+    {
+     "judul": "Learn Design",
+     "penyedia": "Figma",
+     "jenis": "kursus",
+     "url": "https://www.figma.com/resources/learn-design/"
+    }
    ]
   },
   {
@@ -3505,6 +5009,14 @@
    "sumber": "kurasi",
    "alias": [
     "UX Research"
+   ],
+   "belajar": [
+    {
+     "judul": "UX research articles",
+     "penyedia": "Nielsen Norman Group",
+     "jenis": "panduan",
+     "url": "https://www.nngroup.com/articles/"
+    }
    ]
   },
   {
@@ -3516,7 +5028,8 @@
    "sumber": "kurasi",
    "alias": [
     "Wireframe"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK148",
@@ -3525,7 +5038,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Menyusun peta jalan dan prioritas produk",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK149",
@@ -3534,7 +5048,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Menulis kebutuhan produk",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK150",
@@ -3543,7 +5058,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Mengukur perilaku pengguna produk",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK151",
@@ -3555,6 +5071,14 @@
    "alias": [
     "Jaringan Komputer",
     "CCNA"
+   ],
+   "belajar": [
+    {
+     "judul": "Networking Basics",
+     "penyedia": "Cisco Networking Academy",
+     "jenis": "kursus",
+     "url": "https://www.netacad.com/courses/networking-basics"
+    }
    ]
   },
   {
@@ -3568,6 +5092,14 @@
     "Cisco",
     "MikroTik",
     "MTCNA"
+   ],
+   "belajar": [
+    {
+     "judul": "MikroTik Documentation",
+     "penyedia": "MikroTik",
+     "jenis": "dokumentasi",
+     "url": "https://help.mikrotik.com/docs/"
+    }
    ]
   },
   {
@@ -3577,7 +5109,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Pengamanan lalu lintas jaringan",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK154",
@@ -3588,6 +5121,14 @@
    "sumber": "kurasi",
    "alias": [
     "Active Directory"
+   ],
+   "belajar": [
+    {
+     "judul": "Windows Server documentation",
+     "penyedia": "Microsoft Learn",
+     "jenis": "dokumentasi",
+     "url": "https://learn.microsoft.com/en-us/windows-server/"
+    }
    ]
   },
   {
@@ -3600,7 +5141,8 @@
    "alias": [
     "Troubleshooting",
     "Teknisi Komputer"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK156",
@@ -3612,7 +5154,8 @@
    "alias": [
     "ITIL",
     "Helpdesk"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK157",
@@ -3624,6 +5167,14 @@
    "alias": [
     "Bash",
     "Shell"
+   ],
+   "belajar": [
+    {
+     "judul": "The Linux Command Line (buku gratis)",
+     "penyedia": "linuxcommand.org",
+     "jenis": "panduan",
+     "url": "https://linuxcommand.org/tlcl.php"
+    }
    ]
   },
   {
@@ -3636,6 +5187,20 @@
    "alias": [
     "Grafana",
     "Prometheus"
+   ],
+   "belajar": [
+    {
+     "judul": "Grafana Tutorials",
+     "penyedia": "Grafana Labs",
+     "jenis": "latihan",
+     "url": "https://grafana.com/tutorials/"
+    },
+    {
+     "judul": "Prometheus: Getting started",
+     "penyedia": "prometheus.io",
+     "jenis": "dokumentasi",
+     "url": "https://prometheus.io/docs/prometheus/latest/getting_started/"
+    }
    ]
   },
   {
@@ -3647,6 +5212,14 @@
    "sumber": "kurasi",
    "alias": [
     "Ansible"
+   ],
+   "belajar": [
+    {
+     "judul": "Getting started with Ansible",
+     "penyedia": "Ansible",
+     "jenis": "dokumentasi",
+     "url": "https://docs.ansible.com/ansible/latest/getting_started/index.html"
+    }
    ]
   },
   {
@@ -3659,6 +5232,14 @@
    "alias": [
     "MLOps",
     "MLflow"
+   ],
+   "belajar": [
+    {
+     "judul": "MLflow Documentation",
+     "penyedia": "MLflow",
+     "jenis": "dokumentasi",
+     "url": "https://mlflow.org/docs/latest/index.html"
+    }
    ]
   },
   {
@@ -3668,7 +5249,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Backend-as-a-service untuk aplikasi mobile dan web",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Firebase Documentation",
+     "penyedia": "Firebase",
+     "jenis": "dokumentasi",
+     "url": "https://firebase.google.com/docs"
+    }
+   ]
   },
   {
    "id": "SK162",
@@ -3677,7 +5266,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Toolkit UI deklaratif Android",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Jetpack Compose Tutorial",
+     "penyedia": "Android Developers",
+     "jenis": "latihan",
+     "url": "https://developer.android.com/develop/ui/compose/tutorial"
+    }
+   ]
   },
   {
    "id": "SK163",
@@ -3686,7 +5283,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Pengelolaan state aplikasi",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Redux Essentials",
+     "penyedia": "redux.js.org",
+     "jenis": "dokumentasi",
+     "url": "https://redux.js.org/tutorials/essentials/part-1-overview-concepts"
+    }
+   ]
   },
   {
    "id": "SK164",
@@ -3695,7 +5300,15 @@
    "tipe": "hard_skill",
    "deskripsi": "Tata letak yang menyesuaikan ukuran layar",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Learn Responsive Design",
+     "penyedia": "web.dev",
+     "jenis": "kursus",
+     "url": "https://web.dev/learn/design"
+    }
+   ]
   },
   {
    "id": "SK165",
@@ -3708,6 +5321,14 @@
     "Burp Suite",
     "Kali Linux",
     "Nmap"
+   ],
+   "belajar": [
+    {
+     "judul": "Kali Linux Documentation",
+     "penyedia": "kali.org",
+     "jenis": "dokumentasi",
+     "url": "https://www.kali.org/docs/"
+    }
    ]
   },
   {
@@ -3717,7 +5338,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Penanganan insiden dan forensik digital",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK167",
@@ -3726,7 +5348,8 @@
    "tipe": "hard_skill",
    "deskripsi": "Pemeliharaan dan penalaan basis data",
    "sumber": "kurasi",
-   "alias": []
+   "alias": [],
+   "belajar": []
   },
   {
    "id": "SK168",
@@ -3739,6 +5362,14 @@
     "Prompt Engineering",
     "LLM",
     "Fine-tuning"
+   ],
+   "belajar": [
+    {
+     "judul": "Learn Prompting",
+     "penyedia": "learnprompting.org",
+     "jenis": "panduan",
+     "url": "https://learnprompting.org/docs/introduction"
+    }
    ]
   },
   {
@@ -3751,7 +5382,8 @@
    "alias": [
     "YOLO",
     "Object Detection"
-   ]
+   ],
+   "belajar": []
   },
   {
    "id": "SK170",
@@ -3762,7 +5394,1355 @@
    "sumber": "kurasi",
    "alias": [
     "ERD"
+   ],
+   "belajar": []
+  },
+  {
+   "id": "SK171",
+   "nama": "Web Performance & Core Web Vitals",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengukur dan mempercepat waktu muat halaman",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Learn Performance",
+     "penyedia": "web.dev",
+     "jenis": "kursus",
+     "url": "https://web.dev/learn/performance"
+    }
    ]
+  },
+  {
+   "id": "SK172",
+   "nama": "Web Accessibility (a11y)",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "Membuat antarmuka yang bisa dipakai semua orang",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Learn Accessibility",
+     "penyedia": "web.dev",
+     "jenis": "kursus",
+     "url": "https://web.dev/learn/accessibility"
+    }
+   ]
+  },
+  {
+   "id": "SK173",
+   "nama": "Build Tools (Vite / Webpack)",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "Bundling dan alur build aplikasi web",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Vite Guide",
+     "penyedia": "vite.dev",
+     "jenis": "dokumentasi",
+     "url": "https://vite.dev/guide/"
+    }
+   ]
+  },
+  {
+   "id": "SK174",
+   "nama": "Authentication & Authorization (JWT / OAuth2)",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Login, sesi, dan hak akses",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "OAuth 2.0 Simplified",
+     "penyedia": "oauth.com",
+     "jenis": "panduan",
+     "url": "https://www.oauth.com/"
+    }
+   ]
+  },
+  {
+   "id": "SK175",
+   "nama": "Message Queue (RabbitMQ)",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Komunikasi asinkron antarlayanan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "RabbitMQ Tutorials",
+     "penyedia": "RabbitMQ",
+     "jenis": "latihan",
+     "url": "https://www.rabbitmq.com/tutorials"
+    }
+   ]
+  },
+  {
+   "id": "SK176",
+   "nama": "Caching & Performance Optimization",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Mempercepat layanan dengan cache dan profiling",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK177",
+   "nama": "ORM (Prisma / Eloquent / SQLAlchemy)",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Pemetaan objek ke basis data",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Prisma: Getting started",
+     "penyedia": "Prisma",
+     "jenis": "dokumentasi",
+     "url": "https://www.prisma.io/docs/getting-started"
+    }
+   ]
+  },
+  {
+   "id": "SK178",
+   "nama": "Clean Architecture & Design Patterns",
+   "kategori": "Architecture",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyusun kode yang mudah dirawat",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Refactoring & Design Patterns",
+     "penyedia": "Refactoring.Guru",
+     "jenis": "panduan",
+     "url": "https://refactoring.guru/"
+    }
+   ]
+  },
+  {
+   "id": "SK179",
+   "nama": "Android Jetpack (Room, ViewModel, Navigation)",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "Komponen arsitektur Android",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Android Architecture guide",
+     "penyedia": "Android Developers",
+     "jenis": "dokumentasi",
+     "url": "https://developer.android.com/topic/architecture"
+    }
+   ]
+  },
+  {
+   "id": "SK180",
+   "nama": "Kotlin Coroutines & Flow",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "Pemrograman asinkron di Kotlin",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Kotlin coroutines on Android",
+     "penyedia": "Android Developers",
+     "jenis": "dokumentasi",
+     "url": "https://developer.android.com/kotlin/coroutines"
+    }
+   ]
+  },
+  {
+   "id": "SK181",
+   "nama": "App Publishing (Play Store / App Store)",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "Merilis dan memelihara aplikasi di toko aplikasi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK182",
+   "nama": "Core Data & Combine",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "Penyimpanan lokal dan pemrograman reaktif di iOS",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK183",
+   "nama": "Xcode & TestFlight",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "Perkakas pengembangan dan distribusi uji iOS",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK184",
+   "nama": "Mobile Design Guidelines (Material / HIG)",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "Pedoman desain Android dan iOS",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Material Design 3",
+     "penyedia": "Google",
+     "jenis": "panduan",
+     "url": "https://m3.material.io/"
+    },
+    {
+     "judul": "Human Interface Guidelines",
+     "penyedia": "Apple Developer",
+     "jenis": "panduan",
+     "url": "https://developer.apple.com/design/human-interface-guidelines"
+    }
+   ]
+  },
+  {
+   "id": "SK185",
+   "nama": "Push Notification & Deep Link",
+   "kategori": "Mobile",
+   "tipe": "hard_skill",
+   "deskripsi": "Notifikasi dan tautan langsung ke layar aplikasi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK186",
+   "nama": "Data Cleaning & Wrangling",
+   "kategori": "Data Science",
+   "tipe": "hard_skill",
+   "deskripsi": "Merapikan dan menyiapkan data mentah",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Data Cleaning",
+     "penyedia": "Kaggle Learn",
+     "jenis": "kursus",
+     "url": "https://www.kaggle.com/learn/data-cleaning"
+    }
+   ]
+  },
+  {
+   "id": "SK187",
+   "nama": "Exploratory Data Analysis (EDA)",
+   "kategori": "Data Science",
+   "tipe": "hard_skill",
+   "deskripsi": "Menjelajahi data untuk menemukan pola awal",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK188",
+   "nama": "Dashboard Design & KPI",
+   "kategori": "Data Visualization",
+   "tipe": "hard_skill",
+   "deskripsi": "Merancang dasbor dan indikator kinerja",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK189",
+   "nama": "DAX",
+   "kategori": "Data Tool",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa rumus Power BI",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "DAX documentation",
+     "penyedia": "Microsoft Learn",
+     "jenis": "dokumentasi",
+     "url": "https://learn.microsoft.com/en-us/dax/"
+    }
+   ]
+  },
+  {
+   "id": "SK190",
+   "nama": "Feature Engineering",
+   "kategori": "Data Science",
+   "tipe": "hard_skill",
+   "deskripsi": "Membentuk fitur untuk model",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Feature Engineering",
+     "penyedia": "Kaggle Learn",
+     "jenis": "kursus",
+     "url": "https://www.kaggle.com/learn/feature-engineering"
+    }
+   ]
+  },
+  {
+   "id": "SK191",
+   "nama": "Experiment Design & Hypothesis Testing",
+   "kategori": "Data Science",
+   "tipe": "hard_skill",
+   "deskripsi": "Merancang eksperimen dan menguji hipotesis",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK192",
+   "nama": "Time Series Forecasting",
+   "kategori": "Data Science",
+   "tipe": "hard_skill",
+   "deskripsi": "Peramalan data deret waktu",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Time Series",
+     "penyedia": "Kaggle Learn",
+     "jenis": "kursus",
+     "url": "https://www.kaggle.com/learn/time-series"
+    }
+   ]
+  },
+  {
+   "id": "SK193",
+   "nama": "Data Lake & Lakehouse (Delta / Iceberg)",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Penyimpanan data skala besar",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK194",
+   "nama": "Data Quality & Governance",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Menjaga mutu, katalog, dan tata kelola data",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK195",
+   "nama": "Stream Processing (Flink / Spark Streaming)",
+   "kategori": "Data Engineering",
+   "tipe": "hard_skill",
+   "deskripsi": "Pemrosesan data waktu nyata",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK196",
+   "nama": "Model Deployment & Serving",
+   "kategori": "ML Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyajikan model sebagai layanan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK197",
+   "nama": "LLM Evaluation & Guardrails",
+   "kategori": "AI Technique",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengukur dan menjaga keluaran model bahasa",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK198",
+   "nama": "AI Agents & Tool Calling",
+   "kategori": "AI Technique",
+   "tipe": "hard_skill",
+   "deskripsi": "Membangun agen yang memakai alat",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK199",
+   "nama": "Model Optimization (Quantization / ONNX / TensorRT)",
+   "kategori": "ML Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Memperkecil dan mempercepat model",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK200",
+   "nama": "Data Annotation & Dataset Management",
+   "kategori": "ML Specialization",
+   "tipe": "hard_skill",
+   "deskripsi": "Pelabelan dan pengelolaan dataset",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK201",
+   "nama": "Text Preprocessing & Embeddings",
+   "kategori": "ML Specialization",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyiapkan teks dan representasi vektornya",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK202",
+   "nama": "GitOps (Argo CD / Flux)",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Deployment berbasis repositori Git",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Argo CD: Getting Started",
+     "penyedia": "Argo Project",
+     "jenis": "dokumentasi",
+     "url": "https://argo-cd.readthedocs.io/en/stable/getting_started/"
+    }
+   ]
+  },
+  {
+   "id": "SK203",
+   "nama": "Helm",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Pengelola paket Kubernetes",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Helm Documentation",
+     "penyedia": "helm.sh",
+     "jenis": "dokumentasi",
+     "url": "https://helm.sh/docs/"
+    }
+   ]
+  },
+  {
+   "id": "SK204",
+   "nama": "Cloud Networking (VPC, Load Balancer, DNS)",
+   "kategori": "Cloud Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Jaringan di layanan awan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK205",
+   "nama": "Cloud Security & IAM",
+   "kategori": "Cloud Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Keamanan dan pengelolaan akses di awan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK206",
+   "nama": "Serverless (Lambda / Cloud Functions)",
+   "kategori": "Cloud Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Komputasi tanpa mengelola server",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK207",
+   "nama": "Cloud Cost Optimization (FinOps)",
+   "kategori": "Cloud Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengendalikan biaya layanan awan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK208",
+   "nama": "Incident Management & SLO/SLI",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Menangani insiden dan mengukur keandalan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Site Reliability Engineering (buku gratis)",
+     "penyedia": "Google SRE",
+     "jenis": "panduan",
+     "url": "https://sre.google/books/"
+    }
+   ]
+  },
+  {
+   "id": "SK209",
+   "nama": "Centralized Logging (ELK / Loki)",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengumpulkan dan menelusuri log",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK210",
+   "nama": "Vulnerability Assessment (Nessus / OpenVAS)",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Memindai dan menilai kerentanan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK211",
+   "nama": "Security Frameworks (ISO 27001 / NIST)",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Kerangka kerja pengelolaan keamanan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK212",
+   "nama": "Threat Intelligence & MITRE ATT&CK",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Memahami taktik dan teknik penyerang",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "MITRE ATT&CK",
+     "penyedia": "MITRE",
+     "jenis": "panduan",
+     "url": "https://attack.mitre.org/"
+    }
+   ]
+  },
+  {
+   "id": "SK213",
+   "nama": "Malware Analysis",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Menganalisis perilaku perangkat lunak jahat",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK214",
+   "nama": "Metasploit & Exploitation",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Eksploitasi kerentanan dalam uji penetrasi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Metasploit Unleashed",
+     "penyedia": "OffSec",
+     "jenis": "kursus",
+     "url": "https://www.offsec.com/metasploit-unleashed/"
+    }
+   ]
+  },
+  {
+   "id": "SK215",
+   "nama": "Active Directory Security",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Menguji dan mengamankan lingkungan Active Directory",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK216",
+   "nama": "Mobile & API Security Testing",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Menguji keamanan aplikasi mobile dan API",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK217",
+   "nama": "Security Report Writing",
+   "kategori": "Cybersecurity",
+   "tipe": "hard_skill",
+   "deskripsi": "Menulis laporan temuan dan rekomendasi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK218",
+   "nama": "Interaction Design",
+   "kategori": "Design",
+   "tipe": "hard_skill",
+   "deskripsi": "Merancang alur dan perilaku interaksi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK219",
+   "nama": "Information Architecture",
+   "kategori": "Design",
+   "tipe": "hard_skill",
+   "deskripsi": "Menata struktur dan navigasi informasi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK220",
+   "nama": "Design Handoff & Collaboration",
+   "kategori": "Design",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyerahkan desain ke pengembang",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK221",
+   "nama": "Visual Design (Typography, Color, Layout)",
+   "kategori": "Design",
+   "tipe": "hard_skill",
+   "deskripsi": "Dasar tata rupa antarmuka",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK222",
+   "nama": "Product Strategy & Go-to-Market",
+   "kategori": "Product",
+   "tipe": "hard_skill",
+   "deskripsi": "Menentukan arah dan peluncuran produk",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK223",
+   "nama": "Market & Competitor Research",
+   "kategori": "Product",
+   "tipe": "hard_skill",
+   "deskripsi": "Riset pasar dan pesaing",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK224",
+   "nama": "OKR & Product Metrics",
+   "kategori": "Product",
+   "tipe": "hard_skill",
+   "deskripsi": "Menetapkan sasaran dan mengukur hasil",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK225",
+   "nama": "Performance & Load Testing (JMeter / k6)",
+   "kategori": "Testing",
+   "tipe": "hard_skill",
+   "deskripsi": "Menguji kinerja di bawah beban",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "k6 Documentation",
+     "penyedia": "Grafana k6",
+     "jenis": "dokumentasi",
+     "url": "https://grafana.com/docs/k6/latest/"
+    }
+   ]
+  },
+  {
+   "id": "SK226",
+   "nama": "Bug Tracking & Test Management",
+   "kategori": "Testing",
+   "tipe": "hard_skill",
+   "deskripsi": "Mencatat cacat dan mengelola siklus uji",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK227",
+   "nama": "Mobile Test Automation (Appium)",
+   "kategori": "Testing",
+   "tipe": "hard_skill",
+   "deskripsi": "Otomasi pengujian aplikasi mobile",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Appium Documentation",
+     "penyedia": "appium.io",
+     "jenis": "dokumentasi",
+     "url": "https://appium.io/docs/en/latest/"
+    }
+   ]
+  },
+  {
+   "id": "SK228",
+   "nama": "Project Planning & Scheduling (WBS / Gantt)",
+   "kategori": "Project Management",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyusun rencana dan jadwal proyek",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK229",
+   "nama": "SDLC & Software Process",
+   "kategori": "Methodology",
+   "tipe": "hard_skill",
+   "deskripsi": "Siklus hidup pengembangan perangkat lunak",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK230",
+   "nama": "Vendor & Contract Management",
+   "kategori": "Project Management",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengelola pemasok dan kontrak",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK231",
+   "nama": "PMBOK / PRINCE2",
+   "kategori": "Project Management",
+   "tipe": "hard_skill",
+   "deskripsi": "Kerangka kerja manajemen proyek",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK232",
+   "nama": "Remote Support & Endpoint Management",
+   "kategori": "IT Support",
+   "tipe": "hard_skill",
+   "deskripsi": "Dukungan jarak jauh dan pengelolaan perangkat",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK233",
+   "nama": "Microsoft 365 / Google Workspace Administration",
+   "kategori": "IT Support",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengelola akun dan layanan kolaborasi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK234",
+   "nama": "LAN / Wi-Fi Setup & Troubleshooting",
+   "kategori": "IT Support",
+   "tipe": "hard_skill",
+   "deskripsi": "Memasang dan memperbaiki jaringan lokal",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK235",
+   "nama": "Virtualization (VMware / Proxmox / Hyper-V)",
+   "kategori": "Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Menjalankan dan mengelola mesin virtual",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Proxmox VE Documentation",
+     "penyedia": "Proxmox",
+     "jenis": "dokumentasi",
+     "url": "https://pve.proxmox.com/pve-docs/"
+    }
+   ]
+  },
+  {
+   "id": "SK236",
+   "nama": "Backup & Disaster Recovery",
+   "kategori": "Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Cadangan data dan pemulihan bencana",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK237",
+   "nama": "Network Monitoring & Analysis (Wireshark / Zabbix)",
+   "kategori": "Networking",
+   "tipe": "hard_skill",
+   "deskripsi": "Memantau dan menganalisis lalu lintas jaringan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Wireshark User's Guide",
+     "penyedia": "Wireshark",
+     "jenis": "dokumentasi",
+     "url": "https://www.wireshark.org/docs/wsug_html_chunked/"
+    }
+   ]
+  },
+  {
+   "id": "SK238",
+   "nama": "Subnetting, VLAN & IP Addressing",
+   "kategori": "Networking",
+   "tipe": "hard_skill",
+   "deskripsi": "Perancangan alamat dan segmentasi jaringan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK239",
+   "nama": "Wireless Networking",
+   "kategori": "Networking",
+   "tipe": "hard_skill",
+   "deskripsi": "Perancangan dan pengamanan jaringan nirkabel",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK240",
+   "nama": "Routing Protocols (OSPF / BGP)",
+   "kategori": "Networking",
+   "tipe": "hard_skill",
+   "deskripsi": "Protokol routing dinamis",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK241",
+   "nama": "Network Automation (Python / Netmiko)",
+   "kategori": "Networking",
+   "tipe": "hard_skill",
+   "deskripsi": "Otomasi konfigurasi perangkat jaringan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK242",
+   "nama": "Query Optimization & Indexing",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Mempercepat kueri dengan indeks dan rencana eksekusi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Use The Index, Luke",
+     "penyedia": "Markus Winand",
+     "jenis": "panduan",
+     "url": "https://use-the-index-luke.com/"
+    }
+   ]
+  },
+  {
+   "id": "SK243",
+   "nama": "Replication & High Availability",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Replikasi dan ketersediaan tinggi basis data",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK244",
+   "nama": "Database Security & Access Control",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Hak akses, enkripsi, dan audit basis data",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK245",
+   "nama": "Kanban & Lean",
+   "kategori": "Methodology",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengalirkan pekerjaan dan mengurangi pemborosan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Kanban guide",
+     "penyedia": "Atlassian",
+     "jenis": "panduan",
+     "url": "https://www.atlassian.com/agile/kanban"
+    }
+   ]
+  },
+  {
+   "id": "SK246",
+   "nama": "Agile at Scale (SAFe / LeSS)",
+   "kategori": "Methodology",
+   "tipe": "hard_skill",
+   "deskripsi": "Menerapkan agile pada banyak tim",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK247",
+   "nama": "Sprint Ceremonies & Agile Metrics",
+   "kategori": "Methodology",
+   "tipe": "hard_skill",
+   "deskripsi": "Planning, retrospektif, velocity, dan burndown",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK248",
+   "nama": "Content Marketing & Copywriting",
+   "kategori": "Digital Marketing",
+   "tipe": "hard_skill",
+   "deskripsi": "Menulis konten yang menarik dan menjual",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK249",
+   "nama": "Social Media Analytics",
+   "kategori": "Digital Marketing",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengukur kinerja media sosial",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK250",
+   "nama": "Email Marketing & CRM",
+   "kategori": "Digital Marketing",
+   "tipe": "hard_skill",
+   "deskripsi": "Kampanye surel dan pengelolaan pelanggan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK251",
+   "nama": "Conversion Rate Optimization",
+   "kategori": "Digital Marketing",
+   "tipe": "hard_skill",
+   "deskripsi": "Meningkatkan rasio konversi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK252",
+   "nama": "Google Tag Manager & Tracking",
+   "kategori": "Digital Marketing",
+   "tipe": "hard_skill",
+   "deskripsi": "Memasang pelacakan peristiwa",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Tag Manager Help",
+     "penyedia": "Google",
+     "jenis": "dokumentasi",
+     "url": "https://support.google.com/tagmanager/"
+    }
+   ]
+  },
+  {
+   "id": "SK253",
+   "nama": "Shader & Graphics Programming",
+   "kategori": "Game Development",
+   "tipe": "hard_skill",
+   "deskripsi": "Pemrograman grafis dan efek visual",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK254",
+   "nama": "Game AI & Pathfinding",
+   "kategori": "Game Development",
+   "tipe": "hard_skill",
+   "deskripsi": "Perilaku karakter dan pencarian jalur",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK255",
+   "nama": "Multiplayer & Game Networking",
+   "kategori": "Game Development",
+   "tipe": "hard_skill",
+   "deskripsi": "Sinkronisasi permainan daring",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK256",
+   "nama": "3D Modeling & Animation (Blender)",
+   "kategori": "Game Development",
+   "tipe": "hard_skill",
+   "deskripsi": "Membuat aset tiga dimensi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Blender Tutorials",
+     "penyedia": "Blender",
+     "jenis": "kursus",
+     "url": "https://www.blender.org/support/tutorials/"
+    }
+   ]
+  },
+  {
+   "id": "SK257",
+   "nama": "Game Optimization & Profiling",
+   "kategori": "Game Development",
+   "tipe": "hard_skill",
+   "deskripsi": "Menjaga performa permainan",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK258",
+   "nama": "Godot",
+   "kategori": "Game Engine",
+   "tipe": "hard_skill",
+   "deskripsi": "Mesin gim sumber terbuka",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Godot: Getting started",
+     "penyedia": "Godot Engine",
+     "jenis": "dokumentasi",
+     "url": "https://docs.godotengine.org/en/stable/getting_started/introduction/index.html"
+    }
+   ]
+  },
+  {
+   "id": "SK259",
+   "nama": "Gap Analysis & Feasibility Study",
+   "kategori": "Analysis",
+   "tipe": "hard_skill",
+   "deskripsi": "Menilai selisih kondisi dan kelayakan solusi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK260",
+   "nama": "UAT Planning & Test Scenario",
+   "kategori": "Analysis",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyiapkan uji penerimaan pengguna",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK261",
+   "nama": "ERP Functional Modules (Finance, Inventory, HR)",
+   "kategori": "ERP Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Memahami proses di tiap modul ERP",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK262",
+   "nama": "ABAP",
+   "kategori": "ERP Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Bahasa pemrograman SAP",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "ABAP di SAP Learning",
+     "penyedia": "SAP",
+     "jenis": "kursus",
+     "url": "https://learning.sap.com/"
+    }
+   ]
+  },
+  {
+   "id": "SK263",
+   "nama": "ERP Implementation & Data Migration",
+   "kategori": "ERP Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Tahapan implementasi dan pemindahan data",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK264",
+   "nama": "Microsoft Dynamics 365",
+   "kategori": "ERP Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform ERP dan CRM Microsoft",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Dynamics 365 training",
+     "penyedia": "Microsoft Learn",
+     "jenis": "kursus",
+     "url": "https://learn.microsoft.com/en-us/training/dynamics365/"
+    }
+   ]
+  },
+  {
+   "id": "SK265",
+   "nama": "Smart Contract Security & Auditing",
+   "kategori": "Blockchain",
+   "tipe": "hard_skill",
+   "deskripsi": "Mencari celah pada smart contract",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK266",
+   "nama": "Token Standards & DeFi (ERC-20 / ERC-721)",
+   "kategori": "Blockchain",
+   "tipe": "hard_skill",
+   "deskripsi": "Standar token dan aplikasi keuangan terdesentralisasi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK267",
+   "nama": "Blockchain Fundamentals & Consensus",
+   "kategori": "Blockchain",
+   "tipe": "hard_skill",
+   "deskripsi": "Cara kerja rantai blok dan konsensus",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Ethereum development documentation",
+     "penyedia": "ethereum.org",
+     "jenis": "dokumentasi",
+     "url": "https://ethereum.org/en/developers/docs/"
+    }
+   ]
+  },
+  {
+   "id": "SK268",
+   "nama": "Blockchain Node, RPC & Indexing",
+   "kategori": "Blockchain",
+   "tipe": "hard_skill",
+   "deskripsi": "Berinteraksi dengan node dan mengindeks data",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK269",
+   "nama": "RTOS (FreeRTOS)",
+   "kategori": "IoT",
+   "tipe": "hard_skill",
+   "deskripsi": "Sistem operasi waktu nyata untuk mikrokontroler",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "FreeRTOS Documentation",
+     "penyedia": "FreeRTOS",
+     "jenis": "dokumentasi",
+     "url": "https://www.freertos.org/Documentation/00-Overview"
+    }
+   ]
+  },
+  {
+   "id": "SK270",
+   "nama": "Sensors, Actuators & Basic Electronics",
+   "kategori": "IoT",
+   "tipe": "hard_skill",
+   "deskripsi": "Dasar elektronika, sensor, dan aktuator",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK271",
+   "nama": "PCB Design (KiCad / Eagle)",
+   "kategori": "IoT",
+   "tipe": "hard_skill",
+   "deskripsi": "Merancang papan sirkuit",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "KiCad: Getting Started",
+     "penyedia": "KiCad",
+     "jenis": "dokumentasi",
+     "url": "https://docs.kicad.org/"
+    }
+   ]
+  },
+  {
+   "id": "SK272",
+   "nama": "Wireless Connectivity (BLE / LoRa / Zigbee)",
+   "kategori": "IoT",
+   "tipe": "hard_skill",
+   "deskripsi": "Komunikasi nirkabel perangkat",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK273",
+   "nama": "IoT Platform & Dashboard (Node-RED / ThingsBoard)",
+   "kategori": "IoT",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengumpulkan dan menampilkan data perangkat",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Node-RED Documentation",
+     "penyedia": "Node-RED",
+     "jenis": "dokumentasi",
+     "url": "https://nodered.org/docs/"
+    }
+   ]
+  },
+  {
+   "id": "SK274",
+   "nama": "Edge Computing & TinyML",
+   "kategori": "IoT",
+   "tipe": "hard_skill",
+   "deskripsi": "Menjalankan model di perangkat tepi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK275",
+   "nama": "Docs-as-Code (Markdown / Docusaurus / Sphinx)",
+   "kategori": "Documentation",
+   "tipe": "hard_skill",
+   "deskripsi": "Dokumentasi yang dikelola seperti kode",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Docusaurus Documentation",
+     "penyedia": "Docusaurus",
+     "jenis": "dokumentasi",
+     "url": "https://docusaurus.io/docs"
+    },
+    {
+     "judul": "Write the Docs: Documentation Guide",
+     "penyedia": "Write the Docs",
+     "jenis": "panduan",
+     "url": "https://www.writethedocs.org/guide/"
+    }
+   ]
+  },
+  {
+   "id": "SK276",
+   "nama": "Information Design & Diagramming",
+   "kategori": "Documentation",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyajikan informasi dengan struktur dan diagram",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK277",
+   "nama": "Editing, Style Guide & Localization",
+   "kategori": "Documentation",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyunting dan menjaga konsistensi gaya",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK278",
+   "nama": "UX Writing",
+   "kategori": "Documentation",
+   "tipe": "hard_skill",
+   "deskripsi": "Menulis teks antarmuka",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
+  },
+  {
+   "id": "SK279",
+   "nama": "WebSocket & Real-time Communication",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Komunikasi dua arah waktu nyata",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": []
   }
  ],
  "profesi_skill": {
@@ -3890,6 +6870,69 @@
     "skill_id": "SK164",
     "wajib": false,
     "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK171",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK172",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK173",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK018",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK091",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK142",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK023",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK174",
+    "wajib": false,
+    "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -4048,6 +7091,111 @@
     "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK174",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK175",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK176",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK177",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK178",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK028",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK004",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK029",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK026",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK039",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK091",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK060",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK279",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C003": [
@@ -4183,6 +7331,62 @@
     "bobot": 5.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK174",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK177",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK022",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK141",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK164",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK029",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK049",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK279",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C004": [
@@ -4283,6 +7487,76 @@
     "bobot": 8.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK179",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK180",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK181",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK184",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK185",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK141",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK178",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK042",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK091",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C005": [
@@ -4346,6 +7620,76 @@
     "skill_id": "SK161",
     "wajib": false,
     "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK182",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK183",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK181",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK184",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK185",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK141",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK178",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK042",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK139",
+    "wajib": false,
+    "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -4432,6 +7776,69 @@
     "skill_id": "SK163",
     "wajib": false,
     "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK181",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK184",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK185",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK003",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK141",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK042",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK178",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK091",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -4548,6 +7955,76 @@
     "bobot": 6.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK186",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK187",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK188",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK189",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK191",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK094",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK045",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK067",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK012",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK192",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C008": [
@@ -4639,6 +8116,69 @@
     "skill_id": "SK170",
     "wajib": false,
     "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK188",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK189",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK066",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK067",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK043",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK194",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK046",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK095",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK061",
+    "wajib": false,
+    "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -4783,6 +8323,83 @@
     "bobot": 6.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK193",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK194",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK195",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK013",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK097",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK054",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK157",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK242",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK051",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C010": [
@@ -4902,6 +8519,76 @@
     "skill_id": "SK137",
     "wajib": false,
     "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK186",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK187",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK190",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK191",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK192",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK135",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK136",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK138",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK059",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK160",
+    "wajib": false,
+    "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -5046,6 +8733,76 @@
     "bobot": 8.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK190",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK196",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK199",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK073",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK027",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK059",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK058",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK158",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK069",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C012": [
@@ -5181,6 +8938,69 @@
     "bobot": 8.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK197",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK198",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK201",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK196",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK072",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK053",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK050",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK041",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C013": [
@@ -5286,6 +9106,76 @@
     "skill_id": "SK169",
     "wajib": false,
     "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK199",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK200",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK196",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK069",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK160",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK068",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK053",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK056",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK130",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK274",
+    "wajib": false,
+    "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -5416,6 +9306,69 @@
     "bobot": 5.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK201",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK197",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK198",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK070",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK071",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK196",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK160",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK048",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK069",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C015": [
@@ -5537,6 +9490,62 @@
     "bobot": 5.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK202",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK203",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK204",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK205",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK208",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK209",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK092",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK235",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C016": [
@@ -5630,6 +9639,76 @@
     "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK204",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK205",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK206",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK207",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK203",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK235",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK157",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK151",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK236",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK202",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C017": [
@@ -5721,6 +9800,76 @@
     "skill_id": "SK158",
     "wajib": false,
     "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK208",
+    "wajib": false,
+    "bobot": 9.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK209",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK203",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK204",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK093",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK159",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK092",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK050",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK202",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK176",
+    "wajib": false,
+    "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -5823,6 +9972,76 @@
     "bobot": 8.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK210",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK211",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK212",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK213",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK215",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK205",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK154",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK157",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK165",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK217",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C019": [
@@ -5893,6 +10112,83 @@
     "skill_id": "SK165",
     "wajib": false,
     "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK214",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK210",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK215",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK216",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK217",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK157",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK151",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK212",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK002",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK154",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -5972,6 +10268,76 @@
     "skill_id": "SK147",
     "wajib": false,
     "bobot": 10.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK218",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK219",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK220",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK221",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK172",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK184",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK164",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK278",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK098",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK150",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -6074,6 +10440,69 @@
     "bobot": 8.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK222",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK223",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK224",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK116",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK119",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK147",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK093",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK229",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK251",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C022": [
@@ -6160,6 +10589,69 @@
     "bobot": 14.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK225",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK226",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK227",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK055",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK002",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK229",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK004",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK216",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C024": [
@@ -6230,6 +10722,76 @@
     "skill_id": "SK156",
     "wajib": false,
     "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK232",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK233",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK234",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK235",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK236",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK151",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK157",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK237",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK238",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK153",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -6332,6 +10894,83 @@
     "bobot": 6.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK235",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK236",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK233",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK237",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK238",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK159",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK158",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK205",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK049",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK039",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK243",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C026": [
@@ -6388,6 +11027,76 @@
     "skill_id": "SK153",
     "wajib": false,
     "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK237",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK238",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK239",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK240",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK241",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK204",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK157",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK158",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK235",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -6490,6 +11199,76 @@
     "bobot": 5.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK242",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK243",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK244",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK157",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK049",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK158",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK062",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK236",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C023": [
@@ -6555,6 +11334,76 @@
     "bobot": 5.0,
     "catatan": "Memahami rancangan sistem",
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK228",
+    "wajib": false,
+    "bobot": 9.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK229",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK230",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK231",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK245",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK125",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK095",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK224",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK149",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK226",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C028": [
@@ -6611,6 +11460,76 @@
     "skill_id": "SK105",
     "wajib": false,
     "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK245",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK246",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK247",
+    "wajib": false,
+    "bobot": 9.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK229",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK228",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK224",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK149",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK125",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK226",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK148",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -6685,6 +11604,83 @@
     "bobot": 5.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK248",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK249",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK250",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK251",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK252",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK065",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK064",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK138",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK186",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK188",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C030": [
@@ -6755,6 +11751,69 @@
     "skill_id": "SK140",
     "wajib": false,
     "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK253",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK254",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK255",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK256",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK257",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK258",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK178",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK181",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK141",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -6829,6 +11888,76 @@
     "bobot": 6.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK259",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK260",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK229",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK065",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK138",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK087",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK093",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK228",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK188",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK170",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C032": [
@@ -6892,6 +12021,83 @@
     "skill_id": "SK044",
     "wajib": false,
     "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK261",
+    "wajib": false,
+    "bobot": 9.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK262",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK263",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK264",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK090",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK038",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK002",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK095",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK260",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK065",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -6959,6 +12165,69 @@
     "bobot": 6.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK265",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK266",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK267",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK268",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK024",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK016",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK141",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK052",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK139",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C034": [
@@ -7017,6 +12286,83 @@
     "bobot": 6.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK269",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK270",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK271",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK272",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK273",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK274",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK080",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK050",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK015",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK040",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK002",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C035": [
@@ -7073,6 +12419,76 @@
     "skill_id": "SK021",
     "wajib": false,
     "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK275",
+    "wajib": false,
+    "bobot": 8.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK276",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK277",
+    "wajib": false,
+    "bobot": 7.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK278",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK087",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK229",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK116",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK002",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK001",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK172",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }

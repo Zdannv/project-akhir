@@ -1,0 +1,71 @@
+career_id|tingkat|judul|deskripsi
+C001|Pemula|Landing page responsif|Bangun ulang halaman depan sebuah produk dengan HTML, CSS, dan JavaScript, lalu ukur performa dan aksesibilitasnya dengan Lighthouse.
+C001|Menengah|Dasbor data dengan React|Aplikasi React + TypeScript yang mengambil data dari API publik, lengkap dengan pencarian, filter, state management, dan pengujian komponen.
+C002|Pemula|REST API toko daring|API dengan autentikasi JWT, CRUD produk dan pesanan, validasi masukan, PostgreSQL, serta dokumentasi OpenAPI.
+C002|Menengah|Layanan dengan cache dan antrean|Tambahkan Redis untuk cache dan antrean pesan untuk pekerjaan latar, bungkus dengan Docker, dan uji bebannya.
+C003|Pemula|Aplikasi catatan full-stack|Frontend React dan backend Node.js dengan login, basis data, dan deployment ke layanan cloud gratis.
+C003|Menengah|Marketplace sederhana|Katalog, keranjang, pembayaran simulasi, panel admin, dan pipeline CI/CD yang menjalankan pengujian otomatis.
+C004|Pemula|Aplikasi daftar tugas Android|Kotlin + Jetpack Compose dengan penyimpanan Room dan arsitektur ViewModel.
+C004|Menengah|Aplikasi berita daring-luring|Mengambil data dari REST API, menyimpan cache lokal, notifikasi, dan rilis uji di Play Console.
+C005|Pemula|Aplikasi pencatat kebiasaan iOS|SwiftUI dengan penyimpanan lokal dan widget sederhana.
+C005|Menengah|Aplikasi cuaca dengan API|Networking async/await, Core Data untuk cache, pengujian unit, dan distribusi lewat TestFlight.
+C006|Pemula|Aplikasi resep lintas platform|Flutter dengan navigasi, pencarian, dan data dari API publik.
+C006|Menengah|Aplikasi chat real-time|Flutter atau React Native dengan Firebase Auth, Firestore, notifikasi, dan state management.
+C007|Pemula|Analisis penjualan dengan SQL dan Excel|Bersihkan dataset penjualan publik, jawab lima pertanyaan bisnis, dan tulis temuannya.
+C007|Menengah|Dasbor interaktif|Dasbor Power BI atau Tableau dengan KPI, tren, dan segmentasi, disertai cerita data untuk manajemen.
+C008|Pemula|Model data bintang untuk penjualan|Rancang skema bintang, isi dengan ETL sederhana, dan sajikan di Power BI dengan ukuran DAX.
+C008|Menengah|Laporan otomatis harian|Pipeline yang memuat data ke gudang data dan memperbarui dasbor terjadwal.
+C009|Pemula|Pipeline ETL harian|Ambil data dari API publik, bersihkan dengan Python, muat ke PostgreSQL, dan jadwalkan dengan Airflow.
+C009|Menengah|Gudang data dengan dbt|Bangun model berlapis di BigQuery atau PostgreSQL, tambahkan uji kualitas data dan dokumentasi.
+C010|Pemula|Prediksi harga rumah|EDA, feature engineering, perbandingan beberapa model, dan evaluasi dengan validasi silang.
+C010|Menengah|Analisis churn pelanggan|Model klasifikasi, interpretasi fitur, dan rekomendasi bisnis yang disajikan dalam notebook dan presentasi.
+C011|Pemula|Model sebagai API|Latih model klasifikasi dan sajikan lewat FastAPI di dalam kontainer Docker.
+C011|Menengah|Pipeline pelatihan ulang otomatis|Pelacakan eksperimen dengan MLflow, CI/CD untuk model, dan pemantauan performa setelah deployment.
+C012|Pemula|Chatbot tanya-jawab dokumen|RAG sederhana: pecah dokumen, simpan embedding di vector database, dan jawab pertanyaan dengan LLM.
+C012|Menengah|Agen dengan beberapa alat|Agen yang bisa mencari, menghitung, dan memanggil API, dilengkapi evaluasi jawaban dan pengaman.
+C013|Pemula|Klasifikasi gambar|Fine-tuning model pralatih untuk dataset sendiri dan laporan akurasinya.
+C013|Menengah|Deteksi objek waktu nyata|Latih YOLO untuk kasus tertentu, optimalkan modelnya, dan jalankan dari kamera.
+C014|Pemula|Analisis sentimen ulasan berbahasa Indonesia|Praproses teks, fine-tuning model Transformer, dan evaluasi per kelas.
+C014|Menengah|Peringkas dokumen|Bandingkan pendekatan ekstraktif dan generatif, lalu sajikan sebagai layanan API.
+C015|Pemula|Pipeline CI/CD untuk aplikasi web|Build, uji, dan deploy otomatis dengan GitHub Actions dan Docker.
+C015|Menengah|Klaster Kubernetes dengan pemantauan|Deploy aplikasi dengan Helm, infrastruktur lewat Terraform, dan dasbor Prometheus + Grafana.
+C016|Pemula|Situs statis di cloud|Hosting, CDN, domain, dan HTTPS di satu penyedia cloud, seluruhnya ditulis sebagai Terraform.
+C016|Menengah|Arsitektur tiga lapis yang tangguh|VPC, load balancer, autoscaling, basis data terkelola, dan kebijakan IAM dengan hak minimum.
+C017|Pemula|Dasbor keandalan layanan|Tetapkan SLI dan SLO untuk sebuah layanan, pasang pemantauan, dan buat aturan peringatan.
+C017|Menengah|Latihan insiden|Simulasikan kegagalan, tulis runbook, dan susun laporan pascainsiden tanpa menyalahkan.
+C018|Pemula|Laboratorium SIEM rumahan|Kumpulkan log dari beberapa mesin virtual, buat aturan deteksi, dan dokumentasikan temuannya.
+C018|Menengah|Analisis insiden simulasi|Telusuri serangan pada lab sendiri, petakan ke MITRE ATT&CK, dan tulis laporan penanganannya.
+C019|Pemula|Catatan penyelesaian lab keamanan web|Selesaikan lab kerentanan web dan tulis laporan temuan dengan langkah reproduksi dan saran perbaikan.
+C019|Menengah|Uji penetrasi lab sendiri|Pemindaian, eksploitasi, dan eskalasi hak akses pada mesin latihan yang sah, ditutup laporan profesional.
+C020|Pemula|Desain ulang aplikasi yang ada|Audit kegunaan, wireframe, dan purwarupa interaktif di Figma, disertai alasan tiap keputusan.
+C020|Menengah|Studi kasus UX ujung ke ujung|Riset pengguna, persona, alur, design system, uji kegunaan, dan iterasi berdasarkan hasilnya.
+C021|Pemula|Dokumen kebutuhan produk (PRD)|Pilih satu masalah pengguna, tulis PRD, user story, dan metrik keberhasilannya.
+C021|Menengah|Peta jalan dan analisis eksperimen|Susun prioritas fitur, rancang uji A/B, dan analisis hasilnya dengan data contoh.
+C022|Pemula|Rencana dan kasus uji|Rencana uji dan kasus uji untuk aplikasi web publik, beserta laporan bug yang jelas.
+C022|Menengah|Rangkaian uji otomatis|Uji UI dengan Playwright dan uji API dengan Postman, dijalankan otomatis di CI.
+C023|Pemula|Rencana proyek TI|Piagam proyek, WBS, jadwal Gantt, anggaran, dan daftar risiko untuk proyek contoh.
+C023|Menengah|Simulasi pengelolaan sprint|Kelola backlog di Jira, jalankan beberapa sprint, dan laporkan kemajuan ke pemangku kepentingan.
+C024|Pemula|Basis pengetahuan helpdesk|Tulis panduan penyelesaian untuk sepuluh masalah TI yang paling sering muncul.
+C024|Menengah|Lab kantor kecil|Siapkan domain, akun pengguna, berbagi berkas, dan sistem tiket di mesin virtual.
+C025|Pemula|Server Linux yang diperkeras|Pasang server web, atur firewall, akun, dan cadangan otomatis.
+C025|Menengah|Otomasi konfigurasi|Kelola beberapa server dengan Ansible, tambahkan pemantauan, dan uji prosedur pemulihannya.
+C026|Pemula|Rancangan jaringan kantor|Topologi, subnetting, dan VLAN di simulator jaringan, lengkap dengan dokumentasinya.
+C026|Menengah|Jaringan multi-lokasi|Routing dinamis, VPN antarlokasi, pemantauan, dan skrip otomasi konfigurasi.
+C027|Pemula|Rancang dan optimalkan basis data|Skema ternormalisasi untuk sebuah aplikasi, indeks, dan perbandingan rencana eksekusi kueri.
+C027|Menengah|Replikasi dan pemulihan|Siapkan replikasi, cadangan terjadwal, dan latihan pemulihan ke titik waktu tertentu.
+C028|Pemula|Panduan kerja tim Scrum|Susun definisi selesai, format acara sprint, dan papan kerja untuk tim contoh.
+C028|Menengah|Studi kasus perbaikan proses|Ukur velocity dan waktu siklus sebuah tim, temukan hambatannya, dan usulkan perbaikan.
+C029|Pemula|Audit SEO sebuah situs|Analisis kata kunci, masalah teknis, dan rekomendasi perbaikan yang diurutkan menurut dampak.
+C029|Menengah|Dasbor kinerja kampanye|Gabungkan data iklan dan analitik ke Looker Studio, lalu simpulkan saluran yang paling efisien.
+C030|Pemula|Gim 2D sederhana|Platformer atau puzzle dengan Unity atau Godot, lengkap dengan menu, skor, dan suara.
+C030|Menengah|Gim 3D yang dipublikasikan|Mekanika inti, AI musuh, optimasi performa, dan rilis di itch.io.
+C031|Pemula|Dokumen analisis kebutuhan|Wawancara pengguna, diagram proses bisnis, dan spesifikasi kebutuhan untuk sebuah sistem.
+C031|Menengah|Analisis kesenjangan dan usulan solusi|Bandingkan proses saat ini dan yang diinginkan, hitung kelayakannya, dan siapkan skenario UAT.
+C032|Pemula|Konfigurasi modul ERP|Siapkan modul penjualan dan persediaan di Odoo untuk usaha contoh.
+C032|Menengah|Modul kustom dan migrasi data|Buat modul Odoo sederhana dengan Python dan pindahkan data dari spreadsheet.
+C033|Pemula|Token dan kontrak sederhana|Tulis, uji, dan deploy kontrak ERC-20 ke jaringan uji.
+C033|Menengah|Aplikasi terdesentralisasi|Smart contract dengan antarmuka web, pengujian menyeluruh, dan tinjauan keamanannya.
+C034|Pemula|Pemantau suhu dan kelembapan|Sensor dengan ESP32 yang mengirim data lewat MQTT ke dasbor.
+C034|Menengah|Sistem otomasi rumah|Beberapa perangkat, kendali jarak jauh, penyimpanan data, dan peringatan otomatis.
+C035|Pemula|Dokumentasi sebuah proyek sumber terbuka|Tulis ulang panduan memulai dan README sebuah proyek agar lebih mudah diikuti.
+C035|Menengah|Situs dokumentasi API|Dokumentasi API dengan OpenAPI dan Docusaurus, dilengkapi tutorial dan contoh kode.

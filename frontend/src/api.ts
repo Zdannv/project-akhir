@@ -32,6 +32,9 @@ export type Masukan = {
   induk?: string | null
 }
 
+export type Sumber = { judul: string; penyedia: string; jenis: 'dokumentasi' | 'kursus' | 'latihan' | 'panduan'; url: string }
+export type Proyek = { tingkat: string; judul: string; deskripsi: string }
+
 export type SkillProfesi = {
   skill_id: string
   nama: string
@@ -40,6 +43,7 @@ export type SkillProfesi = {
   catatan: string | null
   tingkat?: number
   label_tingkat?: string
+  belajar?: Sumber[]
 }
 
 export type Kesenjangan = {
@@ -106,12 +110,15 @@ export type RingkasTarget = {
   proyeksi: Posisi | null
 }
 
-export type SkillRoadmap = { skill_id: string; nama: string; wajib: boolean; bobot: number; dicentang: boolean }
+export type SkillRoadmap = { skill_id: string; nama: string; wajib: boolean; bobot: number; dicentang: boolean; belajar: Sumber[] }
 
 export type Roadmap =
   | { target: null }
   | {
-      target: { profesi_id: string; nama: string; sektor: string; skill_sumber: string }
+      target: {
+        profesi_id: string; nama: string; sektor: string; skill_sumber: string
+        peta_belajar: { judul: string; url: string } | null; proyek: Proyek[]
+      }
       tahap: { kode: string; nama: string; keterangan: string; skill: SkillRoadmap[] }[]
       dikuasai: { skill_id: string; nama: string; wajib: boolean }[]
       progres: { selesai: number; total: number }
@@ -183,6 +190,8 @@ export type Profesi = {
   big5_ideal: Record<string, number>
   stabilitas: number
   skill_sumber: string
+  peta_belajar: { judul: string; url: string } | null
+  proyek: Proyek[]
 }
 
 export type Detail = {

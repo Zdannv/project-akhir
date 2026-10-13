@@ -49,11 +49,16 @@ lewat `data/sumber/pelengkap_*.csv`:
 - sembilan profesi (C023, C028–C035) tidak punya relasi skill sama sekali;
 - banyak skill umum tidak ada di daftarnya (machine learning, statistika,
   pengujian, jaringan, riset pengguna, dan lain-lain), sehingga responden tidak
-  menemukan skill mereka. Ditambahkan 37 skill beserta relasinya ke profesi
-  yang sudah ada, dengan bobot sengaja kecil (3–16) supaya tidak mengalahkan
-  data lowongan.
+  menemukan skill mereka, dan technical skill tiap profesi terlalu sedikit
+  (IT Project Manager 4, Scrum Master 2). Ditambahkan 146 skill beserta
+  relasinya ke profesi yang sudah ada, dengan bobot sengaja kecil (3–16)
+  supaya tidak mengalahkan data lowongan.
 
-Hasilnya 168 skill dan 463 relasi, **156 relasi di antaranya kurasi**. Setiap
+Hasilnya 277 skill dan 811 relasi, **504 relasi di antaranya kurasi (62%)**.
+Technical skill per profesi sekarang 12–35. Karena lebih dari separuh relasi
+kini berasal dari kurasi, validasi ini bukan lagi pelengkap: basis pengetahuan
+skill harus diperiksa pakar atau dicocokkan dengan data lowongan sebelum
+hasilnya dilaporkan sebagai temuan. Setiap
 relasi membawa penanda `sumber` (`lowongan` atau `kurasi`), dan layar detail
 memberi tahu pengguna kalau daftar skill sebuah profesi memuat kurasi. **Ini
 perlu divalidasi** dengan data lowongan atau pakar sebelum naskah final.
@@ -96,16 +101,20 @@ hanya cara menyajikan skor di antarmuka. Mesin dan evaluasi tidak memakainya.
 Angka lengkap ada di `docs/hasil-evaluasi.md`. Tiga hal yang layak dibahas
 dengan pembimbing:
 
-1. **Hibrida mengungguli KBF saja, dan sedikit di atas CBF saja** (Hit@1 85,5%
-   vs 36,8% dan 85,3%) — di simulasi, hampir seluruh daya beda datang dari skill.
-2. **α = 0,6 bukan yang terbaik di simulasi**; puncaknya di sekitar 0,3–0,4
-   (Hit@1 89,0%). Banyak profesi TI punya kode Holland yang mirip (ICR muncul
-   11 kali), jadi KBF kurang membedakan dan terlalu banyak bobot padanya merugikan.
-3. **Korelasi profil RIASEC mengungguli Iachan** (Hit@1 92,4% vs 85,5%), karena
+1. **Pada α = 0,6, hibrida mengungguli KBF saja tetapi KALAH dari CBF saja**
+   (Hit@1 88,9% vs 37,9% dan 91,0%). Hibrida baru unggul pada α 0,1–0,5, dengan
+   puncak di α = 0,3 (93,6%). Sebelum daftar skill diperluas, hibrida α = 0,6
+   masih sedikit di atas CBF saja; setelah skill tiap profesi lebih kaya, daya
+   beda CBF naik dan bobot KBF 0,6 menjadi terlalu besar. Ini harus dibahas
+   dengan pembimbing: klaim "hybrid lebih baik" di simulasi hanya berlaku
+   kalau α diturunkan.
+2. **Penyebabnya** sama seperti sebelumnya: banyak profesi TI punya kode
+   Holland yang mirip (ICR muncul 11 kali), jadi KBF kurang membedakan.
+3. **Korelasi profil RIASEC mengungguli Iachan** (Hit@1 96,0% vs 88,9%), karena
    Iachan hanya memakai tiga huruf teratas dan memberi skor identik untuk
-   profesi berkode sama.
-4. **Cosine global mengungguli cosine pada ruang skill profesi** (Hit@1 85,3%
-   vs 65,5%), juga untuk persona yang skill-nya banyak. Varian ruang profesi
+   profesi berkode sama. Dengan korelasi, hibrida α = 0,6 kembali di atas CBF saja.
+4. **Cosine global mengungguli cosine pada ruang skill profesi** (Hit@1 91,0%
+   vs 64,9%), juga untuk persona yang skill-nya banyak. Varian ruang profesi
    sempat dicoba karena cosine global "mengencerkan" skor orang yang memilih
    banyak skill, tetapi daya bedanya ternyata jauh lebih buruk, jadi cosine
    global — sesuai proposal — dipertahankan.
@@ -121,11 +130,29 @@ Simulasi memakai persona yang dibangkitkan dari basis pengetahuan itu sendiri,
 jadi angkanya batas atas dan **bukan** bukti akurasi pada manusia. Nilai α dan
 ukuran kongruensi sebaiknya baru diputuskan setelah ada data responden.
 
-## 5. Rencana pengujian
+## 5. Bahan belajar
+
+Roadmap dan layar detail menampilkan bahan belajar. Tidak satu pun ikut dalam
+perhitungan skor; semuanya membantu pengguna menindaklanjuti rekomendasi.
+
+| Bahan | Sumber | Catatan |
+|---|---|---|
+| Sumber belajar per skill | `sumber_belajar.csv`, 190 tautan untuk 157 skill | dokumentasi resmi dan kursus gratis; tiap tautan diperiksa bisa dibuka pada 13 Oktober 2026 |
+| Tautan cari video dan kursus | dirakit dari nama skill | pencarian YouTube dan Coursera; tersedia untuk semua skill, isinya tidak dikurasi |
+| Peta belajar per profesi | `panduan_karier.csv`, 28 profesi | roadmap.sh |
+| Ide proyek portofolio | `proyek_portofolio.csv`, 2 per profesi | disusun penulis |
+| Tautan lowongan | dirakit dari nama profesi | LinkedIn, Jobstreet, Glints |
+
+Tautan luar bisa berubah. Sebelum demo atau pengujian, jalankan ulang
+pemeriksaan tautan dan perbaiki yang mati. Video YouTube tertentu sengaja tidak
+ditautkan langsung: tautan video mudah mati dan mutunya tidak bisa dijamin,
+sedangkan tautan pencarian selalu berfungsi.
+
+## 6. Rencana pengujian
 
 | Pengujian | Cara | Target proposal |
 |---|---|---|
-| Fungsional | `pytest` (29 uji) | semua lulus |
+| Fungsional | `pytest` (30 uji) | semua lulus |
 | Akurasi, uji pakar | 15–20 profesional TI mengisi sebagai "Profesional TI" beserta profesinya; Hit Rate@5 dan MRR dihitung terhadap profesi itu | Hit Rate@5 ≥ 60% |
 | Relevansi | responden menilai tiap rekomendasi relevan/tidak di layar detail; Precision@K | — |
 | Usability | 10 butir SUS di menu Penilaian | skor ≥ 68 |

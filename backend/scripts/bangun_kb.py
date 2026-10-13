@@ -17,6 +17,11 @@ Tiga sumber digabung menjadi satu berkas JSON yang dibaca mesin rekomendasi:
   data/sumber/alias_skill.csv
       Nama lain tiap skill, hanya untuk pencarian di formulir.
 
+  data/sumber/sumber_belajar.csv, panduan_karier.csv, proyek_portofolio.csv
+      Bahan belajar: tautan dokumentasi resmi dan kursus gratis per skill, peta
+      belajar per profesi, dan ide proyek portofolio. Semuanya kurasi, hanya
+      untuk ditampilkan, dan tidak memengaruhi skor.
+
   data/sumber/onet_riasec_profesi_ti.csv
       Profil minat Holland (RIASEC) tiap profesi, dari O*NET 30.3 lewat padanan
       kode SOC. Skala OI asli O*NET, 1,00 - 7,00.
@@ -147,9 +152,9 @@ def baca_sheet(wb, nama: str) -> list[dict]:
     return [dict(zip(kepala, b)) for b in baris[1:] if any(c is not None for c in b)]
 
 
-def baca_csv(nama: str) -> list[dict]:
+def baca_csv(nama: str, pemisah: str = ",") -> list[dict]:
     with open(SUMBER / nama, newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+        return list(csv.DictReader(f, delimiter=pemisah))
 
 
 def main() -> None:
@@ -251,6 +256,32 @@ def main() -> None:
                 "catatan": b["notes"] or None,
                 "sumber": sumber,
             })
+
+    # Sumber belajar per skill: tautan kurasi ke dokumentasi resmi, kursus, dan
+    # latihan gratis. Hanya untuk ditampilkan; tidak ikut dalam perhitungan.
+    belajar: dict[str, list[dict]] = {}
+    for b in baca_csv("sumber_belajar.csv", "|"):
+        if b["skill_id"] not in id_skill:
+            raise ValueError(f"sumber belajar menunjuk skill yang tidak ada: {b['skill_id']}")
+        if not b["url"].startswith("https://"):
+            raise ValueError(f"tautan sumber belajar harus https: {b['url']}")
+        belajar.setdefault(b["skill_id"], []).append(
+            {"judul": b["judul"], "penyedia": b["penyedia"], "jenis": b["jenis"], "url": b["url"]})
+    for s in skill:
+        s["belajar"] = belajar.get(s["id"], [])
+
+    # Panduan per profesi: peta belajar dari roadmap.sh dan ide proyek portofolio.
+    id_profesi = {p["id"] for p in profesi}
+    peta = {b["career_id"]: {"judul": b["judul"], "url": b["url"]} for b in baca_csv("panduan_karier.csv", "|")}
+    proyek: dict[str, list[dict]] = {}
+    for b in baca_csv("proyek_portofolio.csv", "|"):
+        proyek.setdefault(b["career_id"], []).append(
+            {"tingkat": b["tingkat"], "judul": b["judul"], "deskripsi": b["deskripsi"]})
+    if (set(peta) | set(proyek)) - id_profesi:
+        raise ValueError("panduan karier menunjuk profesi yang tidak ada")
+    for p in profesi:
+        p["peta_belajar"] = peta.get(p["id"])
+        p["proyek"] = proyek.get(p["id"], [])
 
     prodi = [
         {"id": b["prodi_id"], "nama": b["nama_prodi"], "jenjang": b["jenjang"], "rumpun": b["rumpun"],

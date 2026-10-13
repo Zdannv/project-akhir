@@ -41,6 +41,7 @@ TAHAP = [
 def susun(profil: ProfilPengguna, profesi_id: str, dicentang: set[str],
           kb: BasisPengetahuan, konfig: Konfigurasi = Konfigurasi()) -> dict:
     nama = kb.nama_skill()
+    belajar = kb.belajar_skill()
     relasi = kb.skill_profesi(profesi_id)
     belum = [r for r in relasi if profil.skill.get(r["skill_id"], 0) == 0]
     pilihan = [r["bobot"] for r in belum if not r["wajib"]]
@@ -52,6 +53,7 @@ def susun(profil: ProfilPengguna, profesi_id: str, dicentang: set[str],
         kelompok[kode].append({
             "skill_id": r["skill_id"], "nama": nama[r["skill_id"]], "wajib": r["wajib"],
             "bobot": r["bobot"], "dicentang": r["skill_id"] in dicentang,
+            "belajar": belajar[r["skill_id"]],
         })
 
     # Hanya centang yang memang bagian dari roadmap profesi ini yang dihitung.

@@ -11,6 +11,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { ambilDetail, kirimUmpanBalik, pilihTarget, NAMA_BIG5, NAMA_RIASEC, persen, rupiah, type Alasan, type Detail, type SkillProfesi } from '../api'
 import { AppTopNav, KepalaLayar } from '../komponen/AppNav'
 import { BusurSkor, LencanaPita, TabSwitch } from '../komponen/profesi'
+import { useBelajar, CariLowongan, DaftarProyek, PetaBelajar } from '../komponen/belajar'
 import { Batang, Galat, Memuat, Radar } from '../komponen/umum'
 import { useData } from '../komponen/useData'
 
@@ -261,7 +262,8 @@ function TabSkill({ d }: { d: Detail }) {
       )}
 
       <Blok judul="Perlu Dikembangkan" keterangan={`(${g.belum.length} skill, dari yang paling penting)`}>
-        <DaftarSkill daftar={g.belum} kosong="Semua skill profesi ini sudah kamu miliki." />
+        {p.peta_belajar && <div className="mb-3"><PetaBelajar peta={p.peta_belajar} /></div>}
+        <DaftarSkill daftar={g.belum} kosong="Semua skill profesi ini sudah kamu miliki." belajar />
       </Blok>
       <Blok judul="Sudah Kamu Miliki" keterangan={`(${g.dimiliki.length} skill)`}>
         <DaftarSkill daftar={g.dimiliki} kosong="Belum ada skill-mu yang beririsan dengan profesi ini." />
@@ -270,12 +272,16 @@ function TabSkill({ d }: { d: Detail }) {
   )
 }
 
-function DaftarSkill({ daftar, kosong }: { daftar: SkillProfesi[]; kosong: string }) {
+function DaftarSkill({ daftar, kosong, belajar = false }: { daftar: SkillProfesi[]; kosong: string; belajar?: boolean }) {
   if (daftar.length === 0) return <p className="text-[13px] text-slate-400">{kosong}</p>
+  return <ul>{daftar.map((s) => <BarisSkill key={s.skill_id} s={s} belajar={belajar} />)}</ul>
+}
+
+function BarisSkill({ s, belajar }: { s: SkillProfesi; belajar: boolean }) {
+  const b = useBelajar({ nama: s.nama, belajar: s.belajar ?? [] })
   return (
-    <ul>
-      {daftar.map((s) => (
-        <li key={s.skill_id} className="flex items-start justify-between gap-3 border-b border-slate-200 py-3 last:border-b-0">
+        <li className="border-b border-slate-200 py-3 last:border-b-0">
+          <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
             <p className="text-[13.5px] font-semibold leading-snug text-slate-900">
               {s.nama}
@@ -283,13 +289,13 @@ function DaftarSkill({ daftar, kosong }: { daftar: SkillProfesi[]; kosong: strin
             </p>
             {s.catatan && <p className="mt-0.5 text-[12.5px] leading-snug text-slate-400">{s.catatan}</p>}
           </div>
-          <div className="shrink-0 text-right">
+          <div className="flex shrink-0 flex-col items-end gap-1 text-right">
             {s.label_tingkat && <p className="rounded-md bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700">{s.label_tingkat}</p>}
-            {s.bobot > 0 && <p className="mt-0.5 text-[11.5px] tabular-nums text-slate-400">bobot {s.bobot}</p>}
+            {belajar ? b.tombol : s.bobot > 0 && <p className="text-[11.5px] tabular-nums text-slate-400">bobot {s.bobot}</p>}
           </div>
+          </div>
+          {belajar && b.isi}
         </li>
-      ))}
-    </ul>
   )
 }
 
@@ -336,6 +342,16 @@ function TabInsight({ d }: { d: Detail }) {
             </li>
           ))}
         </ol>
+      </Blok>
+
+      {p.proyek.length > 0 && (
+        <Blok judul="Ide Proyek Portofolio" keterangan="(untuk membuktikan skill-mu)">
+          <DaftarProyek proyek={p.proyek} />
+        </Blok>
+      )}
+
+      <Blok judul="Cari Lowongan" keterangan="(membuka situs lowongan di tab baru)">
+        <CariLowongan nama={p.nama} />
       </Blok>
 
       {d.prodi_terkait.length > 0 && (

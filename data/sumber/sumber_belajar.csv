@@ -1,0 +1,172 @@
+skill_id|judul|penyedia|jenis|url
+SK001|The Python Tutorial|python.org|dokumentasi|https://docs.python.org/3/tutorial/
+SK001|CS50's Introduction to Programming with Python|Harvard CS50|kursus|https://cs50.harvard.edu/python/
+SK002|The Modern JavaScript Tutorial|javascript.info|panduan|https://javascript.info/
+SK002|JavaScript Algorithms and Data Structures|freeCodeCamp|kursus|https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/
+SK003|The TypeScript Handbook|typescriptlang.org|dokumentasi|https://www.typescriptlang.org/docs/handbook/intro.html
+SK004|Learn Java|dev.java|dokumentasi|https://dev.java/learn/
+SK005|Get started with Kotlin|kotlinlang.org|dokumentasi|https://kotlinlang.org/docs/getting-started.html
+SK006|The Swift Programming Language|swift.org|dokumentasi|https://docs.swift.org/swift-book/documentation/the-swift-programming-language/
+SK007|A tour of C#|Microsoft Learn|dokumentasi|https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/
+SK008|Learn C++|learncpp.com|panduan|https://www.learncpp.com/
+SK009|A Tour of Go|go.dev|latihan|https://go.dev/tour/
+SK010|PHP: A simple tutorial|php.net|dokumentasi|https://www.php.net/manual/en/tutorial.php
+SK011|Introduction to Dart|dart.dev|dokumentasi|https://dart.dev/language
+SK012|R for Data Science (2e)|Hadley Wickham|panduan|https://r4ds.hadley.nz/
+SK013|Tour of Scala|scala-lang.org|dokumentasi|https://docs.scala-lang.org/tour/tour-of-scala.html
+SK014|The Rust Programming Language|rust-lang.org|panduan|https://doc.rust-lang.org/book/
+SK015|SQLBolt: Learn SQL with interactive exercises|SQLBolt|latihan|https://sqlbolt.com/
+SK015|Intro to SQL|Kaggle Learn|kursus|https://www.kaggle.com/learn/intro-to-sql
+SK016|Learn React|react.dev|dokumentasi|https://react.dev/learn
+SK017|Vue.js Tutorial|vuejs.org|latihan|https://vuejs.org/tutorial/
+SK018|Angular Tutorials|angular.dev|latihan|https://angular.dev/tutorials
+SK019|Learn Next.js|nextjs.org|kursus|https://nextjs.org/learn
+SK020|Nuxt: Getting Started|nuxt.com|dokumentasi|https://nuxt.com/docs/getting-started/introduction
+SK021|Learn web development|MDN Web Docs|panduan|https://developer.mozilla.org/en-US/docs/Learn_web_development
+SK021|Responsive Web Design|freeCodeCamp|kursus|https://www.freecodecamp.org/learn/2022/responsive-web-design/
+SK022|Tailwind CSS Documentation|tailwindcss.com|dokumentasi|https://tailwindcss.com/docs
+SK023|Get started with Bootstrap|getbootstrap.com|dokumentasi|https://getbootstrap.com/docs/5.3/getting-started/introduction/
+SK024|Learn Node.js|nodejs.org|dokumentasi|https://nodejs.org/en/learn/getting-started/introduction-to-nodejs
+SK025|Laravel Documentation|laravel.com|dokumentasi|https://laravel.com/docs
+SK026|Writing your first Django app|djangoproject.com|dokumentasi|https://docs.djangoproject.com/en/stable/intro/tutorial01/
+SK027|FastAPI Tutorial - User Guide|fastapi.tiangolo.com|dokumentasi|https://fastapi.tiangolo.com/tutorial/
+SK028|Spring Guides|spring.io|panduan|https://spring.io/guides
+SK029|Express: Getting started|expressjs.com|dokumentasi|https://expressjs.com/en/starter/installing.html
+SK030|NestJS Documentation|nestjs.com|dokumentasi|https://docs.nestjs.com/
+SK031|Flask Tutorial|palletsprojects.com|dokumentasi|https://flask.palletsprojects.com/en/stable/tutorial/
+SK032|CodeIgniter User Guide|codeigniter.com|dokumentasi|https://codeigniter.com/user_guide/intro/index.html
+SK033|Get started with ASP.NET Core|Microsoft Learn|dokumentasi|https://learn.microsoft.com/en-us/aspnet/core/getting-started/
+SK034|Learn Flutter|flutter.dev|dokumentasi|https://docs.flutter.dev/get-started/learn-flutter
+SK035|React Native: Introduction|reactnative.dev|dokumentasi|https://reactnative.dev/docs/getting-started
+SK036|Android Basics with Compose|Android Developers|kursus|https://developer.android.com/courses/android-basics-compose/course
+SK037|SwiftUI Tutorials|Apple Developer|latihan|https://developer.apple.com/tutorials/swiftui
+SK038|PostgreSQL Tutorial|postgresql.org|dokumentasi|https://www.postgresql.org/docs/current/tutorial.html
+SK039|MySQL Tutorial|dev.mysql.com|dokumentasi|https://dev.mysql.com/doc/refman/8.4/en/tutorial.html
+SK040|MongoDB University|MongoDB|kursus|https://learn.mongodb.com/
+SK041|Redis University|Redis|kursus|https://university.redis.io/
+SK042|SQLite Documentation|sqlite.org|dokumentasi|https://www.sqlite.org/docs.html
+SK043|SQL Server Tutorials|Microsoft Learn|dokumentasi|https://learn.microsoft.com/en-us/sql/sql-server/tutorials-for-sql-server-2016
+SK045|BigQuery Documentation|Google Cloud|dokumentasi|https://cloud.google.com/bigquery/docs
+SK046|Snowflake Documentation|Snowflake|dokumentasi|https://docs.snowflake.com/
+SK048|Elastic Training|Elastic|kursus|https://www.elastic.co/training
+SK049|AWS Skill Builder|Amazon Web Services|kursus|https://skillbuilder.aws/
+SK050|Google Cloud Skills Boost|Google Cloud|kursus|https://www.cloudskillsboost.google/
+SK051|Microsoft Learn: Azure|Microsoft Learn|kursus|https://learn.microsoft.com/en-us/training/azure/
+SK052|Docker: Get started|docker.com|dokumentasi|https://docs.docker.com/get-started/
+SK053|Kubernetes Tutorials|kubernetes.io|latihan|https://kubernetes.io/docs/tutorials/
+SK054|Terraform Tutorials|HashiCorp|latihan|https://developer.hashicorp.com/terraform/tutorials
+SK055|GitHub Actions Documentation|GitHub|dokumentasi|https://docs.github.com/en/actions
+SK056|The Linux command line for beginners|Ubuntu|latihan|https://ubuntu.com/tutorials/command-line-for-beginners
+SK057|NGINX Beginner's Guide|nginx.org|dokumentasi|https://nginx.org/en/docs/beginners_guide.html
+SK058|Airflow Tutorials|Apache Airflow|dokumentasi|https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html
+SK059|Spark Quick Start|Apache Spark|dokumentasi|https://spark.apache.org/docs/latest/quick-start.html
+SK060|Kafka Quickstart|Apache Kafka|dokumentasi|https://kafka.apache.org/quickstart
+SK061|dbt Learn|dbt Labs|kursus|https://learn.getdbt.com/
+SK064|Tableau Free Training Videos|Tableau|kursus|https://www.tableau.com/learn/training
+SK065|Power BI on Microsoft Learn|Microsoft Learn|kursus|https://learn.microsoft.com/en-us/training/powerplatform/power-bi
+SK066|Looker Studio Help|Google|dokumentasi|https://support.google.com/looker-studio/
+SK067|Metabase Learn|Metabase|panduan|https://www.metabase.com/learn/
+SK068|Pandas|Kaggle Learn|kursus|https://www.kaggle.com/learn/pandas
+SK068|Getting started with pandas|pandas.pydata.org|dokumentasi|https://pandas.pydata.org/docs/getting_started/index.html
+SK069|NumPy: the absolute basics for beginners|numpy.org|dokumentasi|https://numpy.org/doc/stable/user/absolute_beginners.html
+SK070|scikit-learn Tutorials|scikit-learn.org|dokumentasi|https://scikit-learn.org/stable/getting_started.html
+SK071|TensorFlow Tutorials|tensorflow.org|latihan|https://www.tensorflow.org/tutorials
+SK072|PyTorch Tutorials|pytorch.org|latihan|https://pytorch.org/tutorials/
+SK073|Hugging Face Learn|Hugging Face|kursus|https://huggingface.co/learn
+SK074|LangChain Documentation|LangChain|dokumentasi|https://python.langchain.com/docs/introduction/
+SK075|OpenAI API Quickstart|OpenAI|dokumentasi|https://platform.openai.com/docs/quickstart
+SK077|OpenCV Tutorials|opencv.org|dokumentasi|https://docs.opencv.org/4.x/d9/df8/tutorial_root.html
+SK080|Pro Git (buku gratis)|git-scm.com|panduan|https://git-scm.com/book/en/v2
+SK080|Learn Git Branching|learngitbranching.js.org|latihan|https://learngitbranching.js.org/
+SK081|GitHub Skills|GitHub|latihan|https://skills.github.com/
+SK083|OWASP Top Ten|OWASP|panduan|https://owasp.org/www-project-top-ten/
+SK083|Web Security Academy|PortSwigger|latihan|https://portswigger.net/web-security
+SK084|TryHackMe|TryHackMe|latihan|https://tryhackme.com/
+SK087|Figma Learn|Figma|panduan|https://help.figma.com/hc/en-us
+SK089|The Scrum Guide|scrumguides.org|panduan|https://scrumguides.org/scrum-guide.html
+SK089|Agile Coach|Atlassian|panduan|https://www.atlassian.com/agile
+SK090|HTTP guides|MDN Web Docs|panduan|https://developer.mozilla.org/en-US/docs/Web/HTTP
+SK091|Introduction to GraphQL|graphql.org|dokumentasi|https://graphql.org/learn/
+SK092|Microservice Architecture|microservices.io|panduan|https://microservices.io/
+SK093|The System Design Primer|GitHub (donnemartin)|panduan|https://github.com/donnemartin/system-design-primer
+SK094|Power Query documentation|Microsoft Learn|dokumentasi|https://learn.microsoft.com/en-us/power-query/
+SK095|Excel video training|Microsoft Support|kursus|https://support.microsoft.com/en-us/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb
+SK116|Jira Software guides|Atlassian|panduan|https://www.atlassian.com/software/jira/guides/getting-started/introduction
+SK118|SEO Starter Guide|Google Search Central|panduan|https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+SK119|Google Analytics di Skillshop|Google Skillshop|kursus|https://skillshop.withgoogle.com/
+SK121|Unity Learn|Unity|kursus|https://learn.unity.com/
+SK122|Unreal Engine Learning|Epic Games|kursus|https://dev.epicgames.com/community/unreal-engine/learning
+SK124|BPMN Tutorial|Camunda|panduan|https://camunda.com/bpmn/
+SK126|SAP Learning|SAP|kursus|https://learning.sap.com/
+SK127|Odoo Tutorials|Odoo|kursus|https://www.odoo.com/slides
+SK128|Solidity Documentation|soliditylang.org|dokumentasi|https://docs.soliditylang.org/
+SK128|CryptoZombies|CryptoZombies|latihan|https://cryptozombies.io/
+SK129|Hardhat: Getting started|Hardhat|dokumentasi|https://hardhat.org/hardhat-runner/docs/getting-started
+SK130|Arduino Learn|Arduino|panduan|https://docs.arduino.cc/learn/
+SK131|MQTT: Getting Started|mqtt.org|panduan|https://mqtt.org/getting-started/
+SK132|Technical Writing Courses|Google for Developers|kursus|https://developers.google.com/tech-writing
+SK133|OpenAPI Specification|Swagger|dokumentasi|https://swagger.io/docs/specification/v3_0/about/
+SK134|Machine Learning Crash Course|Google for Developers|kursus|https://developers.google.com/machine-learning/crash-course
+SK134|Intro to Machine Learning|Kaggle Learn|kursus|https://www.kaggle.com/learn/intro-to-machine-learning
+SK135|Practical Deep Learning for Coders|fast.ai|kursus|https://course.fast.ai/
+SK136|Hugging Face LLM / NLP Course|Hugging Face|kursus|https://huggingface.co/learn/llm-course/chapter1/1
+SK137|Statistics and Probability|Khan Academy|kursus|https://www.khanacademy.org/math/statistics-probability
+SK138|Data Visualization|Kaggle Learn|kursus|https://www.kaggle.com/learn/data-visualization
+SK139|NeetCode Roadmap|NeetCode|latihan|https://neetcode.io/roadmap
+SK140|Design Patterns|Refactoring.Guru|panduan|https://refactoring.guru/design-patterns
+SK142|Playwright: Getting started|playwright.dev|dokumentasi|https://playwright.dev/docs/intro
+SK142|Selenium Documentation|selenium.dev|dokumentasi|https://www.selenium.dev/documentation/
+SK143|Postman Learning Center|Postman|panduan|https://learning.postman.com/
+SK145|Learn Design|Figma|kursus|https://www.figma.com/resources/learn-design/
+SK146|UX research articles|Nielsen Norman Group|panduan|https://www.nngroup.com/articles/
+SK151|Networking Basics|Cisco Networking Academy|kursus|https://www.netacad.com/courses/networking-basics
+SK152|MikroTik Documentation|MikroTik|dokumentasi|https://help.mikrotik.com/docs/
+SK154|Windows Server documentation|Microsoft Learn|dokumentasi|https://learn.microsoft.com/en-us/windows-server/
+SK157|The Linux Command Line (buku gratis)|linuxcommand.org|panduan|https://linuxcommand.org/tlcl.php
+SK158|Grafana Tutorials|Grafana Labs|latihan|https://grafana.com/tutorials/
+SK158|Prometheus: Getting started|prometheus.io|dokumentasi|https://prometheus.io/docs/prometheus/latest/getting_started/
+SK159|Getting started with Ansible|Ansible|dokumentasi|https://docs.ansible.com/ansible/latest/getting_started/index.html
+SK160|MLflow Documentation|MLflow|dokumentasi|https://mlflow.org/docs/latest/index.html
+SK161|Firebase Documentation|Firebase|dokumentasi|https://firebase.google.com/docs
+SK162|Jetpack Compose Tutorial|Android Developers|latihan|https://developer.android.com/develop/ui/compose/tutorial
+SK163|Redux Essentials|redux.js.org|dokumentasi|https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+SK164|Learn Responsive Design|web.dev|kursus|https://web.dev/learn/design
+SK165|Kali Linux Documentation|kali.org|dokumentasi|https://www.kali.org/docs/
+SK168|Learn Prompting|learnprompting.org|panduan|https://learnprompting.org/docs/introduction
+SK171|Learn Performance|web.dev|kursus|https://web.dev/learn/performance
+SK172|Learn Accessibility|web.dev|kursus|https://web.dev/learn/accessibility
+SK173|Vite Guide|vite.dev|dokumentasi|https://vite.dev/guide/
+SK174|OAuth 2.0 Simplified|oauth.com|panduan|https://www.oauth.com/
+SK175|RabbitMQ Tutorials|RabbitMQ|latihan|https://www.rabbitmq.com/tutorials
+SK177|Prisma: Getting started|Prisma|dokumentasi|https://www.prisma.io/docs/getting-started
+SK178|Refactoring & Design Patterns|Refactoring.Guru|panduan|https://refactoring.guru/
+SK179|Android Architecture guide|Android Developers|dokumentasi|https://developer.android.com/topic/architecture
+SK180|Kotlin coroutines on Android|Android Developers|dokumentasi|https://developer.android.com/kotlin/coroutines
+SK184|Material Design 3|Google|panduan|https://m3.material.io/
+SK184|Human Interface Guidelines|Apple Developer|panduan|https://developer.apple.com/design/human-interface-guidelines
+SK186|Data Cleaning|Kaggle Learn|kursus|https://www.kaggle.com/learn/data-cleaning
+SK189|DAX documentation|Microsoft Learn|dokumentasi|https://learn.microsoft.com/en-us/dax/
+SK190|Feature Engineering|Kaggle Learn|kursus|https://www.kaggle.com/learn/feature-engineering
+SK192|Time Series|Kaggle Learn|kursus|https://www.kaggle.com/learn/time-series
+SK203|Helm Documentation|helm.sh|dokumentasi|https://helm.sh/docs/
+SK202|Argo CD: Getting Started|Argo Project|dokumentasi|https://argo-cd.readthedocs.io/en/stable/getting_started/
+SK208|Site Reliability Engineering (buku gratis)|Google SRE|panduan|https://sre.google/books/
+SK212|MITRE ATT&CK|MITRE|panduan|https://attack.mitre.org/
+SK214|Metasploit Unleashed|OffSec|kursus|https://www.offsec.com/metasploit-unleashed/
+SK225|k6 Documentation|Grafana k6|dokumentasi|https://grafana.com/docs/k6/latest/
+SK227|Appium Documentation|appium.io|dokumentasi|https://appium.io/docs/en/latest/
+SK235|Proxmox VE Documentation|Proxmox|dokumentasi|https://pve.proxmox.com/pve-docs/
+SK237|Wireshark User's Guide|Wireshark|dokumentasi|https://www.wireshark.org/docs/wsug_html_chunked/
+SK242|Use The Index, Luke|Markus Winand|panduan|https://use-the-index-luke.com/
+SK245|Kanban guide|Atlassian|panduan|https://www.atlassian.com/agile/kanban
+SK252|Tag Manager Help|Google|dokumentasi|https://support.google.com/tagmanager/
+SK256|Blender Tutorials|Blender|kursus|https://www.blender.org/support/tutorials/
+SK258|Godot: Getting started|Godot Engine|dokumentasi|https://docs.godotengine.org/en/stable/getting_started/introduction/index.html
+SK262|ABAP di SAP Learning|SAP|kursus|https://learning.sap.com/
+SK264|Dynamics 365 training|Microsoft Learn|kursus|https://learn.microsoft.com/en-us/training/dynamics365/
+SK267|Ethereum development documentation|ethereum.org|dokumentasi|https://ethereum.org/en/developers/docs/
+SK269|FreeRTOS Documentation|FreeRTOS|dokumentasi|https://www.freertos.org/Documentation/00-Overview
+SK271|KiCad: Getting Started|KiCad|dokumentasi|https://docs.kicad.org/
+SK273|Node-RED Documentation|Node-RED|dokumentasi|https://nodered.org/docs/
+SK275|Docusaurus Documentation|Docusaurus|dokumentasi|https://docusaurus.io/docs
+SK275|Write the Docs: Documentation Guide|Write the Docs|panduan|https://www.writethedocs.org/guide/

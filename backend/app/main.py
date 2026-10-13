@@ -211,7 +211,8 @@ def ambil_roadmap(rid: str) -> dict:
     p = kb.cari_profesi(r["target"])
     peta = rm.susun(ev.profil_dari_masukan(r["masukan"], kb), r["target"], r["centang"], kb)
     return {"target": {"profesi_id": p["id"], "nama": p["nama"], "sektor": p["sektor"],
-                       "skill_sumber": p["skill_sumber"]}, **peta}
+                       "skill_sumber": p["skill_sumber"], "peta_belajar": p["peta_belajar"],
+                       "proyek": p["proyek"]}, **peta}
 
 
 @app.post("/api/rekomendasi/{rid}/roadmap/centang", status_code=204)
@@ -261,9 +262,16 @@ def detail_profesi(rid: str, pid: str) -> dict:
         "tersaring": tersaring,
         "relevan": r["umpan_balik"].get(pid),
         "jadi_target": r["target"] == pid,
-        "kesenjangan": kesenjangan_skill(r["masukan"]["skill"], kb.skill_profesi(pid), kb.nama_skill()),
+        "kesenjangan": _dengan_belajar(
+            kesenjangan_skill(r["masukan"]["skill"], kb.skill_profesi(pid), kb.nama_skill())),
         "prodi_terkait": [x["nama"] for x in kb.prodi if pid in x["profesi"]],
     }
+
+
+def _dengan_belajar(k: dict) -> dict:
+    """Skill yang belum dikuasai dilengkapi sumber belajarnya."""
+    belajar = muat_kb().belajar_skill()
+    return {**k, "belum": [{**s, "belajar": belajar[s["skill_id"]]} for s in k["belum"]]}
 
 
 @app.post("/api/rekomendasi/{rid}/umpan-balik", status_code=204)

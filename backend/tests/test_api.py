@@ -159,4 +159,17 @@ def test_dasbor_peneliti(klien, monkeypatch):
 
 def test_alias_skill(klien):
     skill = {s["id"]: s for s in klien.get("/api/kuesioner").json()["skill"]}
-    assert "ReactJS" in skill["SK016"]["alias"] and len(skill) == 168
+    assert "ReactJS" in skill["SK016"]["alias"] and len(skill) == 277
+
+
+def test_sumber_belajar_dan_panduan(klien):
+    rid = klien.post("/api/rekomendasi", json=masukan(skill={"SK015": 2})).json()["id"]
+    d = klien.get(f"/api/rekomendasi/{rid}/profesi/C001").json()
+    react = next(s for s in d["kesenjangan"]["belum"] if s["skill_id"] == "SK016")
+    assert react["belajar"] and all(b["url"].startswith("https://") for b in react["belajar"])
+    assert d["profesi"]["peta_belajar"]["url"] == "https://roadmap.sh/frontend"
+    assert len(d["profesi"]["proyek"]) == 2
+
+    klien.put(f"/api/rekomendasi/{rid}/target", json={"profesi_id": "C001"})
+    r = klien.get(f"/api/rekomendasi/{rid}/roadmap").json()
+    assert r["target"]["proyek"] and all("belajar" in s for t in r["tahap"] for s in t["skill"])
