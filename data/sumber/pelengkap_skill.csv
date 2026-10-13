@@ -188,3 +188,6 @@ SK301,No-code / Low-code (Webflow / Framer / Bubble),Design Tool,hard_skill,Memb
 SK302,Local LLM (Ollama),AI Infrastructure,hard_skill,Menjalankan model bahasa di mesin sendiri
 SK303,Model Context Protocol (MCP),AI Technique,hard_skill,Standar menyambungkan model bahasa ke alat dan data
 SK304,Object Storage (S3 / R2 / MinIO),Cloud Platform,hard_skill,Penyimpanan berkas skala besar
+SK305,Docker Compose,DevOps,hard_skill,Menjalankan aplikasi multi-kontainer dari satu berkas konfigurasi
+SK306,Laravel Livewire,Backend Framework,hard_skill,Komponen antarmuka dinamis di Laravel tanpa menulis banyak JavaScript
+SK307,Inertia.js,Frontend Framework,hard_skill,Menyambungkan backend Laravel dengan frontend React / Vue tanpa membuat API terpisah

@@ -262,6 +262,7 @@ def detail_profesi(rid: str, pid: str) -> dict:
         "tersaring": tersaring,
         "relevan": r["umpan_balik"].get(pid),
         "jadi_target": r["target"] == pid,
+        "alpha": r["hasil"]["konfigurasi"]["alpha"],
         "kesenjangan": _dengan_belajar(
             kesenjangan_skill(r["masukan"]["skill"], kb.skill_profesi(pid), kb.nama_skill())),
         "prodi_terkait": [x["nama"] for x in kb.prodi if pid in x["profesi"]],

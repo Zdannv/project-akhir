@@ -185,6 +185,7 @@ function TabAnalisa({ d }: { d: Detail }) {
               <Batang nilai={n.cbf.skor} warna="bg-indigo-500" alas="bg-indigo-100" />
             </div>
           </dl>
+          <PenahanSkor n={n} alpha={d.alpha} />
         </section>
       ) : d.ringkas && (
         <section className="rounded-2xl bg-violet-50 px-4 py-3.5">
@@ -206,6 +207,39 @@ function TabAnalisa({ d }: { d: Detail }) {
       </Blok>
       <p className="text-[11px] leading-relaxed text-slate-400">
         **Profil profesi dari O*NET: {p.soc_judul} ({p.soc_code}), keyakinan padanan {p.soc_keyakinan}.{p.soc_catatan && ` ${p.soc_catatan}.`}
+      </p>
+    </div>
+  )
+}
+
+/**
+ * Menjelaskan dari mana poin yang hilang. Skor akhir adalah jumlah berbobot,
+ * jadi poin yang hilang tiap komponen bisa dihitung persis:
+ *   KBF  : alpha x bobot komponen x (1 - nilai komponen)
+ *   CBF  : (1 - alpha) x (1 - kemiripan skill)
+ */
+function PenahanSkor({ n, alpha }: { n: NonNullable<Detail['penilaian']>; alpha: number }) {
+  const hilang = [
+    ...(Object.keys(NAMA_KOMPONEN) as (keyof typeof NAMA_KOMPONEN)[]).map((k) => ({
+      nama: NAMA_KOMPONEN[k].replace(/ \(.*\)/, ''), poin: alpha * n.kbf.bobot[k] * (1 - n.kbf.komponen[k]) * 100, skill: false,
+    })),
+    { nama: 'Kemiripan skill', poin: (1 - alpha) * (1 - n.cbf.skor) * 100, skill: true },
+  ].filter((h) => h.poin >= 1).sort((a, b) => b.poin - a.poin)
+  if (hilang.length === 0) return null
+  const skill = hilang.find((h) => h.skill)
+  return (
+    <div className="mt-5 rounded-xl bg-slate-50 px-4 py-3.5">
+      <p className="text-[13px] font-semibold text-slate-900">Dari mana {Math.round((1 - n.skor) * 100)} poin yang hilang?</p>
+      <ul className="mt-2 flex flex-col gap-1">
+        {hilang.map((h) => (
+          <li key={h.nama} className="flex justify-between gap-3 text-[12.5px] text-slate-600">
+            <span>{h.nama}</span><span className="tabular-nums font-semibold text-slate-900">−{Math.round(h.poin)} poin</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-3 text-[11.5px] leading-relaxed text-slate-500">
+        Skor akhir = {Math.round(alpha * 100)}% kecocokan profil (minat, kepribadian, finansial) + {Math.round((1 - alpha) * 100)}% kemiripan skill.
+        {skill && skill.poin >= 10 && ' Kemiripan skill dihitung dengan cosine similarity, yang membandingkan seluruh skill-mu dengan kebutuhan profesi: skill di luar kebutuhan profesi ini ikut menurunkan nilainya, dan skill bertingkat Dasar atau Menengah dihitung sebagian.'}
       </p>
     </div>
   )

@@ -206,6 +206,7 @@ export type Detail = {
   tersaring: Tersaring | null
   relevan: boolean | null
   jadi_target: boolean
+  alpha: number
   kesenjangan: Kesenjangan
   prodi_terkait: string[]
 }
@@ -246,11 +247,18 @@ export async function unduhEkspor(kunci: string): Promise<Blob> {
 export const kirimSus = (id: string, jawaban: number[]) =>
   minta<{ skor: number }>(`/rekomendasi/${id}/sus`, { method: 'POST', body: JSON.stringify({ jawaban }) })
 
-/** Pita rekomendasi. Hanya cara menyajikan skor; tidak dipakai mesin maupun evaluasi. */
-export function pita(skor: number): { label: string; nada: 'hijau' | 'biru' | 'kuning' } {
-  if (skor >= 0.75) return { label: 'Sangat Direkomendasikan', nada: 'hijau' }
-  if (skor >= 0.6) return { label: 'Direkomendasikan', nada: 'biru' }
-  return { label: 'Kurang Direkomendasikan', nada: 'kuning' }
+/**
+ * Pita kecocokan. Hanya cara menyajikan skor; tidak dipakai mesin maupun evaluasi.
+ *
+ * Labelnya menggambarkan tingkat kecocokan, bukan anjuran: profesi peringkat
+ * satu tetap rekomendasi terbaik untuk orang itu walaupun skornya di bawah 60%,
+ * jadi menyebutnya "kurang direkomendasikan" saling bertentangan.
+ */
+export function pita(skor: number): { label: string; nada: 'hijau' | 'biru' | 'kuning' | 'abu' } {
+  if (skor >= 0.75) return { label: 'Sangat Cocok', nada: 'hijau' }
+  if (skor >= 0.6) return { label: 'Cocok', nada: 'biru' }
+  if (skor >= 0.45) return { label: 'Cukup Cocok', nada: 'kuning' }
+  return { label: 'Kurang Cocok', nada: 'abu' }
 }
 
 export const gaji = (min: number, maks: number) =>

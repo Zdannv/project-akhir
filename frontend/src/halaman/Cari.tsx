@@ -110,7 +110,7 @@ function Isi({ id, d }: { id: string; d: Hasil }) {
         <ul className="mt-4 grid gap-3 sm:grid-cols-2">
           {hasil.map((p) => {
             const b = pita(p.skor)
-            const warna = { hijau: 'bg-emerald-50 text-emerald-700', biru: 'bg-sky-50 text-sky-700', kuning: 'bg-amber-50 text-amber-700' }[b.nada]
+            const warna = { hijau: 'bg-emerald-50 text-emerald-700', biru: 'bg-sky-50 text-sky-700', kuning: 'bg-amber-50 text-amber-700', abu: 'bg-slate-100 text-slate-600' }[b.nada]
             return (
               <li key={p.profesi_id}>
                 <Link to={`/explore/${id}/profesi/${p.profesi_id}`} className="flex h-full flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-4 transition-colors hover:border-slate-300">

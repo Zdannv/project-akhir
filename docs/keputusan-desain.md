@@ -54,7 +54,7 @@ lewat `data/sumber/pelengkap_*.csv`:
   relasinya ke profesi yang sudah ada, dengan bobot sengaja kecil (3–16)
   supaya tidak mengalahkan data lowongan.
 
-Hasilnya 302 skill dan 889 relasi, **582 relasi di antaranya kurasi (65%)**.
+Hasilnya 305 skill dan 898 relasi, **591 relasi di antaranya kurasi (66%)**.
 Di dalamnya termasuk platform dan perkakas modern (Supabase, Vercel,
 Cloudflare, asisten koding AI, dan sejenisnya) yang tidak muncul di data lowongan.
 Technical skill per profesi sekarang 12–47. Karena lebih dari separuh relasi
@@ -95,8 +95,21 @@ jawaban yang terkumpul sebagai bukti awal reliabilitas.
 tetapi bobotnya 0. Skill itu tampil di analisis kesenjangan, tetapi tidak
 menyumbang ke skor CBF.
 
-**Pita rekomendasi** (≥ 75% sangat direkomendasikan, ≥ 60% direkomendasikan)
-hanya cara menyajikan skor di antarmuka. Mesin dan evaluasi tidak memakainya.
+**Pita kecocokan** (≥ 75% sangat cocok, ≥ 60% cocok, ≥ 45% cukup cocok, di
+bawahnya kurang cocok) hanya cara menyajikan skor di antarmuka. Ambangnya
+ditetapkan penulis, bukan hasil kalibrasi, dan mesin maupun evaluasi tidak
+memakainya. Labelnya sengaja menggambarkan kecocokan, bukan anjuran: profesi
+peringkat satu tetap rekomendasi terbaik walau skornya rendah.
+
+**Skor absolut cenderung rendah.** Skor akhir jarang melewati 60–70% karena
+tiga hal yang bekerja bersamaan: (a) Iachan memberi nilai sangat rendah kalau
+huruf pertama kode minat tidak sama, dan pengguna yang menjawab "suka" di
+hampir semua butir mendapat kode tiga huruf yang ditentukan selisih tipis;
+(b) cosine pada seluruh kosakata skill menurunkan nilai orang yang memilih
+banyak skill; (c) skill bertingkat Dasar dan Menengah dihitung 1/3 dan 2/3.
+Yang bermakna adalah URUTAN profesi, bukan angka persennya. Layar detail
+merinci berapa poin yang hilang di tiap komponen supaya pengguna bisa melihat
+sebabnya.
 
 ## 4. Temuan dari simulasi
 

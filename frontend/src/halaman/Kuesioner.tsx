@@ -423,7 +423,9 @@ function PilihSkill({ k, skill, atur, lain, ubahLain }: {
   const sudahAda = k.skill.some((s) => s.nama.toLowerCase() === kata || s.alias.some((a) => a.toLowerCase() === kata)) ||
     lain.some((s) => s.toLowerCase() === kata)
   const bisaTambah = ketik.length >= 2 && ketik.length <= 40 && !sudahAda && lain.length < 20
-  const terpilih = Object.entries(skill).sort((a, b) => b[1] - a[1])
+  // Urutannya mengikuti urutan dipilih dan TIDAK berubah saat tingkatnya diganti:
+  // baris yang melompat setiap kali diketuk membuat daftar panjang sulit diikuti.
+  const terpilih = Object.entries(skill)
 
   function tambahLain() {
     if (!bisaTambah) return

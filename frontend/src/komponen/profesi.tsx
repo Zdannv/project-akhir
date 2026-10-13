@@ -8,6 +8,7 @@ const NADA = {
   hijau: { kotak: 'border-emerald-200 bg-emerald-50', teks: 'text-emerald-700', chip: 'bg-emerald-50 text-emerald-700' },
   biru: { kotak: 'border-sky-200 bg-sky-50', teks: 'text-sky-700', chip: 'bg-sky-50 text-sky-700' },
   kuning: { kotak: 'border-amber-200 bg-amber-50', teks: 'text-amber-700', chip: 'bg-amber-50 text-amber-700' },
+  abu: { kotak: 'border-slate-200 bg-slate-50', teks: 'text-slate-600', chip: 'bg-slate-100 text-slate-600' },
 }
 
 export function LencanaPita({ skor }: { skor: number }) {

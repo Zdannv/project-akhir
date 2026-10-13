@@ -2,9 +2,9 @@
  "meta": {
   "dibuat": "2026-10-13",
   "n_profesi": 35,
-  "n_skill": 302,
-  "n_relasi": 889,
-  "n_relasi_kurasi": 582,
+  "n_skill": 305,
+  "n_relasi": 898,
+  "n_relasi_kurasi": 591,
   "sumber": {
    "pasar_kerja": "knowledge_base_profesi_IT.xlsx — pengolahan lowongan kerja LinkedIn Indonesia 2025",
    "skill_kurasi": "pelengkap_*.csv — kurasi penulis: skill untuk 9 profesi yang belum tercakup dan skill umum yang belum ada di data lowongan; perlu divalidasi",
@@ -10937,6 +10937,65 @@
      "durasi": "18.06"
     }
    ]
+  },
+  {
+   "id": "SK305",
+   "nama": "Docker Compose",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Menjalankan aplikasi multi-kontainer dari satu berkas konfigurasi",
+   "sumber": "kurasi",
+   "alias": [
+    "docker-compose"
+   ],
+   "belajar": [
+    {
+     "judul": "Docker Compose Documentation",
+     "penyedia": "docker.com",
+     "jenis": "dokumentasi",
+     "url": "https://docs.docker.com/compose/"
+    }
+   ]
+  },
+  {
+   "id": "SK306",
+   "nama": "Laravel Livewire",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Komponen antarmuka dinamis di Laravel tanpa menulis banyak JavaScript",
+   "sumber": "kurasi",
+   "alias": [
+    "Livewire",
+    "TALL Stack"
+   ],
+   "belajar": [
+    {
+     "judul": "Livewire Documentation",
+     "penyedia": "Laravel Livewire",
+     "jenis": "dokumentasi",
+     "url": "https://livewire.laravel.com/docs/quickstart"
+    }
+   ]
+  },
+  {
+   "id": "SK307",
+   "nama": "Inertia.js",
+   "kategori": "Frontend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyambungkan backend Laravel dengan frontend React / Vue tanpa membuat API terpisah",
+   "sumber": "kurasi",
+   "alias": [
+    "Inertia",
+    "InertiaJS"
+   ],
+   "belajar": [
+    {
+     "judul": "Inertia.js Documentation",
+     "penyedia": "inertiajs.com",
+     "jenis": "dokumentasi",
+     "url": "https://inertiajs.com/"
+    }
+   ]
   }
  ],
  "profesi_skill": {
@@ -11195,6 +11254,13 @@
    },
    {
     "skill_id": "SK294",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK307",
     "wajib": false,
     "bobot": 3.0,
     "catatan": null,
@@ -11544,6 +11610,20 @@
     "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK305",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK306",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C003": [
@@ -11838,6 +11918,27 @@
     "skill_id": "SK304",
     "wajib": false,
     "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK305",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK306",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK307",
+    "wajib": false,
+    "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -12935,6 +13036,13 @@
     "skill_id": "SK304",
     "wajib": false,
     "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK305",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -14144,6 +14252,13 @@
     "skill_id": "SK304",
     "wajib": false,
     "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK305",
+    "wajib": false,
+    "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -15667,6 +15782,13 @@
     "skill_id": "SK291",
     "wajib": false,
     "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK305",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
