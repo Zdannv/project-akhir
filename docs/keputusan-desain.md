@@ -13,10 +13,10 @@ sistem yang tidak bisa dijelaskan asal-usulnya saat sidang.
 | Profiling: skill, preferensi, kendala sosial-keluarga | langkah 1 dan 4 kuesioner | |
 | Profiling: klaster GMM (K = 8) | **tidak dibuat** | lihat §2 |
 | Hard filter pendidikan dan relokasi | `kbf.alasan_tersaring` | profesi tersaring tetap ditampilkan dengan alasannya |
-| Kongruensi Iachan | `kbf.kongruensi_iachan` | indeks M, maksimum 28 |
+| Kongruensi Iachan | `kbf.kongruensi_iachan` | indeks M, maksimum 28; kini pembanding, bawaannya korelasi (§2) |
 | Bobot KBF 50/20/15/15 dan 60/25/15/0 | `kbf.BOBOT_TANGGUNGAN`, `BOBOT_TANPA` | sesuai proposal |
 | CBF cosine similarity skill | `cbf.skor_cbf` | vektor profesi berbobot `skill_weight_pct` |
-| `α·KBF + (1−α)·CBF`, α = 0,6 | `hibrida.py` | α bisa diubah untuk eksperimen |
+| `α·KBF + (1−α)·CBF`, α = 0,6 | `hibrida.py` | bawaan kini α = 0,5 (§2); konfigurasi proposal tersedia sebagai `KONFIG_PROPOSAL` |
 | Dasbor Top-N + detail 3 tab | layar Explore dan Detail Profesi | Analisa · Skill & Kompetensi · Insight |
 | Analisis kesenjangan skill | `cbf.kesenjangan_skill`, `roadmap.py` | ditambah roadmap bertahap dan simulasi skor |
 | Precision@K, Recall@K, Hit Rate@5, SUS | `scripts/evaluasi.py` | lihat §5 |
@@ -29,6 +29,32 @@ pengguna yang belum ada, dan judul yang sudah direvisi tidak lagi menyebutnya.
 Kalau penguji memintanya, tempat yang wajar adalah sebagai label profil di
 layar Profil, dilatih dari `profil.riasec + profil.big5` responden yang
 terkumpul — tanpa mengubah `hibrida.py`.
+
+**Kongruensi minat: korelasi, bukan Iachan; dan α = 0,5, bukan 0,6.** Ini
+penyimpangan terbesar dari proposal, diputuskan pada 13 Oktober 2026 setelah
+uji coba dan simulasi.
+
+- *Masalah Iachan.* Indeks Iachan hanya membandingkan tiga huruf teratas dan
+  urutannya. Pengguna dengan minat merata (misalnya S 100%, E 100%, C 92%,
+  I 83%) mendapat kode SEC, dan kongruensinya dengan profesi berkode ICR jatuh
+  ke 7%, padahal minat Investigative-nya 83%. Selisih tipis di kuesioner
+  menentukan segalanya. Selain itu 11 profesi berkode sama (ICR), sehingga
+  Iachan tidak bisa membedakannya.
+- *Penggantinya.* Korelasi Pearson antara keenam skor minat pengguna dan
+  profil O*NET profesi, dipetakan ke 0–1. Memakai seluruh bentuk profil.
+- *Bukti simulasi.* Hit@1 hibrida naik dari 89,6% (Iachan, α = 0,6) ke 95,9%
+  (korelasi, α = 0,5). Dengan Iachan, hibrida α = 0,6 kalah dari CBF saja
+  (91,4%); dengan korelasi, hibrida unggul di seluruh rentang α 0,1–0,9.
+- *Kenapa α = 0,5.* Dengan korelasi, α 0,5–0,8 memberi hasil hampir sama di
+  simulasi. Simulasi menguntungkan KBF (minat persona dibangkitkan dari profil
+  profesi itu sendiri), sedangkan minat manusia lebih berderau; pada simulasi
+  dengan derau minat dua kali lipat, puncaknya bergeser ke α = 0,5. Maka
+  dipilih ujung bawah rentang itu: bobot seimbang antara profil dan skill.
+
+Konfigurasi proposal tidak dibuang. `KONFIG_PROPOSAL` (Iachan, α = 0,6) selalu
+dihitung berdampingan di laporan evaluasi dan dasbor peneliti, sehingga Bab 4
+bisa menyajikan keduanya. **Keputusan ini perlu disetujui pembimbing**, karena
+mengubah rumus yang tertulis di buku proposal.
 
 **Tumpukan teknologi.** FastAPI + Python untuk mesin dan evaluasi (satu bahasa
 untuk rumus dan pengujiannya), React + Vite untuk antarmuka, SQLite untuk
@@ -116,18 +142,13 @@ sebabnya.
 Angka lengkap ada di `docs/hasil-evaluasi.md`. Tiga hal yang layak dibahas
 dengan pembimbing:
 
-1. **Pada α = 0,6, hibrida mengungguli KBF saja tetapi KALAH dari CBF saja**
-   (Hit@1 89,7% vs 38,0% dan 92,9%). Hibrida baru unggul pada α 0,1–0,4, dengan
-   puncak di α = 0,2 (94,5%). Sebelum daftar skill diperluas, hibrida α = 0,6
-   masih sedikit di atas CBF saja; setelah skill tiap profesi lebih kaya, daya
-   beda CBF naik dan bobot KBF 0,6 menjadi terlalu besar. Ini harus dibahas
-   dengan pembimbing: klaim "hybrid lebih baik" di simulasi hanya berlaku
-   kalau α diturunkan.
-2. **Penyebabnya** sama seperti sebelumnya: banyak profesi TI punya kode
-   Holland yang mirip (ICR muncul 11 kali), jadi KBF kurang membedakan.
-3. **Korelasi profil RIASEC mengungguli Iachan** (Hit@1 96,6% vs 89,7%), karena
-   Iachan hanya memakai tiga huruf teratas dan memberi skor identik untuk
-   profesi berkode sama. Dengan korelasi, hibrida α = 0,6 kembali di atas CBF saja.
+1. **Dengan konfigurasi bawaan, hibrida mengungguli KBF saja dan CBF saja**
+   (Hit@1 95,9% vs 55,9% dan 91,4%).
+2. **Dengan konfigurasi proposal, hibrida kalah dari CBF saja** (89,6% vs
+   91,4%). Iachan baru unggul tipis pada α 0,1–0,5 (puncak 93,9% di α = 0,3):
+   banyak profesi TI berkode Holland sama, jadi Iachan kurang membedakan dan
+   bobot 0,6 padanya terlalu besar. Inilah alasan konfigurasi bawaan diganti (§2).
+3. **Korelasi tahan terhadap pilihan α**: Hit@1 di atas 94% untuk α 0,4–0,9.
 4. **Cosine global mengungguli cosine pada ruang skill profesi** (Hit@1 92,9%
    vs 65,9%), juga untuk persona yang skill-nya banyak. Varian ruang profesi
    sempat dicoba karena cosine global "mengencerkan" skor orang yang memilih
@@ -142,8 +163,10 @@ roadmap diukur dengan *cakupan* (porsi bobot skill profesi yang dikuasai), yang
 selalu naik, sedangkan skor dan peringkat proyeksi ditampilkan apa adanya.
 
 Simulasi memakai persona yang dibangkitkan dari basis pengetahuan itu sendiri,
-jadi angkanya batas atas dan **bukan** bukti akurasi pada manusia. Nilai α dan
-ukuran kongruensi sebaiknya baru diputuskan setelah ada data responden.
+jadi angkanya batas atas dan **bukan** bukti akurasi pada manusia. Persona
+juga dibangkitkan dari vektor minat profesi, sehingga simulasi cenderung
+menguntungkan ukuran korelasi. Konfigurasi bawaan dan konfigurasi proposal
+harus dibandingkan lagi pada data responden sungguhan.
 
 ## 5. Bahan belajar
 

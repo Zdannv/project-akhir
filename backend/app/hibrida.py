@@ -1,6 +1,11 @@
 """Tahap 2c — penggabungan (weighted hybrid) dan penyusunan Top-N.
 
-    Skor_Final = alpha * Skor_KBF + (1 - alpha) * Skor_CBF        alpha = 0,6
+    Skor_Final = alpha * Skor_KBF + (1 - alpha) * Skor_CBF        alpha = 0,5
+
+Konfigurasi bawaan (alpha 0,5 dan kongruensi minat berbasis korelasi) berbeda
+dari buku proposal (alpha 0,6 dan indeks Iachan). Alasannya ada di
+docs/keputusan-desain.md; konfigurasi proposal tetap tersedia sebagai
+`KONFIG_PROPOSAL` dan selalu dilaporkan berdampingan di evaluasi.
 
 Fungsi `rekomendasi` adalah satu-satunya pintu masuk mesin: API dan skrip
 evaluasi memanggil fungsi yang sama, sehingga angka di laporan pengujian
@@ -19,8 +24,8 @@ from .kuesioner import kode_holland
 
 @dataclass(frozen=True)
 class Konfigurasi:
-    alpha: float = 0.6              # porsi KBF; 1 = KBF saja, 0 = CBF saja
-    metode_riasec: str = "iachan"   # "iachan" | "korelasi"
+    alpha: float = 0.5              # porsi KBF; 1 = KBF saja, 0 = CBF saja
+    metode_riasec: str = "korelasi"  # "korelasi" | "iachan"
     ruang_cbf: str = "global"       # "global" | "profesi"; lihat cbf.py
     top_n: int = 5
 
@@ -29,6 +34,10 @@ class Konfigurasi:
             raise ValueError("alpha harus di antara 0 dan 1")
         if self.top_n < 1:
             raise ValueError("top_n minimal 1")
+
+
+# Persis seperti di buku proposal; dipakai sebagai pembanding.
+KONFIG_PROPOSAL = Konfigurasi(alpha=0.6, metode_riasec="iachan")
 
 
 def peringkat(profil: ProfilPengguna, kb: BasisPengetahuan,
@@ -106,7 +115,8 @@ def susun_alasan(profil: ProfilPengguna, profesi: dict, baris: dict) -> list[dic
         alasan.append({"nada": nada, "teks": teks})
 
     sama = [h for h in kode if h in profesi["kode_holland"]]
-    if k["riasec"] >= 0.6:
+    # Ambang 0,7: korelasi +0,4 ke atas, atau indeks Iachan dengan huruf pertama sama.
+    if k["riasec"] >= 0.7:
         tambah("cocok", f"Minatmu ({kode}) sejalan dengan tipe minat profesi ini ({profesi['kode_holland']}).")
     elif sama:
         tambah("cocok", f"Sebagian minatmu ({', '.join(sama)}) cocok dengan tipe minat profesi ini ({profesi['kode_holland']}).")

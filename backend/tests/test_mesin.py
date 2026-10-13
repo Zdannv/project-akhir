@@ -197,6 +197,17 @@ def test_cakupan_selalu_naik_saat_skill_bertambah():
             sebelum = sesudah
 
 
+def test_konfigurasi_bawaan_dan_proposal():
+    from app.hibrida import KONFIG_PROPOSAL
+    assert (Konfigurasi().alpha, Konfigurasi().metode_riasec) == (0.5, "korelasi")
+    assert (KONFIG_PROPOSAL.alpha, KONFIG_PROPOSAL.metode_riasec) == (0.6, "iachan")
+    # Minat merata dengan huruf pertama berbeda tipis: Iachan menjatuhkan, korelasi tidak.
+    rata = profil(riasec=dict(R=0.58, I=0.83, A=0.67, S=1.0, E=1.0, C=0.92))
+    dev = KB.cari_profesi("C003")
+    assert skor_kbf(rata, dev, "iachan")["komponen"]["riasec"] < 0.2
+    assert skor_kbf(rata, dev, "korelasi")["komponen"]["riasec"] > 0.4
+
+
 def test_konfigurasi_tidak_sah():
     with pytest.raises(ValueError):
         Konfigurasi(alpha=1.2)

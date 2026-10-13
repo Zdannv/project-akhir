@@ -79,7 +79,7 @@ export default function Peneliti() {
 const angka = (x: number, digit = 1) => x.toLocaleString('id-ID', { minimumFractionDigits: digit, maximumFractionDigits: digit })
 
 function Isi({ d }: { d: Data }) {
-  const hibrida = d.pakar?.['Hibrida (α = 0,6)']
+  const hibrida = d.pakar?.['Hibrida bawaan (korelasi, α = 0,5)']
   return (
     <div className="flex flex-col gap-6">
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">

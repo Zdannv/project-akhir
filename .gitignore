@@ -9,6 +9,6 @@ frontend/dist/
 
 # Data responden: berisi jawaban orang sungguhan, jangan masuk repo
 data/*.db
-data/*.db-*
+data/*.db*
 
 .DS_Store

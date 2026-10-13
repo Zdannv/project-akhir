@@ -91,10 +91,13 @@ def kongruensi_iachan(kode_orang: str, kode_profesi: str) -> float:
 
 
 def kongruensi_korelasi(riasec_orang: dict[str, float], riasec_profesi: dict[str, float]) -> float:
-    """Alternatif Iachan: korelasi Pearson keenam skor, dipetakan ke 0 - 1.
+    """Korelasi Pearson keenam skor minat, dipetakan ke 0 - 1. Ukuran bawaan.
 
-    Memakai seluruh bentuk profil, jadi bisa membedakan profesi yang kode tiga
-    hurufnya sama. Dipakai di eksperimen pembanding (scripts/evaluasi.py).
+    Memakai seluruh bentuk profil, bukan hanya tiga huruf teratas. Dua akibatnya:
+    profesi yang kode tiga hurufnya sama tetap bisa dibedakan, dan orang yang
+    minatnya merata tidak dijatuhkan hanya karena huruf pertamanya berbeda
+    tipis. Indeks Iachan (di atas) adalah ukuran di buku proposal dan tetap
+    dipakai sebagai pembanding.
     """
     a = [riasec_orang[t] for t in RIASEC]
     b = [riasec_profesi[t] for t in RIASEC]
@@ -124,7 +127,7 @@ def kecocokan_finansial(ekspektasi: int, gaji_min: int, gaji_maks: int) -> float
 
 
 # ── Skor KBF ────────────────────────────────────────────────────────────────
-def skor_kbf(profil: ProfilPengguna, profesi: dict, metode_riasec: str = "iachan") -> dict:
+def skor_kbf(profil: ProfilPengguna, profesi: dict, metode_riasec: str = "korelasi") -> dict:
     if metode_riasec == "iachan":
         riasec = kongruensi_iachan(kode_holland(profil.riasec), profesi["kode_holland"])
     elif metode_riasec == "korelasi":

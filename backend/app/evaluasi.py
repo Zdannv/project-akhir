@@ -12,16 +12,18 @@ from collections import Counter
 
 from . import kuesioner as q
 from . import penyimpanan as db
-from .hibrida import Konfigurasi, peringkat
+from .hibrida import KONFIG_PROPOSAL, Konfigurasi, peringkat
 from .kb import BIG5, RIASEC, BasisPengetahuan
 from .kbf import ProfilPengguna
 
 K = (1, 3, 5)
 
+NAMA_BAWAAN = "Hibrida bawaan (korelasi, α = 0,5)"
 KONFIG_ABLASI = {
-    "KBF saja (α = 1,0)": Konfigurasi(alpha=1.0),
+    "KBF saja (korelasi, α = 1,0)": Konfigurasi(alpha=1.0),
     "CBF saja (α = 0,0)": Konfigurasi(alpha=0.0),
-    "Hibrida (α = 0,6)": Konfigurasi(alpha=0.6),
+    NAMA_BAWAAN: Konfigurasi(),
+    "Hibrida proposal (Iachan, α = 0,6)": KONFIG_PROPOSAL,
 }
 
 

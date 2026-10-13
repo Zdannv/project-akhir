@@ -5,7 +5,7 @@ Proyek akhir. Merekomendasikan profesi TI dengan menggabungkan
 Five, finansial, stabilitas) dan **Content-Based Filtering** (cosine similarity
 skill):
 
-    Skor_Final = α · Skor_KBF + (1 − α) · Skor_CBF        α = 0,6
+    Skor_Final = α · Skor_KBF + (1 − α) · Skor_CBF        α = 0,5
 
 ## Fitur
 
