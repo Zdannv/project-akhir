@@ -439,9 +439,53 @@ function PilihSkill({ k, skill, atur, lain, ubahLain }: {
         yang dinilai adalah kemiripan dengan kebutuhan profesi, bukan jumlahnya.
       </p>
 
+      <div className="relative mt-4">
+        <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" aria-hidden />
+        <input type="search" value={cari} onChange={(e) => setCari(e.target.value)}
+          onKeyDown={(e) => { if (e.key === 'Enter' && kelompok.length === 0) { e.preventDefault(); tambahLain() } }}
+          placeholder="Cari skill, mis. Python, ReactJS, Figma, jaringan"
+          className="w-full rounded-full border border-slate-200 bg-white py-3 pl-11 pr-4 text-[13.5px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-violet-400" />
+      </div>
+
       {(terpilih.length > 0 || lain.length > 0) && (
-        <section className="mt-4 rounded-2xl border border-violet-200 bg-violet-50/50 p-4">
+        <p className="mt-3 text-[12.5px] text-slate-600">
+          <strong className="font-semibold text-slate-900">{terpilih.length + lain.length} skill dipilih.</strong>{' '}
+          Pilih dulu semuanya, tingkatnya diatur di bagian bawah.{' '}
+          <a href="#skill-pilihan" className="font-semibold text-violet-700 hover:text-violet-800">Lihat pilihan ↓</a>
+        </p>
+      )}
+
+      {bisaTambah && (
+        <button type="button" onClick={tambahLain} className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-dashed border-violet-400 px-3.5 py-2 text-[13px] font-semibold text-violet-700 hover:bg-violet-50">
+          <Plus className="size-4" aria-hidden /> Tidak ada di daftar? Tambahkan “{ketik}”
+        </button>
+      )}
+
+      <div className="mt-5 flex flex-col gap-5">
+        {kelompok.length === 0 && <p className="text-[13px] text-slate-400">Tidak ada skill yang cocok dengan “{ketik}”.</p>}
+        {kelompok.map(([kategori, daftar]) => (
+          <section key={kategori}>
+            <h2 className="text-[12px] font-bold uppercase tracking-wide text-slate-500">{kategori}</h2>
+            <div className="mt-2.5 flex flex-wrap gap-2">
+              {daftar.map((s) => {
+                const on = (skill[s.id] ?? 0) > 0
+                return (
+                  <button key={s.id} type="button" aria-pressed={on} onClick={() => atur(s.id, on ? 0 : 2)}
+                    className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-medium shadow-sm ring-1 transition-colors ${on ? 'bg-[#F1EBFF] text-[#7033FF] ring-[#DDD0FF]' : 'bg-white text-slate-900 ring-slate-200 hover:bg-slate-50'}`}>
+                    {on && <Check className="size-3.5" strokeWidth={3} aria-hidden />}
+                    {s.nama}
+                  </button>
+                )
+              })}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      {(terpilih.length > 0 || lain.length > 0) && (
+        <section id="skill-pilihan" className="mt-8 scroll-mt-24 rounded-2xl border border-violet-200 bg-violet-50/50 p-4">
           <h2 className="text-[13px] font-bold text-slate-900">Skill pilihanmu <span className="font-normal text-slate-500">({terpilih.length + lain.length})</span></h2>
+          <p className="mt-0.5 text-[12px] leading-relaxed text-slate-500">Atur tingkat penguasaan tiap skill di sini sebelum menyimpan. Bawaannya Menengah.</p>
           <ul className="mt-3 flex flex-col gap-2">
             {terpilih.map(([id, t]) => (
               <li key={id} className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-white px-3 py-2 ring-1 ring-slate-200">
@@ -477,41 +521,6 @@ function PilihSkill({ k, skill, atur, lain, ubahLain }: {
           )}
         </section>
       )}
-
-      <div className="relative mt-4">
-        <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" aria-hidden />
-        <input type="search" value={cari} onChange={(e) => setCari(e.target.value)}
-          onKeyDown={(e) => { if (e.key === 'Enter' && kelompok.length === 0) { e.preventDefault(); tambahLain() } }}
-          placeholder="Cari skill, mis. Python, ReactJS, Figma, jaringan"
-          className="w-full rounded-full border border-slate-200 bg-white py-3 pl-11 pr-4 text-[13.5px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-violet-400" />
-      </div>
-
-      {bisaTambah && (
-        <button type="button" onClick={tambahLain} className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-dashed border-violet-400 px-3.5 py-2 text-[13px] font-semibold text-violet-700 hover:bg-violet-50">
-          <Plus className="size-4" aria-hidden /> Tidak ada di daftar? Tambahkan “{ketik}”
-        </button>
-      )}
-
-      <div className="mt-5 flex flex-col gap-5">
-        {kelompok.length === 0 && <p className="text-[13px] text-slate-400">Tidak ada skill yang cocok dengan “{ketik}”.</p>}
-        {kelompok.map(([kategori, daftar]) => (
-          <section key={kategori}>
-            <h2 className="text-[12px] font-bold uppercase tracking-wide text-slate-500">{kategori}</h2>
-            <div className="mt-2.5 flex flex-wrap gap-2">
-              {daftar.map((s) => {
-                const on = (skill[s.id] ?? 0) > 0
-                return (
-                  <button key={s.id} type="button" aria-pressed={on} onClick={() => atur(s.id, on ? 0 : 2)}
-                    className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-medium shadow-sm ring-1 transition-colors ${on ? 'bg-[#F1EBFF] text-[#7033FF] ring-[#DDD0FF]' : 'bg-white text-slate-900 ring-slate-200 hover:bg-slate-50'}`}>
-                    {on && <Check className="size-3.5" strokeWidth={3} aria-hidden />}
-                    {s.nama}
-                  </button>
-                )
-              })}
-            </div>
-          </section>
-        ))}
-      </div>
     </div>
   )
 }
