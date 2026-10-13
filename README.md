@@ -1,8 +1,8 @@
 # Sistem Rekomendasi Profesi Bidang Teknologi Informasi — Hybrid Filtering
 
 Proyek akhir. Merekomendasikan profesi TI dengan menggabungkan
-**Knowledge-Based Filtering** (syarat mutlak, minat RIASEC, kepribadian Big
-Five, finansial, stabilitas) dan **Content-Based Filtering** (cosine similarity
+**Knowledge-Based Filtering** (syarat mutlak, minat RIASEC, minat bidang TI,
+kepribadian Big Five, kesiapan pengalaman, finansial, stabilitas) dan **Content-Based Filtering** (cosine similarity
 skill):
 
     Skor_Final = α · Skor_KBF + (1 − α) · Skor_CBF        α = 0,5
@@ -55,8 +55,9 @@ Untuk pengembangan antarmuka: jalankan backend seperti di atas, lalu
 
 ```bash
 cd backend
-.venv/bin/python -m pytest                   # 30 uji: mesin (white-box) dan API (black-box)
+.venv/bin/python -m pytest                   # 33 uji: mesin (white-box) dan API (black-box)
 .venv/bin/python scripts/evaluasi.py         # menulis docs/hasil-evaluasi.md
+.venv/bin/python scripts/kalibrasi.py        # mencari bobot dari data responden profesional
 ```
 
 `evaluasi.py` punya dua bagian: simulasi persona sintetis (ablasi KBF/CBF/hibrida,

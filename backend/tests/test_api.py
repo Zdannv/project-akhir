@@ -144,7 +144,7 @@ def test_dasbor_peneliti(klien, monkeypatch):
     d = klien.get("/api/peneliti/ringkasan").json()
     assert d["n"] == 1 and d["n_pakar"] == 1 and d["sus"][0] == 75.0
     assert d["skill_lain"] == [["svelte", 1]] and d["responden"][0]["profesi_aktual"] == "Data Scientist"
-    assert "Hibrida bawaan (korelasi, α = 0,5)" in d["pakar"] and len(d["pakar"]) == 4
+    assert "Hibrida bawaan (korelasi, α = 0,5)" in d["pakar"] and len(d["pakar"]) == 5
 
     csv_ = klien.get("/api/peneliti/ekspor.csv")
     assert csv_.headers["content-type"].startswith("text/csv")
@@ -155,6 +155,28 @@ def test_dasbor_peneliti(klien, monkeypatch):
     assert klien.get("/api/peneliti/ringkasan").status_code == 401
     assert klien.get("/api/peneliti/ringkasan", headers={"X-Kunci": "salah"}).status_code == 401
     assert klien.get("/api/peneliti/ringkasan", headers={"X-Kunci": "rahasia-uji"}).status_code == 200
+
+
+def test_minat_bidang_dan_pengalaman(klien):
+    k = klien.get("/api/kuesioner").json()
+    assert len(k["bidang"]["butir"]) == 16 and k["pengalaman"][0]["nilai"] == 0
+    bidang = {b["kode"]: 1 for b in k["bidang"]["butir"]} | {"DATA": 5}
+
+    # Tanpa dua jawaban itu (isian lama) komponennya dilewati.
+    lama = klien.get(f"/api/rekomendasi/{klien.post('/api/rekomendasi', json=masukan()).json()['id']}").json()
+    assert "bidang" not in lama["hasil"]["rekomendasi"][0]["kbf"]["komponen"]
+
+    rid = klien.post("/api/rekomendasi", json=masukan(bidang=bidang, pengalaman_tahun=0)).json()["id"]
+    h = klien.get(f"/api/rekomendasi/{rid}").json()
+    teratas = h["hasil"]["rekomendasi"][0]
+    assert {"bidang", "kesiapan"} <= set(teratas["kbf"]["komponen"])
+    assert abs(sum(teratas["kbf"]["bobot"].values()) - 1) < 1e-3
+    assert h["data_diri"]["pengalaman_tahun"] == 0 and h["data_diri"]["bidang"]["Data & analitik"] == 1.0
+    # Minat hanya pada data dan belum berpengalaman: profesi senior tidak di puncak.
+    assert teratas["pengalaman_min_tahun"] <= 1
+
+    assert klien.post("/api/rekomendasi", json=masukan(bidang={"DATA": 5})).status_code == 422
+    assert klien.post("/api/rekomendasi", json=masukan(bidang=bidang | {"DATA": 9})).status_code == 422
 
 
 def test_alias_skill(klien):

@@ -9,16 +9,30 @@ Dua lapis, mengikuti buku proposal:
                        tidak ada di kota domisili dan tidak bisa dikerjakan
                        jarak jauh.
 
-  2. Skor kecocokan berbobot dari empat komponen, masing-masing 0 - 1:
+  2. Skor kecocokan berbobot dari enam komponen, masing-masing 0 - 1:
 
-       komponen              punya tanggungan   tanpa tanggungan
-       kongruensi RIASEC           0,50              0,60
-       kecocokan Big Five          0,20              0,25
-       kecocokan finansial         0,15              0,15
-       stabilitas kerja            0,15              0,00
+       komponen               punya tanggungan   tanpa tanggungan   proposal
+       kongruensi RIASEC            0,25              0,30          0,50 / 0,60
+       minat bidang TI              0,25              0,30              -
+       kecocokan Big Five           0,10              0,15          0,20 / 0,25
+       kesiapan pengalaman          0,15              0,15              -
+       kecocokan finansial          0,10              0,10          0,15 / 0,15
+       stabilitas kerja             0,15              0,00          0,15 / 0,00
 
-     Bobot stabilitas hanya aktif untuk pengguna yang menanggung keluarga;
-     bagi yang lain bobotnya dialihkan ke minat dan kepribadian.
+     Dua komponen tidak ada di buku proposal dan ditambahkan setelah uji coba:
+
+       * minat bidang TI   RIASEC membedakan bidang besar (teknik, seni,
+         sosial), tetapi hampir semua profesi TI berkode mirip. Yang
+         membedakan Backend dari Data Engineer dari UI/UX adalah bidang kerja
+         yang disukai, jadi itu ditanyakan langsung.
+       * kesiapan pengalaman   tanpa ini profesi senior (minimal 3 tahun) bisa
+         menjadi peringkat satu bagi mahasiswa: cocok, tetapi belum bisa
+         dimasuki.
+
+     Bobot stabilitas hanya aktif untuk pengguna yang menanggung keluarga.
+     Komponen yang datanya tidak ada (isian lama tanpa minat bidang) dilewati
+     dan bobot sisanya dinormalkan ulang. Skema "proposal" memakai empat
+     komponen dan bobot asli buku proposal, sebagai pembanding.
 """
 
 from __future__ import annotations
@@ -29,8 +43,21 @@ from dataclasses import dataclass
 from .kb import BIG5, RIASEC, BasisPengetahuan
 from .kuesioner import kode_holland
 
-BOBOT_TANGGUNGAN = {"riasec": 0.50, "big5": 0.20, "finansial": 0.15, "stabilitas": 0.15}
-BOBOT_TANPA = {"riasec": 0.60, "big5": 0.25, "finansial": 0.15, "stabilitas": 0.00}
+# (punya tanggungan, tanpa tanggungan) per skema.
+SKEMA_BOBOT = {
+    "lengkap": (
+        {"riasec": 0.25, "bidang": 0.25, "big5": 0.10, "kesiapan": 0.15, "finansial": 0.10, "stabilitas": 0.15},
+        {"riasec": 0.30, "bidang": 0.30, "big5": 0.15, "kesiapan": 0.15, "finansial": 0.10, "stabilitas": 0.00},
+    ),
+    "proposal": (
+        {"riasec": 0.50, "big5": 0.20, "finansial": 0.15, "stabilitas": 0.15},
+        {"riasec": 0.60, "big5": 0.25, "finansial": 0.15, "stabilitas": 0.00},
+    ),
+}
+BOBOT_TANGGUNGAN, BOBOT_TANPA = SKEMA_BOBOT["proposal"]   # nama lama, dipakai pengujian
+
+# Selisih pengalaman (tahun) yang membuat kesiapan menjadi nol.
+JARAK_PENGALAMAN_MAKS = 3.0
 
 # Indeks M Iachan (1984): bobot kecocokan posisi huruf pada kode tiga huruf.
 # Baris = posisi huruf di kode orang, kolom = posisinya di kode pekerjaan.
@@ -52,6 +79,8 @@ class ProfilPengguna:
     ekspektasi_gaji: int               # rupiah per bulan; 0 = tidak diisi
     punya_tanggungan: bool
     skill: dict[str, int]              # skill_id -> tingkat 1..3
+    bidang: dict[str, float] | None = None   # minat per bidang TI, 0 - 1; None = tidak ditanyakan
+    pengalaman: float | None = None    # tahun pengalaman kerja/magang di TI; None = tidak ditanyakan
 
 
 # ── Penyaring mutlak ────────────────────────────────────────────────────────
@@ -126,8 +155,24 @@ def kecocokan_finansial(ekspektasi: int, gaji_min: int, gaji_maks: int) -> float
     return (gaji_maks - ekspektasi) / (gaji_maks - gaji_min)
 
 
+def minat_bidang(minat: dict[str, float] | None, bidang_profesi: dict[str, float]) -> float | None:
+    """Rata-rata berbobot minat pengguna pada bidang-bidang profesi ini."""
+    if not minat:
+        return None
+    return sum(b * minat.get(k, 0.0) for k, b in bidang_profesi.items()) / sum(bidang_profesi.values())
+
+
+def kesiapan_pengalaman(pengalaman: float | None, minimum: int) -> float | None:
+    """1 kalau pengalaman memenuhi syarat minimum profesi, turun linear sampai
+    0 saat kurang tiga tahun atau lebih."""
+    if pengalaman is None:
+        return None
+    return max(0.0, 1.0 - max(0.0, minimum - pengalaman) / JARAK_PENGALAMAN_MAKS)
+
+
 # ── Skor KBF ────────────────────────────────────────────────────────────────
-def skor_kbf(profil: ProfilPengguna, profesi: dict, metode_riasec: str = "korelasi") -> dict:
+def skor_kbf(profil: ProfilPengguna, profesi: dict, metode_riasec: str = "korelasi",
+             skema: str = "lengkap") -> dict:
     if metode_riasec == "iachan":
         riasec = kongruensi_iachan(kode_holland(profil.riasec), profesi["kode_holland"])
     elif metode_riasec == "korelasi":
@@ -135,17 +180,25 @@ def skor_kbf(profil: ProfilPengguna, profesi: dict, metode_riasec: str = "korela
     else:
         raise ValueError(f"metode_riasec tidak dikenal: {metode_riasec}")
 
-    komponen = {
+    if skema not in SKEMA_BOBOT:
+        raise ValueError(f"skema bobot tidak dikenal: {skema}")
+    nilai = {
         "riasec": riasec,
+        "bidang": minat_bidang(profil.bidang, profesi["bidang"]),
         "big5": kecocokan_big5(profil.big5, profesi["big5_ideal"]),
+        "kesiapan": kesiapan_pengalaman(profil.pengalaman, profesi["pengalaman_min_tahun"]),
         "finansial": kecocokan_finansial(profil.ekspektasi_gaji, profesi["gaji_min"], profesi["gaji_maks"]),
         "stabilitas": profesi["stabilitas"],
     }
-    bobot = BOBOT_TANGGUNGAN if profil.punya_tanggungan else BOBOT_TANPA
-    skor = sum(bobot[k] * komponen[k] for k in bobot)
+    dasar = SKEMA_BOBOT[skema][0 if profil.punya_tanggungan else 1]
+    # Komponen tanpa data dilewati; bobot sisanya dinormalkan supaya tetap berjumlah 1.
+    aktif = {k: b for k, b in dasar.items() if nilai[k] is not None}
+    total = sum(aktif.values())
+    bobot = {k: round(b / total, 4) for k, b in aktif.items()}
+    skor = sum(bobot[k] * nilai[k] for k in bobot)
     return {
         "skor": round(skor, 4),
-        "komponen": {k: round(v, 4) for k, v in komponen.items()},
+        "komponen": {k: round(nilai[k], 4) for k in bobot},
         "bobot": bobot,
     }
 

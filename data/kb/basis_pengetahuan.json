@@ -45,6 +45,88 @@
    "rank": 6
   }
  ],
+ "bidang": [
+  {
+   "kode": "WEB",
+   "nama": "Pengembangan web",
+   "pertanyaan": "Membangun situs dan aplikasi web, dari tampilan sampai server."
+  },
+  {
+   "kode": "MOBILE",
+   "nama": "Pengembangan mobile",
+   "pertanyaan": "Membangun aplikasi untuk ponsel Android atau iOS."
+  },
+  {
+   "kode": "DATA",
+   "nama": "Data & analitik",
+   "pertanyaan": "Mengolah dan menganalisis data untuk menjawab pertanyaan bisnis."
+  },
+  {
+   "kode": "AI",
+   "nama": "Kecerdasan buatan",
+   "pertanyaan": "Melatih model machine learning atau membangun aplikasi berbasis AI."
+  },
+  {
+   "kode": "INFRA",
+   "nama": "Infrastruktur & cloud",
+   "pertanyaan": "Mengelola server, cloud, dan otomasi supaya aplikasi tetap berjalan."
+  },
+  {
+   "kode": "JARINGAN",
+   "nama": "Jaringan & dukungan TI",
+   "pertanyaan": "Memasang jaringan, merawat perangkat, dan membantu pengguna yang bermasalah."
+  },
+  {
+   "kode": "KEAMANAN",
+   "nama": "Keamanan siber",
+   "pertanyaan": "Mencari celah keamanan dan melindungi sistem dari serangan."
+  },
+  {
+   "kode": "DESAIN",
+   "nama": "Desain UI/UX",
+   "pertanyaan": "Merancang tampilan dan alur aplikasi supaya mudah dipakai."
+  },
+  {
+   "kode": "MANAJEMEN",
+   "nama": "Manajemen produk & proyek",
+   "pertanyaan": "Mengatur prioritas, jadwal, dan orang supaya sebuah produk selesai."
+  },
+  {
+   "kode": "BISNIS",
+   "nama": "Analisis bisnis & sistem perusahaan",
+   "pertanyaan": "Memahami proses bisnis lalu merancang atau menerapkan sistem untuknya."
+  },
+  {
+   "kode": "PEMASARAN",
+   "nama": "Pemasaran digital",
+   "pertanyaan": "Menjalankan dan mengukur kampanye pemasaran di internet."
+  },
+  {
+   "kode": "GIM",
+   "nama": "Pengembangan gim",
+   "pertanyaan": "Membuat gim: mekanika, grafis, dan cerita."
+  },
+  {
+   "kode": "PERANGKAT",
+   "nama": "Perangkat keras & IoT",
+   "pertanyaan": "Memprogram mikrokontroler, sensor, dan perangkat terhubung."
+  },
+  {
+   "kode": "KUALITAS",
+   "nama": "Pengujian perangkat lunak",
+   "pertanyaan": "Menguji aplikasi sampai ketemu bug sebelum dipakai orang."
+  },
+  {
+   "kode": "DOKUMENTASI",
+   "nama": "Penulisan teknis",
+   "pertanyaan": "Menulis panduan dan dokumentasi supaya hal teknis mudah dipahami."
+  },
+  {
+   "kode": "WEB3",
+   "nama": "Blockchain",
+   "pertanyaan": "Membangun smart contract dan aplikasi terdesentralisasi."
+  }
+ ],
  "kota": [
   "Bali",
   "Bandung",
@@ -106,6 +188,9 @@
     "N": 0.4804
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "WEB": 1.0
+   },
    "peta_belajar": {
     "judul": "Frontend Developer Roadmap",
     "url": "https://roadmap.sh/frontend"
@@ -178,6 +263,9 @@
     "N": 0.4395
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "WEB": 1.0
+   },
    "peta_belajar": {
     "judul": "Backend Developer Roadmap",
     "url": "https://roadmap.sh/backend"
@@ -249,6 +337,9 @@
     "N": 0.4395
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "WEB": 1.0
+   },
    "peta_belajar": {
     "judul": "Full Stack Developer Roadmap",
     "url": "https://roadmap.sh/full-stack"
@@ -319,6 +410,9 @@
     "N": 0.4395
    },
    "stabilitas": 0.87,
+   "bidang": {
+    "MOBILE": 1.0
+   },
    "peta_belajar": {
     "judul": "Android Developer Roadmap",
     "url": "https://roadmap.sh/android"
@@ -389,6 +483,9 @@
     "N": 0.4395
    },
    "stabilitas": 0.87,
+   "bidang": {
+    "MOBILE": 1.0
+   },
    "peta_belajar": {
     "judul": "iOS Developer Roadmap",
     "url": "https://roadmap.sh/ios"
@@ -460,6 +557,10 @@
     "N": 0.4395
    },
    "stabilitas": 0.637,
+   "bidang": {
+    "MOBILE": 1.0,
+    "WEB": 0.3
+   },
    "peta_belajar": {
     "judul": "Flutter Developer Roadmap",
     "url": "https://roadmap.sh/flutter"
@@ -533,6 +634,10 @@
     "N": 0.5506
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "DATA": 1.0,
+    "BISNIS": 0.3
+   },
    "peta_belajar": {
     "judul": "Data Analyst Roadmap",
     "url": "https://roadmap.sh/data-analyst"
@@ -604,6 +709,10 @@
     "N": 0.5506
    },
    "stabilitas": 0.87,
+   "bidang": {
+    "DATA": 1.0,
+    "BISNIS": 0.4
+   },
    "peta_belajar": {
     "judul": "BI Analyst Roadmap",
     "url": "https://roadmap.sh/bi-analyst"
@@ -677,6 +786,10 @@
     "N": 0.6306
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "DATA": 1.0,
+    "INFRA": 0.5
+   },
    "peta_belajar": {
     "judul": "Data Engineer Roadmap",
     "url": "https://roadmap.sh/data-engineer"
@@ -748,6 +861,10 @@
     "N": 0.5043
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "AI": 1.0,
+    "DATA": 0.7
+   },
    "peta_belajar": {
     "judul": "AI and Data Scientist Roadmap",
     "url": "https://roadmap.sh/ai-data-scientist"
@@ -819,6 +936,11 @@
     "N": 0.5043
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "AI": 1.0,
+    "INFRA": 0.4,
+    "DATA": 0.4
+   },
    "peta_belajar": {
     "judul": "MLOps Roadmap",
     "url": "https://roadmap.sh/mlops"
@@ -889,6 +1011,10 @@
     "N": 0.4592
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "AI": 1.0,
+    "WEB": 0.4
+   },
    "peta_belajar": {
     "judul": "AI Engineer Roadmap",
     "url": "https://roadmap.sh/ai-engineer"
@@ -960,6 +1086,9 @@
     "N": 0.4592
    },
    "stabilitas": 0.93,
+   "bidang": {
+    "AI": 1.0
+   },
    "peta_belajar": {
     "judul": "AI and Data Scientist Roadmap",
     "url": "https://roadmap.sh/ai-data-scientist"
@@ -1031,6 +1160,9 @@
     "N": 0.4592
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "AI": 1.0
+   },
    "peta_belajar": {
     "judul": "AI Engineer Roadmap",
     "url": "https://roadmap.sh/ai-engineer"
@@ -1103,6 +1235,10 @@
     "N": 0.4075
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "INFRA": 1.0,
+    "WEB": 0.2
+   },
    "peta_belajar": {
     "judul": "DevOps Roadmap",
     "url": "https://roadmap.sh/devops"
@@ -1174,6 +1310,10 @@
     "N": 0.3948
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "INFRA": 1.0,
+    "JARINGAN": 0.3
+   },
    "peta_belajar": {
     "judul": "AWS Roadmap",
     "url": "https://roadmap.sh/aws"
@@ -1245,6 +1385,9 @@
     "N": 0.4075
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "INFRA": 1.0
+   },
    "peta_belajar": {
     "judul": "DevOps Roadmap",
     "url": "https://roadmap.sh/devops"
@@ -1317,6 +1460,10 @@
     "N": 0.3097
    },
    "stabilitas": 0.93,
+   "bidang": {
+    "KEAMANAN": 1.0,
+    "JARINGAN": 0.3
+   },
    "peta_belajar": {
     "judul": "Cyber Security Roadmap",
     "url": "https://roadmap.sh/cyber-security"
@@ -1389,6 +1536,9 @@
     "N": 0.4027
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "KEAMANAN": 1.0
+   },
    "peta_belajar": {
     "judul": "Cyber Security Roadmap",
     "url": "https://roadmap.sh/cyber-security"
@@ -1463,6 +1613,9 @@
     "N": 0.4234
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "DESAIN": 1.0
+   },
    "peta_belajar": {
     "judul": "UX Design Roadmap",
     "url": "https://roadmap.sh/ux-design"
@@ -1534,6 +1687,11 @@
     "N": 0.3187
    },
    "stabilitas": 0.87,
+   "bidang": {
+    "MANAJEMEN": 1.0,
+    "BISNIS": 0.4,
+    "DESAIN": 0.3
+   },
    "peta_belajar": {
     "judul": "Product Manager Roadmap",
     "url": "https://roadmap.sh/product-manager"
@@ -1606,6 +1764,10 @@
     "N": 0.5575
    },
    "stabilitas": 0.87,
+   "bidang": {
+    "KUALITAS": 1.0,
+    "WEB": 0.3
+   },
    "peta_belajar": {
     "judul": "QA Engineer Roadmap",
     "url": "https://roadmap.sh/qa"
@@ -1678,6 +1840,9 @@
     "N": 0.254
    },
    "stabilitas": 0.93,
+   "bidang": {
+    "MANAJEMEN": 1.0
+   },
    "peta_belajar": {
     "judul": "Engineering Manager Roadmap",
     "url": "https://roadmap.sh/engineering-manager"
@@ -1745,6 +1910,9 @@
     "N": 0.4527
    },
    "stabilitas": 1.0,
+   "bidang": {
+    "JARINGAN": 1.0
+   },
    "peta_belajar": null,
    "proyek": [
     {
@@ -1814,6 +1982,10 @@
     "N": 0.4075
    },
    "stabilitas": 0.93,
+   "bidang": {
+    "INFRA": 1.0,
+    "JARINGAN": 0.7
+   },
    "peta_belajar": {
     "judul": "Linux Roadmap",
     "url": "https://roadmap.sh/linux"
@@ -1886,6 +2058,10 @@
     "N": 0.3948
    },
    "stabilitas": 1.0,
+   "bidang": {
+    "JARINGAN": 1.0,
+    "KEAMANAN": 0.3
+   },
    "peta_belajar": null,
    "proyek": [
     {
@@ -1955,6 +2131,10 @@
     "N": 0.5194
    },
    "stabilitas": 0.93,
+   "bidang": {
+    "DATA": 0.7,
+    "INFRA": 0.7
+   },
    "peta_belajar": {
     "judul": "PostgreSQL DBA Roadmap",
     "url": "https://roadmap.sh/postgresql-dba"
@@ -2027,6 +2207,9 @@
     "N": 0.254
    },
    "stabilitas": 0.87,
+   "bidang": {
+    "MANAJEMEN": 1.0
+   },
    "peta_belajar": null,
    "proyek": [
     {
@@ -2097,6 +2280,10 @@
     "N": 0.4154
    },
    "stabilitas": 0.713,
+   "bidang": {
+    "PEMASARAN": 1.0,
+    "DATA": 0.4
+   },
    "peta_belajar": null,
    "proyek": [
     {
@@ -2167,6 +2354,9 @@
     "N": 0.3726
    },
    "stabilitas": 0.83,
+   "bidang": {
+    "GIM": 1.0
+   },
    "peta_belajar": {
     "judul": "Game Developer Roadmap",
     "url": "https://roadmap.sh/game-developer"
@@ -2239,6 +2429,11 @@
     "N": 0.4215
    },
    "stabilitas": 0.93,
+   "bidang": {
+    "BISNIS": 1.0,
+    "MANAJEMEN": 0.4,
+    "DATA": 0.3
+   },
    "peta_belajar": null,
    "proyek": [
     {
@@ -2308,6 +2503,10 @@
     "N": 0.4215
    },
    "stabilitas": 0.93,
+   "bidang": {
+    "BISNIS": 1.0,
+    "WEB": 0.3
+   },
    "peta_belajar": null,
    "proyek": [
     {
@@ -2375,6 +2574,11 @@
     "N": 0.3736
    },
    "stabilitas": 0.487,
+   "bidang": {
+    "WEB3": 1.0,
+    "WEB": 0.4,
+    "KEAMANAN": 0.2
+   },
    "peta_belajar": {
     "judul": "Blockchain Developer Roadmap",
     "url": "https://roadmap.sh/blockchain"
@@ -2447,6 +2651,10 @@
     "N": 0.476
    },
    "stabilitas": 0.78,
+   "bidang": {
+    "PERANGKAT": 1.0,
+    "JARINGAN": 0.2
+   },
    "peta_belajar": null,
    "proyek": [
     {
@@ -2515,6 +2723,9 @@
     "N": 0.6857
    },
    "stabilitas": 0.637,
+   "bidang": {
+    "DOKUMENTASI": 1.0
+   },
    "peta_belajar": {
     "judul": "Technical Writer Roadmap",
     "url": "https://roadmap.sh/technical-writer"
@@ -10954,6 +11165,20 @@
      "penyedia": "docker.com",
      "jenis": "dokumentasi",
      "url": "https://docs.docker.com/compose/"
+    },
+    {
+     "judul": "TUTORIAL DOCKER COMPOSE (BAHASA INDONESIA)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=3nFbRd4FnRo",
+     "durasi": "31.25"
+    },
+    {
+     "judul": "Tutorial Lengkap Docker Compose: Dari Awal Hingga Tuntas (Full Video)",
+     "penyedia": "Tri Wicaksono",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Hbsi9qEi8n0",
+     "durasi": "22.09"
     }
    ]
   },
@@ -10974,6 +11199,20 @@
      "penyedia": "Laravel Livewire",
      "jenis": "dokumentasi",
      "url": "https://livewire.laravel.com/docs/quickstart"
+    },
+    {
+     "judul": "Belajar Livewire - 1. Intro",
+     "penyedia": "WPU",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=U4BCzaiZpRU",
+     "durasi": "14.14"
+    },
+    {
+     "judul": "Tutorial Laravel Livewire 4",
+     "penyedia": "SantriKoding Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=vpfF-7u331E",
+     "durasi": "34.14"
     }
    ]
   },
@@ -10994,6 +11233,20 @@
      "penyedia": "inertiajs.com",
      "jenis": "dokumentasi",
      "url": "https://inertiajs.com/"
+    },
+    {
+     "judul": "Upgrade Inertia js Ke Versi 1.0",
+     "penyedia": "Parsinta",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=X6b99B5Z2nk",
+     "durasi": "10.18"
+    },
+    {
+     "judul": "Tutorial Laravel Inertia: Penjelasan & Cara Install Inertia dengan Vue - Part 1",
+     "penyedia": "Cara Fajar",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=jwSQe9F3f_o",
+     "durasi": "37.57"
     }
    ]
   }

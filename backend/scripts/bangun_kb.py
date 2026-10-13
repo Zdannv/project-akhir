@@ -20,6 +20,10 @@ Tiga sumber digabung menjadi satu berkas JSON yang dibaca mesin rekomendasi:
   data/sumber/video_tutorial.csv
       Video tutorial YouTube per skill, dibuat scripts/ambil_video.py.
 
+  data/sumber/bidang_ti.csv, bidang_profesi.csv
+      Enam belas bidang kerja TI dan bobotnya di tiap profesi, bahan komponen
+      "minat bidang" di KBF.
+
   data/sumber/sumber_belajar.csv, panduan_karier.csv, proyek_portofolio.csv
       Bahan belajar: tautan dokumentasi resmi dan kursus gratis per skill, peta
       belajar per profesi, dan ide proyek portofolio. Semuanya kurasi, hanya
@@ -294,6 +298,23 @@ def main() -> None:
             {"tingkat": b["tingkat"], "judul": b["judul"], "deskripsi": b["deskripsi"]})
     if (set(peta) | set(proyek)) - id_profesi:
         raise ValueError("panduan karier menunjuk profesi yang tidak ada")
+    # Bidang kerja TI tiap profesi. Bidang utama mengikuti kolom sektor di data
+    # lowongan; bidang sekunder (bobot < 1) ditambahkan untuk profesi lintas
+    # bidang, mis. Data Engineer = data + infrastruktur.
+    bidang = [{"kode": b["kode"], "nama": b["nama"], "pertanyaan": b["pertanyaan"]}
+              for b in baca_csv("bidang_ti.csv", "|")]
+    kode_bidang = {b["kode"] for b in bidang}
+    bidang_profesi: dict[str, dict[str, float]] = {}
+    for b in baca_csv("bidang_profesi.csv", "|"):
+        if b["bidang"] not in kode_bidang or b["career_id"] not in id_profesi:
+            raise ValueError(f"bidang profesi tidak sah: {b}")
+        bidang_profesi.setdefault(b["career_id"], {})[b["bidang"]] = float(b["bobot"])
+    tanpa_bidang = id_profesi - set(bidang_profesi)
+    if tanpa_bidang:
+        raise ValueError(f"profesi tanpa bidang: {sorted(tanpa_bidang)}")
+    for p in profesi:
+        p["bidang"] = bidang_profesi[p["id"]]
+
     for p in profesi:
         p["peta_belajar"] = peta.get(p["id"])
         p["proyek"] = proyek.get(p["id"], [])
@@ -339,6 +360,7 @@ def main() -> None:
             },
         },
         "jenjang": JENJANG,
+        "bidang": bidang,
         "kota": kota,
         "profesi": profesi,
         "skill": skill,

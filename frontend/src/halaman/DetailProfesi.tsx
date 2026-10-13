@@ -24,10 +24,17 @@ const TABS = [
 
 const NAMA_KOMPONEN = {
   riasec: 'Kongruensi minat (RIASEC)',
+  bidang: 'Minat bidang TI',
   big5: 'Kecocokan kepribadian (Big Five)',
+  kesiapan: 'Kesiapan pengalaman',
   finansial: 'Kecocokan finansial',
   stabilitas: 'Stabilitas kerja',
 } as const
+
+/** Komponen KBF yang memang dihitung untuk isian ini, dalam urutan tampil. */
+function komponenAda(n: NonNullable<Detail['penilaian']>) {
+  return (Object.keys(NAMA_KOMPONEN) as (keyof typeof NAMA_KOMPONEN)[]).filter((k) => k in n.kbf.bobot)
+}
 
 export default function DetailProfesi() {
   const { id = '', pid = '' } = useParams()
@@ -168,13 +175,13 @@ function TabAnalisa({ d }: { d: Detail }) {
             Kecocokan profil (KBF) {persen(n.kbf.skor)} dan kemiripan skill (CBF) {persen(n.cbf.skor)} digabung menjadi {persen(n.skor)}.
           </p>
           <dl className="mt-4 flex flex-col gap-3.5">
-            {(Object.keys(NAMA_KOMPONEN) as (keyof typeof NAMA_KOMPONEN)[]).map((k) => (
+            {komponenAda(n).map((k) => (
               <div key={k} className={n.kbf.bobot[k] === 0 ? 'opacity-45' : ''}>
                 <div className="mb-1.5 flex justify-between gap-3 text-[13px]">
-                  <dt className="text-slate-700">{NAMA_KOMPONEN[k]} <span className="text-[11.5px] text-slate-400">· bobot {persen(n.kbf.bobot[k])}</span></dt>
-                  <dd className="font-semibold tabular-nums text-slate-900">{persen(n.kbf.komponen[k])}</dd>
+                  <dt className="text-slate-700">{NAMA_KOMPONEN[k]} <span className="text-[11.5px] text-slate-400">· bobot {persen(n.kbf.bobot[k] ?? 0)}</span></dt>
+                  <dd className="font-semibold tabular-nums text-slate-900">{persen(n.kbf.komponen[k] ?? 0)}</dd>
                 </div>
-                <Batang nilai={n.kbf.komponen[k]} />
+                <Batang nilai={n.kbf.komponen[k] ?? 0} />
               </div>
             ))}
             <div>
@@ -220,8 +227,8 @@ function TabAnalisa({ d }: { d: Detail }) {
  */
 function PenahanSkor({ n, alpha }: { n: NonNullable<Detail['penilaian']>; alpha: number }) {
   const hilang = [
-    ...(Object.keys(NAMA_KOMPONEN) as (keyof typeof NAMA_KOMPONEN)[]).map((k) => ({
-      nama: NAMA_KOMPONEN[k].replace(/ \(.*\)/, ''), poin: alpha * n.kbf.bobot[k] * (1 - n.kbf.komponen[k]) * 100, skill: false,
+    ...komponenAda(n).map((k) => ({
+      nama: NAMA_KOMPONEN[k].replace(/ \(.*\)/, ''), poin: alpha * (n.kbf.bobot[k] ?? 0) * (1 - (n.kbf.komponen[k] ?? 0)) * 100, skill: false,
     })),
     { nama: 'Kemiripan skill', poin: (1 - alpha) * (1 - n.cbf.skor) * 100, skill: true },
   ].filter((h) => h.poin >= 1).sort((a, b) => b.poin - a.poin)
@@ -238,7 +245,7 @@ function PenahanSkor({ n, alpha }: { n: NonNullable<Detail['penilaian']>; alpha:
         ))}
       </ul>
       <p className="mt-3 text-[11.5px] leading-relaxed text-slate-500">
-        Skor akhir = {Math.round(alpha * 100)}% kecocokan profil (minat, kepribadian, finansial) + {Math.round((1 - alpha) * 100)}% kemiripan skill.
+        Skor akhir = {Math.round(alpha * 100)}% kecocokan profil (minat, bidang, kepribadian, pengalaman, finansial) + {Math.round((1 - alpha) * 100)}% kemiripan skill.
         {skill && skill.poin >= 10 && ' Kemiripan skill dihitung dengan cosine similarity, yang membandingkan seluruh skill-mu dengan kebutuhan profesi: skill di luar kebutuhan profesi ini ikut menurunkan nilainya, dan skill bertingkat Dasar atau Menengah dihitung sebagian.'}
       </p>
     </div>

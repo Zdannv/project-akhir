@@ -23,6 +23,7 @@ KONFIG_ABLASI = {
     "KBF saja (korelasi, α = 1,0)": Konfigurasi(alpha=1.0),
     "CBF saja (α = 0,0)": Konfigurasi(alpha=0.0),
     NAMA_BAWAAN: Konfigurasi(),
+    "Hibrida tanpa minat bidang dan kesiapan (α = 0,5)": Konfigurasi(skema_bobot="proposal"),
     "Hibrida proposal (Iachan, α = 0,6)": KONFIG_PROPOSAL,
 }
 
@@ -47,6 +48,9 @@ def profil_dari_masukan(m: dict, kb: BasisPengetahuan) -> ProfilPengguna:
         rank_pendidikan=kb.rank_jenjang(m["jenjang"]), domisili=m["domisili"],
         bersedia_relokasi=m["bersedia_relokasi"], ekspektasi_gaji=m["ekspektasi_gaji"],
         punya_tanggungan=m["punya_tanggungan"], skill=m["skill"],
+        # Isian lama belum punya dua pertanyaan ini; None membuat komponennya dilewati.
+        bidang={k: (v - 1) / 4 for k, v in m["bidang"].items()} if m.get("bidang") else None,
+        pengalaman=m.get("pengalaman_tahun"),
     )
 
 

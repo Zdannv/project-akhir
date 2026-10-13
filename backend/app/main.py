@@ -26,7 +26,7 @@ from . import roadmap as rm
 from .cbf import LABEL_TINGKAT, kesenjangan_skill
 from .hibrida import Konfigurasi, rekomendasi
 from .kb import AKAR, muat_kb
-from .kbf import DOMISILI_LAIN, ProfilPengguna
+from .kbf import DOMISILI_LAIN, ProfilPengguna  # noqa: F401
 from .sus import BUTIR_SUS, skor_sus
 
 
@@ -58,6 +58,10 @@ class Masukan(BaseModel):
     riasec: dict[str, int]
     big5: dict[str, int]
     skill: dict[str, int] = Field(default_factory=dict)
+    # Minat per bidang kerja TI (kode bidang -> 1..5) dan pengalaman di TI.
+    # Dua-duanya opsional supaya isian lama tetap bisa dibaca.
+    bidang: dict[str, int] = Field(default_factory=dict)
+    pengalaman_tahun: float | None = Field(default=None, ge=0, le=50)
     # Skill yang tidak ada di pilihan, diketik sendiri. Disimpan dan dilaporkan,
     # tetapi tidak ikut dihitung: belum ada profesi yang bisa dicocokkan dengannya.
     skill_lain: list[str] = Field(default_factory=list, max_length=20)
@@ -112,13 +116,11 @@ def _profil(m: Masukan) -> ProfilPengguna:
     for sid, tingkat in m.skill.items():
         if sid not in id_skill or tingkat not in LABEL_TINGKAT:
             raise HTTPException(422, f"skill tidak sah: {sid}")
+    kode_bidang = {b["kode"] for b in kb.bidang}
+    if m.bidang and (set(m.bidang) != kode_bidang or any(not 1 <= v <= 5 for v in m.bidang.values())):
+        raise HTTPException(422, "jawaban minat bidang belum lengkap atau di luar skala 1-5")
     try:
-        return ProfilPengguna(
-            riasec=q.skor_riasec(m.riasec), big5=q.skor_big5(m.big5),
-            rank_pendidikan=kb.rank_jenjang(m.jenjang), domisili=m.domisili,
-            bersedia_relokasi=m.bersedia_relokasi, ekspektasi_gaji=m.ekspektasi_gaji,
-            punya_tanggungan=m.punya_tanggungan, skill=m.skill,
-        )
+        return ev.profil_dari_masukan(m.model_dump(), kb)
     except ValueError as e:
         raise HTTPException(422, str(e)) from e
 
@@ -137,6 +139,17 @@ def ambil_kuesioner() -> dict:
             "awalan": q.AWALAN_BIG5,
             "butir": [{"kode": k, "teks": t} for k, _, _, t in q.BUTIR_BIG5],
         },
+        "bidang": {
+            "skala": q.LABEL_SKALA_MINAT,
+            "butir": [{"kode": b["kode"], "teks": b["pertanyaan"], "nama": b["nama"]} for b in kb.bidang],
+        },
+        "pengalaman": [
+            {"nilai": 0, "label": "Belum ada"},
+            {"nilai": 0.5, "label": "Kurang dari 1 tahun"},
+            {"nilai": 1.5, "label": "1–2 tahun"},
+            {"nilai": 3, "label": "3–4 tahun"},
+            {"nilai": 5, "label": "5 tahun atau lebih"},
+        ],
         "sus": BUTIR_SUS,
         "jenjang": kb.jenjang,
         "kota": kb.kota + [DOMISILI_LAIN],
@@ -239,6 +252,8 @@ def _data_diri(m: dict) -> dict:
         "skill": [{"nama": nama_skill[sid], "tingkat": LABEL_TINGKAT[t]}
                   for sid, t in sorted(m["skill"].items(), key=lambda x: -x[1])],
         "skill_lain": m.get("skill_lain", []),
+        "pengalaman_tahun": m.get("pengalaman_tahun"),
+        "bidang": {b["nama"]: (m["bidang"][b["kode"]] - 1) / 4 for b in kb.bidang} if m.get("bidang") else None,
     }
 
 

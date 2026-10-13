@@ -14,7 +14,7 @@ sistem yang tidak bisa dijelaskan asal-usulnya saat sidang.
 | Profiling: klaster GMM (K = 8) | **tidak dibuat** | lihat §2 |
 | Hard filter pendidikan dan relokasi | `kbf.alasan_tersaring` | profesi tersaring tetap ditampilkan dengan alasannya |
 | Kongruensi Iachan | `kbf.kongruensi_iachan` | indeks M, maksimum 28; kini pembanding, bawaannya korelasi (§2) |
-| Bobot KBF 50/20/15/15 dan 60/25/15/0 | `kbf.BOBOT_TANGGUNGAN`, `BOBOT_TANPA` | sesuai proposal |
+| Bobot KBF 50/20/15/15 dan 60/25/15/0 | `kbf.SKEMA_BOBOT["proposal"]` | kini pembanding; bawaannya skema enam komponen (§2) |
 | CBF cosine similarity skill | `cbf.skor_cbf` | vektor profesi berbobot `skill_weight_pct` |
 | `α·KBF + (1−α)·CBF`, α = 0,6 | `hibrida.py` | bawaan kini α = 0,5 (§2); konfigurasi proposal tersedia sebagai `KONFIG_PROPOSAL` |
 | Dasbor Top-N + detail 3 tab | layar Explore dan Detail Profesi | Analisa · Skill & Kompetensi · Insight |
@@ -55,6 +55,40 @@ Konfigurasi proposal tidak dibuang. `KONFIG_PROPOSAL` (Iachan, α = 0,6) selalu
 dihitung berdampingan di laporan evaluasi dan dasbor peneliti, sehingga Bab 4
 bisa menyajikan keduanya. **Keputusan ini perlu disetujui pembimbing**, karena
 mengubah rumus yang tertulis di buku proposal.
+
+**Dua komponen KBF baru: minat bidang TI dan kesiapan pengalaman.** Ditambahkan
+pada 13 Oktober 2026 karena dua kelemahan yang terlihat saat uji coba.
+
+- *Minat bidang TI.* RIASEC dirancang untuk membedakan bidang pekerjaan besar.
+  Di dalam TI hampir semua profesi berkode mirip, sehingga RIASEC nyaris tidak
+  membedakan Backend Developer dari Data Engineer dari UI/UX Designer. Yang
+  membedakan mereka adalah bidang kerja yang disukai, jadi itu ditanyakan
+  langsung: 16 bidang (web, mobile, data, AI, infrastruktur, keamanan, desain,
+  manajemen, ...) dinilai 1–5. Tiap profesi punya bobot bidang
+  (`bidang_profesi.csv`): bidang utama mengikuti kolom sektor di data lowongan,
+  bidang sekunder ditambahkan penulis untuk profesi lintas bidang. Nilainya
+  rata-rata berbobot minat pengguna pada bidang profesi itu.
+- *Kesiapan pengalaman.* Tanpa ini, profesi senior (IT Project Manager, minimal
+  3 tahun) bisa menjadi peringkat satu bagi mahasiswa. Nilainya 1 kalau
+  pengalaman memenuhi syarat minimum profesi (kolom `min_experience_year` di
+  data lowongan), turun linear sampai 0 saat kurang tiga tahun. Sengaja bukan
+  penyaring mutlak: profesi itu tetap tampil, dengan catatan "tujuan jangka
+  menengah".
+
+Bobot KBF menjadi (punya tanggungan / tanpa): RIASEC 0,25 / 0,30 · minat
+bidang 0,25 / 0,30 · Big Five 0,10 / 0,15 · kesiapan 0,15 / 0,15 · finansial
+0,10 / 0,10 · stabilitas 0,15 / 0. Bobot Big Five diturunkan karena dasarnya
+paling lemah (BFI-10 dua butir per dimensi, profil ideal hasil turunan).
+**Bobot-bobot ini pilihan penulis, bukan hasil dari data.** `scripts/kalibrasi.py`
+mencari bobot dan α dari data responden profesional dengan validasi
+leave-one-out; jalankan setelah data terkumpul dan ganti bobot hanya kalau
+hasil leave-one-out mengungguli bobot bawaan.
+
+Di simulasi, dua komponen ini menaikkan KBF saja dari 55,9% ke 75,7% (Hit@1),
+tetapi hibrida hampir tidak berubah (95,6% → 95,7%) karena CBF sudah sangat
+kuat pada persona sintetis. Manfaat yang diharapkan ada pada pengguna
+sungguhan yang skill-nya masih sedikit atau terlalu banyak; itu baru bisa
+dibuktikan dengan data responden.
 
 **Tumpukan teknologi.** FastAPI + Python untuk mesin dan evaluasi (satu bahasa
 untuk rumus dan pengujiannya), React + Vite untuk antarmuka, SQLite untuk
@@ -143,9 +177,9 @@ Angka lengkap ada di `docs/hasil-evaluasi.md`. Tiga hal yang layak dibahas
 dengan pembimbing:
 
 1. **Dengan konfigurasi bawaan, hibrida mengungguli KBF saja dan CBF saja**
-   (Hit@1 95,9% vs 55,9% dan 91,4%).
-2. **Dengan konfigurasi proposal, hibrida kalah dari CBF saja** (89,6% vs
-   91,4%). Iachan baru unggul tipis pada α 0,1–0,5 (puncak 93,9% di α = 0,3):
+   (Hit@1 95,7% vs 75,7% dan 91,1%).
+2. **Dengan konfigurasi proposal, hibrida kalah dari CBF saja** (88,9% vs
+   91,1%). Iachan baru unggul tipis pada α 0,1–0,5 (puncak 93,9% di α = 0,3):
    banyak profesi TI berkode Holland sama, jadi Iachan kurang membedakan dan
    bobot 0,6 padanya terlalu besar. Inilah alasan konfigurasi bawaan diganti (§2).
 3. **Korelasi tahan terhadap pilihan α**: Hit@1 di atas 94% untuk α 0,4–0,9.
@@ -205,7 +239,8 @@ yang sudah dihapus tetap menjawab 200) dan perbaiki yang mati.
 
 | Pengujian | Cara | Target proposal |
 |---|---|---|
-| Fungsional | `pytest` (30 uji) | semua lulus |
+| Fungsional | `pytest` (33 uji) | semua lulus |
+| Kalibrasi bobot | `scripts/kalibrasi.py` pada data profesional, leave-one-out | — |
 | Akurasi, uji pakar | 15–20 profesional TI mengisi sebagai "Profesional TI" beserta profesinya; Hit Rate@5 dan MRR dihitung terhadap profesi itu | Hit Rate@5 ≥ 60% |
 | Relevansi | responden menilai tiap rekomendasi relevan/tidak di layar detail; Precision@K | — |
 | Usability | 10 butir SUS di menu Penilaian | skor ≥ 68 |

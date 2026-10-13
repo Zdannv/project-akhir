@@ -31,6 +31,10 @@ class BasisPengetahuan:
         return self.mentah["jenjang"]
 
     @property
+    def bidang(self) -> list[dict]:
+        return self.mentah["bidang"]
+
+    @property
     def kota(self) -> list[str]:
         return self.mentah["kota"]
 

@@ -59,7 +59,11 @@ def persona(p: dict, kb: BasisPengetahuan, acak: random.Random,
             skill[s["skill_id"]] = acak.choice((1, 2, 2, 3))
     for sid in acak.sample(semua_skill, n_derau):
         skill.setdefault(sid, acak.choice((1, 2)))
+    # Minat bidang: bobot bidang profesi + derau. Pengalaman: memenuhi syarat
+    # profesi asalnya, karena persona ini memang "orang yang cocok" di sana.
+    bidang = {b["kode"]: jepit(p["bidang"].get(b["kode"], 0.2) + acak.gauss(0, 2 * sigma)) for b in kb.bidang}
     return ProfilPengguna(
+        bidang=bidang, pengalaman=p["pengalaman_min_tahun"] + acak.choice((0, 0.5, 1.5)),
         riasec=riasec, big5=big5,
         rank_pendidikan=max(p["pendidikan_min_rank"], 4),
         domisili="Jakarta", bersedia_relokasi=True,

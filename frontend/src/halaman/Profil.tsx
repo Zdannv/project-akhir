@@ -30,6 +30,7 @@ export default function Profil() {
                 ['Program studi', data.data_diri.prodi ?? '—'],
                 ['Domisili', data.data_diri.domisili],
                 ['Bersedia relokasi', data.data_diri.bersedia_relokasi ? 'Ya' : 'Tidak'],
+                ['Pengalaman di TI', data.data_diri.pengalaman_tahun === null ? 'Tidak diisi' : data.data_diri.pengalaman_tahun === 0 ? 'Belum ada' : `± ${data.data_diri.pengalaman_tahun.toLocaleString('id-ID')} tahun`],
                 ['Ekspektasi gaji', data.data_diri.ekspektasi_gaji ? `${rupiah(data.data_diri.ekspektasi_gaji)}/bulan` : 'Tidak diisi'],
                 ['Menanggung keluarga', data.data_diri.punya_tanggungan ? 'Ya' : 'Tidak'],
               ] as const).map(([k, v]) => (
@@ -45,6 +46,21 @@ export default function Profil() {
             <Radar sumbu={[...'RIASEC'].map((t) => ({ kode: t, nama: NAMA_RIASEC[t] }))} kamu={data.hasil.profil.riasec} />
             <div className="mt-4"><Skor nama={NAMA_RIASEC} nilai={data.hasil.profil.riasec} urut="RIASEC" /></div>
           </Kartu>
+          {data.data_diri.bidang && (
+            <Kartu judul="Minat bidang TI">
+              <div className="flex flex-col gap-3">
+                {Object.entries(data.data_diri.bidang).sort((a, b) => b[1] - a[1]).map(([nama, v]) => (
+                  <div key={nama}>
+                    <div className="mb-1.5 flex justify-between text-[13px]">
+                      <span className="text-slate-700">{nama}</span>
+                      <span className="font-semibold tabular-nums text-slate-900">{persen(v)}</span>
+                    </div>
+                    <Batang nilai={v} />
+                  </div>
+                ))}
+              </div>
+            </Kartu>
+          )}
           <Kartu judul="Kepribadian (Big Five)">
             <Skor nama={NAMA_BIG5} nilai={data.hasil.profil.big5} urut="OCEAN" />
           </Kartu>

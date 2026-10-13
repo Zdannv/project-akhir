@@ -5,6 +5,8 @@ export type Skill = { id: string; nama: string; kategori: string; tipe: string; 
 
 export type Kuesioner = {
   riasec: { skala: string[]; butir: Butir[] }
+  bidang: { skala: string[]; butir: (Butir & { nama: string })[] }
+  pengalaman: { nilai: number; label: string }[]
   big5: { skala: string[]; awalan: string; butir: Butir[] }
   sus: string[]
   jenjang: { kode: string; nama: string; rank: number }[]
@@ -29,6 +31,8 @@ export type Masukan = {
   big5: Record<string, number>
   skill: Record<string, number>
   skill_lain: string[]
+  bidang: Record<string, number>
+  pengalaman_tahun: number | null
   induk?: string | null
 }
 
@@ -58,7 +62,8 @@ export type Kesenjangan = {
 
 export type Alasan = { nada: 'cocok' | 'perhatian'; teks: string }
 
-export type Komponen = { riasec: number; big5: number; finansial: number; stabilitas: number }
+/** Komponen KBF. `bidang` dan `kesiapan` tidak ada pada isian lama yang belum menjawabnya. */
+export type Komponen = { riasec: number; big5: number; finansial: number; stabilitas: number; bidang?: number; kesiapan?: number }
 
 export type Rekomendasi = {
   peringkat: number
@@ -90,9 +95,12 @@ export type Ringkas = {
   kode_holland: string
   deskripsi: string
   senioritas: string
+  pengalaman_min_tahun: number
 }
 
 export type DataDiri = {
+  pengalaman_tahun: number | null
+  bidang: Record<string, number> | null
   jenjang: string
   prodi: string | null
   domisili: string

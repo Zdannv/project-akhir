@@ -99,10 +99,34 @@ def test_bobot_berjumlah_satu():
 
 def test_stabilitas_hanya_untuk_yang_punya_tanggungan():
     p = KB.cari_profesi("C033")  # Blockchain Developer, stabilitas rendah
-    tanpa = skor_kbf(profil(), p)
-    dengan = skor_kbf(profil(punya_tanggungan=True), p)
+    tanpa = skor_kbf(profil(), p, skema="proposal")
+    dengan = skor_kbf(profil(punya_tanggungan=True), p, skema="proposal")
     assert tanpa["bobot"]["stabilitas"] == 0 and dengan["bobot"]["stabilitas"] == 0.15
     assert dengan["skor"] < tanpa["skor"]
+
+
+def test_minat_bidang_dan_kesiapan():
+    from app.kbf import SKEMA_BOBOT, kesiapan_pengalaman, minat_bidang
+    for skema in SKEMA_BOBOT.values():
+        assert all(math.isclose(sum(b.values()), 1.0) for b in skema)
+
+    assert minat_bidang(None, {"WEB": 1}) is None
+    assert minat_bidang({"WEB": 1.0, "DATA": 0.0}, {"WEB": 1}) == 1.0
+    assert minat_bidang({"WEB": 1.0, "DATA": 0.0}, {"DATA": 1, "WEB": 0.5}) == pytest.approx(0.5 / 1.5)
+
+    assert kesiapan_pengalaman(None, 3) is None
+    assert kesiapan_pengalaman(0, 0) == 1.0 and kesiapan_pengalaman(5, 3) == 1.0
+    assert kesiapan_pengalaman(0, 3) == 0.0 and kesiapan_pengalaman(1.5, 3) == pytest.approx(0.5)
+
+    # Komponen tanpa data dilewati dan bobotnya dinormalkan ulang.
+    pm = KB.cari_profesi("C023")  # IT Project Manager, minimal 3 tahun
+    tanpa_data = skor_kbf(profil(), pm)
+    assert "bidang" not in tanpa_data["bobot"] and math.isclose(sum(tanpa_data["bobot"].values()), 1.0, abs_tol=1e-3)
+    minat = dict.fromkeys((b["kode"] for b in KB.bidang), 0.5) | {"MANAJEMEN": 1.0}
+    baru = skor_kbf(profil(bidang=minat, pengalaman=0), pm)
+    senior = skor_kbf(profil(bidang=minat, pengalaman=5), pm)
+    assert baru["komponen"]["kesiapan"] == 0.0 and senior["komponen"]["kesiapan"] == 1.0
+    assert senior["skor"] > baru["skor"]
 
 
 def test_saring_pendidikan():

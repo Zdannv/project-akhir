@@ -27,6 +27,7 @@ class Konfigurasi:
     alpha: float = 0.5              # porsi KBF; 1 = KBF saja, 0 = CBF saja
     metode_riasec: str = "korelasi"  # "korelasi" | "iachan"
     ruang_cbf: str = "global"       # "global" | "profesi"; lihat cbf.py
+    skema_bobot: str = "lengkap"    # "lengkap" | "proposal"; lihat kbf.py
     top_n: int = 5
 
     def __post_init__(self) -> None:
@@ -37,7 +38,7 @@ class Konfigurasi:
 
 
 # Persis seperti di buku proposal; dipakai sebagai pembanding.
-KONFIG_PROPOSAL = Konfigurasi(alpha=0.6, metode_riasec="iachan")
+KONFIG_PROPOSAL = Konfigurasi(alpha=0.6, metode_riasec="iachan", skema_bobot="proposal")
 
 
 def peringkat(profil: ProfilPengguna, kb: BasisPengetahuan,
@@ -46,7 +47,7 @@ def peringkat(profil: ProfilPengguna, kb: BasisPengetahuan,
     lolos, tersaring = saring(profil, kb)
     baris = []
     for p in lolos:
-        kbf = skor_kbf(profil, p, konfig.metode_riasec)
+        kbf = skor_kbf(profil, p, konfig.metode_riasec, konfig.skema_bobot)
         cbf = skor_cbf(profil.skill, kb.skill_profesi(p["id"]), konfig.ruang_cbf)
         final = konfig.alpha * kbf["skor"] + (1 - konfig.alpha) * cbf["skor"]
         baris.append({
@@ -77,8 +78,9 @@ def rekomendasi(profil: ProfilPengguna, kb: BasisPengetahuan,
             "gaji_min": p["gaji_min"],
             "gaji_maks": p["gaji_maks"],
             "pola_kerja": p["pola_kerja"],
+            "pengalaman_min_tahun": p["pengalaman_min_tahun"],
             "kesenjangan": kesenjangan_skill(profil.skill, kb.skill_profesi(p["id"]), nama),
-            "alasan": susun_alasan(profil, p, b),
+            "alasan": susun_alasan(profil, p, b, {x["kode"]: x["nama"] for x in kb.bidang}),
         })
     return {
         "konfigurasi": asdict(konfig),
@@ -98,10 +100,12 @@ def rekomendasi(profil: ProfilPengguna, kb: BasisPengetahuan,
 
 def _ringkas(p: dict) -> dict:
     """Data kartu profesi di daftar."""
-    return {k: p[k] for k in ("gaji_min", "gaji_maks", "pola_kerja", "kode_holland", "deskripsi", "senioritas")}
+    return {k: p[k] for k in ("gaji_min", "gaji_maks", "pola_kerja", "kode_holland", "deskripsi",
+                              "senioritas", "pengalaman_min_tahun")}
 
 
-def susun_alasan(profil: ProfilPengguna, profesi: dict, baris: dict) -> list[dict]:
+def susun_alasan(profil: ProfilPengguna, profesi: dict, baris: dict,
+                 nama_bidang: dict[str, str] | None = None) -> list[dict]:
     """Penjelasan singkat mengapa profesi ini muncul, dari komponen skornya.
 
     Tiap alasan bernada "cocok" atau "perhatian", supaya antarmuka bisa
@@ -109,6 +113,7 @@ def susun_alasan(profil: ProfilPengguna, profesi: dict, baris: dict) -> list[dic
     """
     k = baris["kbf"]["komponen"]
     kode = kode_holland(profil.riasec)
+    nama_bidang = nama_bidang or {}
     alasan: list[dict] = []
 
     def tambah(nada: str, teks: str) -> None:
@@ -123,8 +128,19 @@ def susun_alasan(profil: ProfilPengguna, profesi: dict, baris: dict) -> list[dic
     else:
         tambah("perhatian", f"Tipe minat profesi ini ({profesi['kode_holland']}) berbeda dari minatmu ({kode}).")
 
+    if "bidang" in k:
+        utama = max(profesi["bidang"], key=profesi["bidang"].get)
+        if k["bidang"] >= 0.75:
+            tambah("cocok", f"Kamu tertarik pada bidang kerja profesi ini ({nama_bidang.get(utama, utama)}).")
+        elif k["bidang"] <= 0.4:
+            tambah("perhatian", f"Minatmu pada bidang kerja profesi ini ({nama_bidang.get(utama, utama)}) rendah.")
+
     if k["big5"] >= 0.75:
         tambah("cocok", "Kepribadianmu dekat dengan profil ideal profesi ini.")
+
+    if k.get("kesiapan", 1) < 1:
+        tambah("perhatian", f"Profesi ini umumnya meminta pengalaman minimal {profesi['pengalaman_min_tahun']} tahun. "
+                            "Anggap sebagai tujuan jangka menengah.")
 
     cakupan = baris["cbf"]["cakupan"]
     if cakupan >= 0.5:

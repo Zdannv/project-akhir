@@ -50,7 +50,7 @@ export function KartuProfesi({ id, p, alasan, tampilDeskripsi = false }: {
           </div>
           <div className="flex items-center gap-2">
             <Signal className="size-3.5 shrink-0 text-slate-400" aria-hidden />
-            <dd>{p.senioritas}</dd>
+            <dd>{p.senioritas} · {p.pengalaman_min_tahun === 0 ? 'tanpa pengalaman' : `min. ${p.pengalaman_min_tahun} th pengalaman`}</dd>
           </div>
           <div className="flex items-center gap-2">
             <Laptop className="size-3.5 shrink-0 text-slate-400" aria-hidden />

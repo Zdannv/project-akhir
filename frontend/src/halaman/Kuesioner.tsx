@@ -22,7 +22,7 @@ const AWAL: Masukan = {
   nama: '', jenis_responden: 'mahasiswa', profesi_aktual: null,
   jenjang: '', prodi_id: null, domisili: '', bersedia_relokasi: true,
   ekspektasi_gaji: 0, punya_tanggungan: false,
-  riasec: {}, big5: {}, skill: {}, skill_lain: [],
+  riasec: {}, big5: {}, skill: {}, skill_lain: [], bidang: {}, pengalaman_tahun: null,
 }
 
 export default function Kuesioner() {
@@ -53,9 +53,9 @@ function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; d
   if (step === 5 && idHasil) return <Kerangka step={null}><Penutup id={idHasil} /></Kerangka>
 
   const lengkap = [
-    m.nama.trim() !== '' && m.jenjang !== '' && m.domisili !== '' &&
+    m.nama.trim() !== '' && m.jenjang !== '' && m.domisili !== '' && m.pengalaman_tahun !== null &&
       (m.jenis_responden === 'mahasiswa' || m.profesi_aktual !== null),
-    k.riasec.butir.every((b) => m.riasec[b.kode]),
+    k.riasec.butir.every((b) => m.riasec[b.kode]) && k.bidang.butir.every((b) => m.bidang[b.kode]),
     k.big5.butir.every((b) => m.big5[b.kode]),
     true, // skill boleh kosong: mesin tetap jalan dengan KBF saja
   ][step - 1]
@@ -145,12 +145,20 @@ function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; d
           <div className="flex-1 px-4 py-6 sm:px-6">
             {step === 1 && <LatarBelakang k={k} m={m} ubah={ubah} />}
             {step === 2 && (
-              <Likert
-                judul="Seberapa suka kamu melakukan kegiatan berikut?"
-                keterangan="Bayangkan kegiatannya, bukan apakah kamu sudah bisa melakukannya."
-                butir={k.riasec.butir} skala={k.riasec.skala} jawaban={m.riasec}
-                pilih={(kode, n) => setM((lama) => ({ ...lama, riasec: { ...lama.riasec, [kode]: n } }))}
-              />
+              <div className="flex flex-col gap-10">
+                <Likert
+                  judul="Seberapa suka kamu melakukan kegiatan berikut?"
+                  keterangan="Bayangkan kegiatannya, bukan apakah kamu sudah bisa melakukannya. Usahakan tidak menjawab sama untuk semuanya: perbedaan jawabanmu yang dipakai."
+                  butir={k.riasec.butir} skala={k.riasec.skala} jawaban={m.riasec}
+                  pilih={(kode, n) => setM((lama) => ({ ...lama, riasec: { ...lama.riasec, [kode]: n } }))}
+                />
+                <Likert
+                  judul="Di bidang TI, pekerjaan mana yang ingin kamu kerjakan sehari-hari?"
+                  keterangan="Ini soal keinginan, bukan kemampuan. Beri nilai tinggi hanya untuk yang benar-benar kamu mau."
+                  butir={k.bidang.butir} skala={k.bidang.skala} jawaban={m.bidang}
+                  pilih={(kode, n) => setM((lama) => ({ ...lama, bidang: { ...lama.bidang, [kode]: n } }))}
+                />
+              </div>
             )}
             {step === 3 && (
               <Likert
@@ -343,6 +351,13 @@ function LatarBelakang({ k, m, ubah }: { k: DataKuesioner; m: Masukan; ubah: (b:
           value={m.ekspektasi_gaji ? m.ekspektasi_gaji / 1_000_000 : ''}
           onChange={(e) => ubah({ ekspektasi_gaji: Math.max(0, Math.round(Number(e.target.value) * 1_000_000)) || 0 })} />
       </label>
+
+      <fieldset>
+        <legend className={judulKolom}>Pengalaman kerja atau magang di bidang TI</legend>
+        <Pil nama="pengalaman" nilai={m.pengalaman_tahun === null ? '' : String(m.pengalaman_tahun)}
+          pilihan={k.pengalaman.map((p) => ({ nilai: String(p.nilai), label: p.label }))}
+          pilih={(v) => ubah({ pengalaman_tahun: Number(v) })} />
+      </fieldset>
 
       <div className="flex flex-col gap-2.5">
         <p className={judulKolom}>Kondisi pribadimu</p>
