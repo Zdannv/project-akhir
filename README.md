@@ -51,6 +51,11 @@ Buka http://127.0.0.1:8000. Setelah di-build, aplikasinya jalan tanpa internet.
 Untuk pengembangan antarmuka: jalankan backend seperti di atas, lalu
 `npm run dev` di `frontend/` dan buka http://localhost:5173.
 
+## Hosting
+
+Vercel (antarmuka + API Python) dan Supabase (Postgres). Langkahnya ada di
+[docs/HOSTING.md](docs/HOSTING.md).
+
 ## Pengujian dan evaluasi
 
 ```bash
@@ -82,6 +87,8 @@ backend/app/     kuesioner.py · kbf.py · cbf.py · hibrida.py · roadmap.py ·
                  evaluasi.py · main.py (API)
 backend/scripts/ bangun_kb.py · evaluasi.py
 frontend/        React + Vite + Tailwind
+api/             titik masuk API di Vercel
+supabase/        skema basis data untuk hosting
 docs/            keputusan-desain.md · hasil-evaluasi.md
 ```
 

@@ -70,7 +70,7 @@ def cronbach_alpha(butir: list[list[int]]) -> float | None:
 def data_responden(kb: BasisPengetahuan) -> dict | None:
     """Semua metrik pengujian. Hanya isian TERAKHIR tiap orang yang dihitung:
     isian yang sudah diperbarui lewat "ubah jawaban" tidak dihitung dua kali."""
-    if not db.berkas_db().exists():
+    if not db.tersedia():
         return None
     db.siapkan()  # basis data dari versi lama dimutakhirkan dulu
     responden = db.responden_terakhir()

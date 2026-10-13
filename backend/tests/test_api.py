@@ -10,6 +10,12 @@ from app.sus import skor_sus
 @pytest.fixture()
 def klien(tmp_path, monkeypatch):
     monkeypatch.setenv("PA_DB", str(tmp_path / "uji.db"))
+    # Dengan DATABASE_URL, rangkaian uji yang sama dijalankan terhadap Postgres
+    # (skema supabase/migrations). Tabelnya dikosongkan supaya tiap uji mulai bersih.
+    from app import penyimpanan
+    if penyimpanan.pakai_postgres():
+        with penyimpanan.koneksi() as k:
+            k.jalankan("truncate responden cascade")
     from app.main import app
     with TestClient(app) as k:
         yield k

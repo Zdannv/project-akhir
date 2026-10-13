@@ -1,0 +1,5 @@
+# Dependensi fungsi Python di Vercel (API). Untuk pengembangan lokal pakai
+# backend/requirements.txt, yang memuat juga alat uji dan pembangun data.
+fastapi==0.143.0
+pydantic==2.14.1
+psycopg[binary]==3.3.6

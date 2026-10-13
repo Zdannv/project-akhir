@@ -14,7 +14,6 @@ dimulai, jangan dijalankan tanpa mencadangkan data/pa.db lebih dulu.
 
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
 
@@ -37,9 +36,7 @@ def main() -> None:
         profil = profil_dari_masukan(m, kb)
         hasil = rekomendasi(profil, kb, Konfigurasi())
         hasil["profil"] = {"riasec": profil.riasec, "big5": profil.big5}
-        with db.koneksi() as k:
-            k.execute("update responden set hasil = ? where id = ?",
-                      (json.dumps(hasil, ensure_ascii=False), r["id"]))
+        db.perbarui_hasil(r["id"], hasil)
         teratas = hasil["rekomendasi"][0] if hasil["rekomendasi"] else None
         print(f"{r['nama'][:30]:30} -> {teratas['nama'] if teratas else '-'}"
               f" ({round(teratas['skor'] * 100) if teratas else 0}%)")

@@ -12,3 +12,9 @@ data/*.db
 data/*.db*
 
 .DS_Store
+
+# Rahasia lokal
+.env
+.env.*
+!.env.example
+.vercel
