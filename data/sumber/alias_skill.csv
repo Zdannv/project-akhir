@@ -165,3 +165,48 @@ SK168,Fine-tuning
 SK169,YOLO
 SK169,Object Detection
 SK170,ERD
+SK280,BaaS
+SK281,Vercel
+SK281,Netlify
+SK282,Cloudflare Workers
+SK282,Cloudflare Pages
+SK282,CDN
+SK285,Bun
+SK285,Deno
+SK286,WP
+SK286,Elementor
+SK288,Payment
+SK288,Pembayaran
+SK290,Copilot
+SK290,Cursor
+SK290,Vibe Coding
+SK291,Hostinger
+SK291,Niagahoster
+SK291,Linode
+SK291,Hosting
+SK292,Neon
+SK292,PlanetScale
+SK293,MUI
+SK293,Chakra UI
+SK293,Ant Design
+SK293,shadcn
+SK297,Gin
+SK297,Fiber
+SK297,Echo
+SK298,Rails
+SK298,Ruby
+SK299,gRPC
+SK299,Protobuf
+SK300,n8n
+SK300,Zapier
+SK300,Make
+SK300,Integromat
+SK301,Webflow
+SK301,Framer
+SK301,Bubble
+SK302,Ollama
+SK302,LM Studio
+SK303,MCP
+SK304,S3
+SK304,R2
+SK304,MinIO

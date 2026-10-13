@@ -2,9 +2,9 @@
  "meta": {
   "dibuat": "2026-10-13",
   "n_profesi": 35,
-  "n_skill": 277,
-  "n_relasi": 811,
-  "n_relasi_kurasi": 504,
+  "n_skill": 302,
+  "n_relasi": 889,
+  "n_relasi_kurasi": 582,
   "sumber": {
    "pasar_kerja": "knowledge_base_profesi_IT.xlsx — pengolahan lowongan kerja LinkedIn Indonesia 2025",
    "skill_kurasi": "pelengkap_*.csv — kurasi penulis: skill untuk 9 profesi yang belum tercakup dan skill umum yang belum ada di data lowongan; perlu divalidasi",
@@ -10128,6 +10128,815 @@
      "durasi": "49.53"
     }
    ]
+  },
+  {
+   "id": "SK280",
+   "nama": "Supabase",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Backend-as-a-service: basis data Postgres, autentikasi, dan penyimpanan",
+   "sumber": "kurasi",
+   "alias": [
+    "BaaS"
+   ],
+   "belajar": [
+    {
+     "judul": "Supabase Docs",
+     "penyedia": "Supabase",
+     "jenis": "dokumentasi",
+     "url": "https://supabase.com/docs"
+    },
+    {
+     "judul": "Setup Database Web App Pakai Supabase",
+     "penyedia": "Dedi Nugroho",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=NN-l-HeP-KU",
+     "durasi": "14.40"
+    },
+    {
+     "judul": "Supabase Tutorial for Beginners 2026: How to Use Supabase",
+     "penyedia": "Mikey Vibe Coding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hVrSGKGU24g",
+     "durasi": "32.18"
+    }
+   ]
+  },
+  {
+   "id": "SK281",
+   "nama": "Vercel / Netlify",
+   "kategori": "Cloud Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Platform deployment aplikasi web dan frontend",
+   "sumber": "kurasi",
+   "alias": [
+    "Vercel",
+    "Netlify"
+   ],
+   "belajar": [
+    {
+     "judul": "Vercel Documentation",
+     "penyedia": "Vercel",
+     "jenis": "dokumentasi",
+     "url": "https://vercel.com/docs"
+    },
+    {
+     "judul": "🆕 AKHIRNYA TERJAWAB: Cara Hosting Aplikasi AI GRATIS dengan Vercel & Netlify !",
+     "penyedia": "M.M. Billy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=s8tlzLvmUFM",
+     "durasi": "30.19"
+    },
+    {
+     "judul": "JANGAN BUANG DUIT! CARA HOSTING APLIKASI AI GRATIS VERCEL, NETLIFY & FIREBASE⚡#nocode #AI #hosting",
+     "penyedia": "M.M. Billy",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=-2e-k59-q_Q",
+     "durasi": "1.02.26"
+    }
+   ]
+  },
+  {
+   "id": "SK282",
+   "nama": "Cloudflare (CDN, DNS, Workers)",
+   "kategori": "Cloud Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Jaringan pengiriman konten, DNS, dan komputasi tepi",
+   "sumber": "kurasi",
+   "alias": [
+    "Cloudflare Workers",
+    "Cloudflare Pages",
+    "CDN"
+   ],
+   "belajar": [
+    {
+     "judul": "Cloudflare Docs",
+     "penyedia": "Cloudflare",
+     "jenis": "dokumentasi",
+     "url": "https://developers.cloudflare.com/"
+    },
+    {
+     "judul": "Cloudflare Learning Center",
+     "penyedia": "Cloudflare",
+     "jenis": "panduan",
+     "url": "https://www.cloudflare.com/learning/"
+    },
+    {
+     "judul": "SEMUA Fitur CloudFlare dalam 45 MENIT!!!",
+     "penyedia": "MMV Project",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=js6kOyAOSmk",
+     "durasi": "48.13"
+    },
+    {
+     "judul": "Tutorial Basic Server - Integrasi VPS IP Public, Domain & Cloudflare Buat Publish Website",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Yin6FjzPCaQ",
+     "durasi": "22.02"
+    }
+   ]
+  },
+  {
+   "id": "SK283",
+   "nama": "Svelte / SvelteKit",
+   "kategori": "Frontend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Kerangka kerja antarmuka yang dikompilasi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Svelte Tutorial",
+     "penyedia": "svelte.dev",
+     "jenis": "latihan",
+     "url": "https://svelte.dev/tutorial"
+    },
+    {
+     "judul": "Tutorial Svelte Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=D_XoY-ATPPI",
+     "durasi": "3.18.05"
+    },
+    {
+     "judul": "Svelte, Framework favorit gua",
+     "penyedia": "Mico-Ritsu",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=kEYPJ61Hs88",
+     "durasi": "13.13"
+    }
+   ]
+  },
+  {
+   "id": "SK284",
+   "nama": "Astro",
+   "kategori": "Frontend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Kerangka kerja situs berbasis konten",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Astro Docs",
+     "penyedia": "Astro",
+     "jenis": "dokumentasi",
+     "url": "https://docs.astro.build/en/getting-started/"
+    },
+    {
+     "judul": "Tutorial ASTRO JS Fundamental",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=HPedOTi2hk8",
+     "durasi": "42.51"
+    },
+    {
+     "judul": "Ngulik Astro JS : 1.Intro & Island Architecture",
+     "penyedia": "VIP CODE STUDIO",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=a2JRUeNNi6U",
+     "durasi": "31.38"
+    }
+   ]
+  },
+  {
+   "id": "SK285",
+   "nama": "Bun / Deno",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Runtime JavaScript modern",
+   "sumber": "kurasi",
+   "alias": [
+    "Bun",
+    "Deno"
+   ],
+   "belajar": [
+    {
+     "judul": "Bun Docs",
+     "penyedia": "Bun",
+     "jenis": "dokumentasi",
+     "url": "https://bun.sh/docs"
+    },
+    {
+     "judul": "Tutorial Bun Dasar (Bahasa Indonesia)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=XzxhvNDNBgY",
+     "durasi": "1.45.19"
+    },
+    {
+     "judul": "TUTORIAL BUN DASAR UNTUK PEMULA - ALTERNATIF UNTUK NODE JS",
+     "penyedia": "Pojok Code",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=QFMfARC4B_o",
+     "durasi": "2.24.37"
+    }
+   ]
+  },
+  {
+   "id": "SK286",
+   "nama": "WordPress",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "Sistem pengelola konten yang paling banyak dipakai",
+   "sumber": "kurasi",
+   "alias": [
+    "WP",
+    "Elementor"
+   ],
+   "belajar": [
+    {
+     "judul": "Learn WordPress",
+     "penyedia": "WordPress.org",
+     "jenis": "kursus",
+     "url": "https://learn.wordpress.org/"
+    },
+    {
+     "judul": "Tutorial Membuat Website WordPress Untuk Pemula - Full Lengkap",
+     "penyedia": "Yoko Bomb",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=rmAgpHNnNy8",
+     "durasi": "42.41"
+    },
+    {
+     "judul": "Cara Membuat Website Wordpress untuk Pemula 2025 - Wordpress Tutorial Indonesia 2025",
+     "penyedia": "Ihsan Santoso",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=MIg5XPve7Fs",
+     "durasi": "1.17.01"
+    }
+   ]
+  },
+  {
+   "id": "SK287",
+   "nama": "Headless CMS (Strapi / Sanity / Contentful)",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Pengelola konten yang disajikan lewat API",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Strapi Documentation",
+     "penyedia": "Strapi",
+     "jenis": "dokumentasi",
+     "url": "https://docs.strapi.io/"
+    },
+    {
+     "judul": "Headless CMS - Payload CMS - Part 1 - Bahasa Indonesia",
+     "penyedia": "Banu Thalhah Al Anshaary",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=UMir19t7mq0",
+     "durasi": "30.23"
+    },
+    {
+     "judul": "Menjadikan WordPress Sebagai Headless CMS",
+     "penyedia": "Nauval",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=C_KC4M8-L2U",
+     "durasi": "26.46"
+    }
+   ]
+  },
+  {
+   "id": "SK288",
+   "nama": "Payment Gateway Integration (Midtrans / Xendit / Stripe)",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyambungkan pembayaran daring ke aplikasi",
+   "sumber": "kurasi",
+   "alias": [
+    "Payment",
+    "Pembayaran"
+   ],
+   "belajar": [
+    {
+     "judul": "Midtrans Documentation",
+     "penyedia": "Midtrans",
+     "jenis": "dokumentasi",
+     "url": "https://docs.midtrans.com/"
+    },
+    {
+     "judul": "Tips Payment Gateway - Yang Gue Gak Ngerti Pas Dulu Belajar Ngoding",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=uC_K3HF8lFQ",
+     "durasi": "12.14"
+    },
+    {
+     "judul": "TUTORIAL PAYMENT GATEWAY MIDTRANS - JAVASCRIPT",
+     "penyedia": "Dea Afrizal",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=tdDARiQOmZE",
+     "durasi": "46.37"
+    }
+   ]
+  },
+  {
+   "id": "SK289",
+   "nama": "Error Tracking & APM (Sentry)",
+   "kategori": "DevOps",
+   "tipe": "hard_skill",
+   "deskripsi": "Melacak galat dan kinerja aplikasi di produksi",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Sentry Docs",
+     "penyedia": "Sentry",
+     "jenis": "dokumentasi",
+     "url": "https://docs.sentry.io/"
+    },
+    {
+     "judul": "Tutorial Integrasi Sentry di Next JS Untuk Error Tracking",
+     "penyedia": "Nauval",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=eP6pJEm3MTI",
+     "durasi": "1.04.43"
+    },
+    {
+     "judul": "Nyobain GlitchTip Error Tracking and APM self-hosted",
+     "penyedia": "Aji Kamaludin",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=7b8aMb1UF8Y",
+     "durasi": "28.00"
+    }
+   ]
+  },
+  {
+   "id": "SK290",
+   "nama": "AI Coding Assistants (GitHub Copilot / Cursor / Claude Code)",
+   "kategori": "AI Technique",
+   "tipe": "hard_skill",
+   "deskripsi": "Memakai asisten AI untuk menulis dan meninjau kode",
+   "sumber": "kurasi",
+   "alias": [
+    "Copilot",
+    "Cursor",
+    "Vibe Coding"
+   ],
+   "belajar": [
+    {
+     "judul": "GitHub Copilot Docs",
+     "penyedia": "GitHub",
+     "jenis": "dokumentasi",
+     "url": "https://docs.github.com/en/copilot"
+    },
+    {
+     "judul": "Claude Code: AI Coding Assistant Terbaik 2025? - Tutorial Indonesia Part 1",
+     "penyedia": "AI Coding Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=A2s6jsJdjK8",
+     "durasi": "14.57"
+    },
+    {
+     "judul": "Tutorial Pi Agent: AI Coding Agent yang Bisa Kamu Atur Sendiri?!",
+     "penyedia": "Dirumahrafif",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=HV8JmTnn9gQ",
+     "durasi": "16.18"
+    }
+   ]
+  },
+  {
+   "id": "SK291",
+   "nama": "VPS & Web Hosting (DigitalOcean / cPanel)",
+   "kategori": "Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Menyewa dan mengelola server serta hosting",
+   "sumber": "kurasi",
+   "alias": [
+    "Hostinger",
+    "Niagahoster",
+    "Linode",
+    "Hosting"
+   ],
+   "belajar": [
+    {
+     "judul": "DigitalOcean Community Tutorials",
+     "penyedia": "DigitalOcean",
+     "jenis": "panduan",
+     "url": "https://www.digitalocean.com/community/tutorials"
+    },
+    {
+     "judul": "CARA KONFIGURASI VPS - DEPLOY FULL STACK NEXT JS KE VPS HOSTING INDONESIA",
+     "penyedia": "Creative Academy Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=jW5iDcd-VGQ",
+     "durasi": "28.59"
+    },
+    {
+     "judul": "Belajar VPS Hosting - Bagian 1 ::: Order,Aktivasi & Remote VPS Server",
+     "penyedia": "Walid Umar",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=xod7LCF9xAU",
+     "durasi": "10.56"
+    }
+   ]
+  },
+  {
+   "id": "SK292",
+   "nama": "Serverless Database (Neon / PlanetScale / Turso)",
+   "kategori": "Database",
+   "tipe": "hard_skill",
+   "deskripsi": "Basis data terkelola yang menskala otomatis",
+   "sumber": "kurasi",
+   "alias": [
+    "Neon",
+    "PlanetScale"
+   ],
+   "belajar": [
+    {
+     "judul": "Neon Docs",
+     "penyedia": "Neon",
+     "jenis": "dokumentasi",
+     "url": "https://neon.com/docs/introduction"
+    }
+   ]
+  },
+  {
+   "id": "SK293",
+   "nama": "UI Component Library (shadcn/ui / Material UI)",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "Pustaka komponen antarmuka siap pakai",
+   "sumber": "kurasi",
+   "alias": [
+    "MUI",
+    "Chakra UI",
+    "Ant Design",
+    "shadcn"
+   ],
+   "belajar": [
+    {
+     "judul": "shadcn/ui Docs",
+     "penyedia": "shadcn/ui",
+     "jenis": "dokumentasi",
+     "url": "https://ui.shadcn.com/docs"
+    },
+    {
+     "judul": "Apa itu UI Component Library? dan Cara Pakainya Di Project Kita Dengan Mudah",
+     "penyedia": "Kode Awan",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=_U1duqUHIRU",
+     "durasi": "13.29"
+    },
+    {
+     "judul": "🔥 UI Component Library: Pakai atau Gak?! Untung Rugi, Tips Memilih, & Pengalaman Developer!",
+     "penyedia": "Eksperimen Pemrograman",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=fnKxblQw57c",
+     "durasi": "1.31.44"
+    }
+   ]
+  },
+  {
+   "id": "SK294",
+   "nama": "Storybook",
+   "kategori": "Frontend",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengembangkan dan mendokumentasikan komponen secara terpisah",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Storybook Docs",
+     "penyedia": "Storybook",
+     "jenis": "dokumentasi",
+     "url": "https://storybook.js.org/docs"
+    }
+   ]
+  },
+  {
+   "id": "SK295",
+   "nama": "Expo",
+   "kategori": "Mobile Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Perkakas dan layanan untuk React Native",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Expo Documentation",
+     "penyedia": "Expo",
+     "jenis": "dokumentasi",
+     "url": "https://docs.expo.dev/"
+    },
+    {
+     "judul": "Tutorial React Native Expo dari Dasar - Bahasa Indonesia: Belajar Membuat Aplikasi Sticker Smash",
+     "penyedia": "furfullstack",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=VBMZkctkUdY",
+     "durasi": "1.44.19"
+    },
+    {
+     "judul": "Belajar React Native Expo untuk Pemula #1 : Pengenalan dan Setup React Native Expo",
+     "penyedia": "JustKoding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=phYa-zi0PjM",
+     "durasi": "13.23"
+    }
+   ]
+  },
+  {
+   "id": "SK296",
+   "nama": "Kotlin Multiplatform",
+   "kategori": "Mobile Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Berbagi kode Kotlin antara Android dan iOS",
+   "sumber": "kurasi",
+   "alias": [],
+   "belajar": [
+    {
+     "judul": "Kotlin Multiplatform",
+     "penyedia": "kotlinlang.org",
+     "jenis": "dokumentasi",
+     "url": "https://kotlinlang.org/docs/multiplatform.html"
+    },
+    {
+     "judul": "Berkenalan dengan Kotlin Multiplatform Mobile (KMM) - TUGAS03 Android Developer Kalsel",
+     "penyedia": "AndroidDev Kalsel",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=oPf546pFfIw",
+     "durasi": "1.08.02"
+    },
+    {
+     "judul": "Kotlin Multiplatform Tutorial for Beginners - Your First KMP App",
+     "penyedia": "Kotlin by JetBrains",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=GcqFhoUuNNI",
+     "durasi": "12.20"
+    }
+   ]
+  },
+  {
+   "id": "SK297",
+   "nama": "Go Web Framework (Gin / Fiber)",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Kerangka kerja web untuk Go",
+   "sumber": "kurasi",
+   "alias": [
+    "Gin",
+    "Fiber",
+    "Echo"
+   ],
+   "belajar": [
+    {
+     "judul": "Gin Web Framework",
+     "penyedia": "gin-gonic.com",
+     "jenis": "dokumentasi",
+     "url": "https://gin-gonic.com/en/docs/"
+    },
+    {
+     "judul": "Golang Backend untuk Pemula 2026 - Full Course Golang, Gin, Gorm dan PostgreSQL",
+     "penyedia": "JustKoding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=QXRboKIPeh0",
+     "durasi": "3.56.15"
+    },
+    {
+     "judul": "Belajar Golang Backend #2 - Install Golang dan Gin Framework",
+     "penyedia": "JustKoding",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=x5xawBw0VaY",
+     "durasi": "14.46"
+    }
+   ]
+  },
+  {
+   "id": "SK298",
+   "nama": "Ruby on Rails",
+   "kategori": "Backend Framework",
+   "tipe": "hard_skill",
+   "deskripsi": "Kerangka kerja web berbasis Ruby",
+   "sumber": "kurasi",
+   "alias": [
+    "Rails",
+    "Ruby"
+   ],
+   "belajar": [
+    {
+     "judul": "Getting Started with Rails",
+     "penyedia": "Ruby on Rails",
+     "jenis": "dokumentasi",
+     "url": "https://guides.rubyonrails.org/getting_started.html"
+    },
+    {
+     "judul": "Tutorial Ruby on Rails - 5 Flow, Cara Kerja, dan Konsep Ruby on Rails Hello World - Bahasa Indonesia",
+     "penyedia": "Riky Hidayat",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=MyMgEj3EHoQ",
+     "durasi": "12.05"
+    },
+    {
+     "judul": "Tutorial Programming Ruby Bahasa Indonesia - Full Course",
+     "penyedia": "Agung Setiawan",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=TTZjX9Lq-QY",
+     "durasi": "6.32.28"
+    }
+   ]
+  },
+  {
+   "id": "SK299",
+   "nama": "gRPC & Protocol Buffers",
+   "kategori": "Backend",
+   "tipe": "hard_skill",
+   "deskripsi": "Komunikasi antarlayanan berkinerja tinggi",
+   "sumber": "kurasi",
+   "alias": [
+    "gRPC",
+    "Protobuf"
+   ],
+   "belajar": [
+    {
+     "judul": "Introduction to gRPC",
+     "penyedia": "grpc.io",
+     "jenis": "dokumentasi",
+     "url": "https://grpc.io/docs/what-is-grpc/introduction/"
+    },
+    {
+     "judul": "#1 Belajar gRPC pemula - Instalasi gRPC dan Helloworld gRPC menggunakan Node JS",
+     "penyedia": "sekolahkampus TV Programming & Tutorial",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=WYxC3iTxABI",
+     "durasi": "18.23"
+    },
+    {
+     "judul": "Golang gRPC Bagian 1 - Protocol Buffers",
+     "penyedia": "TentangKode",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=l20bZcwDCjg",
+     "durasi": "38.10"
+    }
+   ]
+  },
+  {
+   "id": "SK300",
+   "nama": "Workflow Automation (n8n / Zapier / Make)",
+   "kategori": "AI Technique",
+   "tipe": "hard_skill",
+   "deskripsi": "Mengotomasi alur kerja antaraplikasi",
+   "sumber": "kurasi",
+   "alias": [
+    "n8n",
+    "Zapier",
+    "Make",
+    "Integromat"
+   ],
+   "belajar": [
+    {
+     "judul": "n8n Docs",
+     "penyedia": "n8n",
+     "jenis": "dokumentasi",
+     "url": "https://docs.n8n.io/"
+    },
+    {
+     "judul": "#KelasTanya: \"Mengenal n8n & AI Agent: Dasar Membangun Workflow Otomatis\"",
+     "penyedia": "DomaiNesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=-hLa-ZS6ewQ",
+     "durasi": "1.41.50"
+    },
+    {
+     "judul": "Workflow Automation for Beginners: Step-by-Step Roadmap (n8n, AI + No-Code Guide)",
+     "penyedia": "Damola - AI & Automation",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=XLAj96YID5A",
+     "durasi": "48.06"
+    }
+   ]
+  },
+  {
+   "id": "SK301",
+   "nama": "No-code / Low-code (Webflow / Framer / Bubble)",
+   "kategori": "Design Tool",
+   "tipe": "hard_skill",
+   "deskripsi": "Membangun situs dan aplikasi tanpa banyak kode",
+   "sumber": "kurasi",
+   "alias": [
+    "Webflow",
+    "Framer",
+    "Bubble"
+   ],
+   "belajar": [
+    {
+     "judul": "Webflow University",
+     "penyedia": "Webflow",
+     "jenis": "kursus",
+     "url": "https://university.webflow.com/"
+    },
+    {
+     "judul": "Apa sih Low code dan No code itu",
+     "penyedia": "jalanpintas_net",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=a4n07Oi44rU",
+     "durasi": "12.51"
+    },
+    {
+     "judul": "TEKNOLOGI LOW CODE",
+     "penyedia": "PT Mitra Integrasi Informatika",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=xAQwiMuDKkk",
+     "durasi": "1.24.58"
+    }
+   ]
+  },
+  {
+   "id": "SK302",
+   "nama": "Local LLM (Ollama)",
+   "kategori": "AI Infrastructure",
+   "tipe": "hard_skill",
+   "deskripsi": "Menjalankan model bahasa di mesin sendiri",
+   "sumber": "kurasi",
+   "alias": [
+    "Ollama",
+    "LM Studio"
+   ],
+   "belajar": [
+    {
+     "judul": "Ollama",
+     "penyedia": "ollama.com",
+     "jenis": "dokumentasi",
+     "url": "https://ollama.com/"
+    },
+    {
+     "judul": "Cara Install Ollama - Jalankan AI Lokal GRATIS Tanpa Internet (Lengkap untuk Pemula)",
+     "penyedia": "TimposuLabs",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=6eSg5VkSikM",
+     "durasi": "15.49"
+    }
+   ]
+  },
+  {
+   "id": "SK303",
+   "nama": "Model Context Protocol (MCP)",
+   "kategori": "AI Technique",
+   "tipe": "hard_skill",
+   "deskripsi": "Standar menyambungkan model bahasa ke alat dan data",
+   "sumber": "kurasi",
+   "alias": [
+    "MCP"
+   ],
+   "belajar": [
+    {
+     "judul": "Model Context Protocol",
+     "penyedia": "modelcontextprotocol.io",
+     "jenis": "dokumentasi",
+     "url": "https://modelcontextprotocol.io/"
+    },
+    {
+     "judul": "Vide Coder Wajib Tahu MCP (Model Context Protocol)",
+     "penyedia": "Programmer Zaman Now",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=xNFeC4bJ4FY",
+     "durasi": "18.11"
+    },
+    {
+     "judul": "Mengerti MCP (Model Context Protocol)",
+     "penyedia": "Artificial Indonesia",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=hOwzMmg1X0w",
+     "durasi": "10.53"
+    }
+   ]
+  },
+  {
+   "id": "SK304",
+   "nama": "Object Storage (S3 / R2 / MinIO)",
+   "kategori": "Cloud Platform",
+   "tipe": "hard_skill",
+   "deskripsi": "Penyimpanan berkas skala besar",
+   "sumber": "kurasi",
+   "alias": [
+    "S3",
+    "R2",
+    "MinIO"
+   ],
+   "belajar": [
+    {
+     "judul": "Amazon S3 Documentation",
+     "penyedia": "Amazon Web Services",
+     "jenis": "dokumentasi",
+     "url": "https://docs.aws.amazon.com/s3/"
+    },
+    {
+     "judul": "Perbandingan Cloud Storage - Object Storage - File Storage - Object Storage",
+     "penyedia": "Aji Diyantoro",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=pq44GarrZC4",
+     "durasi": "15.27"
+    },
+    {
+     "judul": "Gak Perlu AWS! Bikin Cloud Storage - Object Storage Sendiri menggunakan MinIO di Ubuntu 24.04 Server",
+     "penyedia": "Walid Umar",
+     "jenis": "video",
+     "url": "https://www.youtube.com/watch?v=Yg-cYztOS_M",
+     "durasi": "18.06"
+    }
+   ]
   }
  ],
  "profesi_skill": {
@@ -10318,6 +11127,76 @@
     "skill_id": "SK174",
     "wajib": false,
     "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK280",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK281",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK282",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK283",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK284",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK286",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK287",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK290",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK293",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK294",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -10581,6 +11460,90 @@
     "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK280",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK282",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK285",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK288",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK289",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK290",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK291",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK292",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK297",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK298",
+    "wajib": false,
+    "bobot": 2.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK299",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK304",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C003": [
@@ -10772,6 +11735,111 @@
     "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK280",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK281",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK282",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK283",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK285",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK286",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK287",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK288",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK289",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK290",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK291",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK292",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK293",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK298",
+    "wajib": false,
+    "bobot": 2.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK304",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C004": [
@@ -10942,6 +12010,41 @@
     "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK280",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK288",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK289",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK290",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK296",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C005": [
@@ -11075,6 +12178,13 @@
     "skill_id": "SK139",
     "wajib": false,
     "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK290",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -11222,6 +12332,41 @@
    },
    {
     "skill_id": "SK091",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK280",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK288",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK290",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK295",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK296",
     "wajib": false,
     "bobot": 3.0,
     "catatan": null,
@@ -11783,6 +12928,13 @@
     "skill_id": "SK051",
     "wajib": false,
     "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK304",
+    "wajib": false,
+    "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -12386,6 +13538,34 @@
     "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK290",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK300",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK302",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK303",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C013": [
@@ -12754,6 +13934,13 @@
     "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK302",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C015": [
@@ -12931,6 +14118,34 @@
     "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK282",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK289",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK291",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK304",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C016": [
@@ -13094,6 +14309,20 @@
     "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK282",
+    "wajib": false,
+    "bobot": 6.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK304",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C017": [
@@ -13255,6 +14484,27 @@
     "skill_id": "SK176",
     "wajib": false,
     "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK282",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK289",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK299",
+    "wajib": false,
+    "bobot": 2.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -13425,6 +14675,13 @@
     "skill_id": "SK217",
     "wajib": false,
     "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK282",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -13725,6 +14982,20 @@
     "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK294",
+    "wajib": false,
+    "bobot": 2.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK301",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C021": [
@@ -13888,6 +15159,13 @@
     "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK301",
+    "wajib": false,
+    "bobot": 2.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C022": [
@@ -14037,6 +15315,13 @@
     "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK290",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C024": [
@@ -14177,6 +15462,20 @@
     "skill_id": "SK153",
     "wajib": false,
     "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK291",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK300",
+    "wajib": false,
+    "bobot": 2.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -14356,6 +15655,20 @@
     "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK282",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK291",
+    "wajib": false,
+    "bobot": 5.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C026": [
@@ -14480,6 +15793,13 @@
    },
    {
     "skill_id": "SK235",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK282",
     "wajib": false,
     "bobot": 3.0,
     "catatan": null,
@@ -14650,6 +15970,13 @@
    },
    {
     "skill_id": "SK052",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK292",
     "wajib": false,
     "bobot": 3.0,
     "catatan": null,
@@ -15066,6 +16393,20 @@
     "bobot": 4.0,
     "catatan": null,
     "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK286",
+    "wajib": false,
+    "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK300",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
    }
   ],
   "C030": [
@@ -15341,6 +16682,13 @@
     "skill_id": "SK170",
     "wajib": false,
     "bobot": 4.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK300",
+    "wajib": false,
+    "bobot": 3.0,
     "catatan": null,
     "sumber": "kurasi"
    }
@@ -15872,6 +17220,13 @@
    },
    {
     "skill_id": "SK172",
+    "wajib": false,
+    "bobot": 3.0,
+    "catatan": null,
+    "sumber": "kurasi"
+   },
+   {
+    "skill_id": "SK287",
     "wajib": false,
     "bobot": 3.0,
     "catatan": null,

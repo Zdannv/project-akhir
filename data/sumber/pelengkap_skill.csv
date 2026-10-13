@@ -163,3 +163,28 @@ SK276,Information Design & Diagramming,Documentation,hard_skill,Menyajikan infor
 SK277,"Editing, Style Guide & Localization",Documentation,hard_skill,Menyunting dan menjaga konsistensi gaya
 SK278,UX Writing,Documentation,hard_skill,Menulis teks antarmuka
 SK279,WebSocket & Real-time Communication,Backend,hard_skill,Komunikasi dua arah waktu nyata
+SK280,Supabase,Backend,hard_skill,"Backend-as-a-service: basis data Postgres, autentikasi, dan penyimpanan"
+SK281,Vercel / Netlify,Cloud Platform,hard_skill,Platform deployment aplikasi web dan frontend
+SK282,"Cloudflare (CDN, DNS, Workers)",Cloud Platform,hard_skill,"Jaringan pengiriman konten, DNS, dan komputasi tepi"
+SK283,Svelte / SvelteKit,Frontend Framework,hard_skill,Kerangka kerja antarmuka yang dikompilasi
+SK284,Astro,Frontend Framework,hard_skill,Kerangka kerja situs berbasis konten
+SK285,Bun / Deno,Backend,hard_skill,Runtime JavaScript modern
+SK286,WordPress,Frontend,hard_skill,Sistem pengelola konten yang paling banyak dipakai
+SK287,Headless CMS (Strapi / Sanity / Contentful),Backend,hard_skill,Pengelola konten yang disajikan lewat API
+SK288,Payment Gateway Integration (Midtrans / Xendit / Stripe),Backend,hard_skill,Menyambungkan pembayaran daring ke aplikasi
+SK289,Error Tracking & APM (Sentry),DevOps,hard_skill,Melacak galat dan kinerja aplikasi di produksi
+SK290,AI Coding Assistants (GitHub Copilot / Cursor / Claude Code),AI Technique,hard_skill,Memakai asisten AI untuk menulis dan meninjau kode
+SK291,VPS & Web Hosting (DigitalOcean / cPanel),Infrastructure,hard_skill,Menyewa dan mengelola server serta hosting
+SK292,Serverless Database (Neon / PlanetScale / Turso),Database,hard_skill,Basis data terkelola yang menskala otomatis
+SK293,UI Component Library (shadcn/ui / Material UI),Frontend,hard_skill,Pustaka komponen antarmuka siap pakai
+SK294,Storybook,Frontend,hard_skill,Mengembangkan dan mendokumentasikan komponen secara terpisah
+SK295,Expo,Mobile Framework,hard_skill,Perkakas dan layanan untuk React Native
+SK296,Kotlin Multiplatform,Mobile Framework,hard_skill,Berbagi kode Kotlin antara Android dan iOS
+SK297,Go Web Framework (Gin / Fiber),Backend Framework,hard_skill,Kerangka kerja web untuk Go
+SK298,Ruby on Rails,Backend Framework,hard_skill,Kerangka kerja web berbasis Ruby
+SK299,gRPC & Protocol Buffers,Backend,hard_skill,Komunikasi antarlayanan berkinerja tinggi
+SK300,Workflow Automation (n8n / Zapier / Make),AI Technique,hard_skill,Mengotomasi alur kerja antaraplikasi
+SK301,No-code / Low-code (Webflow / Framer / Bubble),Design Tool,hard_skill,Membangun situs dan aplikasi tanpa banyak kode
+SK302,Local LLM (Ollama),AI Infrastructure,hard_skill,Menjalankan model bahasa di mesin sendiri
+SK303,Model Context Protocol (MCP),AI Technique,hard_skill,Standar menyambungkan model bahasa ke alat dan data
+SK304,Object Storage (S3 / R2 / MinIO),Cloud Platform,hard_skill,Penyimpanan berkas skala besar

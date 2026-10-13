@@ -159,7 +159,7 @@ def test_dasbor_peneliti(klien, monkeypatch):
 
 def test_alias_skill(klien):
     skill = {s["id"]: s for s in klien.get("/api/kuesioner").json()["skill"]}
-    assert "ReactJS" in skill["SK016"]["alias"] and len(skill) == 277
+    assert "ReactJS" in skill["SK016"]["alias"] and len(skill) == 302
 
 
 def test_sumber_belajar_dan_panduan(klien):

@@ -13,34 +13,34 @@ Dibuat otomatis oleh `backend/scripts/evaluasi.py`. Jangan disunting tangan; jal
 
 | Konfigurasi | Hit@1 | Hit@3 | Hit@5 | MRR |
 |---|---:|---:|---:|---:|
-| KBF saja (α = 1,0) | 37,9% | 58,2% | 68,7% | 0,515 |
-| CBF saja (α = 0,0) | 91,0% | 98,8% | 99,9% | 0,949 |
-| Hibrida (α = 0,6) | 88,9% | 98,1% | 99,2% | 0,934 |
+| KBF saja (α = 1,0) | 38,0% | 58,5% | 68,3% | 0,515 |
+| CBF saja (α = 0,0) | 92,9% | 99,1% | 99,9% | 0,959 |
+| Hibrida (α = 0,6) | 89,7% | 97,5% | 98,9% | 0,937 |
 
 ### A.2 Kepekaan terhadap α
 
 | Konfigurasi | Hit@1 | Hit@3 | Hit@5 | MRR |
 |---|---:|---:|---:|---:|
-| α = 0,0 | 91,0% | 98,8% | 99,9% | 0,949 |
-| α = 0,1 | 92,0% | 99,2% | 99,9% | 0,955 |
-| α = 0,2 | 92,9% | 99,5% | 99,9% | 0,961 |
-| α = 0,3 | 93,6% | 99,6% | 99,9% | 0,965 |
-| α = 0,4 | 93,0% | 99,7% | 99,9% | 0,962 |
-| α = 0,5 | 91,9% | 99,5% | 99,9% | 0,955 |
-| α = 0,6 | 88,9% | 98,1% | 99,2% | 0,934 |
-| α = 0,7 | 83,4% | 94,4% | 96,9% | 0,892 |
-| α = 0,8 | 76,2% | 84,1% | 88,4% | 0,821 |
-| α = 0,9 | 69,8% | 77,9% | 79,4% | 0,757 |
-| α = 1,0 | 37,9% | 58,2% | 68,7% | 0,515 |
+| α = 0,0 | 92,9% | 99,1% | 99,9% | 0,959 |
+| α = 0,1 | 93,4% | 99,3% | 99,9% | 0,963 |
+| α = 0,2 | 94,5% | 99,4% | 99,9% | 0,969 |
+| α = 0,3 | 94,4% | 99,4% | 99,9% | 0,968 |
+| α = 0,4 | 93,9% | 99,6% | 99,8% | 0,966 |
+| α = 0,5 | 92,5% | 99,0% | 99,6% | 0,957 |
+| α = 0,6 | 89,7% | 97,5% | 98,9% | 0,937 |
+| α = 0,7 | 84,4% | 94,1% | 96,5% | 0,896 |
+| α = 0,8 | 75,4% | 83,6% | 87,0% | 0,811 |
+| α = 0,9 | 68,4% | 76,1% | 78,1% | 0,743 |
+| α = 1,0 | 38,0% | 58,5% | 68,3% | 0,515 |
 
 ### A.3 Ukuran kongruensi RIASEC
 
 | Konfigurasi | Hit@1 | Hit@3 | Hit@5 | MRR |
 |---|---:|---:|---:|---:|
-| Hibrida, iachan | 88,9% | 98,1% | 99,2% | 0,934 |
-| Hibrida, korelasi | 96,0% | 100,0% | 100,0% | 0,978 |
-| KBF saja, iachan | 37,9% | 58,2% | 68,7% | 0,515 |
-| KBF saja, korelasi | 57,4% | 80,9% | 90,7% | 0,708 |
+| Hibrida, iachan | 89,7% | 97,5% | 98,9% | 0,937 |
+| Hibrida, korelasi | 96,6% | 100,0% | 100,0% | 0,982 |
+| KBF saja, iachan | 38,0% | 58,5% | 68,3% | 0,515 |
+| KBF saja, korelasi | 55,2% | 81,1% | 90,6% | 0,694 |
 
 ### A.4 Ruang vektor CBF
 
@@ -49,14 +49,14 @@ saja (`profesi`), untuk persona spesialis dan generalis.
 
 | Konfigurasi | Hit@1 | Hit@3 | Hit@5 | MRR |
 |---|---:|---:|---:|---:|
-| CBF saja, ruang profesi — spesialis (2 skill lain) | 64,9% | 95,0% | 98,4% | 0,794 |
-| Hibrida, ruang profesi — spesialis (2 skill lain) | 76,1% | 94,1% | 97,2% | 0,852 |
-| CBF saja, ruang global — spesialis (2 skill lain) | 91,0% | 98,8% | 99,9% | 0,949 |
-| Hibrida, ruang global — spesialis (2 skill lain) | 88,9% | 98,1% | 99,2% | 0,934 |
-| CBF saja, ruang profesi — generalis (15 skill lain) | 58,3% | 89,4% | 95,3% | 0,741 |
-| Hibrida, ruang profesi — generalis (15 skill lain) | 72,1% | 89,4% | 94,6% | 0,817 |
-| CBF saja, ruang global — generalis (15 skill lain) | 87,7% | 97,7% | 99,4% | 0,927 |
-| Hibrida, ruang global — generalis (15 skill lain) | 83,9% | 95,5% | 97,6% | 0,898 |
+| CBF saja, ruang profesi — spesialis (2 skill lain) | 65,9% | 92,7% | 98,1% | 0,796 |
+| Hibrida, ruang profesi — spesialis (2 skill lain) | 74,4% | 92,6% | 96,6% | 0,840 |
+| CBF saja, ruang global — spesialis (2 skill lain) | 92,9% | 99,1% | 99,9% | 0,959 |
+| Hibrida, ruang global — spesialis (2 skill lain) | 89,7% | 97,5% | 98,9% | 0,937 |
+| CBF saja, ruang profesi — generalis (15 skill lain) | 56,6% | 88,0% | 94,8% | 0,730 |
+| Hibrida, ruang profesi — generalis (15 skill lain) | 72,4% | 90,6% | 95,4% | 0,821 |
+| CBF saja, ruang global — generalis (15 skill lain) | 88,4% | 97,9% | 99,1% | 0,931 |
+| Hibrida, ruang global — generalis (15 skill lain) | 84,1% | 95,2% | 97,1% | 0,898 |
 
 ## B. Data responden
 

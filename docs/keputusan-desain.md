@@ -50,12 +50,14 @@ lewat `data/sumber/pelengkap_*.csv`:
 - banyak skill umum tidak ada di daftarnya (machine learning, statistika,
   pengujian, jaringan, riset pengguna, dan lain-lain), sehingga responden tidak
   menemukan skill mereka, dan technical skill tiap profesi terlalu sedikit
-  (IT Project Manager 4, Scrum Master 2). Ditambahkan 146 skill beserta
+  (IT Project Manager 4, Scrum Master 2). Ditambahkan 171 skill beserta
   relasinya ke profesi yang sudah ada, dengan bobot sengaja kecil (3–16)
   supaya tidak mengalahkan data lowongan.
 
-Hasilnya 277 skill dan 811 relasi, **504 relasi di antaranya kurasi (62%)**.
-Technical skill per profesi sekarang 12–35. Karena lebih dari separuh relasi
+Hasilnya 302 skill dan 889 relasi, **582 relasi di antaranya kurasi (65%)**.
+Di dalamnya termasuk platform dan perkakas modern (Supabase, Vercel,
+Cloudflare, asisten koding AI, dan sejenisnya) yang tidak muncul di data lowongan.
+Technical skill per profesi sekarang 12–47. Karena lebih dari separuh relasi
 kini berasal dari kurasi, validasi ini bukan lagi pelengkap: basis pengetahuan
 skill harus diperiksa pakar atau dicocokkan dengan data lowongan sebelum
 hasilnya dilaporkan sebagai temuan. Setiap
@@ -102,19 +104,19 @@ Angka lengkap ada di `docs/hasil-evaluasi.md`. Tiga hal yang layak dibahas
 dengan pembimbing:
 
 1. **Pada α = 0,6, hibrida mengungguli KBF saja tetapi KALAH dari CBF saja**
-   (Hit@1 88,9% vs 37,9% dan 91,0%). Hibrida baru unggul pada α 0,1–0,5, dengan
-   puncak di α = 0,3 (93,6%). Sebelum daftar skill diperluas, hibrida α = 0,6
+   (Hit@1 89,7% vs 38,0% dan 92,9%). Hibrida baru unggul pada α 0,1–0,4, dengan
+   puncak di α = 0,2 (94,5%). Sebelum daftar skill diperluas, hibrida α = 0,6
    masih sedikit di atas CBF saja; setelah skill tiap profesi lebih kaya, daya
    beda CBF naik dan bobot KBF 0,6 menjadi terlalu besar. Ini harus dibahas
    dengan pembimbing: klaim "hybrid lebih baik" di simulasi hanya berlaku
    kalau α diturunkan.
 2. **Penyebabnya** sama seperti sebelumnya: banyak profesi TI punya kode
    Holland yang mirip (ICR muncul 11 kali), jadi KBF kurang membedakan.
-3. **Korelasi profil RIASEC mengungguli Iachan** (Hit@1 96,0% vs 88,9%), karena
+3. **Korelasi profil RIASEC mengungguli Iachan** (Hit@1 96,6% vs 89,7%), karena
    Iachan hanya memakai tiga huruf teratas dan memberi skor identik untuk
    profesi berkode sama. Dengan korelasi, hibrida α = 0,6 kembali di atas CBF saja.
-4. **Cosine global mengungguli cosine pada ruang skill profesi** (Hit@1 91,0%
-   vs 64,9%), juga untuk persona yang skill-nya banyak. Varian ruang profesi
+4. **Cosine global mengungguli cosine pada ruang skill profesi** (Hit@1 92,9%
+   vs 65,9%), juga untuk persona yang skill-nya banyak. Varian ruang profesi
    sempat dicoba karena cosine global "mengencerkan" skor orang yang memilih
    banyak skill, tetapi daya bedanya ternyata jauh lebih buruk, jadi cosine
    global — sesuai proposal — dipertahankan.
@@ -137,8 +139,8 @@ perhitungan skor; semuanya membantu pengguna menindaklanjuti rekomendasi.
 
 | Bahan | Sumber | Catatan |
 |---|---|---|
-| Sumber belajar per skill | `sumber_belajar.csv`, 190 tautan untuk 157 skill | dokumentasi resmi dan kursus gratis; tiap tautan diperiksa bisa dibuka pada 13 Oktober 2026 |
-| Video tutorial per skill | `video_tutorial.csv`, 470 video untuk 248 dari 262 technical skill | dibuat `scripts/ambil_video.py` dari hasil pencarian YouTube, lihat di bawah |
+| Sumber belajar per skill | `sumber_belajar.csv`, 216 tautan untuk 182 skill | dokumentasi resmi dan kursus gratis; tiap tautan diperiksa bisa dibuka pada 13 Oktober 2026 |
+| Video tutorial per skill | `video_tutorial.csv`, 515 video untuk 271 dari 287 technical skill | dibuat `scripts/ambil_video.py` dari hasil pencarian YouTube, lihat di bawah |
 | Tautan cari video dan kursus | dirakit dari nama skill | pencarian YouTube dan Coursera; tersedia untuk semua skill, isinya tidak dikurasi |
 | Peta belajar per profesi | `panduan_karier.csv`, 28 profesi | roadmap.sh |
 | Ide proyek portofolio | `proyek_portofolio.csv`, 2 per profesi | disusun penulis |
@@ -148,7 +150,7 @@ perhitungan skor; semuanya membantu pengguna menindaklanjuti rekomendasi.
 `ambil_video.py` membuka pencarian YouTube ("tutorial <skill> bahasa
 indonesia"), mengambil dua hasil teratas yang durasinya minimal 8 menit dan
 judulnya memuat nama skill, lalu memastikan videonya masih ada lewat oEmbed.
-Seluruh 513 judul hasilnya dibaca satu per satu; 43 yang meleset dibuang dan
+Seluruh 563 judul hasilnya dibaca satu per satu; 48 yang meleset dibuang dan
 dicatat beserta alasannya di `video_ditolak.csv` (misalnya "dbt" yang ternyata
 terapi psikologi, "Helm" yang ternyata helm motor, "risk management" yang
 ternyata trading). Video di daftar itu tidak akan terpilih lagi.
