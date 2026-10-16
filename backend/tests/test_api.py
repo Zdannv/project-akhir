@@ -146,11 +146,15 @@ def test_dasbor_peneliti(klien, monkeypatch):
     assert klien.get("/api/peneliti/ringkasan").json() == {"n": 0}
     rid = klien.post("/api/rekomendasi", json=masukan(
         profesi_aktual="C010", jenis_responden="profesional", skill_lain=["Svelte"])).json()["id"]
-    klien.post(f"/api/rekomendasi/{rid}/sus", json={"jawaban": [4, 2] * 5})
+    klien.post(f"/api/rekomendasi/{rid}/sus", json={"jawaban": [4, 2] * 5, "penjelasan": [5, 4, 4, 3]})
+    assert klien.post(f"/api/rekomendasi/{rid}/sus", json={"jawaban": [4, 2] * 5, "penjelasan": [9, 4, 4, 3]}).status_code == 422
     d = klien.get("/api/peneliti/ringkasan").json()
     assert d["n"] == 1 and d["n_pakar"] == 1 and d["sus"][0] == 75.0
     assert d["skill_lain"] == [["svelte", 1]] and d["responden"][0]["profesi_aktual"] == "Data Scientist"
-    assert "Hibrida bawaan (korelasi, α = 0,5)" in d["pakar"] and len(d["pakar"]) == 6
+    assert "Hibrida bawaan (korelasi, α = 0,5)" in d["pakar"] and len(d["pakar"]) == 11
+    assert {"Baseline: RIASEC saja (indeks Iachan)", "Baseline: acak (nilai harapan)"} <= set(d["pakar"])
+    assert d["penjelasan"]["n"] == 1 and d["penjelasan"]["rata"] == 4.0
+    assert d["pakar_uji"]["n"] == 1 and "Hibrida tanpa RIASEC (α = 0,5)" in d["pakar_uji"]["uji"]
 
     csv_ = klien.get("/api/peneliti/ekspor.csv")
     assert csv_.headers["content-type"].startswith("text/csv")

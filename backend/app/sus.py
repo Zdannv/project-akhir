@@ -16,6 +16,23 @@ BUTIR_SUS = [
 ]
 
 
+# Evaluasi penjelasan rekomendasi: apakah rincian poin dan kalimat alasan
+# membuat pengguna paham dan percaya. Butir disusun mengikuti dimensi
+# transparansi dan kepercayaan pada sistem rekomendasi yang dapat dijelaskan;
+# skala 1 - 5, semuanya berarah positif.
+BUTIR_PENJELASAN = [
+    "Saya paham mengapa profesi-profesi tersebut direkomendasikan kepada saya.",
+    "Rincian poin dan alasan membantu saya menilai apakah rekomendasinya tepat.",
+    "Saya percaya rekomendasi profesi dari sistem ini.",
+    "Penjelasan skill yang belum saya kuasai membuat saya tahu apa yang harus dipelajari.",
+]
+
+
+def periksa_penjelasan(jawaban: list[int]) -> None:
+    if len(jawaban) != len(BUTIR_PENJELASAN) or any(not 1 <= j <= 5 for j in jawaban):
+        raise ValueError(f"evaluasi penjelasan butuh {len(BUTIR_PENJELASAN)} jawaban bernilai 1-5")
+
+
 def skor_sus(jawaban: list[int]) -> float:
     """Butir ganjil: nilai - 1; butir genap: 5 - nilai; jumlahnya dikali 2,5."""
     if len(jawaban) != 10 or any(not 1 <= j <= 5 for j in jawaban):

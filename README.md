@@ -60,16 +60,28 @@ Vercel (antarmuka + API Python) dan Supabase (Postgres). Langkahnya ada di
 
 ```bash
 cd backend
-.venv/bin/python -m pytest                   # 33 uji: mesin (white-box) dan API (black-box)
+.venv/bin/python -m pytest                   # 40 uji: mesin, statistik, dan API
 .venv/bin/python scripts/evaluasi.py         # menulis docs/hasil-evaluasi.md
 .venv/bin/python scripts/kalibrasi.py        # mencari bobot dari data responden profesional
+.venv/bin/python scripts/kalibrasi_riasec.py # profil RIASEC O*NET vs data profesional lokal
+.venv/bin/python scripts/validasi_pakar.py buat      # lembar validasi relasi profesi-skill
+.venv/bin/python scripts/validasi_pakar.py hitung pakar1.xlsx pakar2.xlsx pakar3.xlsx
+.venv/bin/python scripts/validitas_isi.py buat       # lembar validitas isi kuesioner
+.venv/bin/python scripts/validitas_isi.py hitung ahli1.xlsx ahli2.xlsx ahli3.xlsx
 ```
 
 `evaluasi.py` punya dua bagian: simulasi persona sintetis (ablasi KBF/CBF/hibrida,
 kepekaan α, Iachan vs korelasi, ruang vektor CBF) dan metrik dari responden
-sungguhan yang tersimpan di `data/pa.db` (Hit Rate@K, Precision@K, SUS,
-Cronbach's α, skill di luar pilihan). Angka yang sama tampil langsung di dasbor
-peneliti.
+sungguhan yang tersimpan di `data/pa.db` (Hit Rate@K dan MRR dengan selang
+kepercayaan bootstrap, uji McNemar dan Wilcoxon terhadap baseline, Precision@K,
+SUS, evaluasi penjelasan, Cronbach's α, skill di luar pilihan). Angka yang sama
+tampil langsung di dasbor peneliti.
+
+Baseline yang selalu dihitung berdampingan: RIASEC saja (indeks Iachan dan
+korelasi, setara pendekatan penelitian terdahulu), urutan acak, hibrida tanpa
+RIASEC, dan hibrida dengan profil RIASEC yang dikalibrasi responden lokal.
+Pertanyaan "data O*NET dari AS, relevan untuk Indonesia?" dibahas di
+`docs/relevansi-riasec.md`.
 
 ## Dasbor peneliti
 
@@ -85,7 +97,8 @@ data/kb/         basis pengetahuan hasil bangun_kb.py
 data/pa.db       jawaban responden (tidak masuk repo)
 backend/app/     kuesioner.py · kbf.py · cbf.py · hibrida.py · roadmap.py ·
                  evaluasi.py · main.py (API)
-backend/scripts/ bangun_kb.py · evaluasi.py
+backend/scripts/ bangun_kb.py · evaluasi.py · kalibrasi*.py · validasi_pakar.py · validitas_isi.py
+docs/validasi/   lembar penilaian untuk pakar dan ahli
 frontend/        React + Vite + Tailwind
 api/             titik masuk API di Vercel
 supabase/        skema basis data untuk hosting

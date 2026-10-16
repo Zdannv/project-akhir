@@ -9,6 +9,10 @@ from pathlib import Path
 
 AKAR = Path(__file__).resolve().parents[2]
 BERKAS_KB = AKAR / "data" / "kb" / "basis_pengetahuan.json"
+# Profil minat profesi hasil kalibrasi dengan responden profesional Indonesia.
+# Hanya ada kalau scripts/kalibrasi_riasec.py --tulis dijalankan DAN kalibrasi
+# terbukti lebih baik daripada profil O*NET murni. Lihat docs/relevansi-riasec.md.
+BERKAS_RIASEC_LOKAL = AKAR / "data" / "kb" / "riasec_lokal.json"
 
 RIASEC = "RIASEC"
 BIG5 = "OCEAN"
@@ -59,10 +63,45 @@ class BasisPengetahuan:
         return next(j["rank"] for j in self.jenjang if j["kode"] == kode)
 
 
+def dengan_riasec(kb: BasisPengetahuan, profil: dict[str, dict[str, float]],
+                  sumber: str = "kalibrasi lokal") -> BasisPengetahuan:
+    """Salinan basis pengetahuan dengan profil RIASEC (skala 1 - 7) sebagian profesi diganti.
+
+    Kode Holland ikut dihitung ulang supaya indeks Iachan memakai profil yang sama.
+    """
+    profesi = []
+    for p in kb.profesi:
+        if p["id"] in profil:
+            r = {t: round(profil[p["id"]][t], 3) for t in RIASEC}
+            kode = "".join(sorted(RIASEC, key=lambda t: (-r[t], RIASEC.index(t)))[:3])
+            p = {**p, "riasec": r, "kode_holland": kode, "riasec_sumber": sumber}
+        profesi.append(p)
+    return BasisPengetahuan({**kb.mentah, "profesi": profesi})
+
+
+def campur_riasec(onet: dict[str, float], lokal: list[dict[str, float]], k: float = 5.0) -> dict[str, float]:
+    """Penyusutan (shrinkage) profil O*NET ke rata-rata responden lokal.
+
+    onet: skala 1 - 7. lokal: skor responden profesional skala 0 - 1.
+    Bobot lokal = n / (n + k): satu-dua responden hanya menggeser sedikit, dan
+    profil O*NET baru benar-benar tergantikan kalau respondennya banyak.
+    """
+    n = len(lokal)
+    if n == 0:
+        return dict(onet)
+    w = n / (n + k)
+    rata = {t: 1 + 6 * sum(x[t] for x in lokal) / n for t in RIASEC}
+    return {t: (1 - w) * onet[t] + w * rata[t] for t in RIASEC}
+
+
 @lru_cache(maxsize=1)
 def muat_kb() -> BasisPengetahuan:
     if not BERKAS_KB.exists():
         raise FileNotFoundError(
             f"{BERKAS_KB} belum ada. Jalankan dulu: python scripts/bangun_kb.py"
         )
-    return BasisPengetahuan(json.loads(BERKAS_KB.read_text(encoding="utf-8")))
+    kb = BasisPengetahuan(json.loads(BERKAS_KB.read_text(encoding="utf-8")))
+    if BERKAS_RIASEC_LOKAL.exists():
+        lokal = json.loads(BERKAS_RIASEC_LOKAL.read_text(encoding="utf-8"))
+        kb = dengan_riasec(kb, lokal["profil"])
+    return kb

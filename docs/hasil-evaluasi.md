@@ -19,6 +19,10 @@ Dibuat otomatis oleh `backend/scripts/evaluasi.py`. Jangan disunting tangan; jal
 | Hibrida tanpa minat bidang dan kesiapan (α = 0,5) | 96,4% | 99,9% | 100,0% | 0,981 |
 | Hibrida dengan cosine murni (α = 0,5) | 95,7% | 100,0% | 100,0% | 0,976 |
 | Hibrida proposal (Iachan, α = 0,6) | 88,9% | 97,9% | 99,4% | 0,934 |
+| Hibrida tanpa RIASEC (α = 0,5) | 93,9% | 100,0% | 100,0% | 0,966 |
+| Baseline: RIASEC saja (indeks Iachan) | 18,1% | 35,2% | 44,2% | 0,324 |
+| Baseline: RIASEC saja (korelasi) | 34,5% | 66,4% | 77,6% | 0,534 |
+| Baseline: acak (nilai harapan) | 2,9% | 8,6% | 14,3% | 0,118 |
 
 ### A.2 Kepekaan terhadap α
 
@@ -91,13 +95,17 @@ Belum ada responden profesional.
 
 | K | Precision@K | n responden |
 |---:|---:|---:|
-| 1 | 100,0% | 1 |
+| 1 | – | 0 |
 | 3 | – | 0 |
 | 5 | – | 0 |
 
 ### B.3 Usability (SUS)
 
 Belum ada jawaban SUS.
+
+### B.3b Evaluasi penjelasan rekomendasi
+
+Belum ada jawaban.
 
 ### B.4 Reliabilitas kuesioner (Cronbach's α)
 

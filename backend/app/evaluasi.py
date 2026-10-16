@@ -12,9 +12,11 @@ from collections import Counter
 
 from . import kuesioner as q
 from . import penyimpanan as db
+from . import statistik as st
 from .hibrida import KONFIG_PROPOSAL, Konfigurasi, peringkat
-from .kb import BIG5, RIASEC, BasisPengetahuan
-from .kbf import ProfilPengguna
+from .kb import BIG5, RIASEC, BasisPengetahuan, campur_riasec, dengan_riasec
+from .kbf import ProfilPengguna, saring
+from .sus import BUTIR_PENJELASAN
 
 K = (1, 3, 5)
 
@@ -26,8 +28,18 @@ KONFIG_ABLASI = {
     "Hibrida tanpa minat bidang dan kesiapan (α = 0,5)": Konfigurasi(skema_bobot="proposal"),
     "Hibrida dengan cosine murni (α = 0,5)": Konfigurasi(ukuran_cbf="kosinus"),
     "Hibrida proposal (Iachan, α = 0,6)": KONFIG_PROPOSAL,
+    "Hibrida tanpa RIASEC (α = 0,5)": Konfigurasi(skema_bobot="tanpa_riasec"),
 }
 
+# Baseline: cara merekomendasikan yang lebih sederhana, sebagai pembanding.
+# "RIASEC saja" setara pendekatan penelitian terdahulu yang hanya memakai minat.
+KONFIG_BASELINE = {
+    "Baseline: RIASEC saja (indeks Iachan)": Konfigurasi(alpha=1.0, metode_riasec="iachan", skema_bobot="riasec"),
+    "Baseline: RIASEC saja (korelasi)": Konfigurasi(alpha=1.0, skema_bobot="riasec"),
+}
+NAMA_ACAK = "Baseline: acak (nilai harapan)"
+NAMA_LOKAL = "Hibrida, profil RIASEC dikalibrasi responden lokal (leave-one-out)"
+K_SUSUT = 5.0  # bobot profil O*NET dalam penyusutan, setara 5 responden
 
 def metrik(posisi: list[int | None]) -> dict:
     """posisi: peringkat jawaban benar tiap kasus (None = tidak masuk daftar)."""
@@ -53,6 +65,74 @@ def profil_dari_masukan(m: dict, kb: BasisPengetahuan) -> ProfilPengguna:
         bidang={k: (v - 1) / 4 for k, v in m["bidang"].items()} if m.get("bidang") else None,
         pengalaman=m.get("pengalaman_tahun"),
     )
+
+
+def metrik_lengkap(posisi: list[int | None]) -> dict:
+    """Metrik + selang kepercayaan 95% (bootstrap) untuk Hit@5 dan MRR."""
+    hasil = metrik(posisi)
+    hit5 = [1.0 if r and r <= 5 else 0.0 for r in posisi]
+    rr = [1 / r if r else 0.0 for r in posisi]
+    hasil["ci_hit@5"] = st.bootstrap_ci(hit5)
+    hasil["ci_mrr"] = st.bootstrap_ci(rr)
+    return hasil
+
+
+def metrik_acak(n_lolos: list[int]) -> dict:
+    """Nilai harapan kalau urutan profesi diacak: Hit@K = K / m, MRR = H(m) / m."""
+    hasil = {f"hit@{k}": statistics.mean(min(k, m) / m for m in n_lolos) for k in K}
+    hasil["mrr"] = statistics.mean(sum(1 / i for i in range(1, m + 1)) / m for m in n_lolos)
+    return hasil
+
+
+def _riasec_lokal_loo(kasus: list[tuple[ProfilPengguna, str]], kb: BasisPengetahuan,
+                      i: int, k: float = K_SUSUT) -> BasisPengetahuan:
+    """Basis pengetahuan dengan profil RIASEC profesi disusutkan ke rata-rata
+    responden profesional lain (responden ke-i sendiri tidak ikut)."""
+    per_profesi: dict[str, list[dict]] = {}
+    for j, (profil, target) in enumerate(kasus):
+        if j != i:
+            per_profesi.setdefault(target, []).append(profil.riasec)
+    profil_baru = {pid: campur_riasec(kb.cari_profesi(pid)["riasec"], daftar, k)
+                   for pid, daftar in per_profesi.items() if kb.cari_profesi(pid)}
+    return dengan_riasec(kb, profil_baru)
+
+
+def uji_pakar(kasus: list[tuple[ProfilPengguna, str]], kb: BasisPengetahuan) -> dict:
+    """Hit Rate dan MRR terhadap profesi aktual responden profesional,
+    untuk konfigurasi sistem dan baseline, beserta uji berpasangan terhadap
+    konfigurasi bawaan."""
+    konfig = KONFIG_ABLASI | KONFIG_BASELINE
+    posisi = {nama: [posisi_profesi(p, t, kb, k) for p, t in kasus] for nama, k in konfig.items()}
+    posisi[NAMA_LOKAL] = [posisi_profesi(p, t, _riasec_lokal_loo(kasus, kb, i), Konfigurasi())
+                          for i, (p, t) in enumerate(kasus)]
+    hasil = {nama: metrik_lengkap(pos) for nama, pos in posisi.items()}
+    hasil[NAMA_ACAK] = metrik_acak([len(saring(p, kb)[0]) for p, _ in kasus])
+
+    acuan = posisi[NAMA_BAWAAN]
+    hit = lambda pos: [bool(r and r <= 5) for r in pos]  # noqa: E731
+    rr = lambda pos: [1 / r if r else 0.0 for r in pos]  # noqa: E731
+    uji = {}
+    for nama, pos in posisi.items():
+        if nama == NAMA_BAWAAN:
+            continue
+        uji[nama] = {"mcnemar_hit@5": st.mcnemar(hit(acuan), hit(pos)),
+                     "wilcoxon_rr": st.wilcoxon(rr(acuan), rr(pos))}
+    return {"metrik": hasil, "uji": uji, "n": len(kasus)}
+
+
+def ringkas_penjelasan(responden: list[dict]) -> dict | None:
+    """Rata-rata tiap butir evaluasi penjelasan (skala 1 - 5)."""
+    isi = [r["penjelasan"] for r in responden if r.get("penjelasan")]
+    if not isi:
+        return None
+    rata_orang = [statistics.mean(j) for j in isi]
+    return {
+        "n": len(isi),
+        "butir": [(teks, statistics.mean(j[i] for j in isi)) for i, teks in enumerate(BUTIR_PENJELASAN)],
+        "rata": statistics.mean(rata_orang),
+        "ci": st.bootstrap_ci(rata_orang),
+        "setuju": sum(1 for x in rata_orang if x >= 4) / len(isi),
+    }
 
 
 def cronbach_alpha(butir: list[list[int]]) -> float | None:
@@ -81,11 +161,12 @@ def data_responden(kb: BasisPengetahuan) -> dict | None:
     hasil: dict = {"n": len(responden), "n_pakar": len(pakar)}
 
     if pakar:
-        hasil["pakar"] = {
-            nama: metrik([posisi_profesi(profil_dari_masukan(r["masukan"], kb), r["profesi_aktual"], kb, k)
-                          for r in pakar])
-            for nama, k in KONFIG_ABLASI.items()
-        }
+        kasus = [(profil_dari_masukan(r["masukan"], kb), r["profesi_aktual"]) for r in pakar]
+        uji = uji_pakar(kasus, kb)
+        # "pakar" dipertahankan bentuknya untuk dasbor; rinciannya di "pakar_uji".
+        hasil["pakar"] = {nama: {k: m[k] for k in ("hit@1", "hit@3", "hit@5", "mrr")}
+                          for nama, m in uji["metrik"].items()}
+        hasil["pakar_uji"] = uji
 
     # Precision@K dari penilaian relevansi: hanya responden yang menilai semua
     # K rekomendasi teratasnya, supaya penyebutnya benar-benar K.
@@ -101,6 +182,8 @@ def data_responden(kb: BasisPengetahuan) -> dict | None:
 
     sus = [r["skor_sus"] for r in responden if r["skor_sus"] is not None]
     hasil["sus"] = (statistics.mean(sus), len(sus)) if sus else None
+    hasil["sus_ci"] = st.bootstrap_ci(sus) if sus else None
+    hasil["penjelasan"] = ringkas_penjelasan(responden)
 
     reliabilitas = {}
     for tipe in RIASEC:

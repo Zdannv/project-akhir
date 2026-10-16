@@ -29,7 +29,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.evaluasi import KONFIG_ABLASI, data_responden, metrik, posisi_profesi  # noqa: E402
+from app.evaluasi import (KONFIG_ABLASI, KONFIG_BASELINE, NAMA_ACAK, NAMA_BAWAAN, NAMA_LOKAL,  # noqa: E402
+                          data_responden, metrik, metrik_acak, posisi_profesi)
+from app.kbf import saring  # noqa: E402
 from app.hibrida import Konfigurasi  # noqa: E402
 from app.kb import AKAR, BIG5, RIASEC, BasisPengetahuan, muat_kb  # noqa: E402
 from app.kbf import ProfilPengguna  # noqa: E402
@@ -100,7 +102,8 @@ def simulasi(kb: BasisPengetahuan, n_persona: int, seed: int, sigma: float) -> d
     return {
         "ruang": ruang,
         "n": len(kasus),
-        "ablasi": {nama: jalankan(k) for nama, k in KONFIG_ABLASI.items()},
+        "ablasi": {nama: jalankan(k) for nama, k in (KONFIG_ABLASI | KONFIG_BASELINE).items()}
+                  | {NAMA_ACAK: metrik_acak([len(saring(pr, kb)[0]) for _, pr in kasus])},
         "alpha": {a / 10: jalankan(Konfigurasi(alpha=a / 10)) for a in range(11)},
         "alpha_iachan": {a / 10: jalankan(Konfigurasi(alpha=a / 10, metode_riasec="iachan")) for a in range(11)},
         "riasec": {m: jalankan(Konfigurasi(metode_riasec=m)) for m in ("iachan", "korelasi")},
@@ -111,6 +114,37 @@ def simulasi(kb: BasisPengetahuan, n_persona: int, seed: int, sigma: float) -> d
 # ── Laporan ─────────────────────────────────────────────────────────────────
 def pct(x: float) -> str:
     return f"{x * 100:.1f}%".replace(".", ",")
+
+
+def d(x: float, digit: int = 2) -> str:
+    return f"{x:.{digit}f}".replace(".", ",")
+
+
+def ci(pasangan) -> str:
+    return f"{pct(pasangan[0])}–{pct(pasangan[1])}"
+
+
+def p_teks(p: float) -> str:
+    return "< 0,001" if p < 0.001 else f"{p:.3f}".replace(".", ",")
+
+
+def tabel_pakar(uji: dict) -> list[str]:
+    out = ["| Konfigurasi | Hit@1 | Hit@3 | Hit@5 (95% CI) | MRR (95% CI) |", "|---|---:|---:|---:|---:|"]
+    for nama, m in uji["metrik"].items():
+        hit5 = pct(m["hit@5"]) + (f" ({ci(m['ci_hit@5'])})" if "ci_hit@5" in m else "")
+        mrr = f"{m['mrr']:.3f}".replace(".", ",") + (
+            f" ({m['ci_mrr'][0]:.3f}–{m['ci_mrr'][1]:.3f})".replace(".", ",") if "ci_mrr" in m else "")
+        out.append(f"| {nama} | {pct(m['hit@1'])} | {pct(m['hit@3'])} | {hit5} | {mrr} |")
+    return out
+
+
+def tabel_uji(uji: dict) -> list[str]:
+    out = ["| Dibandingkan dengan hibrida bawaan | Hanya bawaan benar | Hanya pembanding benar | p McNemar (Hit@5) | p Wilcoxon (RR) |",
+           "|---|---:|---:|---:|---:|"]
+    for nama, u in uji["uji"].items():
+        m, w = u["mcnemar_hit@5"], u["wilcoxon_rr"]
+        out.append(f"| {nama} | {m['hanya_a']} | {m['hanya_b']} | {p_teks(m['p'])} | {p_teks(w['p'])} |")
+    return out
 
 
 def tabel_metrik(baris: dict) -> list[str]:
@@ -172,9 +206,21 @@ def laporan(sim: dict, resp: dict | None, argumen: argparse.Namespace, kb: Basis
 
     L += [f"{resp['n']} responden, {resp['n_pakar']} di antaranya profesional yang mengisi profesi aktual.", ""]
     L += ["### B.1 Hit Rate terhadap profesi aktual (uji pakar)", ""]
-    if resp.get("pakar"):
-        L += [*tabel_metrik(resp["pakar"]), "",
-              "Target proposal: Hit Rate@5 ≥ 60% dengan 15–20 profesional.", ""]
+    if resp.get("pakar_uji"):
+        uji = resp["pakar_uji"]
+        L += [*tabel_pakar(uji), "",
+              "Selang kepercayaan 95% dari 2000 sampel ulang bootstrap. Target proposal: Hit Rate@5 ≥ 60% "
+              "dengan 15–20 profesional.", "",
+              f"`{NAMA_LOKAL}`: profil RIASEC tiap profesi disusutkan ke rata-rata minat responden "
+              "profesional Indonesia di profesi itu, tanpa menyertakan responden yang sedang diuji. "
+              "Kalau baris ini lebih baik daripada hibrida bawaan, profil O*NET kurang mewakili kondisi lokal; "
+              "jalankan `scripts/kalibrasi_riasec.py`. Lihat `docs/relevansi-riasec.md`.", "",
+              "#### Uji berpasangan terhadap hibrida bawaan", "", *tabel_uji(uji), "",
+              "McNemar (eksak) membandingkan apakah profesi aktual masuk 5 teratas pada kasus yang sama; "
+              "Wilcoxon membandingkan reciprocal rank per kasus. p < 0,05 berarti perbedaannya kecil "
+              "kemungkinan terjadi karena kebetulan." +
+              (" **Responden profesional kurang dari 10, jadi p-value di atas hanya indikatif.**"
+               if uji["n"] < 10 else ""), ""]
     else:
         L += ["Belum ada responden profesional.", ""]
 
@@ -187,9 +233,21 @@ def laporan(sim: dict, resp: dict | None, argumen: argparse.Namespace, kb: Basis
     L += ["### B.3 Usability (SUS)", ""]
     if resp["sus"]:
         rata, n = resp["sus"]
-        L += [f"Rata-rata **{rata:.1f}** dari {n} responden (ambang proposal: ≥ 68).".replace(".", ",", 1), ""]
+        lo, hi = resp["sus_ci"]
+        L += [f"Rata-rata **{d(rata, 1)}** dari {n} responden (95% CI {d(lo, 1)}–{d(hi, 1)}; "
+              "ambang proposal: ≥ 68).", ""]
     else:
         L += ["Belum ada jawaban SUS.", ""]
+
+    L += ["### B.3b Evaluasi penjelasan rekomendasi", ""]
+    pj = resp.get("penjelasan")
+    if pj:
+        L += [f"{pj['n']} responden. Rata-rata keseluruhan **{d(pj['rata'])}** dari 5 "
+              f"(95% CI {d(pj['ci'][0])}–{d(pj['ci'][1])}); {pct(pj['setuju'])} responden rata-ratanya ≥ 4.",
+              "", "| Butir | Rata-rata |", "|---|---:|",
+              *[f"| {t} | {d(v)} |" for t, v in pj["butir"]], ""]
+    else:
+        L += ["Belum ada jawaban.", ""]
 
     L += ["### B.4 Reliabilitas kuesioner (Cronbach's α)", "", "| Skala | α |", "|---|---:|"]
     for nama, a in resp["reliabilitas"].items():

@@ -53,7 +53,8 @@ create table if not exists umpan_balik (
 create table if not exists sus (
   responden_id  text primary key references responden(id) on delete cascade,
   jawaban       text not null,            -- json: 10 nilai 1..5
-  skor          real not null
+  skor          real not null,
+  penjelasan    text                      -- json: 4 nilai 1..5, evaluasi penjelasan
 );
 """
 
@@ -127,6 +128,8 @@ def siapkan() -> None:
         for kolom in ("induk", "target"):
             if kolom not in ada:
                 k.jalankan(f"alter table responden add column {kolom} text")
+        if "penjelasan" not in {b["name"] for b in k.jalankan("pragma table_info(sus)")}:
+            k.jalankan("alter table sus add column penjelasan text")
 
 
 def _json(nilai):
@@ -151,8 +154,11 @@ def _rakit(k: _Koneksi, baris: list[dict]) -> list[dict]:
     relevan: dict[str, dict[str, bool]] = {}
     for r in k.jalankan(f"select * from umpan_balik where responden_id in ({tanda})", ids):
         relevan.setdefault(r["responden_id"], {})[r["profesi_id"]] = bool(r["relevan"])
-    sus = {r["responden_id"]: r["skor"]
-           for r in k.jalankan(f"select responden_id, skor from sus where responden_id in ({tanda})", ids)}
+    sus, penjelasan = {}, {}
+    for r in k.jalankan(f"select responden_id, skor, penjelasan from sus where responden_id in ({tanda})", ids):
+        sus[r["responden_id"]] = r["skor"]
+        if r["penjelasan"] is not None:
+            penjelasan[r["responden_id"]] = _json(r["penjelasan"])
     centang: dict[str, set[str]] = {}
     for r in k.jalankan(f"select * from roadmap_centang where responden_id in ({tanda})", ids):
         centang.setdefault(r["responden_id"], set()).add(r["skill_id"])
@@ -161,6 +167,7 @@ def _rakit(k: _Koneksi, baris: list[dict]) -> list[dict]:
         "profesi_aktual": b["profesi_aktual"],
         "masukan": _json(b["masukan"]), "hasil": _json(b["hasil"]),
         "umpan_balik": relevan.get(b["id"], {}), "skor_sus": sus.get(b["id"]),
+        "penjelasan": penjelasan.get(b["id"]),
         "induk": b["induk"], "target": b["target"], "centang": centang.get(b["id"], set()),
     } for b in baris]
 
@@ -199,12 +206,12 @@ def simpan_umpan_balik(rid: str, penilaian: dict[str, bool]) -> None:
             )
 
 
-def simpan_sus(rid: str, jawaban: list[int], skor: float) -> None:
+def simpan_sus(rid: str, jawaban: list[int], skor: float, penjelasan: list[int] | None = None) -> None:
     with koneksi() as k:
         k.jalankan(
-            "insert into sus (responden_id, jawaban, skor) values (?,?,?) on conflict (responden_id) "
-            "do update set jawaban = excluded.jawaban, skor = excluded.skor",
-            (rid, k.j(jawaban), skor),
+            "insert into sus (responden_id, jawaban, skor, penjelasan) values (?,?,?,?) on conflict (responden_id) "
+            "do update set jawaban = excluded.jawaban, skor = excluded.skor, penjelasan = excluded.penjelasan",
+            (rid, k.j(jawaban), skor, None if penjelasan is None else k.j(penjelasan)),
         )
 
 

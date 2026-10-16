@@ -102,6 +102,11 @@ function Isi({ d }: { d: Data }) {
             <Tabel kepala={['K', 'Precision', 'n']} baris={Object.entries(d.presisi).map(([k, v]) => [k, v ? persen(v[0]) : '–', v ? String(v[1]) : '0'])} />
           </Bagian>
         )}
+        {d.penjelasan && (
+          <Bagian judul="Evaluasi penjelasan rekomendasi" ket={`${d.penjelasan.n} responden · rata-rata ${angka(d.penjelasan.rata, 2)} dari 5 (95% CI ${angka(d.penjelasan.ci[0], 2)}–${angka(d.penjelasan.ci[1], 2)}) · ${persen(d.penjelasan.setuju)} setuju (≥ 4)`}>
+            <Tabel kepala={['Butir', 'Rata-rata']} baris={d.penjelasan.butir.map(([teks, v]) => [teks, angka(v, 2)])} />
+          </Bagian>
+        )}
         {d.reliabilitas && (
           <Bagian judul="Reliabilitas kuesioner (Cronbach's α)" ket="Big Five hanya dua butir per dimensi, jadi α rendah di sana lazim.">
             <Tabel kepala={['Skala', 'α']} baris={Object.entries(d.reliabilitas).map(([k, v]) => [k, v === null ? '–' : angka(v, 2)])} />

@@ -9,6 +9,7 @@ export type Kuesioner = {
   pengalaman: { nilai: number; label: string }[]
   big5: { skala: string[]; awalan: string; butir: Butir[] }
   sus: string[]
+  penjelasan: string[]
   jenjang: { kode: string; nama: string; rank: number }[]
   kota: string[]
   prodi: { id: string; nama: string }[]
@@ -144,6 +145,7 @@ export type Peneliti = {
   pakar?: Record<string, { 'hit@1': number; 'hit@3': number; 'hit@5': number; mrr: number }>
   presisi?: Record<string, [number, number] | null>
   sus?: [number, number] | null
+  penjelasan?: { n: number; butir: [string, number][]; rata: number; ci: [number, number]; setuju: number } | null
   reliabilitas?: Record<string, number | null>
   skill_lain?: [string, number][]
   n_skill?: number
@@ -254,8 +256,8 @@ export async function unduhEkspor(kunci: string): Promise<Blob> {
   if (!r.ok) throw new Error('Gagal mengunduh data.')
   return r.blob()
 }
-export const kirimSus = (id: string, jawaban: number[]) =>
-  minta<{ skor: number }>(`/rekomendasi/${id}/sus`, { method: 'POST', body: JSON.stringify({ jawaban }) })
+export const kirimSus = (id: string, jawaban: number[], penjelasan: number[]) =>
+  minta<{ skor: number }>(`/rekomendasi/${id}/sus`, { method: 'POST', body: JSON.stringify({ jawaban, penjelasan }) })
 
 /**
  * Pita kecocokan. Hanya cara menyajikan skor; tidak dipakai mesin maupun evaluasi.

@@ -264,12 +264,20 @@ yang sudah dihapus tetap menjawab 200) dan perbaiki yang mati.
 
 | Pengujian | Cara | Target proposal |
 |---|---|---|
-| Fungsional | `pytest` (33 uji) | semua lulus |
+| Fungsional | `pytest` (40 uji) | semua lulus |
+| Validitas isi kuesioner | 3+ ahli menilai kesesuaian dan kejelasan tiap butir; Aiken's V dengan p-value eksak (`scripts/validitas_isi.py`) | butir p ≥ 0,05 diperbaiki sebelum pengambilan data |
+| Validasi basis pengetahuan | 2–3 pakar menilai 210 sampel relasi profesi–skill tanpa tahu asalnya; Cohen's/Fleiss' κ dan proporsi relevan kurasi vs lowongan (`scripts/validasi_pakar.py`) | — |
 | Kalibrasi bobot | `scripts/kalibrasi.py` pada data profesional, leave-one-out | — |
-| Akurasi, uji pakar | 15–20 profesional TI mengisi sebagai "Profesional TI" beserta profesinya; Hit Rate@5 dan MRR dihitung terhadap profesi itu | Hit Rate@5 ≥ 60% |
+| Akurasi, uji pakar | profesional TI mengisi sebagai "Profesional TI" beserta profesinya; Hit Rate@K dan MRR dengan 95% CI bootstrap, dibandingkan dengan baseline lewat McNemar dan Wilcoxon | Hit Rate@5 ≥ 60% |
+| Relevansi profil RIASEC | profil O*NET vs profil yang dikalibrasi responden lokal, leave-one-out (`scripts/kalibrasi_riasec.py`, `docs/relevansi-riasec.md`) | — |
 | Relevansi | responden menilai tiap rekomendasi relevan/tidak di layar detail; Precision@K | — |
 | Usability | 10 butir SUS di menu Penilaian | skor ≥ 68 |
+| Penjelasan rekomendasi | 4 butir Likert di menu Penilaian: paham, membantu menilai, percaya, tahu apa yang dipelajari | — |
 | Reliabilitas instrumen | Cronbach's α per skala | — |
+
+Jumlah responden profesional sebaiknya ≥ 30 supaya selang kepercayaan Hit
+Rate@5 tidak terlalu lebar dan uji berpasangan punya daya; dengan kurang dari
+10 orang, laporan menandai p-value sebagai indikatif.
 
 Isian yang diperbarui lewat "Ubah jawaban" disimpan sebagai isian baru yang
 menunjuk isian lamanya; evaluasi hanya menghitung isian terakhir tiap orang.

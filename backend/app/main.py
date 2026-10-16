@@ -27,7 +27,7 @@ from .cbf import LABEL_TINGKAT, kesenjangan_skill
 from .hibrida import Konfigurasi, rekomendasi
 from .kb import AKAR, muat_kb
 from .kbf import DOMISILI_LAIN, ProfilPengguna, catatan_lokasi  # noqa: F401
-from .sus import BUTIR_SUS, skor_sus
+from .sus import BUTIR_PENJELASAN, BUTIR_SUS, periksa_penjelasan, skor_sus
 
 
 @asynccontextmanager
@@ -102,6 +102,7 @@ class UmpanBalik(BaseModel):
 
 class JawabanSus(BaseModel):
     jawaban: list[int]
+    penjelasan: list[int] | None = None  # evaluasi penjelasan; opsional untuk klien lama
 
 
 def _profil(m: Masukan) -> ProfilPengguna:
@@ -151,6 +152,7 @@ def ambil_kuesioner() -> dict:
             {"nilai": 5, "label": "5 tahun atau lebih"},
         ],
         "sus": BUTIR_SUS,
+        "penjelasan": BUTIR_PENJELASAN,
         "jenjang": kb.jenjang,
         "kota": kb.kota + [DOMISILI_LAIN],
         "prodi": [{"id": p["id"], "nama": f"{p['nama']} ({p['jenjang']})"} for p in kb.prodi],
@@ -305,9 +307,11 @@ def kirim_sus(rid: str, j: JawabanSus) -> dict:
     _responden(rid)
     try:
         skor = skor_sus(j.jawaban)
+        if j.penjelasan is not None:
+            periksa_penjelasan(j.penjelasan)
     except ValueError as e:
         raise HTTPException(422, str(e)) from e
-    db.simpan_sus(rid, j.jawaban, skor)
+    db.simpan_sus(rid, j.jawaban, skor, j.penjelasan)
     return {"skor": skor}
 
 
@@ -360,7 +364,8 @@ def ekspor_peneliti(request: Request, x_kunci: str | None = Header(default=None)
     w.writerow(["id", "dibuat", "jenis", "jenjang", "domisili", "bersedia_relokasi", "ekspektasi_gaji",
                 "punya_tanggungan", "profesi_aktual", "kode_holland", *kode_r, *kode_b, "n_skill",
                 "skill_lain", *[f"rekomendasi_{i}" for i in range(1, 6)],
-                *[f"relevan_{i}" for i in range(1, 6)], "posisi_profesi_aktual", "skor_sus"])
+                *[f"relevan_{i}" for i in range(1, 6)], "posisi_profesi_aktual", "skor_sus",
+                *[f"penjelasan_{i}" for i in range(1, len(BUTIR_PENJELASAN) + 1)]])
     for r in db.responden_terakhir():
         m, rek = r["masukan"], r["hasil"]["rekomendasi"]
         isi = lambda i: rek[i]["nama"] if i < len(rek) else ""  # noqa: E731
@@ -375,6 +380,7 @@ def ekspor_peneliti(request: Request, x_kunci: str | None = Header(default=None)
             next((b["peringkat"] for b in r["hasil"]["peringkat_lengkap"]
                   if b["profesi_id"] == r["profesi_aktual"]), ""),
             "" if r["skor_sus"] is None else r["skor_sus"],
+            *(r["penjelasan"] or [""] * len(BUTIR_PENJELASAN)),
         ])
     return Response(buf.getvalue(), media_type="text/csv",
                     headers={"Content-Disposition": 'attachment; filename="responden.csv"'})
