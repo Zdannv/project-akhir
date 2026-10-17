@@ -65,7 +65,10 @@ sebaliknya. Itu yang dijawab dengan desain dan pengujian di bawah.
    yang hanya memakai RIASEC (pendekatan penelitian terdahulu) hanya 18,1%
    (indeks Iachan) dan 34,5% (korelasi). Lihat `docs/hasil-evaluasi.md` A.1.
    Angka simulasi berasal dari persona sintetis dan harus dikonfirmasi dengan
-   data responden.
+   data responden. **Catatan penting:** minat persona simulasi dibangkitkan dari
+   profil O*NET itu sendiri, jadi angka ini hanya menunjukkan bahwa porsi RIASEC
+   dalam skor kecil; angka ini tidak membuktikan profil O*NET cocok untuk
+   Indonesia. Bukti itu hanya bisa datang dari kalibrasi di poin 3.
 3. **Dapat dikalibrasi dengan data lokal.** Jawaban minat responden
    profesional TI Indonesia dipakai untuk menyusutkan profil O*NET tiap
    profesi ke rata-rata profesional lokal di profesi itu

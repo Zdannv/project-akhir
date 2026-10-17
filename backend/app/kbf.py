@@ -55,17 +55,20 @@ SKEMA_BOBOT = {
         {"riasec": 0.50, "big5": 0.20, "finansial": 0.15, "stabilitas": 0.15},
         {"riasec": 0.60, "big5": 0.25, "finansial": 0.15, "stabilitas": 0.00},
     ),
-    # Dua skema di bawah hanya untuk evaluasi, bukan untuk pengguna:
+    # Skema di bawah ini hanya untuk evaluasi, bukan untuk pengguna:
     #   riasec        baseline "minat saja", setara pendekatan penelitian
     #                 terdahulu yang merekomendasikan dari RIASEC
-    #   tanpa_riasec  menguji seberapa bergantung hasil pada profil minat O*NET
-    #                 (pertanyaan "datanya dari AS, relevan untuk Indonesia?")
+    #   tanpa_<x>     ablasi satu komponen (dibuat di bawah)
     "riasec": ({"riasec": 1.0}, {"riasec": 1.0}),
 }
-# Bobot "lengkap" tanpa RIASEC, sisanya dinormalkan ulang supaya berjumlah 1.
-SKEMA_BOBOT["tanpa_riasec"] = tuple(
-    {k: v / (1 - b["riasec"]) for k, v in b.items() if k != "riasec"} for b in SKEMA_BOBOT["lengkap"]
-)
+# Ablasi satu komponen: bobot "lengkap" tanpa komponen itu, sisanya dinormalkan
+# ulang supaya berjumlah 1. tanpa_riasec menguji ketergantungan pada profil
+# O*NET ("datanya dari AS, relevan untuk Indonesia?"); tiga lainnya menguji
+# sumbangan tiap komponen tambahan secara terpisah.
+for _komp in ("riasec", "bidang", "kesiapan", "stabilitas"):
+    SKEMA_BOBOT[f"tanpa_{_komp}"] = tuple(
+        {k: v / (1 - b[_komp]) for k, v in b.items() if k != _komp} for b in SKEMA_BOBOT["lengkap"]
+    )
 BOBOT_TANGGUNGAN, BOBOT_TANPA = SKEMA_BOBOT["proposal"]   # nama lama, dipakai pengujian
 
 # Selisih pengalaman (tahun) yang membuat kesiapan menjadi nol.

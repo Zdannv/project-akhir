@@ -19,7 +19,7 @@ const LANGKAH = [
 ]
 
 const AWAL: Masukan = {
-  nama: '', jenis_responden: 'mahasiswa', profesi_aktual: null,
+  nama: '', jenis_responden: 'mahasiswa', profesi_aktual: null, kecocokan_profesi: null,
   jenjang: '', prodi_id: null, domisili: '', bersedia_relokasi: true,
   ekspektasi_gaji: 0, punya_tanggungan: false,
   riasec: {}, big5: {}, skill: {}, skill_lain: [], bidang: {}, pengalaman_tahun: null,
@@ -54,7 +54,7 @@ function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; d
 
   const lengkap = [
     m.nama.trim() !== '' && m.jenjang !== '' && m.domisili !== '' && m.pengalaman_tahun !== null &&
-      (m.jenis_responden === 'mahasiswa' || m.profesi_aktual !== null),
+      (m.jenis_responden === 'mahasiswa' || (m.profesi_aktual !== null && m.kecocokan_profesi !== null)),
     k.riasec.butir.every((b) => m.riasec[b.kode]) && k.bidang.butir.every((b) => m.bidang[b.kode]),
     k.big5.butir.every((b) => m.big5[b.kode]),
     true, // skill boleh kosong: mesin tetap jalan dengan KBF saja
@@ -313,7 +313,7 @@ function LatarBelakang({ k, m, ubah }: { k: DataKuesioner; m: Masukan; ubah: (b:
         <legend className={judulKolom}>Kamu mengisi sebagai</legend>
         <Pil nama="jenis" nilai={m.jenis_responden}
           pilihan={[{ nilai: 'mahasiswa', label: 'Mahasiswa / pencari kerja' }, { nilai: 'profesional', label: 'Profesional TI' }]}
-          pilih={(v) => ubah({ jenis_responden: v as Masukan['jenis_responden'], profesi_aktual: v === 'mahasiswa' ? null : m.profesi_aktual })} />
+          pilih={(v) => ubah({ jenis_responden: v as Masukan['jenis_responden'], profesi_aktual: v === 'mahasiswa' ? null : m.profesi_aktual, kecocokan_profesi: v === 'mahasiswa' ? null : m.kecocokan_profesi })} />
       </fieldset>
 
       {m.jenis_responden === 'profesional' && (
@@ -325,6 +325,16 @@ function LatarBelakang({ k, m, ubah }: { k: DataKuesioner; m: Masukan; ubah: (b:
             {k.profesi.map((p) => <option key={p.id} value={p.id}>{p.nama}</option>)}
           </select>
         </label>
+      )}
+
+      {m.jenis_responden === 'profesional' && (
+        <fieldset>
+          <legend className={judulKolom}>Seberapa cocok profesi ini denganmu?</legend>
+          <span className="mt-0.5 block text-[12.5px] text-slate-500">1 = sama sekali tidak cocok, 5 = sangat cocok.</span>
+          <Pil nama="kecocokan" nilai={m.kecocokan_profesi === null ? '' : String(m.kecocokan_profesi)}
+            pilihan={[1, 2, 3, 4, 5].map((n) => ({ nilai: String(n), label: String(n) }))}
+            pilih={(v) => ubah({ kecocokan_profesi: Number(v) })} />
+        </fieldset>
       )}
 
       <fieldset>

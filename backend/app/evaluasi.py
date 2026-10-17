@@ -67,6 +67,37 @@ def profil_dari_masukan(m: dict, kb: BasisPengetahuan) -> ProfilPengguna:
     )
 
 
+def posisi_jaccard(profil: ProfilPengguna, target: str, kb: BasisPengetahuan) -> int | None:
+    """Baseline kecocokan keahlian paling sederhana: indeks Jaccard antara
+    himpunan keahlian pengguna dan himpunan keahlian profesi, tanpa bobot dan
+    tanpa tingkat penguasaan."""
+    lolos, _ = saring(profil, kb)
+    u = set(profil.skill)
+    skor = []
+    for p in lolos:
+        s = {r["skill_id"] for r in kb.skill_profesi(p["id"])}
+        skor.append((len(u & s) / len(u | s) if u | s else 0.0, p["id"]))
+    skor.sort(key=lambda x: (-x[0], x[1]))
+    return next((i for i, (_, pid) in enumerate(skor, 1) if pid == target), None)
+
+
+def metrik_ci(posisi: list[int | None]) -> dict:
+    """Metrik dengan selang kepercayaan 95%: Wilson untuk Hit@K, bootstrap untuk MRR."""
+    hasil = metrik(posisi)
+    n = len(posisi)
+    for k in K:
+        hasil[f"ci_hit@{k}"] = st.wilson(sum(1 for r in posisi if r and r <= k), n)
+    hasil["ci_mrr"] = st.bootstrap_ci([1 / r if r else 0.0 for r in posisi])
+    return hasil
+
+
+def uji_berpasangan(acuan: list[int | None], pembanding: list[int | None], k: int = 1) -> dict:
+    """McNemar pada Hit@k dan Wilcoxon pada reciprocal rank, kasus yang sama."""
+    hit = lambda pos: [bool(r and r <= k) for r in pos]  # noqa: E731
+    rr = lambda pos: [1 / r if r else 0.0 for r in pos]  # noqa: E731
+    return {"mcnemar": st.mcnemar(hit(acuan), hit(pembanding)), "wilcoxon": st.wilcoxon(rr(acuan), rr(pembanding))}
+
+
 def metrik_lengkap(posisi: list[int | None]) -> dict:
     """Metrik + selang kepercayaan 95% (bootstrap) untuk Hit@5 dan MRR."""
     hasil = metrik(posisi)
@@ -147,6 +178,33 @@ def cronbach_alpha(butir: list[list[int]]) -> float | None:
     return k / (k - 1) * (1 - sum(statistics.variance(b) for b in butir) / var_total)
 
 
+MIN_RELIABILITAS = 10  # di bawah ini koefisien reliabilitas tidak bermakna dan tidak dilaporkan
+
+# Batas label skor di antarmuka (frontend/src/api.ts). Relevansi per kelompok
+# label dari penilaian responden menunjukkan apakah batas itu masuk akal.
+LABEL_SKOR = (("Sangat Cocok", 0.75), ("Cocok", 0.60), ("Cukup Cocok", 0.45), ("Kurang Cocok", 0.0))
+
+
+def spearman_brown(a: list[int], b: list[int]) -> float | None:
+    """Reliabilitas skala dua butir: 2r / (1 + r), r = korelasi Pearson kedua butir.
+    Untuk skala dua butir, koefisien ini lebih tepat daripada alfa."""
+    if len(a) < 3 or statistics.pstdev(a) == 0 or statistics.pstdev(b) == 0:
+        return None
+    r = statistics.correlation(a, b)
+    return 2 * r / (1 + r) if r > -1 else None
+
+
+def relevansi_per_label(responden: list[dict]) -> dict:
+    """Porsi rekomendasi yang dinilai relevan, dikelompokkan menurut label skornya."""
+    kelompok = {nama: [] for nama, _ in LABEL_SKOR}
+    for r in responden:
+        for b in r["hasil"]["rekomendasi"]:
+            if b["profesi_id"] in r["umpan_balik"]:
+                nama = next(n for n, batas in LABEL_SKOR if b["skor"] >= batas)
+                kelompok[nama].append(r["umpan_balik"][b["profesi_id"]])
+    return {n: ((sum(v) / len(v), len(v)) if v else None) for n, v in kelompok.items()}
+
+
 def data_responden(kb: BasisPengetahuan) -> dict | None:
     """Semua metrik pengujian. Hanya isian TERAKHIR tiap orang yang dihitung:
     isian yang sudah diperbarui lewat "ubah jawaban" tidak dihitung dua kali."""
@@ -167,6 +225,11 @@ def data_responden(kb: BasisPengetahuan) -> dict | None:
         hasil["pakar"] = {nama: {k: m[k] for k in ("hit@1", "hit@3", "hit@5", "mrr")}
                           for nama, m in uji["metrik"].items()}
         hasil["pakar_uji"] = uji
+        # Profesi yang dijalani belum tentu yang paling cocok. Uji yang sama diulang
+        # khusus responden yang menilai profesinya cocok (>= 4 dari 5).
+        cocok = [(profil_dari_masukan(r["masukan"], kb), r["profesi_aktual"]) for r in pakar
+                 if (r["masukan"].get("kecocokan_profesi") or 0) >= 4]
+        hasil["pakar_cocok"] = uji_pakar(cocok, kb) if cocok else None
 
     # Precision@K dari penilaian relevansi: hanya responden yang menilai semua
     # K rekomendasi teratasnya, supaya penyebutnya benar-benar K.
@@ -185,17 +248,20 @@ def data_responden(kb: BasisPengetahuan) -> dict | None:
     hasil["sus_ci"] = st.bootstrap_ci(sus) if sus else None
     hasil["penjelasan"] = ringkas_penjelasan(responden)
 
+    # Alfa untuk RIASEC (tiga butir per tipe); Spearman-Brown untuk Big Five,
+    # karena BFI-10 hanya dua butir per dimensi dan alfa pada dua butir bias ke bawah.
     reliabilitas = {}
+    cukup = len(responden) >= MIN_RELIABILITAS
     for tipe in RIASEC:
         kode = [k for k, t, _ in q.BUTIR_RIASEC if t == tipe]
-        reliabilitas[f"RIASEC {tipe}"] = cronbach_alpha(
-            [[r["masukan"]["riasec"][k] for r in responden] for k in kode])
+        reliabilitas[f"RIASEC {tipe} (α)"] = cronbach_alpha(
+            [[r["masukan"]["riasec"][k] for r in responden] for k in kode]) if cukup else None
     for dim in BIG5:
-        butir = [(k, tb) for k, d, tb, _ in q.BUTIR_BIG5 if d == dim]
-        reliabilitas[f"Big Five {dim}"] = cronbach_alpha(
-            [[(6 - r["masukan"]["big5"][k]) if tb else r["masukan"]["big5"][k] for r in responden]
-             for k, tb in butir])
+        butir = [[(6 - r["masukan"]["big5"][k]) if tb else r["masukan"]["big5"][k] for r in responden]
+                 for k, d, tb, _ in q.BUTIR_BIG5 if d == dim]
+        reliabilitas[f"Big Five {dim} (Spearman-Brown)"] = spearman_brown(*butir) if cukup else None
     hasil["reliabilitas"] = reliabilitas
+    hasil["relevansi_label"] = relevansi_per_label(responden)
 
     # Skill yang diketik sendiri karena tidak ada di pilihan: daftar belanja
     # untuk memperluas basis pengetahuan.

@@ -22,6 +22,7 @@ export type Masukan = {
   nama: string
   jenis_responden: 'mahasiswa' | 'profesional'
   profesi_aktual: string | null
+  kecocokan_profesi: number | null
   jenjang: string
   prodi_id: string | null
   domisili: string

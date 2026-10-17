@@ -49,6 +49,9 @@ class Masukan(BaseModel):
     nama: str = Field(min_length=1, max_length=80)
     jenis_responden: Literal["mahasiswa", "profesional"] = "mahasiswa"
     profesi_aktual: str | None = None
+    # Seberapa cocok profesi itu menurut profesional sendiri (1..5). Profesi yang dijalani belum tentu
+    # yang paling cocok; uji pakar dihitung ulang khusus responden yang merasa cocok (>= 4).
+    kecocokan_profesi: int | None = Field(default=None, ge=1, le=5)
     jenjang: str
     prodi_id: str | None = None
     domisili: str
@@ -362,7 +365,7 @@ def ekspor_peneliti(request: Request, x_kunci: str | None = Header(default=None)
     buf = io.StringIO()
     w = csv.writer(buf)
     w.writerow(["id", "dibuat", "jenis", "jenjang", "domisili", "bersedia_relokasi", "ekspektasi_gaji",
-                "punya_tanggungan", "profesi_aktual", "kode_holland", *kode_r, *kode_b, "n_skill",
+                "punya_tanggungan", "profesi_aktual", "kecocokan_profesi", "kode_holland", *kode_r, *kode_b, "n_skill",
                 "skill_lain", *[f"rekomendasi_{i}" for i in range(1, 6)],
                 *[f"relevan_{i}" for i in range(1, 6)], "posisi_profesi_aktual", "skor_sus",
                 *[f"penjelasan_{i}" for i in range(1, len(BUTIR_PENJELASAN) + 1)]])
@@ -374,7 +377,7 @@ def ekspor_peneliti(request: Request, x_kunci: str | None = Header(default=None)
         w.writerow([
             r["id"], r["dibuat"], r["jenis"], m["jenjang"], m["domisili"], int(m["bersedia_relokasi"]),
             m["ekspektasi_gaji"], int(m["punya_tanggungan"]), nama.get(r["profesi_aktual"], ""),
-            r["hasil"]["kode_holland"], *[m["riasec"][k] for k in kode_r], *[m["big5"][k] for k in kode_b],
+            m.get("kecocokan_profesi") or "", r["hasil"]["kode_holland"], *[m["riasec"][k] for k in kode_r], *[m["big5"][k] for k in kode_b],
             len(m["skill"]), "; ".join(m.get("skill_lain", [])), *[isi(i) for i in range(5)],
             *[rel(i) for i in range(5)],
             next((b["peringkat"] for b in r["hasil"]["peringkat_lengkap"]

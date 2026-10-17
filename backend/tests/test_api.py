@@ -145,7 +145,9 @@ def test_ubah_jawaban_tidak_dihitung_dua_kali(klien):
 def test_dasbor_peneliti(klien, monkeypatch):
     assert klien.get("/api/peneliti/ringkasan").json() == {"n": 0}
     rid = klien.post("/api/rekomendasi", json=masukan(
-        profesi_aktual="C010", jenis_responden="profesional", skill_lain=["Svelte"])).json()["id"]
+        profesi_aktual="C010", jenis_responden="profesional", skill_lain=["Svelte"], kecocokan_profesi=5)).json()["id"]
+    assert klien.post("/api/rekomendasi", json=masukan(
+        profesi_aktual="C010", jenis_responden="profesional", kecocokan_profesi=6)).status_code == 422
     klien.post(f"/api/rekomendasi/{rid}/sus", json={"jawaban": [4, 2] * 5, "penjelasan": [5, 4, 4, 3]})
     assert klien.post(f"/api/rekomendasi/{rid}/sus", json={"jawaban": [4, 2] * 5, "penjelasan": [9, 4, 4, 3]}).status_code == 422
     d = klien.get("/api/peneliti/ringkasan").json()
@@ -155,6 +157,7 @@ def test_dasbor_peneliti(klien, monkeypatch):
     assert {"Baseline: RIASEC saja (indeks Iachan)", "Baseline: acak (nilai harapan)"} <= set(d["pakar"])
     assert d["penjelasan"]["n"] == 1 and d["penjelasan"]["rata"] == 4.0
     assert d["pakar_uji"]["n"] == 1 and "Hibrida tanpa RIASEC (α = 0,5)" in d["pakar_uji"]["uji"]
+    assert d["pakar_cocok"]["n"] == 1   # menilai profesinya cocok (5), jadi ikut uji khusus
 
     csv_ = klien.get("/api/peneliti/ekspor.csv")
     assert csv_.headers["content-type"].startswith("text/csv")

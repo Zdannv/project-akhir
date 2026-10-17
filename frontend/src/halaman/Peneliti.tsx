@@ -108,8 +108,8 @@ function Isi({ d }: { d: Data }) {
           </Bagian>
         )}
         {d.reliabilitas && (
-          <Bagian judul="Reliabilitas kuesioner (Cronbach's α)" ket="Big Five hanya dua butir per dimensi, jadi α rendah di sana lazim.">
-            <Tabel kepala={['Skala', 'α']} baris={Object.entries(d.reliabilitas).map(([k, v]) => [k, v === null ? '–' : angka(v, 2)])} />
+          <Bagian judul="Reliabilitas kuesioner" ket="RIASEC memakai Cronbach's α; Big Five memakai Spearman-Brown karena hanya dua butir per dimensi. Dihitung setelah minimal 10 responden.">
+            <Tabel kepala={['Skala', 'Koefisien']} baris={Object.entries(d.reliabilitas).map(([k, v]) => [k, v === null ? '–' : angka(v, 2)])} />
           </Bagian>
         )}
       </div>
