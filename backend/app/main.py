@@ -59,7 +59,6 @@ class Masukan(BaseModel):
     ekspektasi_gaji: int = Field(ge=0, le=1_000_000_000)
     punya_tanggungan: bool
     riasec: dict[str, int]
-    big5: dict[str, int]
     skill: dict[str, int] = Field(default_factory=dict)
     # Minat per bidang kerja TI (kode bidang -> 1..5) dan pengalaman di TI.
     # Dua-duanya opsional supaya isian lama tetap bisa dibaca.
@@ -138,11 +137,6 @@ def ambil_kuesioner() -> dict:
             "skala": q.LABEL_SKALA_MINAT,
             "butir": [{"kode": k, "teks": t} for k, _, t in q.BUTIR_RIASEC],
         },
-        "big5": {
-            "skala": q.LABEL_SKALA_SETUJU,
-            "awalan": q.AWALAN_BIG5,
-            "butir": [{"kode": k, "teks": t} for k, _, _, t in q.BUTIR_BIG5],
-        },
         "bidang": {
             "skala": q.LABEL_SKALA_MINAT,
             "butir": [{"kode": b["kode"], "teks": b["pertanyaan"], "nama": b["nama"]} for b in kb.bidang],
@@ -170,7 +164,7 @@ def ambil_kuesioner() -> dict:
 def buat_rekomendasi(m: Masukan) -> dict:
     profil = _profil(m)
     hasil = rekomendasi(profil, muat_kb(), Konfigurasi())
-    hasil["profil"] = {"riasec": profil.riasec, "big5": profil.big5}
+    hasil["profil"] = {"riasec": profil.riasec}
     if m.induk and db.ambil_responden(m.induk) is None:
         raise HTTPException(422, "isian sebelumnya tidak ditemukan")
     rid = db.simpan_responden(m.model_dump(exclude={"induk"}), hasil, m.induk)
@@ -361,11 +355,10 @@ def ekspor_peneliti(request: Request, x_kunci: str | None = Header(default=None)
     kb = muat_kb()
     nama = {p["id"]: p["nama"] for p in kb.profesi}
     kode_r = [k for k, _, _ in q.BUTIR_RIASEC]
-    kode_b = [k for k, _, _, _ in q.BUTIR_BIG5]
     buf = io.StringIO()
     w = csv.writer(buf)
     w.writerow(["id", "dibuat", "jenis", "jenjang", "domisili", "bersedia_relokasi", "ekspektasi_gaji",
-                "punya_tanggungan", "profesi_aktual", "kecocokan_profesi", "kode_holland", *kode_r, *kode_b, "n_skill",
+                "punya_tanggungan", "profesi_aktual", "kecocokan_profesi", "kode_holland", *kode_r, "n_skill",
                 "skill_lain", *[f"rekomendasi_{i}" for i in range(1, 6)],
                 *[f"relevan_{i}" for i in range(1, 6)], "posisi_profesi_aktual", "skor_sus",
                 *[f"penjelasan_{i}" for i in range(1, len(BUTIR_PENJELASAN) + 1)]])
@@ -377,7 +370,7 @@ def ekspor_peneliti(request: Request, x_kunci: str | None = Header(default=None)
         w.writerow([
             r["id"], r["dibuat"], r["jenis"], m["jenjang"], m["domisili"], int(m["bersedia_relokasi"]),
             m["ekspektasi_gaji"], int(m["punya_tanggungan"]), nama.get(r["profesi_aktual"], ""),
-            m.get("kecocokan_profesi") or "", r["hasil"]["kode_holland"], *[m["riasec"][k] for k in kode_r], *[m["big5"][k] for k in kode_b],
+            m.get("kecocokan_profesi") or "", r["hasil"]["kode_holland"], *[m["riasec"][k] for k in kode_r],
             len(m["skill"]), "; ".join(m.get("skill_lain", [])), *[isi(i) for i in range(5)],
             *[rel(i) for i in range(5)],
             next((b["peringkat"] for b in r["hasil"]["peringkat_lengkap"]

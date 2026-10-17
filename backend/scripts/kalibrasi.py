@@ -31,7 +31,7 @@ from app.cbf import skor_cbf  # noqa: E402
 from app.evaluasi import profil_dari_masukan  # noqa: E402
 from app.kb import muat_kb  # noqa: E402
 
-KOMPONEN = ("riasec", "bidang", "big5", "kesiapan", "finansial")
+KOMPONEN = ("riasec", "bidang", "kesiapan", "finansial")
 
 
 def siapkan(kb, responden):

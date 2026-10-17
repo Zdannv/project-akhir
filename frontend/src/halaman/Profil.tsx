@@ -1,7 +1,7 @@
 import { ArrowRight, PencilLine } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ambilHasil, NAMA_BIG5, NAMA_RIASEC, persen, rupiah } from '../api'
+import { ambilHasil, NAMA_RIASEC, persen, rupiah } from '../api'
 import { AppBottomNav, AppTopNav, KepalaLayar } from '../komponen/AppNav'
 import { Avatar, Batang, Galat, Memuat, Radar } from '../komponen/umum'
 import { useData } from '../komponen/useData'
@@ -61,10 +61,6 @@ export default function Profil() {
               </div>
             </Kartu>
           )}
-          <Kartu judul="Kepribadian (Big Five)">
-            <Skor nama={NAMA_BIG5} nilai={data.hasil.profil.big5} urut="OCEAN" />
-          </Kartu>
-
           <Kartu judul="Keahlian" kanan={<span className="text-[12.5px] text-slate-400">{data.data_diri.skill.length} skill</span>}>
             {data.data_diri.skill.length === 0 ? (
               <p className="text-[13px] text-slate-400">Belum ada skill yang dipilih.</p>

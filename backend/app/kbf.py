@@ -47,7 +47,15 @@ from .kuesioner import kode_holland
 
 # (punya tanggungan, tanpa tanggungan) per skema.
 SKEMA_BOBOT = {
+    # Kepribadian tidak lagi dipakai: buktinya lemah dan membuangnya tidak
+    # mengubah ketepatan (docs/keputusan-desain.md). Bobotnya dibagi ke minat,
+    # minat bidang, dan kesiapan pengalaman.
     "lengkap": (
+        {"riasec": 0.30, "bidang": 0.30, "kesiapan": 0.15, "finansial": 0.10, "stabilitas": 0.15},
+        {"riasec": 0.35, "bidang": 0.35, "kesiapan": 0.20, "finansial": 0.10, "stabilitas": 0.00},
+    ),
+    # Rancangan sebelumnya yang masih memakai kepribadian; hanya untuk evaluasi.
+    "dengan_kepribadian": (
         {"riasec": 0.25, "bidang": 0.25, "big5": 0.10, "kesiapan": 0.15, "finansial": 0.10, "stabilitas": 0.15},
         {"riasec": 0.30, "bidang": 0.30, "big5": 0.15, "kesiapan": 0.15, "finansial": 0.10, "stabilitas": 0.00},
     ),
@@ -87,7 +95,6 @@ class ProfilPengguna:
     """Hasil profiling, masukan tahap matching."""
 
     riasec: dict[str, float]           # 0 - 1 per tipe
-    big5: dict[str, float]             # 0 - 1 per dimensi
     rank_pendidikan: int
     domisili: str
     bersedia_relokasi: bool
@@ -96,6 +103,9 @@ class ProfilPengguna:
     skill: dict[str, int]              # skill_id -> tingkat 1..3
     bidang: dict[str, float] | None = None   # minat per bidang TI, 0 - 1; None = tidak ditanyakan
     pengalaman: float | None = None    # tahun pengalaman kerja/magang di TI; None = tidak ditanyakan
+    # Kepribadian 0 - 1 per dimensi. Tidak ditanyakan lagi kepada pengguna; hanya
+    # diisi persona simulasi untuk membandingkan dengan rancangan sebelumnya.
+    big5: dict[str, float] | None = None
 
 
 # ── Penyaring mutlak ────────────────────────────────────────────────────────
@@ -173,8 +183,11 @@ def kongruensi_korelasi(riasec_orang: dict[str, float], riasec_profesi: dict[str
     return (r + 1) / 2
 
 
-def kecocokan_big5(orang: dict[str, float], ideal: dict[str, float]) -> float:
-    """1 - jarak Euclid ternormalisasi (jarak maksimum di ruang 5 dimensi: akar 5)."""
+def kecocokan_big5(orang: dict[str, float] | None, ideal: dict[str, float]) -> float | None:
+    """1 - jarak Euclid ternormalisasi (jarak maksimum di ruang 5 dimensi: akar 5).
+    None kalau kepribadian tidak diketahui, sehingga komponennya dilewati."""
+    if orang is None:
+        return None
     d = math.sqrt(sum((orang[k] - ideal[k]) ** 2 for k in BIG5))
     return 1 - d / math.sqrt(len(BIG5))
 

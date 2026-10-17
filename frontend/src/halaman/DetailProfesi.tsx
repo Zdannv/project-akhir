@@ -8,7 +8,7 @@
 import { ArrowRight, Building2, Check, GraduationCap, Info, Loader2, Target, ThumbsDown, ThumbsUp } from 'lucide-react'
 import { useState, type ReactNode } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ambilDetail, kirimUmpanBalik, pilihTarget, NAMA_BIG5, NAMA_RIASEC, persen, rupiah, type Alasan, type Detail, type SkillProfesi } from '../api'
+import { ambilDetail, kirimUmpanBalik, pilihTarget, NAMA_RIASEC, persen, rupiah, type Alasan, type Detail, type SkillProfesi } from '../api'
 import { AppTopNav, KepalaLayar } from '../komponen/AppNav'
 import { BusurSkor, LencanaPita, TabSwitch } from '../komponen/profesi'
 import { useBelajar, CariLowongan, DaftarProyek, PetaBelajar } from '../komponen/belajar'
@@ -25,7 +25,6 @@ const TABS = [
 const NAMA_KOMPONEN = {
   riasec: 'Kongruensi minat (RIASEC)',
   bidang: 'Minat bidang TI',
-  big5: 'Kecocokan kepribadian (Big Five)',
   kesiapan: 'Kesiapan pengalaman',
   finansial: 'Kecocokan finansial',
   stabilitas: 'Stabilitas kerja',
@@ -216,9 +215,6 @@ function TabAnalisa({ d }: { d: Detail }) {
           banding={Object.fromEntries([...'RIASEC'].map((t) => [t, (p.riasec[t] - 1) / 6]))}
         />
       </Blok>
-      <Blok judul="Kepribadian" keterangan="(kamu dan profil ideal profesi)">
-        <Banding baris={[...'OCEAN'].map((k) => ({ nama: NAMA_BIG5[k], kamu: d.profil.big5[k], profesi: p.big5_ideal[k] }))} />
-      </Blok>
       <p className="text-[11px] leading-relaxed text-slate-400">
         **Profil profesi dari O*NET: {p.soc_judul} ({p.soc_code}), keyakinan padanan {p.soc_keyakinan}.{p.soc_catatan && ` ${p.soc_catatan}.`}
       </p>
@@ -252,29 +248,9 @@ function PenahanSkor({ n, alpha }: { n: NonNullable<Detail['penilaian']>; alpha:
         ))}
       </ul>
       <p className="mt-3 text-[11.5px] leading-relaxed text-slate-500">
-        Skor akhir = {Math.round(alpha * 100)}% kecocokan profil (minat, bidang, kepribadian, pengalaman, finansial) + {Math.round((1 - alpha) * 100)}% kecocokan skill.
+        Skor akhir = {Math.round(alpha * 100)}% kecocokan profil (minat, bidang, pengalaman, finansial) + {Math.round((1 - alpha) * 100)}% kecocokan skill.
         {skill && skill.poin >= 10 && ' Kecocokan skill tinggi kalau skill-mu searah dengan kebutuhan profesi ini DAN sudah menutup sebagian besar kebutuhannya. Skill di luar kebutuhan profesi menurunkan keserahannya; skill yang belum dimiliki, atau baru bertingkat Dasar dan Menengah, menurunkan kelengkapannya.'}
       </p>
-    </div>
-  )
-}
-
-function Banding({ baris }: { baris: { nama: string; kamu: number; profesi: number }[] }) {
-  return (
-    <div className="flex flex-col gap-3">
-      <div className="flex gap-4 text-[11.5px] text-slate-500">
-        <span className="flex items-center gap-1.5"><span className="size-2.5 rounded-full bg-violet-600" /> Kamu</span>
-        <span className="flex items-center gap-1.5"><span className="size-2.5 rounded-full bg-slate-400" /> Profesi</span>
-      </div>
-      {baris.map((b) => (
-        <div key={b.nama}>
-          <p className="mb-1.5 text-[13px] text-slate-700">{b.nama}</p>
-          <div className="flex flex-col gap-1">
-            <Batang nilai={b.kamu} />
-            <Batang nilai={b.profesi} warna="bg-slate-400" alas="bg-slate-100" />
-          </div>
-        </div>
-      ))}
     </div>
   )
 }

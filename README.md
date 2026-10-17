@@ -2,15 +2,15 @@
 
 Proyek akhir. Merekomendasikan profesi TI dengan menggabungkan
 **Knowledge-Based Filtering** (syarat mutlak, minat RIASEC, minat bidang TI,
-kepribadian Big Five, kesiapan pengalaman, finansial, stabilitas) dan **Content-Based Filtering** (cosine similarity
+kesiapan pengalaman, finansial, stabilitas) dan **Content-Based Filtering** (cosine similarity
 skill):
 
     Skor_Final = α · Skor_KBF + (1 − α) · Skor_CBF        α = 0,5
 
 ## Fitur
 
-- **Profil karier** — kuesioner empat langkah: latar belakang, minat (RIASEC),
-  kepribadian (Big Five), dan keahlian. Pencarian skill mengenali nama lain
+- **Profil karier** — kuesioner tiga langkah: latar belakang, minat (RIASEC dan
+  bidang kerja TI), dan keahlian. Pencarian skill mengenali nama lain
   ("ReactJS", "Postgres"), dan skill yang tidak ada di daftar bisa diketik sendiri.
 - **Explore** — lima profesi teratas beserta alasannya, peringkat lengkap, dan
   profesi yang tersaring berikut sebabnya.

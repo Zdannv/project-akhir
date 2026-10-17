@@ -26,7 +26,6 @@ def masukan(**ubah) -> dict:
         "nama": "Uji", "jenjang": "S1", "domisili": "Surabaya", "bersedia_relokasi": True,
         "ekspektasi_gaji": 6_000_000, "punya_tanggungan": False,
         "riasec": {k: 3 for k, _, _ in q.BUTIR_RIASEC} | {"I1": 5, "I2": 5, "I3": 5},
-        "big5": {k: 3 for k, _, _, _ in q.BUTIR_BIG5},
         "skill": {"SK001": 3, "SK015": 2},
     }
     return dasar | ubah
@@ -34,7 +33,7 @@ def masukan(**ubah) -> dict:
 
 def test_kuesioner(klien):
     d = klien.get("/api/kuesioner").json()
-    assert len(d["riasec"]["butir"]) == 18 and len(d["big5"]["butir"]) == 10
+    assert len(d["riasec"]["butir"]) == 18 and "big5" not in d
     assert len(d["sus"]) == 10 and len(d["profesi"]) == 35
     assert "Lainnya" in d["kota"]
 

@@ -35,7 +35,7 @@ def main() -> None:
         m["skill"] = {s: t for s, t in m["skill"].items() if s in id_skill}
         profil = profil_dari_masukan(m, kb)
         hasil = rekomendasi(profil, kb, Konfigurasi())
-        hasil["profil"] = {"riasec": profil.riasec, "big5": profil.big5}
+        hasil["profil"] = {"riasec": profil.riasec}
         db.perbarui_hasil(r["id"], hasil)
         teratas = hasil["rekomendasi"][0] if hasil["rekomendasi"] else None
         print(f"{r['nama'][:30]:30} -> {teratas['nama'] if teratas else '-'}"

@@ -1,5 +1,5 @@
 /**
- * Alur profiling: layar pembuka, empat langkah
+ * Alur profiling: layar pembuka, tiga langkah
  * dengan daftar langkah di kiri (desktop) atau chip STEP (ponsel), lalu layar
  * penutup yang mengantar ke rekomendasi.
  */
@@ -14,15 +14,17 @@ import { ingatHasil } from '../sesi'
 const LANGKAH = [
   { nama: 'Latar Belakang', tanya: 'Ceritakan pendidikan dan kondisimu saat ini.', gambar: '/ilustrasi/langkah-latar.webp' },
   { nama: 'Minat', tanya: 'Kegiatan seperti apa yang kamu sukai?', gambar: '/ilustrasi/langkah-minat.webp' },
-  { nama: 'Kepribadian', tanya: 'Seperti apa dirimu sehari-hari?', gambar: '/ilustrasi/langkah-kepribadian.webp' },
   { nama: 'Keahlian', tanya: 'Skill apa saja yang sudah kamu kuasai?', gambar: '/ilustrasi/langkah-keahlian.webp' },
 ]
+
+// Nomor langkah layar penutup, sesudah langkah terakhir.
+const SELESAI = LANGKAH.length + 1
 
 const AWAL: Masukan = {
   nama: '', jenis_responden: 'mahasiswa', profesi_aktual: null, kecocokan_profesi: null,
   jenjang: '', prodi_id: null, domisili: '', bersedia_relokasi: true,
   ekspektasi_gaji: 0, punya_tanggungan: false,
-  riasec: {}, big5: {}, skill: {}, skill_lain: [], bidang: {}, pengalaman_tahun: null,
+  riasec: {}, skill: {}, skill_lain: [], bidang: {}, pengalaman_tahun: null,
 }
 
 export default function Kuesioner() {
@@ -39,7 +41,7 @@ export default function Kuesioner() {
 }
 
 function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; dari: string | null }) {
-  // 0 = pembuka, 1..4 = langkah, 5 = penutup. Saat mengubah jawaban, pembuka
+  // 0 = pembuka, 1..3 = langkah, 4 = penutup. Saat mengubah jawaban, pembuka
   // dilewati dan semua langkah langsung bisa dilompati.
   const [step, setStep] = useState(awal ? 1 : 0)
   const [capai, setCapai] = useState(awal ? LANGKAH.length : 1)
@@ -50,13 +52,12 @@ function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; d
   const ubah = (bagian: Partial<Masukan>) => setM((lama) => ({ ...lama, ...bagian }))
 
   if (step === 0) return <Kerangka step={null}><Pembuka onMulai={() => setStep(1)} /></Kerangka>
-  if (step === 5 && idHasil) return <Kerangka step={null}><Penutup id={idHasil} /></Kerangka>
+  if (step === SELESAI && idHasil) return <Kerangka step={null}><Penutup id={idHasil} /></Kerangka>
 
   const lengkap = [
     m.nama.trim() !== '' && m.jenjang !== '' && m.domisili !== '' && m.pengalaman_tahun !== null &&
       (m.jenis_responden === 'mahasiswa' || (m.profesi_aktual !== null && m.kecocokan_profesi !== null)),
     k.riasec.butir.every((b) => m.riasec[b.kode]) && k.bidang.butir.every((b) => m.bidang[b.kode]),
-    k.big5.butir.every((b) => m.big5[b.kode]),
     true, // skill boleh kosong: mesin tetap jalan dengan KBF saja
   ][step - 1]
 
@@ -83,7 +84,7 @@ function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; d
       const { id } = await kirimMasukan({ ...m, nama: m.nama.trim(), induk: dari })
       ingatHasil(id)
       setIdHasil(id)
-      setStep(5)
+      setStep(SELESAI)
       window.scrollTo({ top: 0 })
     } catch (e) {
       setGagal((e as Error).message)
@@ -160,15 +161,7 @@ function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; d
                 />
               </div>
             )}
-            {step === 3 && (
-              <Likert
-                judul={k.big5.awalan}
-                keterangan="Tidak ada jawaban benar atau salah. Jawab sesuai dirimu sehari-hari."
-                butir={k.big5.butir} skala={k.big5.skala} jawaban={m.big5}
-                pilih={(kode, n) => setM((lama) => ({ ...lama, big5: { ...lama.big5, [kode]: n } }))}
-              />
-            )}
-            {step === 4 && <PilihSkill k={k} skill={m.skill} atur={aturSkill} lain={m.skill_lain} ubahLain={(skill_lain) => ubah({ skill_lain })} />}
+            {step === 3 && <PilihSkill k={k} skill={m.skill} atur={aturSkill} lain={m.skill_lain} ubahLain={(skill_lain) => ubah({ skill_lain })} />}
             {gagal && <div className="mt-5"><Galat pesan={gagal} /></div>}
           </div>
 
@@ -231,14 +224,14 @@ function Pembuka({ onMulai }: { onMulai: () => void }) {
         <img src="/ilustrasi/pembuka.webp" alt="" className="mx-auto h-auto w-[218px]" aria-hidden />
         <h1 className="mt-4 text-[17px] font-bold tracking-tight text-slate-900">Kenali Profil Kariermu</h1>
         <p className="mx-auto mt-1 max-w-[380px] text-[13.5px] leading-relaxed text-slate-600">
-          Temukan profesi TI yang sesuai dengan minat, kepribadian, keahlian, dan kondisimu.
+          Temukan profesi TI yang sesuai dengan minat, keahlian, dan kondisimu.
         </p>
       </div>
       <div className="mt-4 flex items-center gap-3 rounded-xl bg-slate-100/80 px-4 py-3">
         <span className="grid size-9 shrink-0 place-items-center rounded-full bg-violet-100 text-violet-600"><Timer className="size-4" aria-hidden /></span>
         <span>
           <span className="block text-[12.5px] font-bold text-slate-900">Estimasi penyelesaian</span>
-          <span className="block text-[12.5px] text-slate-600">~7 menit · 4 langkah</span>
+          <span className="block text-[12.5px] text-slate-600">~6 menit · 3 langkah</span>
         </span>
       </div>
       <button type="button" onClick={onMulai} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-violet-600 py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-violet-700">

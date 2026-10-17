@@ -9,8 +9,8 @@ sistem yang tidak bisa dijelaskan asal-usulnya saat sidang.
 | Di proposal | Di kode | Catatan |
 |---|---|---|
 | Profiling: RIASEC | `kuesioner.py`, 18 butir, 3 per tipe | butir susunan sendiri, lihat §3 |
-| Profiling: Big Five | `kuesioner.py`, BFI-10 | terjemahan sendiri, lihat §3 |
-| Profiling: skill, preferensi, kendala sosial-keluarga | langkah 1 dan 4 kuesioner | |
+| Profiling: Big Five | **dihapus** (Oktober 2026) | lihat §2, "Kepribadian dihapus" |
+| Profiling: skill, preferensi, kendala sosial-keluarga | langkah 1 dan 3 kuesioner | |
 | Profiling: klaster GMM (K = 8) | **tidak dibuat** | lihat §2 |
 | Hard filter pendidikan dan relokasi | `kbf.alasan_tersaring` | pendidikan tetap penyaring; relokasi kini hanya catatan (§2) |
 | Kongruensi Iachan | `kbf.kongruensi_iachan` | indeks M, maksimum 28; kini pembanding, bawaannya korelasi (§2) |
@@ -27,7 +27,7 @@ sistem yang tidak bisa dijelaskan asal-usulnya saat sidang.
 oleh rumus matching mana pun; ia hanya label. Melatihnya juga butuh data
 pengguna yang belum ada, dan judul yang sudah direvisi tidak lagi menyebutnya.
 Kalau penguji memintanya, tempat yang wajar adalah sebagai label profil di
-layar Profil, dilatih dari `profil.riasec + profil.big5` responden yang
+layar Profil, dilatih dari `profil.riasec` dan minat bidang responden yang
 terkumpul — tanpa mengubah `hibrida.py`.
 
 **Kongruensi minat: korelasi, bukan Iachan; dan α = 0,5, bukan 0,6.** Ini
@@ -75,10 +75,26 @@ pada 13 Oktober 2026 karena dua kelemahan yang terlihat saat uji coba.
   penyaring mutlak: profesi itu tetap tampil, dengan catatan "tujuan jangka
   menengah".
 
-Bobot KBF menjadi (punya tanggungan / tanpa): RIASEC 0,25 / 0,30 · minat
-bidang 0,25 / 0,30 · Big Five 0,10 / 0,15 · kesiapan 0,15 / 0,15 · finansial
-0,10 / 0,10 · stabilitas 0,15 / 0. Bobot Big Five diturunkan karena dasarnya
-paling lemah (BFI-10 dua butir per dimensi, profil ideal hasil turunan).
+Bobot KBF sekarang (punya tanggungan / tanpa): RIASEC 0,30 / 0,35 · minat
+bidang 0,30 / 0,35 · kesiapan 0,15 / 0,20 · finansial 0,10 / 0,10 ·
+stabilitas 0,15 / 0. Kepribadian sudah dihapus (lihat di bawah).
+
+**Kepribadian dihapus (Oktober 2026).** Atas masukan dosen pembimbing: pada
+pemilihan profesi, kemauan dan minat lebih menentukan daripada kepribadian;
+orang yang kepribadiannya "tidak cocok" tetap bisa menjalani profesi yang ia
+mau. Alasan pendukung: (1) literatur tidak menemukan efek kecocokan
+kepribadian–pekerjaan secara umum (Juchem dkk., 2026), dan tiap sifat
+kepribadian berhubungan dengan konfigurasi minat (Etzel dkk., 2025), jadi
+sebagian informasinya sudah tertangkap lewat pengukuran minat; (2) profil
+kepribadian ideal profesi hanya turunan penulis dari O*NET Work Styles, tanpa
+sumber data; (3) BFI-10 dua butir per dimensi bermasalah reliabilitasnya;
+(4) pada simulasi, membuangnya tidak mengubah ketepatan secara bermakna,
+padahal kepribadian persona dibangkitkan dari profil ideal itu sendiri,
+sehingga simulasi justru menguntungkan kepribadian. Bobot lamanya (0,10 /
+0,15) dibagi ke RIASEC, minat bidang, dan kesiapan. Skema lama tetap ada
+sebagai `dengan_kepribadian` untuk pembanding di evaluasi, dan profil
+kepribadian ideal tetap ada di basis pengetahuan untuk skema itu dan skema
+proposal.
 **Bobot-bobot ini pilihan penulis, bukan hasil dari data.** `scripts/kalibrasi.py`
 mencari bobot dan α dari data responden profesional dengan validasi
 leave-one-out; jalankan setelah data terkumpul dan ganti bobot hanya kalau
@@ -172,8 +188,8 @@ satu kode SOC sehingga profil RIASEC dan Big Five-nya identik — itulah
 sebabnya KBF saja tidak bisa membedakan, misalnya, Backend dari Mobile
 Developer, dan CBF diperlukan.
 
-**Butir kuesioner.** 18 butir RIASEC disusun sendiri dan BFI-10 diterjemahkan
-sendiri; keduanya belum divalidasi. `evaluasi.py` menghitung Cronbach's α dari
+**Butir kuesioner.** 18 butir RIASEC dan 16 butir minat bidang disusun
+sendiri dan belum divalidasi. `evaluasi.py` menghitung Cronbach's α dari
 jawaban yang terkumpul sebagai bukti awal reliabilitas.
 
 **Skill berbobot nol.** Di data sumber, sebagian soft skill ditandai wajib

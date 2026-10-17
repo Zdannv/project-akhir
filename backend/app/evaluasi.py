@@ -14,21 +14,25 @@ from . import kuesioner as q
 from . import penyimpanan as db
 from . import statistik as st
 from .hibrida import KONFIG_PROPOSAL, Konfigurasi, peringkat
-from .kb import BIG5, RIASEC, BasisPengetahuan, campur_riasec, dengan_riasec
+from .kb import RIASEC, BasisPengetahuan, campur_riasec, dengan_riasec
 from .kbf import ProfilPengguna, saring
 from .sus import BUTIR_PENJELASAN
 
 K = (1, 3, 5)
 
 NAMA_BAWAAN = "Hibrida bawaan (korelasi, α = 0,5)"
+NAMA_DENGAN_KEPRIBADIAN = "Hibrida dengan kepribadian (rancangan sebelumnya)"
 KONFIG_ABLASI = {
     "KBF saja (korelasi, α = 1,0)": Konfigurasi(alpha=1.0),
     "CBF saja (α = 0,0)": Konfigurasi(alpha=0.0),
     NAMA_BAWAAN: Konfigurasi(),
-    "Hibrida tanpa minat bidang dan kesiapan (α = 0,5)": Konfigurasi(skema_bobot="proposal"),
+    # Bobot proposal: tanpa minat bidang dan kesiapan, tetapi dengan kepribadian 0,20 / 0,25.
+    "Hibrida dengan bobot KBF proposal (α = 0,5)": Konfigurasi(skema_bobot="proposal"),
     "Hibrida dengan cosine murni (α = 0,5)": Konfigurasi(ukuran_cbf="kosinus"),
     "Hibrida proposal (Iachan, α = 0,6)": KONFIG_PROPOSAL,
     "Hibrida tanpa RIASEC (α = 0,5)": Konfigurasi(skema_bobot="tanpa_riasec"),
+    # Rancangan sebelum kepribadian dihapus; hanya bermakna pada simulasi.
+    NAMA_DENGAN_KEPRIBADIAN: Konfigurasi(skema_bobot="dengan_kepribadian"),
 }
 
 # Baseline: cara merekomendasikan yang lebih sederhana, sebagai pembanding.
@@ -57,7 +61,7 @@ def posisi_profesi(profil: ProfilPengguna, target: str, kb: BasisPengetahuan,
 
 def profil_dari_masukan(m: dict, kb: BasisPengetahuan) -> ProfilPengguna:
     return ProfilPengguna(
-        riasec=q.skor_riasec(m["riasec"]), big5=q.skor_big5(m["big5"]),
+        riasec=q.skor_riasec(m["riasec"]),
         rank_pendidikan=kb.rank_jenjang(m["jenjang"]), domisili=m["domisili"],
         bersedia_relokasi=m["bersedia_relokasi"], ekspektasi_gaji=m["ekspektasi_gaji"],
         punya_tanggungan=m["punya_tanggungan"], skill=m["skill"],
@@ -132,7 +136,9 @@ def uji_pakar(kasus: list[tuple[ProfilPengguna, str]], kb: BasisPengetahuan) -> 
     """Hit Rate dan MRR terhadap profesi aktual responden profesional,
     untuk konfigurasi sistem dan baseline, beserta uji berpasangan terhadap
     konfigurasi bawaan."""
-    konfig = KONFIG_ABLASI | KONFIG_BASELINE
+    # Kepribadian tidak ditanyakan kepada responden, jadi skema yang memakainya
+    # sama dengan bawaan dan tidak ikut dibandingkan.
+    konfig = {n: k for n, k in (KONFIG_ABLASI | KONFIG_BASELINE).items() if n != NAMA_DENGAN_KEPRIBADIAN}
     posisi = {nama: [posisi_profesi(p, t, kb, k) for p, t in kasus] for nama, k in konfig.items()}
     posisi[NAMA_LOKAL] = [posisi_profesi(p, t, _riasec_lokal_loo(kasus, kb, i), Konfigurasi())
                           for i, (p, t) in enumerate(kasus)]
@@ -183,15 +189,6 @@ MIN_RELIABILITAS = 10  # di bawah ini koefisien reliabilitas tidak bermakna dan 
 # Batas label skor di antarmuka (frontend/src/api.ts). Relevansi per kelompok
 # label dari penilaian responden menunjukkan apakah batas itu masuk akal.
 LABEL_SKOR = (("Sangat Cocok", 0.75), ("Cocok", 0.60), ("Cukup Cocok", 0.45), ("Kurang Cocok", 0.0))
-
-
-def spearman_brown(a: list[int], b: list[int]) -> float | None:
-    """Reliabilitas skala dua butir: 2r / (1 + r), r = korelasi Pearson kedua butir.
-    Untuk skala dua butir, koefisien ini lebih tepat daripada alfa."""
-    if len(a) < 3 or statistics.pstdev(a) == 0 or statistics.pstdev(b) == 0:
-        return None
-    r = statistics.correlation(a, b)
-    return 2 * r / (1 + r) if r > -1 else None
 
 
 def relevansi_per_label(responden: list[dict]) -> dict:
@@ -248,18 +245,12 @@ def data_responden(kb: BasisPengetahuan) -> dict | None:
     hasil["sus_ci"] = st.bootstrap_ci(sus) if sus else None
     hasil["penjelasan"] = ringkas_penjelasan(responden)
 
-    # Alfa untuk RIASEC (tiga butir per tipe); Spearman-Brown untuk Big Five,
-    # karena BFI-10 hanya dua butir per dimensi dan alfa pada dua butir bias ke bawah.
     reliabilitas = {}
     cukup = len(responden) >= MIN_RELIABILITAS
     for tipe in RIASEC:
         kode = [k for k, t, _ in q.BUTIR_RIASEC if t == tipe]
-        reliabilitas[f"RIASEC {tipe} (α)"] = cronbach_alpha(
+        reliabilitas[f"RIASEC {tipe}"] = cronbach_alpha(
             [[r["masukan"]["riasec"][k] for r in responden] for k in kode]) if cukup else None
-    for dim in BIG5:
-        butir = [[(6 - r["masukan"]["big5"][k]) if tb else r["masukan"]["big5"][k] for r in responden]
-                 for k, d, tb, _ in q.BUTIR_BIG5 if d == dim]
-        reliabilitas[f"Big Five {dim} (Spearman-Brown)"] = spearman_brown(*butir) if cukup else None
     hasil["reliabilitas"] = reliabilitas
     hasil["relevansi_label"] = relevansi_per_label(responden)
 

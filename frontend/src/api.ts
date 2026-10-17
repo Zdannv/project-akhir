@@ -7,7 +7,6 @@ export type Kuesioner = {
   riasec: { skala: string[]; butir: Butir[] }
   bidang: { skala: string[]; butir: (Butir & { nama: string })[] }
   pengalaman: { nilai: number; label: string }[]
-  big5: { skala: string[]; awalan: string; butir: Butir[] }
   sus: string[]
   penjelasan: string[]
   jenjang: { kode: string; nama: string; rank: number }[]
@@ -30,7 +29,6 @@ export type Masukan = {
   ekspektasi_gaji: number
   punya_tanggungan: boolean
   riasec: Record<string, number>
-  big5: Record<string, number>
   skill: Record<string, number>
   skill_lain: string[]
   bidang: Record<string, number>
@@ -65,7 +63,7 @@ export type Kesenjangan = {
 export type Alasan = { nada: 'cocok' | 'perhatian'; teks: string }
 
 /** Komponen KBF. `bidang` dan `kesiapan` tidak ada pada isian lama yang belum menjawabnya. */
-export type Komponen = { riasec: number; big5: number; finansial: number; stabilitas: number; bidang?: number; kesiapan?: number }
+export type Komponen = { riasec: number; finansial: number; stabilitas: number; bidang?: number; kesiapan?: number }
 
 export type Rekomendasi = {
   peringkat: number
@@ -168,7 +166,7 @@ export type Hasil = {
     kode_holland: string
     n_lolos: number
     n_tersaring: number
-    profil: { riasec: Record<string, number>; big5: Record<string, number> }
+    profil: { riasec: Record<string, number> }
     rekomendasi: Rekomendasi[]
     peringkat_lengkap: Ringkas[]
     tersaring: Tersaring[]
@@ -202,7 +200,6 @@ export type Profesi = {
   soc_catatan: string
   riasec: Record<string, number>
   kode_holland: string
-  big5_ideal: Record<string, number>
   stabilitas: number
   skill_sumber: string
   peta_belajar: { judul: string; url: string } | null
@@ -211,7 +208,7 @@ export type Profesi = {
 
 export type Detail = {
   profesi: Profesi
-  profil: { riasec: Record<string, number>; big5: Record<string, number> }
+  profil: { riasec: Record<string, number> }
   kode_holland_pengguna: string
   penilaian: Rekomendasi | null
   ringkas: Ringkas | null
@@ -282,7 +279,4 @@ export const persen = (x: number) => `${Math.round(x * 100)}%`
 
 export const NAMA_RIASEC: Record<string, string> = {
   R: 'Realistic', I: 'Investigative', A: 'Artistic', S: 'Social', E: 'Enterprising', C: 'Conventional',
-}
-export const NAMA_BIG5: Record<string, string> = {
-  O: 'Openness', C: 'Conscientiousness', E: 'Extraversion', A: 'Agreeableness', N: 'Neuroticism',
 }

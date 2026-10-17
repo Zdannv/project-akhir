@@ -1,8 +1,8 @@
-"""Uji untuk evaluasi tambahan: lowongan nyata, baseline Jaccard, ablasi per komponen, reliabilitas."""
+"""Uji untuk evaluasi tambahan: lowongan nyata, baseline Jaccard, ablasi per komponen, relevansi per label."""
 
 import pytest
 
-from app.evaluasi import posisi_jaccard, relevansi_per_label, spearman_brown, uji_berpasangan
+from app.evaluasi import posisi_jaccard, relevansi_per_label, uji_berpasangan
 from app.kb import muat_kb
 from app.kbf import SKEMA_BOBOT, ProfilPengguna
 from app.lowongan import pola_skill, profesi_dari_judul, skill_dari_teks
@@ -43,19 +43,9 @@ def test_skema_ablasi_berjumlah_satu():
 
 def test_posisi_jaccard_mengutamakan_himpunan_paling_mirip(kb):
     skill = {r["skill_id"]: 2 for r in kb.skill_profesi("C007")}
-    profil = ProfilPengguna(riasec={t: 0.5 for t in "RIASEC"}, big5={d: 0.5 for d in "OCEAN"},
-                            rank_pendidikan=6, domisili="Jakarta", bersedia_relokasi=True,
-                            ekspektasi_gaji=0, punya_tanggungan=False, skill=skill)
+    profil = ProfilPengguna(riasec={t: 0.5 for t in "RIASEC"}, rank_pendidikan=6, domisili="Jakarta",
+                            bersedia_relokasi=True, ekspektasi_gaji=0, punya_tanggungan=False, skill=skill)
     assert posisi_jaccard(profil, "C007", kb) == 1
-
-
-def test_spearman_brown():
-    a = [1, 2, 3, 4, 5, 3]
-    assert spearman_brown(a, a) == pytest.approx(1.0)
-    assert spearman_brown([1, 1, 1], [1, 2, 3]) is None   # tanpa variasi
-    # r = 0,5 -> 2(0,5) / 1,5
-    x, y = [1, 2, 3, 4], [2, 1, 4, 3]
-    assert spearman_brown(x, y) == pytest.approx(2 * 0.6 / 1.6)
 
 
 def test_relevansi_per_label():

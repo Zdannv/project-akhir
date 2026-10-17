@@ -18,7 +18,6 @@ KB = muat_kb()
 def profil(**ubah) -> ProfilPengguna:
     dasar = dict(
         riasec=dict(R=0.4, I=0.9, A=0.3, S=0.2, E=0.2, C=0.8),
-        big5=dict(O=0.8, C=0.8, E=0.3, A=0.4, N=0.4),
         rank_pendidikan=4, domisili="Surabaya", bersedia_relokasi=True,
         ekspektasi_gaji=7_000_000, punya_tanggungan=False,
         skill={"SK001": 3, "SK015": 3, "SK068": 2},
@@ -45,17 +44,11 @@ def test_skor_riasec_rata_dan_normal():
     assert s["I"] == 1.0 and s["S"] == 0.0 and s["R"] == 0.5
 
 
-def test_skor_big5_butir_terbalik():
-    # B1 (terbalik) = 1 dan B6 = 5 -> ekstraversi maksimum
-    jawab = {k: 3 for k, _, _, _ in q.BUTIR_BIG5} | {"B1": 1, "B6": 5}
-    assert q.skor_big5(jawab)["E"] == 1.0
-
-
 def test_jawaban_tidak_lengkap_ditolak():
     with pytest.raises(ValueError):
         q.skor_riasec({"R1": 3})
     with pytest.raises(ValueError):
-        q.skor_big5({k: 9 for k, _, _, _ in q.BUTIR_BIG5})
+        q.skor_riasec({k: 9 for k, _, _ in q.BUTIR_RIASEC})
 
 
 def test_kode_holland_seri_deterministik():
@@ -83,9 +76,11 @@ def test_korelasi_riasec():
 
 
 def test_big5_dan_finansial():
+    # Kepribadian hanya dipakai skema pembanding; tanpa data, komponennya dilewati.
     x = dict(O=0.5, C=0.5, E=0.5, A=0.5, N=0.5)
     assert kecocokan_big5(x, x) == 1.0
     assert kecocokan_big5(dict.fromkeys("OCEAN", 0.0), dict.fromkeys("OCEAN", 1.0)) == pytest.approx(0.0)
+    assert kecocokan_big5(None, x) is None
     assert kecocokan_finansial(0, 5, 10) == 1.0
     assert kecocokan_finansial(5, 5, 10) == 1.0
     assert kecocokan_finansial(7, 5, 10) == pytest.approx(0.6)
@@ -97,10 +92,19 @@ def test_bobot_berjumlah_satu():
     assert math.isclose(sum(BOBOT_TANPA.values()), 1.0)
 
 
+def test_kepribadian_tidak_dipakai_skema_bawaan():
+    p = KB.cari_profesi("C010")
+    hasil = skor_kbf(profil(big5=dict.fromkeys("OCEAN", 0.5)), p)
+    assert "big5" not in hasil["bobot"]
+    # Skema pembanding yang masih memakai kepribadian tetap bisa dihitung.
+    assert "big5" in skor_kbf(profil(big5=dict.fromkeys("OCEAN", 0.5)), p, skema="dengan_kepribadian")["bobot"]
+
+
 def test_stabilitas_hanya_untuk_yang_punya_tanggungan():
     p = KB.cari_profesi("C033")  # Blockchain Developer, stabilitas rendah
-    tanpa = skor_kbf(profil(), p, skema="proposal")
-    dengan = skor_kbf(profil(punya_tanggungan=True), p, skema="proposal")
+    b5 = dict(O=0.8, C=0.8, E=0.3, A=0.4, N=0.4)  # skema proposal masih memakai kepribadian
+    tanpa = skor_kbf(profil(big5=b5), p, skema="proposal")
+    dengan = skor_kbf(profil(punya_tanggungan=True, big5=b5), p, skema="proposal")
     assert tanpa["bobot"]["stabilitas"] == 0 and dengan["bobot"]["stabilitas"] == 0.15
     assert dengan["skor"] < tanpa["skor"]
 

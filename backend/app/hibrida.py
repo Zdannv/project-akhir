@@ -138,9 +138,6 @@ def susun_alasan(profil: ProfilPengguna, profesi: dict, baris: dict,
         elif k["bidang"] <= 0.4:
             tambah("perhatian", f"Minatmu pada bidang kerja profesi ini ({nama_bidang.get(utama, utama)}) rendah.")
 
-    if k["big5"] >= 0.75:
-        tambah("cocok", "Kepribadianmu dekat dengan profil ideal profesi ini.")
-
     if k.get("kesiapan", 1) < 1:
         tambah("perhatian", f"Profesi ini umumnya meminta pengalaman minimal {profesi['pengalaman_min_tahun']} tahun. "
                             "Anggap sebagai tujuan jangka menengah.")

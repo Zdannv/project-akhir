@@ -32,12 +32,14 @@ import random
 import statistics
 import sys
 from collections import Counter
+from dataclasses import replace
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app import statistik as st  # noqa: E402
 from app.evaluasi import (KONFIG_ABLASI, KONFIG_BASELINE, MIN_RELIABILITAS, NAMA_ACAK, NAMA_BAWAAN,  # noqa: E402
+                          NAMA_DENGAN_KEPRIBADIAN,
                           NAMA_LOKAL,
                           data_responden, metrik, metrik_acak, metrik_ci, posisi_jaccard, posisi_profesi,
                           uji_berpasangan)
@@ -65,7 +67,10 @@ def persona(p: dict, kb: BasisPengetahuan, acak: random.Random,
             pengalaman: float | None = None, tanggungan: bool | None = None) -> ProfilPengguna:
     """Satu orang rekaan yang 'cocok' dengan profesi p, dengan derau.
 
-    Minat dan kepribadian: profil profesi + derau Gauss. Skill: sebagian skill
+    Minat dan kepribadian: profil profesi + derau Gauss. Kepribadian tidak lagi
+    dipakai skema bawaan; ia hanya diisi untuk skema pembanding (proposal dan
+    rancangan sebelumnya) dan karena dibangkitkan dari profil ideal profesi
+    sendiri, simulasi ini menguntungkan kepribadian. Skill: sebagian skill
     wajib (peluang 0,75) dan pilihan (0,35) profesi itu, ditambah dua skill
     acak yang tidak berhubungan — orang sungguhan tidak pernah punya persis
     daftar skill sebuah lowongan.
@@ -176,6 +181,8 @@ def simulasi(kb: BasisPengetahuan, n_persona: int, seed: int, sigma: float) -> d
         "pemula": uji_pemula(kb, n_persona, seed, sigma),
         "mahasiswa": uji_mahasiswa(kb, n_persona, seed, sigma),
         "tanggungan": uji_tanggungan(kb, n_persona, seed, sigma),
+        "kepribadian": uji_kepribadian(kb, n_persona, seed, sigma),
+        "contoh": contoh_perhitungan(kb),
     }
 
 
@@ -189,7 +196,7 @@ KONFIG_KURVA = {
 
 def kurva_derau(kb: BasisPengetahuan, n_persona: int, seed: int) -> dict:
     """Seberapa cepat ketepatan turun ketika persona makin jauh dari profil
-    profesinya: (1) derau minat dan kepribadian dibesarkan, (2) keahlian yang
+    profesinya: (1) derau minat dibesarkan, (2) keahlian yang
     dimiliki makin sedikit."""
     semua_skill = [s["id"] for s in kb.skill]
     n = max(10, n_persona // 2)
@@ -245,6 +252,28 @@ def uji_mahasiswa(kb: BasisPengetahuan, n_persona: int, seed: int, sigma: float)
     return {"n": len(kasus), "n_profesi": len(awal), "n_senior": len(senior), "hasil": hasil}
 
 
+def uji_kepribadian(kb: BasisPengetahuan, n_persona: int, seed: int, sigma: float) -> dict:
+    """Dampak menghapus kepribadian pada dua keadaan: (a) kepribadian persona
+    dibangkitkan dari profil ideal profesinya, keadaan yang paling menguntungkan
+    kepribadian; (b) kepribadian persona acak, yaitu orang yang memilih profesi
+    walaupun kepribadiannya tidak sesuai profil ideal. Keduanya persona pemula
+    (2–4 keahlian), sehingga sisi KBF menanggung beban pembeda terbesar."""
+    semua_skill = [s["id"] for s in kb.skill]
+    konfig = {NAMA_BAWAAN: Konfigurasi(), NAMA_DENGAN_KEPRIBADIAN: Konfigurasi(skema_bobot="dengan_kepribadian")}
+    hasil = {}
+    for nama, acak_kepribadian in (("sesuai profil ideal", False), ("acak", True)):
+        acak = random.Random(seed + 4)
+        kasus = []
+        for p in kb.profesi:
+            for _ in range(n_persona):
+                pr = persona(p, kb, acak, sigma, semua_skill, n_skill=acak.choice((2, 3, 4)))
+                if acak_kepribadian:
+                    pr = replace(pr, big5={d: acak.random() for d in BIG5})
+                kasus.append((p["id"], pr))
+        hasil[nama] = {"n": len(kasus), "hasil": ringkas(posisi_semua(kasus, kb, konfig), acuan=NAMA_BAWAAN, k_uji=3)}
+    return hasil
+
+
 def uji_tanggungan(kb: BasisPengetahuan, n_persona: int, seed: int, sigma: float) -> dict:
     """Besar pengaruh indeks stabilitas (proksi) bagi pengguna bertanggungan:
     berapa persen daftar lima teratas berubah kalau komponen itu dibuang."""
@@ -262,6 +291,42 @@ def uji_tanggungan(kb: BasisPengetahuan, n_persona: int, seed: int, sigma: float
     return {"n": len(kasus), "hasil": hasil, "top5_berubah": berubah / len(kasus)}
 
 
+# ── Contoh perhitungan untuk naskah ─────────────────────────────────────────
+# Satu responden rekaan yang masukannya ditulis lengkap di naskah, supaya pembaca
+# bisa menghitung ulang skornya dengan tangan.
+CONTOH = dict(
+    # Hasil skor_riasec dari jawaban R 3-2-3, I 5-5-4, A 4-3-3, S 2-2-3, E 2-2-3, C 4-5-4 (kode ICA).
+    riasec={"R": 0.4167, "I": 0.9167, "A": 0.5833, "S": 0.3333, "E": 0.3333, "C": 0.8333},
+    bidang={"DATA": 1.0, "AI": 0.75, "BISNIS": 0.75, "WEB": 0.25, "MOBILE": 0.25, "INFRA": 0.25,
+            "JARINGAN": 0.0, "KEAMANAN": 0.25, "DESAIN": 0.25, "MANAJEMEN": 0.5, "PEMASARAN": 0.25,
+            "GIM": 0.0, "PERANGKAT": 0.0, "KUALITAS": 0.25, "DOKUMENTASI": 0.25, "WEB3": 0.0},
+    skill={"SK015": 3, "SK001": 3, "SK068": 2, "SK095": 3, "SK064": 2, "SK137": 2,
+           "SK187": 2, "SK186": 2, "SK138": 2, "SK134": 1},
+    pengalaman=0.5, rank_pendidikan=4, domisili="Surabaya", bersedia_relokasi=True,
+    ekspektasi_gaji=7_000_000, punya_tanggungan=False,
+)
+LABEL = (("Sangat Cocok", 0.75), ("Cocok", 0.60), ("Cukup Cocok", 0.45), ("Kurang Cocok", 0.0))
+
+
+def contoh_perhitungan(kb: BasisPengetahuan) -> dict:
+    pr = ProfilPengguna(**CONTOH)
+    semua, tersaring = peringkat(pr, kb, Konfigurasi())
+    nama = kb.nama_skill()
+    atas = []
+    for b in semua[:5]:
+        p = kb.cari_profesi(b["profesi_id"])
+        atas.append({"nama": b["nama"], "kbf": b["kbf"]["skor"], "cbf": b["cbf"]["skor"], "skor": b["skor"],
+                     "label": next(n for n, batas in LABEL if b["skor"] >= batas),
+                     "komponen": b["kbf"]["komponen"], "bobot": b["kbf"]["bobot"],
+                     "kosinus": b["cbf"]["kosinus"], "cakupan": b["cbf"]["cakupan"],
+                     "gaji_min": p["gaji_min"], "gaji_maks": p["gaji_maks"],
+                     "pengalaman_min": p["pengalaman_min_tahun"],
+                     "n_skill_profesi": sum(1 for r in kb.skill_profesi(p["id"]) if r["bobot"] > 0),
+                     "n_skill_dimiliki": sum(1 for r in kb.skill_profesi(p["id"]) if r["bobot"] > 0 and r["skill_id"] in pr.skill)})
+    return {"masukan": {**CONTOH, "skill_nama": [nama[s] for s in CONTOH["skill"]]},
+            "n_lolos": len(semua), "n_tersaring": len(tersaring), "teratas": atas}
+
+
 # ── C. Lowongan nyata ───────────────────────────────────────────────────────
 def uji_lowongan(kb: BasisPengetahuan, berkas: Path) -> dict | None:
     """Kasus uji dari lowongan LinkedIn mentah (lihat app/lowongan.py). Lowongan
@@ -271,7 +336,7 @@ def uji_lowongan(kb: BasisPengetahuan, berkas: Path) -> dict | None:
         return None
     data = baca_lowongan(berkas, kb)
     kasus = [(d["profesi_id"], ProfilPengguna(
-        riasec={t: 0.5 for t in RIASEC}, big5={d_: 0.5 for d_ in BIG5}, rank_pendidikan=6,
+        riasec={t: 0.5 for t in RIASEC}, rank_pendidikan=6,
         domisili="Jakarta", bersedia_relokasi=True, ekspektasi_gaji=0, punya_tanggungan=False,
         skill={s: 2 for s in d["skill"]})) for d in data]
 
@@ -384,7 +449,7 @@ def tabel_kurva(kurva: dict, label: str) -> list[str]:
 def bagian_lanjut(sim: dict, low: dict | None) -> list[str]:
     pm, mh, tg, kv = sim["pemula"], sim["mahasiswa"], sim["tanggungan"], sim["derau"]
     L = ["### A.5 Kurva ketahanan terhadap derau", "",
-         "Derau minat dan kepribadian (σ) dibesarkan; keahlian tetap seperti persona bawaan:", "",
+         "Derau minat (σ) dibesarkan; keahlian tetap seperti persona bawaan:", "",
          *tabel_kurva(kv["sigma"], "σ"), "",
          "Keahlian makin sedikit (peluang memiliki keahlian profesi dikalikan faktor), σ = 0,20:", "",
          *tabel_kurva(kv["kelengkapan"], "faktor keahlian"), "",
@@ -400,7 +465,11 @@ def bagian_lanjut(sim: dict, low: dict | None) -> list[str]:
          f"Wilcoxon porsi senior per persona: p = {p_teks(mh['hasil'][NAMA_TANPA_KESIAPAN]['uji_porsi']['p'])}.", "",
          "### A.8 Pengaruh indeks stabilitas (proksi) bagi pengguna bertanggungan", "",
          f"{tg['n']} persona bertanggungan.", "", *tabel_ci(tg["hasil"]), "",
-         f"Daftar lima teratas berubah pada {pct(tg['top5_berubah'])} persona bila komponen stabilitas dibuang.", ""]
+         f"Daftar lima teratas berubah pada {pct(tg['top5_berubah'])} persona bila komponen stabilitas dibuang.", "",
+         "### A.9 Dampak menghapus kepribadian", "",
+         "Persona pemula (2–4 keahlian). Uji McNemar pada Hit@3 terhadap hibrida bawaan (tanpa kepribadian).", ""]
+    for nama, v in sim["kepribadian"].items():
+        L += [f"Kepribadian persona {nama} ({v['n']} persona):", "", *tabel_ci(v["hasil"], 3), ""]
     L += ["## C. Uji pada lowongan nyata", ""]
     if low is None:
         L += ["Berkas lowongan mentah tidak ditemukan; bagian ini dilewati.", ""]
@@ -521,12 +590,10 @@ def laporan(sim: dict, resp: dict | None, argumen: argparse.Namespace, kb: Basis
     else:
         L += ["Belum ada jawaban.", ""]
 
-    L += ["### B.4 Reliabilitas kuesioner", "", "| Skala | Koefisien |", "|---|---:|"]
+    L += ["### B.4 Reliabilitas kuesioner (Cronbach's α)", "", "| Skala | α |", "|---|---:|"]
     for nama, a in resp["reliabilitas"].items():
         L.append(f"| {nama} | {'–' if a is None else f'{a:.2f}'.replace('.', ',')} |")
-    L += ["", "RIASEC memakai Cronbach's α (tiga butir per tipe). Big Five memakai koefisien Spearman-Brown "
-              "karena BFI-10 hanya dua butir per dimensi. Koefisien baru dihitung setelah ada minimal "
-              f"{MIN_RELIABILITAS} responden.", ""]
+    L += ["", f"Tiga butir per tipe RIASEC. Koefisien baru dihitung setelah ada minimal {MIN_RELIABILITAS} responden.", ""]
     L += ["### B.4b Relevansi menurut label skor", "",
           "Porsi rekomendasi yang dinilai relevan oleh responden pada tiap label. Label yang baik menunjukkan "
           "porsi relevan yang menurun dari Sangat Cocok ke Kurang Cocok.", "",

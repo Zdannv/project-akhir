@@ -1,7 +1,6 @@
 """Validitas isi kuesioner dengan penilaian ahli (indeks Aiken's V).
 
-Butir RIASEC disusun penulis, butir BFI-10 diterjemahkan penulis, dan butir
-minat bidang TI ditulis penulis. Sebelum dipakai untuk mengambil data, tiap
+Butir RIASEC dan butir minat bidang TI disusun penulis. Sebelum dipakai untuk mengambil data, tiap
 butir dinilai oleh beberapa ahli (dosen psikologi / bimbingan konseling /
 praktisi rekrutmen TI) pada dua aspek, skala 1–5:
 
@@ -47,20 +46,11 @@ DESKRIPSI_RIASEC = {
     "E": "Enterprising: menyukai kegiatan memimpin, membujuk, dan berwirausaha",
     "C": "Conventional: menyukai kegiatan yang teratur, mengikuti prosedur, dan mengolah data",
 }
-DESKRIPSI_BIG5 = {
-    "O": "Openness: keterbukaan terhadap pengalaman, imajinasi, dan seni",
-    "C": "Conscientiousness: keteraturan, ketekunan, dan tanggung jawab",
-    "E": "Extraversion: kecenderungan bersosialisasi dan energik",
-    "A": "Agreeableness: keramahan, kepercayaan, dan kerja sama",
-    "N": "Neuroticism: kecenderungan cemas dan mudah tertekan",
-}
 
 
 def butir() -> list[tuple[str, str, str, str]]:
     """(kode, instrumen, dimensi yang dituju, kalimat)."""
     hasil = [(k, "Minat RIASEC", DESKRIPSI_RIASEC[t], t_) for k, t, t_ in q.BUTIR_RIASEC]
-    hasil += [(k, "Kepribadian (BFI-10)", DESKRIPSI_BIG5[d] + (" — butir berarah terbalik" if tb else ""),
-               f"{q.AWALAN_BIG5.rstrip(' …')} {t_}") for k, d, tb, t_ in q.BUTIR_BIG5]
     hasil += [(f"BD_{b['kode']}", "Minat bidang TI", f"Minat pada bidang kerja: {b['nama']}", b["pertanyaan"])
               for b in muat_kb().bidang]
     return hasil
@@ -73,15 +63,14 @@ def buat(_: argparse.Namespace) -> None:
     ws0.title = "Petunjuk"
     for i, t in enumerate([
         "Lembar Validitas Isi Kuesioner", "",
-        "Lembar 'Penilaian' berisi butir kuesioner yang dipakai sistem untuk mengukur minat dan kepribadian.",
+        "Lembar 'Penilaian' berisi butir kuesioner yang dipakai sistem untuk mengukur minat.",
         "Untuk tiap butir, beri dua nilai 1–5:",
         "  Kolom E  Kesesuaian: seberapa tepat butir ini mengukur dimensi pada kolom C",
         "           (1 = sangat tidak sesuai, 5 = sangat sesuai)",
         "  Kolom F  Kejelasan: seberapa mudah kalimatnya dipahami pelajar atau mahasiswa",
         "           (1 = sangat tidak jelas, 5 = sangat jelas)",
         "  Kolom G  Saran perbaikan kalimat (opsional)", "",
-        "Butir minat dijawab responden dengan skala 'sangat tidak suka' sampai 'sangat suka';",
-        "butir kepribadian dengan 'sangat tidak setuju' sampai 'sangat setuju'.", "",
+        "Seluruh butir dijawab responden dengan skala 'sangat tidak suka' sampai 'sangat suka'.", "",
         "Nama ahli:", "Bidang keahlian:", "Instansi:",
     ], 1):
         ws0.cell(i, 1, t).font = Font(bold=(i == 1), size=13 if i == 1 else 11)

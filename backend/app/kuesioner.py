@@ -1,33 +1,29 @@
 """Tahap 1 — Profiling: butir kuesioner dan penskorannya.
 
-Dua instrumen, keduanya skala Likert 1 - 5:
+Minat RIASEC, 18 butir (3 per tipe), skala Likert 1 - 5. Butirnya disusun
+sendiri mengikuti enam tipe Holland, jadi BELUM tervalidasi; scripts/evaluasi.py
+menghitung Cronbach's alpha per tipe dari jawaban yang terkumpul. Minat bidang
+kerja TI ditanyakan per bidang (lihat basis pengetahuan).
 
-  * Minat RIASEC, 18 butir (3 per tipe). Butirnya disusun sendiri mengikuti
-    enam tipe Holland, jadi BELUM tervalidasi; scripts/evaluasi.py menghitung
-    Cronbach's alpha per tipe dari jawaban yang terkumpul sebagai bukti awal.
-  * Kepribadian Big Five, BFI-10 (Rammstedt & John, 2007): 2 butir per dimensi,
-    satu di antaranya berarah terbalik. Kalimat Indonesianya terjemahan
-    penulis; untuk naskah, rujuk adaptasi Indonesia yang sudah terbit.
+Kuesioner kepribadian (BFI-10) sudah dihapus: kecocokan kepribadian dengan
+profesi tidak didukung bukti yang cukup, profil kepribadian ideal profesi hanya
+turunan penulis, dan pada simulasi membuangnya tidak mengubah ketepatan
+(docs/keputusan-desain.md).
 
 Semua skor dinormalkan ke 0 - 1 supaya sebanding dengan profil profesi.
 """
 
 from __future__ import annotations
 
-from .kb import BIG5, RIASEC
+from .kb import RIASEC
 
 SKALA_MIN, SKALA_MAKS = 1, 5
 
 LABEL_SKALA_MINAT = ["Sangat tidak suka", "Tidak suka", "Netral", "Suka", "Sangat suka"]
-LABEL_SKALA_SETUJU = ["Sangat tidak setuju", "Tidak setuju", "Netral", "Setuju", "Sangat setuju"]
 
 NAMA_RIASEC = {
     "R": "Realistic", "I": "Investigative", "A": "Artistic",
     "S": "Social", "E": "Enterprising", "C": "Conventional",
-}
-NAMA_BIG5 = {
-    "O": "Openness", "C": "Conscientiousness", "E": "Extraversion",
-    "A": "Agreeableness", "N": "Neuroticism",
 }
 
 # (kode, tipe, kalimat). Urutan tampil diselang antar tipe supaya butir setipe
@@ -53,23 +49,6 @@ BUTIR_RIASEC: list[tuple[str, str, str]] = [
     ("C3", "C", "Mengecek pekerjaan berulang kali supaya tidak ada yang terlewat."),
 ]
 
-# (kode, dimensi, terbalik, kalimat). Awalan: "Saya melihat diri saya sebagai
-# seseorang yang ..."
-BUTIR_BIG5: list[tuple[str, str, bool, str]] = [
-    ("B1", "E", True, "pendiam dan cenderung menahan diri."),
-    ("B2", "A", False, "mudah percaya kepada orang lain."),
-    ("B3", "C", True, "cenderung malas."),
-    ("B4", "N", True, "santai dan bisa menghadapi tekanan dengan baik."),
-    ("B5", "O", True, "kurang tertarik pada hal-hal yang berbau seni."),
-    ("B6", "E", False, "mudah bergaul dan suka bersosialisasi."),
-    ("B7", "A", True, "cenderung mencari-cari kesalahan orang lain."),
-    ("B8", "C", False, "mengerjakan tugas sampai tuntas dan teliti."),
-    ("B9", "N", False, "mudah merasa gugup atau cemas."),
-    ("B10", "O", False, "punya imajinasi yang aktif."),
-]
-AWALAN_BIG5 = "Saya melihat diri saya sebagai seseorang yang …"
-
-
 def _periksa(jawaban: dict[str, int], kode_wajib: list[str], nama: str) -> None:
     kurang = [k for k in kode_wajib if k not in jawaban]
     if kurang:
@@ -90,19 +69,6 @@ def skor_riasec(jawaban: dict[str, int]) -> dict[str, float]:
     for tipe in RIASEC:
         nilai = [jawaban[k] for k, t, _ in BUTIR_RIASEC if t == tipe]
         hasil[tipe] = round(_normal(sum(nilai) / len(nilai)), 4)
-    return hasil
-
-
-def skor_big5(jawaban: dict[str, int]) -> dict[str, float]:
-    """Rata-rata dua butir per dimensi (butir terbalik dibalik dulu), 0 - 1."""
-    _periksa(jawaban, [k for k, _, _, _ in BUTIR_BIG5], "kepribadian")
-    hasil = {}
-    for dim in BIG5:
-        nilai = [
-            (SKALA_MIN + SKALA_MAKS - jawaban[k]) if terbalik else jawaban[k]
-            for k, d, terbalik, _ in BUTIR_BIG5 if d == dim
-        ]
-        hasil[dim] = round(_normal(sum(nilai) / len(nilai)), 4)
     return hasil
 
 

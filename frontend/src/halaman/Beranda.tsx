@@ -4,8 +4,8 @@ import { Lambang } from '../komponen/umum'
 import { hasilTerakhir } from '../sesi'
 
 const TAHAP = [
-  { ikon: ListChecks, nama: 'Profiling', isi: 'Isi latar belakang, minat (RIASEC), kepribadian (Big Five), dan skill yang sudah kamu kuasai.' },
-  { ikon: ScanSearch, nama: 'Matching', isi: 'Profilmu dicocokkan dengan 35 profesi TI: aturan dan kecocokan psikologis (KBF) digabung dengan kecocokan skill (CBF).' },
+  { ikon: ListChecks, nama: 'Profiling', isi: 'Isi latar belakang, minat (RIASEC dan bidang kerja TI), dan skill yang sudah kamu kuasai.' },
+  { ikon: ScanSearch, nama: 'Matching', isi: 'Profilmu dicocokkan dengan 35 profesi TI: aturan, minat, dan kondisimu (KBF) digabung dengan kecocokan skill (CBF).' },
   { ikon: Target, nama: 'Rekomendasi', isi: 'Dapatkan lima profesi teratas, alasan di balik skornya, dan skill yang masih perlu dikejar.' },
 ]
 
@@ -41,14 +41,14 @@ export default function Beranda() {
               Temukan profesi TI yang paling <span className="text-violet-600">cocok</span> untukmu
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-slate-600 lg:mx-0">
-              Minat, kepribadian, dan kondisi pribadimu dipertimbangkan bersama skill yang sudah kamu miliki,
+              Minat dan kondisi pribadimu dipertimbangkan bersama skill yang sudah kamu miliki,
               dengan pendekatan hybrid knowledge-based dan content-based filtering.
             </p>
             <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
               <Link to="/mulai" className="inline-flex items-center justify-center gap-2 rounded-full bg-violet-600 px-6 py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-violet-700">
                 Mulai Sekarang <ArrowRight className="size-4" aria-hidden />
               </Link>
-              <span className="text-[13px] text-slate-500">±7 menit · tanpa perlu akun</span>
+              <span className="text-[13px] text-slate-500">±6 menit · tanpa perlu akun</span>
             </div>
           </div>
           <img src="/ilustrasi/hero.webp" alt="" width={997} height={1240} className="mx-auto h-auto w-full max-w-[420px]" aria-hidden />
