@@ -1,7 +1,7 @@
 /**
  * Roadmap skill menuju profesi tujuan.
  *
- * Skill yang belum dikuasai disusun tiga tahap (Pondasi, Penguatan, Pelengkap)
+ * Skill yang belum dikuasai disusun tiga tahap (Fondasi, Penguatan, Pelengkap)
  * dari data yang sama dengan yang dipakai mesin. Mencentang skill tidak
  * mengubah rekomendasi tersimpan; ia menghitung proyeksi: kalau skill ini
  * sudah dikuasai, cakupan, skor, dan peringkatnya jadi berapa.
@@ -98,7 +98,7 @@ function Isi({ id, d, centang, ganti }: { id: string; d: Terisi; centang: (skill
             <Angka label="Peringkat" awal={`#${d.awal.peringkat}`} kini={`#${d.proyeksi.peringkat}`} berubah={d.awal.peringkat !== d.proyeksi.peringkat} />
           </dl>
           <p className="mt-3 text-[11px] leading-relaxed text-slate-400">
-            **Cakupan = porsi bobot skill profesi yang dikuasai. Skill yang dicentang dihitung pada tingkat Menengah. Skor akhir
+            Cakupan = porsi bobot skill profesi yang dikuasai. Skill yang dicentang dihitung pada tingkat Menengah. Skor akhir
             menggabungkan cakupan dengan kemiripan arah skill dan kecocokan profilmu, sehingga kenaikannya tidak sebesar cakupan.
           </p>
         </section>

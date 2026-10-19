@@ -54,12 +54,22 @@ function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; d
   if (step === 0) return <Kerangka step={null}><Pembuka onMulai={() => setStep(1)} /></Kerangka>
   if (step === SELESAI && idHasil) return <Kerangka step={null}><Penutup id={idHasil} /></Kerangka>
 
-  const lengkap = [
-    m.nama.trim() !== '' && m.jenjang !== '' && m.domisili !== '' && m.pengalaman_tahun !== null &&
-      (m.jenis_responden === 'mahasiswa' || (m.profesi_aktual !== null && m.kecocokan_profesi !== null)),
-    k.riasec.butir.every((b) => m.riasec[b.kode]) && k.bidang.butir.every((b) => m.bidang[b.kode]),
-    true, // skill boleh kosong: mesin tetap jalan dengan KBF saja
+  // Isian yang masih kosong di langkah ini. Ditampilkan di dekat tombol Lanjut,
+  // supaya pengguna tahu kenapa tombolnya belum aktif.
+  const belumMinat = k.riasec.butir.filter((b) => !m.riasec[b.kode]).length + k.bidang.butir.filter((b) => !m.bidang[b.kode]).length
+  const kurang: string[] = [
+    [
+      m.nama.trim() === '' && 'nama',
+      m.jenjang === '' && 'pendidikan',
+      m.domisili === '' && 'domisili',
+      m.pengalaman_tahun === null && 'pengalaman',
+      m.jenis_responden === 'profesional' && m.profesi_aktual === null && 'profesi saat ini',
+      m.jenis_responden === 'profesional' && m.kecocokan_profesi === null && 'kecocokan profesi',
+    ].filter((x): x is string => Boolean(x)),
+    belumMinat ? [`${belumMinat} pertanyaan`] : [],
+    [], // skill boleh kosong: mesin tetap jalan dengan KBF saja
   ][step - 1]
+  const lengkap = kurang.length === 0
 
   function pindah(ke: number) {
     setStep(ke)
@@ -130,7 +140,7 @@ function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; d
           </div>
         </aside>
 
-        <div className="flex min-w-0 flex-1 flex-col overflow-hidden border-slate-200 lg:rounded-2xl lg:border">
+        <div className="flex min-w-0 flex-1 flex-col overflow-clip border-slate-200 lg:rounded-2xl lg:border">
           <div className="border-b border-slate-200 bg-slate-50/80 px-4 pb-4 pt-3.5 sm:px-6">
             <div className="flex items-center gap-3">
               <span className="inline-flex shrink-0 items-center rounded-md bg-violet-600 px-2 py-1 text-[11px] font-bold text-white">
@@ -173,6 +183,12 @@ function Formulir({ k, awal, dari }: { k: DataKuesioner; awal: Masukan | null; d
             >
               {kirim ? <><Loader2 className="size-4 animate-spin" aria-hidden /> Menghitung…</> : <>{terakhir ? 'Simpan & Lihat Rekomendasi' : `Lanjut ke Step ${step + 1}`} <ArrowRight className="size-4" aria-hidden /></>}
             </button>
+            {/* Ponsel: di atas tombol. Desktop (baris dibalik): tepat di kiri tombol. */}
+            {!lengkap && (
+              <p className="order-first text-center text-[12.5px] text-slate-500 lg:order-none lg:ml-auto lg:mr-1 lg:text-right" aria-live="polite">
+                Belum diisi: {kurang.join(', ')}
+              </p>
+            )}
             {step > 1 ? (
               <button type="button" disabled={kirim} onClick={() => pindah(step - 1)} className="inline-flex items-center justify-center gap-2 rounded-full py-3 text-[13.5px] font-semibold text-slate-600 transition-colors hover:bg-slate-100 lg:px-5">
                 <CornerUpLeft className="size-4" aria-hidden /> Kembali ke Step {step - 1}

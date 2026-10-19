@@ -4,7 +4,7 @@ Setelah pengguna memilih satu profesi sebagai tujuan, skill profesi itu yang
 belum dikuasai disusun menjadi tiga tahap berdasarkan data yang sama dengan
 yang dipakai CBF:
 
-    Pondasi     skill wajib
+    Fondasi     skill wajib
     Penguatan   skill pilihan dengan bobot di atas atau sama dengan median
     Pelengkap   skill pilihan sisanya
 
@@ -32,7 +32,7 @@ from .kbf import ProfilPengguna
 TINGKAT_PROYEKSI = 2
 
 TAHAP = [
-    ("pondasi", "Pondasi", "Skill wajib. Tanpa ini sulit melamar ke profesi ini."),
+    ("pondasi", "Fondasi", "Skill wajib. Tanpa ini sulit melamar ke profesi ini."),
     ("penguatan", "Penguatan", "Skill pilihan yang paling sering diminta."),
     ("pelengkap", "Pelengkap", "Nilai tambah yang membedakanmu dari pelamar lain."),
 ]

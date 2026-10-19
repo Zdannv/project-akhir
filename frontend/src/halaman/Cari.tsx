@@ -73,7 +73,7 @@ function Isi({ id, d }: { id: string; d: Hasil }) {
       <div className="relative">
         <label htmlFor="cari" className="sr-only">Cari profesi</label>
         <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" aria-hidden />
-        <input id="cari" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Cari nama atau deskripsi profesi.."
+        <input id="cari" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Cari nama atau deskripsi profesi…"
           className="w-full rounded-full border border-slate-200 bg-white py-3 pl-11 pr-4 text-[13.5px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-violet-400" />
       </div>
 

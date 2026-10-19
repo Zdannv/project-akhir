@@ -34,7 +34,7 @@ export default function Penilaian() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <AppTopNav id={id} />
-      <KepalaLayar ke={`/explore/${id}`} judul="Penilaian Sistem" subjudul="System Usability Scale" />
+      <KepalaLayar ke={`/explore/${id}`} judul="Penilaian Sistem" subjudul="Kemudahan sistem dan kejelasan rekomendasi" />
       {muat ? <Memuat /> : galat || !data ? (
         <div className="mx-auto w-full max-w-2xl flex-1 p-6"><Galat pesan={galat ?? 'Gagal memuat.'} /></div>
       ) : (
@@ -81,6 +81,9 @@ function DaftarButir({ butir, nilai, ubah, mulai = 0 }: {
                 {n}
               </button>
             ))}
+          </div>
+          <div className="mt-1.5 flex justify-between text-[11px] text-slate-400 sm:mx-auto sm:max-w-[232px]" aria-hidden>
+            <span>Sangat tidak setuju</span><span>Sangat setuju</span>
           </div>
         </li>
       ))}

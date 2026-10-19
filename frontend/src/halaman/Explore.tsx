@@ -32,7 +32,10 @@ export default function Explore() {
 function Isi({ id, d }: { id: string; d: Hasil }) {
   const h = d.hasil
   const n = h.rekomendasi.length
-  const alasan = new Map(h.rekomendasi.map((r) => [r.profesi_id, r.alasan.find((a) => a.nada === 'cocok')?.teks ?? r.alasan[0]?.teks]))
+  // Kartu menampilkan alasan soal skill karena alasan itulah yang berbeda di tiap
+  // profesi; alasan minat hampir selalu sama untuk lima teratas. Rincian lengkapnya di detail.
+  const alasan = new Map(h.rekomendasi.map((r) => [r.profesi_id,
+    (r.alasan.find((a) => /skill/i.test(a.teks)) ?? r.alasan.find((a) => a.nada === 'cocok') ?? r.alasan[0])?.teks]))
   const alpha = h.konfigurasi.alpha.toLocaleString('id-ID')
   const beta = (1 - h.konfigurasi.alpha).toLocaleString('id-ID', { maximumFractionDigits: 1 })
 
@@ -61,7 +64,7 @@ function Isi({ id, d }: { id: string; d: Hasil }) {
           <Banner
             ke={`/explore/${id}/penilaian`} gambar="/ilustrasi/banner.webp" gambarLebar="/ilustrasi/banner-lebar.webp"
             eyebrow="Penilaian Sistem" judul={d.skor_sus === null ? 'Bantu penelitian ini' : 'Terima kasih!'}
-            isi={d.skor_sus === null ? 'Nilai kemudahan penggunaan sistem lewat 10 pertanyaan singkat.' : 'Penilaianmu sudah tersimpan. Kamu masih bisa mengubahnya.'}
+            isi={d.skor_sus === null ? 'Nilai kemudahan sistem dan kejelasan rekomendasinya lewat 14 pertanyaan singkat.' : 'Penilaianmu sudah tersimpan. Kamu masih bisa mengubahnya.'}
             tombol={d.skor_sus === null ? 'Isi Penilaian' : 'Ubah Penilaian'}
           />
         </div>
@@ -71,13 +74,14 @@ function Isi({ id, d }: { id: string; d: Hasil }) {
         {n === 0 ? (
           <div className="p-4 sm:p-6"><Galat pesan="Tidak ada profesi yang lolos penyaringan dengan syarat yang kamu isi. Coba ubah pendidikan atau kesediaan relokasi." /></div>
         ) : (
-          <BarisKartu judul="Persentase Match Profesi" keterangan={`${n} profesi teratas untukmu. Skor akhir = ${alpha} × kecocokan profil (KBF) + ${beta} × kecocokan skill (CBF).`}>
+          <BarisKartu judul="Paling Cocok untukmu" keterangan={`${n} profesi teratas. Skor akhir = ${alpha} × kecocokan profil (KBF) + ${beta} × kecocokan skill (CBF).`}>
             {h.peringkat_lengkap.slice(0, n).map((p) => <KartuProfesi key={p.profesi_id} id={id} p={p} alasan={alasan.get(p.profesi_id)} />)}
           </BarisKartu>
         )}
 
         {h.peringkat_lengkap.length > n && (
-          <BarisKartu judul="Profesi TI Lainnya" keterangan={`Peringkat ${n + 1} sampai ${h.peringkat_lengkap.length}, diurutkan dari skor tertinggi.`}>
+          <BarisKartu judul="Profesi TI Lainnya" keterangan={`Peringkat ${n + 1} sampai ${h.peringkat_lengkap.length}, diurutkan dari skor tertinggi.`}
+            semua={{ ke: `/explore/${id}/cari`, label: 'Lihat semua' }}>
             {h.peringkat_lengkap.slice(n).map((p) => <KartuProfesi key={p.profesi_id} id={id} p={p} tampilDeskripsi />)}
           </BarisKartu>
         )}
@@ -133,7 +137,7 @@ function Sapaan({ id, d }: { id: string; d: Hasil }) {
       <div className="relative flex-1">
         <label htmlFor="cari-profesi" className="sr-only">Cari profesi TI</label>
         <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" aria-hidden />
-        <input id="cari-profesi" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Cari profesi TI.."
+        <input id="cari-profesi" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Cari profesi TI…"
           className="w-full rounded-full border border-slate-200 bg-white py-3 pl-11 pr-4 text-[13.5px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-violet-400" />
         {kata.length >= 2 && (
           <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-20 max-h-80 overflow-y-auto rounded-2xl border border-slate-200 bg-white py-1 shadow-lg">

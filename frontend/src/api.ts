@@ -272,7 +272,7 @@ export function pita(skor: number): { label: string; nada: 'hijau' | 'biru' | 'k
 }
 
 export const gaji = (min: number, maks: number) =>
-  `Rp ${(min / 1e6).toLocaleString('id-ID')} - ${(maks / 1e6).toLocaleString('id-ID')} juta/bulan`
+  `Rp${(min / 1e6).toLocaleString('id-ID')}–${(maks / 1e6).toLocaleString('id-ID')} juta/bulan`
 
 export const rupiah = (n: number) => `Rp${(n / 1_000_000).toLocaleString('id-ID', { maximumFractionDigits: 1 })} jt`
 export const persen = (x: number) => `${Math.round(x * 100)}%`

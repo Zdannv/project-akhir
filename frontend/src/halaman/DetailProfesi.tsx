@@ -16,6 +16,9 @@ import { Batang, Galat, Memuat, Radar } from '../komponen/umum'
 import { useData } from '../komponen/useData'
 
 type Tab = 'analisa' | 'skill' | 'insight'
+// Tingkat keyakinan padanan kode SOC disimpan dalam bahasa Inggris di basis pengetahuan.
+const KEYAKINAN: Record<string, string> = { high: 'tinggi', medium: 'sedang', low: 'rendah' }
+
 const TABS = [
   { kode: 'analisa' as const, label: 'Analisa' },
   { kode: 'skill' as const, label: 'Skill & Kompetensi' },
@@ -216,7 +219,7 @@ function TabAnalisa({ d }: { d: Detail }) {
         />
       </Blok>
       <p className="text-[11px] leading-relaxed text-slate-400">
-        **Profil profesi dari O*NET: {p.soc_judul} ({p.soc_code}), keyakinan padanan {p.soc_keyakinan}.{p.soc_catatan && ` ${p.soc_catatan}.`}
+        Profil minat profesi dari O*NET: {p.soc_judul} ({p.soc_code}), keyakinan padanan {KEYAKINAN[p.soc_keyakinan] ?? p.soc_keyakinan}.{p.soc_catatan && ` ${p.soc_catatan}.`}
       </p>
     </div>
   )
@@ -337,7 +340,7 @@ function TabInsight({ d }: { d: Detail }) {
             </li>
           ))}
         </ul>
-        <p className="mt-2.5 text-[11px] text-slate-400">**Jenjang {p.senioritas}. Sumber: pengolahan lowongan kerja LinkedIn Indonesia 2025.</p>
+        <p className="mt-2.5 text-[11px] text-slate-400">Jenjang {p.senioritas}. Sumber: pengolahan lowongan kerja LinkedIn Indonesia 2025.</p>
       </Blok>
 
       <section className="flex items-center justify-between gap-3 rounded-2xl bg-violet-50 px-4 py-3.5">

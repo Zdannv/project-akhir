@@ -1,6 +1,6 @@
 /** Potongan tampilan profesi yang dipakai Explore dan layar detail. */
-import { Building2, ChevronRight, CircleDollarSign, Laptop, PieChart, Signal } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { Building2, ChevronLeft, ChevronRight, CircleDollarSign, Laptop, PieChart, Signal } from 'lucide-react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { gaji, pita, type Ringkas } from '../api'
 
@@ -50,7 +50,7 @@ export function KartuProfesi({ id, p, alasan, tampilDeskripsi = false }: {
           </div>
           <div className="flex items-center gap-2">
             <Signal className="size-3.5 shrink-0 text-slate-400" aria-hidden />
-            <dd>{p.senioritas} · {p.pengalaman_min_tahun === 0 ? 'tanpa pengalaman' : `min. ${p.pengalaman_min_tahun} th pengalaman`}</dd>
+            <dd>{p.senioritas} · {p.pengalaman_min_tahun === 0 ? 'tanpa pengalaman' : `${p.pengalaman_min_tahun}+ tahun pengalaman`}</dd>
           </div>
           <div className="flex items-center gap-2">
             <Laptop className="size-3.5 shrink-0 text-slate-400" aria-hidden />
@@ -70,15 +70,43 @@ export function KartuProfesi({ id, p, alasan, tampilDeskripsi = false }: {
   )
 }
 
-/** Satu baris kartu yang bisa digeser, dengan judul dan keterangan. */
-export function BarisKartu({ judul, keterangan, children }: { judul: string; keterangan?: string; children: ReactNode }) {
+/** Satu baris kartu yang bisa digeser, dengan judul dan keterangan.
+ *  Di ponsel digeser dengan jari; di desktop ada tombol panah, karena baris
+ *  tanpa scrollbar tidak bisa digeser dengan tetikus biasa. */
+export function BarisKartu({ judul, keterangan, semua, children }: {
+  judul: string; keterangan?: string; semua?: { ke: string; label: string }; children: ReactNode
+}) {
+  const baris = useRef<HTMLDivElement>(null)
+  const [bisa, setBisa] = useState({ kiri: false, kanan: false })
+  useEffect(() => {
+    const el = baris.current
+    if (!el) return
+    const periksa = () => setBisa({ kiri: el.scrollLeft > 4, kanan: el.scrollLeft + el.clientWidth < el.scrollWidth - 4 })
+    periksa()
+    el.addEventListener('scroll', periksa, { passive: true })
+    window.addEventListener('resize', periksa)
+    return () => { el.removeEventListener('scroll', periksa); window.removeEventListener('resize', periksa) }
+  }, [children])
+  const geser = (arah: 1 | -1) => baris.current?.scrollBy({ left: arah * baris.current.clientWidth * 0.8, behavior: 'smooth' })
+  const panah = 'grid size-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:border-violet-300 hover:text-violet-700 disabled:opacity-30 disabled:hover:border-slate-200 disabled:hover:text-slate-600'
   return (
     <section className="py-5">
-      <div className="px-4 sm:px-6">
-        <h2 className="text-[17px] font-bold tracking-tight text-slate-900">{judul}</h2>
-        {keterangan && <p className="mt-0.5 text-[13px] leading-relaxed text-slate-500">{keterangan}</p>}
+      <div className="flex items-end justify-between gap-4 px-4 sm:px-6">
+        <div className="min-w-0">
+          <h2 className="text-[17px] font-bold tracking-tight text-slate-900">{judul}</h2>
+          {keterangan && <p className="mt-0.5 text-[13px] leading-relaxed text-slate-500">{keterangan}</p>}
+        </div>
+        <div className="flex shrink-0 items-center gap-2">
+          {semua && <Link to={semua.ke} className="text-[13px] font-semibold text-violet-700 hover:underline">{semua.label}</Link>}
+          {(bisa.kiri || bisa.kanan) && (
+            <div className="hidden gap-1.5 md:flex">
+              <button type="button" aria-label="Geser ke kiri" disabled={!bisa.kiri} onClick={() => geser(-1)} className={panah}><ChevronLeft className="size-4" /></button>
+              <button type="button" aria-label="Geser ke kanan" disabled={!bisa.kanan} onClick={() => geser(1)} className={panah}><ChevronRight className="size-4" /></button>
+            </div>
+          )}
+        </div>
       </div>
-      <div className="mt-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-2 sm:px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div ref={baris} className="mt-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-2 sm:px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {children}
         <div className="w-1 shrink-0" aria-hidden />
       </div>
