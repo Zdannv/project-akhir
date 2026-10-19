@@ -250,8 +250,13 @@ function Pembuka({ onMulai }: { onMulai: () => void }) {
           <span className="block text-[12.5px] text-slate-600">~6 menit · 3 langkah</span>
         </span>
       </div>
-      <button type="button" onClick={onMulai} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-violet-600 py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-violet-700">
-        Ayo Mulai! <ArrowRight className="size-4" aria-hidden />
+      {/* Persetujuan singkat: jawaban responden dipakai untuk penelitian proyek akhir. */}
+      <p className="mt-4 text-[12px] leading-relaxed text-slate-500">
+        Jawabanmu disimpan untuk penelitian proyek akhir dan hanya dilaporkan sebagai rangkuman, tanpa nama.
+        Boleh memakai nama panggilan. Dengan menekan tombol di bawah, kamu setuju jawabanmu dipakai untuk keperluan itu.
+      </p>
+      <button type="button" onClick={onMulai} className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-violet-600 py-3.5 text-[14px] font-semibold text-white transition-colors hover:bg-violet-700">
+        Setuju dan Mulai <ArrowRight className="size-4" aria-hidden />
       </button>
     </div>
   )
