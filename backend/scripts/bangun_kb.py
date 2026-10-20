@@ -4,7 +4,7 @@ Tiga sumber digabung menjadi satu berkas JSON yang dibaca mesin rekomendasi:
 
   data/sumber/knowledge_base_profesi_IT.xlsx
       35 profesi TI, 114 skill, 308 relasi profesi-skill berbobot, patokan gaji.
-      Hasil pengolahan lowongan kerja lokal (LinkedIn Indonesia, 2025).
+      Hasil pengolahan lowongan kerja lokal (LinkedIn Indonesia, April–Juli 2026).
 
   data/sumber/pelengkap_skill.csv, pelengkap_profesi_skill.csv
       Workbook di atas punya dua lubang: sembilan profesi (C023, C028 - C035)
