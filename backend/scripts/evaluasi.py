@@ -52,7 +52,7 @@ from app.kbf import ProfilPengguna  # noqa: E402
 
 KELUARAN = AKAR / "docs" / "hasil-evaluasi.md"
 KELUARAN_JSON = AKAR / "docs" / "hasil-evaluasi.json"
-# Data mentah scraping disimpan di luar repositori (lihat docs/bukti-data/README.md).
+# Data mentah scraping disimpan di luar repositori, di laptop penulis.
 BERKAS_LOWONGAN = Path.home() / "Downloads" / "jobs.xlsx"
 
 
