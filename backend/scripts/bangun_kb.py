@@ -351,7 +351,7 @@ def main() -> None:
             "n_relasi": sum(len(v) for v in profesi_skill.values()),
             "n_relasi_kurasi": sum(1 for v in profesi_skill.values() for r in v if r["sumber"] == "kurasi"),
             "sumber": {
-                "pasar_kerja": "knowledge_base_profesi_IT.xlsx — pengolahan lowongan kerja LinkedIn Indonesia 2025",
+                "pasar_kerja": "knowledge_base_profesi_IT.xlsx — pengolahan lowongan kerja LinkedIn Indonesia April–Juli 2026",
                 "skill_kurasi": "pelengkap_*.csv — kurasi penulis: skill untuk 9 profesi yang belum tercakup "
                                 "dan skill umum yang belum ada di data lowongan; perlu divalidasi",
                 "riasec": "O*NET 30.3 Career Interest Types (USDOL/ETA, CC BY 4.0), lewat padanan kode SOC",
